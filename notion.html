@@ -218,9 +218,70 @@
   .footer-links a { font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; color: #8A857F; text-decoration: none; transition: color 0.3s; }
   .footer-links a:hover { color: var(--noir); }
 
-  /* RESPONSIVE */
+
+  /* HAMBURGER */
+  .nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+  .nav-hamburger span { display: block; width: 22px; height: 1.5px; background: var(--noir); transition: all 0.3s; }
+  .mobile-menu { display: none; position: fixed; top: 76px; left: 0; right: 0; background: var(--blanc); border-bottom: 1px solid rgba(181,173,165,0.3); padding: 1.5rem; z-index: 99; flex-direction: column; gap: 0; }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--noir); text-decoration: none; padding: 0.9rem 0; border-bottom: 1px solid rgba(181,173,165,0.2); }
+  .mobile-menu .mobile-cta { background: var(--noir); color: var(--blanc); text-align: center; padding: 1rem; border: none; margin-top: 1rem; }
+  /* RESPONSIVE — TABLET */
   @media (max-width: 960px) {
     nav { padding: 1.2rem 1.5rem; }
+    .nav-links { display: none; }
+    .nav-cta { display: none; }
+    .nav-hamburger { display: flex; }
+
+    .page-hero { grid-template-columns: 1fr; padding: 6rem 1.5rem 3rem; gap: 2.5rem; min-height: auto; }
+    .hero-title { font-size: clamp(2rem, 7vw, 3rem); }
+    .hero-subtitle { max-width: 100%; }
+    .hero-actions { flex-direction: column; align-items: flex-start; gap: 1rem; }
+    .btn-primary { width: 100%; text-align: center; }
+    .hero-stats { gap: 1.5rem; }
+
+    .process-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .pourqui-grid, .packs-grid, .testimony-grid { grid-template-columns: 1fr; }
+    .pourqui-section, .packs-section, .testimony-section, .process-section, .cta-section, .faq-section { padding: 4rem 1.5rem; }
+
+    .cta-title { font-size: clamp(1.8rem, 7vw, 3rem); }
+    .cta-btn { width: 100%; max-width: 320px; }
+
+    footer { padding: 2rem 1.5rem; flex-direction: column; gap: 1.2rem; text-align: center; }
+    .footer-links { flex-wrap: wrap; justify-content: center; gap: 1rem; }
+  }
+
+  /* RESPONSIVE — MOBILE */
+  @media (max-width: 480px) {
+    nav { padding: 1rem 1.2rem; }
+    .nav-logo { font-size: 0.95rem; }
+
+    .page-hero { padding: 5rem 1.2rem 2.5rem; }
+    .hero-title { font-size: clamp(1.8rem, 9vw, 2.4rem); }
+    .hero-subtitle { font-size: 0.82rem; }
+    .hero-stats { flex-wrap: wrap; gap: 1.2rem; }
+    .stat-number { font-size: 1.5rem; }
+
+    .marquee-item { font-size: 0.5rem; letter-spacing: 0.2em; }
+
+    .pourqui-section, .packs-section, .testimony-section,
+    .process-section, .cta-section, .faq-section { padding: 3rem 1.2rem; }
+
+    .pack-card { padding: 2rem 1.5rem; }
+    .pack-price { font-size: 1.8rem; }
+    .pack-cta { padding: 0.85rem 1rem; }
+
+    .testimony-card { padding: 1.8rem; }
+    .testimony-quote { font-size: 0.88rem; }
+
+    .faq-question { font-size: 0.88rem; padding: 1.2rem 0; }
+
+    .cta-section { padding: 4rem 1.2rem; }
+
+    footer { padding: 1.8rem 1.2rem; }
+    .footer-links { gap: 0.8rem; }
+    .footer-links a { font-size: 0.58rem; }
+  }
     .nav-links { display: none; }
     .page-hero { grid-template-columns: 1fr; padding: 7rem 1.5rem 4rem; gap: 3rem; }
     .process-grid { grid-template-columns: 1fr; gap: 3rem; }
@@ -244,7 +305,19 @@
     <li><a href='/mentions-legales'>Mentions légales</a></li>
   </ul>
   <a href="https://calendar.app.google/x3LrzMWr5spjaSn56" target="_blank" class="nav-cta">Appel découverte</a>
+  <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/#systemes" onclick="toggleMenu()">Systèmes</a>
+  <a href="/#packs" onclick="toggleMenu()">Packs</a>
+  <a href="/notion" onclick="toggleMenu()">Boost'Her Notion</a>
+  <a href="/ia" onclick="toggleMenu()">Boost'Her IA</a>
+  <a href="/#temoignages" onclick="toggleMenu()">Témoignages</a>
+  <a href="/mentions-legales" onclick="toggleMenu()">Mentions légales</a>
+  <a href="https://calendar.app.google/x3LrzMWr5spjaSn56" target="_blank" class="mobile-cta">Appel découverte gratuit</a>
+</div>
 
 <!-- HERO -->
 <section class="page-hero">
