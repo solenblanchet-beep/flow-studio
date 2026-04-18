@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Système Notion — Flow Studio</title>
+<meta name="description" content="Flow Studio construit votre espace Notion sur-mesure : tableau de bord, CRM, projets, finances. Consultant Notion pour entrepreneures et PME en France. Livré clé en main." />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://flow-studio.app/notion" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://flow-studio.app/notion" />
+  <meta property="og:title" content="Système Notion sur-mesure — Flow Studio" />
+  <meta property="og:description" content="Tableau de bord, CRM, projets, finances sur Notion. Livré clé en main par Flow Studio, sans formation nécessaire." />
+  <meta property="og:image" content="https://flow-studio.app/solen-ouahioune-flow-studio.jpg" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:site_name" content="Flow Studio" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Système Notion sur-mesure — Flow Studio" />
+  <meta name="twitter:description" content="Tableau de bord, CRM, projets, finances sur Notion. Livré clé en main." />
+  <meta name="twitter:image" content="https://flow-studio.app/solen-ouahioune-flow-studio.jpg" />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Système Notion sur-mesure",
+    "description": "Construction d'espaces Notion sur-mesure pour entrepreneures et PME : tableau de bord, CRM, gestion de projets, suivi finances.",
+    "provider": {
+      "@type": "ProfessionalService",
+      "name": "Flow Studio",
+      "url": "https://flow-studio.app",
+      "founder": {
+        "@type": "Person",
+        "name": "Solen Ouahioune"
+      }
+    },
+    "areaServed": "France",
+    "offers": {
+      "@type": "Offer",
+      "price": "490",
+      "priceCurrency": "EUR"
+    },
+    "serviceType": "Notion Consultant"
+  }
+  </script>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --noir: #0F0F0F; --beige: #EAE6E1; --blanc: #F7F5F2;
+    --taupe: #B5ADA5; --terracotta: #BA7F75;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'Inter', sans-serif;
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--blanc); color: var(--noir); font-family: var(--font-body); font-weight: 300; line-height: 1.7; overflow-x: hidden; }
+
+  /* NAV — identique index.html */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.4rem 4rem; background: rgba(247,245,242,0.94); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(181,173,165,0.2); }
+  .nav-logo { font-family: var(--font-display); font-size: 1.1rem; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 400; color: var(--noir); text-decoration: none; }
+  .nav-logo span { font-size: 0.55rem; letter-spacing: 0.4em; display: block; text-align: center; margin-top: -2px; color: var(--taupe); }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--noir); text-decoration: none; font-weight: 400; transition: color 0.3s; }
+  .nav-links a:hover { color: var(--taupe); }
+  .nav-links a.active { color: var(--taupe); border-bottom: 1px solid var(--taupe); padding-bottom: 2px; }
+  .nav-cta { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 0.65rem 1.5rem; border: 1px solid var(--noir); color: var(--noir); text-decoration: none; transition: all 0.3s; }
+  .nav-cta:hover { background: var(--noir); color: var(--blanc); }
+
+  /* BOUTONS */
+  .btn-primary { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 1.1rem 2.2rem; background: var(--noir); color: var(--blanc); text-decoration: none; border: 1px solid var(--noir); transition: all 0.35s; display: inline-block; }
+  .btn-primary:hover { background: transparent; color: var(--noir); }
+  .btn-ghost { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--noir); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; transition: gap 0.3s; }
+  .btn-ghost:hover { gap: 0.9rem; }
+  .btn-ghost::after { content: '→'; }
+
+  /* EYEBROW / TITRES — identiques */
+  .section-eyebrow { font-size: 0.62rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1.2rem; display: flex; align-items: center; gap: 1rem; }
+  .section-eyebrow::before { content: ''; width: 1.8rem; height: 1px; background: var(--taupe); }
+  .section-title { font-family: var(--font-display); font-size: clamp(1.8rem, 3vw, 2.8rem); font-weight: 400; line-height: 1.15; }
+  .section-title em { font-style: italic; color: var(--taupe); }
+  .section-header { margin-bottom: 4rem; }
+
+  /* REVEAL — identique */
+  .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  /* MARQUEE — identique */
+  .marquee-section { background: var(--noir); padding: 1.1rem 0; overflow: hidden; }
+  .marquee-track { display: flex; gap: 2.5rem; animation: marquee 28s linear infinite; width: max-content; }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .marquee-item { font-size: 0.58rem; letter-spacing: 0.28em; text-transform: uppercase; color: rgba(234,230,225,0.6); white-space: nowrap; display: flex; align-items: center; gap: 2rem; }
+  .marquee-item::after { content: '◆'; font-size: 0.35rem; opacity: 0.4; }
+
+  /* HERO PAGE INTÉRIEURE */
+  .page-hero { padding: 9rem 6rem 6rem; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; min-height: 70vh; }
+  .page-hero-left { }
+  .hero-eyebrow { font-size: 0.62rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1.8rem; display: flex; align-items: center; gap: 1rem; }
+  .hero-eyebrow::before { content: ''; display: block; width: 2rem; height: 1px; background: var(--taupe); }
+  .hero-title { font-family: var(--font-display); font-size: clamp(2.4rem, 4vw, 3.6rem); font-weight: 400; line-height: 1.1; margin-bottom: 1.8rem; }
+  .hero-title em { font-style: italic; color: var(--taupe); }
+  .hero-subtitle { font-size: 0.88rem; color: #6B6560; max-width: 420px; line-height: 1.9; margin-bottom: 2.8rem; }
+  .hero-actions { display: flex; gap: 1.5rem; align-items: center; }
+  .hero-stats { margin-top: 3.5rem; padding-top: 2.5rem; border-top: 1px solid rgba(181,173,165,0.4); display: flex; gap: 3rem; }
+  .stat-number { font-family: var(--font-display); font-size: 1.9rem; line-height: 1; }
+  .stat-label { font-size: 0.62rem; letter-spacing: 0.12em; color: var(--taupe); text-transform: uppercase; margin-top: 0.3rem; }
+  .page-hero-right { background: var(--beige); padding: 3.5rem; }
+  .hero-card-label { font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1.2rem; }
+  .hero-card-title { font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 1.5rem; line-height: 1.3; }
+  .hero-card-list { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+  .hero-card-list li { font-size: 0.78rem; color: #5A5550; display: flex; gap: 0.8rem; align-items: flex-start; line-height: 1.5; }
+  .hero-card-list li::before { content: '✓'; color: var(--noir); flex-shrink: 0; font-size: 0.68rem; margin-top: 2px; }
+
+  /* POUR QUI */
+  .pourqui-section { background: var(--beige); padding: 7rem 6rem; }
+  .pourqui-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 2px; margin-top: 3.5rem; background: rgba(181,173,165,0.3); }
+  .pourqui-item { background: var(--blanc); padding: 2.5rem; transition: background 0.3s; }
+  .pourqui-item:hover { background: var(--beige); }
+  .pourqui-num { font-family: var(--font-display); font-size: 0.75rem; color: var(--taupe); margin-bottom: 1rem; }
+  .pourqui-title { font-family: var(--font-display); font-size: 1.1rem; margin-bottom: 0.6rem; }
+  .pourqui-text { font-size: 0.8rem; color: #6B6560; line-height: 1.8; }
+
+  /* PROCESS — identique au how-section */
+  .process-section { padding: 7rem 6rem; }
+  .process-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; margin-top: 3.5rem; }
+  .process-steps { display: flex; flex-direction: column; }
+  .process-step { display: grid; grid-template-columns: 52px 1fr; gap: 1.5rem; padding: 1.8rem 0; border-bottom: 1px solid rgba(181,173,165,0.4); align-items: start; }
+  .process-step:hover .step-num { background: var(--noir); color: var(--blanc); }
+  .step-num { width: 40px; height: 40px; border: 1px solid var(--noir); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 0.85rem; transition: all 0.3s; flex-shrink: 0; }
+  .step-title { font-family: var(--font-display); font-size: 1rem; margin-bottom: 0.4rem; }
+  .step-text { font-size: 0.78rem; color: #6B6560; line-height: 1.7; }
+  .process-visual { background: var(--beige); padding: 3.5rem; }
+  .visual-label { font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1.5rem; }
+  .visual-tagline { font-family: var(--font-display); font-size: 1.5rem; line-height: 1.3; margin-bottom: 2rem; }
+  .visual-tagline em { font-style: italic; }
+  .visual-divider { height: 1px; background: rgba(181,173,165,0.4); margin-bottom: 1.5rem; }
+  .visual-quote { font-size: 0.8rem; color: #6B6560; line-height: 1.8; font-style: italic; border-left: 2px solid var(--taupe); padding-left: 1.2rem; }
+  .visual-author { font-size: 0.62rem; color: var(--taupe); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 1rem; }
+
+  /* PACKS — identique */
+  .packs-section { background: var(--beige); padding: 7rem 6rem; }
+  .packs-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; margin-top: 3.5rem; background: rgba(181,173,165,0.3); }
+  .pack-card { background: var(--blanc); padding: 2.8rem 2.2rem; display: flex; flex-direction: column; transition: all 0.3s; }
+  .pack-card:hover:not(.featured) { background: var(--noir); }
+  .pack-card:hover:not(.featured) .pack-price, .pack-card:hover:not(.featured) .pack-title, .pack-card:hover:not(.featured) .pack-tag, .pack-card:hover:not(.featured) .pack-price-sub { color: var(--blanc); }
+  .pack-card:hover:not(.featured) .pack-feature { color: rgba(255,255,255,0.6); }
+  .pack-card:hover:not(.featured) .pack-divider { background: rgba(255,255,255,0.15); }
+  .pack-card:hover:not(.featured) .pack-cta { border-color: var(--blanc); color: var(--blanc); }
+  .pack-card.featured { background: var(--noir); }
+  .pack-card.featured .pack-price, .pack-card.featured .pack-title, .pack-card.featured .pack-tag { color: var(--blanc); }
+  .pack-card.featured .pack-price-sub { color: rgba(255,255,255,0.5); }
+  .pack-card.featured .pack-feature { color: rgba(255,255,255,0.65); }
+  .pack-card.featured .pack-divider { background: rgba(255,255,255,0.15); }
+  .pack-card.featured .pack-cta { border-color: var(--blanc); color: var(--blanc); }
+  .pack-card.featured .pack-cta:hover { background: var(--blanc); color: var(--noir); }
+  .pack-badge { display: inline-block; font-size: 0.52rem; letter-spacing: 0.2em; text-transform: uppercase; background: var(--taupe); color: var(--blanc); padding: 0.3rem 0.7rem; margin-bottom: 1.2rem; align-self: flex-start; }
+  .pack-tag { font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--taupe); margin-bottom: 0.6rem; }
+  .pack-title { font-family: var(--font-display); font-size: 1.4rem; margin-bottom: 0.4rem; }
+  .pack-price { font-family: var(--font-display); font-size: 2.2rem; }
+  .pack-price-sub { font-size: 0.68rem; color: var(--taupe); margin-bottom: 1.8rem; }
+  .pack-divider { height: 1px; background: rgba(181,173,165,0.4); margin-bottom: 1.8rem; }
+  .pack-features { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; flex: 1; }
+  .pack-feature { font-size: 0.75rem; color: #5A5550; display: flex; gap: 0.7rem; align-items: flex-start; line-height: 1.5; }
+  .pack-feature::before { content: '—'; color: var(--taupe); flex-shrink: 0; font-size: 0.65rem; margin-top: 2px; }
+  .pack-cta { display: block; text-align: center; margin-top: 2rem; font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; padding: 0.9rem 1.2rem; border: 1px solid var(--noir); color: var(--noir); text-decoration: none; transition: all 0.3s; }
+  .pack-cta:hover { background: var(--blanc); color: var(--noir); }
+  .packs-note { text-align: center; font-size: 0.72rem; color: var(--taupe); margin-top: 2rem; letter-spacing: 0.05em; }
+  .packs-note a { color: var(--noir); text-decoration: none; border-bottom: 1px solid rgba(181,173,165,0.5); transition: border-color 0.3s; }
+  .packs-note a:hover { border-color: var(--noir); }
+
+  /* TESTIMONY */
+  .testimony-section { padding: 7rem 6rem; }
+  .testimony-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 3.5rem; }
+  .testimony-card { background: var(--beige); padding: 2.2rem; }
+  .testimony-quote { font-family: var(--font-display); font-style: italic; font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.5rem; }
+  .testimony-divider { height: 1px; background: rgba(181,173,165,0.4); margin-bottom: 1.2rem; }
+  .testimony-author { font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--taupe); }
+  .testimony-role { font-size: 0.62rem; color: #8A857F; margin-top: 0.2rem; }
+
+  /* FAQ — identique */
+  .faq-section { background: var(--beige); padding: 5rem 6rem; }
+  .faq-list { margin-top: 3rem; }
+  .faq-item { border-bottom: 1px solid rgba(181,173,165,0.4); }
+  .faq-question { padding: 1.4rem 0; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-family: var(--font-display); font-size: 0.95rem; user-select: none; }
+  .faq-icon { color: var(--taupe); transition: transform 0.3s; font-size: 1.1rem; }
+  .faq-answer { font-size: 0.8rem; color: #6B6560; line-height: 1.8; max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s; }
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
+  .faq-item.open .faq-answer { max-height: 200px; padding-bottom: 1.5rem; }
+
+  /* CTA — identique */
+  .cta-section { background: var(--noir); padding: 8rem 6rem; text-align: center; position: relative; overflow: hidden; }
+  .cta-section::before { content: 'NOTION'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-family: var(--font-display); font-size: 16rem; color: rgba(255,255,255,0.02); pointer-events: none; white-space: nowrap; letter-spacing: -0.05em; }
+  .cta-eyebrow { font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1.8rem; }
+  .cta-title { font-family: var(--font-display); font-size: clamp(2.2rem, 4.5vw, 3.8rem); color: var(--blanc); line-height: 1.1; margin-bottom: 1.5rem; }
+  .cta-title em { font-style: italic; color: var(--taupe); }
+  .cta-subtitle { font-size: 0.83rem; color: rgba(255,255,255,0.45); max-width: 460px; margin: 0 auto 3rem; line-height: 1.8; }
+  .cta-btn { display: inline-block; font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; padding: 1.2rem 2.8rem; background: var(--blanc); color: var(--noir); text-decoration: none; border: 1px solid var(--blanc); transition: all 0.35s; }
+  .cta-btn:hover { background: transparent; color: var(--blanc); }
+  .cta-note { font-size: 0.62rem; color: rgba(255,255,255,0.25); margin-top: 1.5rem; letter-spacing: 0.05em; }
+
+  /* FOOTER — identique */
+  footer { background: var(--blanc); padding: 2.5rem 6rem; border-top: 1px solid rgba(181,173,165,0.3); display: flex; justify-content: space-between; align-items: center; }
+  .footer-logo { font-family: var(--font-display); font-size: 0.95rem; letter-spacing: 0.2em; text-transform: uppercase; }
+  .footer-tagline { font-size: 0.65rem; color: var(--taupe); letter-spacing: 0.08em; margin-top: 0.2rem; }
+  .footer-links { display: flex; gap: 2rem; }
+  .footer-links a { font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; color: #8A857F; text-decoration: none; transition: color 0.3s; }
+  .footer-links a:hover { color: var(--noir); }
+
+  /* RESPONSIVE */
+  @media (max-width: 960px) {
+    nav { padding: 1.2rem 1.5rem; }
+    .nav-links { display: none; }
+    .page-hero { grid-template-columns: 1fr; padding: 7rem 1.5rem 4rem; gap: 3rem; }
+    .process-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .pourqui-grid, .packs-grid, .testimony-grid { grid-template-columns: 1fr; }
+    .pourqui-section, .packs-section, .testimony-section, .process-section, .cta-section, .faq-section { padding: 4rem 1.5rem; }
+    footer { padding: 2rem 1.5rem; flex-direction: column; gap: 1.2rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">FLOW<span>STUDIO</span></a>
+  <ul class="nav-links">
+    <li><a href="/#systemes">Systèmes</a></li>
+    <li><a href="/#packs">Packs</a></li>
+    <li><a class='active' href='/notion'>Notion</a></li>
+    <li><a href='/ia'>IA</a></li>
+    <li><a href="/#temoignages">Témoignages</a></li>
+    <li><a href='/mentions-legales'>Mentions légales</a></li>
+  </ul>
+  <a href="https://calendar.app.google/x3LrzMWr5spjaSn56" target="_blank" class="nav-cta">Appel découverte</a>
+</nav>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="page-hero-left">
+    <p class="hero-eyebrow reveal">Flow Studio · Système Notion</p>
+    <h1 class="hero-title reveal reveal-delay-1">
+      Ton Notion,<br>
+      <em>construit pour toi.</em><br>
+      Pas pour tout le monde.
+    </h1>
+    <p class="hero-subtitle reveal reveal-delay-2">
+      Un espace Notion livré clé en main — tableau de bord, CRM, projets, finances. Tu n'as rien à apprendre. Tu arrives, tout est là.
+    </p>
+    <div class="hero-actions reveal reveal-delay-3">
+      <a href="#packs" class="btn-primary">Voir les forfaits</a>
+      <a href="https://calendar.app.google/x3LrzMWr5spjaSn56" target="_blank" class="btn-ghost">Appel gratuit</a>
+    </div>
+    <div class="hero-stats reveal reveal-delay-4">
+      <div class="stat-item">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Livré, pas enseigné</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">1–2 sem.</div>
+        <div class="stat-label">Délai de livraison</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">0</div>
+        <div class="stat-label">Prérequis Notion</div>
+      </div>
+    </div>
+  </div>
+  <div class="page-hero-right reveal reveal-delay-2">
+    <p class="hero-card-label">Ce que tu reçois</p>
+    <h3 class="hero-card-title">Ton espace Notion<br>sur-mesure</h3>
+    <ul class="hero-card-list">
+      <li>Tableau de bord quotidien (tâches & priorités)</li>
+      <li>CRM clients & pipeline de vente</li>
+      <li>Gestion de projets reliée</li>
+      <li>Calendrier éditorial</li>
+      <li>Suivi finances & objectifs</li>
+      <li>Templates sur-mesure prêts à l'emploi</li>
+      <li>Vidéo(s) tutorielle(s) personnalisée(s)</li>
+    </ul>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-section">
+  <div class="marquee-track">
+    <span class="marquee-item">Notion sur-mesure</span>
+    <span class="marquee-item">Livré clé en main</span>
+    <span class="marquee-item">CRM & pipeline</span>
+    <span class="marquee-item">Tableau de bord CEO</span>
+    <span class="marquee-item">Calendrier éditorial</span>
+    <span class="marquee-item">Zéro prérequis</span>
+    <span class="marquee-item">Autonomie totale</span>
+    <span class="marquee-item">Notion sur-mesure</span>
+    <span class="marquee-item">Livré clé en main</span>
+    <span class="marquee-item">CRM & pipeline</span>
+    <span class="marquee-item">Tableau de bord CEO</span>
+    <span class="marquee-item">Calendrier éditorial</span>
+    <span class="marquee-item">Zéro prérequis</span>
+    <span class="marquee-item">Autonomie totale</span>
+  </div>
+</div>
+
+<!-- POUR QUI -->
+<section class="pourqui-section" id="systemes">
+  <div class="section-header">
+    <p class="section-eyebrow reveal">Pour qui</p>
+    <h2 class="section-title reveal reveal-delay-1">Ce forfait est fait pour toi <em>si…</em></h2>
+  </div>
+  <div class="pourqui-grid">
+    <div class="pourqui-item reveal">
+      <p class="pourqui-num">01</p>
+      <h3 class="pourqui-title">Tu travailles dans tous les sens</h3>
+      <p class="pourqui-text">Notes éparpillées, fichiers partout, aucun endroit central. Tu as besoin d'un cockpit qui centralise tout sans t'en demander plus.</p>
+    </div>
+    <div class="pourqui-item reveal reveal-delay-1">
+      <p class="pourqui-num">02</p>
+      <h3 class="pourqui-title">Tu n'as pas le temps de le construire</h3>
+      <p class="pourqui-text">Tu sais que Notion peut tout changer. Mais entre les clients et le quotidien, tu ne t'y mets jamais vraiment.</p>
+    </div>
+    <div class="pourqui-item reveal reveal-delay-2">
+      <p class="pourqui-num">03</p>
+      <h3 class="pourqui-title">Tu veux Notion — sans (encore) l'IA</h3>
+      <p class="pourqui-text">Pas besoin d'automatisations complexes pour l'instant. Tu veux une base solide, claire, que tu vas vraiment utiliser.</p>
+    </div>
+    <div class="pourqui-item reveal reveal-delay-3">
+      <p class="pourqui-num">04</p>
+      <h3 class="pourqui-title">Tu as déjà essayé, ça n'a pas tenu</h3>
+      <p class="pourqui-text">Tu as commencé un espace Notion qui est vite devenu une pile de pages abandonnées. Cette fois, c'est construit pour durer.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process-section">
+  <div class="section-header">
+    <p class="section-eyebrow reveal">Comment ça se passe</p>
+    <h2 class="section-title reveal reveal-delay-1">De l'audit à la <em>prise en main.</em></h2>
+  </div>
+  <div class="process-grid">
+    <div class="process-steps">
+      <div class="process-step reveal">
+        <div class="step-num">01</div>
+        <div>
+          <p class="step-title">Appel découverte gratuit</p>
+          <p class="step-text">30 min pour comprendre ton business, ta façon de travailler et ce dont tu as vraiment besoin. Aucun engagement.</p>
+        </div>
+      </div>
+      <div class="process-step reveal reveal-delay-1">
+        <div class="step-num">02</div>
+        <div>
+          <p class="step-title">Audit & mapping</p>
+          <p class="step-text">Je cartographie tes processus, tes clients, tes contenus avant de construire quoi que ce soit. Rien de générique.</p>
+        </div>
+      </div>
+      <div class="process-step reveal reveal-delay-2">
+        <div class="step-num">03</div>
+        <div>
+          <p class="step-title">Construction de ton espace</p>
+          <p class="step-text">Je construis tout : structure, bases de données, templates, vues. Tu n'as rien à faire, rien à apprendre en avance.</p>
+        </div>
+      </div>
+      <div class="process-step reveal reveal-delay-3">
+        <div class="step-num">04</div>
+        <div>
+          <p class="step-title">Prise en main</p>
+          <p class="step-text">Je t'explique tout en vidéo personnalisée. Tu repars autonome — pas dépendante de moi pour la suite.</p>
+        </div>
+      </div>
+    </div>
+    <div class="process-visual reveal reveal-delay-2">
+      <p class="visual-label">La différence Flow Studio</p>
+      <p class="visual-tagline">Ce n'est pas un joli template.<br><em>C'est ton système à toi.</em></p>
+      <div class="visual-divider"></div>
+      <p class="visual-quote">« À chaque fois tu apportes du nouveau et de la profondeur. Une pédagogie qui rend l'IA simple. J'ai appliqué dès 17h30 pour ma prospection. »</p>
+      <p class="visual-author">Bérangère Mainguy — Consultante</p>
+    </div>
+  </div>
+</section>
+
+<!-- PACKS -->
+<section class="packs-section" id="packs">
+  <div class="section-header">
+    <p class="section-eyebrow reveal">Les forfaits</p>
+    <h2 class="section-title reveal reveal-delay-1">Deux niveaux, <em>un seul objectif.</em></h2>
+  </div>
+  <div class="packs-grid">
+
+    <!-- ESSENTIEL -->
+    <div class="pack-card reveal">
+      <p class="pack-tag">Pack 01</p>
+      <h3 class="pack-title">Notion Essentiel</h3>
+      <p class="pack-price">490€</p>
+      <p class="pack-price-sub">Paiement en 2x disponible · Livraison 5–7 jours</p>
+      <div class="pack-divider"></div>
+      <ul class="pack-features">
+        <li class="pack-feature">Audit express (30 min)</li>
+        <li class="pack-feature">Tableau de bord quotidien (tâches & priorités)</li>
+        <li class="pack-feature">Mini CRM clients</li>
+        <li class="pack-feature">1 template sur-mesure au choix (contenus, projets ou finances)</li>
+        <li class="pack-feature">1 vidéo tutorielle personnalisée</li>
+      </ul>
+      <a href="https://calendar.app.google/x3LrzMWr5spjaSn56" target="_blank" class="pack-cta">Je démarre</a>
+    </div>
+
+    <!-- PRO — featured -->
+    <div class="pack-card featured reveal reveal-delay-1">
+      <span class="pack-badge">Le plus complet</span>
+      <p class="pack-tag">Pack 02</p>
+      <h3 class="pack-title">Notion Pro</h3>
+      <p class="pack-price">690€</p>
+      <p class="pack-price-sub">Paiement en 2x disponible · Livraison 1–2 semaines</p>
+      <div class="pack-divider"></div>
+      <ul class="pack-features">
+        <li class="pack-feature">Audit + mapping de tes processus</li>
+        <li class="pack-feature">Tableau de bord complet</li>
+        <li class="pack-feature">CRM & pipeline de vente</li>
+        <li class="pack-feature">Gestion de projets & tâches reliées</li>
+        <li class="pack-feature">Calendrier éditorial</li>
+        <li class="pack-feature">Suivi finances & objectifs</li>
+        <li class="pack-feature">Templates sur-mesure</li>
+        <li class="pack-feature">Automatisations natives Notion</li>
+        <li class="pack-feature">2 vidéos tutorielles personnalisées</li>
+      </ul>
+      <a href="https://calendar.app.google/x3LrzMWr5spjaSn56" target="_blank" class="pack-cta">Je veux ce pack</a>
+    </div>
+
+    <!-- SESSION -->
+    <div class="pack-card reveal reveal-delay-2">
+      <p class="pack-tag">Session ponctuelle</p>
+      <h3 class="pack-title">Boost'Her Notion</h3>
+      <p class="pack-price">190€</p>
+      <p class="pack-price-sub">2h en visio · Sans engagement</p>
+      <div class="pack-divider"></div>
+      <ul class="pack-features">
+        <li class="pack-feature">Démarrer ton espace Notion from scratch</li>
+        <li class="pack-feature">Débloquer un point précis sur ton Notion existant</li>
+        <li class="pack-feature">Optimiser une partie de ton système</li>
+        <li class="pack-feature">Poser tes questions en direct</li>
+      </ul>
+      <a href="https://calendar.app.google/x3LrzMWr5spjaSn56" target="_blank" class="pack-cta">Réserver une session</a>
+    </div>
+
+  </div>
+  <p class="packs-note reveal">Tu veux aussi l'IA et les automatisations ? <a href="/#packs">Découvre les packs System complets →</a></p>
+</section>
+
+<!-- TESTIMONIES -->
+<section class="testimony-section" id="temoignages">
+  <div class="section-header">
+    <p class="section-eyebrow reveal">Ce qu'elles en disent</p>
+    <h2 class="section-title reveal reveal-delay-1">Des résultats <em>concrets,</em> pas des promesses.</h2>
+  </div>
+  <div class="testimony-grid">
+    <div class="testimony-card reveal">
+      <p class="testimony-quote">« Ton business devient enfin clair, organisé et apaisé. J'ai mis à jour mon brief de départ dès la fin de la session. »</p>
+      <div class="testimony-divider"></div>
+      <p class="testimony-author">Leslie Cure</p>
+      <p class="testimony-role">Entrepreneure</p>
+    </div>
+    <div class="testimony-card reveal reveal-delay-1">
+      <p class="testimony-quote">« Ça m'a ouvert un boulevard de possibilités. Passion pour le sujet et une vraie capacité à le rendre accessible à tous les niveaux. »</p>
+      <div class="testimony-divider"></div>
+      <p class="testimony-author">Alex Roman</p>
+      <p class="testimony-role">Architecte d'intérieur</p>
+    </div>
+    <div class="testimony-card reveal reveal-delay-2">
+      <p class="testimony-quote">« J'étais convaincue qu'il faudrait m'épuiser ou embaucher. Avoir un système solide me permet d'avancer sereinement. Une vraie révélation. »</p>
+      <div class="testimony-divider"></div>
+      <p class="testimony-author">Andréa</p>
+      <p class="testimony-role">Fleuriste</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="section-header">
+    <p class="section-eyebrow reveal">Questions fréquentes</p>
+    <h2 class="section-title reveal reveal-delay-1">Tout ce que tu veux <em>savoir.</em></h2>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-question">Est-ce que je dois connaître Notion avant ?<span class="faq-icon">+</span></div>
+      <div class="faq-answer">Pas du tout. Je construis tout de A à Z, avec une vidéo tutorielle personnalisée pour que tu repartes complètement autonome — même si tu n'as jamais ouvert Notion.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Combien de temps dure la mission ?<span class="faq-icon">+</span></div>
+      <div class="faq-answer">Le Notion Essentiel est livré en 5 à 7 jours. Le Notion Pro prend 1 à 2 semaines selon la complexité de ton business.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Quelle différence avec un template Notion du commerce ?<span class="faq-icon">+</span></div>
+      <div class="faq-answer">Un template est générique. Ce que je construis correspond à ton business spécifique : tes types de clients, ta façon de facturer, tes projets, tes contenus. Rien de standardisé.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Est-ce que je peux évoluer vers un pack avec IA après ?<span class="faq-icon">+</span></div>
+      <div class="faq-answer">Oui, c'est souvent ce qui se passe. Une fois l'espace Notion en place et bien utilisé, on peut ajouter une couche IA et automatisations. Le pack Notion Pro donne droit à 200€ de remise si tu passes ensuite au System Pro.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Tu travailles uniquement avec Notion ?<span class="faq-icon">+</span></div>
+      <div class="faq-answer">Non. Selon ton besoin, j'intègre aussi Airtable, Make, N8N, Claude et d'autres outils. Je choisis ce qui correspond le mieux à ton business et à ce que tu utilises déjà — Notion est souvent la base, mais pas toujours la seule réponse.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Puis-je payer en plusieurs fois ?<span class="faq-icon">+</span></div>
+      <div class="faq-answer">Oui. Un paiement en 2 fois est disponible sur les deux forfaits. On en parle lors de l'appel découverte selon ta situation.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <p class="cta-eyebrow reveal">Et maintenant ?</p>
+  <h2 class="cta-title reveal reveal-delay-1">Prête à avoir un Notion<br><em>que tu vas vraiment utiliser ?</em></h2>
+  <p class="cta-subtitle reveal reveal-delay-2">30 minutes pour comprendre ton besoin et te proposer le forfait adapté. Gratuit, sans engagement.</p>
+  <a href="https://calendar.app.google/x3LrzMWr5spjaSn56" target="_blank" class="cta-btn reveal reveal-delay-3">Réserver mon appel découverte</a>
+  <p class="cta-note reveal reveal-delay-4">solen@flow-studio.app · @solenouahioune</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-logo">Flow Studio</div>
+    <div class="footer-tagline">Création de systèmes IA & Notion</div>
+  </div>
+  <div class="footer-links">
+    <a href="/#systemes">Systèmes</a>
+    <a href="/#packs">Packs</a>
+    <a href='/notion'>Notion</a>
+    <a href='/ia'>IA</a>
+    <a href="/#temoignages">Témoignages</a>
+    <a href='/mentions-legales'>Mentions légales</a>
+    <a href="mailto:solen@flow-studio.app">Contact</a>
+  </div>
+</footer>
+
+<script>
+  // Reveal on scroll — identique index.html
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.07 });
+  reveals.forEach(r => observer.observe(r));
+  setTimeout(() => { document.querySelectorAll('.page-hero .reveal').forEach(r => r.classList.add('visible')); }, 80);
+
+  // FAQ accordion — identique index.html
+  document.querySelectorAll('.faq-question').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+</script>
+
+
+<script async id="netlify-rum-container" src="/.netlify/scripts/rum" data-netlify-rum-site-id="b878db27-2b14-4394-a811-188bd9e98b07" data-netlify-deploy-branch="" data-netlify-deploy-context="production" data-netlify-cwv-token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaXRlX2lkIjoiYjg3OGRiMjctMmIxNC00Mzk0LWE4MTEtMTg4YmQ5ZTk4YjA3IiwiYWNjb3VudF9pZCI6IjY5YzY0YmU4NGNmZjk0YmNmYTZlYTZmZCIsImRlcGxveV9pZCI6IjY5YzdkYjZjMWY0NTNiZDYxNTkxODhkYSIsImlzc3VlciI6Im5mc2VydmVyIn0.SQpxCfcETnh60bTaPcToh8CwmU28yW_s3ljrp7r8BT0"></script>
+<script async id="netlify-rum-container" src="/.netlify/scripts/rum" data-netlify-rum-site-id="b878db27-2b14-4394-a811-188bd9e98b07" data-netlify-deploy-branch="" data-netlify-deploy-context="production" data-netlify-cwv-token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaXRlX2lkIjoiYjg3OGRiMjctMmIxNC00Mzk0LWE4MTEtMTg4YmQ5ZTk4YjA3IiwiYWNjb3VudF9pZCI6IjY5YzY0YmU4NGNmZjk0YmNmYTZlYTZmZCIsImRlcGxveV9pZCI6IjY5Yzk1M2ExZTUxYWNiYjEyYTcyYjI3OCIsImlzc3VlciI6Im5mc2VydmVyIn0.Rz1FpWL2NiyFxErXYga-LsY7RvfZiws9LHpUxKOE90E"></script></body>
+</html>

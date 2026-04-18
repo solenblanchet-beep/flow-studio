@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mentions légales — Flow Studio</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --noir: #0F0F0F; --beige: #EAE6E1; --blanc: #F7F5F2;
+    --taupe: #B5ADA5;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'Inter', sans-serif;
+  }
+  body { background: var(--blanc); color: var(--noir); font-family: var(--font-body); font-weight: 300; line-height: 1.7; }
+
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.4rem 4rem; background: rgba(247,245,242,0.94); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(181,173,165,0.2); }
+  .nav-logo { font-family: var(--font-display); font-size: 1.1rem; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 400; color: var(--noir); text-decoration: none; }
+  .nav-logo span { font-size: 0.55rem; letter-spacing: 0.4em; display: block; text-align: center; margin-top: -2px; color: var(--taupe); }
+  .nav-back { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--noir); text-decoration: none; display: flex; align-items: center; gap: 0.6rem; transition: gap 0.3s; }
+  .nav-back:hover { gap: 1rem; }
+  .nav-back::before { content: '←'; }
+
+  /* CONTENT */
+  .page-wrap { padding: 8rem 6rem 6rem; max-width: 860px; margin: 0 auto; }
+  .page-eyebrow { font-size: 0.62rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1.2rem; display: flex; align-items: center; gap: 1rem; }
+  .page-eyebrow::before { content: ''; width: 1.8rem; height: 1px; background: var(--taupe); }
+  .page-title { font-family: var(--font-display); font-size: clamp(2rem, 3vw, 3rem); font-weight: 400; margin-bottom: 4rem; line-height: 1.1; }
+  .mentions-block { margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(181,173,165,0.3); }
+  .mentions-block:last-child { border-bottom: none; }
+  .mentions-block h3 { font-family: var(--font-display); font-size: 1.1rem; font-weight: 400; margin-bottom: 1rem; color: var(--noir); }
+  .mentions-block p { font-size: 0.82rem; color: #6B6560; line-height: 1.9; }
+  .mentions-block p + p { margin-top: 0.8rem; }
+
+  /* FOOTER */
+  footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid rgba(181,173,165,0.3); display: flex; justify-content: space-between; align-items: center; }
+  .footer-logo { font-family: var(--font-display); font-size: 0.95rem; letter-spacing: 0.2em; text-transform: uppercase; }
+  .footer-tagline { font-size: 0.65rem; color: var(--taupe); margin-top: 0.2rem; }
+  .footer-links { display: flex; gap: 2rem; }
+  .footer-links a { font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; color: #8A857F; text-decoration: none; transition: color 0.3s; }
+  .footer-links a:hover { color: var(--noir); }
+
+  @media (max-width: 768px) {
+    nav { padding: 1.2rem 1.5rem; }
+    .page-wrap { padding: 6rem 1.5rem 4rem; }
+    footer { padding: 2rem 1.5rem; flex-direction: column; gap: 1.2rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">FLOW<span>STUDIO</span></a>
+  <a href="/" class="nav-back">Retour au site</a>
+</nav>
+
+<div class="page-wrap">
+  <p class="page-eyebrow">Informations légales</p>
+  <h1 class="page-title">Mentions légales</h1>
+
+  <div class="mentions-block">
+    <h3>Éditeur du site</h3>
+    <p>
+      Solen Ouahioune<br>
+      Micro-entreprise<br>
+      SIRET : 82175254000012<br>
+      Adresse : Vaux-sur-Seine, Île-de-France, France<br>
+      Email : solen@flow-studio.app<br>
+      Site : https://flow-studio.app
+    </p>
+  </div>
+
+  <div class="mentions-block">
+    <h3>Activité</h3>
+    <p>Conseil en systèmes d'information et numérique, formation professionnelle, création de systèmes business Notion & IA.</p>
+  </div>
+
+  <div class="mentions-block">
+    <h3>TVA</h3>
+    <p>Solen Ouahioune bénéficie de la franchise en base de TVA conformément à l'article 293 B du CGI. TVA non applicable.</p>
+  </div>
+
+  <div class="mentions-block">
+    <h3>Hébergement</h3>
+    <p>
+      Ce site est hébergé par Netlify, Inc.<br>
+      512 2nd Street, Suite 200<br>
+      San Francisco, CA 94107, États-Unis<br>
+      https://www.netlify.com
+    </p>
+  </div>
+
+  <div class="mentions-block">
+    <h3>Propriété intellectuelle</h3>
+    <p>L'ensemble des contenus présents sur ce site (textes, visuels, méthode Bloom & Build) est la propriété exclusive de Solen Ouahioune. Toute reproduction, même partielle, est interdite sans autorisation préalable écrite.</p>
+  </div>
+
+  <div class="mentions-block">
+    <h3>Données personnelles</h3>
+    <p>Les données collectées via les formulaires de contact sont utilisées uniquement pour répondre à vos demandes et ne sont jamais transmises à des tiers.</p>
+    <p>Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression de vos données en contactant : solen@flow-studio.app</p>
+  </div>
+
+  <div class="mentions-block">
+    <h3>Cookies</h3>
+    <p>Ce site n'utilise pas de cookies de traçage ou publicitaires.</p>
+  </div>
+
+  <div class="mentions-block">
+    <h3>Responsabilité</h3>
+    <p>Les informations contenues sur ce site sont fournies à titre indicatif. Solen Ouahioune ne saurait être tenue responsable des erreurs ou omissions, ni des dommages directs ou indirects pouvant résulter de l'utilisation de ces informations.</p>
+  </div>
+
+</div>
+
+<footer>
+  <div>
+    <div class="footer-logo">Flow Studio</div>
+    <div class="footer-tagline">Création de systèmes IA & Notion</div>
+  </div>
+  <div class="footer-links">
+    <a href="/">Accueil</a>
+    <a href="/#packs">Packs</a>
+    <a href="mailto:solen@flow-studio.app">Contact</a>
+  </div>
+</footer>
+
+
+<script async id="netlify-rum-container" src="/.netlify/scripts/rum" data-netlify-rum-site-id="b878db27-2b14-4394-a811-188bd9e98b07" data-netlify-deploy-branch="" data-netlify-deploy-context="production" data-netlify-cwv-token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaXRlX2lkIjoiYjg3OGRiMjctMmIxNC00Mzk0LWE4MTEtMTg4YmQ5ZTk4YjA3IiwiYWNjb3VudF9pZCI6IjY5YzY0YmU4NGNmZjk0YmNmYTZlYTZmZCIsImRlcGxveV9pZCI6IjY5Yzk1M2ExZTUxYWNiYjEyYTcyYjI3OCIsImlzc3VlciI6Im5mc2VydmVyIn0.Rz1FpWL2NiyFxErXYga-LsY7RvfZiws9LHpUxKOE90E"></script></body>
+</html>

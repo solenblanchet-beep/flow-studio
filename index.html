@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flow Studio — Création de systèmes IA & Notion</title>
+<meta name="description" content="Flow Studio crée vos systèmes Notion, IA et automatisations sur-mesure. Consultante en organisation digitale pour entrepreneures et PME en Île-de-France." />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://flow-studio.app/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://flow-studio.app/" />
+  <meta property="og:title" content="Flow Studio — Systèmes Notion & IA sur-mesure" />
+  <meta property="og:description" content="Flow Studio crée vos systèmes Notion, IA et automatisations sur-mesure. Pour entrepreneures et PME qui veulent travailler avec clarté." />
+  <meta property="og:image" content="https://flow-studio.app/solen-ouahioune-flow-studio.jpg" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:site_name" content="Flow Studio" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Flow Studio — Systèmes Notion & IA sur-mesure" />
+  <meta name="twitter:description" content="Systèmes Notion, IA et automatisations sur-mesure pour entrepreneures et PME." />
+  <meta name="twitter:image" content="https://flow-studio.app/solen-ouahioune-flow-studio.jpg" />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Flow Studio",
+    "description": "Création de systèmes Notion, IA et automatisations sur-mesure pour entrepreneures et PME",
+    "url": "https://flow-studio.app",
+    "founder": {
+      "@type": "Person",
+      "name": "Solen Ouahioune"
+    },
+    "areaServed": "France",
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "Île-de-France",
+      "addressCountry": "FR"
+    },
+    "priceRange": "890€ - 1490€",
+    "serviceType": ["Notion", "Intelligence Artificielle", "Automatisation", "Systèmes Business"]
+  }
+  </script>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --noir: #0F0F0F; --beige: #EAE6E1; --blanc: #F7F5F2;
+    --taupe: #B5ADA5; --terracotta: #BA7F75;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'Inter', sans-serif;
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--blanc); color: var(--noir); font-family: var(--font-body); font-weight: 300; line-height: 1.7; overflow-x: hidden; }
+
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.4rem 4rem; background: rgba(247,245,242,0.94); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(181,173,165,0.2); }
+  .nav-logo { font-family: var(--font-display); font-size: 1.1rem; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 400; color: var(--noir); text-decoration: none; }
+  .nav-logo span { font-size: 0.55rem; letter-spacing: 0.4em; display: block; text-align: center; margin-top: -2px; color: var(--taupe); }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--noir); text-decoration: none; font-weight: 400; transition: color 0.3s; }
+  .nav-links a:hover { color: var(--taupe); }
+  .nav-cta { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 0.65rem 1.5rem; border: 1px solid var(--noir); color: var(--noir); text-decoration: none; transition: all 0.3s; }
+  .nav-cta:hover { background: var(--noir); color: var(--blanc); }
+
+  /* HERO */
+  .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 76px; }
+  .hero-left { display: flex; flex-direction: column; justify-content: center; padding: 5rem 4rem 5rem 6rem; }
+  .hero-eyebrow { font-size: 0.62rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1.8rem; display: flex; align-items: center; gap: 1rem; }
+  .hero-eyebrow::before { content: ''; display: block; width: 2rem; height: 1px; background: var(--taupe); }
+  .hero-title { font-family: var(--font-display); font-size: clamp(2.6rem, 4vw, 4rem); font-weight: 400; line-height: 1.1; margin-bottom: 1.8rem; }
+  .hero-title em { font-style: italic; color: var(--taupe); }
+  .hero-subtitle { font-size: 0.88rem; color: #6B6560; max-width: 400px; line-height: 1.9; margin-bottom: 2.8rem; }
+  .hero-actions { display: flex; gap: 1.5rem; align-items: center; }
+  .btn-primary { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 1.1rem 2.2rem; background: var(--noir); color: var(--blanc); text-decoration: none; border: 1px solid var(--noir); transition: all 0.35s; }
+  .btn-primary:hover { background: transparent; color: var(--noir); }
+  .btn-ghost { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--noir); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; transition: gap 0.3s; }
+  .btn-ghost:hover { gap: 0.9rem; }
+  .btn-ghost::after { content: '→'; }
+  .hero-stats { margin-top: 3.5rem; padding-top: 2.5rem; border-top: 1px solid rgba(181,173,165,0.4); display: flex; gap: 3rem; }
+  .stat-number { font-family: var(--font-display); font-size: 1.9rem; line-height: 1; }
+  .stat-label { font-size: 0.62rem; letter-spacing: 0.12em; color: var(--taupe); text-transform: uppercase; margin-top: 0.3rem; }
+  .hero-right { position: relative; overflow: hidden; background: var(--beige); display: flex; align-items: center; justify-content: center; }
+  .hero-photo { width: 100%; height: 100%; object-fit: cover; object-position: right center; filter: grayscale(8%); }
+  .hero-card { position: absolute; bottom: 3rem; left: 2rem; background: var(--blanc); padding: 2rem 2.2rem; box-shadow: 0 20px 60px rgba(0,0,0,0.1); max-width: 280px; }
+  .card-tag { font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--taupe); margin-bottom: 0.8rem; }
+  .card-title { font-family: var(--font-display); font-size: 1.1rem; margin-bottom: 1rem; line-height: 1.3; }
+  .card-items { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+  .card-items li { font-size: 0.72rem; color: #5A5550; display: flex; gap: 0.6rem; }
+  .card-items li::before { content: '✓'; color: var(--noir); flex-shrink: 0; }
+  .card-price { margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid rgba(181,173,165,0.4); display: flex; justify-content: space-between; align-items: baseline; }
+  .price-label { font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--taupe); }
+  .price-amount { font-family: var(--font-display); font-size: 1.6rem; }
+
+  /* MARQUEE */
+  .marquee-section { background: var(--noir); padding: 1.1rem 0; overflow: hidden; }
+  .marquee-track { display: flex; gap: 2.5rem; animation: marquee 28s linear infinite; width: max-content; }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .marquee-item { font-size: 0.58rem; letter-spacing: 0.28em; text-transform: uppercase; color: rgba(234,230,225,0.6); white-space: nowrap; display: flex; align-items: center; gap: 2rem; }
+  .marquee-item::after { content: '◆'; font-size: 0.35rem; opacity: 0.4; }
+
+  /* SECTIONS */
+  .section-eyebrow { font-size: 0.62rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1.2rem; display: flex; align-items: center; gap: 1rem; }
+  .section-eyebrow::before { content: ''; width: 1.8rem; height: 1px; background: var(--taupe); }
+  .section-title { font-family: var(--font-display); font-size: clamp(1.8rem, 3vw, 2.8rem); font-weight: 400; line-height: 1.15; }
+  .section-title em { font-style: italic; color: var(--taupe); }
+
+  /* PROMISE */
+  .promise-section { padding: 7rem 6rem; }
+  .section-header { margin-bottom: 4rem; }
+  .promise-grid { display: grid; grid-template-columns: repeat(3,1fr); border-top: 1px solid rgba(181,173,165,0.4); }
+  .promise-item { padding: 2.5rem; border-right: 1px solid rgba(181,173,165,0.4); transition: background 0.3s; }
+  .promise-item:last-child { border-right: none; }
+  .promise-item:hover { background: var(--beige); }
+  .promise-num { font-family: var(--font-display); font-size: 0.75rem; color: var(--taupe); margin-bottom: 1.2rem; }
+  .promise-title { font-family: var(--font-display); font-size: 1.2rem; margin-bottom: 0.8rem; }
+  .promise-text { font-size: 0.8rem; color: #6B6560; line-height: 1.8; }
+
+  /* HOW */
+  .how-section { background: var(--beige); padding: 7rem 6rem; }
+  .how-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+  .how-steps { display: flex; flex-direction: column; }
+  .how-step { display: grid; grid-template-columns: 52px 1fr; gap: 1.5rem; padding: 1.8rem 0; border-bottom: 1px solid rgba(181,173,165,0.4); align-items: start; }
+  .how-step:hover .step-num { background: var(--noir); color: var(--blanc); }
+  .step-num { width: 40px; height: 40px; border: 1px solid var(--noir); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 0.85rem; transition: all 0.3s; flex-shrink: 0; }
+  .step-title { font-family: var(--font-display); font-size: 1rem; margin-bottom: 0.4rem; }
+  .step-text { font-size: 0.78rem; color: #6B6560; line-height: 1.7; }
+  .how-visual { background: var(--blanc); padding: 3.5rem; box-shadow: 0 20px 60px rgba(0,0,0,0.06); }
+  .visual-label { font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1.5rem; }
+  .visual-tagline { font-family: var(--font-display); font-size: 1.6rem; line-height: 1.3; margin-bottom: 2rem; }
+  .visual-tagline em { font-style: italic; }
+  .visual-divider { height: 1px; background: rgba(181,173,165,0.4); margin-bottom: 1.5rem; }
+  .visual-quote { font-size: 0.8rem; color: #6B6560; line-height: 1.8; font-style: italic; border-left: 2px solid var(--taupe); padding-left: 1.2rem; }
+  .visual-author { font-size: 0.62rem; color: var(--taupe); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 1rem; }
+
+  /* PACKS */
+  .packs-section { padding: 7rem 6rem; }
+  .packs-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; margin-top: 3.5rem; background: rgba(181,173,165,0.3); }
+  .pack-card { background: var(--blanc); padding: 2.8rem 2.2rem; display: flex; flex-direction: column; transition: all 0.3s; }
+  .pack-card:hover:not(.featured) { background: var(--noir); }
+  .pack-card:hover:not(.featured) .pack-price, .pack-card:hover:not(.featured) .pack-title, .pack-card:hover:not(.featured) .pack-tag, .pack-card:hover:not(.featured) .pack-price-sub { color: var(--blanc); }
+  .pack-card:hover:not(.featured) .pack-feature { color: rgba(255,255,255,0.6); }
+  .pack-card:hover:not(.featured) .pack-divider { background: rgba(255,255,255,0.15); }
+  .pack-card:hover:not(.featured) .pack-cta { border-color: var(--blanc); color: var(--blanc); }
+  .pack-card.featured { background: var(--noir); }
+  .pack-card.featured .pack-price, .pack-card.featured .pack-title, .pack-card.featured .pack-tag { color: var(--blanc); }
+  .pack-card.featured .pack-price-sub { color: rgba(255,255,255,0.5); }
+  .pack-card.featured .pack-feature { color: rgba(255,255,255,0.65); }
+  .pack-card.featured .pack-divider { background: rgba(255,255,255,0.15); }
+  .pack-card.featured .pack-cta { border-color: var(--blanc); color: var(--blanc); }
+  .pack-card.featured .pack-cta:hover { background: var(--blanc); color: var(--noir); }
+  .pack-badge { display: inline-block; font-size: 0.52rem; letter-spacing: 0.2em; text-transform: uppercase; background: var(--taupe); color: var(--blanc); padding: 0.3rem 0.7rem; margin-bottom: 1.2rem; align-self: flex-start; }
+  .pack-tag { font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--taupe); margin-bottom: 0.6rem; }
+  .pack-title { font-family: var(--font-display); font-size: 1.4rem; margin-bottom: 0.4rem; }
+  .pack-price { font-family: var(--font-display); font-size: 2.2rem; }
+  .pack-price-sub { font-size: 0.68rem; color: var(--taupe); margin-bottom: 1.8rem; }
+  .pack-divider { height: 1px; background: rgba(181,173,165,0.4); margin-bottom: 1.8rem; }
+  .pack-features { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; flex: 1; }
+  .pack-feature { font-size: 0.75rem; color: #5A5550; display: flex; gap: 0.7rem; align-items: flex-start; line-height: 1.5; }
+  .pack-feature::before { content: '—'; color: var(--taupe); flex-shrink: 0; font-size: 0.65rem; margin-top: 2px; }
+  .pack-cta { display: block; text-align: center; margin-top: 2rem; font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; padding: 0.9rem 1.2rem; border: 1px solid var(--noir); color: var(--noir); text-decoration: none; transition: all 0.3s; }
+  .pack-cta:hover { background: var(--blanc); color: var(--noir); }
+  .packs-note { text-align: center; font-size: 0.72rem; color: var(--taupe); margin-top: 2rem; letter-spacing: 0.05em; }
+
+  /* TESTIMONY */
+  .testimony-section { background: var(--beige); padding: 7rem 6rem; }
+  .testimony-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 3.5rem; }
+  .testimony-card { background: var(--blanc); padding: 2.2rem; }
+  .testimony-quote { font-family: var(--font-display); font-style: italic; font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.5rem; }
+  .testimony-divider { height: 1px; background: rgba(181,173,165,0.4); margin-bottom: 1.2rem; }
+  .testimony-author { font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--taupe); }
+  .testimony-role { font-size: 0.62rem; color: #8A857F; margin-top: 0.2rem; }
+
+  /* ABOUT */
+  .about-section { padding: 7rem 6rem; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+  .about-photo-wrap { position: relative; }
+  .about-photo { width: 100%; height: 680px; object-fit: cover; object-position: 50% 15%; filter: grayscale(8%); }
+  .about-photo-caption { position: absolute; bottom: -1rem; right: -1rem; background: var(--noir); color: var(--blanc); padding: 1.5rem 2rem; }
+  .caption-title { font-family: var(--font-display); font-size: 1rem; font-style: italic; }
+  .caption-sub { font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--taupe); margin-top: 0.3rem; }
+  .about-title { font-family: var(--font-display); font-size: clamp(1.8rem, 2.5vw, 2.4rem); font-weight: 400; line-height: 1.2; margin-bottom: 1.5rem; }
+  .about-title em { font-style: italic; color: var(--taupe); }
+  .about-text { font-size: 0.83rem; color: #6B6560; line-height: 1.9; margin-bottom: 1.2rem; }
+  .about-signature { font-family: var(--font-display); font-style: italic; font-size: 1.5rem; color: var(--taupe); margin-top: 2rem; }
+  .about-role { font-size: 0.62rem; color: #8A857F; letter-spacing: 0.12em; margin-top: 0.3rem; }
+
+  /* FAQ */
+  .faq-section { background: var(--beige); padding: 5rem 6rem; }
+  .faq-list { margin-top: 3rem; }
+  .faq-item { border-bottom: 1px solid rgba(181,173,165,0.4); }
+  .faq-question { padding: 1.4rem 0; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-family: var(--font-display); font-size: 0.95rem; user-select: none; }
+  .faq-icon { color: var(--taupe); transition: transform 0.3s; font-size: 1.1rem; }
+  .faq-answer { font-size: 0.8rem; color: #6B6560; line-height: 1.8; max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s; }
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
+  .faq-item.open .faq-answer { max-height: 200px; padding-bottom: 1.5rem; }
+
+  /* CTA */
+  .cta-section { background: var(--noir); padding: 8rem 6rem; text-align: center; position: relative; overflow: hidden; }
+  .cta-section::before { content: 'FLOW'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-family: var(--font-display); font-size: 20rem; color: rgba(255,255,255,0.02); pointer-events: none; white-space: nowrap; letter-spacing: -0.05em; }
+  .cta-eyebrow { font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1.8rem; }
+  .cta-title { font-family: var(--font-display); font-size: clamp(2.2rem, 4.5vw, 3.8rem); color: var(--blanc); line-height: 1.1; margin-bottom: 1.5rem; }
+  .cta-title em { font-style: italic; color: var(--taupe); }
+  .cta-subtitle { font-size: 0.83rem; color: rgba(255,255,255,0.45); max-width: 460px; margin: 0 auto 3rem; line-height: 1.8; }
+  .cta-btn { display: inline-block; font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; padding: 1.2rem 2.8rem; background: var(--blanc); color: var(--noir); text-decoration: none; border: 1px solid var(--blanc); transition: all 0.35s; }
+  .cta-btn:hover { background: transparent; color: var(--blanc); }
+  .cta-note { font-size: 0.62rem; color: rgba(255,255,255,0.25); margin-top: 1.5rem; letter-spacing: 0.05em; }
+
+  /* FOOTER */
+  footer { background: var(--blanc); padding: 2.5rem 6rem; border-top: 1px solid rgba(181,173,165,0.3); display: flex; justify-content: space-between; align-items: center; }
+  .footer-logo { font-family: var(--font-display); font-size: 0.95rem; letter-spacing: 0.2em; text-transform: uppercase; }
+  .footer-tagline { font-size: 0.65rem; color: var(--taupe); letter-spacing: 0.08em; margin-top: 0.2rem; }
+  .footer-links { display: flex; gap: 2rem; }
+  .footer-links a { font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; color: #8A857F; text-decoration: none; transition: color 0.3s; }
+  .footer-links a:hover { color: var(--noir); }
+
+  /* MENTIONS LÉGALES */
+  .mentions-section { padding: 6rem 6rem; max-width: 860px; margin: 0 auto; }
+  .mentions-title { font-family: var(--font-display); font-size: 2rem; margin-bottom: 3rem; }
+  .mentions-block { margin-bottom: 2.5rem; }
+  .mentions-block h3 { font-family: var(--font-display); font-size: 1rem; margin-bottom: 0.8rem; }
+  .mentions-block p { font-size: 0.82rem; color: #6B6560; line-height: 1.8; }
+
+  /* REVEAL */
+  .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  /* RESPONSIVE */
+  @media (max-width: 960px) {
+    nav { padding: 1.2rem 1.5rem; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-left { padding: 4rem 1.5rem 2rem; }
+    .hero-right { min-height: 55vw; }
+    .hero-card { left: 1rem; bottom: 1rem; max-width: 240px; padding: 1.5rem; }
+    .promise-section, .packs-section, .cta-section, .faq-section, .mentions-section { padding: 4rem 1.5rem; }
+    .how-section, .testimony-section { padding: 4rem 1.5rem; }
+    .about-section { padding: 4rem 1.5rem; grid-template-columns: 1fr; gap: 3rem; }
+    .promise-grid, .packs-grid, .testimony-grid { grid-template-columns: 1fr; }
+    .how-grid { grid-template-columns: 1fr; }
+    footer { padding: 2rem 1.5rem; flex-direction: column; gap: 1.2rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">FLOW<span>STUDIO</span></a>
+  <ul class="nav-links">
+    <li><a href="#systemes">Systèmes</a></li>
+    <li><a href="#packs">Packs</a></li>
+    <li><a href='/notion'>Notion</a></li>
+    <li><a href='/ia'>IA</a></li>
+    <li><a href="#temoignages">Témoignages</a></li>
+    <li><a href='/mentions-legales'>Mentions légales</a></li>
+  </ul>
+  <a href="https://calendar.app.google/x3LrzMWr5spjaSn56" target="_blank" class="nav-cta">Appel découverte</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <p class="hero-eyebrow reveal">Création de systèmes IA & Notion</p>
+    <h1 class="hero-title reveal reveal-delay-1">
+      Ton business,<br>
+      <em>enfin organisé</em><br>
+      comme un système.
+    </h1>
+    <p class="hero-subtitle reveal reveal-delay-2">
+      Flow Studio crée des systèmes business sur-mesure — Notion, IA, automatisations — pour que tu travailles avec clarté, sans t'épuiser.
+    </p>
+    <div class="hero-actions reveal reveal-delay-3">
+      <a href="https://calendar.app.google/x3LrzMWr5spjaSn56" target="_blank" class="btn-primary">Réserver l'appel découverte</a>
+      <a href="#packs" class="btn-ghost">Voir les packs</a>
+    </div>
+    <div class="hero-stats reveal reveal-delay-4">
+      <div class="stat-item">
+        <div class="stat-number">5h+</div>
+        <div class="stat-label">Gagnées par semaine</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">3</div>
+        <div class="stat-label">Packs clés-en-main</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Livré, pas enseigné</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img class="hero-photo" src="solen-ouahioune-flow-studio.jpg" alt="Solen Ouahioune — Flow Studio">
+    <div class="hero-card reveal reveal-delay-2">
+      <p class="card-tag">Pack System Pro — Le plus populaire</p>
+      <h3 class="card-title">Ton cockpit digital complet</h3>
+      <ul class="card-items">
+        <li>Audit & mapping business</li>
+        <li>Système Notion Pro sur-mesure</li>
+        <li>CRM + pipeline automatisé</li>
+        <li>2 agents IA personnalisés</li>
+        <li>3 automatisations Make</li>
+      </ul>
+      <div class="card-price">
+        <span class="price-label">À partir de</span>
+        <span class="price-amount">1 190€</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-section">
+  <div class="marquee-track">
+    <span class="marquee-item">Notion</span><span class="marquee-item">Intelligence Artificielle</span><span class="marquee-item">Automatisation Make</span><span class="marquee-item">Agents IA</span><span class="marquee-item">Systèmes Business</span><span class="marquee-item">Organisation CEO</span><span class="marquee-item">No-code</span><span class="marquee-item">Notion</span><span class="marquee-item">Intelligence Artificielle</span><span class="marquee-item">Automatisation Make</span><span class="marquee-item">Agents IA</span><span class="marquee-item">Systèmes Business</span><span class="marquee-item">Organisation CEO</span><span class="marquee-item">No-code</span>
+  </div>
+</div>
+
+<!-- PROMISE -->
+<section class="promise-section" id="systemes">
+  <div class="section-header">
+    <p class="section-eyebrow reveal">Notre promesse</p>
+    <h2 class="section-title reveal reveal-delay-1">Ce n'est pas un joli Notion.<br><em>C'est un système qui travaille pour toi.</em></h2>
+  </div>
+  <div class="promise-grid">
+    <div class="promise-item reveal">
+      <p class="promise-num">01</p>
+      <h3 class="promise-title">Clarté immédiate</h3>
+      <p class="promise-text">Tu sais exactement où tu en es, quoi prioriser, et comment avancer. Finis les post-its éparpillés et les tableaux qui se contredisent.</p>
+    </div>
+    <div class="promise-item reveal reveal-delay-1">
+      <p class="promise-num">02</p>
+      <h3 class="promise-title">Système intégré</h3>
+      <p class="promise-text">Notion, IA et automatisations travaillent ensemble dans un écosystème cohérent, conçu spécifiquement pour ton business et ta façon de travailler.</p>
+    </div>
+    <div class="promise-item reveal reveal-delay-2">
+      <p class="promise-num">03</p>
+      <h3 class="promise-title">Autonomie totale</h3>
+      <p class="promise-text">Tu repars avec ton système, une vidéo tutorielle personnalisée et les clés pour l'utiliser seule. Pas de dépendance, pas de formation supplémentaire.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW -->
+<section class="how-section" id="methode">
+  <div class="how-grid">
+    <div>
+      <p class="section-eyebrow reveal">Comment ça se passe</p>
+      <h2 class="section-title reveal reveal-delay-1" style="margin-bottom:3rem;">De l'audit à la <em>prise en main</em></h2>
+      <div class="how-steps">
+        <div class="how-step reveal">
+          <div class="step-num">01</div>
+          <div><h3 class="step-title">Appel découverte gratuit</h3><p class="step-text">30 min pour identifier ton besoin, tes blocages et le pack adapté. Aucun engagement.</p></div>
+        </div>
+        <div class="how-step reveal reveal-delay-1">
+          <div class="step-num">02</div>
+          <div><h3 class="step-title">Audit & mapping</h3><p class="step-text">Je cartographie ton business, tes processus et tes objectifs avant de construire quoi que ce soit.</p></div>
+        </div>
+        <div class="how-step reveal reveal-delay-2">
+          <div class="step-num">03</div>
+          <div><h3 class="step-title">Création du système</h3><p class="step-text">Je construis, ajuste et intègre ton infrastructure entre chaque session de travail.</p></div>
+        </div>
+        <div class="how-step reveal reveal-delay-3">
+          <div class="step-num">04</div>
+          <div><h3 class="step-title">Prise en main</h3><p class="step-text">Je t'explique tout en détail. Tu repars autonome, avec une vidéo tutorielle personnalisée.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal reveal-delay-2">
+      <div class="how-visual">
+        <p class="visual-label">La différence Flow Studio</p>
+        <h3 class="visual-tagline"><em>Un business qui respire,</em><br>pas juste un outil de plus.</h3>
+        <div class="visual-divider"></div>
+        <p class="visual-quote">« J'étais convaincue qu'il faudrait m'épuiser ou embaucher. Créer ma propre équipe de GPT me permet d'avancer sereinement tout en conservant mon CA. Une vraie révélation. »</p>
+        <p class="visual-author">Andréa, fleuriste</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKS -->
+<section class="packs-section" id="packs">
+  <div class="section-header">
+    <p class="section-eyebrow reveal">L'offre</p>
+    <h2 class="section-title reveal reveal-delay-1">Trois packs,<br><em>un système sur-mesure.</em></h2>
+  </div>
+  <div class="packs-grid">
+    <div class="pack-card reveal">
+      <p class="pack-tag">Pack 01</p>
+      <h3 class="pack-title">System Starter</h3>
+      <p class="pack-price">890€</p>
+      <p class="pack-price-sub">Pour une base solide et simple</p>
+      <div class="pack-divider"></div>
+      <ul class="pack-features">
+        <li class="pack-feature">Audit express (30 min)</li>
+        <li class="pack-feature">Tableau de bord quotidien</li>
+        <li class="pack-feature">Tâches & priorités Notion</li>
+        <li class="pack-feature">Calendrier éditorial simple</li>
+        <li class="pack-feature">Mini CRM clients</li>
+        <li class="pack-feature">1 automatisation utile (Make)</li>
+        <li class="pack-feature">1 mini-agent IA</li>
+        <li class="pack-feature">1 vidéo tutorielle personnalisée</li>
+      </ul>
+      <a href="https://calendar.app.google/x3LrzMWr5spjaSn56" target="_blank" class="pack-cta">Je démarre</a>
+    </div>
+    <div class="pack-card featured reveal reveal-delay-1">
+      <div class="pack-badge">Le plus populaire</div>
+      <p class="pack-tag">Pack 02</p>
+      <h3 class="pack-title">System Pro</h3>
+      <p class="pack-price">1 190€</p>
+      <p class="pack-price-sub">Le cockpit digital complet</p>
+      <div class="pack-divider"></div>
+      <ul class="pack-features">
+        <li class="pack-feature">Audit + mapping complet</li>
+        <li class="pack-feature">Projets & tâches reliées</li>
+        <li class="pack-feature">CRM & pipeline de vente</li>
+        <li class="pack-feature">Calendrier éditorial automatisé</li>
+        <li class="pack-feature">Finances & objectifs</li>
+        <li class="pack-feature">3 automatisations Make</li>
+        <li class="pack-feature">2 agents IA personnalisés</li>
+        <li class="pack-feature">2 vidéos tutorielles (5 min)</li>
+      </ul>
+      <a href="https://calendar.app.google/x3LrzMWr5spjaSn56" target="_blank" class="pack-cta">Je veux ce pack</a>
+    </div>
+    <div class="pack-card reveal reveal-delay-2">
+      <p class="pack-tag">Pack 03</p>
+      <h3 class="pack-title">System Premium</h3>
+      <p class="pack-price">1 490€</p>
+      <p class="pack-price-sub">Transformation complète + IA avancée</p>
+      <div class="pack-divider"></div>
+      <ul class="pack-features">
+        <li class="pack-feature">Tout le Pack Pro</li>
+        <li class="pack-feature">5 automatisations avancées (Make)</li>
+        <li class="pack-feature">Workflow onboarding client</li>
+        <li class="pack-feature">Suivi de vente automatisé</li>
+        <li class="pack-feature">4 agents IA (stratégie, client, CEO…)</li>
+        <li class="pack-feature">Dashboard finances + reporting</li>
+        <li class="pack-feature">5 vidéos tutorielles (10-15 min)</li>
+      </ul>
+      <a href="https://calendar.app.google/x3LrzMWr5spjaSn56" target="_blank" class="pack-cta">Je veux transformer mon business</a>
+    </div>
+  </div>
+  <p class="packs-note">Pas encore prête pour un pack complet ? Sessions 2h à 190€ — <a href='/notion' style='color:var(--noir);text-decoration:none;border-bottom:1px solid rgba(181,173,165,0.5);'>Boost'Her Notion</a> ou <a href='/ia' style='color:var(--noir);text-decoration:none;border-bottom:1px solid rgba(181,173,165,0.5);'>Boost'Her IA</a>.</p>
+</section>
+
+<!-- TÉMOIGNAGES -->
+<section class="testimony-section" id="temoignages">
+  <div class="section-header">
+    <p class="section-eyebrow reveal">Ce qu'elles en disent</p>
+    <h2 class="section-title reveal reveal-delay-1">Des résultats <em>concrets,</em><br>pas des promesses.</h2>
+  </div>
+  <div class="testimony-grid">
+    <div class="testimony-card reveal">
+      <p class="testimony-quote">« À chaque fois tu apportes du nouveau et de la profondeur. Une pédagogie qui rend l'IA simple. J'ai appliqué dès 17h30 pour ma prospection. »</p>
+      <div class="testimony-divider"></div>
+      <p class="testimony-author">Bérangère Mainguy</p>
+      <p class="testimony-role">Consultante</p>
+    </div>
+    <div class="testimony-card reveal reveal-delay-1">
+      <p class="testimony-quote">« J'étais convaincue qu'il faudrait m'épuiser ou embaucher. Créer ma propre équipe de GPT me permet d'avancer sereinement. Une vraie révélation. »</p>
+      <div class="testimony-divider"></div>
+      <p class="testimony-author">Andréa</p>
+      <p class="testimony-role">Fleuriste</p>
+    </div>
+    <div class="testimony-card reveal reveal-delay-2">
+      <p class="testimony-quote">« Ça m'a ouvert un boulevard de possibilités. Passion pour le sujet et une vraie capacité à le rendre accessible à tous les niveaux. »</p>
+      <div class="testimony-divider"></div>
+      <p class="testimony-author">Alex Roman</p>
+      <p class="testimony-role">Architecte d'intérieur</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <div class="about-photo-wrap reveal">
+    <img class="about-photo" src="solen-ouahioune-flow-studio-2.jpg" alt="Solen Ouahioune">
+    <div class="about-photo-caption">
+      <p class="caption-title">Solen Ouahioune</p>
+      <p class="caption-sub">Fondatrice · Flow Studio</p>
+    </div>
+  </div>
+  <div>
+    <p class="section-eyebrow reveal">À propos</p>
+    <h2 class="about-title reveal reveal-delay-1">Je ne t'enseigne pas Notion.<br><em>Je construis ton système.</em></h2>
+    <p class="about-text reveal reveal-delay-2">En 2014, licenciement économique du jour au lendemain. Je voulais apprendre le marketing digital. J'ai appris à coder. Coup de foudre.</p>
+    <p class="about-text reveal reveal-delay-2">7 mois plus tard, développeuse web. Avec un enfant en bas âge, sans filet. C'est là que j'ai compris que les bons systèmes ne font pas juste gagner du temps — ils changent ce qu'on croit possible pour soi.</p>
+    <p class="about-text reveal reveal-delay-3">Depuis je construis pour les femmes entrepreneures ce que j'aurais voulu avoir dès le début. Notion, l'IA, les automatisations Make — pas pour les geeks, pour celles qui ont trop de choses dans la tête et pas assez de temps pour les faire toutes.</p>
+    <p class="about-signature reveal reveal-delay-3">Solen Ouahioune</p>
+    <p class="about-role reveal reveal-delay-3">Stratège IA & Systèmes Business · Flow Studio · Boost'Her Club</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="section-header">
+    <p class="section-eyebrow reveal">Questions fréquentes</p>
+    <h2 class="section-title reveal reveal-delay-1">Tout ce que tu veux <em>savoir.</em></h2>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-question">Combien de temps dure une mission ?<span class="faq-icon">+</span></div>
+      <div class="faq-answer">Selon le pack : 1 à 6 semaines. Le Starter peut être livré en une semaine. Le Premium demande 4 à 6 semaines pour garantir une intégration complète.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Est-ce que je dois maîtriser Notion avant ?<span class="faq-icon">+</span></div>
+      <div class="faq-answer">Pas du tout. Je construis le système pour toi, avec une vidéo tutorielle personnalisée pour que tu repartes complètement autonome — même si tu n'as jamais touché à Notion.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Puis-je payer en plusieurs fois ?<span class="faq-icon">+</span></div>
+      <div class="faq-answer">Oui. Un paiement en 2 ou 3 fois est disponible sur demande. On en parle lors de l'appel découverte selon ta situation.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Quelle est la différence avec une formation Notion ?<span class="faq-icon">+</span></div>
+      <div class="faq-answer">Une formation te donne des compétences. Flow Studio te livre un système. Tu n'as rien à construire — tu reçois une infrastructure opérationnelle, personnalisée à ton business, prête à utiliser dès le premier jour.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Tu travailles avec quel type de clientes ?<span class="faq-icon">+</span></div>
+      <div class="faq-answer">Principalement des entrepreneures indépendantes (coachs, consultantes, formatrices, créatrices) et des petites équipes jusqu'à 10 personnes. Mon approche s'adapte à tous les secteurs.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <p class="cta-eyebrow reveal">Et maintenant ?</p>
+  <h2 class="cta-title reveal reveal-delay-1">Prête à piloter<br><em>ton business comme une CEO ?</em></h2>
+  <p class="cta-subtitle reveal reveal-delay-2">30 minutes pour identifier ton besoin, comprendre ton business et définir le pack qui te correspond. Gratuit, sans engagement.</p>
+  <a href="https://calendar.app.google/x3LrzMWr5spjaSn56" target="_blank" class="cta-btn reveal reveal-delay-3">Réserver mon appel découverte</a>
+  <p class="cta-note reveal reveal-delay-4">solen@flow-studio.app · @solenouahioune</p>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-logo">Flow Studio</div>
+    <div class="footer-tagline">Création de systèmes IA & Notion</div>
+  </div>
+  <div class="footer-links">
+    <a href="#systemes">Systèmes</a>
+    <a href="#packs">Packs</a>
+    <a href='/notion'>Notion</a>
+    <a href='/ia'>IA</a>
+    <a href="#temoignages">Témoignages</a>
+    <a href='/mentions-legales'>Mentions légales</a>
+    <a href="mailto:solen@flow-studio.app">Contact</a>
+  </div>
+</footer>
+
+<script>
+  // Reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.07 });
+  reveals.forEach(r => observer.observe(r));
+  setTimeout(() => { document.querySelectorAll('.hero .reveal').forEach(r => r.classList.add('visible')); }, 80);
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-question').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+</script>
+
+<script async id="netlify-rum-container" src="/.netlify/scripts/rum" data-netlify-rum-site-id="b878db27-2b14-4394-a811-188bd9e98b07" data-netlify-deploy-branch="" data-netlify-deploy-context="production" data-netlify-cwv-token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaXRlX2lkIjoiYjg3OGRiMjctMmIxNC00Mzk0LWE4MTEtMTg4YmQ5ZTk4YjA3IiwiYWNjb3VudF9pZCI6IjY5YzY0YmU4NGNmZjk0YmNmYTZlYTZmZCIsImRlcGxveV9pZCI6IjY5YzdkYjZjMWY0NTNiZDYxNTkxODhkYSIsImlzc3VlciI6Im5mc2VydmVyIn0.SQpxCfcETnh60bTaPcToh8CwmU28yW_s3ljrp7r8BT0"></script>
+<script async id="netlify-rum-container" src="/.netlify/scripts/rum" data-netlify-rum-site-id="b878db27-2b14-4394-a811-188bd9e98b07" data-netlify-deploy-branch="" data-netlify-deploy-context="production" data-netlify-cwv-token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaXRlX2lkIjoiYjg3OGRiMjctMmIxNC00Mzk0LWE4MTEtMTg4YmQ5ZTk4YjA3IiwiYWNjb3VudF9pZCI6IjY5YzY0YmU4NGNmZjk0YmNmYTZlYTZmZCIsImRlcGxveV9pZCI6IjY5Yzk1M2ExZTUxYWNiYjEyYTcyYjI3OCIsImlzc3VlciI6Im5mc2VydmVyIn0.Rz1FpWL2NiyFxErXYga-LsY7RvfZiws9LHpUxKOE90E"></script></body>
+</html>
