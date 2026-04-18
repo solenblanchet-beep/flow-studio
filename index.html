@@ -676,6 +676,15 @@
       if (!wasOpen) item.classList.add('open');
     });
   });
+
+  // Mobile menu
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('open');
+  }
+  window.addEventListener('scroll', () => {
+    document.getElementById('mobileMenu').classList.remove('open');
+  });
 </script>
 
 <script async id="netlify-rum-container" src="/.netlify/scripts/rum" data-netlify-rum-site-id="b878db27-2b14-4394-a811-188bd9e98b07" data-netlify-deploy-branch="" data-netlify-deploy-context="production" data-netlify-cwv-token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaXRlX2lkIjoiYjg3OGRiMjctMmIxNC00Mzk0LWE4MTEtMTg4YmQ5ZTk4YjA3IiwiYWNjb3VudF9pZCI6IjY5YzY0YmU4NGNmZjk0YmNmYTZlYTZmZCIsImRlcGxveV9pZCI6IjY5YzdkYjZjMWY0NTNiZDYxNTkxODhkYSIsImlzc3VlciI6Im5mc2VydmVyIn0.SQpxCfcETnh60bTaPcToh8CwmU28yW_s3ljrp7r8BT0"></script></body>
