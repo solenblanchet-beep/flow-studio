@@ -244,6 +244,32 @@
     nav { padding: 1.2rem 1.5rem; }
     .nav-links { display: none; }
     .nav-cta { display: none; }
-    .nav-hamburger { display: flex;
+    .nav-hamburger { display: flex; }
+
+    .page-hero { grid-template-columns: 1fr; padding: 6rem 1.5rem 3rem; gap: 2.5rem; min-height: auto; }
+    .process-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .pourqui-grid, .packs-grid, .testimony-grid { grid-template-columns: 1fr; }
+    .pourqui-section, .packs-section, .testimony-section, .process-section, .cta-section, .faq-section { padding: 4rem 1.5rem; }
+    .section-title { font-size: clamp(1.6rem, 6vw, 2.4rem); }
+    .cta-title { font-size: clamp(1.8rem, 7vw, 3rem); }
+    footer { padding: 2rem 1.5rem; flex-direction: column; gap: 1.2rem; text-align: center; }
+    .footer-links { flex-wrap: wrap; justify-content: center; gap: 1rem; }
+  }
+
+  /* RESPONSIVE — MOBILE */
+  @media (max-width: 480px) {
+    nav { padding: 1rem 1.2rem; }
+    .nav-logo { font-size: 0.95rem; }
+    .page-hero { padding: 5rem 1.2rem 2.5rem; }
+    .section-title { font-size: clamp(1.5rem, 7vw, 2rem); }
+    .pourqui-section, .packs-section, .testimony-section, .process-section, .cta-section, .faq-section { padding: 3rem 1.2rem; }
+    .pack-card { padding: 2rem 1.5rem; }
+    .testimony-card { padding: 1.8rem; }
+    .testimony-quote { font-size: 0.88rem; }
+    .faq-question { font-size: 0.88rem; padding: 1.2rem 0; }
+    .cta-section { padding: 4rem 1.2rem; }
+    footer { padding: 1.8rem 1.2rem; }
+    .footer-links { gap: 0.8rem; }
+    .footer-links a { font-size: 0.58rem; }
   }
 </style>
