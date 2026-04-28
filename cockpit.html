@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flow Studio · Cockpit — Le système Notion pour architectes d'intérieur</title>
+<meta name="description" content="Flow Studio Cockpit : un système Notion sur mesure pour les architectes d'intérieur. Suivi de chantier, shopping list, portail client, ROI projet. Livré clé en main." />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --noir: #0F0F0F; --beige: #EAE6E1; --blanc: #F7F5F2;
+    --taupe: #B5ADA5; --terracotta: #BA7F75;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'Inter', sans-serif;
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--blanc); color: var(--noir); font-family: var(--font-body); font-weight: 300; line-height: 1.7; overflow-x: hidden; }
+
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.4rem 4rem; background: rgba(247,245,242,0.94); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(181,173,165,0.2); }
+  .nav-logo { font-family: var(--font-display); font-size: 1.1rem; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 400; color: var(--noir); text-decoration: none; }
+  .nav-logo span { font-size: 0.55rem; letter-spacing: 0.4em; display: block; text-align: center; margin-top: -2px; color: var(--taupe); }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--noir); text-decoration: none; font-weight: 400; transition: color 0.3s; }
+  .nav-links a:hover { color: var(--taupe); }
+  .nav-cta { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 0.65rem 1.5rem; border: 1px solid var(--noir); color: var(--noir); text-decoration: none; transition: all 0.3s; }
+  .nav-cta:hover { background: var(--noir); color: var(--blanc); }
+
+  /* REVEAL */
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+  .reveal-delay-1 { transition-delay: 0.12s; }
+  .reveal-delay-2 { transition-delay: 0.24s; }
+  .reveal-delay-3 { transition-delay: 0.36s; }
+
+  /* HERO */
+  .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 76px; }
+  .hero-left { display: flex; flex-direction: column; justify-content: center; padding: 5rem 4rem 5rem 6rem; }
+  .hero-eyebrow { font-size: 0.62rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1.8rem; display: flex; align-items: center; gap: 1rem; }
+  .hero-eyebrow::before { content: ''; display: block; width: 2rem; height: 1px; background: var(--taupe); }
+  .hero-title { font-family: var(--font-display); font-size: clamp(2.6rem, 4vw, 4rem); font-weight: 400; line-height: 1.1; margin-bottom: 1.8rem; }
+  .hero-title em { font-style: italic; color: var(--taupe); }
+  .hero-subtitle { font-size: 0.88rem; color: #6B6560; max-width: 400px; line-height: 1.9; margin-bottom: 2.8rem; }
+  .hero-actions { display: flex; gap: 1.5rem; align-items: center; }
+  .btn-primary { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 1.1rem 2.2rem; background: var(--noir); color: var(--blanc); text-decoration: none; border: 1px solid var(--noir); transition: all 0.35s; }
+  .btn-primary:hover { background: transparent; color: var(--noir); }
+  .btn-ghost { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--noir); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; transition: gap 0.3s; }
+  .btn-ghost:hover { gap: 0.9rem; }
+  .btn-ghost::after { content: '→'; }
+  .hero-stats { margin-top: 3.5rem; padding-top: 2.5rem; border-top: 1px solid rgba(181,173,165,0.4); display: flex; gap: 3rem; }
+  .stat-number { font-family: var(--font-display); font-size: 1.9rem; line-height: 1; }
+  .stat-label { font-size: 0.62rem; letter-spacing: 0.12em; color: var(--taupe); text-transform: uppercase; margin-top: 0.3rem; }
+  .hero-right { position: relative; overflow: hidden; background: var(--beige); display: flex; align-items: center; justify-content: center; padding: 4rem 3rem; }
+
+  /* Notion mockup */
+  .notion-mockup { background: var(--blanc); border: 1px solid rgba(0,0,0,0.08); box-shadow: 0 20px 60px rgba(0,0,0,0.1); width: 100%; max-width: 460px; font-family: var(--font-body); }
+  .notion-topbar { background: #f7f7f5; border-bottom: 1px solid rgba(0,0,0,0.06); padding: 0.6rem 1rem; display: flex; align-items: center; gap: 0.4rem; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; }
+  .dot-r { background: #ff5f57; } .dot-y { background: #febc2e; } .dot-g { background: #28c840; }
+  .mockup-url { font-size: 0.62rem; color: #9b9a97; margin-left: 0.5rem; letter-spacing: 0.02em; }
+  .mockup-title { font-family: var(--font-display); font-size: 1.3rem; font-weight: 500; padding: 1.2rem 1.5rem 0.6rem; color: #1a1a1a; }
+  .mockup-tabs { display: flex; padding: 0 1.5rem; border-bottom: 1px solid rgba(0,0,0,0.06); }
+  .mockup-tab { padding: 0.4rem 0.8rem; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; color: #9b9a97; border-bottom: 2px solid transparent; }
+  .mockup-tab.active { color: var(--noir); border-bottom-color: var(--noir); }
+  .mockup-row { display: flex; align-items: center; gap: 0.6rem; padding: 0.55rem 1.5rem; border-bottom: 1px solid rgba(0,0,0,0.04); font-size: 0.72rem; color: #374151; }
+  .mockup-name { flex: 1; }
+  .phase { font-size: 0.6rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 2px 7px; background: rgba(181,173,165,0.2); color: var(--taupe); white-space: nowrap; }
+  .status { font-size: 0.6rem; padding: 2px 7px; font-weight: 500; white-space: nowrap; }
+  .s-todo { background: #f3f4f6; color: #6b7280; }
+  .s-wip { background: #fef3c7; color: #92400e; }
+  .s-done { background: #d1fae5; color: #065f46; }
+  .mockup-roi { margin: 0.8rem 1.5rem 1.2rem; background: var(--noir); padding: 1rem 1.2rem; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.5rem; }
+  .roi-item { text-align: center; }
+  .roi-label { font-size: 0.55rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--taupe); display: block; margin-bottom: 3px; }
+  .roi-val { font-family: var(--font-display); font-size: 1rem; color: var(--blanc); }
+  .roi-val.ok { color: #6ee7b7; }
+
+  /* MARQUEE */
+  .marquee-section { background: var(--noir); padding: 1.1rem 0; overflow: hidden; }
+  .marquee-track { display: flex; gap: 2.5rem; animation: marquee 32s linear infinite; width: max-content; }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .marquee-item { font-size: 0.58rem; letter-spacing: 0.28em; text-transform: uppercase; color: rgba(234,230,225,0.5); white-space: nowrap; display: flex; align-items: center; gap: 2rem; }
+  .marquee-item::after { content: '◆'; font-size: 0.35rem; opacity: 0.4; }
+
+  /* SECTIONS */
+  .section-eyebrow { font-size: 0.62rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1.2rem; display: flex; align-items: center; gap: 1rem; }
+  .section-eyebrow::before { content: ''; width: 1.8rem; height: 1px; background: var(--taupe); }
+  .section-title { font-family: var(--font-display); font-size: clamp(1.8rem, 3vw, 2.8rem); font-weight: 400; line-height: 1.15; }
+  .section-title em { font-style: italic; color: var(--taupe); }
+
+  /* DIAGNOSTIC */
+  .diag-section { background: var(--noir); display: grid; grid-template-columns: 1fr 1fr; }
+  .diag-left { padding: 7rem 4rem 7rem 6rem; border-right: 1px solid rgba(255,255,255,0.06); }
+  .diag-left .section-eyebrow { color: rgba(181,173,165,0.7); }
+  .diag-left .section-eyebrow::before { background: rgba(181,173,165,0.4); }
+  .diag-left .section-title { color: var(--blanc); }
+  .diag-left .section-title em { color: var(--taupe); }
+  .diag-intro { font-size: 0.83rem; color: rgba(255,255,255,0.4); line-height: 1.9; margin-top: 1.5rem; max-width: 380px; }
+  .diag-right { padding: 7rem 6rem 7rem 4rem; display: flex; flex-direction: column; justify-content: center; }
+  .diag-item { display: grid; grid-template-columns: 52px 1fr; gap: 1.2rem; padding: 2rem 0; border-bottom: 1px solid rgba(255,255,255,0.06); align-items: start; }
+  .diag-item:last-child { border-bottom: none; }
+  .diag-num { font-family: var(--font-display); font-size: 1.6rem; font-style: italic; color: rgba(181,173,165,0.3); line-height: 1; }
+  .diag-title { font-family: var(--font-display); font-size: 0.95rem; color: var(--blanc); margin-bottom: 0.4rem; }
+  .diag-text { font-size: 0.78rem; color: rgba(255,255,255,0.38); line-height: 1.8; }
+
+  /* MODULES */
+  .modules-section { padding: 7rem 6rem; }
+  .section-header { margin-bottom: 1.5rem; }
+  .modules-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; background: rgba(181,173,165,0.3); border: 1px solid rgba(181,173,165,0.3); margin-top: 3rem; }
+  .module-card { background: var(--blanc); padding: 2.5rem 2rem; transition: background 0.3s; }
+  .module-card:hover { background: var(--beige); }
+  .module-tag { font-size: 0.55rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1.2rem; }
+  .module-title { font-family: var(--font-display); font-size: 1.1rem; margin-bottom: 0.6rem; line-height: 1.3; }
+  .module-desc { font-size: 0.78rem; color: #6B6560; line-height: 1.8; }
+  .module-benefit { margin-top: 1.2rem; font-size: 0.68rem; letter-spacing: 0.04em; color: var(--taupe); padding-top: 1rem; border-top: 1px solid rgba(181,173,165,0.3); }
+  .module-benefit::before { content: '→ '; }
+
+  /* PACKS */
+  .packs-section { padding: 7rem 6rem; background: var(--beige); }
+  .packs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 3.5rem; background: rgba(181,173,165,0.3); }
+  .pack-card { background: var(--blanc); padding: 2.8rem 2.5rem; display: flex; flex-direction: column; transition: all 0.3s; }
+  .pack-card.featured { background: var(--noir); }
+  .pack-badge { display: inline-block; font-size: 0.52rem; letter-spacing: 0.2em; text-transform: uppercase; background: var(--taupe); color: var(--blanc); padding: 0.3rem 0.7rem; margin-bottom: 1.2rem; align-self: flex-start; }
+  .pack-tag { font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--taupe); margin-bottom: 0.6rem; }
+  .pack-title { font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 0.4rem; }
+  .pack-card.featured .pack-title { color: var(--blanc); }
+  .pack-price { font-family: var(--font-display); font-size: 2.2rem; }
+  .pack-card.featured .pack-price { color: var(--blanc); }
+  .pack-price-sub { font-size: 0.68rem; color: var(--taupe); margin-bottom: 1.8rem; }
+  .pack-divider { height: 1px; background: rgba(181,173,165,0.4); margin-bottom: 1.8rem; }
+  .pack-card.featured .pack-divider { background: rgba(255,255,255,0.1); }
+  .pack-features { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; flex: 1; }
+  .pack-feature { font-size: 0.75rem; color: #5A5550; display: flex; gap: 0.7rem; align-items: flex-start; line-height: 1.5; }
+  .pack-feature::before { content: '—'; color: var(--taupe); flex-shrink: 0; font-size: 0.65rem; margin-top: 2px; }
+  .pack-card.featured .pack-feature { color: rgba(255,255,255,0.5); }
+  .pack-feature.highlight { color: var(--noir); }
+  .pack-card.featured .pack-feature.highlight { color: rgba(255,255,255,0.9); }
+  .pack-feature.highlight::before { color: var(--noir); }
+  .pack-card.featured .pack-feature.highlight::before { color: rgba(255,255,255,0.4); }
+  .pack-cta { display: block; text-align: center; margin-top: 2rem; font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; padding: 0.9rem 1.2rem; border: 1px solid var(--noir); color: var(--noir); text-decoration: none; transition: all 0.3s; }
+  .pack-cta:hover { background: var(--noir); color: var(--blanc); }
+  .pack-card.featured .pack-cta { border-color: var(--blanc); color: var(--blanc); }
+  .pack-card.featured .pack-cta:hover { background: var(--blanc); color: var(--noir); }
+  .packs-note { text-align: center; font-size: 0.72rem; color: var(--taupe); margin-top: 2rem; letter-spacing: 0.05em; }
+
+  /* HOW */
+  .how-section { padding: 7rem 6rem; }
+  .how-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+  .how-steps { display: flex; flex-direction: column; margin-top: 2.5rem; }
+  .how-step { display: grid; grid-template-columns: 52px 1fr; gap: 1.5rem; padding: 1.8rem 0; border-bottom: 1px solid rgba(181,173,165,0.4); align-items: start; }
+  .how-step:hover .step-num { background: var(--noir); color: var(--blanc); }
+  .step-num { width: 40px; height: 40px; border: 1px solid var(--noir); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 0.85rem; transition: all 0.3s; flex-shrink: 0; }
+  .step-title { font-family: var(--font-display); font-size: 1rem; margin-bottom: 0.4rem; }
+  .step-text { font-size: 0.78rem; color: #6B6560; line-height: 1.7; }
+  .how-visual { background: var(--beige); padding: 3.5rem; }
+  .visual-label { font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1.5rem; }
+  .visual-tagline { font-family: var(--font-display); font-size: 1.5rem; line-height: 1.3; margin-bottom: 2rem; }
+  .visual-tagline em { font-style: italic; }
+  .visual-divider { height: 1px; background: rgba(181,173,165,0.4); margin-bottom: 1.5rem; }
+  .visual-quote { font-size: 0.8rem; color: #6B6560; line-height: 1.8; font-style: italic; border-left: 2px solid var(--taupe); padding-left: 1.2rem; }
+  .visual-author { font-size: 0.62rem; color: var(--taupe); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 1rem; }
+
+  /* TESTIMONY */
+  .testimony-section { background: var(--beige); padding: 7rem 6rem; }
+  .testimony-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1.5rem; margin-top: 3.5rem; }
+  .testimony-card { background: var(--blanc); padding: 2.2rem; }
+  .testimony-quote { font-family: var(--font-display); font-style: italic; font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.5rem; }
+  .testimony-divider { height: 1px; background: rgba(181,173,165,0.4); margin-bottom: 1.2rem; }
+  .testimony-author { font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--taupe); }
+  .testimony-role { font-size: 0.62rem; color: #8A857F; margin-top: 0.2rem; }
+  .testimony-placeholder { background: var(--blanc); padding: 2.2rem; border: 1px dashed rgba(181,173,165,0.5); display: flex; align-items: center; justify-content: center; text-align: center; min-height: 180px; }
+  .testimony-placeholder p { font-size: 0.75rem; color: var(--taupe); line-height: 1.8; }
+
+  /* FAQ */
+  .faq-section { padding: 5rem 6rem; }
+  .faq-list { margin-top: 3rem; }
+  .faq-item { border-bottom: 1px solid rgba(181,173,165,0.4); }
+  .faq-question { padding: 1.4rem 0; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-family: var(--font-display); font-size: 0.95rem; user-select: none; }
+  .faq-icon { color: var(--taupe); transition: transform 0.3s; font-size: 1.1rem; }
+  .faq-answer { font-size: 0.8rem; color: #6B6560; line-height: 1.8; max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s; }
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
+  .faq-item.open .faq-answer { max-height: 200px; padding-bottom: 1.5rem; }
+
+  /* CTA */
+  .cta-section { background: var(--noir); padding: 8rem 6rem; text-align: center; position: relative; overflow: hidden; }
+  .cta-section::before { content: 'COCKPIT'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-family: var(--font-display); font-size: 16rem; color: rgba(255,255,255,0.02); pointer-events: none; white-space: nowrap; }
+  .cta-eyebrow { font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1.8rem; }
+  .cta-title { font-family: var(--font-display); font-size: clamp(2.2rem, 4.5vw, 3.8rem); color: var(--blanc); line-height: 1.1; margin-bottom: 1.5rem; }
+  .cta-title em { font-style: italic; color: var(--taupe); }
+  .cta-subtitle { font-size: 0.83rem; color: rgba(255,255,255,0.4); max-width: 460px; margin: 0 auto 3rem; line-height: 1.8; }
+  .cta-btn { display: inline-block; font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; padding: 1.2rem 2.8rem; background: var(--blanc); color: var(--noir); text-decoration: none; border: 1px solid var(--blanc); transition: all 0.35s; }
+  .cta-btn:hover { background: transparent; color: var(--blanc); }
+  .cta-note { font-size: 0.62rem; color: rgba(255,255,255,0.2); margin-top: 1.5rem; letter-spacing: 0.05em; }
+
+  /* FOOTER */
+  footer { background: var(--blanc); padding: 2.5rem 6rem; border-top: 1px solid rgba(181,173,165,0.3); display: flex; justify-content: space-between; align-items: center; }
+  .footer-logo { font-family: var(--font-display); font-size: 0.95rem; letter-spacing: 0.2em; text-transform: uppercase; }
+  .footer-tagline { font-size: 0.65rem; color: var(--taupe); letter-spacing: 0.08em; margin-top: 0.2rem; }
+  .footer-links { display: flex; gap: 2rem; }
+  .footer-links a { font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; color: #8A857F; text-decoration: none; transition: color 0.3s; }
+  .footer-links a:hover { color: var(--noir); }
+
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-left { padding: 4rem 2rem 3rem; }
+    .hero-right { padding: 3rem 2rem; }
+    .diag-section { grid-template-columns: 1fr; }
+    .diag-left { padding: 4rem 2rem 3rem; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .diag-right { padding: 3rem 2rem; }
+    .modules-grid { grid-template-columns: 1fr; }
+    .packs-grid { grid-template-columns: 1fr; }
+    .how-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .testimony-grid { grid-template-columns: 1fr; }
+    .modules-section, .packs-section, .how-section, .testimony-section, .faq-section { padding: 4rem 2rem; }
+    .cta-section { padding: 5rem 2rem; }
+    footer { flex-direction: column; gap: 1.5rem; padding: 2rem; text-align: center; }
+    .footer-links { flex-wrap: wrap; justify-content: center; }
+  }
+
+  /* HAMBURGER */
+  .nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+  .nav-hamburger span { display: block; width: 22px; height: 1.5px; background: var(--noir); transition: all 0.3s; }
+  .mobile-menu { display: none; position: fixed; top: 76px; left: 0; right: 0; background: var(--blanc); border-bottom: 1px solid rgba(181,173,165,0.3); padding: 1.5rem; z-index: 99; flex-direction: column; gap: 0; }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--noir); text-decoration: none; padding: 0.9rem 0; border-bottom: 1px solid rgba(181,173,165,0.2); }
+  .mobile-menu .mobile-cta { background: var(--noir); color: var(--blanc); text-align: center; padding: 1rem; border: none; margin-top: 1rem; }
+
+  /* RESPONSIVE — TABLET */
+  @media (max-width: 960px) {
+    nav { padding: 1.2rem 1.5rem; }
+    .nav-links { display: none; }
+    .nav-cta { display: none; }
+    .nav-hamburger { display: flex; }
+  }
+  @media (max-width: 480px) {
+    nav { padding: 1rem 1.2rem; }
+    .nav-logo { font-size: 0.95rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="https://flow-studio.app" class="nav-logo">Flow Studio<span>Cockpit · Architectes d'intérieur</span></a>
+  <ul class="nav-links">
+    <li><a href="#modules">Le système</a></li>
+    <li><a href="#offres">Offres</a></li>
+    <li><a href="#methode">Méthode</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <a href="https://calendar.app.google/6ozvY6Bq2rzY5D4G8" target="_blank" class="nav-cta">Réserver un call</a>
+  <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/" onclick="toggleMenu()">Accueil</a>
+  <a href="/#packs" onclick="toggleMenu()">Packs</a>
+  <a href="/notion" onclick="toggleMenu()">Notion</a>
+  <a href="/ia" onclick="toggleMenu()">IA</a>
+  <a href="/solen-ouahioune" onclick="toggleMenu()">À propos</a>
+  <a href="/contact" onclick="toggleMenu()">Contact</a>
+  <a href="https://calendar.app.google/x3LrzMWr5spjaSn56" target="_blank" class="mobile-cta">Appel découverte gratuit</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <p class="hero-eyebrow reveal">Flow Studio · Cockpit</p>
+    <h1 class="hero-title reveal reveal-delay-1">Ton agence tourne.<br>Mais toi, <em>tu cours encore.</em></h1>
+    <p class="hero-subtitle reveal reveal-delay-2">Un système Notion sur mesure pour les architectes d'intérieur qui veulent piloter leurs projets, leurs clients et leur rentabilité — sans Excel, sans WhatsApp, sans chaos.</p>
+    <div class="hero-actions reveal reveal-delay-3">
+      <a href="https://calendar.app.google/6ozvY6Bq2rzY5D4G8" target="_blank" class="btn-primary">Réserver un call découverte gratuit</a>
+      <a href="#offres" class="btn-ghost">Voir les offres</a>
+    </div>
+    <div class="hero-stats reveal reveal-delay-3">
+      <div>
+        <p class="stat-number">1 sem.</p>
+        <p class="stat-label">Livraison Essentiel</p>
+      </div>
+      <div>
+        <p class="stat-number">100%</p>
+        <p class="stat-label">Sur mesure</p>
+      </div>
+      <div>
+        <p class="stat-number">0</p>
+        <p class="stat-label">Template générique</p>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="notion-mockup reveal reveal-delay-1">
+      <div class="notion-topbar">
+        <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
+        <span class="mockup-url">Cockpit · Projet Dupont — Appartement Marais</span>
+      </div>
+      <div class="mockup-title">Suivi de chantier</div>
+      <div class="mockup-tabs">
+        <div class="mockup-tab active">Tâches</div>
+        <div class="mockup-tab">Shopping list</div>
+        <div class="mockup-tab">Portail client</div>
+      </div>
+      <div class="mockup-row">
+        <span class="mockup-name">Validation plan cuisine</span>
+        <span class="phase">Conception</span>
+        <span class="status s-wip">En cours</span>
+      </div>
+      <div class="mockup-row">
+        <span class="mockup-name">Commande carrelage SdB</span>
+        <span class="phase">Réalisation</span>
+        <span class="status s-todo">À faire</span>
+      </div>
+      <div class="mockup-row">
+        <span class="mockup-name">Brief artisan menuisier</span>
+        <span class="phase">Consultation</span>
+        <span class="status s-done">Fait</span>
+      </div>
+      <div class="mockup-row">
+        <span class="mockup-name">Retour client moodboard salon</span>
+        <span class="phase">Conception</span>
+        <span class="status s-done">Fait</span>
+      </div>
+      <div class="mockup-roi">
+        <div class="roi-item"><span class="roi-label">Facturé</span><span class="roi-val">18 500 €</span></div>
+        <div class="roi-item"><span class="roi-label">Dépenses</span><span class="roi-val">4 200 €</span></div>
+        <div class="roi-item"><span class="roi-label">Taux net/h</span><span class="roi-val ok">87 €</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-section">
+  <div class="marquee-track">
+    <span class="marquee-item">Suivi de chantier par phase</span>
+    <span class="marquee-item">Shopping list structurée</span>
+    <span class="marquee-item">Dashboard ROI projet</span>
+    <span class="marquee-item">Portail client</span>
+    <span class="marquee-item">CRM clients & artisans</span>
+    <span class="marquee-item">Onboarding automatisé</span>
+    <span class="marquee-item">Agents IA sur mesure</span>
+    <span class="marquee-item">Livré clé en main</span>
+    <span class="marquee-item">Suivi de chantier par phase</span>
+    <span class="marquee-item">Shopping list structurée</span>
+    <span class="marquee-item">Dashboard ROI projet</span>
+    <span class="marquee-item">Portail client</span>
+    <span class="marquee-item">CRM clients & artisans</span>
+    <span class="marquee-item">Onboarding automatisé</span>
+    <span class="marquee-item">Agents IA sur mesure</span>
+    <span class="marquee-item">Livré clé en main</span>
+  </div>
+</div>
+
+<!-- DIAGNOSTIC -->
+<div class="diag-section">
+  <div class="diag-left">
+    <p class="section-eyebrow reveal">Le problème</p>
+    <h2 class="section-title reveal reveal-delay-1">Tu gères de beaux projets.<br><em>Ton back-office,</em><br>c'est une autre histoire.</h2>
+    <p class="diag-intro reveal reveal-delay-2">Tu es architecte d'intérieur, pas gestionnaire de projet. Pourtant tu passes des heures sur des tâches qui n'ont rien à voir avec ton métier.</p>
+  </div>
+  <div class="diag-right">
+    <div class="diag-item reveal">
+      <span class="diag-num">01</span>
+      <div>
+        <p class="diag-title">Le chaos entre les projets</p>
+        <p class="diag-text">Devis dans les mails, planning sur Excel, WhatsApp avec les artisans. Tu jonglES en permanence et tu perds du temps à chercher au lieu de créer.</p>
+      </div>
+    </div>
+    <div class="diag-item reveal reveal-delay-1">
+      <span class="diag-num">02</span>
+      <div>
+        <p class="diag-title">Le client qui ne sait pas où en est son projet</p>
+        <p class="diag-text">"La commande est passée ?" "Quand arrive le menuisier ?" Tu réponds aux mêmes questions tous les jours. Un portail client réglerait ça — mais tu n'en as pas.</p>
+      </div>
+    </div>
+    <div class="diag-item reveal reveal-delay-2">
+      <span class="diag-num">03</span>
+      <div>
+        <p class="diag-title">Le ROI que tu ne calcules jamais</p>
+        <p class="diag-text">Tu sais que ce projet a été "rentable" mais tu serais incapable de dire à quel taux horaire tu as vraiment travaillé. Et tu reprices le suivant à l'intuition.</p>
+      </div>
+    </div>
+    <div class="diag-item reveal reveal-delay-3">
+      <span class="diag-num">04</span>
+      <div>
+        <p class="diag-title">La shopping list qui part dans tous les sens</p>
+        <p class="diag-text">Références dans les mails, dans les notes, dans des screenshots. Ton client voit un canapé en showroom — et toi tu passes 20 minutes à retrouver le lien fournisseur.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODULES -->
+<section class="modules-section" id="modules">
+  <div class="section-header">
+    <p class="section-eyebrow reveal">Ce que ça contient</p>
+    <h2 class="section-title reveal reveal-delay-1">Tout ce dont tu as besoin,<br><em>dans un seul endroit.</em></h2>
+  </div>
+  <p style="font-size:0.83rem;color:#6B6560;max-width:520px;line-height:1.9;" class="reveal reveal-delay-2">Cockpit est construit sur mesure pour ton agence. Pas un template générique à adapter — un système pensé pour le métier d'architecte d'intérieur, livré clé en main.</p>
+
+  <div class="modules-grid">
+    <div class="module-card reveal">
+      <p class="module-tag">Module 01</p>
+      <h3 class="module-title">Suivi de chantier par phase</h3>
+      <p class="module-desc">Tes tâches organisées par phase : Esquisse, Conception, Consultation entreprises, Suivi chantier, Réception. Tu sais exactement où en est chaque projet, sans ouvrir un seul email.</p>
+      <p class="module-benefit">Fini les oublis entre les phases</p>
+    </div>
+    <div class="module-card reveal reveal-delay-1">
+      <p class="module-tag">Module 02</p>
+      <h3 class="module-title">Shopping list structurée</h3>
+      <p class="module-desc">Toutes tes références par pièce et par poste. Lien produit, fournisseur, prix, statut commande. Ton client voit exactement ce qui est prévu — tu ne cherches plus rien.</p>
+      <p class="module-benefit">Zéro référence perdue</p>
+    </div>
+    <div class="module-card reveal reveal-delay-2">
+      <p class="module-tag">Module 03</p>
+      <h3 class="module-title">Dashboard ROI par projet</h3>
+      <p class="module-desc">Total facturé, temps passé, dépenses engagées. Ton taux horaire réel calculé automatiquement. Pour la première fois, tu sais quels projets sont vraiment rentables.</p>
+      <p class="module-benefit">Tu arrêtes de pricer à l'intuition</p>
+    </div>
+    <div class="module-card reveal">
+      <p class="module-tag">Module 04</p>
+      <h3 class="module-title">Portail client</h3>
+      <p class="module-desc">Un espace partagé où ton client consulte l'avancement, les documents clés et la shopping list. Il arrête de te demander "où en est-on ?" — tu arrêtes de répondre.</p>
+      <p class="module-benefit">Relation client professionnalisée</p>
+    </div>
+    <div class="module-card reveal reveal-delay-1">
+      <p class="module-tag">Module 05</p>
+      <h3 class="module-title">CRM clients et artisans</h3>
+      <p class="module-desc">Tes contacts centralisés : clients, fournisseurs, artisans. Historique des projets, coordonnées, notes de suivi. Ton carnet d'adresses devient un vrai outil de pilotage.</p>
+      <p class="module-benefit">Ton réseau, enfin exploitable</p>
+    </div>
+    <div class="module-card reveal reveal-delay-2">
+      <p class="module-tag">Module 06</p>
+      <h3 class="module-title">Suivi budget et devis</h3>
+      <p class="module-desc">Budget initial, devis fournisseurs, dépenses réelles. Tu vois en un coup d'œil si le projet est dans l'enveloppe — et tu anticipes avant que ça déborde.</p>
+      <p class="module-benefit">Maîtrise totale du budget</p>
+    </div>
+  </div>
+</section>
+
+<!-- PACKS -->
+<section class="packs-section" id="offres">
+  <div class="section-header">
+    <p class="section-eyebrow reveal">L'offre</p>
+    <h2 class="section-title reveal reveal-delay-1">Deux niveaux,<br><em>un système sur mesure.</em></h2>
+  </div>
+  <p style="font-size:0.83rem;color:#6B6560;max-width:500px;line-height:1.9;" class="reveal reveal-delay-2">Dans les deux cas, je construis ton Cockpit à partir de ton activité réelle. Pas un template. Un système pensé pour toi, livré et expliqué.</p>
+
+  <div class="packs-grid">
+    <div class="pack-card reveal">
+      <p class="pack-tag">Cockpit 01</p>
+      <h3 class="pack-title">Essentiel</h3>
+      <p class="pack-price">690€</p>
+      <p class="pack-price-sub">Livraison en environ 1 semaine</p>
+      <div class="pack-divider"></div>
+      <ul class="pack-features">
+        <li class="pack-feature">Suivi de chantier par phase</li>
+        <li class="pack-feature">Shopping list par pièce et poste</li>
+        <li class="pack-feature">Dashboard ROI (facturé vs temps vs dépenses)</li>
+        <li class="pack-feature">Portail client en accès lecture</li>
+        <li class="pack-feature">CRM clients et artisans</li>
+        <li class="pack-feature">Suivi budget et devis fournisseurs</li>
+        <li class="pack-feature">1 vidéo tuto personnalisée</li>
+        <li class="pack-feature">30 jours de support ajustements</li>
+      </ul>
+      <a href="https://calendar.app.google/6ozvY6Bq2rzY5D4G8" target="_blank" class="pack-cta">Je démarre</a>
+    </div>
+    <div class="pack-card featured reveal reveal-delay-1">
+      <div class="pack-badge">Le plus choisi</div>
+      <p class="pack-tag">Cockpit 02</p>
+      <h3 class="pack-title">Automatisé</h3>
+      <p class="pack-price">1 190€</p>
+      <p class="pack-price-sub">Livraison en 2 à 3 semaines</p>
+      <div class="pack-divider"></div>
+      <ul class="pack-features">
+        <li class="pack-feature highlight">Tout le Cockpit Essentiel inclus</li>
+        <li class="pack-feature highlight">Alerte automatique si tâche ou phase en retard</li>
+        <li class="pack-feature highlight">Onboarding client automatisé dès la signature</li>
+        <li class="pack-feature highlight">Rapport de fin de projet généré automatiquement</li>
+        <li class="pack-feature highlight">Agent IA brief client (questions → specs projet)</li>
+        <li class="pack-feature highlight">Agent IA shopping list (ambiance → suggestions)</li>
+        <li class="pack-feature">2 vidéos tuto personnalisées</li>
+        <li class="pack-feature">30 jours de support ajustements</li>
+      </ul>
+      <a href="https://calendar.app.google/6ozvY6Bq2rzY5D4G8" target="_blank" class="pack-cta">Je veux ce pack</a>
+    </div>
+  </div>
+  <p class="packs-note reveal">Pas encore décidée ? Le call découverte est gratuit et sans engagement — on voit ensemble ce qui te correspond.</p>
+</section>
+
+<!-- HOW -->
+<section class="how-section" id="methode">
+  <div class="how-grid">
+    <div>
+      <p class="section-eyebrow reveal">Comment ça se passe</p>
+      <h2 class="section-title reveal reveal-delay-1">Simple. Rapide.<br><em>Livré, pas expliqué.</em></h2>
+      <div class="how-steps">
+        <div class="how-step reveal">
+          <div class="step-num">01</div>
+          <div><h3 class="step-title">Call découverte (30 min)</h3><p class="step-text">On fait le point sur ton activité, tes projets en cours, tes habitudes. Je comprends ton fonctionnement pour construire un système qui te ressemble — pas un système générique.</p></div>
+        </div>
+        <div class="how-step reveal reveal-delay-1">
+          <div class="step-num">02</div>
+          <div><h3 class="step-title">Je construis ton Cockpit</h3><p class="step-text">Je m'occupe de tout. En 1 à 3 semaines selon l'offre choisie, ton système est monté, configuré et testé. Tu ne fais rien.</p></div>
+        </div>
+        <div class="how-step reveal reveal-delay-2">
+          <div class="step-num">03</div>
+          <div><h3 class="step-title">Livraison et prise en main</h3><p class="step-text">Je te remets ton Cockpit avec une vidéo tuto personnalisée sur ton système à toi. Tu repartes autonome — même si tu n'as jamais ouvert Notion.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal reveal-delay-2">
+      <div class="how-visual">
+        <p class="visual-label">Pourquoi Cockpit et pas un template ?</p>
+        <h3 class="visual-tagline"><em>Un système qui épouse</em><br>ta façon de travailler.</h3>
+        <div class="visual-divider"></div>
+        <p class="visual-quote">« Passion pour le sujet et une vraie capacité à le rendre accessible. J'ai pu m'en emparer immédiatement dans mon activité. »</p>
+        <p class="visual-author">Alex Roman · Architecte d'intérieur</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONY -->
+<section class="testimony-section" id="temoignages">
+  <div class="section-header">
+    <p class="section-eyebrow reveal">Ce qu'elles en disent</p>
+    <h2 class="section-title reveal reveal-delay-1">Des résultats <em>concrets,</em><br>pas des promesses.</h2>
+  </div>
+  <div class="testimony-grid">
+    <div class="testimony-card reveal">
+      <p class="testimony-quote">« Passion pour le sujet et une vraie capacité à le rendre accessible. J'ai pu m'en emparer immédiatement dans mon activité. »</p>
+      <div class="testimony-divider"></div>
+      <p class="testimony-author">Alex Roman</p>
+      <p class="testimony-role">Architecte d'intérieur</p>
+    </div>
+    <div class="testimony-placeholder reveal reveal-delay-1">
+      <p>D'autres témoignages arrivent bientôt.<br><br>Tu es architecte d'intérieur et tu veux partager ton expérience ?<br><a href="mailto:solen@flow-studio.app" style="color:var(--noir);font-size:0.72rem;letter-spacing:0.08em;text-decoration:none;border-bottom:1px solid rgba(181,173,165,0.5);">solen@flow-studio.app</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="section-header">
+    <p class="section-eyebrow reveal">Questions fréquentes</p>
+    <h2 class="section-title reveal reveal-delay-1">Tout ce que tu veux <em>savoir.</em></h2>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-question">Je ne sais pas utiliser Notion. C'est un problème ?<span class="faq-icon">+</span></div>
+      <div class="faq-answer">Pas du tout. Je construis le système pour toi, et je te livre une vidéo tuto personnalisée — pas un tutoriel YouTube générique, mais une vidéo sur ton Cockpit à toi, avec tes projets. En général, mes clientes sont autonomes en moins d'une heure.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">J'ai déjà un système qui fonctionne à peu près.<span class="faq-icon">+</span></div>
+      <div class="faq-answer">À peu près, c'est souvent beaucoup d'énergie dépensée pour un résultat imparfait. Le call découverte est là pour voir si Cockpit t'apporte vraiment quelque chose de plus. Si ce n'est pas le cas, je te le dis franchement — sans te faire perdre ton temps.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Est-ce que ça remplace mon logiciel de facturation ?<span class="faq-icon">+</span></div>
+      <div class="faq-answer">Non, et c'est voulu. Cockpit pilote tes projets et ton activité. Pour la facturation légale, je recommande un outil dédié (Freepaper, Pennylane). Les deux se complètent — chacun fait ce qu'il fait bien.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Combien de temps ça prend à prendre en main ?<span class="faq-icon">+</span></div>
+      <div class="faq-answer">Le système est conçu pour s'intégrer dans ta façon de travailler, pas l'inverse. La plupart de mes clientes l'utilisent dès le premier jour. Et tu as 30 jours de support après livraison pour les ajustements.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Puis-je payer en plusieurs fois ?<span class="faq-icon">+</span></div>
+      <div class="faq-answer">Oui. Un paiement en 2 fois est disponible sur demande. On en parle lors de l'appel découverte selon ta situation.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <p class="cta-eyebrow reveal">Et maintenant ?</p>
+  <h2 class="cta-title reveal reveal-delay-1">Arrête de gérer<br><em>ton business à vue.</em></h2>
+  <p class="cta-subtitle reveal reveal-delay-2">30 minutes pour identifier ton besoin, comprendre ton activité et définir le Cockpit qui te correspond. Gratuit, sans engagement.</p>
+  <a href="https://calendar.app.google/6ozvY6Bq2rzY5D4G8" target="_blank" class="cta-btn reveal reveal-delay-3">Réserver mon call découverte</a>
+  <p class="cta-note reveal reveal-delay-3">solen@flow-studio.app · flow-studio.app</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-logo">Flow Studio · Cockpit</div>
+    <div class="footer-tagline">Systèmes Notion sur mesure pour architectes d'intérieur</div>
+  </div>
+  <div class="footer-links">
+    <a href="#modules">Le système</a>
+    <a href="#offres">Offres</a>
+    <a href="#methode">Méthode</a>
+    <a href="#faq">FAQ</a>
+    <a href="https://flow-studio.app">Flow Studio</a>
+    <a href="mailto:solen@flow-studio.app">Contact</a>
+  </div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.07 });
+  reveals.forEach(r => observer.observe(r));
+  setTimeout(() => { document.querySelectorAll('.hero .reveal').forEach(r => r.classList.add('visible')); }, 80);
+
+  document.querySelectorAll('.faq-question').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+
+  function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+  window.addEventListener('scroll', () => { document.getElementById('mobileMenu').classList.remove('open'); });
+</script>
+</body>
+</html>
