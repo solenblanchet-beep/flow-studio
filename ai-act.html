@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Act — Ce que les TPE/PME doivent savoir | Flow Studio</title>
+<meta name="description" content="L'AI Act en clair, sans jargon. Checklist gratuite pour savoir si vos usages IA sont conformes — à télécharger.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --noir: #0F0F0F; --beige: #EAE6E1; --blanc: #F7F5F2;
+    --taupe: #B5ADA5; --terracotta: #BA7F75;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'Inter', sans-serif;
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--blanc); color: var(--noir); font-family: var(--font-body); font-weight: 300; line-height: 1.7; overflow-x: hidden; }
+
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.4rem 4rem; background: rgba(247,245,242,0.94); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(181,173,165,0.2); }
+  .nav-logo { font-family: var(--font-display); font-size: 1.1rem; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 400; color: var(--noir); text-decoration: none; }
+  .nav-logo span { font-size: 0.55rem; letter-spacing: 0.4em; display: block; text-align: center; margin-top: -2px; color: var(--taupe); }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--noir); text-decoration: none; transition: color 0.3s; }
+  .nav-links a:hover { color: var(--taupe); }
+  .nav-cta { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 0.65rem 1.5rem; border: 1px solid var(--noir); color: var(--noir); text-decoration: none; transition: all 0.3s; }
+  .nav-cta:hover { background: var(--noir); color: var(--blanc); }
+  .nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+  .nav-hamburger span { display: block; width: 22px; height: 1.5px; background: var(--noir); transition: all 0.3s; }
+  .mobile-menu { display: none; position: fixed; top: 76px; left: 0; right: 0; background: var(--blanc); border-bottom: 1px solid rgba(181,173,165,0.3); padding: 1.5rem; z-index: 99; flex-direction: column; gap: 0; }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--noir); text-decoration: none; padding: 0.9rem 0; border-bottom: 1px solid rgba(181,173,165,0.2); }
+  .mobile-menu .mobile-cta { background: var(--noir); color: var(--blanc); text-align: center; padding: 1rem; border: none; margin-top: 1rem; }
+
+  /* HERO */
+  .page-hero { padding: 9rem 6rem 5rem; max-width: 860px; }
+  .hero-eyebrow { font-size: 0.62rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem; }
+  .hero-eyebrow::before { content: ''; width: 1.8rem; height: 1px; background: var(--taupe); }
+  .hero-badge { display: inline-block; font-size: 0.58rem; letter-spacing: 0.18em; text-transform: uppercase; background: var(--beige); color: var(--taupe); padding: 0.35rem 0.9rem; border: 1px solid rgba(181,173,165,0.5); margin-bottom: 1.5rem; }
+  .hero-title { font-family: var(--font-display); font-size: clamp(2.2rem, 4vw, 3.6rem); font-weight: 400; line-height: 1.1; margin-bottom: 1.5rem; }
+  .hero-title em { font-style: italic; color: var(--taupe); }
+  .hero-subtitle { font-size: 0.92rem; color: #6B6560; line-height: 1.9; max-width: 600px; margin-bottom: 2.5rem; }
+  .hero-dates { display: flex; gap: 2.5rem; padding: 1.5rem 0; border-top: 1px solid rgba(181,173,165,0.4); border-bottom: 1px solid rgba(181,173,165,0.4); margin-bottom: 3rem; }
+  .date-label { font-size: 0.58rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--taupe); margin-bottom: 0.3rem; }
+  .date-value { font-family: var(--font-display); font-size: 0.95rem; }
+
+  /* CONTENT */
+  .content-section { padding: 0 6rem 5rem; max-width: 860px; }
+  .section-block { margin-bottom: 4rem; }
+  .block-num { font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--taupe); margin-bottom: 0.8rem; }
+  .block-title { font-family: var(--font-display); font-size: 1.5rem; font-weight: 400; margin-bottom: 1rem; }
+  .block-text { font-size: 0.85rem; color: #6B6560; line-height: 1.9; margin-bottom: 1rem; }
+  .block-divider { height: 1px; background: rgba(181,173,165,0.4); margin: 3rem 0; }
+
+  /* RISK TABLE */
+  .risk-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+  .risk-table th { background: var(--noir); color: var(--blanc); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.9rem 1rem; text-align: left; font-weight: 400; }
+  .risk-table td { font-size: 0.8rem; padding: 0.9rem 1rem; border-bottom: 1px solid rgba(181,173,165,0.3); vertical-align: top; line-height: 1.6; }
+  .risk-table tr:nth-child(odd) td { background: var(--blanc); }
+  .risk-table tr:nth-child(even) td { background: var(--beige); }
+  .risk-table tr:last-child td { background: #FFF0EE; }
+  .risk-badge { display: inline-block; font-size: 0.55rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.2rem 0.6rem; border: 1px solid; margin-bottom: 4px; }
+  .risk-badge.minimal { color: #4A7C59; border-color: #4A7C59; background: #F0F8F3; }
+  .risk-badge.limite { color: #856404; border-color: #856404; background: #FFF8E6; }
+  .risk-badge.eleve { color: #CC6200; border-color: #CC6200; background: #FFF4EE; }
+  .risk-badge.interdit { color: #C0392B; border-color: #C0392B; background: #FFF0EE; }
+
+  /* DOWNLOAD */
+  .download-section { background: var(--noir); padding: 5rem 6rem; }
+  .download-inner { max-width: 700px; margin: 0 auto; text-align: center; }
+  .download-eyebrow { font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1.5rem; }
+  .download-title { font-family: var(--font-display); font-size: clamp(1.8rem, 3vw, 2.8rem); color: var(--blanc); line-height: 1.15; margin-bottom: 1rem; }
+  .download-title em { font-style: italic; color: var(--taupe); }
+  .download-subtitle { font-size: 0.85rem; color: rgba(255,255,255,0.45); margin-bottom: 2.5rem; line-height: 1.8; max-width: 480px; margin-left: auto; margin-right: auto; }
+  .download-form { display: flex; flex-direction: column; gap: 1rem; max-width: 440px; margin: 0 auto; }
+  .form-row { display: flex; gap: 0.8rem; }
+  .form-input { flex: 1; padding: 0.9rem 1.2rem; background: rgba(255,255,255,0.08); border: 1px solid rgba(181,173,165,0.3); color: var(--blanc); font-family: var(--font-body); font-size: 0.8rem; font-weight: 300; outline: none; transition: border 0.3s; }
+  .form-input::placeholder { color: rgba(255,255,255,0.3); }
+  .form-input:focus { border-color: var(--taupe); }
+  .form-btn { padding: 0.9rem 2rem; background: var(--blanc); color: var(--noir); font-family: var(--font-body); font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; border: 1px solid var(--blanc); cursor: pointer; transition: all 0.3s; }
+  .form-btn:hover { background: transparent; color: var(--blanc); }
+  .form-note { font-size: 0.65rem; color: rgba(255,255,255,0.25); }
+  .download-success { display: none; text-align: center; padding: 1.5rem; }
+  .download-success p { color: var(--blanc); font-size: 0.85rem; margin-bottom: 1.2rem; }
+  .download-link { display: inline-block; font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 1rem 2rem; border: 1px solid var(--blanc); color: var(--blanc); text-decoration: none; transition: all 0.3s; }
+  .download-link:hover { background: var(--blanc); color: var(--noir); }
+
+  /* CTA */
+  .cta-section { padding: 6rem; background: var(--beige); }
+  .cta-inner { max-width: 700px; }
+  .cta-eyebrow { font-size: 0.62rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1.2rem; display: flex; align-items: center; gap: 1rem; }
+  .cta-eyebrow::before { content: ''; width: 1.8rem; height: 1px; background: var(--taupe); }
+  .cta-title { font-family: var(--font-display); font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 400; line-height: 1.2; margin-bottom: 1rem; }
+  .cta-title em { font-style: italic; color: var(--taupe); }
+  .cta-text { font-size: 0.85rem; color: #6B6560; line-height: 1.9; margin-bottom: 2rem; max-width: 520px; }
+  .cta-btn { display: inline-block; font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 1rem 2.2rem; background: var(--noir); color: var(--blanc); text-decoration: none; border: 1px solid var(--noir); transition: all 0.3s; }
+  .cta-btn:hover { background: transparent; color: var(--noir); }
+
+  /* FOOTER */
+  footer { background: var(--blanc); padding: 2.5rem 6rem; border-top: 1px solid rgba(181,173,165,0.3); display: flex; justify-content: space-between; align-items: center; }
+  .footer-logo { font-family: var(--font-display); font-size: 0.95rem; letter-spacing: 0.2em; text-transform: uppercase; }
+  .footer-tagline { font-size: 0.65rem; color: var(--taupe); margin-top: 0.2rem; }
+  .footer-links { display: flex; gap: 2rem; }
+  .footer-links a { font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; color: #8A857F; text-decoration: none; transition: color 0.3s; }
+  .footer-links a:hover { color: var(--noir); }
+
+  /* REVEAL */
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+
+  /* RESPONSIVE */
+  @media (max-width: 960px) {
+    nav { padding: 1.2rem 1.5rem; }
+    .nav-links { display: none; }
+    .nav-cta { display: none; }
+    .nav-hamburger { display: flex; }
+    .page-hero, .content-section { padding-left: 1.5rem; padding-right: 1.5rem; }
+    .page-hero { padding-top: 7rem; }
+    .download-section, .cta-section { padding: 4rem 1.5rem; }
+    .hero-dates { flex-wrap: wrap; gap: 1.5rem; }
+    .form-row { flex-direction: column; }
+    footer { padding: 2rem 1.5rem; flex-direction: column; gap: 1.2rem; text-align: center; }
+    .footer-links { flex-wrap: wrap; justify-content: center; gap: 1rem; }
+  }
+  @media (max-width: 480px) {
+    nav { padding: 1rem 1.2rem; }
+    .page-hero { padding-top: 5.5rem; padding-left: 1.2rem; padding-right: 1.2rem; }
+    .content-section { padding-left: 1.2rem; padding-right: 1.2rem; }
+    .risk-table { font-size: 0.72rem; }
+    .risk-table th, .risk-table td { padding: 0.6rem 0.5rem; }
+    .cta-section { padding: 4rem 1.2rem; }
+    footer { padding: 1.8rem 1.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">FLOW<span>STUDIO</span></a>
+  <ul class="nav-links">
+    <li><a href="/#systemes">Systèmes</a></li>
+    <li><a href="/#packs">Packs</a></li>
+    <li><a href="/notion">Notion</a></li>
+    <li><a href="/ia">IA</a></li>
+    <li><a href="/solen-ouahioune">À propos</a></li>
+    <li><a href="/contact">Contact</a></li>
+  </ul>
+  <a href="https://calendar.app.google/x3LrzMWr5spjaSn56" target="_blank" class="nav-cta">Appel découverte</a>
+  <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/#systemes" onclick="toggleMenu()">Systèmes</a>
+  <a href="/#packs" onclick="toggleMenu()">Packs</a>
+  <a href="/notion" onclick="toggleMenu()">Notion</a>
+  <a href="/ia" onclick="toggleMenu()">IA</a>
+  <a href="/solen-ouahioune" onclick="toggleMenu()">À propos</a>
+  <a href="/contact" onclick="toggleMenu()">Contact</a>
+  <a href="https://calendar.app.google/x3LrzMWr5spjaSn56" target="_blank" class="mobile-cta">Appel découverte gratuit</a>
+</div>
+
+<!-- HERO -->
+<section class="page-hero">
+  <p class="hero-eyebrow reveal">Ressource gratuite</p>
+  <div class="hero-badge reveal">AI Act — Règlement européen sur l'IA</div>
+  <h1 class="hero-title reveal reveal-delay-1">
+    Ce que votre entreprise<br>
+    doit savoir sur <em>l'AI Act.</em>
+  </h1>
+  <p class="hero-subtitle reveal reveal-delay-1">
+    En vigueur depuis août 2024, l'AI Act est le premier cadre réglementaire européen sur l'intelligence artificielle. Sans jargon juridique, voici ce que ça change concrètement pour les TPE/PME françaises.
+  </p>
+  <div class="hero-dates reveal reveal-delay-2">
+    <div class="date-item">
+      <p class="date-label">Entrée en vigueur</p>
+      <p class="date-value">Août 2024</p>
+    </div>
+    <div class="date-item">
+      <p class="date-label">Interdictions actives</p>
+      <p class="date-value">Février 2025</p>
+    </div>
+    <div class="date-item">
+      <p class="date-label">Systèmes à haut risque</p>
+      <p class="date-value">Août 2026</p>
+    </div>
+    <div class="date-item">
+      <p class="date-label">Application complète</p>
+      <p class="date-value">Août 2027</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<section class="content-section">
+
+  <div class="section-block reveal">
+    <p class="block-num">01 — C'est quoi</p>
+    <h2 class="block-title">L'AI Act en deux minutes</h2>
+    <p class="block-text">L'AI Act (Règlement UE 2024/1689) est la première loi au monde qui encadre spécifiquement l'intelligence artificielle. Son principe central : classer les usages IA par niveau de risque, et adapter les obligations en conséquence.</p>
+    <p class="block-text">La bonne nouvelle pour les TPE/PME : <strong>la grande majorité des usages courants (ChatGPT, outils de productivité, génération de contenu, Notion AI, automatisations) relèvent du risque minimal</strong>, avec peu ou pas d'obligations spécifiques. L'AI Act cible en priorité les usages à fort impact : recrutement automatisé, scoring de crédit, IA médicale, systèmes de surveillance.</p>
+    <p class="block-text">En revanche, si vous utilisez des outils IA en contact avec des clients ou des salariés, quelques règles s'appliquent dès maintenant — notamment sur la transparence.</p>
+  </div>
+
+  <div class="block-divider"></div>
+
+  <div class="section-block reveal">
+    <p class="block-num">02 — Les niveaux de risque</p>
+    <h2 class="block-title">Où se situe votre entreprise ?</h2>
+    <p class="block-text">L'AI Act classe les usages IA en quatre niveaux. Voici comment se positionnent les cas concrets en TPE/PME :</p>
+    <table class="risk-table">
+      <thead>
+        <tr>
+          <th>Niveau</th>
+          <th>Exemples en TPE/PME</th>
+          <th>Ce que ça implique</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="risk-badge minimal">Risque minimal</span><br><small style="color:#6B6560;font-size:0.72rem;">La majorité des cas</small></td>
+          <td>ChatGPT, Notion AI, rédaction, traduction, organisation, contenu, automatisations Make/Zapier</td>
+          <td>Aucune obligation spécifique. Bonnes pratiques recommandées.</td>
+        </tr>
+        <tr>
+          <td><span class="risk-badge limite">Risque limité</span></td>
+          <td>Chatbots clients, agents IA visibles par des tiers, personnalisation marketing</td>
+          <td>Informer les utilisateurs qu'ils interagissent avec une IA. Mention obligatoire.</td>
+        </tr>
+        <tr>
+          <td><span class="risk-badge eleve">Risque élevé</span></td>
+          <td>IA de recrutement, scoring de crédit, évaluation de solvabilité, IA médicale ou juridique</td>
+          <td>Obligations strictes : documentation, audit, conformité. Consultez un·e avocat·e.</td>
+        </tr>
+        <tr>
+          <td><span class="risk-badge interdit">Interdit</span></td>
+          <td>Reconnaissance faciale en temps réel dans l'espace public, manipulation comportementale, notation sociale</td>
+          <td>Strictement interdit. Sanctions jusqu'à 35M€ ou 7% du CA mondial.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="block-divider"></div>
+
+  <div class="section-block reveal">
+    <p class="block-num">03 — Ce qui s'applique dès maintenant</p>
+    <h2 class="block-title">Les 3 règles qui concernent déjà votre entreprise</h2>
+    <p class="block-text"><strong>1. La transparence envers vos utilisateurs.</strong> Si vous utilisez un chatbot ou un agent IA pour répondre à vos clients, vous devez les informer qu'ils interagissent avec une IA. Une mention simple suffit — mais elle est obligatoire depuis février 2025.</p>
+    <p class="block-text"><strong>2. La protection des données dans vos usages IA.</strong> L'AI Act s'applique en complément du RGPD. Si vos outils IA traitent des données personnelles (noms, emails, données RH, données clients), les deux réglementations s'appliquent. Évitez de copier des données sensibles dans les interfaces IA publiques sans précaution.</p>
+    <p class="block-text"><strong>3. La traçabilité de vos usages.</strong> Savoir quels outils IA vous utilisez, à quoi ils servent et qui y a accès dans votre équipe est une bonne pratique qui deviendra obligatoire pour les usages à risque élevé. Autant commencer maintenant.</p>
+  </div>
+
+  <div class="block-divider"></div>
+
+  <div class="section-block reveal">
+    <p class="block-num">04 — La question des données</p>
+    <h2 class="block-title">Vos données sont-elles en sécurité ?</h2>
+    <p class="block-text"><strong>ChatGPT et les outils publics :</strong> par défaut, vos conversations peuvent être utilisées pour entraîner les modèles. Activez l'option "Ne pas utiliser pour l'entraînement" dans les paramètres, ou utilisez la version Business/Enterprise.</p>
+    <p class="block-text"><strong>Notion AI :</strong> les données restent dans votre espace Notion. Vérifiez les paramètres de confidentialité de votre plan.</p>
+    <p class="block-text"><strong>Automatisations Make/Zapier :</strong> les données transitent par leurs serveurs. Vérifiez où elles sont stockées (UE ou hors UE) et ce que disent leurs CGU.</p>
+    <p class="block-text"><strong>La règle de bon sens :</strong> ne copiez jamais de données personnelles sensibles (dossiers RH, données médicales, informations bancaires) dans une interface IA publique sans garanties contractuelles claires.</p>
+  </div>
+
+</section>
+
+<!-- DOWNLOAD -->
+<section class="download-section" id="checklist">
+  <div class="download-inner">
+    <p class="download-eyebrow reveal">Ressource gratuite</p>
+    <h2 class="download-title reveal reveal-delay-1">La checklist AI Act<br><em>pour votre TPE/PME.</em></h2>
+    <p class="download-subtitle reveal reveal-delay-1">20 points de contrôle pour savoir où vous en êtes — et ce que vous devez faire. En langage clair, sans jargon juridique.</p>
+    <div class="download-form reveal reveal-delay-2" id="downloadForm">
+      <div class="form-row">
+        <input type="text" class="form-input" id="firstName" placeholder="Prénom" required>
+        <input type="email" class="form-input" id="emailInput" placeholder="Email professionnel" required>
+      </div>
+      <button class="form-btn" onclick="handleDownload()">Télécharger la checklist gratuite →</button>
+      <p class="form-note">Pas de spam. Votre PDF disponible immédiatement.</p>
+    </div>
+    <div class="download-success" id="downloadSuccess">
+      <p>Merci ! Votre checklist est prête.</p>
+      <a href="/ai-act-checklist.pdf" download="checklist-ai-act-flow-studio.pdf" class="download-link">Télécharger le PDF →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <p class="cta-eyebrow reveal">Vous avez des questions ?</p>
+    <h2 class="cta-title reveal reveal-delay-1">Votre système IA n'est pas<br>encore <em>structuré ?</em></h2>
+    <p class="cta-text reveal reveal-delay-1">Flow Studio construit votre infrastructure Notion + IA clé en main — avec des pratiques responsables intégrées dès la conception. Je construis. Je vous explique. Vous pilotez.</p>
+    <a href="https://calendar.app.google/x3LrzMWr5spjaSn56" target="_blank" class="cta-btn reveal reveal-delay-2">Réserver un appel découverte gratuit</a>
+  </div>
+</section>
+
+<footer>
+  <div>
+    <div class="footer-logo">Flow Studio</div>
+    <div class="footer-tagline">Création de systèmes IA & Notion</div>
+  </div>
+  <div class="footer-links">
+    <a href="/">Accueil</a>
+    <a href="/notion">Notion</a>
+    <a href="/ia">IA</a>
+    <a href="/solen-ouahioune">À propos</a>
+    <a href="/contact">Contact</a>
+    <a href="/mentions-legales">Mentions légales</a>
+  </div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.07 });
+  reveals.forEach(r => observer.observe(r));
+  setTimeout(() => { document.querySelectorAll('.page-hero .reveal').forEach(r => r.classList.add('visible')); }, 80);
+  function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+  window.addEventListener('scroll', () => { document.getElementById('mobileMenu').classList.remove('open'); });
+  function handleDownload() {
+    const email = document.getElementById('emailInput').value;
+    const firstName = document.getElementById('firstName').value;
+    if (!email || !firstName) { alert('Merci de renseigner votre prénom et votre email.'); return; }
+    if (!email.includes('@')) { alert('Merci de renseigner un email valide.'); return; }
+    document.getElementById('downloadForm').style.display = 'none';
+    document.getElementById('downloadSuccess').style.display = 'block';
+  }
+</script>
+</body>
+</html>
