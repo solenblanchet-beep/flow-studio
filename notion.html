@@ -282,6 +282,23 @@
     .footer-links { gap: 0.8rem; }
     .footer-links a { font-size: 0.58rem; }
   }
+
+  /* COOKIE BANNER */
+  .cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; z-index: 999; background: var(--noir); padding: 1.2rem 4rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; transform: translateY(100%); transition: transform 0.4s ease; }
+  .cookie-banner.visible { transform: translateY(0); }
+  .cookie-text { font-size: 0.72rem; color: rgba(255,255,255,0.6); line-height: 1.6; max-width: 600px; }
+  .cookie-text a { color: var(--taupe); text-decoration: underline; }
+  .cookie-actions { display: flex; gap: 0.8rem; flex-shrink: 0; }
+  .cookie-btn { font-size: 0.58rem; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.7rem 1.4rem; cursor: pointer; border: none; font-family: var(--font-body); transition: all 0.3s; white-space: nowrap; }
+  .cookie-btn.accept { background: var(--blanc); color: var(--noir); }
+  .cookie-btn.accept:hover { background: var(--beige); }
+  .cookie-btn.refuse { background: transparent; color: rgba(255,255,255,0.5); border: 1px solid rgba(255,255,255,0.2); }
+  .cookie-btn.refuse:hover { color: var(--blanc); border-color: rgba(255,255,255,0.5); }
+  @media (max-width: 768px) {
+    .cookie-banner { padding: 1.2rem 1.5rem; flex-direction: column; align-items: flex-start; gap: 1rem; }
+    .cookie-actions { width: 100%; }
+    .cookie-btn { flex: 1; text-align: center; }
+  }
 </style>
 </head>
 <body>
@@ -646,5 +663,35 @@
 </script>
 
 
-<script async id="netlify-rum-container" src="/.netlify/scripts/rum" data-netlify-rum-site-id="b878db27-2b14-4394-a811-188bd9e98b07" data-netlify-deploy-branch="" data-netlify-deploy-context="production" data-netlify-cwv-token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaXRlX2lkIjoiYjg3OGRiMjctMmIxNC00Mzk0LWE4MTEtMTg4YmQ5ZTk4YjA3IiwiYWNjb3VudF9pZCI6IjY5YzY0YmU4NGNmZjk0YmNmYTZlYTZmZCIsImRlcGxveV9pZCI6IjY5YzdkYjZjMWY0NTNiZDYxNTkxODhkYSIsImlzc3VlciI6Im5mc2VydmVyIn0.SQpxCfcETnh60bTaPcToh8CwmU28yW_s3ljrp7r8BT0"></script></body>
+<script async id="netlify-rum-container" src="/.netlify/scripts/rum" data-netlify-rum-site-id="b878db27-2b14-4394-a811-188bd9e98b07" data-netlify-deploy-branch="" data-netlify-deploy-context="production" data-netlify-cwv-token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaXRlX2lkIjoiYjg3OGRiMjctMmIxNC00Mzk0LWE4MTEtMTg4YmQ5ZTk4YjA3IiwiYWNjb3VudF9pZCI6IjY5YzY0YmU4NGNmZjk0YmNmYTZlYTZmZCIsImRlcGxveV9pZCI6IjY5YzdkYjZjMWY0NTNiZDYxNTkxODhkYSIsImlzc3VlciI6Im5mc2VydmVyIn0.SQpxCfcETnh60bTaPcToh8CwmU28yW_s3ljrp7r8BT0">
+  // Cookie banner
+  (function() {
+    if (!localStorage.getItem('cookieConsent')) {
+      setTimeout(function() {
+        var b = document.getElementById('cookieBanner');
+        if (b) b.classList.add('visible');
+      }, 800);
+    }
+  })();
+  function acceptCookies() {
+    localStorage.setItem('cookieConsent', 'accepted');
+    document.getElementById('cookieBanner').classList.remove('visible');
+  }
+  function closeCookieBanner() {
+    localStorage.setItem('cookieConsent', 'closed');
+    document.getElementById('cookieBanner').classList.remove('visible');
+  }
+</script>
+<!-- COOKIE BANNER -->
+<div class="cookie-banner" id="cookieBanner">
+  <p class="cookie-text">
+    Ce site n'utilise pas de cookies publicitaires ni de traceurs. Les seuls cookies présents sont techniques et nécessaires au bon fonctionnement du site.
+    <a href="/mentions-legales">En savoir plus</a>
+  </p>
+  <div class="cookie-actions">
+    <button class="cookie-btn refuse" onclick="closeCookieBanner()">Fermer</button>
+    <button class="cookie-btn accept" onclick="acceptCookies()">J'ai compris</button>
+  </div>
+</div>
+</body>
 </html>
