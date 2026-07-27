@@ -344,11 +344,26 @@
   setTimeout(() => { document.querySelectorAll('.page-hero .reveal').forEach(r => r.classList.add('visible')); }, 80);
   function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
   window.addEventListener('scroll', () => { document.getElementById('mobileMenu').classList.remove('open'); });
-  function handleDownload() {
-    const email = document.getElementById('emailInput').value;
-    const firstName = document.getElementById('firstName').value;
+  async function handleDownload() {
+    const email = document.getElementById('emailInput').value.trim();
+    const firstName = document.getElementById('firstName').value.trim();
     if (!email || !firstName) { alert('Merci de renseigner votre prénom et votre email.'); return; }
     if (!email.includes('@')) { alert('Merci de renseigner un email valide.'); return; }
+
+    const btn = document.querySelector('.form-btn');
+    btn.textContent = 'Envoi en cours...';
+    btn.disabled = true;
+
+    try {
+      await fetch('/.netlify/functions/subscribe', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ email, firstName })
+      });
+    } catch(e) {
+      console.log('Brevo error:', e);
+    }
+
     document.getElementById('downloadForm').style.display = 'none';
     document.getElementById('downloadSuccess').style.display = 'block';
   }
