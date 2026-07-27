@@ -3,37 +3,370 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Réalisations, Flow Studio</title>
+<title>Réalisations & Témoignages — Flow Studio</title>
+<meta name="description" content="Découvrez les retours de clients qui ont fait appel à Flow Studio pour structurer leur business avec Notion, l'IA et les automatisations.">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root { --noir: #0F0F0F; --beige: #EAE6E1; --blanc: #F7F5F2; --taupe: #B5ADA5; --font-display: 'Playfair Display', Georgia, serif; --font-body: 'Inter', sans-serif; }
-  body { background: var(--blanc); color: var(--noir); font-family: var(--font-body); font-weight: 300; }
+  :root { --noir: #0F0F0F; --beige: #EAE6E1; --blanc: #F7F5F2; --taupe: #B5ADA5; --terracotta: #BA7F75; --font-display: 'Playfair Display', Georgia, serif; --font-body: 'Inter', sans-serif; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--blanc); color: var(--noir); font-family: var(--font-body); font-weight: 300; line-height: 1.7; overflow-x: hidden; }
+
+  /* NAV */
   nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.4rem 4rem; background: rgba(247,245,242,0.94); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(181,173,165,0.2); }
-  .nav-logo { font-family: var(--font-display); font-size: 1.1rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--noir); text-decoration: none; }
+  .nav-logo { font-family: var(--font-display); font-size: 1.1rem; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 400; color: var(--noir); text-decoration: none; }
   .nav-logo span { font-size: 0.55rem; letter-spacing: 0.4em; display: block; text-align: center; margin-top: -2px; color: var(--taupe); }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--noir); text-decoration: none; transition: color 0.3s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--taupe); }
+  .nav-dropdown { position: relative; }
+  .dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background: var(--blanc); border: 1px solid rgba(181,173,165,0.3); min-width: 240px; z-index: 200; padding: 0.5rem 0; box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+  .dropdown-menu li { list-style: none; }
+  .dropdown-menu a { display: block; padding: 0.7rem 1.2rem; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--noir); text-decoration: none; transition: background 0.2s; white-space: nowrap; }
+  .dropdown-menu a:hover { background: var(--beige); }
+  .nav-dropdown:hover .dropdown-menu { display: block; }
   .nav-cta { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 0.65rem 1.5rem; border: 1px solid var(--noir); color: var(--noir); text-decoration: none; transition: all 0.3s; }
   .nav-cta:hover { background: var(--noir); color: var(--blanc); }
-  .page { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 2rem; }
-  .eyebrow { font-size: 0.62rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1.5rem; }
-  .title { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 400; line-height: 1.1; margin-bottom: 1.5rem; }
-  .title em { font-style: italic; color: var(--taupe); }
-  .subtitle { font-size: 0.88rem; color: #6B6560; max-width: 440px; line-height: 1.9; margin-bottom: 2.5rem; }
-  .btn { display: inline-block; font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 1rem 2.2rem; background: var(--noir); color: var(--blanc); text-decoration: none; border: 1px solid var(--noir); transition: all 0.3s; }
-  .btn:hover { background: transparent; color: var(--noir); }
+  .nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+  .nav-hamburger span { display: block; width: 22px; height: 1.5px; background: var(--noir); }
+  .mobile-menu { display: none; position: fixed; top: 76px; left: 0; right: 0; background: var(--blanc); border-bottom: 1px solid rgba(181,173,165,0.3); padding: 1.5rem; z-index: 99; flex-direction: column; gap: 0; }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--noir); text-decoration: none; padding: 0.9rem 0; border-bottom: 1px solid rgba(181,173,165,0.2); }
+  .mobile-menu .mobile-cta { background: var(--noir); color: var(--blanc); text-align: center; padding: 1rem; border: none; margin-top: 1rem; }
+
+  /* HERO */
+  .page-hero { padding: 9rem 6rem 5rem; }
+  .hero-eyebrow { font-size: 0.62rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem; }
+  .hero-eyebrow::before { content: ''; width: 1.8rem; height: 1px; background: var(--taupe); }
+  .hero-title { font-family: var(--font-display); font-size: clamp(2.2rem, 4vw, 3.6rem); font-weight: 400; line-height: 1.1; margin-bottom: 1.5rem; }
+  .hero-title em { font-style: italic; color: var(--taupe); }
+  .hero-subtitle { font-size: 0.9rem; color: #6B6560; max-width: 600px; line-height: 1.9; }
+
+  /* STATS */
+  .stats-section { padding: 3rem 6rem 5rem; display: flex; gap: 0; border-top: 1px solid rgba(181,173,165,0.4); border-bottom: 1px solid rgba(181,173,165,0.4); }
+  .stat { flex: 1; padding: 2rem; border-right: 1px solid rgba(181,173,165,0.4); }
+  .stat:last-child { border-right: none; }
+  .stat-number { font-family: var(--font-display); font-size: 2.4rem; line-height: 1; margin-bottom: 0.4rem; }
+  .stat-label { font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--taupe); }
+
+  /* REALISATIONS */
+  .realisations-section { padding: 5rem 6rem; }
+  .section-eyebrow { font-size: 0.62rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1.2rem; display: flex; align-items: center; gap: 1rem; }
+  .section-eyebrow::before { content: ''; width: 1.8rem; height: 1px; background: var(--taupe); }
+  .section-title { font-family: var(--font-display); font-size: clamp(1.8rem, 2.8vw, 2.4rem); font-weight: 400; line-height: 1.2; margin-bottom: 3rem; }
+  .section-title em { font-style: italic; color: var(--taupe); }
+
+  /* REALISATION CARDS */
+  .realisation-featured { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: rgba(181,173,165,0.3); margin-bottom: 2px; }
+  .realisation-card { background: var(--blanc); padding: 3rem; }
+  .realisation-card.dark { background: var(--noir); }
+  .real-tag { font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1.2rem; }
+  .real-quote { font-family: var(--font-display); font-size: 1.1rem; font-style: italic; line-height: 1.7; color: var(--noir); margin-bottom: 1.5rem; }
+  .realisation-card.dark .real-quote { color: var(--blanc); }
+  .real-result { font-size: 0.8rem; color: #4A7C59; font-weight: 400; margin-bottom: 1.5rem; padding: 0.8rem 1rem; background: #F0F8F3; }
+  .realisation-card.dark .real-result { background: rgba(74,124,89,0.15); }
+  .real-divider { height: 1px; background: rgba(181,173,165,0.4); margin-bottom: 1.2rem; }
+  .realisation-card.dark .real-divider { background: rgba(255,255,255,0.1); }
+  .real-author { font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--taupe); }
+  .real-sector { font-size: 0.62rem; color: #8A857F; margin-top: 0.2rem; }
+  .real-stars { color: var(--taupe); font-size: 0.7rem; margin-bottom: 0.5rem; }
+
+  /* GRID SMALL */
+  .realisations-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: rgba(181,173,165,0.3); margin-bottom: 5rem; }
+  .realisation-small { background: var(--blanc); padding: 2.2rem; transition: background 0.3s; }
+  .realisation-small:hover { background: var(--beige); }
+  .small-quote { font-family: var(--font-display); font-style: italic; font-size: 0.95rem; line-height: 1.7; color: var(--noir); margin-bottom: 1.2rem; }
+  .small-divider { height: 1px; background: rgba(181,173,165,0.4); margin-bottom: 1rem; }
+  .small-author { font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--taupe); }
+  .small-tag { display: inline-block; font-size: 0.55rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.25rem 0.6rem; border: 1px solid rgba(181,173,165,0.5); color: var(--taupe); margin-top: 0.5rem; }
+
+  /* ENTREPRISE */
+  .entreprise-section { background: var(--beige); padding: 5rem 6rem; }
+  .entreprise-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: rgba(181,173,165,0.3); margin-top: 3rem; }
+  .entreprise-card { background: var(--blanc); padding: 2.5rem; }
+  .ent-score { font-family: var(--font-display); font-size: 2rem; color: var(--noir); margin-bottom: 0.3rem; }
+  .ent-label { font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1.2rem; }
+  .ent-quote { font-size: 0.82rem; color: #6B6560; line-height: 1.8; font-style: italic; margin-bottom: 1.2rem; }
+  .ent-author { font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--taupe); }
+
+  /* CTA */
+  .cta-section { padding: 7rem 6rem; text-align: center; }
+  .cta-eyebrow { font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1.5rem; }
+  .cta-title { font-family: var(--font-display); font-size: clamp(2rem, 3.5vw, 3rem); line-height: 1.15; margin-bottom: 1rem; }
+  .cta-title em { font-style: italic; color: var(--taupe); }
+  .cta-subtitle { font-size: 0.85rem; color: #6B6560; max-width: 440px; margin: 0 auto 2.5rem; line-height: 1.8; }
+  .cta-btn { display: inline-block; font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; padding: 1.2rem 2.8rem; background: var(--noir); color: var(--blanc); text-decoration: none; border: 1px solid var(--noir); transition: all 0.35s; }
+  .cta-btn:hover { background: transparent; color: var(--noir); }
+
+  /* BLOOM FOOTER BAR */
+  .bloom-footer-bar { background: var(--beige); padding: 1rem 6rem; text-align: center; border-top: 1px solid rgba(181,173,165,0.4); }
+  .bloom-footer-bar p { font-size: 0.78rem; color: #6B6560; }
+  .bloom-footer-bar a { color: var(--noir); font-weight: 400; text-decoration: underline; text-underline-offset: 3px; transition: color 0.3s; }
+  .bloom-footer-bar a:hover { color: var(--taupe); }
+
+  /* FOOTER */
+  footer { background: var(--blanc); padding: 2.5rem 6rem; border-top: 1px solid rgba(181,173,165,0.3); display: flex; justify-content: space-between; align-items: center; }
+  .footer-logo { font-family: var(--font-display); font-size: 0.95rem; letter-spacing: 0.2em; text-transform: uppercase; }
+  .footer-tagline { font-size: 0.65rem; color: var(--taupe); margin-top: 0.2rem; }
+  .footer-links { display: flex; gap: 2rem; }
+  .footer-links a { font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; color: #8A857F; text-decoration: none; transition: color 0.3s; }
+  .footer-links a:hover { color: var(--noir); }
+
+  /* REVEAL */
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+
+  /* RESPONSIVE */
+  @media (max-width: 960px) {
+    nav { padding: 1.2rem 1.5rem; }
+    .nav-links { display: none; }
+    .nav-cta { display: none; }
+    .nav-hamburger { display: flex; }
+    .page-hero, .stats-section, .realisations-section, .entreprise-section, .cta-section { padding-left: 1.5rem; padding-right: 1.5rem; }
+    .page-hero { padding-top: 7rem; }
+    .stats-section { flex-wrap: wrap; }
+    .stat { min-width: 50%; border-bottom: 1px solid rgba(181,173,165,0.4); }
+    .realisation-featured, .entreprise-grid { grid-template-columns: 1fr; }
+    .realisations-grid { grid-template-columns: 1fr; }
+    footer { padding: 2rem 1.5rem; flex-direction: column; gap: 1.2rem; text-align: center; }
+    .footer-links { flex-wrap: wrap; justify-content: center; gap: 1rem; }
+    .bloom-footer-bar { padding: 1rem 1.5rem; }
+  }
+  @media (max-width: 480px) {
+    nav { padding: 1rem 1.2rem; }
+    .page-hero { padding-top: 5.5rem; }
+    .stat { min-width: 100%; }
+    .realisation-card, .realisation-small, .entreprise-card { padding: 1.8rem 1.5rem; }
+    footer { padding: 1.8rem 1.2rem; }
+  }
 </style>
 </head>
 <body>
+
 <nav>
   <a href="/" class="nav-logo">FLOW<span>STUDIO</span></a>
+  <ul class="nav-links">
+    <li class="nav-dropdown">
+      <a href="#solutions">Solutions ▾</a>
+      <ul class="dropdown-menu">
+        <li><a href="/entrepreneurs">Entrepreneurs & petites équipes</a></li>
+        <li><a href="/pme">PME & organisations</a></li>
+      </ul>
+    </li>
+    <li><a href="/entrepreneurs">Entrepreneurs</a></li>
+    <li><a href="/pme">PME</a></li>
+    <li><a href="/realisations" class="active">Réalisations</a></li>
+    <li><a href="/solen-ouahioune">À propos</a></li>
+  </ul>
   <a href="https://calendar.app.google/x3LrzMWr5spjaSn56" target="_blank" class="nav-cta">Prendre rendez-vous</a>
+  <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
-<div class="page">
-  <p class="eyebrow">Réalisations</p>
-  <h1 class="title">Bientôt disponible.<br><em>En cours de construction.</em></h1>
-  <p class="subtitle">Les cas clients et réalisations Flow Studio arrivent prochainement. En attendant, parlons de votre projet.</p>
-  <a href="https://calendar.app.google/x3LrzMWr5spjaSn56" target="_blank" class="btn">Prendre rendez-vous</a>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/entrepreneurs" onclick="toggleMenu()">Entrepreneurs</a>
+  <a href="/pme" onclick="toggleMenu()">PME</a>
+  <a href="/realisations" onclick="toggleMenu()">Réalisations</a>
+  <a href="/solen-ouahioune" onclick="toggleMenu()">À propos</a>
+  <a href="https://calendar.app.google/x3LrzMWr5spjaSn56" target="_blank" class="mobile-cta" onclick="toggleMenu()">Prendre rendez-vous</a>
 </div>
+
+<!-- HERO -->
+<section class="page-hero">
+  <p class="hero-eyebrow reveal">Réalisations & Témoignages</p>
+  <h1 class="hero-title reveal reveal-delay-1">
+    Ce que ça change,<br>
+    <em>dans leurs mots.</em>
+  </h1>
+  <p class="hero-subtitle reveal reveal-delay-2">
+    Des systèmes construits pour des entrepreneur·es, des petites équipes et des PME. Voici ce qu'ils et elles en disent.
+  </p>
+</section>
+
+<!-- STATS -->
+<div class="stats-section reveal">
+  <div class="stat">
+    <div class="stat-number">100%</div>
+    <div class="stat-label">Taux d'adoption Notion (c3llar)</div>
+  </div>
+  <div class="stat">
+    <div class="stat-number">92/100</div>
+    <div class="stat-label">Satisfaction globale UCPA</div>
+  </div>
+  <div class="stat">
+    <div class="stat-number">5/5</div>
+    <div class="stat-label">Note sur 5 — Marion, Catherine, Isabelle</div>
+  </div>
+  <div class="stat">
+    <div class="stat-number">10+</div>
+    <div class="stat-label">Structures accompagnées</div>
+  </div>
+</div>
+
+<!-- RÉALISATIONS FEATURED -->
+<section class="realisations-section">
+  <p class="section-eyebrow reveal">Systèmes Notion & IA</p>
+  <h2 class="section-title reveal reveal-delay-1">Ce qui a changé <em>concrètement.</em></h2>
+
+  <div class="realisation-featured reveal">
+    <div class="realisation-card dark">
+      <p class="real-tag">Organisation Notion · Petite équipe</p>
+      <p class="real-quote">« Notre Notion était peu intuitif et ne répondait plus à nos besoins. Pas d'espace collaboratif, pas d'automation. C'était un empilement de pages qui vivaient en silo. Flow Studio nous a aidé à poser un cahier des charges et a rebooté toutes les pages pour créer les bonnes connexions entre les sujets et les collaborateurs. »</p>
+      <div class="real-result">Résultat : taux d'adoption du nouveau Notion de 100% chez les opérationnels qui avaient déserté l'outil auparavant.</div>
+      <div class="real-divider"></div>
+      <p class="real-author">c3llar Wine Society</p>
+      <p class="real-sector">Industrie du vin</p>
+    </div>
+    <div class="realisation-card">
+      <p class="real-tag">Organisation Notion · Réseau professionnel</p>
+      <p class="real-stars">★★★★★</p>
+      <p class="real-quote">« Avant nous perdions des informations et du temps, l'espace était un fourre-tout non optimisé. Nous avons gagné en clarté et en temps de façon considérable, en plus d'avoir une esthétique qui donne envie ! »</p>
+      <div class="real-result">Résultat : gain de temps considérable, clarté retrouvée.</div>
+      <div class="real-divider"></div>
+      <p class="real-author">Lev'Elle Up 78</p>
+      <p class="real-sector">Réseau professionnel féminin</p>
+    </div>
+  </div>
+
+  <!-- TÉMOIGNAGES FORMATION IA -->
+  <p class="section-eyebrow reveal" style="margin-top:4rem;">Formation IA</p>
+  <h2 class="section-title reveal reveal-delay-1">Ce qu'ils et elles <em>appliquent dès le lendemain.</em></h2>
+
+  <div class="realisations-grid reveal">
+    <div class="realisation-small">
+      <p class="small-quote">« Merci beaucoup. Ce n'est pas le 1er atelier auquel j'assiste et à chaque fois tu apportes du nouveau et de la profondeur. J'ai aimé ta pédagogie qui rend simple cet outil qu'est l'IA. Je vais appliquer dès 17h30 : l'aide à la prospection, j'ai un rendez-vous client ! »</p>
+      <div class="small-divider"></div>
+      <p class="small-author">Florence L.</p>
+      <span class="small-tag">IA concrète</span>
+    </div>
+    <div class="realisation-small">
+      <p class="small-quote">« J'étais convaincue qu'il faudrait soit m'épuiser à tout gérer seule, soit embaucher. Aujourd'hui, j'ai compris que ce n'était pas nécessaire : créer ma propre équipe de GPT me permet d'avancer sereinement tout en conservant mon CA. Une vraie révélation. »</p>
+      <div class="small-divider"></div>
+      <p class="small-author">Andréa, fleuriste</p>
+      <span class="small-tag">Sérénité</span>
+    </div>
+    <div class="realisation-small">
+      <p class="small-quote">« Ta passion pour le sujet et ta capacité à le rendre accessible. Le développement des agents avec ton concours : ça m'a ouvert un boulevard de possibilités ! »</p>
+      <div class="small-divider"></div>
+      <p class="small-author">Alex Roman, architecte d'intérieur</p>
+      <span class="small-tag">IA concrète</span>
+    </div>
+    <div class="realisation-small">
+      <p class="small-quote">« La théorie accompagnée de cas pratiques qui te mettent déjà dans l'action. Ce que je vais appliquer : me lancer dans une stratégie commerciale structurée. Super dynamisant ! »</p>
+      <div class="small-divider"></div>
+      <p class="small-author">Carol V.</p>
+      <span class="small-tag">Clarté & Structure</span>
+    </div>
+    <div class="realisation-small">
+      <p class="small-quote">« J'ai beaucoup apprécié la masterclass. L'alternance de théorie et d'exercices pratiques ont été très pédagogiques. »</p>
+      <div class="small-divider"></div>
+      <p class="small-author">Sophie B.</p>
+      <span class="small-tag">IA concrète</span>
+    </div>
+    <div class="realisation-small">
+      <p class="small-quote">« Notion sur mesure : pour la première fois, je me suis sentie vraiment à l'aise pour l'utiliser. Le côté pratique s'installe immédiatement. Si vous cherchez à maîtriser cet outil de manière concrète et efficace, l'approche de Solen fera toute la différence. »</p>
+      <div class="small-divider"></div>
+      <p class="small-author">Catherine H.</p>
+      <span class="small-tag">Organisation Notion</span>
+    </div>
+  </div>
+
+  <!-- FLOW STUDIO DIRECT -->
+  <p class="section-eyebrow reveal">Flow Studio</p>
+  <h2 class="section-title reveal reveal-delay-1">Des missions <em>clé en main.</em></h2>
+
+  <div class="realisation-featured reveal">
+    <div class="realisation-card">
+      <p class="real-tag">System Core · Flow Studio</p>
+      <p class="real-stars">★★★★★</p>
+      <p class="real-quote">« Que dire mis à part MERCI ! Rapidité, pédagogie, grand sens du service et en recherche de solution. Je recommande à 100%. »</p>
+      <div class="real-divider"></div>
+      <p class="real-author">Marion O.</p>
+    </div>
+    <div class="realisation-card" style="background:var(--beige);">
+      <p class="real-tag">Formation Notion · Individuel</p>
+      <p class="real-stars">★★★★★</p>
+      <p class="real-quote">« J'ai participé à une formation IA et j'ai vraiment apprécié. Solen partage ses compétences avec passion et fournit des informations très opérationnelles qui me font désormais gagner un temps précieux au quotidien. Je recommande vivement. »</p>
+      <div class="real-divider"></div>
+      <p class="real-author">Isabelle L.</p>
+      <p class="real-sector">Formation via Fuzzy</p>
+    </div>
+  </div>
+</section>
+
+<!-- ENTREPRISES -->
+<section class="entreprise-section">
+  <p class="section-eyebrow reveal">Formations en entreprise</p>
+  <h2 class="section-title reveal reveal-delay-1">Des équipes qui <em>passent à l'action.</em></h2>
+  <div class="entreprise-grid reveal">
+    <div class="entreprise-card">
+      <p class="ent-score">92/100</p>
+      <p class="ent-label">Satisfaction globale · UCPA Sport Vacances</p>
+      <p class="ent-quote">« Le plus : la pratique, les conseils adaptés à notre poste. »<br><br>Expertise formatrice : 100/100. Action prévue par les stagiaires : lister les tâches à faciliter grâce à l'IA.</p>
+      <p class="ent-author">UCPA Sport Vacances · via Cegos</p>
+    </div>
+    <div class="entreprise-card">
+      <p class="ent-score">97/100</p>
+      <p class="ent-label">Expertise formatrice · CMAR IDF</p>
+      <p class="ent-quote">« Consultante compétente qui a répondu à la plupart de nos questions même si notre activité est différente de ses clients habituels. Très à l'écoute et explications claires. »</p>
+      <p class="ent-author">CMAR IDF · Chambre de métiers · via Cegos</p>
+    </div>
+    <div class="entreprise-card">
+      <p class="ent-score">100/100</p>
+      <p class="ent-label">Expertise formatrice · Enorise SAS</p>
+      <p class="ent-quote">« Consultante très à l'écoute, avec une connaissance du sujet impressionnante. Bonne vision d'ensemble du panel d'outils IA. »<br><br>Actions prévues : aide à la rédaction d'emails, création d'un assistant personnalisé.</p>
+      <p class="ent-author">Enorise SAS · PME · via Cegos</p>
+    </div>
+    <div class="entreprise-card">
+      <p class="ent-score">100/100</p>
+      <p class="ent-label">Expertise formatrice · Session Paris mai 2026</p>
+      <p class="ent-quote">« J'ai beaucoup apprécié les connaissances et l'expertise de la formatrice. Des échanges très pertinents. »<br><br>Actions prévues : continuer à automatiser des process.</p>
+      <p class="ent-author">Session INTER Paris · via Cegos</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <p class="cta-eyebrow reveal">Et votre business ?</p>
+  <h2 class="cta-title reveal reveal-delay-1">Prêt·e à construire<br><em>votre propre système ?</em></h2>
+  <p class="cta-subtitle reveal reveal-delay-1">30 minutes pour comprendre votre situation et voir si on peut travailler ensemble. Gratuit, sans engagement.</p>
+  <a href="https://calendar.app.google/x3LrzMWr5spjaSn56" target="_blank" class="cta-btn reveal">Prendre rendez-vous</a>
+</section>
+
+<div class="bloom-footer-bar">
+  <p>Tu préfères construire ton système avec mon accompagnement ? <a href="https://bloom-and-build.fr" target="_blank">Découvre Bloom & Build →</a></p>
+</div>
+
+<footer>
+  <div>
+    <div class="footer-logo">Flow Studio</div>
+    <div class="footer-tagline">Création de systèmes IA & Notion</div>
+  </div>
+  <div class="footer-links">
+    <a href="/">Accueil</a>
+    <a href="/notion">Notion</a>
+    <a href="/ia">IA</a>
+    <a href="/solen-ouahioune">À propos</a>
+    <a href="/contact">Contact</a>
+    <a href="/mentions-legales">Mentions légales</a>
+  </div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.07 });
+  reveals.forEach(r => observer.observe(r));
+  setTimeout(() => { document.querySelectorAll('.page-hero .reveal').forEach(r => r.classList.add('visible')); }, 80);
+  function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+  window.addEventListener('scroll', () => { document.getElementById('mobileMenu').classList.remove('open'); });
+</script>
 </body>
 </html>
