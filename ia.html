@@ -234,6 +234,15 @@
   .footer-links a { font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; color: #8A857F; text-decoration: none; transition: color 0.3s; }
   .footer-links a:hover { color: var(--noir); }
 
+
+  /* DROPDOWN */
+  .nav-dropdown { position: relative; }
+  .dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background: var(--blanc); border: 1px solid rgba(181,173,165,0.3); min-width: 240px; z-index: 200; padding: 0.5rem 0; box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+  .dropdown-menu li { list-style: none; }
+  .dropdown-menu a { display: block; padding: 0.7rem 1.2rem; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--noir); text-decoration: none; transition: background 0.2s; white-space: nowrap; }
+  .dropdown-menu a:hover { background: var(--beige); }
+  .nav-dropdown:hover .dropdown-menu { display: block; }
+
   /* HAMBURGER */
   .nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
   .nav-hamburger span { display: block; width: 22px; height: 1.5px; background: var(--noir); transition: all 0.3s; }
@@ -300,30 +309,29 @@
 <nav>
   <a href="/" class="nav-logo">FLOW<span>STUDIO</span></a>
   <ul class="nav-links">
-    <li><a href="/#systemes">Systèmes</a></li>
-    <li><a href="/#packs">Packs</a></li>
-    <li><a href="/notion">Notion</a></li>
-    <li><a href="/ia">IA</a></li>
-    <li><a href="/diagnostic-ia">Diagnostic PME</a></li>
-    <li><a href="/#temoignages">Témoignages</a></li>
+    <li class="nav-dropdown">
+      <a href="#solutions">Solutions ▾</a>
+      <ul class="dropdown-menu">
+        <li><a href="/entrepreneurs">Entrepreneurs & petites équipes</a></li>
+        <li><a href="/pme">PME & organisations</a></li>
+      </ul>
+    </li>
+    <li><a href="/entrepreneurs">Entrepreneurs</a></li>
+    <li><a href="/pme">PME</a></li>
+    <li><a href="/realisations">Réalisations</a></li>
     <li><a href="/solen-ouahioune">À propos</a></li>
-    <li><a href="/contact">Contact</a></li>
   </ul>
-  <a href="https://calendar.app.google/x3LrzMWr5spjaSn56" target="_blank" class="nav-cta">Appel découverte</a>
+  <a href="https://calendar.app.google/x3LrzMWr5spjaSn56" target="_blank" class="nav-cta">Prendre rendez-vous</a>
   <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="/#systemes" onclick="toggleMenu()">Systèmes</a>
-  <a href="/#packs" onclick="toggleMenu()">Packs</a>
-  <a href="/notion" onclick="toggleMenu()">Notion</a>
-  <a href="/ia" onclick="toggleMenu()">IA</a>
-  <a href="/diagnostic-ia" onclick="toggleMenu()">Diagnostic PME</a>
-  <a href="/#temoignages" onclick="toggleMenu()">Témoignages</a>
+  <a href="/entrepreneurs" onclick="toggleMenu()">Entrepreneurs</a>
+  <a href="/pme" onclick="toggleMenu()">PME</a>
+  <a href="/realisations" onclick="toggleMenu()">Réalisations</a>
   <a href="/solen-ouahioune" onclick="toggleMenu()">À propos</a>
-  <a href="/contact" onclick="toggleMenu()">Contact</a>
-  <a href="https://calendar.app.google/x3LrzMWr5spjaSn56" target="_blank" class="mobile-cta">Appel découverte gratuit</a>
+  <a href="https://calendar.app.google/x3LrzMWr5spjaSn56" target="_blank" class="mobile-cta" onclick="toggleMenu()">Prendre rendez-vous</a>
 </div>
 
 <!-- HERO -->

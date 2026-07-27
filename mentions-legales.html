@@ -67,6 +67,15 @@
     .cookie-actions { width: 100%; }
     .cookie-btn { flex: 1; text-align: center; }
   }
+
+  /* DROPDOWN */
+  .nav-dropdown { position: relative; }
+  .dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background: var(--blanc); border: 1px solid rgba(181,173,165,0.3); min-width: 240px; z-index: 200; padding: 0.5rem 0; box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+  .dropdown-menu li { list-style: none; }
+  .dropdown-menu a { display: block; padding: 0.7rem 1.2rem; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--noir); text-decoration: none; transition: background 0.2s; white-space: nowrap; }
+  .dropdown-menu a:hover { background: var(--beige); }
+  .nav-dropdown:hover .dropdown-menu { display: block; }
+
 </style>
 </head>
 <body>
