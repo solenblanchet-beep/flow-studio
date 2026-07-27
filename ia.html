@@ -25,30 +25,6 @@
   <meta name="twitter:image" content="https://flow-studio.app/solen-ouahioune-flow-studio.jpg" />
 
   <!-- Schema.org -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Système IA sur-mesure",
-    "description": "Construction d'écosystèmes IA sur-mesure pour entrepreneures et PME : agents IA personnalisés, automatisations Make, intégrations métier.",
-    "provider": {
-      "@type": "ProfessionalService",
-      "name": "Flow Studio",
-      "url": "https://flow-studio.app",
-      "founder": {
-        "@type": "Person",
-        "name": "Solen Ouahioune"
-      }
-    },
-    "areaServed": "France",
-    "offers": {
-      "@type": "Offer",
-      "price": "490",
-      "priceCurrency": "EUR"
-    },
-    "serviceType": "Intelligence Artificielle Consultant"
-  }
-  </script>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -309,6 +285,80 @@
   @media (max-width: 768px) { .bloom-footer-bar { padding: 1rem 1.5rem; } }
 
 </style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "Organization",
+        "ProfessionalService"
+      ],
+      "@id": "https://flow-studio.app/#organization",
+      "name": "Flow Studio",
+      "url": "https://flow-studio.app",
+      "logo": "https://flow-studio.app/favicon.svg",
+      "email": "solen@flow-studio.app",
+      "founder": {
+        "@id": "https://flow-studio.app/solen-ouahioune#person"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Vaux-sur-Seine",
+        "addressRegion": "Île-de-France",
+        "addressCountry": "FR"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "France"
+      },
+      "description": "Flow Studio crée des systèmes IA, Notion et automatisations sur mesure pour entrepreneurs et PME.",
+      "knowsAbout": [
+        "Notion",
+        "Intelligence Artificielle",
+        "Automatisation",
+        "Make",
+        "Agents IA",
+        "Systèmes business"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://flow-studio.app/ia",
+      "url": "https://flow-studio.app/ia",
+      "name": "Agents IA et automatisations sur mesure | Flow Studio",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Accueil",
+            "item": "https://flow-studio.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Agents IA",
+            "item": "https://flow-studio.app/ia"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Agents IA et automatisations sur mesure",
+      "provider": {
+        "@id": "https://flow-studio.app/#organization"
+      },
+      "description": "Création d'agents IA personnalisés et d'automatisations Make pour automatiser les tâches répétitives.",
+      "areaServed": "France",
+      "url": "https://flow-studio.app/ia"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
