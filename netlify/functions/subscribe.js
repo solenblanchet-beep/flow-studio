@@ -20,7 +20,7 @@ exports.handler = async (event) => {
       body: JSON.stringify({
         email: email,
         attributes: { PRENOM: firstName || '' },
-        listIds: [3],
+        listIds: [13],
         updateEnabled: true
       })
     });
