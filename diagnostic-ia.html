@@ -139,6 +139,20 @@
   .reveal-delay-2 { transition-delay: 0.2s; }
   .reveal-delay-3 { transition-delay: 0.3s; }
 
+  .hero-pricing { display: flex; flex-direction: column; gap: 1.5px; margin-bottom: 1.5rem; }
+  .pricing-tier { display: flex; justify-content: space-between; align-items: center; padding: 0.9rem 1.2rem; background: var(--beige); gap: 1rem; }
+  .pricing-tier.featured-tier { background: var(--noir); }
+  .pricing-tier.featured-tier .tier-size,
+  .pricing-tier.featured-tier .tier-price { color: var(--blanc); }
+  .pricing-tier.featured-tier .tier-note { color: var(--taupe); }
+  .tier-size { font-size: 0.72rem; color: var(--noir); font-weight: 400; flex-shrink: 0; }
+  .tier-price { font-family: var(--font-display); font-size: 1rem; color: var(--noir); }
+  .tier-note { font-size: 0.6rem; letter-spacing: 0.08em; color: #8A857F; text-align: right; }
+  @media (max-width: 480px) {
+    .pricing-tier { flex-wrap: wrap; gap: 0.3rem; }
+    .tier-note { text-align: left; }
+  }
+
   /* RESPONSIVE */
   @media (max-width: 960px) {
     nav { padding: 1.2rem 1.5rem; }
@@ -248,9 +262,22 @@
     <p class="hero-subtitle reveal reveal-delay-2">
       En une demi-journée, on cartographie vos usages IA, on identifie les risques, les opportunités et les quick wins. Vous repartez avec un plan d'action concret — pas une étude de 80 pages que personne ne lit.
     </p>
-    <div class="hero-price-block reveal reveal-delay-2">
-      <span class="hero-price">1 490€</span>
-      <span class="hero-price-label">HT — tarif fixe</span>
+    <div class="hero-pricing reveal reveal-delay-2">
+      <div class="pricing-tier featured-tier">
+        <span class="tier-size">5 à 15 personnes</span>
+        <span class="tier-price">1 490€ HT</span>
+        <span class="tier-note">Tarif fixe · Audit standardisé</span>
+      </div>
+      <div class="pricing-tier">
+        <span class="tier-size">16 à 40 personnes</span>
+        <span class="tier-price">Sur devis</span>
+        <span class="tier-note">Selon la complexité des usages</span>
+      </div>
+      <div class="pricing-tier">
+        <span class="tier-size">41 à 80 personnes</span>
+        <span class="tier-price">Sur devis</span>
+        <span class="tier-note">Avec entretiens complémentaires</span>
+      </div>
     </div>
     <p class="hero-format reveal reveal-delay-2">Demi-journée d'audit + livrable écrit sous 5 à 7 jours</p>
     <a href="https://calendar.app.google/x3LrzMWr5spjaSn56" target="_blank" class="hero-cta reveal reveal-delay-3">Réserver un appel de qualification</a>
@@ -269,7 +296,7 @@
         <span class="deliverable-num">02</span>
         <div>
           <p class="deliverable-title">Analyse des risques</p>
-          <p class="deliverable-text">Conformité AI Act, protection des données, exposition réglementaire</p>
+          <p class="deliverable-text">Repérage des principaux points de vigilance liés à l'AI Act, au RGPD et à la confidentialité des données</p>
         </div>
       </div>
       <div class="deliverable reveal reveal-delay-2">
@@ -396,11 +423,12 @@
     <div class="livrable-card reveal reveal-delay-1">
       <p class="livrable-num">Livrable 02</p>
       <h3 class="livrable-title">Analyse des risques</h3>
-      <p class="livrable-text">Ce qui peut poser problème — réglementairement, humainement, opérationnellement — avec un niveau de priorité pour chaque point.</p>
+      <p class="livrable-text" style="font-size:0.72rem;color:var(--taupe);font-style:italic;margin-bottom:0.8rem;">La CNIL rappelle que l'utilisation de données personnelles dans les systèmes d'IA doit respecter le RGPD et les droits des personnes.</p>
+      <p class="livrable-text">Repérage des principaux points de vigilance — réglementaires, opérationnels, humains — avec un niveau de priorité pour chaque point. Les questions nécessitant une analyse juridique sont transmises à votre conseil, DPO ou avocat.</p>
       <ul class="livrable-items">
-        <li>Positionnement par rapport à l'AI Act</li>
-        <li>Risques RGPD liés aux usages IA</li>
-        <li>Risques opérationnels et humains</li>
+        <li>Points de vigilance AI Act applicables à votre situation</li>
+        <li>Points de vigilance RGPD liés à vos usages IA</li>
+        <li>Risques opérationnels et humains identifiés</li>
       </ul>
     </div>
     <div class="livrable-card reveal">
@@ -416,7 +444,7 @@
     <div class="livrable-card reveal reveal-delay-1">
       <p class="livrable-num">Livrable 04</p>
       <h3 class="livrable-title">Charte IA interne</h3>
-      <p class="livrable-text">Un document opérationnel que vos équipes peuvent lire et appliquer dès demain. Pas un document juridique — un cadre de travail.</p>
+      <p class="livrable-text">Un document de travail interne que vos équipes peuvent lire et appliquer dès demain. Cadre pratique d'usage — pas un avis juridique, pas une garantie de conformité.</p>
       <ul class="livrable-items">
         <li>Ce qui est autorisé / déconseillé / interdit</li>
         <li>Règles sur les données et la confidentialité</li>
@@ -456,7 +484,7 @@
       <h3>Ce n'est pas fait pour vous si :</h3>
       <ul class="limit-list no">
         <li>Votre entreprise n'utilise aucun outil IA et n'envisage pas de le faire</li>
-        <li>Vous cherchez une certification de conformité AI Act (il vous faut un·e avocat·e)</li>
+        <li>Vous cherchez une garantie de conformité AI Act ou RGPD (il vous faut un·e avocat·e spécialisé·e)</li>
         <li>Vous avez besoin d'un audit technique approfondi de vos systèmes informatiques</li>
         <li>Vous avez des usages IA à haut risque (recrutement algorithmique, IA médicale) — nécessite un accompagnement juridique spécialisé</li>
       </ul>
@@ -472,8 +500,8 @@
     <em>livré en une semaine.</em>
   </h2>
   <p class="cta-subtitle reveal reveal-delay-2">On commence par un appel de 30 minutes pour vérifier que le diagnostic correspond à votre situation.</p>
-  <p class="cta-price reveal reveal-delay-2">1 490€ HT</p>
-  <p class="cta-price-sub reveal reveal-delay-2">Tarif fixe · Demi-journée d'audit · Livraison sous 5 à 7 jours</p>
+  <p class="cta-price reveal reveal-delay-2">À partir de 1 490€ HT</p>
+  <p class="cta-price-sub reveal reveal-delay-2">Structures de 5 à 15 personnes · Sur devis au-delà</p>
   <a href="https://calendar.app.google/x3LrzMWr5spjaSn56" target="_blank" class="cta-btn reveal reveal-delay-3">Réserver l'appel de qualification</a>
   <p class="cta-note reveal reveal-delay-3">solen@flow-studio.app · flow-studio.app</p>
 </section>
