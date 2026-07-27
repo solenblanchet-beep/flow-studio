@@ -366,6 +366,26 @@
     .footer-links a { font-size: 0.58rem; }
   }
 
+
+  /* BLOOM & BUILD SECTION */
+  .bloom-section { background: var(--noir); padding: 6rem; }
+  .bloom-inner { display: grid; grid-template-columns: 1fr 1px 1fr; gap: 4rem; align-items: start; max-width: 960px; margin: 0 auto; }
+  .bloom-divider { background: rgba(255,255,255,0.1); width: 1px; height: 100%; }
+  .bloom-eyebrow { font-size: 0.58rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1rem; }
+  .bloom-title { font-family: var(--font-display); font-size: 1.6rem; font-weight: 400; color: var(--blanc); line-height: 1.2; margin-bottom: 1rem; }
+  .bloom-title em { font-style: italic; color: var(--taupe); }
+  .bloom-text { font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.8; margin-bottom: 1.8rem; }
+  .bloom-cta { display: inline-block; font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 0.85rem 1.6rem; text-decoration: none; transition: all 0.3s; }
+  .bloom-cta.dark { background: var(--blanc); color: var(--noir); border: 1px solid var(--blanc); }
+  .bloom-cta.dark:hover { background: transparent; color: var(--blanc); }
+  .bloom-cta.light { background: transparent; color: var(--blanc); border: 1px solid rgba(255,255,255,0.3); }
+  .bloom-cta.light:hover { border-color: var(--blanc); }
+  @media (max-width: 768px) {
+    .bloom-section { padding: 4rem 1.5rem; }
+    .bloom-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .bloom-divider { display: none; }
+  }
+
   /* COOKIE BANNER */
   .cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; z-index: 999; background: var(--noir); padding: 1.2rem 4rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; transform: translateY(100%); transition: transform 0.4s ease; }
   .cookie-banner.visible { transform: translateY(0); }
@@ -645,7 +665,7 @@
     <p class="about-text reveal reveal-delay-2">7 mois plus tard, développeuse web. Avec un enfant en bas âge, sans filet. C'est là que j'ai compris que les bons systèmes ne font pas juste gagner du temps — ils changent ce qu'on croit possible pour soi.</p>
     <p class="about-text reveal reveal-delay-3">Depuis je construis pour les femmes entrepreneures ce que j'aurais voulu avoir dès le début. Notion, l'IA, les automatisations Make — pas pour les geeks, pour celles qui ont trop de choses dans la tête et pas assez de temps pour les faire toutes.</p>
     <p class="about-signature reveal reveal-delay-3">Solen Ouahioune</p>
-    <p class="about-role reveal reveal-delay-3">Stratège IA & Systèmes Business · Flow Studio · <a href="https://boostherclub.fr" target="_blank" rel="noopener">Boost'Her Club</a></p>
+    <p class="about-role reveal reveal-delay-3">Stratège IA & Systèmes Business · Flow Studio · <a href="https://bloom-and-build.fr" target="_blank" rel="noopener">Bloom & Build</a></p>
   </div>
 </section>
 
