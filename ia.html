@@ -189,6 +189,9 @@
   .pack-feature::before { content: '—'; color: var(--taupe); flex-shrink: 0; font-size: 0.65rem; margin-top: 2px; }
   .pack-cta { display: block; text-align: center; margin-top: 2rem; font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; padding: 0.9rem 1.2rem; border: 1px solid var(--noir); color: var(--noir); text-decoration: none; transition: all 0.3s; }
   .pack-cta:hover { background: var(--blanc); color: var(--noir); }
+  .pricing-note { margin-top: 2.5rem; padding: 2rem 2.5rem; background: var(--beige); border-left: 2px solid var(--taupe); }
+  .pricing-note p { font-size: 0.82rem; color: #6B6560; line-height: 1.8; }
+  .pricing-note p strong { color: var(--noir); font-weight: 500; }
   .packs-note { text-align: center; font-size: 0.72rem; color: var(--taupe); margin-top: 2rem; letter-spacing: 0.05em; }
   .packs-note a { color: var(--noir); text-decoration: none; border-bottom: 1px solid rgba(181,173,165,0.5); transition: border-color 0.3s; }
   .packs-note a:hover { border-color: var(--noir); }
@@ -546,7 +549,11 @@
     </div>
 
   </div>
-  <p class="packs-note">Pas encore certain·e du niveau ? Commencez par le <a href="/#packs" style="color:var(--taupe)">Diagnostic Système à 490€</a> — déduit si vous poursuivez.</p>
+
+  <div class="pricing-note reveal">
+    <p>Les projets Flow Studio démarrent à <strong>1 500€</strong>.</p>
+    <p>Le tarif final dépend du nombre de processus, d'outils et d'automatisations à intégrer.</p>
+  </div>
 </section>
 
 <!-- TESTIMONY -->
