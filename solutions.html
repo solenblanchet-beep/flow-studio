@@ -192,6 +192,23 @@
   .reveal-delay-2 { transition-delay: 0.2s; }
   .reveal-delay-3 { transition-delay: 0.3s; }
 
+
+  /* REALISATIONS */
+  .realisations-btn { display:inline-block;font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;padding:1rem 2.2rem;background:var(--noir);color:var(--blanc);text-decoration:none;border:1px solid var(--noir);transition:all 0.35s; }
+  .realisations-btn:hover { background:transparent;color:var(--noir); }
+  .real-section { padding: 7rem 6rem; background: var(--beige); }
+  .real-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: rgba(181,173,165,0.3); margin-top: 3.5rem; }
+  .real-card { background: var(--blanc); padding: 2.8rem 2.5rem; transition: background 0.3s; }
+  .real-card:hover { background: var(--noir); }
+  .real-card:hover .real-card-num { color: var(--taupe); }
+  .real-card:hover .real-card-title { color: var(--blanc); }
+  .real-card:hover .real-card-text { color: rgba(255,255,255,0.72); }
+  .real-card-num { font-family: var(--font-display); font-size: 0.75rem; color: var(--taupe); margin-bottom: 1rem; }
+  .real-card-title { font-family: var(--font-display); font-size: 1.2rem; margin-bottom: 0.8rem; }
+  .real-card-text { font-size: 0.8rem; color: #524E4A; line-height: 1.8; }
+  @media (max-width: 960px) { .real-section { padding: 5rem 1.5rem; } .real-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 480px) { .real-section { padding: 4rem 1.2rem; } }
+
   /* RESPONSIVE */
   @media (max-width: 1100px) {
     .niveaux-grid { grid-template-columns: 1fr 1fr; }
@@ -283,9 +300,6 @@
   </div>
 </section>
 
-<!-- PROBLÈME -->
-
-<!-- DEUX PARCOURS -->
 <section class="parcours-section" id="parcours">
   <p class="section-eyebrow reveal" style="color:var(--taupe);">Deux parcours, deux réalités</p>
   <h2 class="parcours-title reveal reveal-delay-1">Le bon système dépend<br><em>de votre situation.</em></h2>
@@ -305,7 +319,7 @@
         <li>Fonctionnement en équipe</li>
       </ul>
       <p class="parcours-price">Projets à partir de 1 500€ HT</p>
-      <a href="/entrepreneurs" class="parcours-cta">Découvrir les solutions Entrepreneurs →</a>
+      <a href="/entrepreneurs" class="parcours-cta">Découvrir les solutions Entrepreneurs &rarr;</a>
     </div>
     <div class="parcours-card reveal reveal-delay-1">
       <p class="parcours-tag">PME & organisations</p>
@@ -322,12 +336,13 @@
         <li>Suivi des premiers usages</li>
       </ul>
       <p class="parcours-price">Diagnostic à partir de 1 490€ HT</p>
-      <a href="/pme" class="parcours-cta">Découvrir les solutions PME →</a>
+      <a href="/pme" class="parcours-cta">Découvrir les solutions PME &rarr;</a>
     </div>
   </div>
 </section>
 
-<!-- QUATRE DIMENSIONS -->
+
+
 <section class="dimensions-section">
   <p class="section-eyebrow reveal">Quatre dimensions complémentaires</p>
   <h2 class="section-title reveal reveal-delay-1">Un système ne se résume pas<br><em>à sa technologie.</em></h2>
@@ -355,7 +370,6 @@
   </div>
 </section>
 
-<!-- CATALOGUE SOLUTIONS -->
 <section class="catalogue-section">
   <p class="section-eyebrow reveal">Ce que Flow Studio peut construire avec vous</p>
   <h2 class="section-title reveal reveal-delay-1">Cinq domaines.<br><em>Un système cohérent.</em></h2>
@@ -430,7 +444,31 @@
   </div>
 </section>
 
-<!-- NIVEAUX -->
+<section class="real-section">
+  <p class="section-eyebrow reveal">Des systèmes construits autour du travail réel</p>
+  <h2 class="section-title reveal reveal-delay-1">De la méthode<br><em>aux réalisations.</em></h2>
+  <div class="real-grid reveal reveal-delay-2">
+    <div class="real-card">
+      <p class="real-card-num">01</p>
+      <h3 class="real-card-title">Cockpit de pilotage</h3>
+      <p class="real-card-text">Centralisation des projets, tâches, objectifs et indicateurs d'une activité de services. Une vue complète de ce qui avance, ce qui bloque et ce qui mérite attention.</p>
+    </div>
+    <div class="real-card">
+      <p class="real-card-num">02</p>
+      <h3 class="real-card-title">CRM et parcours client</h3>
+      <p class="real-card-text">Suivi commercial, onboarding, livrables et relances regroupés dans un même système. Chaque prospect et chaque client dispose d'un espace dédié et traçable.</p>
+    </div>
+    <div class="real-card">
+      <p class="real-card-num">03</p>
+      <h3 class="real-card-title">Assistant IA métier</h3>
+      <p class="real-card-text">Assistant configuré avec les offres, les processus et les ressources internes de l'entreprise. Il connaît le contexte et produit des résultats directement utilisables.</p>
+    </div>
+  </div>
+  <div style="margin-top:3rem;" class="reveal">
+    <a href="/realisations" class="realisations-btn">Découvrir les réalisations</a>
+  </div>
+</section>
+
 <section class="niveaux-section">
   <p class="section-eyebrow reveal" style="color:var(--taupe);">Le bon niveau d'intervention</p>
   <h2 class="niveaux-title reveal reveal-delay-1">Du diagnostic<br><em>au système opérationnel.</em></h2>
@@ -473,7 +511,6 @@
   </div>
 </section>
 
-<!-- MÉTHODE -->
 <section class="methode-section">
   <p class="section-eyebrow reveal">Une méthode pragmatique</p>
   <h2 class="section-title reveal reveal-delay-1">Partir du travail réel.<br><em>Construire ce qui sera utilisé.</em></h2>
@@ -509,9 +546,6 @@
   </div>
 </section>
 
-<!-- LIMITES -->
-
-<!-- CHOISIR LE BON PARCOURS -->
 <section class="choisir-section">
   <p class="section-eyebrow reveal">Choisir le bon parcours</p>
   <h2 class="section-title reveal reveal-delay-1">Quelle solution correspond<br><em>à votre besoin ?</em></h2>
@@ -535,7 +569,6 @@
   </div>
 </section>
 
-<!-- CTA FINAL -->
 <section class="cta-section">
   <p class="cta-eyebrow reveal">Votre activité évolue. Votre système doit suivre.</p>
   <h2 class="cta-title reveal reveal-delay-1">
