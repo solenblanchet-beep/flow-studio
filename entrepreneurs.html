@@ -153,6 +153,37 @@
   .cta-btn:hover { background: transparent; color: var(--blanc); }
   .cta-note { font-size: 0.65rem; color: rgba(255,255,255,0.25); margin-top: 1rem; }
 
+
+  /* MINI-CAS CLIENT */
+  .cas-section { padding: 7rem 6rem; background: var(--beige); }
+  .cas-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+  .cas-eyebrow { font-size: 0.62rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1.2rem; display: flex; align-items: center; gap: 1rem; }
+  .cas-eyebrow::before { content: ''; width: 1.8rem; height: 1px; background: var(--taupe); }
+  .cas-title { font-family: var(--font-display); font-size: clamp(1.6rem, 2.5vw, 2.2rem); font-weight: 400; line-height: 1.2; margin-bottom: 2rem; }
+  .cas-title em { font-style: italic; color: var(--taupe); }
+  .cas-steps { display: flex; flex-direction: column; gap: 1.5px; margin-bottom: 2rem; }
+  .cas-step { background: var(--blanc); padding: 1.4rem 1.6rem; }
+  .cas-step-label { font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--taupe); margin-bottom: 0.4rem; }
+  .cas-step-text { font-size: 0.82rem; color: #6B6560; line-height: 1.6; }
+  .cas-step.result { background: var(--noir); }
+  .cas-step.result .cas-step-label { color: var(--taupe); }
+  .cas-step.result .cas-step-text { color: rgba(255,255,255,0.75); }
+  .cas-result-stat { font-family: var(--font-display); font-size: 2.5rem; color: var(--blanc); margin-top: 0.5rem; }
+  .cas-result-stat span { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--taupe); display: block; margin-top: -0.3rem; }
+  .cas-quote-block { background: var(--blanc); padding: 2.5rem; }
+  .cas-quote { font-family: var(--font-display); font-style: italic; font-size: 1rem; line-height: 1.7; color: var(--noir); margin-bottom: 1.5rem; }
+  .cas-quote-author { font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--taupe); }
+  .cas-quote-sector { font-size: 0.62rem; color: #8A857F; margin-top: 0.2rem; }
+  .cas-link { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--noir); text-decoration: none; margin-top: 1.5rem; border-bottom: 1px solid rgba(181,173,165,0.5); padding-bottom: 2px; transition: all 0.3s; }
+  .cas-link:hover { gap: 0.9rem; border-bottom-color: var(--noir); }
+  @media (max-width: 960px) {
+    .cas-section { padding: 5rem 1.5rem; }
+    .cas-inner { grid-template-columns: 1fr; gap: 3rem; }
+  }
+  @media (max-width: 480px) {
+    .cas-section { padding: 4rem 1.2rem; }
+  }
+
   /* BLOOM FOOTER BAR */
   .bloom-footer-bar { background: var(--beige); padding: 1rem 6rem; text-align: center; border-top: 1px solid rgba(181,173,165,0.4); }
   .bloom-footer-bar p { font-size: 0.78rem; color: #6B6560; }
@@ -327,6 +358,42 @@
     <div class="deleguer-item">Tutoriels personnalisés</div>
   </div>
   <p class="deleguer-note reveal">La technologie est choisie en fonction de ton besoin. Tu n'as pas à décider seule s'il te faut Notion, Airtable, Make, Claude, ChatGPT ou un autre outil. Cette décision fait partie de mon travail.</p>
+</section>
+
+<!-- MINI-CAS CLIENT -->
+<section class="cas-section">
+  <div class="cas-inner">
+    <div>
+      <p class="cas-eyebrow reveal">Un exemple concret</p>
+      <h2 class="cas-title reveal reveal-delay-1">
+        Un système construit pour<br>
+        <em>une structure en croissance.</em>
+      </h2>
+      <div class="cas-steps reveal reveal-delay-2">
+        <div class="cas-step">
+          <p class="cas-step-label">Avant</p>
+          <p class="cas-step-text">Un Notion peu intuitif, pas d'espace collaboratif, pas d'automatisation. Des pages en silos qui ne communiquaient pas entre elles. L'outil avait été abandonné par une partie de l'équipe.</p>
+        </div>
+        <div class="cas-step">
+          <p class="cas-step-label">Après</p>
+          <p class="cas-step-text">Refonte complète de l'architecture avec les bonnes connexions entre les sujets et les collaborateurs. Un cockpit centralisé, des processus reliés, une documentation partagée.</p>
+        </div>
+        <div class="cas-step result">
+          <p class="cas-step-label">Résultat</p>
+          <p class="cas-step-text">Les opérationnels qui avaient déserté l'outil l'utilisent maintenant au quotidien.</p>
+          <p class="cas-result-stat">100%<span>Taux d'adoption retrouvé</span></p>
+        </div>
+      </div>
+      <a href="/realisations" class="cas-link reveal">Voir toutes les réalisations →</a>
+    </div>
+    <div class="reveal reveal-delay-2">
+      <div class="cas-quote-block">
+        <p class="cas-quote">« Notre Notion était peu intuitif et ne répondait plus à nos besoins. Pas d'espace collaboratif, pas d'automation. Flow Studio nous a aidé à poser un cahier des charges et a rebooté toutes les pages pour créer les bonnes connexions entre les sujets et les collaborateurs. »</p>
+        <p class="cas-quote-author">c3llar Wine Society</p>
+        <p class="cas-quote-sector">Industrie du vin</p>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- OFFRES -->
