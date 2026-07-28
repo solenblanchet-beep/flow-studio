@@ -365,6 +365,13 @@
     .bloom-divider { display: none; }
   }
 
+  /* PME CALLOUT */
+  .pme-callout { border: 1px solid rgba(181,173,165,0.5); padding: 1.4rem 1.6rem; margin-top: 1.5rem; }
+  .pme-callout-label { font-size: 0.72rem; font-weight: 500; color: var(--noir); margin-bottom: 0.4rem; }
+  .pme-callout-text { font-size: 0.72rem; color: #6B6560; line-height: 1.6; margin-bottom: 0.8rem; }
+  .pme-callout-link { font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--taupe); text-decoration: none; transition: color 0.3s; }
+  .pme-callout-link:hover { color: var(--noir); }
+
   /* BLOOM FOOTER BAR */
   .bloom-footer-bar { background: var(--beige); padding: 1rem 6rem; text-align: center; border-top: 1px solid rgba(181,173,165,0.4); }
   .bloom-footer-bar p { font-size: 0.78rem; color: #6B6560; }
@@ -555,7 +562,7 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-left">
-    <p class="hero-eyebrow reveal">Création de systèmes IA & Notion</p>
+    <p class="hero-eyebrow reveal">Systèmes IA, Notion et automatisations pour entrepreneurs</p>
     <h1 class="hero-title reveal reveal-delay-1">
       Ton business ne manque pas d'outils.<br>
       <em>Il manque d'un système.</em>
@@ -568,18 +575,11 @@
       <a href="/realisations" class="btn-ghost">Voir un système en action</a>
     </div>
 
-    <!-- TWO PATHS -->
-    <div class="hero-paths reveal reveal-delay-4">
-      <a href="/entrepreneurs" class="hero-path">
-        <span class="path-label">Entrepreneurs & petites équipes</span>
-        <span class="path-desc">Structurer mon business avec Notion, l'IA et les automatisations.</span>
-        <span class="path-arrow">→</span>
-      </a>
-      <a href="/pme" class="hero-path">
-        <span class="path-label">PME & organisations</span>
-        <span class="path-desc">Auditer et encadrer les usages IA de mon équipe.</span>
-        <span class="path-arrow">→</span>
-      </a>
+    <!-- PME CALLOUT -->
+    <div class="pme-callout reveal reveal-delay-4">
+      <p class="pme-callout-label">Vous représentez une PME ou une organisation ?</p>
+      <p class="pme-callout-text">Découvrez notre accompagnement dédié à l'analyse des processus, aux projets pilotes IA et à l'adoption par les équipes.</p>
+      <a href="/pme" class="pme-callout-link">Notre accompagnement PME →</a>
     </div>
   </div>
   <div class="hero-right">
