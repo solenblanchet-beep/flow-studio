@@ -4,31 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Systèmes IA & Notion pour entrepreneurs et PME | Flow Studio</title>
-<meta name="description" content="Flow Studio crée vos systèmes Notion, IA et automatisations sur-mesure. Consultante en organisation digitale pour entrepreneures et PME en Île-de-France." />
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://flow-studio.app/" />
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://flow-studio.app/" />
-  <meta property="og:title" content="Flow Studio, Systèmes Notion & IA sur-mesure" />
-  <meta property="og:description" content="Flow Studio crée vos systèmes Notion, IA et automatisations sur-mesure. Pour entrepreneures et PME qui veulent travailler avec clarté." />
-  <meta property="og:image" content="https://flow-studio.app/solen-ouahioune-flow-studio.jpg" />
-  <meta property="og:locale" content="fr_FR" />
-  <meta property="og:site_name" content="Flow Studio" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Flow Studio, Systèmes Notion & IA sur-mesure" />
-  <meta name="twitter:description" content="Systèmes Notion, IA et automatisations sur-mesure pour entrepreneures et PME." />
-  <meta name="twitter:image" content="https://flow-studio.app/solen-ouahioune-flow-studio.jpg" />
-
-  <!-- Schema.org -->
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<meta name="description" content="Flow Studio construit le système qui te permet de piloter ton activité sans multiplier les tableaux, les applications et les tâches répétitives. Notion, IA et automatisations connectés à ton fonctionnement réel.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
@@ -45,203 +25,16 @@
   .nav-logo { font-family: var(--font-display); font-size: 1.1rem; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 400; color: var(--noir); text-decoration: none; }
   .nav-logo span { font-size: 0.55rem; letter-spacing: 0.4em; display: block; text-align: center; margin-top: -2px; color: var(--taupe); }
   .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-  .nav-links a { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--noir); text-decoration: none; font-weight: 400; transition: color 0.3s; }
-  .nav-links a:hover { color: var(--taupe); }
-  .nav-cta { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 0.65rem 1.5rem; border: 1px solid var(--noir); color: var(--noir); text-decoration: none; transition: all 0.3s; }
-  .nav-cta:hover { background: var(--noir); color: var(--blanc); }
-
-  /* HERO */
-  .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 76px; }
-  .hero-left { display: flex; flex-direction: column; justify-content: center; padding: 5rem 4rem 5rem 6rem; }
-  .hero-eyebrow { font-size: 0.62rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1.8rem; display: flex; align-items: center; gap: 1rem; }
-  .hero-eyebrow::before { content: ''; display: block; width: 2rem; height: 1px; background: var(--taupe); }
-  .hero-title { font-family: var(--font-display); font-size: clamp(2.6rem, 4vw, 4rem); font-weight: 400; line-height: 1.1; margin-bottom: 1.8rem; }
-  .hero-title em { font-style: italic; color: var(--taupe); }
-  .hero-subtitle { font-size: 0.88rem; color: #6B6560; max-width: 400px; line-height: 1.9; margin-bottom: 2.8rem; }
-  .hero-actions { display: flex; gap: 1.5rem; align-items: center; }
-  .btn-primary { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 1.1rem 2.2rem; background: var(--noir); color: var(--blanc); text-decoration: none; border: 1px solid var(--noir); transition: all 0.35s; }
-  .btn-primary:hover { background: transparent; color: var(--noir); }
-  .btn-ghost { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--noir); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; transition: gap 0.3s; }
-  .btn-ghost:hover { gap: 0.9rem; }
-  .btn-ghost::after { content: '→'; }
-  .hero-stats { margin-top: 3.5rem; padding-top: 2.5rem; border-top: 1px solid rgba(181,173,165,0.4); display: flex; gap: 3rem; }
-  .stat-number { font-family: var(--font-display); font-size: 1.9rem; line-height: 1; }
-  .stat-label { font-size: 0.62rem; letter-spacing: 0.12em; color: var(--taupe); text-transform: uppercase; margin-top: 0.3rem; }
-  .hero-right { position: relative; overflow: hidden; background: var(--beige); display: flex; align-items: center; justify-content: center; }
-  .hero-photo { width: 100%; height: 100%; object-fit: cover; object-position: right center; filter: grayscale(8%); }
-  .hero-card { position: absolute; bottom: 3rem; left: 2rem; background: var(--blanc); padding: 2rem 2.2rem; box-shadow: 0 20px 60px rgba(0,0,0,0.1); max-width: 280px; }
-  .card-tag { font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--taupe); margin-bottom: 0.8rem; }
-  .card-title { font-family: var(--font-display); font-size: 1.1rem; margin-bottom: 1rem; line-height: 1.3; }
-  .card-items { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
-  .card-items li { font-size: 0.72rem; color: #5A5550; display: flex; gap: 0.6rem; }
-  .card-items li::before { content: '✓'; color: var(--noir); flex-shrink: 0; }
-  .card-price { margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid rgba(181,173,165,0.4); display: flex; justify-content: space-between; align-items: baseline; }
-  .price-label { font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--taupe); }
-  .price-amount { font-family: var(--font-display); font-size: 1.6rem; }
-
-  /* MARQUEE */
-  .marquee-section { background: var(--noir); padding: 1.1rem 0; overflow: hidden; }
-  .marquee-track { display: flex; gap: 2.5rem; animation: marquee 28s linear infinite; width: max-content; }
-  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-  .marquee-item { font-size: 0.58rem; letter-spacing: 0.28em; text-transform: uppercase; color: rgba(234,230,225,0.6); white-space: nowrap; display: flex; align-items: center; gap: 2rem; }
-  .marquee-item::after { content: '◆'; font-size: 0.35rem; opacity: 0.4; }
-
-  /* SECTIONS */
-  .section-eyebrow { font-size: 0.62rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1.2rem; display: flex; align-items: center; gap: 1rem; }
-  .section-eyebrow::before { content: ''; width: 1.8rem; height: 1px; background: var(--taupe); }
-  .section-title { font-family: var(--font-display); font-size: clamp(1.8rem, 3vw, 2.8rem); font-weight: 400; line-height: 1.15; }
-  .section-title em { font-style: italic; color: var(--taupe); }
-
-  /* PROMISE */
-  .promise-section { padding: 7rem 6rem; }
-  .section-header { margin-bottom: 4rem; }
-  .promise-grid { display: grid; grid-template-columns: repeat(3,1fr); border-top: 1px solid rgba(181,173,165,0.4); }
-  .promise-item { padding: 2.5rem; border-right: 1px solid rgba(181,173,165,0.4); transition: background 0.3s; }
-  .promise-item:last-child { border-right: none; }
-  .promise-item:hover { background: var(--beige); }
-  .promise-num { font-family: var(--font-display); font-size: 0.75rem; color: var(--taupe); margin-bottom: 1.2rem; }
-  .promise-title { font-family: var(--font-display); font-size: 1.2rem; margin-bottom: 0.8rem; }
-  .promise-text { font-size: 0.8rem; color: #6B6560; line-height: 1.8; }
-
-  /* HOW */
-  .how-section { background: var(--beige); padding: 7rem 6rem; }
-  .how-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
-  .how-steps { display: flex; flex-direction: column; }
-  .how-step { display: grid; grid-template-columns: 52px 1fr; gap: 1.5rem; padding: 1.8rem 0; border-bottom: 1px solid rgba(181,173,165,0.4); align-items: start; }
-  .how-step:hover .step-num { background: var(--noir); color: var(--blanc); }
-  .step-num { width: 40px; height: 40px; border: 1px solid var(--noir); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 0.85rem; transition: all 0.3s; flex-shrink: 0; }
-  .step-title { font-family: var(--font-display); font-size: 1rem; margin-bottom: 0.4rem; }
-  .step-text { font-size: 0.78rem; color: #6B6560; line-height: 1.7; }
-  .how-visual { background: var(--blanc); padding: 3.5rem; box-shadow: 0 20px 60px rgba(0,0,0,0.06); }
-  .visual-label { font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1.5rem; }
-  .visual-tagline { font-family: var(--font-display); font-size: 1.6rem; line-height: 1.3; margin-bottom: 2rem; }
-  .visual-tagline em { font-style: italic; }
-  .visual-divider { height: 1px; background: rgba(181,173,165,0.4); margin-bottom: 1.5rem; }
-  .visual-quote { font-size: 0.8rem; color: #6B6560; line-height: 1.8; font-style: italic; border-left: 2px solid var(--taupe); padding-left: 1.2rem; }
-  .visual-author { font-size: 0.62rem; color: var(--taupe); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 1rem; }
-
-  /* PACKS */
-  .packs-section { padding: 7rem 6rem; }
-  .packs-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; margin-top: 3.5rem; background: rgba(181,173,165,0.3); }
-  .pack-card { background: var(--blanc); padding: 2.8rem 2.2rem; display: flex; flex-direction: column; transition: all 0.3s; }
-  .pack-card:hover:not(.featured) { background: var(--noir); }
-  .pack-card:hover:not(.featured) .pack-price, .pack-card:hover:not(.featured) .pack-title, .pack-card:hover:not(.featured) .pack-tag, .pack-card:hover:not(.featured) .pack-price-sub { color: var(--blanc); }
-  .pack-card:hover:not(.featured) .pack-feature { color: rgba(255,255,255,0.6); }
-  .pack-card:hover:not(.featured) .pack-divider { background: rgba(255,255,255,0.15); }
-  .pack-card:hover:not(.featured) .pack-cta { border-color: var(--blanc); color: var(--blanc); }
-  .pack-card.featured { background: var(--noir); }
-  .pack-card.featured .pack-price, .pack-card.featured .pack-title, .pack-card.featured .pack-tag { color: var(--blanc); }
-  .pack-card.featured .pack-price-sub { color: rgba(255,255,255,0.5); }
-  .pack-card.featured .pack-feature { color: rgba(255,255,255,0.65); }
-  .pack-card.featured .pack-divider { background: rgba(255,255,255,0.15); }
-  .pack-card.featured .pack-cta { border-color: var(--blanc); color: var(--blanc); }
-  .pack-card.featured .pack-cta:hover { background: var(--blanc); color: var(--noir); }
-  .pack-badge { display: inline-block; font-size: 0.52rem; letter-spacing: 0.2em; text-transform: uppercase; background: var(--taupe); color: var(--blanc); padding: 0.3rem 0.7rem; margin-bottom: 1.2rem; align-self: flex-start; }
-  .pack-tag { font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--taupe); margin-bottom: 0.6rem; }
-  .pack-title { font-family: var(--font-display); font-size: 1.4rem; margin-bottom: 0.4rem; }
-  .pack-price { font-family: var(--font-display); font-size: 2.2rem; }
-  .pack-price-sub { font-size: 0.68rem; color: var(--taupe); margin-bottom: 1.8rem; }
-  .pack-divider { height: 1px; background: rgba(181,173,165,0.4); margin-bottom: 1.8rem; }
-  .pack-features { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; flex: 1; }
-  .pack-feature { font-size: 0.75rem; color: #5A5550; display: flex; gap: 0.7rem; align-items: flex-start; line-height: 1.5; }
-  .pack-feature::before { content: '—'; color: var(--taupe); flex-shrink: 0; font-size: 0.65rem; margin-top: 2px; }
-  .pack-cta { display: block; text-align: center; margin-top: 2rem; font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; padding: 0.9rem 1.2rem; border: 1px solid var(--noir); color: var(--noir); text-decoration: none; transition: all 0.3s; }
-  .pack-cta:hover { background: var(--blanc); color: var(--noir); }
-  .section-intro { font-size: 0.85rem; color: #6B6560; line-height: 1.9; max-width: 580px; margin-top: 1rem; }
-  .pricing-note { margin-top: 2.5rem; padding: 2rem 2.5rem; background: var(--beige); border-left: 2px solid var(--taupe); }
-  .pricing-note p { font-size: 0.82rem; color: #6B6560; line-height: 1.8; }
-  .pricing-note p strong { color: var(--noir); font-weight: 500; }
-  .section-intro { font-size: 0.85rem; color: #6B6560; line-height: 1.9; max-width: 580px; margin-top: 1rem; }
-  .packs-note { text-align: center; font-size: 0.72rem; color: var(--taupe); margin-top: 2rem; letter-spacing: 0.05em; }
-
-  /* TESTIMONY */
-  .testimony-section { background: var(--beige); padding: 7rem 6rem; }
-  .testimony-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 3.5rem; }
-  .testimony-card { background: var(--blanc); padding: 2.2rem; }
-  .testimony-quote { font-family: var(--font-display); font-style: italic; font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.5rem; }
-  .testimony-divider { height: 1px; background: rgba(181,173,165,0.4); margin-bottom: 1.2rem; }
-  .testimony-author { font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--taupe); }
-  .testimony-role { font-size: 0.62rem; color: #8A857F; margin-top: 0.2rem; }
-
-  /* ABOUT */
-  .about-section { padding: 7rem 6rem; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
-  .about-photo-wrap { position: relative; }
-  .about-photo { width: 100%; height: 680px; object-fit: cover; object-position: 50% 15%; filter: grayscale(8%); }
-  .about-photo-caption { position: absolute; bottom: -1rem; right: -1rem; background: var(--noir); color: var(--blanc); padding: 1.5rem 2rem; }
-  .caption-title { font-family: var(--font-display); font-size: 1rem; font-style: italic; }
-  .caption-sub { font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--taupe); margin-top: 0.3rem; }
-  .about-title { font-family: var(--font-display); font-size: clamp(1.8rem, 2.5vw, 2.4rem); font-weight: 400; line-height: 1.2; margin-bottom: 1.5rem; }
-  .about-title em { font-style: italic; color: var(--taupe); }
-  .about-text { font-size: 0.83rem; color: #6B6560; line-height: 1.9; margin-bottom: 1.2rem; }
-  .about-signature { font-family: var(--font-display); font-style: italic; font-size: 1.5rem; color: var(--taupe); margin-top: 2rem; }
-  .about-role { font-size: 0.62rem; color: #8A857F; letter-spacing: 0.12em; margin-top: 0.3rem; }
-
-  /* FAQ */
-  .faq-section { background: var(--beige); padding: 5rem 6rem; }
-  .faq-list { margin-top: 3rem; }
-  .faq-item { border-bottom: 1px solid rgba(181,173,165,0.4); }
-  .faq-question { padding: 1.4rem 0; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-family: var(--font-display); font-size: 0.95rem; user-select: none; }
-  .faq-icon { color: var(--taupe); transition: transform 0.3s; font-size: 1.1rem; }
-  .faq-answer { font-size: 0.8rem; color: #6B6560; line-height: 1.8; max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s; }
-  .faq-item.open .faq-icon { transform: rotate(45deg); }
-  .faq-item.open .faq-answer { max-height: 200px; padding-bottom: 1.5rem; }
-
-  /* CTA */
-  .cta-section { background: var(--noir); padding: 8rem 6rem; text-align: center; position: relative; overflow: hidden; }
-  .cta-section::before { content: 'FLOW'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-family: var(--font-display); font-size: 20rem; color: rgba(255,255,255,0.02); pointer-events: none; white-space: nowrap; letter-spacing: -0.05em; }
-  .cta-eyebrow { font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1.8rem; }
-  .cta-title { font-family: var(--font-display); font-size: clamp(2.2rem, 4.5vw, 3.8rem); color: var(--blanc); line-height: 1.1; margin-bottom: 1.5rem; }
-  .cta-title em { font-style: italic; color: var(--taupe); }
-  .cta-subtitle { font-size: 0.83rem; color: rgba(255,255,255,0.45); max-width: 460px; margin: 0 auto 3rem; line-height: 1.8; }
-  .cta-btn { display: inline-block; font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; padding: 1.2rem 2.8rem; background: var(--blanc); color: var(--noir); text-decoration: none; border: 1px solid var(--blanc); transition: all 0.35s; }
-  .cta-btn:hover { background: transparent; color: var(--blanc); }
-  .cta-note { font-size: 0.62rem; color: rgba(255,255,255,0.25); margin-top: 1.5rem; letter-spacing: 0.05em; }
-
-  /* FOOTER */
-  footer { background: var(--blanc); padding: 2.5rem 6rem; border-top: 1px solid rgba(181,173,165,0.3); display: flex; justify-content: space-between; align-items: center; }
-  .footer-logo { font-family: var(--font-display); font-size: 0.95rem; letter-spacing: 0.2em; text-transform: uppercase; }
-  .footer-tagline { font-size: 0.65rem; color: var(--taupe); letter-spacing: 0.08em; margin-top: 0.2rem; }
-  .footer-links { display: flex; gap: 2rem; }
-  .footer-links a { font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; color: #8A857F; text-decoration: none; transition: color 0.3s; }
-  .footer-links a:hover { color: var(--noir); }
-
-  /* MENTIONS LÉGALES */
-  .mentions-section { padding: 6rem 6rem; max-width: 860px; margin: 0 auto; }
-  .mentions-title { font-family: var(--font-display); font-size: 2rem; margin-bottom: 3rem; }
-  .mentions-block { margin-bottom: 2.5rem; }
-  .mentions-block h3 { font-family: var(--font-display); font-size: 1rem; margin-bottom: 0.8rem; }
-  .mentions-block p { font-size: 0.82rem; color: #6B6560; line-height: 1.8; }
-
-  /* REVEAL */
-  .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.7s ease, transform 0.7s ease; }
-  .reveal.visible { opacity: 1; transform: translateY(0); }
-  .reveal-delay-1 { transition-delay: 0.1s; }
-  .reveal-delay-2 { transition-delay: 0.2s; }
-  .reveal-delay-3 { transition-delay: 0.3s; }
-  .reveal-delay-4 { transition-delay: 0.4s; }
-
-
-  /* DROPDOWN */
+  .nav-links a { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--noir); text-decoration: none; transition: color 0.3s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--taupe); }
   .nav-dropdown { position: relative; }
   .dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background: var(--blanc); border: 1px solid rgba(181,173,165,0.3); min-width: 240px; z-index: 200; padding: 0.5rem 0; box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
   .dropdown-menu li { list-style: none; }
   .dropdown-menu a { display: block; padding: 0.7rem 1.2rem; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--noir); text-decoration: none; transition: background 0.2s; white-space: nowrap; }
   .dropdown-menu a:hover { background: var(--beige); }
   .nav-dropdown:hover .dropdown-menu { display: block; }
-
-  /* HERO PATHS */
-  .hero-paths { display: flex; flex-direction: column; gap: 1.5px; margin-bottom: 1.5rem; }
-  .hero-path { display: grid; grid-template-columns: 1fr auto; grid-template-rows: auto auto; gap: 0.2rem 1rem; padding: 1.4rem 1.6rem; background: var(--beige); text-decoration: none; color: var(--noir); transition: background 0.3s; border-left: 2px solid transparent; }
-  .hero-path:hover { background: var(--blanc); border-left-color: var(--taupe); }
-  .path-label { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.04em; grid-column: 1; grid-row: 1; }
-  .path-desc { font-size: 0.72rem; color: #6B6560; line-height: 1.5; grid-column: 1; grid-row: 2; }
-  .path-arrow { grid-column: 2; grid-row: 1 / 3; align-self: center; color: var(--taupe); font-size: 1rem; transition: transform 0.3s; }
-  .hero-path:hover .path-arrow { transform: translateX(4px); color: var(--noir); }
-  .hero-note { font-size: 0.72rem; }
-  .hero-note a { color: var(--taupe); text-decoration: none; transition: color 0.3s; }
-  .hero-note a:hover { color: var(--noir); }
-
-  /* HAMBURGER */
+  .nav-cta { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 0.65rem 1.5rem; border: 1px solid var(--noir); color: var(--noir); text-decoration: none; transition: all 0.3s; }
+  .nav-cta:hover { background: var(--noir); color: var(--blanc); }
   .nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
   .nav-hamburger span { display: block; width: 22px; height: 1.5px; background: var(--noir); transition: all 0.3s; }
   .mobile-menu { display: none; position: fixed; top: 76px; left: 0; right: 0; background: var(--blanc); border-bottom: 1px solid rgba(181,173,165,0.3); padding: 1.5rem; z-index: 99; flex-direction: column; gap: 0; }
@@ -249,278 +42,167 @@
   .mobile-menu a { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--noir); text-decoration: none; padding: 0.9rem 0; border-bottom: 1px solid rgba(181,173,165,0.2); }
   .mobile-menu .mobile-cta { background: var(--noir); color: var(--blanc); text-align: center; padding: 1rem; border: none; margin-top: 1rem; }
 
-  /* RESPONSIVE, TABLET */
-  @media (max-width: 960px) {
-    nav { padding: 1.2rem 1.5rem; }
-    .nav-links { display: none; }
-    .nav-cta { display: none; }
-    .nav-hamburger { display: flex; }
+  /* HERO */
+  .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 76px; }
+  .hero-left { display: flex; flex-direction: column; justify-content: center; padding: 5rem 4rem 5rem 6rem; }
+  .hero-eyebrow { font-size: 0.62rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1.8rem; display: flex; align-items: center; gap: 1rem; }
+  .hero-eyebrow::before { content: ''; width: 1.8rem; height: 1px; background: var(--taupe); }
+  .hero-title { font-family: var(--font-display); font-size: clamp(2.4rem, 3.8vw, 3.8rem); font-weight: 400; line-height: 1.1; margin-bottom: 1.8rem; }
+  .hero-title em { font-style: italic; color: var(--taupe); }
+  .hero-subtitle { font-size: 0.9rem; color: #6B6560; line-height: 1.9; max-width: 440px; margin-bottom: 1rem; }
+  .hero-tagline { font-size: 0.82rem; color: var(--noir); font-weight: 400; margin-bottom: 2.5rem; letter-spacing: 0.04em; }
+  .hero-actions { display: flex; gap: 1.2rem; align-items: center; flex-wrap: wrap; margin-bottom: 0.8rem; }
+  .btn-primary { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 1.1rem 2.2rem; background: var(--noir); color: var(--blanc); text-decoration: none; border: 1px solid var(--noir); transition: all 0.35s; }
+  .btn-primary:hover { background: transparent; color: var(--noir); }
+  .btn-ghost { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--noir); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; transition: gap 0.3s; }
+  .btn-ghost:hover { gap: 0.9rem; }
+  .btn-ghost::after { content: '→'; }
+  .hero-micro { font-size: 0.65rem; color: var(--taupe); }
+  .hero-right { background: var(--beige); display: flex; align-items: center; justify-content: center; padding: 5rem 4rem; position: relative; overflow: hidden; }
+  .hero-right::before { content: 'FS'; position: absolute; bottom: -1rem; right: -1rem; font-family: var(--font-display); font-size: 14rem; color: rgba(181,173,165,0.12); line-height: 1; pointer-events: none; }
+  .problems-list { display: flex; flex-direction: column; gap: 1.5px; width: 100%; }
+  .problem-item { background: var(--blanc); padding: 1.1rem 1.4rem; font-size: 0.8rem; color: #6B6560; display: flex; gap: 0.8rem; align-items: flex-start; line-height: 1.5; }
+  .problem-item::before { content: '·'; color: var(--taupe); font-size: 1rem; flex-shrink: 0; margin-top: -1px; }
 
-    .hero { grid-template-columns: 1fr; min-height: auto; }
-    .hero-left { padding: 5rem 1.5rem 2.5rem; }
-    .hero-title { font-size: clamp(2.2rem, 8vw, 3rem); }
-    .hero-subtitle { max-width: 100%; }
-    .hero-actions { flex-direction: column; align-items: flex-start; gap: 1rem; }
-    .btn-primary { width: 100%; text-align: center; }
-    .hero-stats { gap: 1.5rem; }
-    .hero-right { min-height: 70vw; }
-    .hero-photo { object-position: center top; }
-    .hero-card { left: 1rem; bottom: 1rem; max-width: 220px; padding: 1.2rem; }
-    .card-title { font-size: 0.95rem; }
-    .price-amount { font-size: 1.3rem; }
+  /* SECTION EYEBROW */
+  .section-eyebrow { font-size: 0.62rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1.2rem; display: flex; align-items: center; gap: 1rem; }
+  .section-eyebrow::before { content: ''; width: 1.8rem; height: 1px; background: var(--taupe); }
+  .section-title { font-family: var(--font-display); font-size: clamp(1.8rem, 2.8vw, 2.6rem); font-weight: 400; line-height: 1.2; }
+  .section-title em { font-style: italic; color: var(--taupe); }
 
-    .promise-section, .packs-section, .cta-section, .faq-section { padding: 4rem 1.5rem; }
-    .how-section, .testimony-section { padding: 4rem 1.5rem; }
-    .about-section { padding: 4rem 1.5rem; grid-template-columns: 1fr; gap: 2.5rem; }
-    .section-title { font-size: clamp(1.6rem, 6vw, 2.4rem); }
+  /* SYSTEME */
+  .systeme-section { padding: 7rem 6rem; }
+  .systeme-intro { max-width: 680px; margin-bottom: 4rem; }
+  .systeme-intro p { font-size: 0.88rem; color: #6B6560; line-height: 1.9; margin-top: 1.2rem; }
+  .systeme-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: rgba(181,173,165,0.3); }
+  .systeme-card { background: var(--blanc); padding: 2.5rem 2rem; transition: background 0.3s; }
+  .systeme-card:hover { background: var(--beige); }
+  .systeme-num { font-family: var(--font-display); font-size: 0.75rem; color: var(--taupe); margin-bottom: 1.2rem; }
+  .systeme-title { font-family: var(--font-display); font-size: 1.1rem; margin-bottom: 0.8rem; }
+  .systeme-text { font-size: 0.78rem; color: #6B6560; line-height: 1.8; }
 
-    .promise-grid { grid-template-columns: 1fr; }
-    .promise-item { border-right: none; border-bottom: 1px solid rgba(181,173,165,0.4); }
-    .promise-item:last-child { border-bottom: none; }
-    .packs-grid { grid-template-columns: 1fr; gap: 1px; }
-    .testimony-grid { grid-template-columns: 1fr; gap: 1rem; }
-    .how-grid { grid-template-columns: 1fr; gap: 2rem; }
+  /* DELEGUEZ */
+  .deleguer-section { background: var(--noir); padding: 7rem 6rem; }
+  .deleguer-title { font-family: var(--font-display); font-size: clamp(1.8rem, 2.5vw, 2.4rem); color: var(--blanc); margin-bottom: 0.8rem; }
+  .deleguer-title em { font-style: italic; color: var(--taupe); }
+  .deleguer-sub { font-size: 0.82rem; color: rgba(255,255,255,0.45); margin-bottom: 3rem; max-width: 520px; line-height: 1.8; }
+  .deleguer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5px; background: rgba(255,255,255,0.06); }
+  .deleguer-item { background: rgba(255,255,255,0.03); padding: 1.4rem 1.2rem; font-size: 0.75rem; color: rgba(255,255,255,0.65); display: flex; gap: 0.7rem; align-items: flex-start; line-height: 1.5; transition: background 0.3s; }
+  .deleguer-item:hover { background: rgba(255,255,255,0.07); }
+  .deleguer-item::before { content: '→'; color: var(--taupe); flex-shrink: 0; font-size: 0.65rem; margin-top: 2px; }
+  .deleguer-note { font-size: 0.78rem; color: rgba(255,255,255,0.35); margin-top: 2rem; line-height: 1.7; max-width: 600px; }
 
-    .about-photo { height: 420px; object-position: 50% 15%; }
-    .about-photo-caption { right: 0; bottom: -0.5rem; }
+  /* OFFRES */
+  .offres-section { padding: 7rem 6rem; }
+  .offres-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: rgba(181,173,165,0.3); margin-top: 3.5rem; }
+  .offre-card { background: var(--blanc); padding: 3rem 2.5rem; display: flex; flex-direction: column; }
+  .offre-card.featured { background: var(--noir); }
+  .offre-tag { font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--taupe); margin-bottom: 0.8rem; }
+  .offre-title { font-family: var(--font-display); font-size: 1.6rem; margin-bottom: 0.5rem; }
+  .offre-card.featured .offre-title { color: var(--blanc); }
+  .offre-price { font-family: var(--font-display); font-size: 2rem; margin-bottom: 0.3rem; }
+  .offre-card.featured .offre-price { color: var(--blanc); }
+  .offre-price-sub { font-size: 0.68rem; color: var(--taupe); margin-bottom: 2rem; }
+  .offre-divider { height: 1px; background: rgba(181,173,165,0.4); margin-bottom: 1.8rem; }
+  .offre-card.featured .offre-divider { background: rgba(255,255,255,0.1); }
+  .offre-features { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; flex: 1; margin-bottom: 2rem; }
+  .offre-feature { font-size: 0.78rem; color: #5A5550; display: flex; gap: 0.7rem; align-items: flex-start; line-height: 1.5; }
+  .offre-card.featured .offre-feature { color: rgba(255,255,255,0.6); }
+  .offre-feature::before { content: '—'; color: var(--taupe); flex-shrink: 0; font-size: 0.65rem; margin-top: 2px; }
+  .offre-cta { display: block; text-align: center; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; padding: 1rem 1.5rem; border: 1px solid var(--noir); color: var(--noir); text-decoration: none; transition: all 0.3s; }
+  .offre-cta:hover { background: var(--noir); color: var(--blanc); }
+  .offre-card.featured .offre-cta { border-color: var(--blanc); color: var(--blanc); }
+  .offre-card.featured .offre-cta:hover { background: var(--blanc); color: var(--noir); }
+  .offres-note { text-align: center; font-size: 0.8rem; color: #6B6560; margin-top: 2rem; line-height: 1.8; }
+  .offres-note strong { color: var(--noir); font-weight: 400; }
 
-    .cta-section::before { font-size: 8rem; }
-    .cta-title { font-size: clamp(1.8rem, 7vw, 3rem); }
-    .cta-btn { width: 100%; max-width: 320px; }
+  /* PROCESS */
+  .process-section { background: var(--beige); padding: 7rem 6rem; }
+  .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: rgba(181,173,165,0.3); margin-top: 3.5rem; }
+  .process-step { background: var(--blanc); padding: 2.5rem 2rem; }
+  .process-num { font-family: var(--font-display); font-size: 2.5rem; color: rgba(181,173,165,0.3); margin-bottom: 1rem; line-height: 1; }
+  .process-title { font-family: var(--font-display); font-size: 1rem; margin-bottom: 0.8rem; }
+  .process-text { font-size: 0.78rem; color: #6B6560; line-height: 1.7; }
 
-    footer { padding: 2rem 1.5rem; flex-direction: column; gap: 1.2rem; text-align: center; }
-    .footer-links { flex-wrap: wrap; justify-content: center; gap: 1rem; }
-  }
+  /* POUR QUI */
+  .pourqui-section { padding: 7rem 6rem; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+  .pourqui-col h3 { font-family: var(--font-display); font-size: 1.1rem; margin-bottom: 1.5rem; }
+  .pourqui-list { list-style: none; display: flex; flex-direction: column; gap: 0.8rem; }
+  .pourqui-list li { font-size: 0.8rem; color: #6B6560; display: flex; gap: 0.8rem; line-height: 1.5; }
+  .pourqui-list.yes li::before { content: '✓'; color: #4A7C59; flex-shrink: 0; }
+  .pourqui-list.no li::before { content: '✗'; color: var(--terracotta); flex-shrink: 0; }
 
-  /* RESPONSIVE, MOBILE */
-  @media (max-width: 480px) {
-    nav { padding: 1rem 1.2rem; }
-    .nav-logo { font-size: 0.95rem; }
+  /* FAQ */
+  .faq-section { background: var(--beige); padding: 7rem 6rem; }
+  .faq-list { margin-top: 3rem; max-width: 720px; }
+  .faq-item { border-bottom: 1px solid rgba(181,173,165,0.4); }
+  .faq-question { padding: 1.4rem 0; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-family: var(--font-display); font-size: 0.95rem; user-select: none; }
+  .faq-icon { color: var(--taupe); transition: transform 0.3s; }
+  .faq-answer { font-size: 0.82rem; color: #6B6560; line-height: 1.8; max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s; }
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
+  .faq-item.open .faq-answer { max-height: 200px; padding-bottom: 1.5rem; }
 
-    .hero-left { padding: 4.5rem 1.2rem 2rem; }
-    .hero-title { font-size: clamp(1.9rem, 9vw, 2.4rem); }
-    .hero-subtitle { font-size: 0.82rem; }
-    .hero-stats { flex-wrap: wrap; gap: 1.2rem; }
-    .stat-number { font-size: 1.5rem; }
-    .hero-right { min-height: 80vw; }
-    .hero-card { display: none; }
-
-    .marquee-item { font-size: 0.5rem; letter-spacing: 0.2em; }
-
-    .promise-section { padding: 3rem 1.2rem; }
-    .promise-item { padding: 1.8rem 0; }
-    .promise-title { font-size: 1.05rem; }
-
-    .how-section { padding: 3rem 1.2rem; }
-    .how-step { grid-template-columns: 40px 1fr; gap: 1rem; }
-    .step-num { width: 34px; height: 34px; font-size: 0.75rem; }
-    .how-visual { padding: 2rem; }
-    .visual-tagline { font-size: 1.3rem; }
-
-    .packs-section { padding: 3rem 1.2rem; }
-    .pack-card { padding: 2rem 1.5rem; }
-    .pack-price { font-size: 1.8rem; }
-    .pack-cta { padding: 0.85rem 1rem; }
-
-    .testimony-section { padding: 3rem 1.2rem; }
-    .testimony-card { padding: 1.8rem; }
-    .testimony-quote { font-size: 0.88rem; }
-
-    .about-section { padding: 3rem 1.2rem; }
-    .about-photo { height: 320px; }
-    .about-photo-caption { padding: 1rem 1.2rem; }
-    .caption-title { font-size: 0.85rem; }
-    .about-title { font-size: clamp(1.5rem, 7vw, 2rem); }
-    .about-text { font-size: 0.8rem; }
-
-    .faq-section { padding: 3rem 1.2rem; }
-    .faq-question { font-size: 0.88rem; padding: 1.2rem 0; }
-
-    .cta-section { padding: 4rem 1.2rem; }
-    .cta-eyebrow { font-size: 0.56rem; }
-    .cta-note { font-size: 0.56rem; }
-
-    footer { padding: 1.8rem 1.2rem; }
-    .footer-links { gap: 0.8rem; }
-    .footer-links a { font-size: 0.58rem; }
-  }
-
-
-  /* BLOOM & BUILD SECTION */
-  .bloom-section { background: var(--noir); padding: 6rem; }
-  .bloom-inner { display: grid; grid-template-columns: 1fr 1px 1fr; gap: 4rem; align-items: start; max-width: 960px; margin: 0 auto; }
-  .bloom-divider { background: rgba(255,255,255,0.1); width: 1px; height: 100%; }
-  .bloom-eyebrow { font-size: 0.58rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1rem; }
-  .bloom-title { font-family: var(--font-display); font-size: 1.6rem; font-weight: 400; color: var(--blanc); line-height: 1.2; margin-bottom: 1rem; }
-  .bloom-title em { font-style: italic; color: var(--taupe); }
-  .bloom-text { font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.8; margin-bottom: 1.8rem; }
-  .bloom-cta { display: inline-block; font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 0.85rem 1.6rem; text-decoration: none; transition: all 0.3s; }
-  .bloom-cta.dark { background: var(--blanc); color: var(--noir); border: 1px solid var(--blanc); }
-  .bloom-cta.dark:hover { background: transparent; color: var(--blanc); }
-  .bloom-cta.light { background: transparent; color: var(--blanc); border: 1px solid rgba(255,255,255,0.3); }
-  .bloom-cta.light:hover { border-color: var(--blanc); }
-  @media (max-width: 768px) {
-    .bloom-section { padding: 4rem 1.5rem; }
-    .bloom-inner { grid-template-columns: 1fr; gap: 3rem; }
-    .bloom-divider { display: none; }
-  }
+  /* CTA */
+  .cta-section { background: var(--noir); padding: 8rem 6rem; text-align: center; position: relative; overflow: hidden; }
+  .cta-section::before { content: 'FS'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-family: var(--font-display); font-size: 22rem; color: rgba(255,255,255,0.02); pointer-events: none; }
+  .cta-eyebrow { font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1.8rem; }
+  .cta-title { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3.5rem); color: var(--blanc); line-height: 1.1; margin-bottom: 1.2rem; }
+  .cta-title em { font-style: italic; color: var(--taupe); }
+  .cta-subtitle { font-size: 0.85rem; color: rgba(255,255,255,0.45); max-width: 460px; margin: 0 auto 2.5rem; line-height: 1.8; }
+  .cta-btn { display: inline-block; font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; padding: 1.2rem 2.8rem; background: var(--blanc); color: var(--noir); text-decoration: none; border: 1px solid var(--blanc); transition: all 0.35s; }
+  .cta-btn:hover { background: transparent; color: var(--blanc); }
+  .cta-note { font-size: 0.65rem; color: rgba(255,255,255,0.25); margin-top: 1rem; }
 
   /* BLOOM FOOTER BAR */
   .bloom-footer-bar { background: var(--beige); padding: 1rem 6rem; text-align: center; border-top: 1px solid rgba(181,173,165,0.4); }
   .bloom-footer-bar p { font-size: 0.78rem; color: #6B6560; }
   .bloom-footer-bar a { color: var(--noir); font-weight: 400; text-decoration: underline; text-underline-offset: 3px; transition: color 0.3s; }
   .bloom-footer-bar a:hover { color: var(--taupe); }
-  @media (max-width: 768px) { .bloom-footer-bar { padding: 1rem 1.5rem; } }
 
-  /* COOKIE BANNER */
-  .cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; z-index: 999; background: var(--noir); padding: 1.2rem 4rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; transform: translateY(100%); transition: transform 0.4s ease; }
-  .cookie-banner.visible { transform: translateY(0); }
-  .cookie-text { font-size: 0.72rem; color: rgba(255,255,255,0.6); line-height: 1.6; max-width: 600px; }
-  .cookie-text a { color: var(--taupe); text-decoration: underline; }
-  .cookie-actions { display: flex; gap: 0.8rem; flex-shrink: 0; }
-  .cookie-btn { font-size: 0.58rem; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.7rem 1.4rem; cursor: pointer; border: none; font-family: var(--font-body); transition: all 0.3s; white-space: nowrap; }
-  .cookie-btn.accept { background: var(--blanc); color: var(--noir); }
-  .cookie-btn.accept:hover { background: var(--beige); }
-  .cookie-btn.refuse { background: transparent; color: rgba(255,255,255,0.5); border: 1px solid rgba(255,255,255,0.2); }
-  .cookie-btn.refuse:hover { color: var(--blanc); border-color: rgba(255,255,255,0.5); }
-  @media (max-width: 768px) {
-    .cookie-banner { padding: 1.2rem 1.5rem; flex-direction: column; align-items: flex-start; gap: 1rem; }
-    .cookie-actions { width: 100%; }
-    .cookie-btn { flex: 1; text-align: center; }
+  /* FOOTER */
+  footer { background: var(--blanc); padding: 2.5rem 6rem; border-top: 1px solid rgba(181,173,165,0.3); display: flex; justify-content: space-between; align-items: center; }
+  .footer-logo { font-family: var(--font-display); font-size: 0.95rem; letter-spacing: 0.2em; text-transform: uppercase; }
+  .footer-tagline { font-size: 0.65rem; color: var(--taupe); margin-top: 0.2rem; }
+  .footer-links { display: flex; gap: 2rem; }
+  .footer-links a { font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; color: #8A857F; text-decoration: none; transition: color 0.3s; }
+  .footer-links a:hover { color: var(--noir); }
+
+  /* REVEAL */
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+
+  /* RESPONSIVE */
+  @media (max-width: 960px) {
+    nav { padding: 1.2rem 1.5rem; }
+    .nav-links { display: none; }
+    .nav-cta { display: none; }
+    .nav-hamburger { display: flex; }
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left { padding: 5rem 1.5rem 2.5rem; }
+    .hero-right { padding: 3rem 1.5rem; min-height: 50vw; }
+    .systeme-section, .offres-section, .deleguer-section, .process-section, .faq-section { padding: 5rem 1.5rem; }
+    .pourqui-section { grid-template-columns: 1fr; gap: 3rem; padding: 5rem 1.5rem; }
+    .cta-section { padding: 5rem 1.5rem; }
+    .systeme-grid, .process-grid { grid-template-columns: 1fr; }
+    .deleguer-grid { grid-template-columns: 1fr 1fr; }
+    .offres-grid { grid-template-columns: 1fr; }
+    footer { padding: 2rem 1.5rem; flex-direction: column; gap: 1.2rem; text-align: center; }
+    .footer-links { flex-wrap: wrap; justify-content: center; gap: 1rem; }
+    .bloom-footer-bar { padding: 1rem 1.5rem; }
+  }
+  @media (max-width: 480px) {
+    nav { padding: 1rem 1.2rem; }
+    .hero-left { padding: 4.5rem 1.2rem 2rem; }
+    .hero-right { padding: 2rem 1.2rem; }
+    .systeme-section, .offres-section, .process-section, .faq-section, .pourqui-section { padding: 4rem 1.2rem; }
+    .deleguer-section, .cta-section { padding: 4rem 1.2rem; }
+    .deleguer-grid { grid-template-columns: 1fr; }
+    footer { padding: 1.8rem 1.2rem; }
   }
 </style>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": [
-        "Organization",
-        "ProfessionalService"
-      ],
-      "@id": "https://flow-studio.app/#organization",
-      "name": "Flow Studio",
-      "url": "https://flow-studio.app",
-      "logo": "https://flow-studio.app/favicon.svg",
-      "email": "solen@flow-studio.app",
-      "founder": {
-        "@id": "https://flow-studio.app/solen-ouahioune#person"
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Vaux-sur-Seine",
-        "addressRegion": "Île-de-France",
-        "addressCountry": "FR"
-      },
-      "areaServed": {
-        "@type": "Country",
-        "name": "France"
-      },
-      "description": "Flow Studio crée des systèmes IA, Notion et automatisations sur mesure pour entrepreneurs et PME.",
-      "knowsAbout": [
-        "Notion",
-        "Intelligence Artificielle",
-        "Automatisation",
-        "Make",
-        "Agents IA",
-        "Systèmes business"
-      ]
-    },
-    {
-      "@type": "Person",
-      "@id": "https://flow-studio.app/solen-ouahioune#person",
-      "name": "Solen Ouahioune",
-      "url": "https://flow-studio.app/solen-ouahioune",
-      "jobTitle": "Consultante IA, Notion et automatisation",
-      "email": "solen@flow-studio.app",
-      "sameAs": [
-        "https://www.linkedin.com/in/solen-ouahioune-87b28947/"
-      ],
-      "worksFor": {
-        "@id": "https://flow-studio.app/#organization"
-      },
-      "knowsAbout": [
-        "Notion",
-        "Intelligence Artificielle",
-        "Automatisation Make",
-        "Agents IA",
-        "Systèmes business",
-        "No-code"
-      ]
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://flow-studio.app/",
-      "url": "https://flow-studio.app/",
-      "name": "Systèmes IA & Notion pour entrepreneurs et PME | Flow Studio",
-      "description": "Flow Studio centralise votre organisation, automatise les tâches répétitives et construit les assistants IA adaptés à votre activité.",
-      "isPartOf": {
-        "@id": "https://flow-studio.app/#organization"
-      },
-      "breadcrumb": {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Accueil",
-            "item": "https://flow-studio.app/"
-          }
-        ]
-      }
-    },
-    {
-      "@type": "Service",
-      "name": "Diagnostic Système",
-      "provider": {
-        "@id": "https://flow-studio.app/#organization"
-      },
-      "description": "Cartographie du fonctionnement actuel, identification des priorités et définition de l'architecture cible.",
-      "areaServed": "France",
-      "url": "https://flow-studio.app/#packs"
-    },
-    {
-      "@type": "Service",
-      "name": "System Core",
-      "provider": {
-        "@id": "https://flow-studio.app/#organization"
-      },
-      "description": "Un système principal centré sur une priorité : pilotage, CRM, production client, communication ou système IA métier.",
-      "offers": {
-        "@type": "Offer",
-        "priceCurrency": "EUR",
-        "price": "1500",
-        "priceSpecification": {
-          "@type": "PriceSpecification",
-          "minPrice": "1500"
-        }
-      },
-      "areaServed": "France",
-      "url": "https://flow-studio.app/#packs"
-    },
-    {
-      "@type": "Service",
-      "name": "System Signature",
-      "provider": {
-        "@id": "https://flow-studio.app/#organization"
-      },
-      "description": "Un écosystème complet combinant organisation, IA et automatisations.",
-      "offers": {
-        "@type": "Offer",
-        "priceCurrency": "EUR",
-        "price": "2500",
-        "priceSpecification": {
-          "@type": "PriceSpecification",
-          "minPrice": "2500"
-        }
-      },
-      "areaServed": "France",
-      "url": "https://flow-studio.app/#packs"
-    }
-  ]
-}
-</script>
 </head>
 <body>
 
@@ -555,308 +237,271 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-left">
-    <p class="hero-eyebrow reveal">Création de systèmes IA & Notion</p>
+    <p class="hero-eyebrow reveal">Flow Studio — Entrepreneurs & petites équipes</p>
     <h1 class="hero-title reveal reveal-delay-1">
       Ton business ne manque pas d'outils.<br>
       <em>Il manque d'un système.</em>
     </h1>
     <p class="hero-subtitle reveal reveal-delay-2">
-      Flow Studio centralise ton organisation, automatise les tâches répétitives et construit les assistants IA adaptés à ton activité. Tu récupères un système opérationnel, documenté et prêt à utiliser.
+      Flow Studio construit le système qui te permet de piloter ton activité sans multiplier les tableaux, les applications et les tâches répétitives. Notion, IA et automatisations connectés à ton fonctionnement réel.
     </p>
+    <p class="hero-tagline reveal reveal-delay-2">Je construis. Je t'explique. Tu pilotes.</p>
     <div class="hero-actions reveal reveal-delay-3">
       <a href="https://calendar.app.google/x3LrzMWr5spjaSn56" target="_blank" class="btn-primary">Réserver un diagnostic</a>
-      <a href="/realisations" class="btn-ghost">Voir un système en action</a>
+      <a href="/realisations" class="btn-ghost">Voir ce que je construis</a>
     </div>
-
-    <!-- TWO PATHS -->
-    <div class="hero-paths reveal reveal-delay-4">
-      <a href="/entrepreneurs" class="hero-path">
-        <span class="path-label">Entrepreneurs & petites équipes</span>
-        <span class="path-desc">Structurer mon business avec Notion, l'IA et les automatisations.</span>
-        <span class="path-arrow">→</span>
-      </a>
-      <a href="/pme" class="hero-path">
-        <span class="path-label">PME & organisations</span>
-        <span class="path-desc">Auditer et encadrer les usages IA de mon équipe.</span>
-        <span class="path-arrow">→</span>
-      </a>
-    </div>
+    <p class="hero-micro reveal reveal-delay-3">Premier échange de 30 minutes, sans engagement.</p>
   </div>
   <div class="hero-right">
-    <img class="hero-photo" src="solen-ouahioune-flow-studio.jpg" alt="Solen Ouahioune, Flow Studio">
-    <div class="hero-card reveal reveal-delay-2">
-      <p class="card-tag">System Core, Le plus demandé</p>
-      <h3 class="card-title">Un système centré sur votre priorité</h3>
-      <ul class="card-items">
-        <li>Audit & mapping business</li>
-        <li>Système Notion Pro sur-mesure</li>
-        <li>CRM + pipeline automatisé</li>
-        <li>2 agents IA personnalisés</li>
-        <li>3 automatisations Make</li>
+    <div class="problems-list reveal reveal-delay-2">
+      <div class="problem-item">Rechercher une information que tu sais avoir enregistrée quelque part</div>
+      <div class="problem-item">Recopier les mêmes données d'un outil à un autre</div>
+      <div class="problem-item">Suivre tes prospects et tes clients manuellement</div>
+      <div class="problem-item">Recréer tes documents, tes emails ou tes contenus à chaque fois</div>
+      <div class="problem-item">Vérifier que tu n'as oublié aucune tâche importante</div>
+      <div class="problem-item">Utiliser ChatGPT sans véritable méthode ni continuité</div>
+      <div class="problem-item">Organiser ton business au lieu de le développer</div>
+    </div>
+  </div>
+</section>
+
+<!-- SYSTÈME -->
+<section class="systeme-section">
+  <div class="systeme-intro reveal">
+    <p class="section-eyebrow">Un système construit autour de ton activité</p>
+    <h2 class="section-title">Pas un template générique.<br><em>Ton fonctionnement, organisé.</em></h2>
+    <p>Flow Studio ne t'installe pas un template générique de plus. Je commence par comprendre comment ton business fonctionne aujourd'hui : tes offres, tes clients, tes projets, tes habitudes, tes outils et les points qui te font perdre du temps.</p>
+    <p style="margin-top:0.8rem;">Je construis ensuite un système adapté à ta manière de travailler.</p>
+  </div>
+  <div class="systeme-grid">
+    <div class="systeme-card reveal">
+      <p class="systeme-num">01</p>
+      <h3 class="systeme-title">Un cockpit pour piloter</h3>
+      <p class="systeme-text">Tes objectifs, tes projets, tes priorités, tes tâches, tes indicateurs et tes prochaines actions au même endroit. Tu sais ce qui avance, ce qui bloque et ce qui mérite réellement ton attention.</p>
+    </div>
+    <div class="systeme-card reveal reveal-delay-1">
+      <p class="systeme-num">02</p>
+      <h3 class="systeme-title">Un système commercial clair</h3>
+      <p class="systeme-text">Tes prospects, tes échanges, tes propositions et tes relances ne dépendent plus de ta mémoire. Ton CRM te permet de suivre chaque opportunité et de visualiser ton chiffre d'affaires potentiel.</p>
+    </div>
+    <div class="systeme-card reveal reveal-delay-2">
+      <p class="systeme-num">03</p>
+      <h3 class="systeme-title">Une production client fluide</h3>
+      <p class="systeme-text">Chaque nouveau client suit un parcours clair : onboarding, documents, tâches, livrables, rendez-vous et suivi. Tu réduis les oublis et tu offres une expérience plus professionnelle sans augmenter ta charge mentale.</p>
+    </div>
+    <div class="systeme-card reveal">
+      <p class="systeme-num">04</p>
+      <h3 class="systeme-title">Des assistants IA qui te connaissent</h3>
+      <p class="systeme-text">Configurés avec ton positionnement, tes offres, ta clientèle, ta voix et tes méthodes. Ils t'aident à rédiger, préparer, analyser, organiser sans que tu aies besoin de réexpliquer ton activité à chaque fois.</p>
+    </div>
+    <div class="systeme-card reveal reveal-delay-1">
+      <p class="systeme-num">05</p>
+      <h3 class="systeme-title">Des automatisations réellement utiles</h3>
+      <p class="systeme-text">Les tâches répétitives automatisées entre Notion, Gmail, Google Calendar, Drive, Brevo, Make, N8N ou tes autres outils. L'objectif n'est pas d'automatiser pour impressionner. C'est de supprimer les actions sans valeur ajoutée.</p>
+    </div>
+    <div class="systeme-card reveal reveal-delay-2" style="background:var(--beige);">
+      <p class="systeme-num">Le résultat</p>
+      <h3 class="systeme-title">Moins de dispersion.<br>Plus de pilotage.</h3>
+      <p class="systeme-text">Moins d'informations dispersées, moins de tâches répétitives, moins de décisions prises dans l'urgence, une meilleure visibilité sur ton activité, un parcours client plus professionnel.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CE QUE TU PEUX DÉLÉGUER -->
+<section class="deleguer-section">
+  <p class="section-eyebrow reveal" style="color:var(--taupe);">Ce que tu peux déléguer à Flow Studio</p>
+  <h2 class="deleguer-title reveal reveal-delay-1">Chaque système est <em>personnalisé.</em></h2>
+  <p class="deleguer-sub reveal reveal-delay-1">Les projets peuvent notamment inclure :</p>
+  <div class="deleguer-grid reveal reveal-delay-2">
+    <div class="deleguer-item">Tableau de bord de pilotage</div>
+    <div class="deleguer-item">Espace projets et tâches</div>
+    <div class="deleguer-item">CRM et pipeline commercial</div>
+    <div class="deleguer-item">Calendrier éditorial</div>
+    <div class="deleguer-item">Système de suivi client</div>
+    <div class="deleguer-item">Parcours d'onboarding</div>
+    <div class="deleguer-item">Base de connaissances</div>
+    <div class="deleguer-item">Espace financier</div>
+    <div class="deleguer-item">Assistants IA métiers</div>
+    <div class="deleguer-item">Automatisations entre tes outils</div>
+    <div class="deleguer-item">Tableaux de reporting</div>
+    <div class="deleguer-item">Tutoriels personnalisés</div>
+  </div>
+  <p class="deleguer-note reveal">La technologie est choisie en fonction de ton besoin. Tu n'as pas à décider seule s'il te faut Notion, Airtable, Make, Claude, ChatGPT ou un autre outil. Cette décision fait partie de mon travail.</p>
+</section>
+
+<!-- OFFRES -->
+<section class="offres-section">
+  <p class="section-eyebrow reveal">Deux niveaux d'accompagnement</p>
+  <h2 class="section-title reveal reveal-delay-1">Un système centré sur <em>ce qui compte pour toi.</em></h2>
+  <div class="offres-grid">
+    <div class="offre-card reveal">
+      <p class="offre-tag">Niveau 02</p>
+      <h3 class="offre-title">System Core</h3>
+      <p class="offre-price">À partir de 1 500€</p>
+      <p class="offre-price-sub">Un système centré sur une priorité stratégique</p>
+      <div class="offre-divider"></div>
+      <ul class="offre-features">
+        <li class="offre-feature">Audit de ton fonctionnement</li>
+        <li class="offre-feature">Conception de l'architecture</li>
+        <li class="offre-feature">Construction du système</li>
+        <li class="offre-feature">Intégrations essentielles</li>
+        <li class="offre-feature">Tests et documentation</li>
+        <li class="offre-feature">Session de prise en main</li>
       </ul>
-      <div class="card-price">
-        <span class="price-label">À partir de</span>
-        <span class="price-amount">1 190€</span>
-      </div>
+      <a href="https://calendar.app.google/x3LrzMWr5spjaSn56" target="_blank" class="offre-cta">Parler de mon projet</a>
     </div>
-  </div>
-</section>
-
-<!-- MARQUEE -->
-<div class="marquee-section" aria-hidden="true">
-  <div class="marquee-track" role="presentation">
-    <span class="marquee-item">Notion</span><span class="marquee-item">Intelligence Artificielle</span><span class="marquee-item">Automatisation Make</span><span class="marquee-item">Agents IA</span><span class="marquee-item">Systèmes Business</span><span class="marquee-item">Organisation CEO</span><span class="marquee-item">No-code</span><span class="marquee-item">Notion</span><span class="marquee-item">Intelligence Artificielle</span><span class="marquee-item">Automatisation Make</span><span class="marquee-item">Agents IA</span><span class="marquee-item">Systèmes Business</span><span class="marquee-item">Organisation CEO</span><span class="marquee-item">No-code</span>
-  </div>
-</div>
-
-<!-- PROMISE -->
-<section class="promise-section" id="systemes">
-  <div class="section-header">
-    <p class="section-eyebrow reveal">Notre promesse</p>
-    <h2 class="section-title reveal reveal-delay-1">Ce n'est pas un joli Notion.<br><em>C'est un système qui travaille pour toi.</em></h2>
-  </div>
-  <div class="promise-grid">
-    <div class="promise-item reveal">
-      <p class="promise-num">01</p>
-      <h3 class="promise-title">Clarté immédiate</h3>
-      <p class="promise-text">Tu sais exactement où tu en es, quoi prioriser, et comment avancer. Finis les post-its éparpillés et les tableaux qui se contredisent.</p>
-    </div>
-    <div class="promise-item reveal reveal-delay-1">
-      <p class="promise-num">02</p>
-      <h3 class="promise-title">Système intégré</h3>
-      <p class="promise-text">Notion, IA et automatisations travaillent ensemble dans un écosystème cohérent, conçu spécifiquement pour ton business et ta façon de travailler.</p>
-    </div>
-    <div class="promise-item reveal reveal-delay-2">
-      <p class="promise-num">03</p>
-      <h3 class="promise-title">Autonomie totale</h3>
-      <p class="promise-text">Tu repars avec ton système, une vidéo tutorielle personnalisée et les clés pour l'utiliser en autonomie. Pas de dépendance, pas de formation supplémentaire.</p>
-    </div>
-  </div>
-</section>
-
-<!-- HOW -->
-<section class="how-section" id="methode">
-  <div class="how-grid">
-    <div>
-      <p class="section-eyebrow reveal">Comment ça se passe</p>
-      <h2 class="section-title reveal reveal-delay-1" style="margin-bottom:3rem;">De l'audit à la <em>prise en main</em></h2>
-      <div class="how-steps">
-        <div class="how-step reveal">
-          <div class="step-num">01</div>
-          <div><h3 class="step-title">Appel découverte gratuit</h3><p class="step-text">30 min pour identifier ton besoin, tes blocages et le pack adapté. Aucun engagement.</p></div>
-        </div>
-        <div class="how-step reveal reveal-delay-1">
-          <div class="step-num">02</div>
-          <div><h3 class="step-title">Audit & mapping</h3><p class="step-text">Je cartographie ton business, tes processus et tes objectifs avant de construire quoi que ce soit.</p></div>
-        </div>
-        <div class="how-step reveal reveal-delay-2">
-          <div class="step-num">03</div>
-          <div><h3 class="step-title">Création du système</h3><p class="step-text">Je construis, ajuste et intègre ton infrastructure entre chaque session de travail.</p></div>
-        </div>
-        <div class="how-step reveal reveal-delay-3">
-          <div class="step-num">04</div>
-          <div><h3 class="step-title">Prise en main</h3><p class="step-text">Je t'explique tout en détail. Tu repars autonome, avec une vidéo tutorielle personnalisée.</p></div>
-        </div>
-      </div>
-    </div>
-    <div class="reveal reveal-delay-2">
-      <div class="how-visual">
-        <p class="visual-label">La différence Flow Studio</p>
-        <h3 class="visual-tagline"><em>Un business qui respire,</em><br>pas juste un outil de plus.</h3>
-        <div class="visual-divider"></div>
-        <p class="visual-quote">« J'étais convaincue qu'il faudrait m'épuiser ou embaucher. Créer ma propre équipe de GPT me permet d'avancer sereinement tout en conservant mon CA. Une vraie révélation. »</p>
-        <p class="visual-author">Andréa, fleuriste</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PACKS -->
-<section class="packs-section" id="packs">
-  <div class="section-header">
-    <p class="section-eyebrow reveal">L'offre</p>
-    <h2 class="section-title reveal reveal-delay-1">Trois niveaux.<br><em>Un système qui vous ressemble.</em></h2>
-    <p class="section-intro reveal reveal-delay-2">Chaque mission commence par comprendre votre business. Le diagnostic peut être vendu séparément ou déduit si vous poursuivez avec une mission complète.</p>
-  </div>
-  <div class="packs-grid">
-
-    <!-- NIVEAU 1 -->
-    <div class="pack-card reveal">
-      <p class="pack-tag">Niveau 01</p>
-      <h3 class="pack-title">Diagnostic Système</h3>
-      <div class="pack-divider"></div>
-      <ul class="pack-features">
-        <li class="pack-feature">Cartographie du fonctionnement actuel</li>
-        <li class="pack-feature">Identification des priorités</li>
-        <li class="pack-feature">Définition de l'architecture cible</li>
-        <li class="pack-feature">Rapport écrit livré sous 5 jours</li>
+    <div class="offre-card featured reveal reveal-delay-1">
+      <p class="offre-tag">Niveau 03</p>
+      <h3 class="offre-title">System Signature</h3>
+      <p class="offre-price">À partir de 2 500€</p>
+      <p class="offre-price-sub">Un écosystème complet connecté</p>
+      <div class="offre-divider"></div>
+      <ul class="offre-features">
+        <li class="offre-feature">Audit approfondi</li>
+        <li class="offre-feature">Cartographie de tes processus</li>
+        <li class="offre-feature">Architecture complète multi-espaces</li>
+        <li class="offre-feature">Assistants IA personnalisés</li>
+        <li class="offre-feature">Automatisations avancées</li>
+        <li class="offre-feature">Tutoriels personnalisés</li>
+        <li class="offre-feature">Session de formation</li>
+        <li class="offre-feature">Période de suivi après livraison</li>
       </ul>
-      <p style="font-size:0.72rem;color:#6B6560;margin-top:1.2rem;line-height:1.6;border-top:1px solid rgba(181,173,165,0.4);padding-top:1.2rem;">Vendu séparément ou déduit de la mission si le client poursuit.</p>
-      <a href="https://calendar.app.google/x3LrzMWr5spjaSn56" target="_blank" class="pack-cta">Démarrer par le diagnostic</a>
+      <a href="https://calendar.app.google/x3LrzMWr5spjaSn56" target="_blank" class="offre-cta">Demander un diagnostic</a>
     </div>
-
-    <!-- NIVEAU 2 -->
-    <div class="pack-card featured reveal reveal-delay-1">
-      <div class="pack-badge">Le plus demandé</div>
-      <p class="pack-tag">Niveau 02</p>
-      <h3 class="pack-title">System Core</h3>
-      <p class="pack-price">À partir de 1 500€</p>
-      <p class="pack-price-sub">Un système centré sur une priorité</p>
-      <div class="pack-divider"></div>
-      <ul class="pack-features">
-        <li class="pack-feature">Pilotage du business</li>
-        <li class="pack-feature">CRM et ventes</li>
-        <li class="pack-feature">Production client</li>
-        <li class="pack-feature">Communication & contenu</li>
-        <li class="pack-feature">Système IA métier</li>
-      </ul>
-      <a href="https://calendar.app.google/x3LrzMWr5spjaSn56" target="_blank" class="pack-cta">Définir ma priorité</a>
-    </div>
-
-    <!-- NIVEAU 3 -->
-    <div class="pack-card reveal reveal-delay-2">
-      <p class="pack-tag">Niveau 03</p>
-      <h3 class="pack-title">System Signature</h3>
-      <p class="pack-price">À partir de 2 500€</p>
-      <p class="pack-price-sub">L'écosystème complet</p>
-      <div class="pack-divider"></div>
-      <ul class="pack-features">
-        <li class="pack-feature">Organisation complète du business</li>
-        <li class="pack-feature">IA intégrée à tous les flux</li>
-        <li class="pack-feature">Automatisations avancées Make</li>
-        <li class="pack-feature">Agents IA multi-métiers</li>
-      </ul>
-      <a href="https://calendar.app.google/x3LrzMWr5spjaSn56" target="_blank" class="pack-cta">Parler de mon projet</a>
-    </div>
-
   </div>
-
-  <!-- PRICING NOTE -->
-  <div class="pricing-note reveal">
-    <p>Les projets Flow Studio démarrent à <strong>1 500€</strong>.</p>
-    <p>Le tarif final dépend du nombre de processus, d'outils et d'automatisations à intégrer.</p>
-  </div>
+  <p class="offres-note reveal">Les projets Flow Studio démarrent à <strong>1 500€</strong>. Le tarif final dépend du périmètre, du nombre de processus et des outils à connecter.<br>Tu peux aussi démarrer par le <a href="/#packs" style="color:var(--taupe);text-decoration:underline;">Diagnostic Système</a> pour cartographier ton besoin avant de te lancer.</p>
 </section>
 
-<!-- TÉMOIGNAGES -->
-<section class="testimony-section" id="temoignages">
-  <div class="section-header">
-    <p class="section-eyebrow reveal">Ce qu'elles en disent</p>
-    <h2 class="section-title reveal reveal-delay-1">Des résultats <em>concrets,</em><br>pas des promesses.</h2>
-  </div>
-  <div class="testimony-grid">
-    <div class="testimony-card reveal">
-      <p class="testimony-quote">« À chaque fois tu apportes du nouveau et de la profondeur. Une pédagogie qui rend l'IA simple. J'ai appliqué dès 17h30 pour ma prospection. »</p>
-      <div class="testimony-divider"></div>
-      <p class="testimony-author">Bérangère Mainguy</p>
-      <p class="testimony-role">Consultante</p>
+<!-- PROCESS -->
+<section class="process-section">
+  <p class="section-eyebrow reveal">Comment se déroule un projet</p>
+  <h2 class="section-title reveal reveal-delay-1">De l'audit à la <em>prise en main.</em></h2>
+  <div class="process-grid">
+    <div class="process-step reveal">
+      <p class="process-num">01</p>
+      <h3 class="process-title">Nous faisons le point</h3>
+      <p class="process-text">Lors d'un premier échange, tu m'expliques ton activité, tes difficultés et ce que tu aimerais améliorer. Cet échange permet de vérifier si Flow Studio correspond à ton besoin.</p>
     </div>
-    <div class="testimony-card reveal reveal-delay-1">
-      <p class="testimony-quote">« J'étais convaincue qu'il faudrait m'épuiser ou embaucher. Créer ma propre équipe de GPT me permet d'avancer sereinement. Une vraie révélation. »</p>
-      <div class="testimony-divider"></div>
-      <p class="testimony-author">Andréa</p>
-      <p class="testimony-role">Fleuriste</p>
+    <div class="process-step reveal reveal-delay-1">
+      <p class="process-num">02</p>
+      <h3 class="process-title">Je cartographie ton fonctionnement</h3>
+      <p class="process-text">J'analyse tes processus, tes outils et les endroits où les informations ou les tâches se perdent. Je définis ensuite l'architecture la plus simple pour atteindre ton objectif.</p>
     </div>
-    <div class="testimony-card reveal reveal-delay-2">
-      <p class="testimony-quote">« Ça m'a ouvert un boulevard de possibilités. Passion pour le sujet et une vraie capacité à le rendre accessible à tous les niveaux. »</p>
-      <div class="testimony-divider"></div>
-      <p class="testimony-author">Alex Roman</p>
-      <p class="testimony-role">Architecte d'intérieur</p>
+    <div class="process-step reveal reveal-delay-2">
+      <p class="process-num">03</p>
+      <h3 class="process-title">Je construis et je teste</h3>
+      <p class="process-text">Je crée ton système, je connecte les différents éléments et je teste les parcours avant la livraison. Tu n'as pas à construire l'espace ni à configurer les automatisations toi-même.</p>
+    </div>
+    <div class="process-step reveal reveal-delay-3">
+      <p class="process-num">04</p>
+      <h3 class="process-title">Tu prends le contrôle</h3>
+      <p class="process-text">Je t'explique comment utiliser ton système, comment l'adapter et comment le faire évoluer. Tu repars avec une documentation claire et des tutoriels personnalisés.</p>
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
-<section class="about-section" id="about">
-  <div class="about-photo-wrap reveal">
-    <img class="about-photo" src="solen-ouahioune-flow-studio-2.jpg" alt="Solen Ouahioune">
-    <div class="about-photo-caption">
-      <p class="caption-title">Solen Ouahioune</p>
-      <p class="caption-sub">Fondatrice · Flow Studio</p>
-    </div>
+<!-- POUR QUI -->
+<section class="pourqui-section">
+  <div>
+    <p class="section-eyebrow reveal">Flow Studio est fait pour toi si…</p>
+    <h2 class="section-title reveal reveal-delay-1" style="margin-bottom:2rem;">La bonne <em>solution pour toi ?</em></h2>
+    <p style="font-size:0.85rem;color:#6B6560;line-height:1.9;max-width:420px;" class="reveal reveal-delay-1">Tu es entrepreneuse, consultante, coach, formatrice, créatrice de contenu, prestataire de services ou dirigeante d'une petite équipe. Ton activité fonctionne déjà, mais ton organisation n'a pas suivi ta croissance.</p>
   </div>
   <div>
-    <p class="section-eyebrow reveal">À propos</p>
-    <h2 class="about-title reveal reveal-delay-1">Je ne t'enseigne pas Notion.<br><em>Je construis ton système.</em></h2>
-    <p class="about-text reveal reveal-delay-2">En 2014, licenciement économique du jour au lendemain. Je voulais apprendre le marketing digital. J'ai appris à coder. Coup de foudre.</p>
-    <p class="about-text reveal reveal-delay-2">7 mois plus tard, développeuse web. Avec un enfant en bas âge, sans filet. C'est là que j'ai compris que les bons systèmes ne font pas juste gagner du temps, ils changent ce qu'on croit possible pour soi.</p>
-    <p class="about-text reveal reveal-delay-3">Depuis je construis pour les femmes entrepreneures ce que j'aurais voulu avoir dès le début. Notion, l'IA, les automatisations Make, pas pour les geeks, pour celles qui ont trop de choses dans la tête et pas assez de temps pour les faire toutes.</p>
-    <p class="about-signature reveal reveal-delay-3">Solen Ouahioune</p>
-    <p class="about-role reveal reveal-delay-3">Stratège IA & Systèmes Business · Flow Studio · <a href="https://bloom-and-build.fr" target="_blank" rel="noopener">Bloom & Build</a></p>
+    <div class="pourqui-col reveal">
+      <h3>C'est fait pour toi si :</h3>
+      <ul class="pourqui-list yes">
+        <li>Ton activité fonctionne déjà mais ton organisation n'a pas suivi ta croissance</li>
+        <li>Tu veux structurer ton business sans passer des semaines à regarder des tutoriels</li>
+        <li>Tu cherches une solution personnalisée, pas un template prêt à l'emploi</li>
+        <li>Tu veux utiliser l'IA et les automatisations de manière concrète</li>
+      </ul>
+    </div>
+    <div class="pourqui-col reveal" style="margin-top:2.5rem;">
+      <h3>Ce n'est probablement pas la bonne solution si :</h3>
+      <ul class="pourqui-list no">
+        <li>Tu recherches uniquement un template Notion à petit prix</li>
+        <li>Tu souhaites automatiser un processus qui n'a pas encore été clarifié</li>
+        <li>Tu veux installer le plus grand nombre d'outils possible sans revoir ton organisation</li>
+        <li>Tu n'es pas prête à partager les informations nécessaires pour construire une solution adaptée</li>
+      </ul>
+    </div>
   </div>
 </section>
 
 <!-- FAQ -->
-<section class="faq-section" id="faq">
-  <div class="section-header">
-    <p class="section-eyebrow reveal">Questions fréquentes</p>
-    <h2 class="section-title reveal reveal-delay-1">Tout ce que tu veux <em>savoir.</em></h2>
-  </div>
+<section class="faq-section">
+  <p class="section-eyebrow reveal">Questions fréquentes</p>
+  <h2 class="section-title reveal reveal-delay-1">Tout ce que tu veux <em>savoir.</em></h2>
   <div class="faq-list">
     <div class="faq-item">
-      <div class="faq-question">Combien de temps dure une mission ?<span class="faq-icon">+</span></div>
-      <div class="faq-answer">Selon le pack : 1 à 6 semaines. Le Starter peut être livré en une semaine. Le Premium demande 4 à 6 semaines pour garantir une intégration complète.</div>
+      <div class="faq-question">Dois-je déjà utiliser Notion ?<span class="faq-icon">+</span></div>
+      <div class="faq-answer">Non. Je peux partir de tes outils actuels ou créer une nouvelle architecture. Notion n'est utilisé que s'il correspond réellement à ton besoin.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-question">Est-ce que je dois maîtriser Notion avant ?<span class="faq-icon">+</span></div>
-      <div class="faq-answer">Pas du tout. Je construis le système pour toi, avec une vidéo tutorielle personnalisée pour que tu repartes complètement autonome, même si tu n'as jamais touché à Notion.</div>
+      <div class="faq-question">Est-ce que je dois savoir utiliser l'intelligence artificielle ?<span class="faq-icon">+</span></div>
+      <div class="faq-answer">Non. Les assistants sont configurés pour ton activité et je t'explique comment les utiliser. L'objectif est que tu sois autonome sans avoir à devenir experte technique.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-question">Puis-je payer en plusieurs fois ?<span class="faq-icon">+</span></div>
-      <div class="faq-answer">Oui. Un paiement en 2 ou 3 fois est disponible sur demande. On en parle lors de l'appel découverte selon ta situation.</div>
+      <div class="faq-question">Est-ce que tu peux connecter mes outils actuels ?<span class="faq-icon">+</span></div>
+      <div class="faq-answer">Oui, selon les outils et les accès disponibles. Le diagnostic permet d'identifier les connexions pertinentes et de vérifier leur faisabilité.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-question">Quelle est la différence avec une formation Notion ?<span class="faq-icon">+</span></div>
-      <div class="faq-answer">Une formation te donne des compétences. Flow Studio te livre un système. Tu n'as rien à construire, tu reçois une infrastructure opérationnelle, personnalisée à ton business, prête à utiliser dès le premier jour.</div>
+      <div class="faq-question">Combien de temps dure un projet ?<span class="faq-icon">+</span></div>
+      <div class="faq-answer">Un projet dure généralement entre trois et six semaines selon son périmètre, la disponibilité des informations et le nombre d'intégrations. Le calendrier précis est défini avant le démarrage.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-question">Tu travailles avec quel type de clientes ?<span class="faq-icon">+</span></div>
-      <div class="faq-answer">Principalement des entrepreneur·es indépendant·es (coachs, consultantes, formatrices, créatrices) et des petites équipes jusqu'à 10 personnes. Mon approche s'adapte à tous les secteurs.</div>
+      <div class="faq-question">Est-ce que le système peut évoluer ?<span class="faq-icon">+</span></div>
+      <div class="faq-answer">Oui. L'architecture est pensée pour pouvoir évoluer avec ton activité. Des améliorations ou de nouvelles automatisations peuvent être ajoutées après la livraison.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Est-ce que tu proposes aussi de la formation ?<span class="faq-icon">+</span></div>
+      <div class="faq-answer">Flow Studio est une prestation réalisée pour toi. Pour apprendre à construire ton propre système avec mon accompagnement, découvre les programmes Bloom & Build.</div>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
-<section class="cta-section" id="contact">
-  <p class="cta-eyebrow reveal">Et maintenant ?</p>
-  <h2 class="cta-title reveal reveal-delay-1">Prêt·e à piloter<br><em>ton business comme un·e CEO ?</em></h2>
-  <p class="cta-subtitle reveal reveal-delay-2">30 minutes pour identifier ton besoin, comprendre ton business et définir le pack qui te correspond. Gratuit, sans engagement.</p>
-  <a href="https://calendar.app.google/x3LrzMWr5spjaSn56" target="_blank" class="cta-btn reveal reveal-delay-3">Réserver mon appel découverte</a>
-  <p class="cta-note reveal reveal-delay-4">solen@flow-studio.app · @solenouahioune</p>
+<section class="cta-section">
+  <p class="cta-eyebrow reveal">Ton activité a grandi. Ton système doit maintenant suivre.</p>
+  <h2 class="cta-title reveal reveal-delay-1">
+    Prête à piloter<br>
+    <em>ton business avec clarté ?</em>
+  </h2>
+  <p class="cta-subtitle reveal reveal-delay-2">Tu n'as pas besoin de travailler plus vite dans une organisation qui ne fonctionne plus. Tu as besoin d'un système qui centralise les informations, automatise les tâches répétitives et te permet de piloter avec clarté.</p>
+  <a href="https://calendar.app.google/x3LrzMWr5spjaSn56" target="_blank" class="cta-btn reveal reveal-delay-3">Réserver un diagnostic</a>
+  <p class="cta-note reveal">Premier échange de 30 minutes, sans engagement.</p>
 </section>
 
-
-<!-- FOOTER -->
 <div class="bloom-footer-bar">
   <p>Tu préfères construire ton système avec mon accompagnement ? <a href="https://bloom-and-build.fr" target="_blank">Découvre Bloom & Build →</a></p>
 </div>
+
 <footer>
   <div>
     <div class="footer-logo">Flow Studio</div>
     <div class="footer-tagline">Création de systèmes IA & Notion</div>
   </div>
   <div class="footer-links">
-    <a href="#systemes">Systèmes</a>
-    <a href="#packs">Packs</a>
-    <a href='/notion'>Notion</a>
-    <a href='/ia'>IA</a>
-    <a href="#temoignages">Témoignages</a>
-    <a href='/mentions-legales'>Mentions légales</a>
-    <a href='/solen-ouahioune'>À propos</a>
-    <a href='/contact'>Contact</a>
+    <a href="/">Accueil</a>
+    <a href="/notion">Notion</a>
+    <a href="/ia">IA</a>
+    <a href="/realisations">Réalisations</a>
+    <a href="/solen-ouahioune">À propos</a>
+    <a href="/contact">Contact</a>
+    <a href="/mentions-legales">Mentions légales</a>
   </div>
 </footer>
 
 <script>
-  // Reveal on scroll
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.07 });
   reveals.forEach(r => observer.observe(r));
   setTimeout(() => { document.querySelectorAll('.hero .reveal').forEach(r => r.classList.add('visible')); }, 80);
-
-  // FAQ accordion
+  function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+  window.addEventListener('scroll', () => { document.getElementById('mobileMenu').classList.remove('open'); });
   document.querySelectorAll('.faq-question').forEach(q => {
     q.addEventListener('click', () => {
       const item = q.parentElement;
@@ -865,46 +510,6 @@
       if (!wasOpen) item.classList.add('open');
     });
   });
-
-  // Mobile menu
-  function toggleMenu() {
-    const menu = document.getElementById('mobileMenu');
-    menu.classList.toggle('open');
-  }
-  window.addEventListener('scroll', () => {
-    document.getElementById('mobileMenu').classList.remove('open');
-  });
 </script>
-
-<script async id="netlify-rum-container" src="/.netlify/scripts/rum" data-netlify-rum-site-id="b878db27-2b14-4394-a811-188bd9e98b07" data-netlify-deploy-branch="" data-netlify-deploy-context="production" data-netlify-cwv-token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaXRlX2lkIjoiYjg3OGRiMjctMmIxNC00Mzk0LWE4MTEtMTg4YmQ5ZTk4YjA3IiwiYWNjb3VudF9pZCI6IjY5YzY0YmU4NGNmZjk0YmNmYTZlYTZmZCIsImRlcGxveV9pZCI6IjY5YzdkYjZjMWY0NTNiZDYxNTkxODhkYSIsImlzc3VlciI6Im5mc2VydmVyIn0.SQpxCfcETnh60bTaPcToh8CwmU28yW_s3ljrp7r8BT0">
-  // Cookie banner
-  (function() {
-    if (!localStorage.getItem('cookieConsent')) {
-      setTimeout(function() {
-        var b = document.getElementById('cookieBanner');
-        if (b) b.classList.add('visible');
-      }, 800);
-    }
-  })();
-  function acceptCookies() {
-    localStorage.setItem('cookieConsent', 'accepted');
-    document.getElementById('cookieBanner').classList.remove('visible');
-  }
-  function closeCookieBanner() {
-    localStorage.setItem('cookieConsent', 'closed');
-    document.getElementById('cookieBanner').classList.remove('visible');
-  }
-</script>
-<!-- COOKIE BANNER -->
-<div class="cookie-banner" id="cookieBanner">
-  <p class="cookie-text">
-    Ce site n'utilise pas de cookies publicitaires ni de traceurs. Les seuls cookies présents sont techniques et nécessaires au bon fonctionnement du site.
-    <a href="/mentions-legales">En savoir plus</a>
-  </p>
-  <div class="cookie-actions">
-    <button class="cookie-btn refuse" onclick="closeCookieBanner()">Fermer</button>
-    <button class="cookie-btn accept" onclick="acceptCookies()">J'ai compris</button>
-  </div>
-</div>
 </body>
 </html>
