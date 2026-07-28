@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solutions IA, Notion et automatisations | Flow Studio</title>
+<meta name="description" content="Flow Studio conçoit des systèmes IA et digitaux pour entrepreneurs, petites équipes et PME : organisation, processus, assistants IA, automatisations et adoption.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --noir: #0F0F0F; --beige: #EAE6E1; --blanc: #F7F5F2;
+    --taupe: #B5ADA5; --terracotta: #BA7F75;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'Inter', sans-serif;
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--blanc); color: var(--noir); font-family: var(--font-body); font-weight: 300; line-height: 1.7; overflow-x: hidden; }
+
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.4rem 4rem; background: rgba(247,245,242,0.94); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(181,173,165,0.2); }
+  .nav-logo { font-family: var(--font-display); font-size: 1.1rem; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 400; color: var(--noir); text-decoration: none; }
+  .nav-logo span { font-size: 0.55rem; letter-spacing: 0.4em; display: block; text-align: center; margin-top: -2px; color: var(--taupe); }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--noir); text-decoration: none; transition: color 0.3s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--taupe); }
+  .nav-dropdown { position: relative; }
+  .dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background: var(--blanc); border: 1px solid rgba(181,173,165,0.3); min-width: 240px; z-index: 200; padding: 0.5rem 0; box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+  .dropdown-menu li { list-style: none; }
+  .dropdown-menu a { display: block; padding: 0.7rem 1.2rem; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--noir); text-decoration: none; transition: background 0.2s; white-space: nowrap; }
+  .dropdown-menu a:hover { background: var(--beige); }
+  .nav-dropdown:hover .dropdown-menu { display: block; }
+  .nav-cta { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 0.65rem 1.5rem; border: 1px solid var(--noir); color: var(--noir); text-decoration: none; transition: all 0.3s; }
+  .nav-cta:hover { background: var(--noir); color: var(--blanc); }
+  .nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+  .nav-hamburger span { display: block; width: 22px; height: 1.5px; background: var(--noir); transition: all 0.3s; }
+  .mobile-menu { display: none; position: fixed; top: 76px; left: 0; right: 0; background: var(--blanc); border-bottom: 1px solid rgba(181,173,165,0.3); padding: 1.5rem; z-index: 99; flex-direction: column; }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--noir); text-decoration: none; padding: 0.9rem 0; border-bottom: 1px solid rgba(181,173,165,0.2); }
+  .mobile-menu .mobile-cta { background: var(--noir); color: var(--blanc); text-align: center; padding: 1rem; border: none; margin-top: 1rem; }
+
+  /* HERO */
+  .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 76px; }
+  .hero-left { display: flex; flex-direction: column; justify-content: center; padding: 5rem 4rem 5rem 6rem; }
+  .hero-eyebrow { font-size: 0.62rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1.8rem; display: flex; align-items: center; gap: 1rem; }
+  .hero-eyebrow::before { content: ''; width: 1.8rem; height: 1px; background: var(--taupe); }
+  .hero-title { font-family: var(--font-display); font-size: clamp(2.4rem, 3.8vw, 3.8rem); font-weight: 400; line-height: 1.1; margin-bottom: 1.8rem; }
+  .hero-title em { font-style: italic; color: var(--taupe); }
+  .hero-subtitle { font-size: 0.88rem; color: #524E4A; line-height: 1.9; max-width: 440px; margin-bottom: 0.8rem; }
+  .hero-tagline { font-size: 0.82rem; color: var(--taupe); letter-spacing: 0.08em; margin-bottom: 2.5rem; }
+  .hero-actions { display: flex; gap: 1.2rem; align-items: center; flex-wrap: wrap; margin-bottom: 0.8rem; }
+  .btn-primary { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 1.1rem 2.2rem; background: var(--noir); color: var(--blanc); text-decoration: none; border: 1px solid var(--noir); transition: all 0.35s; }
+  .btn-primary:hover { background: transparent; color: var(--noir); }
+  .btn-ghost { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--noir); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; transition: gap 0.3s; }
+  .btn-ghost:hover { gap: 0.9rem; }
+  .btn-ghost::after { content: '→'; }
+  .hero-micro { font-size: 0.65rem; color: var(--taupe); }
+  .hero-right { background: var(--beige); display: flex; flex-direction: column; justify-content: center; padding: 5rem 4rem; gap: 1.5px; }
+  .hero-benefit { background: var(--blanc); padding: 1.1rem 1.5rem; font-size: 0.82rem; color: #524E4A; display: flex; gap: 0.8rem; align-items: center; transition: background 0.3s; }
+  .hero-benefit:hover { background: rgba(181,173,165,0.2); }
+  .hero-benefit::before { content: '→'; color: var(--taupe); font-size: 0.65rem; flex-shrink: 0; }
+
+  /* SECTION EYEBROW */
+  .section-eyebrow { font-size: 0.62rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1.2rem; display: flex; align-items: center; gap: 1rem; }
+  .section-eyebrow::before { content: ''; width: 1.8rem; height: 1px; background: var(--taupe); }
+  .section-title { font-family: var(--font-display); font-size: clamp(1.8rem, 2.8vw, 2.6rem); font-weight: 400; line-height: 1.2; }
+  .section-title em { font-style: italic; color: var(--taupe); }
+
+  /* PROBLÈME */
+  .probleme-section { padding: 7rem 6rem; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+  .probleme-text { font-size: 0.88rem; color: #524E4A; line-height: 1.9; margin-top: 1.5rem; }
+  .probleme-list { list-style: none; display: flex; flex-direction: column; gap: 1.5px; margin-top: 1.5rem; }
+  .probleme-list li { padding: 1rem 1.4rem; background: var(--beige); font-size: 0.82rem; color: #524E4A; display: flex; gap: 0.8rem; }
+  .probleme-list li::before { content: '→'; color: var(--taupe); flex-shrink: 0; }
+
+  /* DEUX PARCOURS */
+  .parcours-section { background: var(--noir); padding: 7rem 6rem; }
+  .parcours-title { font-family: var(--font-display); font-size: clamp(1.8rem, 2.5vw, 2.4rem); color: var(--blanc); margin-bottom: 3.5rem; line-height: 1.2; }
+  .parcours-title em { font-style: italic; color: var(--taupe); }
+  .parcours-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: rgba(255,255,255,0.06); }
+  .parcours-card { background: rgba(255,255,255,0.03); padding: 3rem 2.8rem; display: flex; flex-direction: column; }
+  .parcours-card:hover { background: rgba(255,255,255,0.06); }
+  .parcours-tag { font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1rem; }
+  .parcours-card-title { font-family: var(--font-display); font-size: 1.3rem; color: var(--blanc); margin-bottom: 0.4rem; }
+  .parcours-card-sub { font-family: var(--font-display); font-style: italic; font-size: 1rem; color: var(--taupe); margin-bottom: 1.5rem; }
+  .parcours-desc { font-size: 0.82rem; color: rgba(255,255,255,0.72); line-height: 1.8; margin-bottom: 1.8rem; }
+  .parcours-items { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 2rem; flex: 1; }
+  .parcours-items li { font-size: 0.75rem; color: rgba(255,255,255,0.6); display: flex; gap: 0.6rem; }
+  .parcours-items li::before { content: '·'; color: var(--taupe); flex-shrink: 0; }
+  .parcours-price { font-size: 0.75rem; color: var(--taupe); margin-bottom: 1.5rem; letter-spacing: 0.06em; }
+  .parcours-cta { display: block; text-align: center; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; padding: 0.9rem 1.2rem; border: 1px solid rgba(255,255,255,0.3); color: var(--blanc); text-decoration: none; transition: all 0.3s; margin-top: auto; }
+  .parcours-cta:hover { background: var(--blanc); color: var(--noir); border-color: var(--blanc); }
+
+  /* QUATRE DIMENSIONS */
+  .dimensions-section { padding: 7rem 6rem; background: var(--beige); }
+  .dimensions-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: rgba(181,173,165,0.3); margin-top: 3.5rem; }
+  .dimension-card { background: var(--blanc); padding: 2.5rem 2rem; transition: background 0.3s; }
+  .dimension-card:hover { background: var(--noir); }
+  .dimension-card:hover .dimension-title,
+  .dimension-card:hover .dimension-text { color: var(--blanc); }
+  .dimension-card:hover .dimension-num { color: var(--taupe); }
+  .dimension-num { font-family: var(--font-display); font-size: 0.75rem; color: var(--taupe); margin-bottom: 1.2rem; }
+  .dimension-title { font-family: var(--font-display); font-size: 1.1rem; margin-bottom: 0.8rem; transition: color 0.3s; }
+  .dimension-text { font-size: 0.8rem; color: #524E4A; line-height: 1.8; transition: color 0.3s; }
+
+  /* SOLUTIONS CATALOGUE */
+  .catalogue-section { padding: 7rem 6rem; }
+  .catalogue-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: rgba(181,173,165,0.3); margin-top: 3.5rem; }
+  .catalogue-col { background: var(--blanc); padding: 2.5rem 2.2rem; }
+  .catalogue-col-title { font-family: var(--font-display); font-size: 1rem; margin-bottom: 1.2rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(181,173,165,0.4); }
+  .catalogue-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+  .catalogue-list li { font-size: 0.8rem; color: #524E4A; display: flex; gap: 0.6rem; line-height: 1.5; }
+  .catalogue-list li::before { content: '·'; color: var(--taupe); flex-shrink: 0; }
+
+  /* NIVEAUX */
+  .niveaux-section { background: var(--noir); padding: 7rem 6rem; }
+  .niveaux-title { font-family: var(--font-display); font-size: clamp(1.8rem, 2.5vw, 2.4rem); color: var(--blanc); margin-bottom: 3.5rem; line-height: 1.2; }
+  .niveaux-title em { font-style: italic; color: var(--taupe); }
+  .niveaux-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: rgba(255,255,255,0.06); }
+  .niveau-card { background: rgba(255,255,255,0.03); padding: 2.2rem 2rem; }
+  .niveau-num { font-family: var(--font-display); font-size: 1.8rem; color: rgba(255,255,255,0.08); line-height: 1; margin-bottom: 1rem; }
+  .niveau-title { font-family: var(--font-display); font-size: 1rem; color: var(--blanc); margin-bottom: 0.8rem; }
+  .niveau-text { font-size: 0.78rem; color: rgba(255,255,255,0.72); line-height: 1.7; margin-bottom: 1.2rem; }
+  .niveau-formats { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
+  .niveau-formats li { font-size: 0.7rem; color: var(--taupe); display: flex; gap: 0.5rem; }
+  .niveau-formats li::before { content: '→'; flex-shrink: 0; }
+
+  /* MÉTHODE */
+  .methode-section { padding: 7rem 6rem; }
+  .methode-steps { display: flex; flex-direction: column; gap: 1.5px; margin-top: 3.5rem; max-width: 760px; }
+  .methode-step { display: grid; grid-template-columns: 60px 1fr; gap: 2rem; padding: 2rem; background: var(--beige); border-left: 2px solid transparent; transition: all 0.3s; }
+  .methode-step:hover { border-left-color: var(--taupe); background: var(--blanc); }
+  .methode-step-num { font-family: var(--font-display); font-size: 1.6rem; color: rgba(181,173,165,0.5); line-height: 1; padding-top: 3px; }
+  .methode-step-title { font-family: var(--font-display); font-size: 1rem; margin-bottom: 0.5rem; }
+  .methode-step-text { font-size: 0.8rem; color: #524E4A; line-height: 1.7; }
+
+  /* CE QUE NOUS NE FAISONS PAS */
+  .limites-section { background: var(--beige); padding: 7rem 6rem; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+  .limites-list { list-style: none; display: flex; flex-direction: column; gap: 1.5px; margin-top: 1.5rem; }
+  .limites-list li { padding: 1.1rem 1.4rem; background: var(--blanc); font-size: 0.82rem; color: #524E4A; display: flex; gap: 0.8rem; line-height: 1.6; }
+  .limites-list li::before { content: '·'; color: var(--taupe); flex-shrink: 0; }
+  .questions-block { margin-top: 2rem; padding: 2rem; background: var(--noir); }
+  .questions-title { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1.2rem; }
+  .questions-list { list-style: none; display: flex; flex-direction: column; gap: 0.8rem; }
+  .questions-list li { font-size: 0.8rem; color: rgba(255,255,255,0.72); display: flex; gap: 0.8rem; line-height: 1.5; }
+  .questions-list li::before { content: '→'; color: var(--taupe); flex-shrink: 0; font-size: 0.65rem; margin-top: 3px; }
+
+  /* CHOISIR */
+  .choisir-section { padding: 7rem 6rem; }
+  .choisir-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: rgba(181,173,165,0.3); margin-top: 3.5rem; }
+  .choisir-card { background: var(--blanc); padding: 2.8rem 2.5rem; display: flex; flex-direction: column; }
+  .choisir-desc { font-size: 0.85rem; color: #524E4A; line-height: 1.8; margin-bottom: 2rem; flex: 1; }
+  .choisir-cta { display: block; text-align: center; font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 0.9rem 1.2rem; border: 1px solid var(--noir); color: var(--noir); text-decoration: none; transition: all 0.3s; margin-top: auto; }
+  .choisir-cta:hover { background: var(--noir); color: var(--blanc); }
+
+  /* CTA FINAL */
+  .cta-section { background: var(--noir); padding: 8rem 6rem; text-align: center; position: relative; overflow: hidden; }
+  .cta-section::before { content: '◆'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-size: 22rem; color: rgba(255,255,255,0.02); pointer-events: none; }
+  .cta-eyebrow { font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1.8rem; }
+  .cta-title { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3.5rem); color: var(--blanc); line-height: 1.1; margin-bottom: 1.2rem; }
+  .cta-title em { font-style: italic; color: var(--taupe); }
+  .cta-subtitle { font-size: 0.85rem; color: rgba(255,255,255,0.6); max-width: 520px; margin: 0 auto 2.5rem; line-height: 1.8; }
+  .cta-actions { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
+  .cta-btn-primary { font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; padding: 1.2rem 2.8rem; background: var(--blanc); color: var(--noir); text-decoration: none; border: 1px solid var(--blanc); transition: all 0.35s; }
+  .cta-btn-primary:hover { background: transparent; color: var(--blanc); }
+  .cta-btn-ghost { font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; padding: 1.2rem 2.8rem; background: transparent; color: rgba(255,255,255,0.6); text-decoration: none; border: 1px solid rgba(255,255,255,0.2); transition: all 0.35s; }
+  .cta-btn-ghost:hover { border-color: var(--blanc); color: var(--blanc); }
+
+  /* PASSERELLES FOOTER */
+  .passerelles-bar { background: var(--beige); padding: 2rem 6rem; display: flex; gap: 4rem; align-items: center; border-top: 1px solid rgba(181,173,165,0.4); flex-wrap: wrap; }
+  .passerelle-item { display: flex; flex-direction: column; gap: 0.3rem; }
+  .passerelle-label { font-size: 0.72rem; color: #524E4A; line-height: 1.5; }
+  .passerelle-link { font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--noir); text-decoration: none; border-bottom: 1px solid rgba(181,173,165,0.5); padding-bottom: 1px; transition: border-color 0.3s; display: inline-flex; align-items: center; gap: 0.4rem; }
+  .passerelle-link:hover { border-bottom-color: var(--noir); }
+  .passerelle-sep { width: 1px; height: 40px; background: rgba(181,173,165,0.4); flex-shrink: 0; }
+
+  /* FOOTER */
+  footer { background: var(--blanc); padding: 2.5rem 6rem; border-top: 1px solid rgba(181,173,165,0.3); display: flex; justify-content: space-between; align-items: center; }
+  .footer-logo { font-family: var(--font-display); font-size: 0.95rem; letter-spacing: 0.2em; text-transform: uppercase; }
+  .footer-tagline { font-size: 0.65rem; color: var(--taupe); margin-top: 0.2rem; }
+  .footer-links { display: flex; gap: 2rem; }
+  .footer-links a { font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; color: #5A5550; text-decoration: none; transition: color 0.3s; }
+  .footer-links a:hover { color: var(--noir); }
+
+  /* REVEAL */
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+
+  /* RESPONSIVE */
+  @media (max-width: 1100px) {
+    .niveaux-grid { grid-template-columns: 1fr 1fr; }
+    .dimensions-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 960px) {
+    nav { padding: 1.2rem 1.5rem; }
+    .nav-links { display: none; }
+    .nav-cta { display: none; }
+    .nav-hamburger { display: flex; }
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left { padding: 5rem 1.5rem 2.5rem; }
+    .hero-right { padding: 2.5rem 1.5rem; }
+    .probleme-section, .limites-section { grid-template-columns: 1fr; gap: 3rem; }
+    .probleme-section, .dimensions-section, .catalogue-section, .niveaux-section,
+    .methode-section, .limites-section, .choisir-section { padding: 5rem 1.5rem; }
+    .parcours-section, .cta-section { padding: 5rem 1.5rem; }
+    .parcours-grid, .dimensions-grid, .catalogue-grid, .niveaux-grid, .choisir-grid { grid-template-columns: 1fr; }
+    .passerelles-bar { padding: 1.5rem; flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+    .passerelle-sep { display: none; }
+    footer { padding: 2rem 1.5rem; flex-direction: column; gap: 1.2rem; text-align: center; }
+    .footer-links { flex-wrap: wrap; justify-content: center; gap: 1rem; }
+  }
+  @media (max-width: 480px) {
+    nav { padding: 1rem 1.2rem; }
+    .hero-left { padding: 4.5rem 1.2rem 2rem; }
+    .hero-right { padding: 2rem 1.2rem; }
+    .probleme-section, .dimensions-section, .catalogue-section, .niveaux-section,
+    .methode-section, .limites-section, .choisir-section { padding: 4rem 1.2rem; }
+    .parcours-section, .cta-section { padding: 4rem 1.2rem; }
+    .methode-step { grid-template-columns: 1fr; gap: 0.8rem; }
+    footer { padding: 1.8rem 1.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">FLOW<span>STUDIO</span></a>
+  <ul class="nav-links">
+    <li class="nav-dropdown">
+      <a href="/solutions" class="active">Solutions ▾</a>
+      <ul class="dropdown-menu">
+        <li><a href="/entrepreneurs">Entrepreneurs & petites équipes</a></li>
+        <li><a href="/pme">PME & organisations</a></li>
+      </ul>
+    </li>
+    <li><a href="/entrepreneurs">Entrepreneurs</a></li>
+    <li><a href="/pme">PME</a></li>
+    <li><a href="/realisations">Réalisations</a></li>
+    <li><a href="/solen-ouahioune">À propos</a></li>
+  </ul>
+  <a href="https://calendar.app.google/YQL39LLfw5zoFn2v7" target="_blank" class="nav-cta">Prendre rendez-vous</a>
+  <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/entrepreneurs" onclick="toggleMenu()">Entrepreneurs</a>
+  <a href="/pme" onclick="toggleMenu()">PME</a>
+  <a href="/realisations" onclick="toggleMenu()">Réalisations</a>
+  <a href="/solen-ouahioune" onclick="toggleMenu()">À propos</a>
+  <a href="https://calendar.app.google/YQL39LLfw5zoFn2v7" target="_blank" class="mobile-cta" onclick="toggleMenu()">Prendre rendez-vous</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <p class="hero-eyebrow reveal">Flow Studio · Solutions</p>
+    <h1 class="hero-title reveal reveal-delay-1">
+      Des outils dispersés<br>
+      à un système <em>qui fonctionne.</em>
+    </h1>
+    <p class="hero-subtitle reveal reveal-delay-2">Flow Studio analyse votre fonctionnement, structure vos processus et construit les systèmes IA et digitaux adaptés à votre activité.</p>
+    <p class="hero-tagline reveal reveal-delay-2">Structurer. Connecter. Automatiser. Transmettre.</p>
+    <div class="hero-actions reveal reveal-delay-3">
+      <a href="#parcours" class="btn-primary">Découvrir les solutions</a>
+      <a href="https://calendar.app.google/YQL39LLfw5zoFn2v7" target="_blank" class="btn-ghost">Prendre rendez-vous</a>
+    </div>
+    <p class="hero-micro reveal reveal-delay-3">Échange de 30 minutes pour identifier votre besoin et le parcours adapté.</p>
+  </div>
+  <div class="hero-right">
+    <div class="hero-benefit reveal reveal-delay-1">Des informations centralisées</div>
+    <div class="hero-benefit reveal reveal-delay-1">Des processus plus clairs</div>
+    <div class="hero-benefit reveal reveal-delay-2">Des tâches répétitives automatisées</div>
+    <div class="hero-benefit reveal reveal-delay-2">Des assistants IA adaptés au métier</div>
+    <div class="hero-benefit reveal reveal-delay-3">Des équipes accompagnées dans les usages</div>
+    <div class="hero-benefit reveal reveal-delay-3">Un système documenté et évolutif</div>
+  </div>
+</section>
+
+<!-- PROBLÈME -->
+<section class="probleme-section">
+  <div>
+    <p class="section-eyebrow reveal">Le problème n'est pas toujours l'outil</p>
+    <h2 class="section-title reveal reveal-delay-1">Ce qui ralentit votre activité<br><em>se trouve souvent entre les outils.</em></h2>
+    <p class="probleme-text reveal reveal-delay-2">Les entreprises accumulent progressivement des applications, des fichiers, des tableaux et des habitudes de travail. Chaque élément peut fonctionner séparément. Mais l'ensemble ne forme pas nécessairement un système cohérent.</p>
+    <p class="probleme-text reveal reveal-delay-2">Les informations se dispersent. Les tâches se répètent. Les décisions reposent sur la mémoire de quelques personnes. Les usages de l'IA se développent sans méthode commune.</p>
+  </div>
+  <div>
+    <p class="section-eyebrow reveal" style="opacity:0;" aria-hidden="true">.</p>
+    <h3 class="section-title reveal reveal-delay-1" style="font-size:1.1rem;margin-bottom:1.5rem;">Flow Studio part du fonctionnement réel pour identifier ce qui doit être :</h3>
+    <ul class="probleme-list reveal reveal-delay-2">
+      <li>Clarifié</li>
+      <li>Centralisé</li>
+      <li>Automatisé</li>
+      <li>Connecté</li>
+      <li>Documenté</li>
+      <li>Transmis</li>
+    </ul>
+    <p style="font-size:0.8rem;color:var(--taupe);margin-top:1.5rem;font-style:italic;" class="reveal">La solution technique vient ensuite.</p>
+  </div>
+</section>
+
+<!-- DEUX PARCOURS -->
+<section class="parcours-section" id="parcours">
+  <p class="section-eyebrow reveal" style="color:var(--taupe);">Deux parcours, deux réalités</p>
+  <h2 class="parcours-title reveal reveal-delay-1">Le bon système dépend<br><em>de votre situation.</em></h2>
+  <div class="parcours-grid">
+    <div class="parcours-card reveal">
+      <p class="parcours-tag">Entrepreneurs & petites équipes</p>
+      <h3 class="parcours-card-title">Votre activité fonctionne.</h3>
+      <p class="parcours-card-sub">Votre organisation doit maintenant suivre.</p>
+      <p class="parcours-desc">Vous avez développé vos offres, vos clients et vos projets, mais les informations et les tâches restent réparties entre plusieurs outils. Flow Studio construit le système qui vous permet de piloter votre activité, suivre vos prospects, fluidifier votre production client et utiliser l'IA sans repartir de zéro à chaque fois.</p>
+      <ul class="parcours-items">
+        <li>Tableau de bord de pilotage</li>
+        <li>CRM et relances</li>
+        <li>Organisation de projets</li>
+        <li>Suivi client</li>
+        <li>Assistants IA métiers</li>
+        <li>Automatisations</li>
+        <li>Fonctionnement en équipe</li>
+      </ul>
+      <p class="parcours-price">Projets à partir de 1 500€ HT</p>
+      <a href="/entrepreneurs" class="parcours-cta">Découvrir les solutions Entrepreneurs →</a>
+    </div>
+    <div class="parcours-card reveal reveal-delay-1">
+      <p class="parcours-tag">PME & organisations</p>
+      <h3 class="parcours-card-title">Vos équipes expérimentent.</h3>
+      <p class="parcours-card-sub">Vos usages doivent maintenant être cadrés.</p>
+      <p class="parcours-desc">Les collaborateurs utilisent déjà ou envisagent d'utiliser l'IA, mais les initiatives restent dispersées et les priorités difficiles à identifier. Flow Studio analyse les usages et les processus, sélectionne les cas d'usage pertinents et accompagne la conception d'un projet pilote jusqu'à son adoption.</p>
+      <ul class="parcours-items">
+        <li>Cartographie des usages existants</li>
+        <li>Analyse des processus prioritaires</li>
+        <li>Sélection des cas d'usage à tester</li>
+        <li>Conception d'un projet pilote</li>
+        <li>Formalisation des règles d'utilisation</li>
+        <li>Formation des collaborateurs</li>
+        <li>Suivi des premiers usages</li>
+      </ul>
+      <p class="parcours-price">Diagnostic à partir de 1 490€ HT</p>
+      <a href="/pme" class="parcours-cta">Découvrir les solutions PME →</a>
+    </div>
+  </div>
+</section>
+
+<!-- QUATRE DIMENSIONS -->
+<section class="dimensions-section">
+  <p class="section-eyebrow reveal">Quatre dimensions complémentaires</p>
+  <h2 class="section-title reveal reveal-delay-1">Un système ne se résume pas<br><em>à sa technologie.</em></h2>
+  <div class="dimensions-grid">
+    <div class="dimension-card reveal">
+      <p class="dimension-num">01 — Structurer</p>
+      <h3 class="dimension-title">Clarifier avant d'automatiser</h3>
+      <p class="dimension-text">Nous clarifions les processus, les responsabilités et les informations nécessaires. Un processus mal défini ne devient pas plus efficace parce qu'il est automatisé.</p>
+    </div>
+    <div class="dimension-card reveal reveal-delay-1">
+      <p class="dimension-num">02 — Centraliser</p>
+      <h3 class="dimension-title">Savoir où chercher et quoi faire</h3>
+      <p class="dimension-text">Les données, les documents et les prochaines actions sont organisés dans un environnement accessible et compréhensible. Chacun sait où chercher et quoi faire.</p>
+    </div>
+    <div class="dimension-card reveal reveal-delay-2">
+      <p class="dimension-num">03 — Automatiser</p>
+      <h3 class="dimension-title">Réduire sans retirer le contrôle</h3>
+      <p class="dimension-text">Les tâches répétitives et sans valeur ajoutée sont confiées aux outils adaptés. L'automatisation réduit les manipulations inutiles sans retirer le contrôle humain.</p>
+    </div>
+    <div class="dimension-card reveal reveal-delay-3">
+      <p class="dimension-num">04 — Accompagner</p>
+      <h3 class="dimension-title">Transmettre pour rendre autonome</h3>
+      <p class="dimension-text">Le système est documenté, expliqué et transmis aux personnes qui devront réellement l'utiliser. Une solution performante reste inutile si elle n'est pas comprise ou adoptée.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CATALOGUE SOLUTIONS -->
+<section class="catalogue-section">
+  <p class="section-eyebrow reveal">Ce que Flow Studio peut construire avec vous</p>
+  <h2 class="section-title reveal reveal-delay-1">Cinq domaines.<br><em>Un système cohérent.</em></h2>
+  <div class="catalogue-grid">
+    <div class="catalogue-col reveal">
+      <h3 class="catalogue-col-title">Pilotage & organisation</h3>
+      <ul class="catalogue-list">
+        <li>Tableaux de bord</li>
+        <li>Espaces projets et tâches</li>
+        <li>Objectifs et indicateurs</li>
+        <li>Gestion des priorités</li>
+        <li>Reporting</li>
+        <li>Espace financier</li>
+      </ul>
+    </div>
+    <div class="catalogue-col reveal reveal-delay-1">
+      <h3 class="catalogue-col-title">Vente & relation client</h3>
+      <ul class="catalogue-list">
+        <li>CRM et pipeline commercial</li>
+        <li>Suivi des prospects</li>
+        <li>Relances automatisées</li>
+        <li>Parcours d'onboarding</li>
+        <li>Espaces clients</li>
+        <li>Suivi des livrables</li>
+      </ul>
+    </div>
+    <div class="catalogue-col reveal reveal-delay-2">
+      <h3 class="catalogue-col-title">Intelligence artificielle</h3>
+      <ul class="catalogue-list">
+        <li>Assistants IA métiers</li>
+        <li>Bases de connaissances</li>
+        <li>Recherche documentaire</li>
+        <li>Assistants commerciaux</li>
+        <li>Génération encadrée de contenus</li>
+        <li>Analyse et synthèse</li>
+      </ul>
+    </div>
+    <div class="catalogue-col reveal">
+      <h3 class="catalogue-col-title">Automatisations</h3>
+      <ul class="catalogue-list">
+        <li>Circulation des données</li>
+        <li>Création automatique de tâches</li>
+        <li>Qualification des demandes</li>
+        <li>Suivi administratif</li>
+        <li>Notifications et relances</li>
+        <li>Mise à jour des bases</li>
+      </ul>
+    </div>
+    <div class="catalogue-col reveal reveal-delay-1">
+      <h3 class="catalogue-col-title">Processus & adoption</h3>
+      <ul class="catalogue-list">
+        <li>Cartographie des usages</li>
+        <li>Analyse des processus</li>
+        <li>Sélection des cas d'usage</li>
+        <li>Conception de pilotes</li>
+        <li>Documentation</li>
+        <li>Formation des utilisateurs</li>
+      </ul>
+    </div>
+    <div class="catalogue-col reveal reveal-delay-2" style="background:var(--beige);">
+      <h3 class="catalogue-col-title">La technologie choisie</h3>
+      <ul class="catalogue-list">
+        <li>Notion</li>
+        <li>Make · N8N</li>
+        <li>Airtable</li>
+        <li>ChatGPT · Claude · Gemini</li>
+        <li>Gmail · Google Workspace</li>
+        <li>Brevo · HubSpot</li>
+      </ul>
+      <p style="font-size:0.72rem;color:var(--taupe);margin-top:1.2rem;font-style:italic;line-height:1.6;">Les outils sont choisis en fonction du besoin, pas l'inverse.</p>
+    </div>
+  </div>
+</section>
+
+<!-- NIVEAUX -->
+<section class="niveaux-section">
+  <p class="section-eyebrow reveal" style="color:var(--taupe);">Le bon niveau d'intervention</p>
+  <h2 class="niveaux-title reveal reveal-delay-1">Du diagnostic<br><em>au système opérationnel.</em></h2>
+  <div class="niveaux-grid">
+    <div class="niveau-card reveal">
+      <p class="niveau-num">01</p>
+      <h3 class="niveau-title">Comprendre et prioriser</h3>
+      <p class="niveau-text">Analyse du fonctionnement, des outils, des processus et des points de friction. Vous repartez avec une vision claire des priorités et du périmètre à traiter.</p>
+      <ul class="niveau-formats">
+        <li>Diagnostic Système</li>
+        <li>Diagnostic IA et processus</li>
+      </ul>
+    </div>
+    <div class="niveau-card reveal reveal-delay-1">
+      <p class="niveau-num">02</p>
+      <h3 class="niveau-title">Concevoir et construire</h3>
+      <p class="niveau-text">Une priorité transformée en solution opérationnelle. L'architecture est définie, les outils sont configurés et les parcours sont testés.</p>
+      <ul class="niveau-formats">
+        <li>System Core</li>
+        <li>Conception d'un projet pilote</li>
+      </ul>
+    </div>
+    <div class="niveau-card reveal reveal-delay-2">
+      <p class="niveau-num">03</p>
+      <h3 class="niveau-title">Connecter et déployer</h3>
+      <p class="niveau-text">Plusieurs dimensions réunies dans un même écosystème. Les automatisations, les assistants et les processus sont intégrés à l'environnement existant.</p>
+      <ul class="niveau-formats">
+        <li>System Signature</li>
+        <li>Déploiement et adoption</li>
+      </ul>
+    </div>
+    <div class="niveau-card reveal reveal-delay-3">
+      <p class="niveau-num">04</p>
+      <h3 class="niveau-title">Documenter et transmettre</h3>
+      <p class="niveau-text">Les utilisateurs sont formés et disposent des ressources nécessaires pour piloter le système en autonomie. Les évolutions futures peuvent s'ajouter sans reconstruire l'ensemble.</p>
+      <ul class="niveau-formats">
+        <li>Inclus dans chaque mission</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- MÉTHODE -->
+<section class="methode-section">
+  <p class="section-eyebrow reveal">Une méthode pragmatique</p>
+  <h2 class="section-title reveal reveal-delay-1">Partir du travail réel.<br><em>Construire ce qui sera utilisé.</em></h2>
+  <div class="methode-steps">
+    <div class="methode-step reveal">
+      <p class="methode-step-num">01</p>
+      <div>
+        <h3 class="methode-step-title">Échange de cadrage</h3>
+        <p class="methode-step-text">Nous échangeons sur votre activité, vos objectifs, vos difficultés et les personnes concernées. Cet échange permet de définir le niveau d'intervention nécessaire.</p>
+      </div>
+    </div>
+    <div class="methode-step reveal">
+      <p class="methode-step-num">02</p>
+      <div>
+        <h3 class="methode-step-title">Analyse</h3>
+        <p class="methode-step-text">J'étudie les processus, les outils et les endroits où les informations ou les tâches se perdent. L'objectif est de comprendre le travail réel, pas uniquement les procédures théoriques.</p>
+      </div>
+    </div>
+    <div class="methode-step reveal">
+      <p class="methode-step-num">03</p>
+      <div>
+        <h3 class="methode-step-title">Architecture</h3>
+        <p class="methode-step-text">Je définis la solution la plus simple pour atteindre l'objectif identifié. Les outils sont choisis en fonction du besoin, pas l'inverse.</p>
+      </div>
+    </div>
+    <div class="methode-step reveal">
+      <p class="methode-step-num">04</p>
+      <div>
+        <h3 class="methode-step-title">Construction</h3>
+        <p class="methode-step-text">Je configure le système, les assistants et les automatisations nécessaires. Chaque parcours est testé avant sa livraison.</p>
+      </div>
+    </div>
+    <div class="methode-step reveal">
+      <p class="methode-step-num">05</p>
+      <div>
+        <h3 class="methode-step-title">Prise en main</h3>
+        <p class="methode-step-text">Le fonctionnement est expliqué aux utilisateurs concernés. Vous recevez une documentation claire et, selon la mission, des tutoriels ou des supports de formation.</p>
+      </div>
+    </div>
+    <div class="methode-step reveal">
+      <p class="methode-step-num">06</p>
+      <div>
+        <h3 class="methode-step-title">Suivi</h3>
+        <p class="methode-step-text">Les premiers usages sont observés afin d'identifier les ajustements et les améliorations utiles.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIMITES -->
+<section class="limites-section">
+  <div>
+    <p class="section-eyebrow reveal">Ce que Flow Studio ne fait pas</p>
+    <h2 class="section-title reveal reveal-delay-1">Moins d'effets d'annonce.<br><em>Plus de solutions utilisables.</em></h2>
+    <ul class="limites-list reveal reveal-delay-2">
+      <li>Flow Studio ne recommande pas d'automatiser un processus qui n'a pas encore été clarifié</li>
+      <li>Je ne construis pas de template générique présenté comme une solution personnalisée</li>
+      <li>Je n'ajoute pas de l'IA à chaque étape simplement parce que la technologie le permet</li>
+      <li>Je ne remplace pas un avocat, un DPO, un RSSI ou un spécialiste de la cybersécurité</li>
+      <li>Les sujets nécessitant une expertise juridique ou technique spécialisée sont documentés et transmis aux professionnels compétents</li>
+    </ul>
+  </div>
+  <div>
+    <p class="section-eyebrow reveal" style="opacity:0;" aria-hidden="true">.</p>
+    <h3 class="section-title reveal reveal-delay-1" style="font-size:1.1rem;margin-bottom:1.5rem;">Chaque solution doit répondre à quatre questions.</h3>
+    <div class="questions-block reveal reveal-delay-2">
+      <p class="questions-title">Les quatre questions</p>
+      <ul class="questions-list">
+        <li>Quel problème concret résout-elle ?</li>
+        <li>Quelle valeur apporte-t-elle ?</li>
+        <li>Qui utilise et vérifie le résultat ?</li>
+        <li>Comment mesurer son efficacité ?</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CHOISIR LE BON PARCOURS -->
+<section class="choisir-section">
+  <p class="section-eyebrow reveal">Choisir le bon parcours</p>
+  <h2 class="section-title reveal reveal-delay-1">Quelle solution correspond<br><em>à votre besoin ?</em></h2>
+  <div class="choisir-grid">
+    <div class="choisir-card reveal">
+      <p class="section-eyebrow" style="margin-bottom:1rem;">Entrepreneurs & petites équipes</p>
+      <p class="choisir-desc">Vous voulez centraliser votre activité, réduire les tâches répétitives et disposer d'un système adapté à votre manière de travailler.</p>
+      <a href="/entrepreneurs" class="choisir-cta">Explorer le parcours Entrepreneurs</a>
+    </div>
+    <div class="choisir-card reveal reveal-delay-1">
+      <p class="section-eyebrow" style="margin-bottom:1rem;">PME & organisations</p>
+      <p class="choisir-desc">Vous souhaitez cadrer vos usages IA, améliorer un processus ou construire un projet pilote avec vos équipes.</p>
+      <a href="/pme" class="choisir-cta">Explorer le parcours PME</a>
+    </div>
+    <div class="choisir-card reveal reveal-delay-2" style="background:var(--beige);">
+      <p class="section-eyebrow" style="margin-bottom:1rem;">Vous ne savez pas encore</p>
+      <p class="choisir-desc">Un échange de cadrage permet d'identifier votre niveau de maturité, la priorité à traiter et le format le plus pertinent.</p>
+      <a href="https://calendar.app.google/YQL39LLfw5zoFn2v7" target="_blank" class="choisir-cta">Réserver un échange de cadrage</a>
+      <p style="font-size:0.65rem;color:var(--taupe);text-align:center;margin-top:0.8rem;">Échange de 30 minutes, sans engagement.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-section">
+  <p class="cta-eyebrow reveal">Votre activité évolue. Votre système doit suivre.</p>
+  <h2 class="cta-title reveal reveal-delay-1">
+    Prêt à transformer<br>
+    <em>vos outils en un système cohérent ?</em>
+  </h2>
+  <p class="cta-subtitle reveal reveal-delay-2">Flow Studio vous aide à structurer le travail, connecter les informations et intégrer l'intelligence artificielle là où elle apporte une valeur réelle.</p>
+  <div class="cta-actions reveal reveal-delay-3">
+    <a href="https://calendar.app.google/YQL39LLfw5zoFn2v7" target="_blank" class="cta-btn-primary">Prendre rendez-vous</a>
+    <a href="/realisations" class="cta-btn-ghost">Voir les réalisations</a>
+  </div>
+</section>
+
+<!-- PASSERELLES -->
+<div class="passerelles-bar">
+  <div class="passerelle-item">
+    <p class="passerelle-label">Vous souhaitez construire vous-même votre système ?</p>
+    <a href="https://bloom-and-build.fr" target="_blank" class="passerelle-link">Découvrir Bloom & Build →</a>
+  </div>
+  <div class="passerelle-sep"></div>
+  <div class="passerelle-item">
+    <p class="passerelle-label">Vous recherchez uniquement une formation pour vos équipes ?</p>
+    <a href="https://fuzzy-formation.fr/" target="_blank" class="passerelle-link">Découvrir Fuzzy Formation →</a>
+  </div>
+</div>
+
+<footer>
+  <div>
+    <div class="footer-logo">Flow Studio</div>
+    <div class="footer-tagline">Création de systèmes IA & Notion</div>
+  </div>
+  <div class="footer-links">
+    <a href="/entrepreneurs">Entrepreneurs</a>
+    <a href="/pme">PME</a>
+    <a href="/realisations">Réalisations</a>
+    <a href="/solen-ouahioune">À propos</a>
+    <a href="/contact">Contact</a>
+    <a href="/mentions-legales">Mentions légales</a>
+    <a href="/mentions-legales#politique-confidentialite">Politique de confidentialité</a>
+  </div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.07 });
+  reveals.forEach(r => observer.observe(r));
+  setTimeout(() => { document.querySelectorAll('.hero .reveal').forEach(r => r.classList.add('visible')); }, 80);
+  function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+  window.addEventListener('scroll', () => { document.getElementById('mobileMenu').classList.remove('open'); });
+</script>
+</body>
+</html>
