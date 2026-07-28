@@ -130,6 +130,33 @@
     .livrables-par-niveau { grid-template-columns: 1fr; }
   }
 
+
+  /* PREUVE PME */
+  .preuve-section { padding: 7rem 6rem; background: var(--blanc); }
+  .preuve-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; margin-top: 3.5rem; }
+  .preuve-context { display: flex; flex-direction: column; gap: 1.5px; margin-bottom: 2rem; }
+  .preuve-row { display: grid; grid-template-columns: 120px 1fr; gap: 1.5rem; padding: 1.3rem 1.6rem; background: var(--beige); align-items: start; }
+  .preuve-row.dark { background: var(--noir); }
+  .preuve-row-label { font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--taupe); padding-top: 2px; }
+  .preuve-row-text { font-size: 0.82rem; color: #524E4A; line-height: 1.6; }
+  .preuve-row.dark .preuve-row-text { color: rgba(255,255,255,0.72); }
+  .preuve-scores { display: flex; flex-direction: column; gap: 1.5px; }
+  .preuve-score-card { background: var(--beige); padding: 2rem 2.2rem; }
+  .preuve-score-num { font-family: var(--font-display); font-size: 2.4rem; color: var(--noir); line-height: 1; margin-bottom: 0.3rem; }
+  .preuve-score-label { font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1rem; }
+  .preuve-score-quote { font-size: 0.78rem; color: #524E4A; line-height: 1.7; font-style: italic; margin-bottom: 0.8rem; }
+  .preuve-score-org { font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--taupe); }
+  .preuve-link { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--noir); text-decoration: none; margin-top: 1.5rem; border-bottom: 1px solid rgba(181,173,165,0.5); padding-bottom: 2px; transition: all 0.3s; }
+  .preuve-link:hover { gap: 0.9rem; border-bottom-color: var(--noir); }
+  @media (max-width: 960px) {
+    .preuve-section { padding: 5rem 1.5rem; }
+    .preuve-grid { grid-template-columns: 1fr; gap: 3rem; }
+  }
+  @media (max-width: 480px) {
+    .preuve-section { padding: 4rem 1.2rem; }
+    .preuve-row { grid-template-columns: 90px 1fr; }
+  }
+
   /* PROCESS */
   .process-section { padding: 7rem 6rem; }
   .process-steps { display: flex; flex-direction: column; gap: 1.5px; margin-top: 3.5rem; }
@@ -362,6 +389,55 @@
 </section>
 
 <!-- CAS D'USAGE -->
+<!-- PREUVE -->
+<section class="preuve-section">
+  <p class="section-eyebrow reveal">Ce que ça produit concrètement</p>
+  <h2 class="section-title reveal reveal-delay-1">Des équipes qui passent<br><em>vraiment à l'action.</em></h2>
+  <div class="preuve-grid">
+    <div>
+      <div class="preuve-context reveal reveal-delay-1">
+        <div class="preuve-row">
+          <p class="preuve-row-label">Organisation</p>
+          <p class="preuve-row-text">Entreprises de services, PME industrielles, collectivités. Sessions en inter-entreprises et intra, de 5 à 25 participants par groupe.</p>
+        </div>
+        <div class="preuve-row">
+          <p class="preuve-row-label">Problème initial</p>
+          <p class="preuve-row-text">Des collaborateurs utilisent déjà l'IA de façon isolée, sans méthode commune ni règles partagées. La direction ne sait pas par où commencer pour structurer ces usages.</p>
+        </div>
+        <div class="preuve-row">
+          <p class="preuve-row-label">Intervention</p>
+          <p class="preuve-row-text">Cadrage des usages existants, identification des processus concernés, formation pratique sur les outils et les méthodes, définition des premières règles d'utilisation. Chaque participant repart avec une action concrète à mettre en place dès le lendemain.</p>
+        </div>
+        <div class="preuve-row dark">
+          <p class="preuve-row-label">Résultat mesuré</p>
+          <p class="preuve-row-text">100 % des participants évaluent l'expertise à 97/100 ou plus. 92/100 de satisfaction globale sur les sessions les plus récentes. Actions déclarées : aide à la rédaction, création d'assistants personnalisés, automatisation de tâches administratives.</p>
+        </div>
+      </div>
+      <a href="/realisations" class="preuve-link reveal">Voir les retours détaillés →</a>
+    </div>
+    <div class="preuve-scores reveal reveal-delay-2">
+      <div class="preuve-score-card">
+        <p class="preuve-score-num">97/100</p>
+        <p class="preuve-score-label">Expertise · CMAR IDF</p>
+        <p class="preuve-score-quote">« Consultante compétente, très à l'écoute, explications claires. »</p>
+        <p class="preuve-score-org">Chambre de métiers · via Cegos</p>
+      </div>
+      <div class="preuve-score-card">
+        <p class="preuve-score-num">100/100</p>
+        <p class="preuve-score-label">Expertise · Enorise SAS</p>
+        <p class="preuve-score-quote">« Bonne vision d'ensemble du panel d'outils IA. Actions prévues : aide à la rédaction et création d'un assistant personnalisé. »</p>
+        <p class="preuve-score-org">PME · via Cegos</p>
+      </div>
+      <div class="preuve-score-card">
+        <p class="preuve-score-num">92/100</p>
+        <p class="preuve-score-label">Satisfaction globale · UCPA</p>
+        <p class="preuve-score-quote">« Le plus : la pratique, les conseils adaptés à notre poste. »</p>
+        <p class="preuve-score-org">UCPA Sport Vacances · via Cegos</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="usages-section">
   <p class="section-eyebrow reveal">Des cas d'usage adaptés à votre organisation</p>
   <h2 class="section-title reveal reveal-delay-1">Là où l'IA apporte <em>une valeur mesurable.</em></h2>
