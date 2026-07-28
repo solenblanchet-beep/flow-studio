@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Audit IA pour PME : usages, risques et plan d'action | Flow Studio</title>
-<meta name="description" content="Cartographie de vos usages IA, analyse des risques, quick wins, charte IA interne et plan de formation par métier. Livré en 1 jour. 1 490€.">
+<meta name="description" content="Flow Studio accompagne les PME qui veulent intégrer l'intelligence artificielle dans leurs processus sans multiplier les expérimentations isolées, exposer leurs données ou perdre leurs équipes en route.">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -26,12 +26,18 @@
   .nav-logo span { font-size: 0.55rem; letter-spacing: 0.4em; display: block; text-align: center; margin-top: -2px; color: var(--taupe); }
   .nav-links { display: flex; gap: 2.5rem; list-style: none; }
   .nav-links a { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--noir); text-decoration: none; transition: color 0.3s; }
-  .nav-links a:hover { color: var(--taupe); }
+  .nav-links a:hover, .nav-links a.active { color: var(--taupe); }
+  .nav-dropdown { position: relative; }
+  .dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background: var(--blanc); border: 1px solid rgba(181,173,165,0.3); min-width: 240px; z-index: 200; padding: 0.5rem 0; box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+  .dropdown-menu li { list-style: none; }
+  .dropdown-menu a { display: block; padding: 0.7rem 1.2rem; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--noir); text-decoration: none; transition: background 0.2s; white-space: nowrap; }
+  .dropdown-menu a:hover { background: var(--beige); }
+  .nav-dropdown:hover .dropdown-menu { display: block; }
   .nav-cta { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 0.65rem 1.5rem; border: 1px solid var(--noir); color: var(--noir); text-decoration: none; transition: all 0.3s; }
   .nav-cta:hover { background: var(--noir); color: var(--blanc); }
   .nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
   .nav-hamburger span { display: block; width: 22px; height: 1.5px; background: var(--noir); transition: all 0.3s; }
-  .mobile-menu { display: none; position: fixed; top: 76px; left: 0; right: 0; background: var(--blanc); border-bottom: 1px solid rgba(181,173,165,0.3); padding: 1.5rem; z-index: 99; flex-direction: column; gap: 0; }
+  .mobile-menu { display: none; position: fixed; top: 76px; left: 0; right: 0; background: var(--blanc); border-bottom: 1px solid rgba(181,173,165,0.3); padding: 1.5rem; z-index: 99; flex-direction: column; }
   .mobile-menu.open { display: flex; }
   .mobile-menu a { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--noir); text-decoration: none; padding: 0.9rem 0; border-bottom: 1px solid rgba(181,173,165,0.2); }
   .mobile-menu .mobile-cta { background: var(--noir); color: var(--blanc); text-align: center; padding: 1rem; border: none; margin-top: 1rem; }
@@ -41,88 +47,124 @@
   .hero-left { display: flex; flex-direction: column; justify-content: center; padding: 5rem 4rem 5rem 6rem; }
   .hero-eyebrow { font-size: 0.62rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1.8rem; display: flex; align-items: center; gap: 1rem; }
   .hero-eyebrow::before { content: ''; width: 1.8rem; height: 1px; background: var(--taupe); }
-  .hero-title { font-family: var(--font-display); font-size: clamp(2.4rem, 3.8vw, 3.8rem); font-weight: 400; line-height: 1.1; margin-bottom: 1.8rem; }
+  .hero-title { font-family: var(--font-display); font-size: clamp(2.2rem, 3.5vw, 3.5rem); font-weight: 400; line-height: 1.1; margin-bottom: 1.8rem; }
   .hero-title em { font-style: italic; color: var(--taupe); }
-  .hero-subtitle { font-size: 0.9rem; color: #6B6560; line-height: 1.9; max-width: 420px; margin-bottom: 2.8rem; }
-  .hero-price-block { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 0.5rem; }
-  .hero-price { font-family: var(--font-display); font-size: 3rem; font-weight: 400; }
-  .hero-price-label { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--taupe); }
-  .hero-format { font-size: 0.78rem; color: #6B6560; margin-bottom: 2rem; }
-  .hero-cta { display: inline-block; font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 1.1rem 2.4rem; background: var(--noir); color: var(--blanc); text-decoration: none; border: 1px solid var(--noir); transition: all 0.35s; align-self: flex-start; }
-  .hero-cta:hover { background: transparent; color: var(--noir); }
-  .hero-note { font-size: 0.65rem; color: var(--taupe); margin-top: 1rem; }
+  .hero-subtitle { font-size: 0.88rem; color: #6B6560; line-height: 1.9; max-width: 440px; margin-bottom: 2.5rem; }
+  .hero-actions { display: flex; gap: 1.2rem; align-items: center; flex-wrap: wrap; margin-bottom: 0.8rem; }
+  .btn-primary { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 1.1rem 2.2rem; background: var(--noir); color: var(--blanc); text-decoration: none; border: 1px solid var(--noir); transition: all 0.35s; }
+  .btn-primary:hover { background: transparent; color: var(--noir); }
+  .btn-ghost { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--noir); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; transition: gap 0.3s; }
+  .btn-ghost:hover { gap: 0.9rem; }
+  .btn-ghost::after { content: '→'; }
+  .hero-micro { font-size: 0.65rem; color: var(--taupe); }
   .hero-right { background: var(--noir); display: flex; flex-direction: column; justify-content: center; padding: 5rem 4rem; position: relative; overflow: hidden; }
-  .hero-right::before { content: '360°'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-family: var(--font-display); font-size: 14rem; color: rgba(255,255,255,0.03); pointer-events: none; letter-spacing: -0.05em; white-space: nowrap; }
-  .hero-deliverables { display: flex; flex-direction: column; gap: 1.5px; }
-  .deliverable { background: rgba(255,255,255,0.04); padding: 1.4rem 1.6rem; display: flex; align-items: flex-start; gap: 1.2rem; border-left: 2px solid transparent; transition: all 0.3s; }
-  .deliverable:hover { background: rgba(255,255,255,0.07); border-left-color: var(--taupe); }
-  .deliverable-num { font-family: var(--font-display); font-size: 0.75rem; color: var(--taupe); flex-shrink: 0; margin-top: 2px; }
-  .deliverable-title { font-size: 0.82rem; color: var(--blanc); font-weight: 400; margin-bottom: 0.2rem; letter-spacing: 0.02em; }
-  .deliverable-text { font-size: 0.72rem; color: rgba(255,255,255,0.45); line-height: 1.5; }
+  .hero-right::before { content: 'IA'; position: absolute; bottom: -2rem; right: -1rem; font-family: var(--font-display); font-size: 16rem; color: rgba(255,255,255,0.03); line-height: 1; pointer-events: none; }
+  .observations { display: flex; flex-direction: column; gap: 1.5px; }
+  .observation-item { background: rgba(255,255,255,0.04); padding: 1rem 1.4rem; font-size: 0.78rem; color: rgba(255,255,255,0.6); display: flex; gap: 0.8rem; align-items: flex-start; line-height: 1.5; transition: background 0.3s; }
+  .observation-item:hover { background: rgba(255,255,255,0.07); }
+  .observation-item::before { content: '·'; color: var(--taupe); font-size: 1rem; flex-shrink: 0; margin-top: -1px; }
 
-  /* POUR QUI */
-  .pourqui-section { padding: 7rem 6rem; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+  /* SECTION COMMONS */
   .section-eyebrow { font-size: 0.62rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1.2rem; display: flex; align-items: center; gap: 1rem; }
   .section-eyebrow::before { content: ''; width: 1.8rem; height: 1px; background: var(--taupe); }
-  .section-title { font-family: var(--font-display); font-size: clamp(1.8rem, 2.8vw, 2.6rem); font-weight: 400; line-height: 1.2; margin-bottom: 2rem; }
+  .section-title { font-family: var(--font-display); font-size: clamp(1.8rem, 2.6vw, 2.4rem); font-weight: 400; line-height: 1.2; }
   .section-title em { font-style: italic; color: var(--taupe); }
-  .section-text { font-size: 0.85rem; color: #6B6560; line-height: 1.9; margin-bottom: 1rem; }
-  .profiles { display: flex; flex-direction: column; gap: 1.5px; }
-  .profile-item { padding: 1.4rem 1.6rem; background: var(--beige); border-left: 3px solid transparent; transition: border-color 0.3s; }
-  .profile-item:hover { border-left-color: var(--taupe); }
-  .profile-title { font-size: 0.8rem; font-weight: 400; color: var(--noir); margin-bottom: 0.3rem; }
-  .profile-text { font-size: 0.75rem; color: #6B6560; line-height: 1.6; }
+
+  /* APPROCHE */
+  .approche-section { padding: 7rem 6rem; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+  .approche-text { font-size: 0.85rem; color: #6B6560; line-height: 1.9; margin-top: 1.5rem; }
+  .approche-pillars { display: flex; flex-direction: column; gap: 1.5px; }
+  .pillar { background: var(--beige); padding: 2rem 2.2rem; border-left: 2px solid transparent; transition: border-color 0.3s; }
+  .pillar:hover { border-left-color: var(--taupe); }
+  .pillar-num { font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--taupe); margin-bottom: 0.6rem; }
+  .pillar-title { font-family: var(--font-display); font-size: 1rem; margin-bottom: 0.5rem; }
+  .pillar-text { font-size: 0.78rem; color: #6B6560; line-height: 1.7; }
+
+  /* NIVEAUX */
+  .niveaux-section { background: var(--beige); padding: 7rem 6rem; }
+  .niveaux-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: rgba(181,173,165,0.3); margin-top: 3.5rem; }
+  .niveau-card { background: var(--blanc); padding: 2.8rem 2.2rem; display: flex; flex-direction: column; }
+  .niveau-card.featured { background: var(--noir); }
+  .niveau-num { font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--taupe); margin-bottom: 0.8rem; }
+  .niveau-title { font-family: var(--font-display); font-size: 1.2rem; margin-bottom: 0.5rem; }
+  .niveau-card.featured .niveau-title { color: var(--blanc); }
+  .niveau-desc { font-size: 0.78rem; color: #6B6560; line-height: 1.7; margin-bottom: 1.5rem; flex: 1; }
+  .niveau-card.featured .niveau-desc { color: rgba(255,255,255,0.5); }
+  .niveau-items { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 2rem; }
+  .niveau-item { font-size: 0.75rem; color: #5A5550; display: flex; gap: 0.6rem; align-items: flex-start; line-height: 1.5; }
+  .niveau-card.featured .niveau-item { color: rgba(255,255,255,0.55); }
+  .niveau-item::before { content: '→'; color: var(--taupe); flex-shrink: 0; font-size: 0.65rem; margin-top: 2px; }
+  .niveau-cta { display: block; text-align: center; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; padding: 0.9rem 1.2rem; border: 1px solid var(--noir); color: var(--noir); text-decoration: none; transition: all 0.3s; margin-top: auto; }
+  .niveau-cta:hover { background: var(--noir); color: var(--blanc); }
+  .niveau-card.featured .niveau-cta { border-color: var(--blanc); color: var(--blanc); }
+  .niveau-card.featured .niveau-cta:hover { background: var(--blanc); color: var(--noir); }
+
+  /* CAS D'USAGE */
+  .usages-section { padding: 7rem 6rem; }
+  .usages-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: rgba(181,173,165,0.3); margin-top: 3.5rem; }
+  .usage-col { background: var(--blanc); padding: 2.2rem; }
+  .usage-col-title { font-family: var(--font-display); font-size: 0.95rem; margin-bottom: 1.2rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(181,173,165,0.4); }
+  .usage-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+  .usage-list li { font-size: 0.75rem; color: #6B6560; display: flex; gap: 0.6rem; line-height: 1.4; }
+  .usage-list li::before { content: '·'; color: var(--taupe); flex-shrink: 0; }
+  .usages-note { margin-top: 2rem; font-size: 0.8rem; color: #6B6560; line-height: 1.8; max-width: 680px; padding: 1.5rem 2rem; background: var(--beige); border-left: 2px solid var(--taupe); }
+
+  /* LIVRABLES */
+  .livrables-section { background: var(--noir); padding: 7rem 6rem; }
+  .livrables-title { font-family: var(--font-display); font-size: clamp(1.8rem, 2.5vw, 2.4rem); color: var(--blanc); margin-bottom: 3rem; }
+  .livrables-title em { font-style: italic; color: var(--taupe); }
+  .livrables-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5px; background: rgba(255,255,255,0.06); }
+  .livrable-item { background: rgba(255,255,255,0.03); padding: 1.2rem 1.5rem; font-size: 0.78rem; color: rgba(255,255,255,0.6); display: flex; gap: 0.8rem; align-items: flex-start; line-height: 1.5; transition: background 0.3s; }
+  .livrable-item:hover { background: rgba(255,255,255,0.07); }
+  .livrable-item::before { content: '→'; color: var(--taupe); flex-shrink: 0; font-size: 0.65rem; margin-top: 2px; }
+  .livrables-disclaimer { font-size: 0.72rem; color: rgba(255,255,255,0.3); margin-top: 2rem; max-width: 620px; line-height: 1.7; font-style: italic; }
 
   /* PROCESS */
-  .process-section { background: var(--noir); padding: 7rem 6rem; }
-  .process-title { font-family: var(--font-display); font-size: clamp(1.8rem, 2.8vw, 2.6rem); color: var(--blanc); font-weight: 400; margin-bottom: 4rem; }
-  .process-title em { font-style: italic; color: var(--taupe); }
-  .process-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
-  .process-step { background: rgba(255,255,255,0.04); padding: 2.5rem 2rem; }
-  .process-step-num { font-family: var(--font-display); font-size: 2rem; color: rgba(255,255,255,0.1); margin-bottom: 1rem; line-height: 1; }
-  .process-step-tag { font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--taupe); margin-bottom: 0.8rem; }
-  .process-step-title { font-family: var(--font-display); font-size: 1.1rem; color: var(--blanc); margin-bottom: 0.8rem; }
-  .process-step-text { font-size: 0.78rem; color: rgba(255,255,255,0.45); line-height: 1.7; }
-  .process-timeline { margin-top: 3rem; padding: 1.5rem 2rem; background: rgba(255,255,255,0.04); display: flex; align-items: center; gap: 3rem; }
-  .timeline-item-proc { }
-  .timeline-label { font-size: 0.58rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--taupe); margin-bottom: 0.3rem; }
-  .timeline-value { font-family: var(--font-display); font-size: 1rem; color: var(--blanc); }
-  .timeline-sep { width: 1px; height: 40px; background: rgba(255,255,255,0.1); flex-shrink: 0; }
+  .process-section { padding: 7rem 6rem; }
+  .process-steps { display: flex; flex-direction: column; gap: 1.5px; margin-top: 3.5rem; }
+  .process-step { display: grid; grid-template-columns: 80px 1fr; gap: 2rem; padding: 2rem; background: var(--blanc); border-left: 2px solid transparent; transition: border-color 0.3s; }
+  .process-step:hover { border-left-color: var(--taupe); background: var(--beige); }
+  .process-num { font-family: var(--font-display); font-size: 1.8rem; color: rgba(181,173,165,0.4); line-height: 1; padding-top: 4px; }
+  .process-title { font-family: var(--font-display); font-size: 1rem; margin-bottom: 0.5rem; }
+  .process-text { font-size: 0.78rem; color: #6B6560; line-height: 1.7; }
 
-  /* LIVRABLES DETAIL */
-  .livrables-section { padding: 7rem 6rem; }
-  .livrables-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; margin-top: 3.5rem; background: rgba(181,173,165,0.3); }
-  .livrable-card { background: var(--blanc); padding: 2.8rem 2.5rem; transition: background 0.3s; }
-  .livrable-card:hover { background: var(--beige); }
-  .livrable-icon { font-size: 1.4rem; margin-bottom: 1.2rem; }
-  .livrable-num { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--taupe); margin-bottom: 0.6rem; }
-  .livrable-title { font-family: var(--font-display); font-size: 1.2rem; margin-bottom: 0.8rem; }
-  .livrable-text { font-size: 0.8rem; color: #6B6560; line-height: 1.8; }
-  .livrable-items { list-style: none; margin-top: 1rem; display: flex; flex-direction: column; gap: 0.4rem; }
-  .livrable-items li { font-size: 0.75rem; color: #6B6560; display: flex; gap: 0.7rem; }
-  .livrable-items li::before { content: '→'; color: var(--taupe); flex-shrink: 0; }
+  /* POUR QUI */
+  .pourqui-section { background: var(--beige); padding: 7rem 6rem; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+  .pourqui-list { list-style: none; display: flex; flex-direction: column; gap: 0.8rem; margin-top: 1.5rem; }
+  .pourqui-list li { font-size: 0.8rem; color: #6B6560; display: flex; gap: 0.8rem; line-height: 1.5; }
+  .pourqui-list.yes li::before { content: '✓'; color: #4A7C59; flex-shrink: 0; }
+  .pas-pour-qui { margin-top: 2.5rem; }
+  .pas-pour-qui h3 { font-family: var(--font-display); font-size: 1rem; margin-bottom: 1rem; }
+  .pas-list { list-style: none; display: flex; flex-direction: column; gap: 0.8rem; }
+  .pas-list li { font-size: 0.78rem; color: #6B6560; display: flex; gap: 0.8rem; line-height: 1.5; }
+  .pas-list li::before { content: '·'; color: var(--taupe); flex-shrink: 0; }
 
-  /* POUR QUI PAS */
-  .limit-section { background: var(--beige); padding: 5rem 6rem; }
-  .limit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 2.5rem; }
-  .limit-col h3 { font-family: var(--font-display); font-size: 1rem; margin-bottom: 1.2rem; }
-  .limit-list { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
-  .limit-list li { font-size: 0.8rem; color: #6B6560; display: flex; gap: 0.8rem; line-height: 1.5; }
-  .limit-list.yes li::before { content: '✓'; color: #4A7C59; flex-shrink: 0; }
-  .limit-list.no li::before { content: '✗'; color: var(--terracotta); flex-shrink: 0; }
+  /* FAQ */
+  .faq-section { padding: 7rem 6rem; }
+  .faq-list { margin-top: 3rem; max-width: 720px; }
+  .faq-item { border-bottom: 1px solid rgba(181,173,165,0.4); }
+  .faq-question { padding: 1.4rem 0; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-family: var(--font-display); font-size: 0.95rem; user-select: none; }
+  .faq-icon { color: var(--taupe); transition: transform 0.3s; }
+  .faq-answer { font-size: 0.82rem; color: #6B6560; line-height: 1.8; max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s; }
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
+  .faq-item.open .faq-answer { max-height: 300px; padding-bottom: 1.5rem; }
 
   /* CTA */
-  .cta-section { padding: 8rem 6rem; text-align: center; position: relative; overflow: hidden; }
-  .cta-section::before { content: '1 490€'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-family: var(--font-display); font-size: 12rem; color: rgba(15,15,15,0.03); pointer-events: none; white-space: nowrap; }
+  .cta-section { background: var(--noir); padding: 8rem 6rem; text-align: center; position: relative; overflow: hidden; }
+  .cta-section::before { content: 'PME'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-family: var(--font-display); font-size: 18rem; color: rgba(255,255,255,0.02); pointer-events: none; }
   .cta-eyebrow { font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1.8rem; }
-  .cta-title { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1.1; margin-bottom: 1rem; }
+  .cta-title { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3.5rem); color: var(--blanc); line-height: 1.1; margin-bottom: 1.2rem; }
   .cta-title em { font-style: italic; color: var(--taupe); }
-  .cta-subtitle { font-size: 0.85rem; color: #6B6560; max-width: 460px; margin: 0 auto 1rem; line-height: 1.8; }
-  .cta-price { font-family: var(--font-display); font-size: 2.5rem; margin-bottom: 0.5rem; }
-  .cta-price-sub { font-size: 0.7rem; color: var(--taupe); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 2.5rem; }
-  .cta-btn { display: inline-block; font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; padding: 1.2rem 2.8rem; background: var(--noir); color: var(--blanc); text-decoration: none; border: 1px solid var(--noir); transition: all 0.35s; }
-  .cta-btn:hover { background: transparent; color: var(--noir); }
-  .cta-note { font-size: 0.65rem; color: var(--taupe); margin-top: 1.2rem; }
+  .cta-subtitle { font-size: 0.85rem; color: rgba(255,255,255,0.45); max-width: 520px; margin: 0 auto 2.5rem; line-height: 1.8; }
+  .cta-btn { display: inline-block; font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; padding: 1.2rem 2.8rem; background: var(--blanc); color: var(--noir); text-decoration: none; border: 1px solid var(--blanc); transition: all 0.35s; }
+  .cta-btn:hover { background: transparent; color: var(--blanc); }
+  .cta-note { font-size: 0.65rem; color: rgba(255,255,255,0.25); margin-top: 1rem; }
+
+  /* BLOOM FOOTER BAR */
+  .bloom-footer-bar { background: var(--beige); padding: 1rem 6rem; text-align: center; border-top: 1px solid rgba(181,173,165,0.4); }
+  .bloom-footer-bar p { font-size: 0.78rem; color: #6B6560; }
+  .bloom-footer-bar a { color: var(--noir); font-weight: 400; text-decoration: underline; text-underline-offset: 3px; transition: color 0.3s; }
+  .bloom-footer-bar a:hover { color: var(--taupe); }
 
   /* FOOTER */
   footer { background: var(--blanc); padding: 2.5rem 6rem; border-top: 1px solid rgba(181,173,165,0.3); display: flex; justify-content: space-between; align-items: center; }
@@ -148,143 +190,27 @@
     .hero { grid-template-columns: 1fr; min-height: auto; }
     .hero-left { padding: 5rem 1.5rem 2.5rem; }
     .hero-right { padding: 3rem 1.5rem; }
-    .pourqui-section { grid-template-columns: 1fr; gap: 3rem; padding: 5rem 1.5rem; }
-    .process-section { padding: 5rem 1.5rem; }
-    .process-steps { grid-template-columns: 1fr; }
-    .livrables-section { padding: 5rem 1.5rem; }
-    .livrables-grid { grid-template-columns: 1fr; }
-    .limit-section { padding: 4rem 1.5rem; }
-    .limit-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .approche-section, .pourqui-section { grid-template-columns: 1fr; gap: 3rem; }
+    .approche-section, .niveaux-section, .usages-section, .livrables-section, .process-section, .pourqui-section, .faq-section { padding: 5rem 1.5rem; }
     .cta-section { padding: 5rem 1.5rem; }
+    .niveaux-grid, .usages-grid { grid-template-columns: 1fr; }
+    .livrables-grid { grid-template-columns: 1fr; }
+    .process-step { grid-template-columns: 60px 1fr; gap: 1.2rem; }
     footer { padding: 2rem 1.5rem; flex-direction: column; gap: 1.2rem; text-align: center; }
     .footer-links { flex-wrap: wrap; justify-content: center; gap: 1rem; }
-    .process-timeline { flex-wrap: wrap; gap: 1.5rem; }
-    .timeline-sep { display: none; }
+    .bloom-footer-bar { padding: 1rem 1.5rem; }
   }
   @media (max-width: 480px) {
     nav { padding: 1rem 1.2rem; }
     .hero-left { padding: 4.5rem 1.2rem 2rem; }
-    .hero-right { padding: 2.5rem 1.2rem; }
-    .hero-price { font-size: 2.2rem; }
-    .pourqui-section, .livrables-section { padding: 4rem 1.2rem; }
-    .process-section, .limit-section, .cta-section { padding: 4rem 1.2rem; }
-    .livrable-card { padding: 2rem 1.5rem; }
+    .hero-right { padding: 2rem 1.2rem; }
+    .approche-section, .niveaux-section, .usages-section, .process-section, .faq-section, .pourqui-section { padding: 4rem 1.2rem; }
+    .livrables-section, .cta-section { padding: 4rem 1.2rem; }
+    .process-step { grid-template-columns: 1fr; }
+    .process-num { font-size: 1.2rem; }
     footer { padding: 1.8rem 1.2rem; }
   }
-
-  /* COOKIE BANNER */
-  .cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; z-index: 999; background: var(--noir); padding: 1.2rem 4rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; transform: translateY(100%); transition: transform 0.4s ease; }
-  .cookie-banner.visible { transform: translateY(0); }
-  .cookie-text { font-size: 0.72rem; color: rgba(255,255,255,0.6); line-height: 1.6; max-width: 600px; }
-  .cookie-text a { color: var(--taupe); text-decoration: underline; }
-  .cookie-actions { display: flex; gap: 0.8rem; flex-shrink: 0; }
-  .cookie-btn { font-size: 0.58rem; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.7rem 1.4rem; cursor: pointer; border: none; font-family: var(--font-body); transition: all 0.3s; white-space: nowrap; }
-  .cookie-btn.accept { background: var(--blanc); color: var(--noir); }
-  .cookie-btn.accept:hover { background: var(--beige); }
-  .cookie-btn.refuse { background: transparent; color: rgba(255,255,255,0.5); border: 1px solid rgba(255,255,255,0.2); }
-  .cookie-btn.refuse:hover { color: var(--blanc); border-color: rgba(255,255,255,0.5); }
-  @media (max-width: 768px) {
-    .cookie-banner { padding: 1.2rem 1.5rem; flex-direction: column; align-items: flex-start; gap: 1rem; }
-    .cookie-actions { width: 100%; }
-    .cookie-btn { flex: 1; text-align: center; }
-  }
-
-  /* DROPDOWN */
-  .nav-dropdown { position: relative; }
-  .dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background: var(--blanc); border: 1px solid rgba(181,173,165,0.3); min-width: 240px; z-index: 200; padding: 0.5rem 0; box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
-  .dropdown-menu li { list-style: none; }
-  .dropdown-menu a { display: block; padding: 0.7rem 1.2rem; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--noir); text-decoration: none; transition: background 0.2s; white-space: nowrap; }
-  .dropdown-menu a:hover { background: var(--beige); }
-  .nav-dropdown:hover .dropdown-menu { display: block; }
-
-  /* BLOOM FOOTER BAR */
-  .bloom-footer-bar { background: var(--beige); padding: 1rem 6rem; text-align: center; border-top: 1px solid rgba(181,173,165,0.4); }
-  .bloom-footer-bar p { font-size: 0.78rem; color: #6B6560; }
-  .bloom-footer-bar a { color: var(--noir); font-weight: 400; text-decoration: underline; text-underline-offset: 3px; transition: color 0.3s; }
-  .bloom-footer-bar a:hover { color: var(--taupe); }
-  @media (max-width: 768px) { .bloom-footer-bar { padding: 1rem 1.5rem; } }
-
 </style>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": [
-        "Organization",
-        "ProfessionalService"
-      ],
-      "@id": "https://flow-studio.app/#organization",
-      "name": "Flow Studio",
-      "url": "https://flow-studio.app",
-      "logo": "https://flow-studio.app/favicon.svg",
-      "email": "solen@flow-studio.app",
-      "founder": {
-        "@id": "https://flow-studio.app/solen-ouahioune#person"
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Vaux-sur-Seine",
-        "addressRegion": "Île-de-France",
-        "addressCountry": "FR"
-      },
-      "areaServed": {
-        "@type": "Country",
-        "name": "France"
-      },
-      "description": "Flow Studio crée des systèmes IA, Notion et automatisations sur mesure pour entrepreneurs et PME.",
-      "knowsAbout": [
-        "Notion",
-        "Intelligence Artificielle",
-        "Automatisation",
-        "Make",
-        "Agents IA",
-        "Systèmes business"
-      ]
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://flow-studio.app/diagnostic-ia",
-      "url": "https://flow-studio.app/diagnostic-ia",
-      "name": "Audit IA pour PME : usages, risques et plan d'action | Flow Studio",
-      "breadcrumb": {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Accueil",
-            "item": "https://flow-studio.app/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Diagnostic IA PME",
-            "item": "https://flow-studio.app/diagnostic-ia"
-          }
-        ]
-      }
-    },
-    {
-      "@type": "Service",
-      "name": "Diagnostic IA 360° PME",
-      "provider": {
-        "@id": "https://flow-studio.app/#organization"
-      },
-      "description": "Audit des usages IA, repérage des points de vigilance AI Act et RGPD, quick wins et plan de formation par métier.",
-      "offers": {
-        "@type": "Offer",
-        "priceCurrency": "EUR",
-        "price": "1490",
-        "description": "Structures de 5 à 15 personnes. Sur devis au-delà."
-      },
-      "areaServed": "France",
-      "url": "https://flow-studio.app/diagnostic-ia"
-    }
-  ]
-}
-</script>
 </head>
 <body>
 
@@ -303,7 +229,7 @@
     <li><a href="/realisations">Réalisations</a></li>
     <li><a href="/solen-ouahioune">À propos</a></li>
   </ul>
-  <a href="https://calendar.app.google/x3LrzMWr5spjaSn56" target="_blank" class="nav-cta">Prendre rendez-vous</a>
+  <a href="https://calendar.app.google/YQL39LLfw5zoFn2v7" target="_blank" class="nav-cta">Prendre rendez-vous</a>
   <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
@@ -313,65 +239,249 @@
   <a href="/pme" onclick="toggleMenu()">PME</a>
   <a href="/realisations" onclick="toggleMenu()">Réalisations</a>
   <a href="/solen-ouahioune" onclick="toggleMenu()">À propos</a>
-  <a href="https://calendar.app.google/x3LrzMWr5spjaSn56" target="_blank" class="mobile-cta" onclick="toggleMenu()">Prendre rendez-vous</a>
+  <a href="https://calendar.app.google/YQL39LLfw5zoFn2v7" target="_blank" class="mobile-cta" onclick="toggleMenu()">Prendre rendez-vous</a>
 </div>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-left">
-    <p class="hero-eyebrow reveal">Offre PME</p>
+    <p class="hero-eyebrow reveal">Flow Studio — PME & organisations</p>
     <h1 class="hero-title reveal reveal-delay-1">
-      Diagnostic<br>
-      <em>IA 360°</em><br>
-      PME
+      Passez d'usages IA dispersés<br>
+      à un cadre <em>clair, utile<br>et maîtrisé.</em>
     </h1>
     <p class="hero-subtitle reveal reveal-delay-2">
-      En une demi-journée, on cartographie vos usages IA, on identifie les risques, les opportunités et les quick wins. Vous repartez avec un plan d'action concret, pas une étude de 80 pages que personne ne lit.
+      Flow Studio accompagne les PME qui veulent intégrer l'intelligence artificielle dans leurs processus sans multiplier les expérimentations isolées, exposer leurs données ou perdre leurs équipes en route.
     </p>
-    <div class="hero-price-block reveal reveal-delay-2">
-      <span class="hero-price">1 490€</span>
-      <span class="hero-price-label">HT, tarif fixe</span>
+    <div class="hero-actions reveal reveal-delay-3">
+      <a href="https://calendar.app.google/YQL39LLfw5zoFn2v7" target="_blank" class="btn-primary">Réserver un échange de cadrage</a>
+      <a href="/diagnostic-ia" class="btn-ghost">Découvrir le diagnostic</a>
     </div>
-    <p class="hero-format reveal reveal-delay-2">Demi-journée d'audit + livrable écrit sous 5 à 7 jours</p>
-    <a href="https://calendar.app.google/x3LrzMWr5spjaSn56" target="_blank" class="hero-cta reveal reveal-delay-3">Réserver un appel de qualification</a>
-    <p class="hero-note reveal reveal-delay-3">Appel gratuit 30 min, on vérifie que le diagnostic correspond à votre besoin avant tout engagement.</p>
+    <p class="hero-micro reveal reveal-delay-3">Échange de 30 minutes pour comprendre votre besoin et définir le format adapté.</p>
   </div>
   <div class="hero-right">
-    <div class="hero-deliverables">
-      <div class="deliverable reveal">
-        <span class="deliverable-num">01</span>
-        <div>
-          <p class="deliverable-title">Cartographie des usages IA</p>
-          <p class="deliverable-text">Audit complet de vos outils et pratiques actuelles par métier</p>
-        </div>
+    <div class="observations reveal reveal-delay-2">
+      <div class="observation-item">Des collaborateurs utilisent des outils différents sans règles partagées</div>
+      <div class="observation-item">Des informations sensibles sont copiées dans des solutions externes</div>
+      <div class="observation-item">Plusieurs équipes réalisent les mêmes tests séparément</div>
+      <div class="observation-item">Les résultats produits par l'IA ne sont pas systématiquement contrôlés</div>
+      <div class="observation-item">Les projets pilotes ne dépassent jamais le stade de l'expérimentation</div>
+      <div class="observation-item">La direction ne sait pas quels usages prioriser</div>
+      <div class="observation-item">Les collaborateurs manquent de méthode ou de formation</div>
+      <div class="observation-item">Les outils s'ajoutent sans s'intégrer aux processus existants</div>
+    </div>
+  </div>
+</section>
+
+<!-- APPROCHE -->
+<section class="approche-section">
+  <div>
+    <p class="section-eyebrow reveal">Une approche centrée sur les usages</p>
+    <h2 class="section-title reveal reveal-delay-1">L'enjeu n'est pas d'ajouter<br>de l'IA <em>partout.</em></h2>
+    <p class="approche-text reveal reveal-delay-2">L'enjeu est d'identifier où elle apporte une valeur mesurable, puis de l'intégrer dans un cadre maîtrisé. Flow Studio intervient à la rencontre de trois dimensions : la stratégie, les processus et l'adoption.</p>
+    <p class="approche-text reveal reveal-delay-2">La première recommandation peut être de ne pas automatiser immédiatement. Certains problèmes nécessitent d'abord de clarifier un processus, de nettoyer des données, de répartir les responsabilités ou de définir des règles communes.</p>
+  </div>
+  <div class="approche-pillars reveal reveal-delay-2">
+    <div class="pillar">
+      <p class="pillar-num">Stratégie</p>
+      <h3 class="pillar-title">Quels objectifs l'IA doit-elle soutenir ?</h3>
+      <p class="pillar-text">Gain de temps, amélioration de la qualité, réduction des tâches répétitives, capitalisation des connaissances, accélération commerciale ou meilleure expérience client.</p>
+    </div>
+    <div class="pillar">
+      <p class="pillar-num">Processus</p>
+      <h3 class="pillar-title">Où sont les pertes d'information et les frictions ?</h3>
+      <p class="pillar-text">L'IA ne peut produire des résultats durables que si elle est intégrée à un processus clair. Partir du réel, pas des promesses des outils.</p>
+    </div>
+    <div class="pillar">
+      <p class="pillar-num">Adoption</p>
+      <h3 class="pillar-title">Comment permettre aux équipes d'utiliser les outils avec méthode ?</h3>
+      <p class="pillar-text">Une solution techniquement performante reste inutile si les collaborateurs ne comprennent pas quand, pourquoi et comment l'utiliser.</p>
+    </div>
+  </div>
+</section>
+
+<!-- NIVEAUX D'INTERVENTION -->
+<section class="niveaux-section">
+  <p class="section-eyebrow reveal">Trois niveaux d'intervention</p>
+  <h2 class="section-title reveal reveal-delay-1">Du diagnostic au <em>déploiement.</em></h2>
+  <div class="niveaux-grid">
+    <div class="niveau-card featured reveal">
+      <p class="niveau-num">Niveau 01</p>
+      <h3 class="niveau-title">Diagnostic IA et processus</h3>
+      <p class="niveau-desc">Comprendre les usages actuels, les opportunités prioritaires et les principaux points de vigilance. À partir de 1 490€ HT (5 à 15 personnes). Sur devis au-delà.</p>
+      <ul class="niveau-items">
+        <li>Entretiens direction et équipes</li>
+        <li>Inventaire des outils utilisés</li>
+        <li>Cartographie des usages formels et informels</li>
+        <li>Repérage des principaux points de vigilance</li>
+        <li>Matrice de priorisation des cas d'usage</li>
+        <li>Feuille de route opérationnelle</li>
+      </ul>
+      <a href="/diagnostic-ia" class="niveau-cta">Découvrir le diagnostic</a>
+    </div>
+    <div class="niveau-card reveal reveal-delay-1">
+      <p class="niveau-num">Niveau 02</p>
+      <h3 class="niveau-title">Conception d'un projet pilote</h3>
+      <p class="niveau-desc">Une fois les priorités identifiées, concevoir et déployer un premier cas d'usage concret avec des objectifs, des utilisateurs et des critères de réussite définis.</p>
+      <ul class="niveau-items">
+        <li>Assistant interne de recherche documentaire</li>
+        <li>Assistant commercial</li>
+        <li>Base de connaissances augmentée par l'IA</li>
+        <li>Automatisation d'un processus administratif</li>
+        <li>Système de veille et de capitalisation</li>
+        <li>Génération encadrée de contenus</li>
+      </ul>
+      <a href="https://calendar.app.google/YQL39LLfw5zoFn2v7" target="_blank" class="niveau-cta">Parler de mon projet</a>
+    </div>
+    <div class="niveau-card reveal reveal-delay-2">
+      <p class="niveau-num">Niveau 03</p>
+      <h3 class="niveau-title">Déploiement et adoption</h3>
+      <p class="niveau-desc">Lorsque le pilote est validé, structurer le déploiement pour que les équipes utilisent les outils avec méthode, discernement et autonomie.</p>
+      <ul class="niveau-items">
+        <li>Formalisation des processus</li>
+        <li>Configuration des outils et assistants IA</li>
+        <li>Documentation et règles d'utilisation</li>
+        <li>Supports et formation des équipes</li>
+        <li>Suivi des premiers usages</li>
+        <li>Recommandations d'amélioration</li>
+      </ul>
+      <a href="https://calendar.app.google/YQL39LLfw5zoFn2v7" target="_blank" class="niveau-cta">En savoir plus</a>
+    </div>
+  </div>
+</section>
+
+<!-- CAS D'USAGE -->
+<section class="usages-section">
+  <p class="section-eyebrow reveal">Des cas d'usage adaptés à votre organisation</p>
+  <h2 class="section-title reveal reveal-delay-1">Là où l'IA apporte <em>une valeur mesurable.</em></h2>
+  <div class="usages-grid reveal reveal-delay-2">
+    <div class="usage-col">
+      <h3 class="usage-col-title">Direction & pilotage</h3>
+      <ul class="usage-list">
+        <li>Synthèse de documents</li>
+        <li>Préparation de réunions</li>
+        <li>Aide à l'analyse</li>
+        <li>Centralisation de l'information</li>
+        <li>Production de reportings</li>
+        <li>Recherche dans les ressources internes</li>
+      </ul>
+    </div>
+    <div class="usage-col">
+      <h3 class="usage-col-title">Commerce & marketing</h3>
+      <ul class="usage-list">
+        <li>Préparation des rendez-vous</li>
+        <li>Enrichissement des fiches prospects</li>
+        <li>Rédaction de propositions</li>
+        <li>Personnalisation des messages</li>
+        <li>Analyse des retours clients</li>
+        <li>Production et adaptation de contenus</li>
+      </ul>
+    </div>
+    <div class="usage-col">
+      <h3 class="usage-col-title">Opérations</h3>
+      <ul class="usage-list">
+        <li>Génération de comptes rendus</li>
+        <li>Traitement de demandes récurrentes</li>
+        <li>Mise à jour des bases d'information</li>
+        <li>Automatisation de tâches administratives</li>
+        <li>Création de procédures</li>
+        <li>Contrôle de la complétude des dossiers</li>
+      </ul>
+    </div>
+    <div class="usage-col">
+      <h3 class="usage-col-title">Ressources humaines</h3>
+      <ul class="usage-list">
+        <li>Création de supports</li>
+        <li>Préparation des parcours d'onboarding</li>
+        <li>Recherche dans la documentation interne</li>
+        <li>Transformation des connaissances métier</li>
+        <li>Accompagnement à la montée en compétence</li>
+      </ul>
+    </div>
+    <div class="usage-col">
+      <h3 class="usage-col-title">Support & relation client</h3>
+      <ul class="usage-list">
+        <li>Aide à la préparation des réponses</li>
+        <li>Qualification des demandes</li>
+        <li>Synthèse de l'historique client</li>
+        <li>Création de bases de réponses</li>
+        <li>Orientation vers les bons interlocuteurs</li>
+      </ul>
+    </div>
+    <div class="usage-col" style="background:var(--beige);">
+      <h3 class="usage-col-title">La question à poser</h3>
+      <ul class="usage-list" style="gap:0.8rem;">
+        <li style="flex-direction:column;gap:0.2rem;"><strong style="font-size:0.72rem;color:var(--noir);font-weight:400;">Quelle valeur concrète apporte-t-il ?</strong></li>
+        <li style="flex-direction:column;gap:0.2rem;"><strong style="font-size:0.72rem;color:var(--noir);font-weight:400;">Quelles données utilise-t-il ?</strong></li>
+        <li style="flex-direction:column;gap:0.2rem;"><strong style="font-size:0.72rem;color:var(--noir);font-weight:400;">Qui vérifie le résultat ?</strong></li>
+        <li style="flex-direction:column;gap:0.2rem;"><strong style="font-size:0.72rem;color:var(--noir);font-weight:400;">Comment mesurer son efficacité ?</strong></li>
+      </ul>
+    </div>
+  </div>
+  <div class="usages-note reveal">
+    Flow Studio ne cherche pas à ajouter de l'intelligence artificielle à chaque étape de votre organisation. Chaque cas d'usage doit répondre à ces quatre questions avant d'être déployé.
+  </div>
+</section>
+
+<!-- LIVRABLES -->
+<section class="livrables-section">
+  <p class="section-eyebrow reveal" style="color:var(--taupe);">Des livrables directement exploitables</p>
+  <h2 class="livrables-title reveal reveal-delay-1">Ce que vous <em>repartez avec.</em></h2>
+  <div class="livrables-grid reveal reveal-delay-2">
+    <div class="livrable-item">Cartographie des usages existants</div>
+    <div class="livrable-item">Cartographie des processus concernés</div>
+    <div class="livrable-item">Matrice opportunité, complexité et risque</div>
+    <div class="livrable-item">Sélection de cas d'usage prioritaires</div>
+    <div class="livrable-item">Feuille de route à 90 jours</div>
+    <div class="livrable-item">Architecture fonctionnelle</div>
+    <div class="livrable-item">Cahier des charges</div>
+    <div class="livrable-item">Prototype ou pilote</div>
+    <div class="livrable-item">Documentation utilisateur</div>
+    <div class="livrable-item">Guide de bonnes pratiques</div>
+    <div class="livrable-item">Projet de charte d'utilisation de l'IA</div>
+    <div class="livrable-item">Supports de formation et indicateurs de suivi</div>
+  </div>
+  <p class="livrables-disclaimer reveal">Les documents relatifs aux usages, aux données et aux points de vigilance peuvent être transmis à votre DPO, votre responsable informatique ou votre conseil juridique pour validation. Flow Studio ne délivre pas de certification juridique de conformité.</p>
+</section>
+
+<!-- PROCESS -->
+<section class="process-section">
+  <p class="section-eyebrow reveal">Comment se déroule la collaboration</p>
+  <h2 class="section-title reveal reveal-delay-1">Une démarche <em>progressive et mesurable.</em></h2>
+  <div class="process-steps">
+    <div class="process-step reveal">
+      <p class="process-num">01</p>
+      <div>
+        <h3 class="process-title">Échange de cadrage</h3>
+        <p class="process-text">Nous échangeons sur votre organisation, vos objectifs, les équipes concernées et les projets déjà envisagés. Cet échange permet de définir le niveau d'intervention nécessaire.</p>
       </div>
-      <div class="deliverable reveal reveal-delay-1">
-        <span class="deliverable-num">02</span>
-        <div>
-          <p class="deliverable-title">Analyse des risques</p>
-          <p class="deliverable-text">Conformité AI Act, protection des données, exposition réglementaire</p>
-        </div>
+    </div>
+    <div class="process-step reveal">
+      <p class="process-num">02</p>
+      <div>
+        <h3 class="process-title">Proposition de mission</h3>
+        <p class="process-text">Vous recevez une proposition précisant le périmètre, les interlocuteurs, les étapes, les livrables, le calendrier et les conditions financières.</p>
       </div>
-      <div class="deliverable reveal reveal-delay-2">
-        <span class="deliverable-num">03</span>
-        <div>
-          <p class="deliverable-title">Quick wins identifiés</p>
-          <p class="deliverable-text">Les 3 à 5 gains rapides à implémenter dans les 30 prochains jours</p>
-        </div>
+    </div>
+    <div class="process-step reveal">
+      <p class="process-num">03</p>
+      <div>
+        <h3 class="process-title">Analyse et entretiens</h3>
+        <p class="process-text">Je recueille les informations nécessaires auprès de la direction et des collaborateurs concernés. L'objectif est de comprendre le travail réel, pas uniquement les procédures théoriques.</p>
       </div>
-      <div class="deliverable reveal reveal-delay-2">
-        <span class="deliverable-num">04</span>
-        <div>
-          <p class="deliverable-title">Charte IA interne</p>
-          <p class="deliverable-text">Un document simple, opérationnel, adapté à votre culture d'entreprise</p>
-        </div>
+    </div>
+    <div class="process-step reveal">
+      <p class="process-num">04</p>
+      <div>
+        <h3 class="process-title">Recommandations</h3>
+        <p class="process-text">Les opportunités sont évaluées selon leur valeur, leur complexité, leur impact organisationnel et leurs points de vigilance. Vous recevez une feuille de route priorisée.</p>
       </div>
-      <div class="deliverable reveal reveal-delay-3">
-        <span class="deliverable-num">05</span>
-        <div>
-          <p class="deliverable-title">Plan de formation par métier</p>
-          <p class="deliverable-text">Qui doit apprendre quoi, dans quel ordre, avec quel objectif</p>
-        </div>
+    </div>
+    <div class="process-step reveal">
+      <p class="process-num">05</p>
+      <div>
+        <h3 class="process-title">Pilote et déploiement</h3>
+        <p class="process-text">Selon la mission retenue, Flow Studio peut construire un pilote, former les équipes et accompagner les premiers usages jusqu'à l'autonomie.</p>
       </div>
     </div>
   </div>
@@ -380,183 +490,78 @@
 <!-- POUR QUI -->
 <section class="pourqui-section">
   <div>
-    <p class="section-eyebrow reveal">Pour qui</p>
-    <h2 class="section-title reveal reveal-delay-1">
-      Votre entreprise utilise déjà l'IA.<br>
-      <em>Mais pas de façon structurée.</em>
-    </h2>
-    <p class="section-text reveal reveal-delay-2">
-      Chaque collaborateur·rice utilise ses propres outils IA dans son coin. Personne ne sait vraiment ce que ça implique en termes de données, de risques ou d'efficacité. Il n'y a pas de règles communes, pas de vision globale.
-    </p>
-    <p class="section-text reveal reveal-delay-2">
-      Le Diagnostic IA 360° est fait pour les PME qui veulent passer de l'utilisation intuitive à l'organisation structurée, sans tout bloquer le temps d'une longue étude.
-    </p>
+    <p class="section-eyebrow reveal">Pour quelles organisations ?</p>
+    <h2 class="section-title reveal reveal-delay-1" style="margin-bottom:1.5rem;">Flow Studio est adapté<br><em>à votre situation si…</em></h2>
+    <ul class="pourqui-list yes reveal reveal-delay-2">
+      <li>Vous souhaitez comprendre comment vos équipes utilisent déjà l'intelligence artificielle</li>
+      <li>Vous avez identifié plusieurs idées mais ne savez pas lesquelles prioriser</li>
+      <li>Vous voulez tester un cas d'usage avant d'investir dans un déploiement plus important</li>
+      <li>Vous avez besoin d'un cadre commun et de méthodes partagées</li>
+      <li>Vous cherchez un accompagnement qui relie stratégie, processus, outils et formation</li>
+      <li>Vous voulez produire des résultats concrets sans lancer un programme de transformation disproportionné</li>
+    </ul>
+    <p style="font-size:0.72rem;color:var(--taupe);margin-top:1.5rem;line-height:1.7;" class="reveal">PME à partir de 5 collaborateurs, organismes de formation, cabinets de conseil, entreprises de services, agences, structures avec un volume important de connaissances ou de documents.</p>
   </div>
-  <div class="profiles reveal reveal-delay-2">
-    <div class="profile-item">
-      <p class="profile-title">PME de 5 à 80 personnes</p>
-      <p class="profile-text">Plusieurs métiers, plusieurs usages IA disparates, pas de vision commune</p>
-    </div>
-    <div class="profile-item">
-      <p class="profile-title">Dirigeant·e ou DRH</p>
-      <p class="profile-text">Vous savez que l'IA est un sujet stratégique mais vous ne savez pas par où commencer</p>
-    </div>
-    <div class="profile-item">
-      <p class="profile-title">Structure en croissance</p>
-      <p class="profile-text">Vos process actuels ne tiennent plus à l'échelle et l'IA pourrait changer ça</p>
-    </div>
-    <div class="profile-item">
-      <p class="profile-title">Secteurs de services</p>
-      <p class="profile-text">Conseil, formation, agences, cabinets, commerce, RH, communication</p>
+  <div>
+    <div class="pas-pour-qui reveal">
+      <h3>Ce que Flow Studio ne propose pas</h3>
+      <ul class="pas-list" style="margin-top:1rem;">
+        <li>Flow Studio ne remplace pas votre avocat, votre DPO, votre RSSI ou votre service informatique</li>
+        <li>Je n'interviens pas comme cabinet d'audit juridique ni comme prestataire de cybersécurité</li>
+        <li>La validation juridique, réglementaire ou technique spécialisée reste sous la responsabilité des professionnels compétents</li>
+      </ul>
+      <p style="font-size:0.78rem;color:#6B6560;margin-top:1.2rem;line-height:1.7;">Je peux identifier les principaux points de vigilance opérationnels, documenter les usages et faciliter le dialogue avec vos experts internes ou externes.</p>
     </div>
   </div>
 </section>
 
-<!-- PROCESS -->
-<section class="process-section">
-  <h2 class="process-title reveal">Comment ça se passe <em>concrètement.</em></h2>
-  <div class="process-steps">
-    <div class="process-step reveal">
-      <p class="process-step-num">01</p>
-      <p class="process-step-tag">Avant, J-7</p>
-      <h3 class="process-step-title">Questionnaire de cadrage</h3>
-      <p class="process-step-text">Un formulaire court envoyé en amont. Vous listez vos outils, vos métiers, vos usages actuels. Je prépare l'audit sur cette base.</p>
+<!-- FAQ -->
+<section class="faq-section">
+  <p class="section-eyebrow reveal">Questions fréquentes</p>
+  <h2 class="section-title reveal reveal-delay-1">Tout ce que vous voulez <em>savoir.</em></h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-question">Le diagnostic est-il réservé aux entreprises déjà avancées sur l'IA ?<span class="faq-icon">+</span></div>
+      <div class="faq-answer">Non. Il peut être réalisé avant un premier projet ou lorsque des usages informels existent déjà dans les équipes. Le contenu de la mission est adapté à votre niveau de maturité.</div>
     </div>
-    <div class="process-step reveal reveal-delay-1">
-      <p class="process-step-num">02</p>
-      <p class="process-step-tag">Jour J, 3h</p>
-      <h3 class="process-step-title">Demi-journée d'audit</h3>
-      <p class="process-step-text">Session de travail en visio ou sur site. On passe en revue vos usages, vos process, vos équipes. Questions directes, zéro jargon.</p>
+    <div class="faq-item">
+      <div class="faq-question">Pouvez-vous travailler avec nos outils actuels ?<span class="faq-icon">+</span></div>
+      <div class="faq-answer">Oui. Le diagnostic prend en compte votre environnement existant : Microsoft 365, Google Workspace, Notion, CRM, outils métiers ou solutions d'intelligence artificielle. La recommandation peut consister à mieux utiliser les outils déjà disponibles plutôt qu'à en ajouter de nouveaux.</div>
     </div>
-    <div class="process-step reveal reveal-delay-2">
-      <p class="process-step-num">03</p>
-      <p class="process-step-tag">J+5 à J+7</p>
-      <h3 class="process-step-title">Livrable complet</h3>
-      <p class="process-step-text">Votre diagnostic complet livré par écrit, cartographie, risques, quick wins, charte IA, plan de formation. Opérationnel dès réception.</p>
+    <div class="faq-item">
+      <div class="faq-question">Intervenez-vous auprès de plusieurs services ?<span class="faq-icon">+</span></div>
+      <div class="faq-answer">Oui. Le périmètre peut concerner une équipe ou plusieurs fonctions. Lorsque le nombre d'interlocuteurs augmente, la mission est adaptée en conséquence.</div>
     </div>
-  </div>
-  <div class="process-timeline reveal">
-    <div class="timeline-item-proc">
-      <p class="timeline-label">Durée totale</p>
-      <p class="timeline-value">1 journée de travail</p>
+    <div class="faq-item">
+      <div class="faq-question">Est-ce que les données de l'entreprise sont protégées ?<span class="faq-icon">+</span></div>
+      <div class="faq-answer">La confidentialité, les accès et les données manipulées font partie des points étudiés pendant le cadrage. Les conditions précises dépendent des outils retenus, de leurs configurations et de vos politiques internes. Les sujets nécessitant une expertise juridique ou de cybersécurité sont transmis aux interlocuteurs compétents.</div>
     </div>
-    <div class="timeline-sep"></div>
-    <div class="timeline-item-proc">
-      <p class="timeline-label">Format</p>
-      <p class="timeline-value">Visio ou sur site</p>
+    <div class="faq-item">
+      <div class="faq-question">Proposez-vous des formations ?<span class="faq-icon">+</span></div>
+      <div class="faq-answer">Oui. Les formations peuvent porter sur les fondamentaux de l'intelligence artificielle, les méthodes de travail, la création de prompts, les règles de vérification ou l'utilisation des outils déployés.</div>
     </div>
-    <div class="timeline-sep"></div>
-    <div class="timeline-item-proc">
-      <p class="timeline-label">Livraison</p>
-      <p class="timeline-value">Sous 5 à 7 jours</p>
-    </div>
-    <div class="timeline-sep"></div>
-    <div class="timeline-item-proc">
-      <p class="timeline-label">Tarif</p>
-      <p class="timeline-value">1 490€ HT fixe</p>
-    </div>
-  </div>
-</section>
-
-<!-- LIVRABLES DÉTAIL -->
-<section class="livrables-section">
-  <p class="section-eyebrow reveal">Ce que vous recevez</p>
-  <h2 class="section-title reveal reveal-delay-1">5 livrables.<br><em>Un plan d'action prêt à exécuter.</em></h2>
-  <div class="livrables-grid">
-    <div class="livrable-card reveal">
-      <p class="livrable-num">Livrable 01</p>
-      <h3 class="livrable-title">Cartographie des usages IA</h3>
-      <p class="livrable-text">Une vue complète de ce qui se passe dans votre entreprise, qui utilise quoi, comment, avec quelles données.</p>
-      <ul class="livrable-items">
-        <li>Inventaire des outils IA par service</li>
-        <li>Évaluation de la maturité par métier</li>
-        <li>Identification des angles morts</li>
-      </ul>
-    </div>
-    <div class="livrable-card reveal reveal-delay-1">
-      <p class="livrable-num">Livrable 02</p>
-      <h3 class="livrable-title">Analyse des risques</h3>
-      <p class="livrable-text">Ce qui peut poser problème, réglementairement, humainement, opérationnellement, avec un niveau de priorité pour chaque point.</p>
-      <ul class="livrable-items">
-        <li>Positionnement par rapport à l'AI Act</li>
-        <li>Risques RGPD liés aux usages IA</li>
-        <li>Risques opérationnels et humains</li>
-      </ul>
-    </div>
-    <div class="livrable-card reveal">
-      <p class="livrable-num">Livrable 03</p>
-      <h3 class="livrable-title">Quick wins, 30 jours</h3>
-      <p class="livrable-text">Les 3 à 5 actions à impact immédiat. Priorisées, détaillées, avec les outils et les responsables identifiés.</p>
-      <ul class="livrable-items">
-        <li>Actions sans investissement supplémentaire</li>
-        <li>Gains de temps estimés par action</li>
-        <li>Ordre d'implémentation recommandé</li>
-      </ul>
-    </div>
-    <div class="livrable-card reveal reveal-delay-1">
-      <p class="livrable-num">Livrable 04</p>
-      <h3 class="livrable-title">Charte IA interne</h3>
-      <p class="livrable-text">Un document opérationnel que vos équipes peuvent lire et appliquer dès demain. Pas un document juridique, un cadre de travail.</p>
-      <ul class="livrable-items">
-        <li>Ce qui est autorisé / déconseillé / interdit</li>
-        <li>Règles sur les données et la confidentialité</li>
-        <li>Adapté à votre culture d'entreprise</li>
-      </ul>
-    </div>
-    <div class="livrable-card reveal" style="grid-column: 1 / -1;">
-      <p class="livrable-num">Livrable 05</p>
-      <h3 class="livrable-title">Plan de formation par métier</h3>
-      <p class="livrable-text">Qui doit apprendre quoi, pas une formation générique "IA pour tous", mais un parcours adapté à chaque profil de votre équipe.</p>
-      <ul class="livrable-items">
-        <li>Cartographie des besoins par poste</li>
-        <li>Recommandations d'outils et de ressources</li>
-        <li>Séquençage sur 3 à 6 mois</li>
-        <li>Estimation du temps de montée en compétences</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- POUR QUI / PAS POUR QUI -->
-<section class="limit-section">
-  <p class="section-eyebrow reveal">Soyons honnêtes</p>
-  <h2 class="section-title reveal reveal-delay-1">Ce diagnostic est <em>fait pour vous</em>, ou pas.</h2>
-  <div class="limit-grid">
-    <div>
-      <h3>C'est fait pour vous si :</h3>
-      <ul class="limit-list yes">
-        <li>Votre équipe utilise déjà l'IA de façon autonome et vous voulez structurer ça</li>
-        <li>Vous préparez une politique IA interne mais ne savez pas par où commencer</li>
-        <li>Vous avez des questions sur l'AI Act et son impact sur votre activité</li>
-        <li>Vous voulez un état des lieux rapide avant d'investir davantage</li>
-        <li>Vous cherchez des gains d'efficacité concrets, pas une réflexion théorique</li>
-      </ul>
-    </div>
-    <div>
-      <h3>Ce n'est pas fait pour vous si :</h3>
-      <ul class="limit-list no">
-        <li>Votre entreprise n'utilise aucun outil IA et n'envisage pas de le faire</li>
-        <li>Vous cherchez une certification de conformité AI Act (il vous faut un·e avocat·e)</li>
-        <li>Vous avez besoin d'un audit technique approfondi de vos systèmes informatiques</li>
-        <li>Vous avez des usages IA à haut risque (recrutement algorithmique, IA médicale), nécessite un accompagnement juridique spécialisé</li>
-      </ul>
+    <div class="faq-item">
+      <div class="faq-question">Quel est le tarif d'une mission ?<span class="faq-icon">+</span></div>
+      <div class="faq-answer">Le tarif dépend du nombre d'équipes, des entretiens nécessaires, du niveau d'analyse et des livrables. Les diagnostics pour une petite équipe (5 à 15 personnes) démarrent à 1 490€ HT. Les missions impliquant plusieurs services, un pilote ou un déploiement font l'objet d'une proposition personnalisée.</div>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
 <section class="cta-section">
-  <p class="cta-eyebrow reveal">Prêt·e à passer à l'action ?</p>
+  <p class="cta-eyebrow reveal">Structurez vos usages IA avant qu'ils ne se développent sans cadre</p>
   <h2 class="cta-title reveal reveal-delay-1">
-    Votre diagnostic IA,<br>
-    <em>livré en une semaine.</em>
+    Prêt·e à identifier<br>
+    <em>les bons usages ?</em>
   </h2>
-  <p class="cta-subtitle reveal reveal-delay-2">On commence par un appel de 30 minutes pour vérifier que le diagnostic correspond à votre situation.</p>
-  <p class="cta-price reveal reveal-delay-2">1 490€ HT</p>
-  <p class="cta-price-sub reveal reveal-delay-2">Tarif fixe · Demi-journée d'audit · Livraison sous 5 à 7 jours</p>
-  <a href="https://calendar.app.google/x3LrzMWr5spjaSn56" target="_blank" class="cta-btn reveal reveal-delay-3">Réserver l'appel de qualification</a>
-  <p class="cta-note reveal reveal-delay-3">solen@flow-studio.app · flow-studio.app</p>
+  <p class="cta-subtitle reveal reveal-delay-2">L'intelligence artificielle peut améliorer votre fonctionnement, à condition de partir de vos processus, de vos équipes et de vos objectifs. Flow Studio vous aide à identifier les bons usages et à créer les conditions d'une adoption durable.</p>
+  <a href="https://calendar.app.google/YQL39LLfw5zoFn2v7" target="_blank" class="cta-btn reveal reveal-delay-3">Réserver un échange de cadrage</a>
+  <p class="cta-note reveal">Échange de 30 minutes, sans engagement.</p>
 </section>
+
+<div class="bloom-footer-bar">
+  <p>Tu préfères construire ton système avec mon accompagnement ? <a href="https://bloom-and-build.fr" target="_blank">Découvre Bloom & Build →</a></p>
+</div>
 
 <footer>
   <div>
@@ -565,8 +570,9 @@
   </div>
   <div class="footer-links">
     <a href="/">Accueil</a>
-    <a href="/notion">Notion</a>
-    <a href="/ia">IA</a>
+    <a href="/entrepreneurs">Entrepreneurs</a>
+    <a href="/diagnostic-ia">Diagnostic PME</a>
+    <a href="/realisations">Réalisations</a>
     <a href="/solen-ouahioune">À propos</a>
     <a href="/contact">Contact</a>
     <a href="/mentions-legales">Mentions légales</a>
@@ -582,36 +588,14 @@
   setTimeout(() => { document.querySelectorAll('.hero .reveal').forEach(r => r.classList.add('visible')); }, 80);
   function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
   window.addEventListener('scroll', () => { document.getElementById('mobileMenu').classList.remove('open'); });
-
-  // Cookie banner
-  (function() {
-    if (!localStorage.getItem('cookieConsent')) {
-      setTimeout(function() {
-        var b = document.getElementById('cookieBanner');
-        if (b) b.classList.add('visible');
-      }, 800);
-    }
-  })();
-  function acceptCookies() {
-    localStorage.setItem('cookieConsent', 'accepted');
-    document.getElementById('cookieBanner').classList.remove('visible');
-  }
-  function closeCookieBanner() {
-    localStorage.setItem('cookieConsent', 'closed');
-    document.getElementById('cookieBanner').classList.remove('visible');
-  }
+  document.querySelectorAll('.faq-question').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
 </script>
-
-<!-- COOKIE BANNER -->
-<div class="cookie-banner" id="cookieBanner">
-  <p class="cookie-text">
-    Ce site n'utilise pas de cookies publicitaires ni de traceurs. Les seuls cookies présents sont techniques et nécessaires au bon fonctionnement du site.
-    <a href="/mentions-legales">En savoir plus</a>
-  </p>
-  <div class="cookie-actions">
-    <button class="cookie-btn refuse" onclick="closeCookieBanner()">Fermer</button>
-    <button class="cookie-btn accept" onclick="acceptCookies()">J'ai compris</button>
-  </div>
-</div>
 </body>
 </html>
