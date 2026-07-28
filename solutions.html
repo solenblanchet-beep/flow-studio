@@ -26,7 +26,7 @@
   .nav-logo span { font-size: 0.55rem; letter-spacing: 0.4em; display: block; text-align: center; margin-top: -2px; color: var(--taupe); }
   .nav-links { display: flex; gap: 2.5rem; list-style: none; }
   .nav-links a { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--noir); text-decoration: none; transition: color 0.3s; }
-  .nav-links a:hover, .nav-links a.active { color: var(--taupe); }
+  .nav-links a:hover, .nav-links a.active { color: var(--noir); }
   .nav-dropdown { position: relative; }
   .dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background: var(--blanc); border: 1px solid rgba(181,173,165,0.3); min-width: 240px; z-index: 200; padding: 0.5rem 0; box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
   .dropdown-menu li { list-style: none; }
@@ -50,14 +50,14 @@
   .hero-title { font-family: var(--font-display); font-size: clamp(2.4rem, 3.8vw, 3.8rem); font-weight: 400; line-height: 1.1; margin-bottom: 1.8rem; }
   .hero-title em { font-style: italic; color: var(--taupe); }
   .hero-subtitle { font-size: 0.88rem; color: #524E4A; line-height: 1.9; max-width: 440px; margin-bottom: 0.8rem; }
-  .hero-tagline { font-size: 0.82rem; color: var(--taupe); letter-spacing: 0.08em; margin-bottom: 2.5rem; }
+  .hero-tagline { font-size: 0.82rem; color: #524E4A; letter-spacing: 0.08em; margin-bottom: 2.5rem; }
   .hero-actions { display: flex; gap: 1.2rem; align-items: center; flex-wrap: wrap; margin-bottom: 0.8rem; }
   .btn-primary { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 1.1rem 2.2rem; background: var(--noir); color: var(--blanc); text-decoration: none; border: 1px solid var(--noir); transition: all 0.35s; }
   .btn-primary:hover { background: transparent; color: var(--noir); }
   .btn-ghost { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--noir); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; transition: gap 0.3s; }
   .btn-ghost:hover { gap: 0.9rem; }
   .btn-ghost::after { content: '→'; }
-  .hero-micro { font-size: 0.65rem; color: var(--taupe); }
+  .hero-micro { font-size: 0.65rem; color: #524E4A; }
   .hero-right { background: var(--beige); display: flex; flex-direction: column; justify-content: center; padding: 5rem 4rem; gap: 1.5px; }
   .hero-benefit { background: var(--blanc); padding: 1.1rem 1.5rem; font-size: 0.82rem; color: #524E4A; display: flex; gap: 0.8rem; align-items: center; transition: background 0.3s; }
   .hero-benefit:hover { background: rgba(181,173,165,0.2); }
@@ -86,11 +86,11 @@
   .parcours-tag { font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1rem; }
   .parcours-card-title { font-family: var(--font-display); font-size: 1.3rem; color: var(--blanc); margin-bottom: 0.4rem; }
   .parcours-card-sub { font-family: var(--font-display); font-style: italic; font-size: 1rem; color: var(--taupe); margin-bottom: 1.5rem; }
-  .parcours-desc { font-size: 0.82rem; color: rgba(255,255,255,0.72); line-height: 1.8; margin-bottom: 1.8rem; }
+  .parcours-desc { font-size: 0.82rem; color: rgba(255,255,255,0.82); line-height: 1.8; margin-bottom: 1.8rem; }
   .parcours-items { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 2rem; flex: 1; }
-  .parcours-items li { font-size: 0.75rem; color: rgba(255,255,255,0.6); display: flex; gap: 0.6rem; }
+  .parcours-items li { font-size: 0.75rem; color: rgba(255,255,255,0.75); display: flex; gap: 0.6rem; }
   .parcours-items li::before { content: '·'; color: var(--taupe); flex-shrink: 0; }
-  .parcours-price { font-size: 0.75rem; color: var(--taupe); margin-bottom: 1.5rem; letter-spacing: 0.06em; }
+  .parcours-price { font-size: 0.75rem; color: rgba(255,255,255,0.65); margin-bottom: 1.5rem; letter-spacing: 0.06em; }
   .parcours-cta { display: block; text-align: center; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; padding: 0.9rem 1.2rem; border: 1px solid rgba(255,255,255,0.3); color: var(--blanc); text-decoration: none; transition: all 0.3s; margin-top: auto; }
   .parcours-cta:hover { background: var(--blanc); color: var(--noir); border-color: var(--blanc); }
 
@@ -123,9 +123,9 @@
   .niveau-card { background: rgba(255,255,255,0.03); padding: 2.2rem 2rem; }
   .niveau-num { font-family: var(--font-display); font-size: 1.8rem; color: rgba(255,255,255,0.08); line-height: 1; margin-bottom: 1rem; }
   .niveau-title { font-family: var(--font-display); font-size: 1rem; color: var(--blanc); margin-bottom: 0.8rem; }
-  .niveau-text { font-size: 0.78rem; color: rgba(255,255,255,0.72); line-height: 1.7; margin-bottom: 1.2rem; }
+  .niveau-text { font-size: 0.78rem; color: rgba(255,255,255,0.82); line-height: 1.7; margin-bottom: 1.2rem; }
   .niveau-formats { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
-  .niveau-formats li { font-size: 0.7rem; color: var(--taupe); display: flex; gap: 0.5rem; }
+  .niveau-formats li { font-size: 0.7rem; color: rgba(255,255,255,0.6); display: flex; gap: 0.5rem; }
   .niveau-formats li::before { content: '→'; flex-shrink: 0; }
 
   /* MÉTHODE */
@@ -162,7 +162,7 @@
   .cta-eyebrow { font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1.8rem; }
   .cta-title { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3.5rem); color: var(--blanc); line-height: 1.1; margin-bottom: 1.2rem; }
   .cta-title em { font-style: italic; color: var(--taupe); }
-  .cta-subtitle { font-size: 0.85rem; color: rgba(255,255,255,0.6); max-width: 520px; margin: 0 auto 2.5rem; line-height: 1.8; }
+  .cta-subtitle { font-size: 0.85rem; color: rgba(255,255,255,0.78); max-width: 520px; margin: 0 auto 2.5rem; line-height: 1.8; }
   .cta-actions { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
   .cta-btn-primary { font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; padding: 1.2rem 2.8rem; background: var(--blanc); color: var(--noir); text-decoration: none; border: 1px solid var(--blanc); transition: all 0.35s; }
   .cta-btn-primary:hover { background: transparent; color: var(--blanc); }
@@ -182,7 +182,7 @@
   .footer-logo { font-family: var(--font-display); font-size: 0.95rem; letter-spacing: 0.2em; text-transform: uppercase; }
   .footer-tagline { font-size: 0.65rem; color: var(--taupe); margin-top: 0.2rem; }
   .footer-links { display: flex; gap: 2rem; }
-  .footer-links a { font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; color: #5A5550; text-decoration: none; transition: color 0.3s; }
+  .footer-links a { font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; color: #3E3A37; text-decoration: none; transition: color 0.3s; }
   .footer-links a:hover { color: var(--noir); }
 
   /* REVEAL */
@@ -342,6 +342,25 @@
 </section>
 
 
+
+<section class="probleme-section">
+  <div>
+    <p class="section-eyebrow reveal">Le problème n'est pas toujours l'outil</p>
+    <h2 class="section-title reveal reveal-delay-1">Ce qui ralentit votre activité<br><em>se trouve souvent entre les outils.</em></h2>
+    <p class="probleme-text reveal reveal-delay-2">Les entreprises accumulent progressivement des applications, des fichiers, des tableaux et des habitudes de travail. Chaque élément peut fonctionner séparément. Mais l'ensemble ne forme pas nécessairement un système cohérent.</p>
+    <p class="probleme-text reveal reveal-delay-2">Flow Studio part du fonctionnement réel pour identifier ce qui doit être clarifié, centralisé, automatisé, connecté, documenté ou transmis. La solution technique vient ensuite.</p>
+  </div>
+  <div>
+    <ul class="probleme-list reveal reveal-delay-2">
+      <li>Les informations se dispersent entre les outils</li>
+      <li>Les tâches se répètent d'un outil à l'autre</li>
+      <li>Les décisions reposent sur la mémoire de quelques personnes</li>
+      <li>Les usages de l'IA se développent sans méthode commune</li>
+      <li>Les projets pilotes ne dépassent jamais l'expérimentation</li>
+      <li>La direction ne sait pas quelles priorités retenir</li>
+    </ul>
+  </div>
+</section>
 
 <section class="dimensions-section">
   <p class="section-eyebrow reveal">Quatre dimensions complémentaires</p>
@@ -543,6 +562,31 @@
         <h3 class="methode-step-title">Transmission et suivi</h3>
         <p class="methode-step-text">Former les utilisateurs, documenter le système et accompagner les premiers usages pour garantir une adoption réelle.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="limites-section">
+  <div>
+    <p class="section-eyebrow reveal">Ce que Flow Studio ne fait pas</p>
+    <h2 class="section-title reveal reveal-delay-1">Moins d'effets d'annonce.<br><em>Plus de solutions utilisables.</em></h2>
+    <ul class="limites-list reveal reveal-delay-2">
+      <li>Pas d'automatisation avant clarification du processus</li>
+      <li>Pas de template générique présenté comme du sur-mesure</li>
+      <li>Pas d'IA ajoutée sans bénéfice identifiable</li>
+      <li>Pas de promesse de conformité juridique ou de cybersécurité</li>
+    </ul>
+  </div>
+  <div>
+    <h3 class="section-title reveal reveal-delay-1" style="font-size:1.1rem;margin-bottom:1.5rem;">Chaque solution doit répondre à quatre questions.</h3>
+    <div class="questions-block reveal reveal-delay-2">
+      <p class="questions-title">Les quatre questions</p>
+      <ul class="questions-list">
+        <li>Quel problème concret résout-elle ?</li>
+        <li>Quelle valeur apporte-t-elle ?</li>
+        <li>Qui utilise et vérifie le résultat ?</li>
+        <li>Comment mesurer son efficacité ?</li>
+      </ul>
     </div>
   </div>
 </section>
