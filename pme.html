@@ -119,6 +119,17 @@
   .livrable-item::before { content: '→'; color: var(--taupe); flex-shrink: 0; font-size: 0.65rem; margin-top: 2px; }
   .livrables-disclaimer { font-size: 0.72rem; color: rgba(255,255,255,0.6); margin-top: 2rem; max-width: 620px; line-height: 1.7; font-style: italic; }
 
+  /* LIVRABLES PAR NIVEAU */
+  .livrables-par-niveau { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: rgba(255,255,255,0.06); margin: 2.5rem 0 2rem; }
+  .livrable-niveau { background: rgba(255,255,255,0.03); display: flex; flex-direction: column; }
+  .livrable-niveau-header { padding: 1.8rem 1.8rem 1.2rem; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .livrable-niveau-num { font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--taupe); margin-bottom: 0.4rem; }
+  .livrable-niveau-title { font-family: var(--font-display); font-size: 1rem; color: var(--blanc); line-height: 1.3; }
+  .livrable-niveau-items { padding: 1.2rem 1.8rem 1.8rem; display: flex; flex-direction: column; gap: 1.5px; }
+  @media (max-width: 960px) {
+    .livrables-par-niveau { grid-template-columns: 1fr; }
+  }
+
   /* PROCESS */
   .process-section { padding: 7rem 6rem; }
   .process-steps { display: flex; flex-direction: column; gap: 1.5px; margin-top: 3.5rem; }
@@ -425,21 +436,56 @@
 
 <!-- LIVRABLES -->
 <section class="livrables-section">
-  <p class="section-eyebrow reveal" style="color:var(--taupe);">Des livrables directement exploitables</p>
-  <h2 class="livrables-title reveal reveal-delay-1">Ce que vous <em>repartez avec.</em></h2>
-  <div class="livrables-grid reveal reveal-delay-2">
-    <div class="livrable-item">Cartographie des usages existants</div>
-    <div class="livrable-item">Cartographie des processus concernés</div>
-    <div class="livrable-item">Matrice opportunité, complexité et risque</div>
-    <div class="livrable-item">Sélection de cas d'usage prioritaires</div>
-    <div class="livrable-item">Feuille de route à 90 jours</div>
-    <div class="livrable-item">Architecture fonctionnelle</div>
-    <div class="livrable-item">Cahier des charges</div>
-    <div class="livrable-item">Prototype ou pilote</div>
-    <div class="livrable-item">Documentation utilisateur</div>
-    <div class="livrable-item">Guide de bonnes pratiques</div>
-    <div class="livrable-item">Projet de charte d'utilisation de l'IA</div>
-    <div class="livrable-item">Supports de formation et indicateurs de suivi</div>
+  <p class="section-eyebrow reveal" style="color:var(--taupe);">Ce que vous recevez</p>
+  <h2 class="livrables-title reveal reveal-delay-1">Des livrables <em>adaptés à chaque niveau d'intervention.</em></h2>
+
+  <div class="livrables-par-niveau reveal reveal-delay-2">
+
+    <div class="livrable-niveau">
+      <div class="livrable-niveau-header">
+        <p class="livrable-niveau-num">Niveau 01</p>
+        <h3 class="livrable-niveau-title">Diagnostic IA et processus</h3>
+      </div>
+      <div class="livrable-niveau-items">
+        <div class="livrable-item">Cartographie des usages existants</div>
+        <div class="livrable-item">Cartographie des processus concernés</div>
+        <div class="livrable-item">Matrice opportunité, complexité et vigilance</div>
+        <div class="livrable-item">Sélection des cas d'usage prioritaires</div>
+        <div class="livrable-item">Feuille de route à 90 jours</div>
+        <div class="livrable-item">Recommandations de cadrage</div>
+      </div>
+    </div>
+
+    <div class="livrable-niveau">
+      <div class="livrable-niveau-header">
+        <p class="livrable-niveau-num">Niveau 02</p>
+        <h3 class="livrable-niveau-title">Conception d'un projet pilote</h3>
+      </div>
+      <div class="livrable-niveau-items">
+        <div class="livrable-item">Architecture fonctionnelle</div>
+        <div class="livrable-item">Cahier des charges</div>
+        <div class="livrable-item">Prototype ou pilote</div>
+        <div class="livrable-item">Protocole de test</div>
+        <div class="livrable-item">Critères de réussite</div>
+        <div class="livrable-item">Documentation utilisateur</div>
+      </div>
+    </div>
+
+    <div class="livrable-niveau">
+      <div class="livrable-niveau-header">
+        <p class="livrable-niveau-num">Niveau 03</p>
+        <h3 class="livrable-niveau-title">Déploiement et adoption</h3>
+      </div>
+      <div class="livrable-niveau-items">
+        <div class="livrable-item">Formalisation des processus</div>
+        <div class="livrable-item">Guide de bonnes pratiques</div>
+        <div class="livrable-item">Projet de règles ou de charte d'utilisation de l'IA</div>
+        <div class="livrable-item">Supports de formation</div>
+        <div class="livrable-item">Indicateurs de suivi</div>
+        <div class="livrable-item">Recommandations d'amélioration</div>
+      </div>
+    </div>
+
   </div>
   <p class="livrables-disclaimer reveal">Les documents relatifs aux usages, aux données et aux points de vigilance peuvent être transmis à votre DPO, votre responsable informatique ou votre conseil juridique pour validation. Flow Studio ne délivre pas de certification juridique de conformité.</p>
 </section>
