@@ -184,6 +184,20 @@
     .cas-section { padding: 4rem 1.2rem; }
   }
 
+
+  /* DIAGNOSTIC BANDEAU */
+  .diag-bandeau { display: flex; justify-content: space-between; align-items: center; gap: 2rem; padding: 2rem 2.5rem; background: var(--beige); border-left: 2px solid var(--taupe); margin-top: 3.5rem; margin-bottom: 2px; flex-wrap: wrap; }
+  .diag-left { display: flex; align-items: flex-start; gap: 1.5rem; }
+  .diag-num { font-family: var(--font-display); font-size: 1.8rem; color: rgba(181,173,165,0.5); line-height: 1; flex-shrink: 0; padding-top: 2px; }
+  .diag-title { font-family: var(--font-display); font-size: 1.1rem; margin-bottom: 0.3rem; }
+  .diag-text { font-size: 0.78rem; color: #6B6560; line-height: 1.6; max-width: 480px; }
+  .diag-cta { font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--noir); text-decoration: none; border-bottom: 1px solid rgba(181,173,165,0.5); padding-bottom: 2px; white-space: nowrap; transition: all 0.3s; flex-shrink: 0; }
+  .diag-cta:hover { border-bottom-color: var(--noir); }
+  @media (max-width: 768px) {
+    .diag-bandeau { flex-direction: column; align-items: flex-start; gap: 1.2rem; }
+    .diag-left { gap: 1rem; }
+  }
+
   /* BLOOM FOOTER BAR */
   .bloom-footer-bar { background: var(--beige); padding: 1rem 6rem; text-align: center; border-top: 1px solid rgba(181,173,165,0.4); }
   .bloom-footer-bar p { font-size: 0.78rem; color: #6B6560; }
@@ -398,14 +412,28 @@
 
 <!-- OFFRES -->
 <section class="offres-section">
-  <p class="section-eyebrow reveal">Deux niveaux d'accompagnement</p>
-  <h2 class="section-title reveal reveal-delay-1">Un système centré sur <em>ce qui compte pour toi.</em></h2>
+  <p class="section-eyebrow reveal">Trois niveaux d'accompagnement</p>
+  <h2 class="section-title reveal reveal-delay-1">De la cartographie<br><em>à l'écosystème complet.</em></h2>
+
+  <!-- DIAGNOSTIC BANDEAU -->
+  <div class="diag-bandeau reveal reveal-delay-1">
+    <div class="diag-left">
+      <p class="diag-num">01</p>
+      <div>
+        <h3 class="diag-title">Diagnostic Système</h3>
+        <p class="diag-text">Cartographier le besoin, identifier les priorités et définir l'architecture cible. Vendu séparément ou déduit si tu poursuis avec une mission.</p>
+      </div>
+    </div>
+    <a href="https://calendar.app.google/YQL39LLfw5zoFn2v7" target="_blank" class="diag-cta">Demander un diagnostic →</a>
+  </div>
+
+  <!-- CORE + SIGNATURE -->
   <div class="offres-grid">
     <div class="offre-card reveal">
       <p class="offre-tag">Niveau 02</p>
       <h3 class="offre-title">System Core</h3>
       <p class="offre-price">À partir de 1 500€</p>
-      <p class="offre-price-sub">Un système centré sur une priorité stratégique</p>
+      <p class="offre-price-sub">Construire un système centré sur une priorité</p>
       <div class="offre-divider"></div>
       <ul class="offre-features">
         <li class="offre-feature">Audit de ton fonctionnement</li>
@@ -421,7 +449,7 @@
       <p class="offre-tag">Niveau 03</p>
       <h3 class="offre-title">System Signature</h3>
       <p class="offre-price">À partir de 2 500€</p>
-      <p class="offre-price-sub">Un écosystème complet connecté</p>
+      <p class="offre-price-sub">Connecter plusieurs processus dans un écosystème complet</p>
       <div class="offre-divider"></div>
       <ul class="offre-features">
         <li class="offre-feature">Audit approfondi</li>
@@ -436,7 +464,7 @@
       <a href="https://calendar.app.google/YQL39LLfw5zoFn2v7" target="_blank" class="offre-cta">Demander un diagnostic</a>
     </div>
   </div>
-  <p class="offres-note reveal">Les projets Flow Studio démarrent à <strong>1 500€</strong>. Le tarif final dépend du périmètre, du nombre de processus et des outils à connecter.<br>Tu peux aussi démarrer par le <a href="/#packs" style="color:var(--taupe);text-decoration:underline;">Diagnostic Système</a> pour cartographier ton besoin avant de te lancer.</p>
+  <p class="offres-note reveal">Les projets Flow Studio démarrent à <strong>1 500€</strong>. Le tarif final dépend du périmètre, du nombre de processus et des outils à connecter.</p>
 </section>
 
 <!-- PROCESS -->
