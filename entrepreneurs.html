@@ -187,6 +187,12 @@
   }
 
 
+  .diag-invite { margin-top: 1.5rem; padding: 1.5rem 2rem; background: var(--beige); display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+  .diag-invite p { font-size: 0.82rem; color: #6B6560; line-height: 1.5; }
+  .diag-invite-btn { font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--noir); text-decoration: none; border-bottom: 1px solid rgba(181,173,165,0.5); padding-bottom: 2px; white-space: nowrap; flex-shrink: 0; transition: border-color 0.3s; }
+  .diag-invite-btn:hover { border-bottom-color: var(--noir); }
+  @media (max-width: 600px) { .diag-invite { flex-direction: column; align-items: flex-start; } }
+
   /* DIAGNOSTIC BANDEAU */
   .diag-bandeau { display: flex; justify-content: space-between; align-items: center; gap: 2rem; padding: 2rem 2.5rem; background: var(--beige); border-left: 2px solid var(--taupe); margin-top: 3.5rem; margin-bottom: 2px; flex-wrap: wrap; }
   .diag-left { display: flex; align-items: flex-start; gap: 1.5rem; }
@@ -446,7 +452,7 @@
         <li class="offre-feature">Tests et documentation</li>
         <li class="offre-feature">Session de prise en main</li>
       </ul>
-      <a href="https://calendar.app.google/YQL39LLfw5zoFn2v7" target="_blank" class="offre-cta">Parler de mon projet</a>
+      <a href="https://calendar.app.google/YQL39LLfw5zoFn2v7" target="_blank" class="offre-cta">Parler de mon système prioritaire</a>
     </div>
     <div class="offre-card featured reveal reveal-delay-1">
       <p class="offre-tag">Niveau 03</p>
@@ -465,10 +471,14 @@
         <li class="offre-feature">Session de formation</li>
         <li class="offre-feature">Période de suivi après livraison</li>
       </ul>
-      <a href="https://calendar.app.google/YQL39LLfw5zoFn2v7" target="_blank" class="offre-cta">Demander un diagnostic</a>
+      <a href="https://calendar.app.google/YQL39LLfw5zoFn2v7" target="_blank" class="offre-cta">Cadrer mon écosystème complet</a>
     </div>
   </div>
   <p class="offres-note reveal">Les projets Flow Studio démarrent à <strong>1 500€</strong>. Le tarif final dépend du périmètre, du nombre de processus et des outils à connecter.</p>
+  <div class="diag-invite reveal">
+    <p>Tu ne sais pas encore quel périmètre choisir ? Commence par le Diagnostic Système.</p>
+    <a href="https://calendar.app.google/YQL39LLfw5zoFn2v7" target="_blank" class="diag-invite-btn">Découvrir le Diagnostic Système →</a>
+  </div>
 </section>
 
 <!-- PROCESS -->
