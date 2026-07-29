@@ -7,7 +7,6 @@
 <meta name="description" content="Flow Studio crée vos systèmes Notion, IA et automatisations sur-mesure. Consultante en organisation digitale pour entrepreneures et PME en Île-de-France." />
 
   <!-- Canonical -->
-  <link rel="canonical" href="https://flow-studio.app/" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
@@ -397,10 +396,20 @@
   }
 </style>
 
+<link rel="canonical" href="https://flow-studio.app/">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://flow-studio.app/#website",
+      "url": "https://flow-studio.app",
+      "name": "Flow Studio",
+      "publisher": {
+        "@id": "https://flow-studio.app/#organization"
+      }
+    },
     {
       "@type": [
         "Organization",
@@ -424,7 +433,7 @@
         "@type": "Country",
         "name": "France"
       },
-      "description": "Flow Studio crée des systèmes IA, Notion et automatisations sur mesure pour entrepreneurs et PME.",
+      "description": "Flow Studio conçoit des systèmes IA, Notion et automatisations pour entrepreneurs, petites équipes et PME.",
       "knowsAbout": [
         "Notion",
         "Intelligence Artificielle",
@@ -439,53 +448,23 @@
       "@id": "https://flow-studio.app/solen-ouahioune#person",
       "name": "Solen Ouahioune",
       "url": "https://flow-studio.app/solen-ouahioune",
-      "jobTitle": "Consultante IA, Notion et automatisation",
+      "jobTitle": "Consultante IA et systèmes digitaux",
       "email": "solen@flow-studio.app",
       "sameAs": [
         "https://www.linkedin.com/in/solen-ouahioune-87b28947/"
       ],
       "worksFor": {
         "@id": "https://flow-studio.app/#organization"
-      },
-      "knowsAbout": [
-        "Notion",
-        "Intelligence Artificielle",
-        "Automatisation Make",
-        "Agents IA",
-        "Systèmes business",
-        "No-code"
-      ]
+      }
     },
     {
       "@type": "WebPage",
       "@id": "https://flow-studio.app/",
       "url": "https://flow-studio.app/",
-      "name": "Systèmes IA & Notion pour entrepreneurs et PME | Flow Studio",
-      "description": "Flow Studio centralise votre organisation, automatise les tâches répétitives et construit les assistants IA adaptés à ton activité.",
+      "name": "Systèmes IA, Notion et automatisations | Flow Studio",
       "isPartOf": {
-        "@id": "https://flow-studio.app/#organization"
-      },
-      "breadcrumb": {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Accueil",
-            "item": "https://flow-studio.app/"
-          }
-        ]
+        "@id": "https://flow-studio.app/#website"
       }
-    },
-    {
-      "@type": "Service",
-      "name": "Diagnostic Système",
-      "provider": {
-        "@id": "https://flow-studio.app/#organization"
-      },
-      "description": "Cartographie du fonctionnement actuel, identification des priorités et définition de l'architecture cible.",
-      "areaServed": "France",
-      "url": "https://flow-studio.app/#packs"
     },
     {
       "@type": "Service",
@@ -493,18 +472,14 @@
       "provider": {
         "@id": "https://flow-studio.app/#organization"
       },
-      "description": "Un système principal centré sur une priorité : pilotage, CRM, production client, communication ou système IA métier.",
+      "description": "Un système business centré sur une priorité : pilotage, CRM, production client, communication ou IA métier.",
+      "areaServed": "France",
+      "url": "https://flow-studio.app/#packs",
       "offers": {
         "@type": "Offer",
         "priceCurrency": "EUR",
-        "price": "1500",
-        "priceSpecification": {
-          "@type": "PriceSpecification",
-          "minPrice": "1500"
-        }
-      },
-      "areaServed": "France",
-      "url": "https://flow-studio.app/#packs"
+        "price": "1500"
+      }
     },
     {
       "@type": "Service",
@@ -512,18 +487,14 @@
       "provider": {
         "@id": "https://flow-studio.app/#organization"
       },
-      "description": "Un écosystème complet combinant organisation, IA et automatisations.",
+      "description": "Un écosystème complet combinant Notion, IA et automatisations.",
+      "areaServed": "France",
+      "url": "https://flow-studio.app/#packs",
       "offers": {
         "@type": "Offer",
         "priceCurrency": "EUR",
-        "price": "2500",
-        "priceSpecification": {
-          "@type": "PriceSpecification",
-          "minPrice": "2500"
-        }
-      },
-      "areaServed": "France",
-      "url": "https://flow-studio.app/#packs"
+        "price": "2500"
+      }
     }
   ]
 }

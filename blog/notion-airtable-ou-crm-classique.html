@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notion, Airtable ou CRM classique : que choisir ? | Flow Studio</title>
+<meta name="description" content="Comparatif pratique entre Notion, Airtable et les CRM classiques pour un consultant, une petite équipe ou une PME. Critères de choix et cas d'usage.">
+<link rel="canonical" href="https://flow-studio.app/blog/notion-airtable-ou-crm-classique">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  :root{--noir:#0F0F0F;--beige:#EAE6E1;--blanc:#F7F5F2;--taupe:#B5ADA5;--font-display:'Playfair Display',Georgia,serif;--font-body:'Inter',sans-serif;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--blanc);color:var(--noir);font-family:var(--font-body);font-weight:300;line-height:1.7;overflow-x:hidden;}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.4rem 4rem;background:rgba(247,245,242,0.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(181,173,165,0.2);}
+  .nav-logo{font-family:var(--font-display);font-size:1.1rem;letter-spacing:0.25em;text-transform:uppercase;font-weight:400;color:var(--noir);text-decoration:none;}
+  .nav-logo span{font-size:0.55rem;letter-spacing:0.4em;display:block;text-align:center;margin-top:-2px;color:var(--taupe);}
+  .nav-links{display:flex;gap:2.5rem;list-style:none;}
+  .nav-links a{font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--noir);text-decoration:none;transition:color 0.3s;}
+  .nav-links a:hover{color:var(--taupe);}
+  .nav-cta{font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;padding:0.65rem 1.5rem;border:1px solid var(--noir);color:var(--noir);text-decoration:none;transition:all 0.3s;}
+  .nav-cta:hover{background:var(--noir);color:var(--blanc);}
+  .nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+  .nav-hamburger span{display:block;width:22px;height:1.5px;background:var(--noir);}
+  .mobile-menu{display:none;position:fixed;top:76px;left:0;right:0;background:var(--blanc);border-bottom:1px solid rgba(181,173,165,0.3);padding:1.5rem;z-index:99;flex-direction:column;}
+  .mobile-menu.open{display:flex;}
+  .mobile-menu a{font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--noir);text-decoration:none;padding:0.9rem 0;border-bottom:1px solid rgba(181,173,165,0.2);}
+  .mobile-menu .mobile-cta{background:var(--noir);color:var(--blanc);text-align:center;padding:1rem;border:none;margin-top:1rem;}
+  .breadcrumb{padding:6rem 6rem 0;font-size:0.65rem;color:var(--taupe);display:flex;gap:0.5rem;align-items:center;flex-wrap:wrap;}
+  .breadcrumb a{color:var(--taupe);text-decoration:none;}
+  .breadcrumb a:hover{color:var(--noir);}
+  .article-header{padding:2rem 6rem 4rem;max-width:860px;}
+  .article-tag{font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--taupe);margin-bottom:1.2rem;}
+  .article-title{font-family:var(--font-display);font-size:clamp(2rem,4vw,3.2rem);font-weight:400;line-height:1.15;margin-bottom:1.2rem;}
+  .article-title em{font-style:italic;color:var(--taupe);}
+  .article-meta{font-size:0.72rem;color:var(--taupe);}
+  .article-body{padding:0 6rem 5rem;max-width:760px;}
+  .article-body h2{font-family:var(--font-display);font-size:1.5rem;font-weight:400;margin:2.5rem 0 1rem;}
+  .article-body h3{font-family:var(--font-display);font-size:1.1rem;font-weight:400;margin:2rem 0 0.8rem;}
+  .article-body p{font-size:0.88rem;color:#3E3A37;line-height:1.9;margin-bottom:1.2rem;}
+  .article-body ul,.article-body ol{margin:1rem 0 1.5rem 1.5rem;}
+  .article-body li{font-size:0.85rem;color:#3E3A37;line-height:1.8;margin-bottom:0.4rem;}
+  .article-body strong{font-weight:500;color:var(--noir);}
+  .article-body a{color:var(--noir);border-bottom:1px solid rgba(181,173,165,0.5);text-decoration:none;padding-bottom:1px;transition:border-color 0.3s;}
+  .article-body a:hover{border-bottom-color:var(--noir);}
+  .article-cta{margin:3rem 0;padding:2.5rem 3rem;background:var(--noir);}
+  .article-cta p{font-size:0.82rem;color:rgba(255,255,255,0.72);line-height:1.7;margin-bottom:1.5rem;}
+  .article-cta a{display:inline-block;font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;padding:0.9rem 2rem;background:var(--blanc);color:var(--noir);text-decoration:none;border:1px solid var(--blanc);transition:all 0.3s;}
+  .article-cta a:hover{background:transparent;color:var(--blanc);border:1px solid var(--blanc);}
+  .article-divider{height:1px;background:rgba(181,173,165,0.4);margin:2.5rem 0;}
+  .related{padding:4rem 6rem;background:var(--beige);}
+  .related h3{font-family:var(--font-display);font-size:1.1rem;margin-bottom:1.5rem;}
+  .related-links{display:flex;flex-direction:column;gap:0.8rem;}
+  .related-links a{font-size:0.78rem;color:var(--noir);text-decoration:none;display:flex;gap:0.5rem;align-items:center;transition:gap 0.3s;}
+  .related-links a:hover{gap:0.9rem;}
+  .related-links a::before{content:'→';color:var(--taupe);flex-shrink:0;}
+  .bloom-footer-bar{background:var(--beige);padding:1rem 6rem;text-align:center;border-top:1px solid rgba(181,173,165,0.4);}
+  .bloom-footer-bar p{font-size:0.78rem;color:#524E4A;}
+  .bloom-footer-bar a{color:var(--noir);font-weight:400;text-decoration:underline;text-underline-offset:3px;}
+  footer{background:var(--blanc);padding:2.5rem 6rem;border-top:1px solid rgba(181,173,165,0.3);display:flex;justify-content:space-between;align-items:center;}
+  .footer-logo{font-family:var(--font-display);font-size:0.95rem;letter-spacing:0.2em;text-transform:uppercase;}
+  .footer-tagline{font-size:0.65rem;color:var(--taupe);margin-top:0.2rem;}
+  .footer-links{display:flex;gap:2rem;}
+  .footer-links a{font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;color:#5A5550;text-decoration:none;transition:color 0.3s;}
+  .footer-links a:hover{color:var(--noir);}
+  @media(max-width:960px){
+    nav{padding:1.2rem 1.5rem;}
+    .nav-links{display:none;}
+    .nav-cta{display:none;}
+    .nav-hamburger{display:flex;}
+    .breadcrumb,.article-header,.article-body{padding-left:1.5rem;padding-right:1.5rem;}
+    .article-header{padding-top:1.5rem;}
+    .related{padding:3rem 1.5rem;}
+    .bloom-footer-bar{padding:1rem 1.5rem;}
+    footer{padding:2rem 1.5rem;flex-direction:column;gap:1.2rem;text-align:center;}
+    .footer-links{flex-wrap:wrap;justify-content:center;gap:1rem;}
+    .article-cta{padding:2rem;}
+  }
+  @media(max-width:480px){
+    nav{padding:1rem 1.2rem;}
+    .breadcrumb,.article-header,.article-body{padding-left:1.2rem;padding-right:1.2rem;}
+    footer{padding:1.8rem 1.2rem;}
+  }
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">FLOW<span>STUDIO</span></a>
+  <ul class="nav-links">
+    <li><a href="/solutions">Solutions</a></li>
+    <li><a href="/entrepreneurs">Entrepreneurs</a></li>
+    <li><a href="/pme">PME</a></li>
+    <li><a href="/realisations">Réalisations</a></li>
+    <li><a href="/solen-ouahioune">À propos</a></li>
+  </ul>
+  <a href="https://calendar.app.google/YQL39LLfw5zoFn2v7" target="_blank" class="nav-cta">Prendre rendez-vous</a>
+  <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/entrepreneurs" onclick="toggleMenu()">Entrepreneurs</a>
+  <a href="/pme" onclick="toggleMenu()">PME</a>
+  <a href="/realisations" onclick="toggleMenu()">Réalisations</a>
+  <a href="/solen-ouahioune" onclick="toggleMenu()">À propos</a>
+  <a href="https://calendar.app.google/YQL39LLfw5zoFn2v7" target="_blank" class="mobile-cta" onclick="toggleMenu()">Prendre rendez-vous</a>
+</div>
+
+<nav aria-label="Breadcrumb" class="breadcrumb">
+  <a href="/">Accueil</a> <span>/</span>
+  <a href="/blog">Blog</a> <span>/</span>
+  <span>Notion, Airtable ou CRM classique</span>
+</nav>
+
+<header class="article-header">
+  <p class="article-tag">Guide pratique · Flow Studio</p>
+  <h1 class="article-title">Notion, Airtable ou CRM classique : que choisir ?</h1>
+  <p class="article-meta">Par Solen Ouahioune · Flow Studio</p>
+</header>
+
+<article class="article-body">
+  <p>La question revient régulièrement, et la bonne réponse dépend de votre situation. Voici un comparatif honnête qui évite les généralités.</p>
+
+  <h2>Notion : pour quels profils ?</h2>
+  <p>Notion excelle quand vous avez besoin de connecter plusieurs dimensions de votre activité dans un même espace. CRM, gestion de projets, base de connaissances, calendrier éditorial, tableaux de bord — tout peut coexister et se relier.</p>
+  <p><strong>Idéal pour</strong> : consultants, coaches, formateurs, créateurs de contenu, petites équipes jusqu'à 20 personnes. Activités avec peu de volume de prospects mais des relations complexes et des projets à gérer.</p>
+  <p><strong>Limites</strong> : pas de fonctions d'emailing intégrées, pas de scoring automatique, interface qui peut sembler complexe au départ.</p>
+
+  <h2>Airtable : pour quels profils ?</h2>
+  <p>Airtable est une base de données avec une interface plus structurée que Notion. Il est plus performant pour gérer des volumes de données importants, des automatisations complexes basées sur des règles et des formulaires d'entrée de données.</p>
+  <p><strong>Idéal pour</strong> : agences, structures avec plusieurs opérateurs qui saisissent des données, processus répétitifs avec des volumes importants.</p>
+  <p><strong>Limites</strong> : moins flexible que Notion pour créer des espaces de travail personnalisés, tarif qui monte rapidement avec les fonctions avancées.</p>
+
+  <h2>CRM classique (HubSpot, Pipedrive, Salesforce) : pour quels profils ?</h2>
+  <p>Les CRM spécialisés sont optimisés pour le cycle de vente et les équipes commerciales. Ils offrent des fonctions natives que ni Notion ni Airtable ne peuvent concurrencer : séquences d'emails, scoring, reporting commercial, intégration téléphonie.</p>
+  <p><strong>Idéal pour</strong> : équipes commerciales structurées, cycles de vente B2B longs, volumes importants de prospects, reporting commercial nécessaire à la direction.</p>
+  <p><strong>Limites</strong> : tarifs élevés pour les fonctions avancées, rigidité de la structure, nécessite souvent d'autres outils en parallèle pour la gestion de projets.</p>
+
+  <div class="article-divider"></div>
+
+  <h2>Comment décider</h2>
+  <p>Posez-vous trois questions :</p>
+  <ul>
+    <li><strong>Quel est votre volume ?</strong> Moins de 100 prospects actifs, Notion suffit. Entre 100 et 500, Airtable ou un CRM simple. Au-delà, un CRM spécialisé.</li>
+    <li><strong>Avez-vous une équipe commerciale dédiée ?</strong> Si oui, un CRM spécialisé a plus de sens. Sinon, Notion ou Airtable couvrent les besoins.</li>
+    <li><strong>Voulez-vous tout centraliser ?</strong> Si votre CRM doit aussi gérer vos projets clients, votre documentation et votre planning, Notion est le plus adapté.</li>
+  </ul>
+
+  <h2>Ce que Flow Studio recommande</h2>
+  <p>Pour la majorité des entrepreneurs, consultants et petites équipes que j'accompagne, Notion permet de couvrir 80 à 90% des besoins à un coût raisonnable — à condition d'être structuré par quelqu'un qui comprend votre activité. Un Notion mal structuré devient vite un fourre-tout inutilisable.</p>
+  <p>La vraie question n'est pas quel outil choisir, mais comment construire un système qui correspond à votre manière de travailler.</p>
+
+  <div class="article-cta">
+    <p>Flow Studio conçoit des systèmes Notion, IA et automatisations sur mesure pour entrepreneurs et PME. Je construis, je t'explique, tu pilotes.</p>
+    <a href="/notion">Découvrir Notion sur mesure →</a>
+  </div>
+</article>
+
+<section class="related">
+  <h3>À lire aussi</h3>
+  <div class="related-links">
+    <a href="/entrepreneurs">Solutions pour entrepreneurs et petites équipes</a>
+    <a href="/pme">Conseil IA pour PME</a>
+    <a href="/realisations">Réalisations Flow Studio</a>
+    <a href="/diagnostic-ia">Diagnostic IA 360° pour PME</a>
+  </div>
+</section>
+
+<div class="bloom-footer-bar">
+  <p>Tu préfères construire ton système avec mon accompagnement ? <a href="https://bloom-and-build.fr" target="_blank">Découvre Bloom & Build →</a></p>
+</div>
+
+<footer>
+  <div>
+    <div class="footer-logo">Flow Studio</div>
+    <div class="footer-tagline">Création de systèmes IA & Notion</div>
+  </div>
+  <div class="footer-links">
+    <a href="/entrepreneurs">Entrepreneurs</a>
+    <a href="/pme">PME</a>
+    <a href="/realisations">Réalisations</a>
+    <a href="/solen-ouahioune">À propos</a>
+    <a href="/contact">Contact</a>
+    <a href="/mentions-legales">Mentions légales</a>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
+  window.addEventListener('scroll',()=>{document.getElementById('mobileMenu').classList.remove('open');});
+</script>
+</body>
+</html>

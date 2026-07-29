@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comment automatiser l'onboarding client | Flow Studio</title>
+<meta name="description" content="Guide pratique pour automatiser le parcours d'accueil d'un nouveau client : étapes, outils et exemples concrets pour consultants et prestataires.">
+<link rel="canonical" href="https://flow-studio.app/blog/automatiser-onboarding-client">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  :root{--noir:#0F0F0F;--beige:#EAE6E1;--blanc:#F7F5F2;--taupe:#B5ADA5;--font-display:'Playfair Display',Georgia,serif;--font-body:'Inter',sans-serif;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--blanc);color:var(--noir);font-family:var(--font-body);font-weight:300;line-height:1.7;overflow-x:hidden;}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.4rem 4rem;background:rgba(247,245,242,0.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(181,173,165,0.2);}
+  .nav-logo{font-family:var(--font-display);font-size:1.1rem;letter-spacing:0.25em;text-transform:uppercase;font-weight:400;color:var(--noir);text-decoration:none;}
+  .nav-logo span{font-size:0.55rem;letter-spacing:0.4em;display:block;text-align:center;margin-top:-2px;color:var(--taupe);}
+  .nav-links{display:flex;gap:2.5rem;list-style:none;}
+  .nav-links a{font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--noir);text-decoration:none;transition:color 0.3s;}
+  .nav-links a:hover{color:var(--taupe);}
+  .nav-cta{font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;padding:0.65rem 1.5rem;border:1px solid var(--noir);color:var(--noir);text-decoration:none;transition:all 0.3s;}
+  .nav-cta:hover{background:var(--noir);color:var(--blanc);}
+  .nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+  .nav-hamburger span{display:block;width:22px;height:1.5px;background:var(--noir);}
+  .mobile-menu{display:none;position:fixed;top:76px;left:0;right:0;background:var(--blanc);border-bottom:1px solid rgba(181,173,165,0.3);padding:1.5rem;z-index:99;flex-direction:column;}
+  .mobile-menu.open{display:flex;}
+  .mobile-menu a{font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--noir);text-decoration:none;padding:0.9rem 0;border-bottom:1px solid rgba(181,173,165,0.2);}
+  .mobile-menu .mobile-cta{background:var(--noir);color:var(--blanc);text-align:center;padding:1rem;border:none;margin-top:1rem;}
+  .breadcrumb{padding:6rem 6rem 0;font-size:0.65rem;color:var(--taupe);display:flex;gap:0.5rem;align-items:center;flex-wrap:wrap;}
+  .breadcrumb a{color:var(--taupe);text-decoration:none;}
+  .breadcrumb a:hover{color:var(--noir);}
+  .article-header{padding:2rem 6rem 4rem;max-width:860px;}
+  .article-tag{font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--taupe);margin-bottom:1.2rem;}
+  .article-title{font-family:var(--font-display);font-size:clamp(2rem,4vw,3.2rem);font-weight:400;line-height:1.15;margin-bottom:1.2rem;}
+  .article-title em{font-style:italic;color:var(--taupe);}
+  .article-meta{font-size:0.72rem;color:var(--taupe);}
+  .article-body{padding:0 6rem 5rem;max-width:760px;}
+  .article-body h2{font-family:var(--font-display);font-size:1.5rem;font-weight:400;margin:2.5rem 0 1rem;}
+  .article-body h3{font-family:var(--font-display);font-size:1.1rem;font-weight:400;margin:2rem 0 0.8rem;}
+  .article-body p{font-size:0.88rem;color:#3E3A37;line-height:1.9;margin-bottom:1.2rem;}
+  .article-body ul,.article-body ol{margin:1rem 0 1.5rem 1.5rem;}
+  .article-body li{font-size:0.85rem;color:#3E3A37;line-height:1.8;margin-bottom:0.4rem;}
+  .article-body strong{font-weight:500;color:var(--noir);}
+  .article-body a{color:var(--noir);border-bottom:1px solid rgba(181,173,165,0.5);text-decoration:none;padding-bottom:1px;transition:border-color 0.3s;}
+  .article-body a:hover{border-bottom-color:var(--noir);}
+  .article-cta{margin:3rem 0;padding:2.5rem 3rem;background:var(--noir);}
+  .article-cta p{font-size:0.82rem;color:rgba(255,255,255,0.72);line-height:1.7;margin-bottom:1.5rem;}
+  .article-cta a{display:inline-block;font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;padding:0.9rem 2rem;background:var(--blanc);color:var(--noir);text-decoration:none;border:1px solid var(--blanc);transition:all 0.3s;}
+  .article-cta a:hover{background:transparent;color:var(--blanc);border:1px solid var(--blanc);}
+  .article-divider{height:1px;background:rgba(181,173,165,0.4);margin:2.5rem 0;}
+  .related{padding:4rem 6rem;background:var(--beige);}
+  .related h3{font-family:var(--font-display);font-size:1.1rem;margin-bottom:1.5rem;}
+  .related-links{display:flex;flex-direction:column;gap:0.8rem;}
+  .related-links a{font-size:0.78rem;color:var(--noir);text-decoration:none;display:flex;gap:0.5rem;align-items:center;transition:gap 0.3s;}
+  .related-links a:hover{gap:0.9rem;}
+  .related-links a::before{content:'→';color:var(--taupe);flex-shrink:0;}
+  .bloom-footer-bar{background:var(--beige);padding:1rem 6rem;text-align:center;border-top:1px solid rgba(181,173,165,0.4);}
+  .bloom-footer-bar p{font-size:0.78rem;color:#524E4A;}
+  .bloom-footer-bar a{color:var(--noir);font-weight:400;text-decoration:underline;text-underline-offset:3px;}
+  footer{background:var(--blanc);padding:2.5rem 6rem;border-top:1px solid rgba(181,173,165,0.3);display:flex;justify-content:space-between;align-items:center;}
+  .footer-logo{font-family:var(--font-display);font-size:0.95rem;letter-spacing:0.2em;text-transform:uppercase;}
+  .footer-tagline{font-size:0.65rem;color:var(--taupe);margin-top:0.2rem;}
+  .footer-links{display:flex;gap:2rem;}
+  .footer-links a{font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;color:#5A5550;text-decoration:none;transition:color 0.3s;}
+  .footer-links a:hover{color:var(--noir);}
+  @media(max-width:960px){
+    nav{padding:1.2rem 1.5rem;}
+    .nav-links{display:none;}
+    .nav-cta{display:none;}
+    .nav-hamburger{display:flex;}
+    .breadcrumb,.article-header,.article-body{padding-left:1.5rem;padding-right:1.5rem;}
+    .article-header{padding-top:1.5rem;}
+    .related{padding:3rem 1.5rem;}
+    .bloom-footer-bar{padding:1rem 1.5rem;}
+    footer{padding:2rem 1.5rem;flex-direction:column;gap:1.2rem;text-align:center;}
+    .footer-links{flex-wrap:wrap;justify-content:center;gap:1rem;}
+    .article-cta{padding:2rem;}
+  }
+  @media(max-width:480px){
+    nav{padding:1rem 1.2rem;}
+    .breadcrumb,.article-header,.article-body{padding-left:1.2rem;padding-right:1.2rem;}
+    footer{padding:1.8rem 1.2rem;}
+  }
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">FLOW<span>STUDIO</span></a>
+  <ul class="nav-links">
+    <li><a href="/solutions">Solutions</a></li>
+    <li><a href="/entrepreneurs">Entrepreneurs</a></li>
+    <li><a href="/pme">PME</a></li>
+    <li><a href="/realisations">Réalisations</a></li>
+    <li><a href="/solen-ouahioune">À propos</a></li>
+  </ul>
+  <a href="https://calendar.app.google/YQL39LLfw5zoFn2v7" target="_blank" class="nav-cta">Prendre rendez-vous</a>
+  <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/entrepreneurs" onclick="toggleMenu()">Entrepreneurs</a>
+  <a href="/pme" onclick="toggleMenu()">PME</a>
+  <a href="/realisations" onclick="toggleMenu()">Réalisations</a>
+  <a href="/solen-ouahioune" onclick="toggleMenu()">À propos</a>
+  <a href="https://calendar.app.google/YQL39LLfw5zoFn2v7" target="_blank" class="mobile-cta" onclick="toggleMenu()">Prendre rendez-vous</a>
+</div>
+
+<nav aria-label="Breadcrumb" class="breadcrumb">
+  <a href="/">Accueil</a> <span>/</span>
+  <a href="/blog">Blog</a> <span>/</span>
+  <span>Automatiser l'onboarding client</span>
+</nav>
+
+<header class="article-header">
+  <p class="article-tag">Guide pratique · Flow Studio</p>
+  <h1 class="article-title">Comment automatiser l'onboarding client</h1>
+  <p class="article-meta">Par Solen Ouahioune · Flow Studio</p>
+</header>
+
+<article class="article-body">
+  <p>L'onboarding client est souvent le moment où l'on perd le plus de temps — et où l'on crée la première impression. L'automatiser permet de gagner du temps et d'offrir une expérience plus professionnelle, sans devoir recruter.</p>
+
+  <h2>Ce que comprend un onboarding client typique</h2>
+  <p>Pour un consultant, une coach ou une formatrice, l'onboarding inclut généralement :</p>
+  <ul>
+    <li>L'envoi des documents contractuels et des informations de paiement</li>
+    <li>La collecte des informations nécessaires au démarrage (formulaire, questionnaire)</li>
+    <li>La prise de rendez-vous de lancement</li>
+    <li>L'accès aux ressources ou à l'espace de travail partagé</li>
+    <li>Les premières communications de bienvenue</li>
+  </ul>
+  <p>Sans automatisation, chacune de ces étapes est réalisée manuellement à chaque nouveau client. Avec un bon système, la plupart se déclenchent automatiquement.</p>
+
+  <h2>Ce qui peut être automatisé</h2>
+  <h3>Le déclencheur : la signature ou le paiement</h3>
+  <p>Dès qu'un contrat est signé ou qu'un paiement est validé, votre système peut déclencher automatiquement une séquence d'actions : création d'un espace Notion pour le client, envoi d'un email de bienvenue personnalisé, création des tâches de démarrage dans votre outil de gestion.</p>
+
+  <h3>La collecte d'informations</h3>
+  <p>Un formulaire envoyé automatiquement au bon moment remplace une série d'échanges email. Les réponses s'enregistrent directement dans votre CRM Notion et alimentent l'espace du client.</p>
+
+  <h3>Les relances automatiques</h3>
+  <p>Si le client n'a pas rempli le formulaire ou signé le document après X jours, une relance automatique est envoyée. Plus besoin de surveiller manuellement.</p>
+
+  <h2>Ce qui ne doit pas être automatisé</h2>
+  <p>Le contact humain au moment de la bienvenue. Le premier appel, le message personnalisé qui montre que vous avez lu leur profil, la touche qui rassure — ces éléments ne peuvent pas être remplacés par une automatisation sans perdre en qualité relationnelle.</p>
+  <p>La règle : automatisez la logistique, gardez l'humain pour la relation.</p>
+
+  <h2>Les outils nécessaires</h2>
+  <p>Un onboarding automatisé repose généralement sur : Notion (espace client et gestion des tâches), Make ou N8N (automatisations entre les outils), Brevo ou similaire (emails automatiques), et éventuellement un outil de signature électronique. L'ensemble peut être connecté pour former un parcours fluide.</p>
+  <p>Un System Core Flow Studio centré sur la production client couvre exactement ce périmètre.</p>
+
+  <div class="article-cta">
+    <p>Flow Studio conçoit des systèmes Notion, IA et automatisations sur mesure pour entrepreneurs et PME. Je construis, je t'explique, tu pilotes.</p>
+    <a href="/entrepreneurs">Découvrir les solutions Entrepreneurs →</a>
+  </div>
+</article>
+
+<section class="related">
+  <h3>À lire aussi</h3>
+  <div class="related-links">
+    <a href="/entrepreneurs">Solutions pour entrepreneurs et petites équipes</a>
+    <a href="/pme">Conseil IA pour PME</a>
+    <a href="/realisations">Réalisations Flow Studio</a>
+    <a href="/diagnostic-ia">Diagnostic IA 360° pour PME</a>
+  </div>
+</section>
+
+<div class="bloom-footer-bar">
+  <p>Tu préfères construire ton système avec mon accompagnement ? <a href="https://bloom-and-build.fr" target="_blank">Découvre Bloom & Build →</a></p>
+</div>
+
+<footer>
+  <div>
+    <div class="footer-logo">Flow Studio</div>
+    <div class="footer-tagline">Création de systèmes IA & Notion</div>
+  </div>
+  <div class="footer-links">
+    <a href="/entrepreneurs">Entrepreneurs</a>
+    <a href="/pme">PME</a>
+    <a href="/realisations">Réalisations</a>
+    <a href="/solen-ouahioune">À propos</a>
+    <a href="/contact">Contact</a>
+    <a href="/mentions-legales">Mentions légales</a>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
+  window.addEventListener('scroll',()=>{document.getElementById('mobileMenu').classList.remove('open');});
+</script>
+</body>
+</html>

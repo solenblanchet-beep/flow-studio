@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — Guides pratiques Notion, IA et systèmes business | Flow Studio</title>
+<meta name="description" content="Guides pratiques sur Notion, l'IA et l'organisation business pour entrepreneurs et PME. Par Solen Ouahioune, Flow Studio.">
+<link rel="canonical" href="https://flow-studio.app/blog">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  :root{--noir:#0F0F0F;--beige:#EAE6E1;--blanc:#F7F5F2;--taupe:#B5ADA5;--font-display:'Playfair Display',Georgia,serif;--font-body:'Inter',sans-serif;}
+  body{background:var(--blanc);color:var(--noir);font-family:var(--font-body);font-weight:300;line-height:1.7;overflow-x:hidden;}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.4rem 4rem;background:rgba(247,245,242,0.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(181,173,165,0.2);}
+  .nav-logo{font-family:var(--font-display);font-size:1.1rem;letter-spacing:0.25em;text-transform:uppercase;font-weight:400;color:var(--noir);text-decoration:none;}
+  .nav-logo span{font-size:0.55rem;letter-spacing:0.4em;display:block;text-align:center;margin-top:-2px;color:var(--taupe);}
+  .nav-links{display:flex;gap:2.5rem;list-style:none;}
+  .nav-links a{font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--noir);text-decoration:none;transition:color 0.3s;}
+  .nav-links a:hover{color:var(--taupe);}
+  .nav-cta{font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;padding:0.65rem 1.5rem;border:1px solid var(--noir);color:var(--noir);text-decoration:none;transition:all 0.3s;}
+  .nav-cta:hover{background:var(--noir);color:var(--blanc);}
+  .nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+  .nav-hamburger span{display:block;width:22px;height:1.5px;background:var(--noir);}
+  .mobile-menu{display:none;position:fixed;top:76px;left:0;right:0;background:var(--blanc);border-bottom:1px solid rgba(181,173,165,0.3);padding:1.5rem;z-index:99;flex-direction:column;}
+  .mobile-menu.open{display:flex;}
+  .mobile-menu a{font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--noir);text-decoration:none;padding:0.9rem 0;border-bottom:1px solid rgba(181,173,165,0.2);}
+  .mobile-menu .mobile-cta{background:var(--noir);color:var(--blanc);text-align:center;padding:1rem;border:none;margin-top:1rem;}
+  .hero{padding:8rem 6rem 4rem;max-width:760px;}
+  .eyebrow{font-size:0.62rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--taupe);margin-bottom:1.2rem;display:flex;align-items:center;gap:1rem;}
+  .eyebrow::before{content:'';width:1.8rem;height:1px;background:var(--taupe);}
+  .hero-title{font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);font-weight:400;line-height:1.15;margin-bottom:1rem;}
+  .hero-title em{font-style:italic;color:var(--taupe);}
+  .hero-sub{font-size:0.88rem;color:#3E3A37;line-height:1.9;}
+  .articles{padding:2rem 6rem 6rem;}
+  .section-label{font-size:0.62rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--taupe);margin-bottom:2rem;display:flex;align-items:center;gap:1rem;}
+  .section-label::before{content:'';width:1.8rem;height:1px;background:var(--taupe);}
+  .articles-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:rgba(181,173,165,0.3);}
+  .article-card{background:var(--blanc);padding:2.5rem;display:flex;flex-direction:column;text-decoration:none;color:var(--noir);transition:background 0.3s;}
+  .article-card:hover{background:var(--beige);}
+  .card-tag{font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--taupe);margin-bottom:0.8rem;}
+  .card-title{font-family:var(--font-display);font-size:1.1rem;line-height:1.3;margin-bottom:0.8rem;}
+  .card-desc{font-size:0.78rem;color:#524E4A;line-height:1.7;flex:1;margin-bottom:1.2rem;}
+  .card-link{font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--taupe);display:flex;align-items:center;gap:0.4rem;}
+  .card-link::after{content:'→';}
+  footer{background:var(--blanc);padding:2.5rem 6rem;border-top:1px solid rgba(181,173,165,0.3);display:flex;justify-content:space-between;align-items:center;}
+  .footer-logo{font-family:var(--font-display);font-size:0.95rem;letter-spacing:0.2em;text-transform:uppercase;}
+  .footer-tagline{font-size:0.65rem;color:var(--taupe);margin-top:0.2rem;}
+  .footer-links{display:flex;gap:2rem;}
+  .footer-links a{font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;color:#5A5550;text-decoration:none;transition:color 0.3s;}
+  .footer-links a:hover{color:var(--noir);}
+  @media(max-width:960px){
+    nav{padding:1.2rem 1.5rem;}
+    .nav-links{display:none;}
+    .nav-cta{display:none;}
+    .nav-hamburger{display:flex;}
+    .hero,.articles{padding-left:1.5rem;padding-right:1.5rem;}
+    .hero{padding-top:6rem;}
+    .articles-grid{grid-template-columns:1fr;}
+    footer{padding:2rem 1.5rem;flex-direction:column;gap:1.2rem;text-align:center;}
+    .footer-links{flex-wrap:wrap;justify-content:center;gap:1rem;}
+  }
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">FLOW<span>STUDIO</span></a>
+  <ul class="nav-links">
+    <li><a href="/solutions">Solutions</a></li>
+    <li><a href="/entrepreneurs">Entrepreneurs</a></li>
+    <li><a href="/pme">PME</a></li>
+    <li><a href="/realisations">Réalisations</a></li>
+    <li><a href="/solen-ouahioune">À propos</a></li>
+  </ul>
+  <a href="https://calendar.app.google/YQL39LLfw5zoFn2v7" target="_blank" class="nav-cta">Prendre rendez-vous</a>
+  <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/entrepreneurs" onclick="toggleMenu()">Entrepreneurs</a>
+  <a href="/pme" onclick="toggleMenu()">PME</a>
+  <a href="/realisations" onclick="toggleMenu()">Réalisations</a>
+  <a href="/solen-ouahioune" onclick="toggleMenu()">À propos</a>
+  <a href="https://calendar.app.google/YQL39LLfw5zoFn2v7" target="_blank" class="mobile-cta" onclick="toggleMenu()">Prendre rendez-vous</a>
+</div>
+
+<div class="hero">
+  <p class="eyebrow">Ressources</p>
+  <h1 class="hero-title">Guides pratiques <em>Notion, IA<br>et systèmes business.</em></h1>
+  <p class="hero-sub">Par Solen Ouahioune · Flow Studio</p>
+</div>
+
+<section class="articles">
+  <p class="section-label">Guides proches de l'achat</p>
+  <div class="articles-grid">
+    <a href="/blog/cout-espace-notion-sur-mesure" class="article-card">
+      <p class="card-tag">Notion sur mesure</p>
+      <h2 class="card-title">Combien coûte la création d'un espace Notion sur mesure ?</h2>
+      <p class="card-desc">Prix, délais et périmètre selon votre besoin réel. Ce que comprend une mission Flow Studio.</p>
+      <span class="card-link">Lire le guide</span>
+    </a>
+    <a href="/blog/audit-ia-pme-que-faut-il-analyser" class="article-card">
+      <p class="card-tag">IA pour PME</p>
+      <h2 class="card-title">Audit IA pour PME : que faut-il réellement analyser ?</h2>
+      <p class="card-desc">Les cinq dimensions d'un audit IA utile, sans jargon technique.</p>
+      <span class="card-link">Lire le guide</span>
+    </a>
+    <a href="/blog/agent-ia-ou-automatisation-quelle-difference" class="article-card">
+      <p class="card-tag">IA & automatisations</p>
+      <h2 class="card-title">Agent IA ou automatisation : quelle différence ?</h2>
+      <p class="card-desc">Comment distinguer les deux et choisir selon votre besoin réel.</p>
+      <span class="card-link">Lire le guide</span>
+    </a>
+    <a href="/blog/premiers-cas-usage-ia-pme" class="article-card">
+      <p class="card-tag">IA pour PME</p>
+      <h2 class="card-title">Comment choisir les premiers cas d'usage IA dans une PME ?</h2>
+      <p class="card-desc">Critères de sélection, erreurs à éviter et méthode opérationnelle.</p>
+      <span class="card-link">Lire le guide</span>
+    </a>
+  </div>
+
+  <p class="section-label" style="margin-top:4rem;">Guides pratiques</p>
+  <div class="articles-grid">
+    <a href="/blog/crm-notion-consultant-organisme-formation" class="article-card">
+      <p class="card-tag">Notion sur mesure</p>
+      <h2 class="card-title">CRM Notion pour consultant ou organisme de formation</h2>
+      <p class="card-desc">Ce que doit contenir un CRM Notion adapté à une activité de services.</p>
+      <span class="card-link">Lire le guide</span>
+    </a>
+    <a href="/blog/automatiser-onboarding-client" class="article-card">
+      <p class="card-tag">Automatisations</p>
+      <h2 class="card-title">Comment automatiser l'onboarding client</h2>
+      <p class="card-desc">Étapes, outils et exemples concrets pour prestataires et consultants.</p>
+      <span class="card-link">Lire le guide</span>
+    </a>
+    <a href="/blog/base-de-connaissances-avec-ia" class="article-card">
+      <p class="card-tag">IA & Notion</p>
+      <h2 class="card-title">Comment créer une base de connaissances avec l'IA</h2>
+      <p class="card-desc">Structure, alimentation et utilisation pratique pour une PME ou un indépendant.</p>
+      <span class="card-link">Lire le guide</span>
+    </a>
+    <a href="/blog/notion-airtable-ou-crm-classique" class="article-card">
+      <p class="card-tag">Comparatif</p>
+      <h2 class="card-title">Notion, Airtable ou CRM classique : que choisir ?</h2>
+      <p class="card-desc">Comparatif honnête selon votre profil, votre volume et vos besoins.</p>
+      <span class="card-link">Lire le guide</span>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div>
+    <div class="footer-logo">Flow Studio</div>
+    <div class="footer-tagline">Création de systèmes IA & Notion</div>
+  </div>
+  <div class="footer-links">
+    <a href="/entrepreneurs">Entrepreneurs</a>
+    <a href="/pme">PME</a>
+    <a href="/realisations">Réalisations</a>
+    <a href="/solen-ouahioune">À propos</a>
+    <a href="/contact">Contact</a>
+    <a href="/mentions-legales">Mentions légales</a>
+  </div>
+</footer>
+<script>
+  function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
+  window.addEventListener('scroll',()=>{document.getElementById('mobileMenu').classList.remove('open');});
+</script>
+</body>
+</html>

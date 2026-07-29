@@ -251,6 +251,81 @@
     footer { padding: 1.8rem 1.2rem; }
   }
 </style>
+
+<link rel="canonical" href="https://flow-studio.app/pme">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "Organization",
+        "ProfessionalService"
+      ],
+      "@id": "https://flow-studio.app/#organization",
+      "name": "Flow Studio",
+      "url": "https://flow-studio.app",
+      "logo": "https://flow-studio.app/favicon.svg",
+      "email": "solen@flow-studio.app",
+      "founder": {
+        "@id": "https://flow-studio.app/solen-ouahioune#person"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Vaux-sur-Seine",
+        "addressRegion": "Île-de-France",
+        "addressCountry": "FR"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "France"
+      },
+      "description": "Flow Studio conçoit des systèmes IA, Notion et automatisations pour entrepreneurs, petites équipes et PME.",
+      "knowsAbout": [
+        "Notion",
+        "Intelligence Artificielle",
+        "Automatisation",
+        "Make",
+        "Agents IA",
+        "Systèmes business"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://flow-studio.app/pme",
+      "url": "https://flow-studio.app/pme",
+      "name": "Conseil IA pour PME : diagnostic, pilote et adoption | Flow Studio",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Accueil",
+            "item": "https://flow-studio.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "PME",
+            "item": "https://flow-studio.app/pme"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Accompagnement IA PME",
+      "provider": {
+        "@id": "https://flow-studio.app/#organization"
+      },
+      "description": "Diagnostic, conception de projet pilote et déploiement IA pour les PME et organisations.",
+      "areaServed": "France",
+      "url": "https://flow-studio.app/pme"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -684,6 +759,11 @@
   <p class="cta-note reveal">Échange de 30 minutes, sans engagement.</p>
 </section>
 
+<div class="maillage-pme" style="padding:2rem 6rem;background:var(--blanc);display:flex;gap:3rem;flex-wrap:wrap;border-top:1px solid rgba(181,173,165,0.3);">
+  <span style="font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--taupe);align-self:center;">Aller plus loin</span>
+  <a href="/diagnostic-ia" style="font-size:0.72rem;color:var(--noir);text-decoration:none;border-bottom:1px solid rgba(181,173,165,0.5);padding-bottom:2px;">Diagnostic IA 360° →</a>
+  <a href="/realisations" style="font-size:0.72rem;color:var(--noir);text-decoration:none;border-bottom:1px solid rgba(181,173,165,0.5);padding-bottom:2px;">Voir les réalisations →</a>
+</div>
 <div class="bloom-footer-bar">
   <p>Vous recherchez une formation pour vos équipes ? <a href="https://fuzzy-formation.fr/" target="_blank">Découvrez les formations IA de Fuzzy Formation →</a></p>
 </div>
