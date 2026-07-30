@@ -18,13 +18,21 @@
   }
   body { background: var(--blanc); color: var(--noir); font-family: var(--font-body); font-weight: 300; line-height: 1.7; }
 
-  /* NAV */
+    /* NAV */
   nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.4rem 4rem; background: rgba(247,245,242,0.94); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(181,173,165,0.2); }
   .nav-logo { font-family: var(--font-display); font-size: 1.1rem; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 400; color: var(--noir); text-decoration: none; }
   .nav-logo span { font-size: 0.55rem; letter-spacing: 0.4em; display: block; text-align: center; margin-top: -2px; color: var(--taupe); }
-  .nav-back { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--noir); text-decoration: none; display: flex; align-items: center; gap: 0.6rem; transition: gap 0.3s; }
-  .nav-back:hover { gap: 1rem; }
-  .nav-back::before { content: '←'; }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--noir); text-decoration: none; transition: color 0.3s; }
+  .nav-links a:hover { color: var(--taupe); }
+  .nav-cta { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 0.65rem 1.5rem; border: 1px solid var(--noir); color: var(--noir); text-decoration: none; transition: all 0.3s; }
+  .nav-cta:hover { background: var(--noir); color: var(--blanc); }
+  .nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+  .nav-hamburger span { display: block; width: 22px; height: 1.5px; background: var(--noir); }
+  .mobile-menu { display: none; position: fixed; top: 76px; left: 0; right: 0; background: var(--blanc); border-bottom: 1px solid rgba(181,173,165,0.3); padding: 1.5rem; z-index: 99; flex-direction: column; }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--noir); text-decoration: none; padding: 0.9rem 0; border-bottom: 1px solid rgba(181,173,165,0.2); }
+  .mobile-menu .mobile-cta { background: var(--noir); color: var(--blanc); text-align: center; padding: 1rem; border: none; margin-top: 1rem; }
 
   /* CONTENT */
   .page-wrap { padding: 8rem 6rem 6rem; max-width: 860px; margin: 0 auto; }
@@ -76,6 +84,12 @@
   .dropdown-menu a:hover { background: var(--beige); }
   .nav-dropdown:hover .dropdown-menu { display: block; }
 
+  @media (max-width: 960px) {
+    nav { padding: 1.2rem 1.5rem; }
+    .nav-links { display: none; }
+    .nav-cta { display: none; }
+    .nav-hamburger { display: flex; }
+  }
 </style>
 </head>
 <body>
@@ -94,6 +108,13 @@
     <span></span><span></span><span></span>
   </button>
 </nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/entrepreneurs" onclick="toggleMenu()">Entrepreneurs</a>
+  <a href="/pme" onclick="toggleMenu()">PME</a>
+  <a href="/realisations" onclick="toggleMenu()">Réalisations</a>
+  <a href="/solen-ouahioune" onclick="toggleMenu()">À propos</a>
+  <a href="https://calendar.app.google/YQL39LLfw5zoFn2v7" target="_blank" class="mobile-cta" onclick="toggleMenu()">Prendre rendez-vous</a>
+</div>
 
 <div class="page-wrap">
   <p class="page-eyebrow">Informations légales</p>
