@@ -417,8 +417,13 @@
       ],
       "@id": "https://flow-studio.app/#organization",
       "name": "Flow Studio",
+      "alternateName": "Flow Studio - Business Systems Design",
+      "description": "Flow Studio est un studio de Business Systems Design & Implementation. Solen Ouahioune conçoit et implémente des systèmes de travail — Notion, IA, automatisations — pour les entrepreneures, les petites équipes et les PME.",
       "url": "https://flow-studio.app",
-      "logo": "https://flow-studio.app/favicon.svg",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://flow-studio.app/favicon.svg"
+      },
       "email": "solen@flow-studio.app",
       "founder": {
         "@id": "https://flow-studio.app/solen-ouahioune#person"
@@ -433,28 +438,67 @@
         "@type": "Country",
         "name": "France"
       },
-      "description": "Flow Studio conçoit des systèmes IA, Notion et automatisations pour entrepreneurs, petites équipes et PME.",
+      "sameAs": [
+        "https://www.linkedin.com/company/flow-studio-app",
+        "https://bloomandbuild.fr",
+        "https://fuzzy-formation.fr"
+      ],
       "knowsAbout": [
+        "Business Systems Design",
         "Notion",
         "Intelligence Artificielle",
-        "Automatisation",
-        "Make",
+        "Automatisation des processus",
         "Agents IA",
-        "Systèmes business"
+        "Make",
+        "Organisation digitale"
       ]
     },
     {
       "@type": "Person",
       "@id": "https://flow-studio.app/solen-ouahioune#person",
       "name": "Solen Ouahioune",
+      "jobTitle": "Business Systems Designer",
+      "description": "Solen Ouahioune est Business Systems Designer et fondatrice de Flow Studio. Elle conçoit et implémente des systèmes de travail pour les entrepreneures, les petites équipes et les PME en France.",
       "url": "https://flow-studio.app/solen-ouahioune",
-      "jobTitle": "Consultante IA et systèmes digitaux",
       "email": "solen@flow-studio.app",
-      "sameAs": [
-        "https://www.linkedin.com/in/solen-ouahioune-87b28947/"
-      ],
       "worksFor": {
         "@id": "https://flow-studio.app/#organization"
+      },
+      "founder": {
+        "@id": "https://flow-studio.app/#organization"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/solen-ouahioune-87b28947/",
+        "https://flow-studio.app",
+        "https://bloomandbuild.fr",
+        "https://fuzzy-formation.fr"
+      ],
+      "knowsAbout": [
+        "Business Systems Design",
+        "Notion",
+        "Intelligence Artificielle",
+        "Automatisation des processus",
+        "Agents IA",
+        "Organisation digitale",
+        "Formation no-code",
+        "Make",
+        "Systèmes de travail"
+      ],
+      "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Numériser et optimiser un processus métier avec des outils no-code",
+        "credentialCategory": "Certification professionnelle",
+        "url": "https://www.contournement.io/details/informations-examen-certification-numeriser-processus",
+        "recognizedBy": {
+          "@type": "Organization",
+          "name": "Contournement.io",
+          "url": "https://www.contournement.io"
+        },
+        "sourceOrganization": {
+          "@type": "Organization",
+          "name": "SENZA Formations"
+        },
+        "dateCreated": "2026"
       }
     },
     {
@@ -464,6 +508,9 @@
       "name": "Systèmes IA, Notion et automatisations | Flow Studio",
       "isPartOf": {
         "@id": "https://flow-studio.app/#website"
+      },
+      "publisher": {
+        "@id": "https://flow-studio.app/#organization"
       }
     },
     {
@@ -472,13 +519,23 @@
       "provider": {
         "@id": "https://flow-studio.app/#organization"
       },
-      "description": "Un système business centré sur une priorité : pilotage, CRM, production client, communication ou IA métier.",
+      "description": "Construction d'un système business centré sur une priorité : pilotage, CRM, production client, communication ou IA métier. Notion, agents IA et automatisations inclus.",
       "areaServed": "France",
-      "url": "https://flow-studio.app/#packs",
+      "url": "https://flow-studio.app/entrepreneurs",
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Entrepreneurs et petites équipes"
+      },
       "offers": {
         "@type": "Offer",
         "priceCurrency": "EUR",
-        "price": "1500"
+        "price": "1500",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "1500",
+          "priceCurrency": "EUR",
+          "description": "À partir de"
+        }
       }
     },
     {
@@ -487,13 +544,37 @@
       "provider": {
         "@id": "https://flow-studio.app/#organization"
       },
-      "description": "Un écosystème complet combinant Notion, IA et automatisations.",
+      "description": "Écosystème business complet connectant pilotage, ventes, production client, assistants IA et automatisations dans une architecture cohérente.",
       "areaServed": "France",
-      "url": "https://flow-studio.app/#packs",
+      "url": "https://flow-studio.app/entrepreneurs",
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Entrepreneurs et petites équipes"
+      },
       "offers": {
         "@type": "Offer",
         "priceCurrency": "EUR",
-        "price": "2500"
+        "price": "2500",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "2500",
+          "priceCurrency": "EUR",
+          "description": "À partir de"
+        }
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Diagnostic Système",
+      "provider": {
+        "@id": "https://flow-studio.app/#organization"
+      },
+      "description": "Analyse du fonctionnement, des outils, des processus et des points de friction. Livrable : vision claire des priorités et du périmètre à traiter.",
+      "areaServed": "France",
+      "url": "https://flow-studio.app/entrepreneurs",
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Entrepreneurs et petites équipes"
       }
     }
   ]

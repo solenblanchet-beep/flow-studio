@@ -232,8 +232,13 @@
       ],
       "@id": "https://flow-studio.app/#organization",
       "name": "Flow Studio",
+      "alternateName": "Flow Studio - Business Systems Design",
+      "description": "Flow Studio est un studio de Business Systems Design & Implementation. Solen Ouahioune conçoit et implémente des systèmes de travail — Notion, IA, automatisations — pour les entrepreneures, les petites équipes et les PME.",
       "url": "https://flow-studio.app",
-      "logo": "https://flow-studio.app/favicon.svg",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://flow-studio.app/favicon.svg"
+      },
       "email": "solen@flow-studio.app",
       "founder": {
         "@id": "https://flow-studio.app/solen-ouahioune#person"
@@ -248,14 +253,19 @@
         "@type": "Country",
         "name": "France"
       },
-      "description": "Flow Studio conçoit des systèmes IA, Notion et automatisations pour entrepreneurs, petites équipes et PME.",
+      "sameAs": [
+        "https://www.linkedin.com/company/flow-studio-app",
+        "https://bloomandbuild.fr",
+        "https://fuzzy-formation.fr"
+      ],
       "knowsAbout": [
+        "Business Systems Design",
         "Notion",
         "Intelligence Artificielle",
-        "Automatisation",
-        "Make",
+        "Automatisation des processus",
         "Agents IA",
-        "Systèmes business"
+        "Make",
+        "Organisation digitale"
       ]
     },
     {
@@ -263,43 +273,59 @@
       "@id": "https://flow-studio.app/diagnostic-ia",
       "url": "https://flow-studio.app/diagnostic-ia",
       "name": "Audit IA pour PME : usages et plan d'action | Flow Studio",
-      "breadcrumb": {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Accueil",
-            "item": "https://flow-studio.app/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "PME",
-            "item": "https://flow-studio.app/pme"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Diagnostic IA",
-            "item": "https://flow-studio.app/diagnostic-ia"
-          }
-        ]
+      "isPartOf": {
+        "@id": "https://flow-studio.app/#website"
+      },
+      "publisher": {
+        "@id": "https://flow-studio.app/#organization"
       }
     },
     {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://flow-studio.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "PME",
+          "item": "https://flow-studio.app/pme"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Diagnostic IA",
+          "item": "https://flow-studio.app/diagnostic-ia"
+        }
+      ]
+    },
+    {
       "@type": "Service",
-      "name": "Diagnostic IA 360° PME",
+      "name": "Diagnostic IA et processus",
       "provider": {
         "@id": "https://flow-studio.app/#organization"
       },
-      "description": "Audit des usages IA, repérage des points de vigilance et plan d'action pour les PME.",
+      "description": "Cartographie des usages IA existants, analyse des processus, matrice de priorisation des cas d'usage et feuille de route opérationnelle à 90 jours pour les PME.",
       "areaServed": "France",
       "url": "https://flow-studio.app/diagnostic-ia",
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "PME et organisations"
+      },
       "offers": {
         "@type": "Offer",
         "priceCurrency": "EUR",
-        "price": "1490"
+        "price": "1490",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "1490",
+          "priceCurrency": "EUR",
+          "description": "À partir de"
+        }
       }
     }
   ]

@@ -265,8 +265,13 @@
       ],
       "@id": "https://flow-studio.app/#organization",
       "name": "Flow Studio",
+      "alternateName": "Flow Studio - Business Systems Design",
+      "description": "Flow Studio est un studio de Business Systems Design & Implementation. Solen Ouahioune conçoit et implémente des systèmes de travail — Notion, IA, automatisations — pour les entrepreneures, les petites équipes et les PME.",
       "url": "https://flow-studio.app",
-      "logo": "https://flow-studio.app/favicon.svg",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://flow-studio.app/favicon.svg"
+      },
       "email": "solen@flow-studio.app",
       "founder": {
         "@id": "https://flow-studio.app/solen-ouahioune#person"
@@ -281,14 +286,19 @@
         "@type": "Country",
         "name": "France"
       },
-      "description": "Flow Studio conçoit des systèmes IA, Notion et automatisations pour entrepreneurs, petites équipes et PME.",
+      "sameAs": [
+        "https://www.linkedin.com/company/flow-studio-app",
+        "https://bloomandbuild.fr",
+        "https://fuzzy-formation.fr"
+      ],
       "knowsAbout": [
+        "Business Systems Design",
         "Notion",
         "Intelligence Artificielle",
-        "Automatisation",
-        "Make",
+        "Automatisation des processus",
         "Agents IA",
-        "Systèmes business"
+        "Make",
+        "Organisation digitale"
       ]
     },
     {
@@ -296,33 +306,82 @@
       "@id": "https://flow-studio.app/pme",
       "url": "https://flow-studio.app/pme",
       "name": "Conseil IA pour PME : diagnostic, pilote et adoption | Flow Studio",
-      "breadcrumb": {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Accueil",
-            "item": "https://flow-studio.app/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "PME",
-            "item": "https://flow-studio.app/pme"
-          }
-        ]
+      "isPartOf": {
+        "@id": "https://flow-studio.app/#website"
+      },
+      "publisher": {
+        "@id": "https://flow-studio.app/#organization"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://flow-studio.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "PME",
+          "item": "https://flow-studio.app/pme"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "name": "Diagnostic IA et processus",
+      "provider": {
+        "@id": "https://flow-studio.app/#organization"
+      },
+      "description": "Cartographie des usages IA existants, analyse des processus, matrice de priorisation des cas d'usage et feuille de route opérationnelle à 90 jours pour les PME.",
+      "areaServed": "France",
+      "url": "https://flow-studio.app/diagnostic-ia",
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "PME et organisations"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "EUR",
+        "price": "1490",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "1490",
+          "priceCurrency": "EUR",
+          "description": "À partir de"
+        }
       }
     },
     {
       "@type": "Service",
-      "name": "Accompagnement IA PME",
+      "name": "Conception d'un projet pilote IA",
       "provider": {
         "@id": "https://flow-studio.app/#organization"
       },
-      "description": "Diagnostic, conception de projet pilote et déploiement IA pour les PME et organisations.",
+      "description": "Conception et déploiement d'un premier cas d'usage IA avec objectifs, utilisateurs, critères de réussite et protocole de test.",
       "areaServed": "France",
-      "url": "https://flow-studio.app/pme"
+      "url": "https://flow-studio.app/pme",
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "PME et organisations"
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Déploiement et adoption IA",
+      "provider": {
+        "@id": "https://flow-studio.app/#organization"
+      },
+      "description": "Structuration du déploiement IA après validation du pilote : formalisation des processus, formation des équipes, documentation et suivi des premiers usages.",
+      "areaServed": "France",
+      "url": "https://flow-studio.app/pme",
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "PME et organisations"
+      }
     }
   ]
 }
