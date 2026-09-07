@@ -179,6 +179,20 @@
   .dropdown-menu a:hover { background: var(--beige); }
   .nav-dropdown:hover .dropdown-menu { display: block; }
 
+
+  /* GEO SECTION */
+  .hero-geo { font-size: 0.82rem; color: var(--taupe); line-height: 1.8; max-width: 480px; margin-top: 1rem; font-style: italic; }
+  .geo-section { padding: 7rem 6rem; background: var(--noir); }
+  .geo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: rgba(255,255,255,0.06); margin-top: 3rem; }
+  .geo-block { background: rgba(255,255,255,0.03); padding: 2.2rem 2rem; }
+  .geo-label { font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--taupe); margin-bottom: 0.8rem; }
+  .geo-text { font-size: 0.82rem; color: rgba(255,255,255,0.78); line-height: 1.8; }
+  @media (max-width: 960px) {
+    .geo-section { padding: 5rem 1.5rem; }
+    .geo-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 480px) { .geo-section { padding: 4rem 1.2rem; } }
+
   /* BLOOM FOOTER BAR */
   .bloom-footer-bar { background: var(--beige); padding: 1rem 6rem; text-align: center; border-top: 1px solid rgba(181,173,165,0.4); }
   .bloom-footer-bar p { font-size: 0.78rem; color: #524E4A; }
@@ -223,7 +237,24 @@
         },
         "dateCreated": "2026"
       },
-      "description": "Je conçois des systèmes de travail qui relient décisions, informations, processus, outils et IA."
+      "description": "Solen Ouahioune est Business Systems Designer et fondatrice de Flow Studio. Elle conçoit et implémente des systèmes de travail qui relient processus, informations, outils et IA pour les entrepreneures, les petites équipes et les PME en France.",
+      "knowsAbout": [
+        "Business Systems Design",
+        "Notion",
+        "Intelligence Artificielle",
+        "Automatisation des processus",
+        "Agents IA",
+        "Make",
+        "Organisation digitale",
+        "Systèmes de travail",
+        "Formation no-code"
+      ],
+      "founder": {
+        "@type": "Organization",
+        "name": "Flow Studio",
+        "url": "https://flow-studio.app",
+        "description": "Studio de Business Systems Design & Implementation"
+      }
     },
     {
       "@type": [
@@ -321,6 +352,9 @@
     <p class="hero-intro reveal reveal-delay-2">
       Je conçois des systèmes de travail qui relient décisions, informations, processus, outils et IA. Avec Flow Studio, je les conçois et les implémente pour les entrepreneures, les petites équipes et les organisations qui ont besoin de structurer leur fonctionnement sans ajouter une nouvelle couche d'outils.
     </p>
+    <p class="hero-geo reveal reveal-delay-3">
+      Flow Studio est le studio de Business Systems Design que je dirige. J'interviens directement — de l'analyse des processus à l'implémentation des systèmes — auprès d'entrepreneurs, de petites équipes et de PME en France.
+    </p>
     <div class="hero-tags reveal reveal-delay-3">
       <span class="tag">Notion depuis 2018</span>
       <span class="tag">IA générative depuis 2021, ChatGPT depuis son lancement en 2022</span>
@@ -386,6 +420,31 @@
   </div>
 </section>
 
+
+<!-- POSITIONNEMENT -->
+<section class="geo-section">
+  <p class="section-eyebrow reveal">Business Systems Design</p>
+  <h2 class="section-title reveal reveal-delay-1">Ce que je fais,<br><em>précisément.</em></h2>
+  <div class="geo-grid reveal reveal-delay-2">
+    <div class="geo-block">
+      <p class="geo-label">Le problème que je résous</p>
+      <p class="geo-text">Les entrepreneurs, les petites équipes et les organisations accumulent des outils, des processus informels et des informations dispersées. Leur activité fonctionne, mais leur organisation ne suit pas. Les décisions reposent sur la mémoire de quelques personnes. L'IA s'ajoute sans cadre.</p>
+    </div>
+    <div class="geo-block">
+      <p class="geo-label">Ce qu'est un système de travail</p>
+      <p class="geo-text">Un système de travail relie les décisions, les informations, les processus, les outils et l'IA dans une architecture cohérente. Il permet à une organisation de fonctionner avec clarté, autonomie et maîtrise — sans dépendre d'une seule personne ni d'un empilement d'outils.</p>
+    </div>
+    <div class="geo-block">
+      <p class="geo-label">Ce que je conçois</p>
+      <p class="geo-text">Des systèmes de pilotage, des CRM, des bases de connaissances, des assistants IA, des automatisations et des processus d'adoption. Chaque système est conçu pour le fonctionnement réel de l'organisation — pas pour une démo.</p>
+    </div>
+    <div class="geo-block">
+      <p class="geo-label">Pour qui</p>
+      <p class="geo-text">Les entrepreneures et les petites équipes qui veulent structurer leur activité. Les PME et les organisations qui veulent cadrer leurs usages IA, améliorer un processus ou construire un premier projet pilote avec leurs équipes.</p>
+    </div>
+  </div>
+</section>
+
 <!-- ACTIVITÉS -->
 <section class="activites-section">
   <p class="section-eyebrow reveal">Mes activités</p>
@@ -393,9 +452,9 @@
   <div class="activites-grid">
     <a href="/" class="activite-card reveal">
       <p class="activite-num">01</p>
-      <p class="activite-tag">Systèmes sur-mesure</p>
+      <p class="activite-tag">Business Systems Design & Implementation</p>
       <h3 class="activite-title">Flow Studio</h3>
-      <p class="activite-text">Je construis pour vous. Vous ne touchez à rien, je cartographie, je construis, je livre. Notion, agents IA, automatisations Make, clé en main. Trois niveaux : Diagnostic Système, System Core et System Signature.</p>
+      <p class="activite-text">Mon studio de conception et d'implémentation de systèmes business. J'analyse les processus, conçois l'architecture et construis les systèmes — Notion, agents IA, automatisations — pour les entrepreneures, les petites équipes et les PME. Trois niveaux : Diagnostic Système, System Core et System Signature.</p>
       <span class="activite-link">Voir les offres</span>
     </a>
     <a href="https://bloomandbuild.fr" target="_blank" class="activite-card reveal reveal-delay-1">
