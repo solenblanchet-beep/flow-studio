@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business Systems Design : définition, méthode et composants | Flow Studio</title>
+<meta name="description" content="Le Business Systems Design est une discipline qui consiste à concevoir des systèmes de travail reliant décisions, informations, processus, outils et IA. Méthode, composants et exemples par Solen Ouahioune, Flow Studio.">
+<link rel="canonical" href="https://flow-studio.app/business-systems-design">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://flow-studio.app/business-systems-design",
+      "url": "https://flow-studio.app/business-systems-design",
+      "name": "Business Systems Design : définition, méthode et composants | Flow Studio",
+      "description": "Le Business Systems Design est une discipline qui consiste à concevoir des systèmes de travail reliant décisions, informations, processus, outils et IA.",
+      "isPartOf": {"@id": "https://flow-studio.app/#website"},
+      "author": {"@id": "https://flow-studio.app/solen-ouahioune#person"},
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://flow-studio.app/"},
+          {"@type": "ListItem", "position": 2, "name": "Business Systems Design", "item": "https://flow-studio.app/business-systems-design"}
+        ]
+      }
+    },
+    {
+      "@type": ["Organization", "ProfessionalService"],
+      "@id": "https://flow-studio.app/#organization",
+      "name": "Flow Studio",
+      "description": "Studio de Business Systems Design & Implementation dirigé par Solen Ouahioune.",
+      "url": "https://flow-studio.app",
+      "founder": {"@id": "https://flow-studio.app/solen-ouahioune#person"}
+    },
+    {
+      "@type": "Person",
+      "@id": "https://flow-studio.app/solen-ouahioune#person",
+      "name": "Solen Ouahioune",
+      "jobTitle": "Business Systems Designer",
+      "url": "https://flow-studio.app/solen-ouahioune",
+      "worksFor": {"@id": "https://flow-studio.app/#organization"}
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "https://flow-studio.app/business-systems-design#term",
+      "name": "Business Systems Design",
+      "description": "Discipline consistant à concevoir des systèmes de travail qui relient les décisions, les informations, les processus, les outils et l'IA dans une architecture cohérente, permettant à une organisation de fonctionner avec clarté, autonomie et maîtrise.",
+      "inDefinedTermSet": {
+        "@type": "DefinedTermSet",
+        "name": "Glossaire Flow Studio",
+        "url": "https://flow-studio.app/business-systems-design"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Qu'est-ce que le Business Systems Design ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Le Business Systems Design est une discipline qui consiste à concevoir des systèmes de travail reliant les décisions, les informations, les processus, les outils et l'IA dans une architecture cohérente. L'objectif est de permettre à une organisation de fonctionner avec clarté, autonomie et maîtrise."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quelle est la différence entre Business Systems Design et gestion de projet ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La gestion de projet organise l'exécution d'une tâche limitée dans le temps. Le Business Systems Design conçoit l'architecture durable qui permet à une organisation de fonctionner sans dépendre d'une seule personne — en structurant les processus, les informations et les outils de façon permanente."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quels sont les composants d'un système business ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Un système business complet comprend cinq composants : les processus (comment le travail est fait), les informations (ce qui est su, stocké et partagé), les outils (Notion, CRM, automatisations, IA), les responsabilités (qui fait quoi, quand et pourquoi) et les boucles de feedback (comment le système apprend et s'améliore)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Comment mettre en place un Business Systems Design dans son entreprise ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La méthode Flow Studio suit quatre étapes : Diagnostic (analyser le fonctionnement réel et identifier les priorités), Architecture (concevoir la solution la plus simple), Implémentation (construire, tester et connecter les outils) et Transmission (former, documenter et assurer l'adoption)."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --noir: #0F0F0F; --beige: #EAE6E1; --blanc: #F7F5F2;
+    --taupe: #B5ADA5; --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'Inter', sans-serif;
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--blanc); color: var(--noir); font-family: var(--font-body); font-weight: 300; line-height: 1.7; overflow-x: hidden; }
+
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.4rem 4rem; background: rgba(247,245,242,0.94); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(181,173,165,0.2); }
+  .nav-logo { font-family: var(--font-display); font-size: 1.1rem; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 400; color: var(--noir); text-decoration: none; }
+  .nav-logo span { font-size: 0.55rem; letter-spacing: 0.4em; display: block; text-align: center; margin-top: -2px; color: var(--taupe); }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--noir); text-decoration: none; transition: color 0.3s; }
+  .nav-links a:hover { color: var(--taupe); }
+  .nav-cta { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 0.65rem 1.5rem; border: 1px solid var(--noir); color: var(--noir); text-decoration: none; transition: all 0.3s; }
+  .nav-cta:hover { background: var(--noir); color: var(--blanc); }
+  .nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+  .nav-hamburger span { display: block; width: 22px; height: 1.5px; background: var(--noir); }
+  .mobile-menu { display: none; position: fixed; top: 76px; left: 0; right: 0; background: var(--blanc); border-bottom: 1px solid rgba(181,173,165,0.3); padding: 1.5rem; z-index: 99; flex-direction: column; }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--noir); text-decoration: none; padding: 0.9rem 0; border-bottom: 1px solid rgba(181,173,165,0.2); }
+  .mobile-menu .mobile-cta { background: var(--noir); color: var(--blanc); text-align: center; padding: 1rem; border: none; margin-top: 1rem; }
+
+  /* BREADCRUMB */
+  .breadcrumb { padding: 6rem 6rem 0; font-size: 0.65rem; color: var(--taupe); display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap; }
+  .breadcrumb a { color: var(--taupe); text-decoration: none; transition: color 0.3s; }
+  .breadcrumb a:hover { color: var(--noir); }
+
+  /* HERO */
+  .page-hero { padding: 3rem 6rem 5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+  .hero-eyebrow { font-size: 0.62rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1.2rem; display: flex; align-items: center; gap: 1rem; }
+  .hero-eyebrow::before { content: ''; width: 1.8rem; height: 1px; background: var(--taupe); }
+  .page-title { font-family: var(--font-display); font-size: clamp(2.2rem, 3.5vw, 3.2rem); font-weight: 400; line-height: 1.1; margin-bottom: 1.5rem; }
+  .page-title em { font-style: italic; color: var(--taupe); }
+  .page-intro { font-size: 0.9rem; color: #3E3A37; line-height: 1.9; margin-bottom: 1.5rem; }
+  .page-conviction { font-size: 1rem; font-family: var(--font-display); font-style: italic; color: var(--taupe); line-height: 1.6; border-left: 2px solid var(--taupe); padding-left: 1.5rem; margin-top: 2rem; }
+  .hero-right { padding-top: 1rem; }
+  .toc { list-style: none; display: flex; flex-direction: column; gap: 0; border: 1px solid rgba(181,173,165,0.4); }
+  .toc-label { font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--taupe); padding: 1rem 1.4rem 0.5rem; }
+  .toc li a { display: flex; justify-content: space-between; align-items: center; padding: 0.8rem 1.4rem; font-size: 0.75rem; color: var(--noir); text-decoration: none; border-top: 1px solid rgba(181,173,165,0.3); transition: background 0.3s; }
+  .toc li a:hover { background: var(--beige); }
+  .toc li a::after { content: '↓'; color: var(--taupe); font-size: 0.65rem; }
+
+  /* SECTIONS */
+  .section-eyebrow { font-size: 0.62rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1.2rem; display: flex; align-items: center; gap: 1rem; }
+  .section-eyebrow::before { content: ''; width: 1.8rem; height: 1px; background: var(--taupe); }
+  .section-title { font-family: var(--font-display); font-size: clamp(1.8rem, 2.8vw, 2.4rem); font-weight: 400; line-height: 1.2; margin-bottom: 1.5rem; }
+  .section-title em { font-style: italic; color: var(--taupe); }
+  .body-text { font-size: 0.88rem; color: #3E3A37; line-height: 1.9; margin-bottom: 1.2rem; max-width: 680px; }
+  .body-text strong { font-weight: 500; color: var(--noir); }
+
+  /* DÉFINITION */
+  .definition-section { padding: 7rem 6rem; background: var(--beige); }
+  .definition-box { background: var(--noir); padding: 3rem; max-width: 720px; margin: 2.5rem 0; }
+  .definition-label { font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1rem; }
+  .definition-text { font-family: var(--font-display); font-size: 1.2rem; color: var(--blanc); line-height: 1.6; font-weight: 400; }
+
+  /* POURQUOI */
+  .pourquoi-section { padding: 7rem 6rem; }
+  .pourquoi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: rgba(181,173,165,0.3); margin-top: 3rem; }
+  .pourquoi-card { background: var(--blanc); padding: 2.5rem 2.2rem; }
+  .pourquoi-card.dark { background: var(--noir); }
+  .pourquoi-num { font-family: var(--font-display); font-size: 0.75rem; color: var(--taupe); margin-bottom: 0.8rem; }
+  .pourquoi-title { font-family: var(--font-display); font-size: 1rem; margin-bottom: 0.8rem; }
+  .pourquoi-card.dark .pourquoi-title { color: var(--blanc); }
+  .pourquoi-text { font-size: 0.82rem; color: #524E4A; line-height: 1.8; }
+  .pourquoi-card.dark .pourquoi-text { color: rgba(255,255,255,0.72); }
+
+  /* COMPOSANTS */
+  .composants-section { padding: 7rem 6rem; background: var(--beige); }
+  .composants-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2px; background: rgba(181,173,165,0.3); margin-top: 3rem; }
+  .composant { background: var(--blanc); padding: 2rem 1.6rem; text-align: center; }
+  .composant-icon { font-size: 1.6rem; margin-bottom: 1rem; }
+  .composant-name { font-family: var(--font-display); font-size: 0.95rem; margin-bottom: 0.6rem; }
+  .composant-desc { font-size: 0.72rem; color: #524E4A; line-height: 1.6; }
+  .composant-connector { display: flex; align-items: center; justify-content: center; font-size: 1.2rem; color: var(--taupe); background: transparent; }
+
+  /* MÉTHODE BSD */
+  .methode-section { padding: 7rem 6rem; }
+  .methode-steps { display: flex; flex-direction: column; gap: 1.5px; margin-top: 3rem; }
+  .methode-step { display: grid; grid-template-columns: 200px 1fr; gap: 3rem; padding: 2.5rem; background: var(--beige); border-left: 2px solid transparent; transition: all 0.3s; }
+  .methode-step:hover { border-left-color: var(--taupe); background: var(--blanc); }
+  .step-left { }
+  .step-num { font-family: var(--font-display); font-size: 2.5rem; color: rgba(181,173,165,0.3); line-height: 1; margin-bottom: 0.5rem; }
+  .step-name { font-family: var(--font-display); font-size: 1.2rem; }
+  .step-question { font-size: 0.72rem; color: var(--taupe); font-style: italic; margin-top: 0.3rem; }
+  .step-content h4 { font-family: var(--font-display); font-size: 0.9rem; margin-bottom: 0.6rem; margin-top: 1rem; }
+  .step-content h4:first-child { margin-top: 0; }
+  .step-content p { font-size: 0.82rem; color: #524E4A; line-height: 1.8; margin-bottom: 0.8rem; }
+  .step-content ul { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
+  .step-content ul li { font-size: 0.8rem; color: #524E4A; display: flex; gap: 0.6rem; }
+  .step-content ul li::before { content: '→'; color: var(--taupe); flex-shrink: 0; }
+
+  /* EXEMPLES */
+  .exemples-section { padding: 7rem 6rem; background: var(--noir); }
+  .exemples-title { font-family: var(--font-display); font-size: clamp(1.8rem, 2.5vw, 2.4rem); color: var(--blanc); margin-bottom: 3rem; line-height: 1.2; }
+  .exemples-title em { font-style: italic; color: var(--taupe); }
+  .exemples-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: rgba(255,255,255,0.06); }
+  .exemple-card { background: rgba(255,255,255,0.03); padding: 2.5rem 2rem; }
+  .exemple-profil { font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--taupe); margin-bottom: 0.8rem; }
+  .exemple-title { font-family: var(--font-display); font-size: 1rem; color: var(--blanc); margin-bottom: 1rem; }
+  .exemple-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+  .exemple-list li { font-size: 0.78rem; color: rgba(255,255,255,0.65); display: flex; gap: 0.6rem; line-height: 1.5; }
+  .exemple-list li::before { content: '·'; color: var(--taupe); flex-shrink: 0; }
+  .exemple-resultat { margin-top: 1.5rem; padding-top: 1.2rem; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.78rem; color: var(--taupe); font-style: italic; line-height: 1.6; }
+
+  /* BSD VS OUTILS */
+  .vs-section { padding: 7rem 6rem; }
+  .vs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: rgba(181,173,165,0.3); margin-top: 3rem; }
+  .vs-col { background: var(--blanc); padding: 2.5rem 2.5rem; }
+  .vs-col.dark { background: var(--noir); }
+  .vs-col-label { font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1.2rem; }
+  .vs-col-title { font-family: var(--font-display); font-size: 1.1rem; margin-bottom: 1.5rem; }
+  .vs-col.dark .vs-col-title { color: var(--blanc); }
+  .vs-list { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
+  .vs-list li { font-size: 0.82rem; color: #524E4A; display: flex; gap: 0.8rem; line-height: 1.5; }
+  .vs-col.dark .vs-list li { color: rgba(255,255,255,0.72); }
+  .vs-list li::before { content: '·'; color: var(--taupe); flex-shrink: 0; }
+
+  /* FAQ */
+  .faq-section { padding: 7rem 6rem; background: var(--beige); }
+  .faq-list { margin-top: 3rem; max-width: 720px; }
+  .faq-item { border-bottom: 1px solid rgba(181,173,165,0.4); }
+  .faq-question { padding: 1.4rem 0; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-family: var(--font-display); font-size: 0.95rem; user-select: none; }
+  .faq-icon { color: var(--taupe); transition: transform 0.3s; }
+  .faq-answer { font-size: 0.82rem; color: #524E4A; line-height: 1.8; max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s; }
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
+  .faq-item.open .faq-answer { max-height: 300px; padding-bottom: 1.5rem; }
+
+  /* CTA */
+  .cta-section { padding: 8rem 6rem; text-align: center; background: var(--noir); position: relative; overflow: hidden; }
+  .cta-section::before { content: 'BSD'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-family: var(--font-display); font-size: 14rem; color: rgba(255,255,255,0.02); pointer-events: none; }
+  .cta-eyebrow { font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1.8rem; }
+  .cta-title { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3.2rem); color: var(--blanc); line-height: 1.1; margin-bottom: 1.2rem; }
+  .cta-title em { font-style: italic; color: var(--taupe); }
+  .cta-subtitle { font-size: 0.85rem; color: rgba(255,255,255,0.6); max-width: 500px; margin: 0 auto 2.5rem; line-height: 1.8; }
+  .cta-btn { display: inline-block; font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; padding: 1.2rem 2.8rem; background: var(--blanc); color: var(--noir); text-decoration: none; border: 1px solid var(--blanc); transition: all 0.35s; }
+  .cta-btn:hover { background: transparent; color: var(--blanc); }
+
+  /* FOOTER */
+  .bloom-footer-bar { background: var(--beige); padding: 1rem 6rem; text-align: center; border-top: 1px solid rgba(181,173,165,0.4); }
+  .bloom-footer-bar p { font-size: 0.78rem; color: #524E4A; }
+  .bloom-footer-bar a { color: var(--noir); font-weight: 400; text-decoration: underline; text-underline-offset: 3px; }
+  footer { background: var(--blanc); padding: 2.5rem 6rem; border-top: 1px solid rgba(181,173,165,0.3); display: flex; justify-content: space-between; align-items: center; }
+  .footer-logo { font-family: var(--font-display); font-size: 0.95rem; letter-spacing: 0.2em; text-transform: uppercase; }
+  .footer-tagline { font-size: 0.65rem; color: var(--taupe); margin-top: 0.2rem; }
+  .footer-keywords { font-size: 0.58rem; color: rgba(181,173,165,0.6); margin-top: 0.2rem; letter-spacing: 0.04em; }
+  .footer-links { display: flex; gap: 2rem; }
+  .footer-links a { font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; color: #5A5550; text-decoration: none; transition: color 0.3s; }
+  .footer-links a:hover { color: var(--noir); }
+
+  /* REVEAL */
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+
+  /* RESPONSIVE */
+  @media (max-width: 960px) {
+    nav { padding: 1.2rem 1.5rem; }
+    .nav-links { display: none; }
+    .nav-cta { display: none; }
+    .nav-hamburger { display: flex; }
+    .breadcrumb { padding: 5.5rem 1.5rem 0; }
+    .page-hero { grid-template-columns: 1fr; gap: 3rem; padding: 2rem 1.5rem 4rem; }
+    .definition-section, .pourquoi-section, .composants-section, .methode-section,
+    .exemples-section, .vs-section, .faq-section { padding: 5rem 1.5rem; }
+    .cta-section { padding: 5rem 1.5rem; }
+    .pourquoi-grid, .vs-grid { grid-template-columns: 1fr; }
+    .composants-grid { grid-template-columns: 1fr 1fr; }
+    .exemples-grid { grid-template-columns: 1fr; }
+    .methode-step { grid-template-columns: 1fr; gap: 1.5rem; }
+    .bloom-footer-bar { padding: 1rem 1.5rem; }
+    footer { padding: 2rem 1.5rem; flex-direction: column; gap: 1.2rem; text-align: center; }
+    .footer-links { flex-wrap: wrap; justify-content: center; gap: 1rem; }
+  }
+  @media (max-width: 480px) {
+    nav { padding: 1rem 1.2rem; }
+    .breadcrumb, .page-hero { padding-left: 1.2rem; padding-right: 1.2rem; }
+    .composants-grid { grid-template-columns: 1fr; }
+    footer { padding: 1.8rem 1.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">FLOW<span>STUDIO</span></a>
+  <ul class="nav-links">
+    <li><a href="/solutions">Solutions</a></li>
+    <li><a href="/entrepreneurs">Entrepreneurs</a></li>
+    <li><a href="/pme">PME</a></li>
+    <li><a href="/realisations">Réalisations</a></li>
+    <li><a href="/solen-ouahioune">À propos</a></li>
+  </ul>
+  <a href="https://calendar.app.google/YQL39LLfw5zoFn2v7" target="_blank" class="nav-cta">Prendre rendez-vous</a>
+  <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/entrepreneurs" onclick="toggleMenu()">Entrepreneurs</a>
+  <a href="/pme" onclick="toggleMenu()">PME</a>
+  <a href="/realisations" onclick="toggleMenu()">Réalisations</a>
+  <a href="/solen-ouahioune" onclick="toggleMenu()">À propos</a>
+  <a href="https://calendar.app.google/YQL39LLfw5zoFn2v7" target="_blank" class="mobile-cta" onclick="toggleMenu()">Prendre rendez-vous</a>
+</div>
+
+<nav aria-label="Breadcrumb" class="breadcrumb">
+  <a href="/">Accueil</a> <span>/</span>
+  <span>Business Systems Design</span>
+</nav>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div>
+    <p class="hero-eyebrow reveal">Discipline · Flow Studio</p>
+    <h1 class="page-title reveal reveal-delay-1">
+      Business<br>
+      <em>Systems Design</em>
+    </h1>
+    <p class="page-intro reveal reveal-delay-2">
+      Le Business Systems Design est la discipline qui consiste à concevoir des systèmes de travail reliant les décisions, les informations, les processus, les outils et l'IA dans une architecture cohérente.
+    </p>
+    <p class="page-intro reveal reveal-delay-2">
+      C'est ce que je pratique depuis dix ans, ce que je transmets via Flow Studio, Bloom & Build et Fuzzy Formation, et ce que j'implémente concrètement pour les entrepreneurs, les petites équipes et les PME en France.
+    </p>
+    <blockquote class="page-conviction reveal reveal-delay-2">
+      « On ne reprend pas le pouvoir sur son business en travaillant plus. On le reprend en construisant de meilleurs systèmes. »
+    </blockquote>
+  </div>
+  <div class="hero-right">
+    <p class="toc-label">Sur cette page</p>
+    <ul class="toc reveal reveal-delay-1">
+      <li><a href="#definition">Définition</a></li>
+      <li><a href="#pourquoi">Pourquoi les systèmes échouent</a></li>
+      <li><a href="#composants">Les cinq composants</a></li>
+      <li><a href="#methode">La méthode en quatre étapes</a></li>
+      <li><a href="#exemples">Exemples concrets</a></li>
+      <li><a href="#vs-outils">BSD vs gestion des outils</a></li>
+      <li><a href="#faq">Questions fréquentes</a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- DÉFINITION -->
+<section class="definition-section" id="definition">
+  <p class="section-eyebrow reveal">Définition</p>
+  <h2 class="section-title reveal reveal-delay-1">Ce qu'est le Business Systems Design.</h2>
+  <div class="definition-box reveal reveal-delay-1">
+    <p class="definition-label">Définition</p>
+    <p class="definition-text">Le Business Systems Design est la discipline qui consiste à concevoir des systèmes de travail reliant les décisions, les informations, les processus, les outils et l'IA dans une architecture cohérente — permettant à une organisation de fonctionner avec clarté, autonomie et maîtrise.</p>
+  </div>
+  <p class="body-text reveal">Un système de travail n'est pas un outil. C'est l'architecture qui relie les outils, les processus et les personnes. Notion n'est pas un système. Make n'est pas un système. Un agent IA n'est pas un système. Ce sont des composants. Le système, c'est ce qui les relie et leur donne une cohérence.</p>
+  <p class="body-text reveal">Le Business Systems Design part du fonctionnement réel d'une organisation — pas de ses procédures théoriques — pour concevoir une architecture adaptée à ses priorités, ses contraintes et ses personnes. L'implémentation vient ensuite.</p>
+</section>
+
+<!-- POURQUOI -->
+<section class="pourquoi-section" id="pourquoi">
+  <p class="section-eyebrow reveal">Le problème fondamental</p>
+  <h2 class="section-title reveal reveal-delay-1">Pourquoi les organisations<br><em>accumulent sans construire.</em></h2>
+  <p class="body-text reveal">La plupart des organisations ne manquent pas d'outils. Elles manquent d'un système. Les outils s'ajoutent au fil du temps, chacun pour résoudre un problème précis, sans jamais former un ensemble cohérent. Les informations se dispersent. Les processus reposent sur la mémoire de quelques personnes. L'IA s'ajoute sans cadre.</p>
+  <div class="pourquoi-grid">
+    <div class="pourquoi-card reveal">
+      <p class="pourquoi-num">01</p>
+      <h3 class="pourquoi-title">L'accumulation d'outils</h3>
+      <p class="pourquoi-text">Chaque nouvel outil résout un problème local sans s'intégrer à l'ensemble. Le résultat : cinq outils qui font partiellement la même chose, des données dispersées, et des processus qui dépendent d'un seul expert par outil.</p>
+    </div>
+    <div class="pourquoi-card dark reveal reveal-delay-1">
+      <p class="pourquoi-num">02</p>
+      <h3 class="pourquoi-title">La connaissance dans les têtes</h3>
+      <p class="pourquoi-text">Quand les processus ne sont pas documentés, l'organisation dépend de quelques personnes pour fonctionner. Un départ, une maladie, une surcharge — et le système s'effondre. Ce n'est pas un problème d'équipe. C'est un problème d'architecture.</p>
+    </div>
+    <div class="pourquoi-card dark reveal">
+      <p class="pourquoi-num">03</p>
+      <h3 class="pourquoi-title">L'IA sans cadre</h3>
+      <p class="pourquoi-text">Les initiatives IA se développent de façon informelle. Des données sensibles circulent dans des outils externes. Les équipes utilisent des outils différents sans règles partagées. Les résultats ne sont pas vérifiés. L'investissement ne produit pas de valeur mesurable.</p>
+    </div>
+    <div class="pourquoi-card reveal reveal-delay-1">
+      <p class="pourquoi-num">04</p>
+      <h3 class="pourquoi-title">L'automatisation prématurée</h3>
+      <p class="pourquoi-text">On automatise un processus flou. Le résultat est une erreur automatisée à grande échelle. Le Business Systems Design commence toujours par clarifier le processus. L'automatisation vient ensuite — seulement quand le processus est compris et stabilisé.</p>
+    </div>
+  </div>
+</section>
+
+<!-- COMPOSANTS -->
+<section class="composants-section" id="composants">
+  <p class="section-eyebrow reveal">Architecture</p>
+  <h2 class="section-title reveal reveal-delay-1">Les cinq composants<br><em>d'un système de travail.</em></h2>
+  <p class="body-text reveal">Un système de travail bien conçu comprend cinq composants reliés. Manquer l'un d'eux fragilise l'ensemble.</p>
+  <div class="composants-grid reveal reveal-delay-1">
+    <div class="composant">
+      <div class="composant-icon">⚙</div>
+      <h3 class="composant-name">Processus</h3>
+      <p class="composant-desc">Comment le travail est fait — les étapes, les séquences, les responsabilités et les règles de décision.</p>
+    </div>
+    <div class="composant">
+      <div class="composant-icon">◎</div>
+      <h3 class="composant-name">Informations</h3>
+      <p class="composant-desc">Ce qui est su, stocké, partagé et retrouvable — données clients, documents, historiques, connaissances.</p>
+    </div>
+    <div class="composant">
+      <div class="composant-icon">◈</div>
+      <h3 class="composant-name">Outils</h3>
+      <p class="composant-desc">Notion, CRM, automatisations, agents IA — les composants technologiques qui exécutent et relient.</p>
+    </div>
+    <div class="composant">
+      <div class="composant-icon">◻</div>
+      <h3 class="composant-name">Responsabilités</h3>
+      <p class="composant-desc">Qui fait quoi, quand et pourquoi — la structure humaine qui fait tourner le système.</p>
+    </div>
+    <div class="composant">
+      <div class="composant-icon">↺</div>
+      <h3 class="composant-name">Feedback</h3>
+      <p class="composant-desc">Comment le système apprend, s'ajuste et s'améliore dans le temps — mesures, revues, itérations.</p>
+    </div>
+  </div>
+  <p class="body-text reveal" style="margin-top:2rem;">Un système ne se résume pas à ses outils. La plupart des projets échouent non pas parce que l'outil est mauvais, mais parce qu'un ou plusieurs de ces composants n'ont pas été traités.</p>
+</section>
+
+<!-- MÉTHODE -->
+<section class="methode-section" id="methode">
+  <p class="section-eyebrow reveal">Méthode Flow Studio</p>
+  <h2 class="section-title reveal reveal-delay-1">Quatre étapes pour concevoir<br><em>et implémenter un système.</em></h2>
+  <p class="body-text reveal">La méthode Flow Studio part systématiquement du fonctionnement réel — pas des procédures théoriques ni des catalogues d'outils. Chaque étape a un livrable. Aucune n'est sautée.</p>
+  <div class="methode-steps">
+    <div class="methode-step reveal">
+      <div class="step-left">
+        <p class="step-num">01</p>
+        <h3 class="step-name">Diagnostic</h3>
+        <p class="step-question">Qu'est-ce qui se passe vraiment ?</p>
+      </div>
+      <div class="step-content">
+        <p>Analyser le fonctionnement réel de l'organisation : les processus existants, les outils utilisés, les informations disponibles, les points de friction et les endroits où la connaissance se perd.</p>
+        <h4>Ce qu'on cherche</h4>
+        <ul>
+          <li>Là où le travail se répète sans valeur ajoutée</li>
+          <li>Là où l'information se disperse ou se perd</li>
+          <li>Là où une seule personne porte trop de connaissance</li>
+          <li>Là où une priorité claire peut produire un résultat mesurable</li>
+        </ul>
+        <h4>Le livrable</h4>
+        <p>Une vision claire des priorités, une matrice opportunité/complexité et une proposition de périmètre.</p>
+      </div>
+    </div>
+    <div class="methode-step reveal">
+      <div class="step-left">
+        <p class="step-num">02</p>
+        <h3 class="step-name">Architecture</h3>
+        <p class="step-question">Quelle est la solution la plus simple ?</p>
+      </div>
+      <div class="step-content">
+        <p>Concevoir la solution la plus simple qui répond au problème identifié. Les outils sont choisis en fonction du besoin, pas l'inverse. L'architecture est dessinée avant de toucher au premier outil.</p>
+        <h4>Ce qu'on conçoit</h4>
+        <ul>
+          <li>La structure des informations et les relations entre elles</li>
+          <li>Les processus formalisés et les règles de décision</li>
+          <li>Les automatisations pertinentes</li>
+          <li>Les points d'intégration entre les outils</li>
+        </ul>
+        <h4>Le livrable</h4>
+        <p>Une architecture fonctionnelle validée avant implémentation.</p>
+      </div>
+    </div>
+    <div class="methode-step reveal">
+      <div class="step-left">
+        <p class="step-num">03</p>
+        <h3 class="step-name">Implémentation</h3>
+        <p class="step-question">Est-ce que ça fonctionne vraiment ?</p>
+      </div>
+      <div class="step-content">
+        <p>Construire, configurer et connecter. Chaque parcours est testé avant livraison. L'implémentation inclut les outils, les automatisations, les agents IA et les intégrations nécessaires.</p>
+        <h4>Ce qu'on construit</h4>
+        <ul>
+          <li>Les espaces Notion, bases de données et tableaux de bord</li>
+          <li>Les automatisations Make ou N8N</li>
+          <li>Les agents IA configurés avec le contexte métier</li>
+          <li>Les tests de chaque parcours utilisateur</li>
+        </ul>
+        <h4>Le livrable</h4>
+        <p>Un système opérationnel, testé, dans les comptes du client.</p>
+      </div>
+    </div>
+    <div class="methode-step reveal">
+      <div class="step-left">
+        <p class="step-num">04</p>
+        <h3 class="step-name">Transmission</h3>
+        <p class="step-question">Est-ce que les personnes peuvent vraiment l'utiliser ?</p>
+      </div>
+      <div class="step-content">
+        <p>Former les utilisateurs, documenter le système et accompagner les premiers usages. Un système techniquement parfait qui n'est pas adopté est un système inutile. La transmission n'est pas une option — c'est une étape.</p>
+        <h4>Ce qu'on transmet</h4>
+        <ul>
+          <li>Session de prise en main avec les utilisateurs</li>
+          <li>Documentation claire et utilisable</li>
+          <li>Tutoriels ou guides selon la complexité</li>
+          <li>Période de suivi pour identifier les ajustements</li>
+        </ul>
+        <h4>Le livrable</h4>
+        <p>Des utilisateurs autonomes et un système qui tourne sans moi.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXEMPLES -->
+<section class="exemples-section" id="exemples">
+  <p class="section-eyebrow reveal" style="color:var(--taupe);">Ce que ça donne en pratique</p>
+  <h2 class="exemples-title reveal reveal-delay-1">Trois systèmes,<br><em>trois organisations différentes.</em></h2>
+  <div class="exemples-grid">
+    <div class="exemple-card reveal">
+      <p class="exemple-profil">Consultante indépendante · Activité de services</p>
+      <h3 class="exemple-title">Système de pilotage commercial</h3>
+      <ul class="exemple-list">
+        <li>CRM Notion avec pipeline visuel et statuts</li>
+        <li>Relances automatiques via Make</li>
+        <li>Espace client unique par mission</li>
+        <li>Tableau de bord hebdomadaire automatisé</li>
+        <li>Assistant IA configuré avec ses offres</li>
+      </ul>
+      <p class="exemple-resultat">Résultat : vision complète de l'activité commerciale, zéro prospect oublié, 3h par semaine récupérées sur les tâches administratives.</p>
+    </div>
+    <div class="exemple-card reveal reveal-delay-1">
+      <p class="exemple-profil">PME de 12 personnes · Secteur événementiel</p>
+      <h3 class="exemple-title">Espace de gestion d'événements</h3>
+      <ul class="exemple-list">
+        <li>Architecture Notion avec 7 bases reliées</li>
+        <li>Automatisation de 30 tâches à la confirmation</li>
+        <li>Espace collaboratif accessible à toute l'équipe</li>
+        <li>Documentation des processus internes</li>
+        <li>Suivi des livrables par client</li>
+      </ul>
+      <p class="exemple-resultat">Résultat : adoption à 100% par une équipe qui avait abandonné l'ancien outil. Information centralisée, coordination simplifiée.</p>
+    </div>
+    <div class="exemple-card reveal reveal-delay-2">
+      <p class="exemple-profil">Organisme de formation · 25 collaborateurs</p>
+      <h3 class="exemple-title">Cadre IA et base de connaissances</h3>
+      <ul class="exemple-list">
+        <li>Cartographie des usages IA existants</li>
+        <li>Règles communes d'utilisation formalisées</li>
+        <li>Base de connaissances interrogeable par l'IA</li>
+        <li>Formation des équipes aux nouveaux usages</li>
+        <li>Feuille de route des cas d'usage prioritaires</li>
+      </ul>
+      <p class="exemple-resultat">Résultat : usages IA cadrés, données protégées, équipes formées. Score de satisfaction formation : 97/100.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BSD VS GESTION DES OUTILS -->
+<section class="vs-section" id="vs-outils">
+  <p class="section-eyebrow reveal">Positionnement</p>
+  <h2 class="section-title reveal reveal-delay-1">Business Systems Design<br><em>versus gestion des outils.</em></h2>
+  <p class="body-text reveal">Le Business Systems Design n'est pas une autre façon de parler de Notion, de Make ou d'IA. Ce sont des composants. La discipline est la couche au-dessus.</p>
+  <div class="vs-grid">
+    <div class="vs-col reveal">
+      <p class="vs-col-label">Gestion des outils</p>
+      <h3 class="vs-col-title">Choisir et configurer les outils</h3>
+      <ul class="vs-list">
+        <li>Part de l'outil disponible</li>
+        <li>S'adapte aux contraintes de l'outil</li>
+        <li>Résout un problème local</li>
+        <li>Produit un outil configuré</li>
+        <li>Dépend de l'expert qui l'a construit</li>
+        <li>Difficile à faire évoluer</li>
+      </ul>
+    </div>
+    <div class="vs-col dark reveal reveal-delay-1">
+      <p class="vs-col-label">Business Systems Design</p>
+      <h3 class="vs-col-title">Concevoir l'architecture, choisir les outils ensuite</h3>
+      <ul class="vs-list">
+        <li>Part du fonctionnement réel</li>
+        <li>Choisit les outils en fonction du besoin</li>
+        <li>Résout un problème de fond</li>
+        <li>Produit un système documenté et transmis</li>
+        <li>Utilisable par les personnes concernées</li>
+        <li>Conçu pour évoluer</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <p class="section-eyebrow reveal">Questions fréquentes</p>
+  <h2 class="section-title reveal reveal-delay-1">Ce qu'on me demande<br><em>le plus souvent.</em></h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-question">Qu'est-ce que le Business Systems Design ?<span class="faq-icon">+</span></div>
+      <div class="faq-answer">Le Business Systems Design est la discipline qui consiste à concevoir des systèmes de travail reliant les décisions, les informations, les processus, les outils et l'IA dans une architecture cohérente. L'objectif est de permettre à une organisation de fonctionner avec clarté, autonomie et maîtrise — sans dépendre d'une seule personne ni d'un empilement d'outils.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Quelle est la différence entre BSD et gestion de projet ?<span class="faq-icon">+</span></div>
+      <div class="faq-answer">La gestion de projet organise l'exécution d'une tâche limitée dans le temps. Le Business Systems Design conçoit l'architecture durable qui permet à une organisation de fonctionner sans dépendre d'une seule personne. Un projet se termine. Un système reste et évolue.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Le Business Systems Design s'applique-t-il aux petites structures ?<span class="faq-icon">+</span></div>
+      <div class="faq-answer">C'est même là qu'il est le plus utile. Une solopreneuse qui gère tout dans sa tête est aussi exposée qu'une PME mal organisée. La différence, c'est l'échelle — pas le principe. Un système bien conçu donne à une personne seule la clarté et l'efficacité d'une équipe structurée.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Faut-il avoir Notion pour bénéficier du Business Systems Design ?<span class="faq-icon">+</span></div>
+      <div class="faq-answer">Non. Notion est l'un des outils que j'utilise, pas le seul. La discipline part du besoin et choisit les outils ensuite. Selon le profil et les contraintes, le système peut reposer sur Notion, Airtable, Google Workspace, un CRM existant — ou une combinaison.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Comment commencer ?<span class="faq-icon">+</span></div>
+      <div class="faq-answer">Par un diagnostic. Avant de construire quoi que ce soit, il faut comprendre ce qui se passe réellement dans l'organisation. C'est l'objet du Diagnostic Système (pour les entrepreneurs) et du Diagnostic IA et processus (pour les PME). Ces diagnostics permettent de définir le périmètre exact avant d'investir dans une implémentation.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Quelle est votre position sur l'IA dans un système de travail ?<span class="faq-icon">+</span></div>
+      <div class="faq-answer">L'IA est un composant — pas une solution. Elle produit des résultats durables seulement si elle est intégrée à un processus clair, avec des données fiables et un contrôle humain défini. Ajouter de l'IA à un processus flou ne fait qu'automatiser le chaos. Le Business Systems Design structure d'abord, intègre l'IA ensuite.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <p class="cta-eyebrow reveal">Flow Studio</p>
+  <h2 class="cta-title reveal reveal-delay-1">
+    Business Systems Design<br>
+    <em>& Implementation.</em>
+  </h2>
+  <p class="cta-subtitle reveal reveal-delay-2">Je conçois et implémente des systèmes de travail pour les entrepreneures, les petites équipes et les PME. Diagnostic, architecture, implémentation, transmission.</p>
+  <a href="https://calendar.app.google/YQL39LLfw5zoFn2v7" target="_blank" class="cta-btn reveal">Réserver un appel découverte</a>
+</section>
+
+<div class="bloom-footer-bar">
+  <p>Tu préfères construire ton système ? <a href="https://bloomandbuild.fr" target="_blank">Découvre Bloom & Build</a> &nbsp;·&nbsp; Besoin de former ton équipe ? <a href="https://fuzzy-formation.fr/" target="_blank">Découvre Fuzzy Formation</a></p>
+</div>
+
+<footer>
+  <div>
+    <div class="footer-logo">Flow Studio</div>
+    <div class="footer-tagline">Business Systems Design & Implementation</div>
+    <div class="footer-keywords">Notion · IA · Automatisations · Systèmes de travail</div>
+  </div>
+  <div class="footer-links">
+    <a href="/entrepreneurs">Entrepreneurs</a>
+    <a href="/pme">PME</a>
+    <a href="/realisations">Réalisations</a>
+    <a href="/solen-ouahioune">À propos</a>
+    <a href="/contact">Contact</a>
+    <a href="/mentions-legales">Mentions légales</a>
+    <a href="/mentions-legales#politique-confidentialite">Politique de confidentialité</a>
+  </div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.07 });
+  reveals.forEach(r => observer.observe(r));
+  setTimeout(() => { document.querySelectorAll('.page-hero .reveal').forEach(r => r.classList.add('visible')); }, 80);
+  function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+  window.addEventListener('scroll', () => { document.getElementById('mobileMenu').classList.remove('open'); });
+  document.querySelectorAll('.faq-question').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+</script>
+</body>
+</html>
