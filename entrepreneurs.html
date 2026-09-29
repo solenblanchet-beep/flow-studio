@@ -263,77 +263,47 @@
     footer { padding: 1.8rem 1.2rem; }
   }
 
+  
   /* ============================
-     DARK MODE
+     DARK MODE (data-theme only)
      ============================ */
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --noir: #F0EDE8;
-      --beige: #1E1C1A;
-      --blanc: #141210;
-      --taupe: #8A8278;
-    }
-    body { background: #141210; color: #F0EDE8; }
-    nav { background: rgba(20,18,16,0.95); border-bottom-color: rgba(138,130,120,0.2); }
-    .mobile-menu { background: #141210; }
-    .dropdown-menu { background: #141210; }
-  }
   :root[data-theme="dark"] {
     --noir: #F0EDE8;
     --beige: #1E1C1A;
     --blanc: #141210;
     --taupe: #8A8278;
   }
-  [data-theme="dark"] body, body[data-theme="dark"] { background: #141210; color: #F0EDE8; }
-  [data-theme="dark"] nav { background: rgba(20,18,16,0.95); border-bottom-color: rgba(138,130,120,0.2); }
+  [data-theme="dark"] body { background: #141210; color: #F0EDE8; }
+  [data-theme="dark"] nav { background: rgba(20,18,16,0.95) !important; border-bottom-color: rgba(138,130,120,0.2); }
   [data-theme="dark"] .mobile-menu { background: #141210; }
+  [data-theme="dark"] .hero-right { background: #1E1C1A; }
+  [data-theme="dark"] .pourqui-section, [data-theme="dark"] .faq-section,
+  [data-theme="dark"] .bloom-footer-bar, [data-theme="dark"] .definition-section,
+  [data-theme="dark"] .composants-section, [data-theme="dark"] .cas-section,
+  [data-theme="dark"] .approche-section, [data-theme="dark"] .dimensions-section,
+  [data-theme="dark"] .catalogue-section, [data-theme="dark"] .real-section,
+  [data-theme="dark"] .related, [data-theme="dark"] .activites-section,
+  [data-theme="dark"] .valeurs-section, [data-theme="dark"] .livrables-section,
+  [data-theme="dark"] .preuve-section { background: #1E1C1A; }
+  [data-theme="dark"] .systeme-card, [data-theme="dark"] .offre-card,
+  [data-theme="dark"] .process-step, [data-theme="dark"] .methode-step,
+  [data-theme="dark"] .pillar, [data-theme="dark"] .usage-col,
+  [data-theme="dark"] .catalogue-col, [data-theme="dark"] .choisir-card,
+  [data-theme="dark"] .article-header, [data-theme="dark"] .hero-benefit,
+  [data-theme="dark"] .incarnation-block, [data-theme="dark"] .diag-bandeau,
+  [data-theme="dark"] .pourqui-temoignage, [data-theme="dark"] .cas-quote-block { background: #1A1816; }
+  [data-theme="dark"] .hero-benefit:hover { background: rgba(138,130,120,0.15); }
+  [data-theme="dark"] footer { background: #141210; border-top-color: rgba(138,130,120,0.2); }
+  [data-theme="dark"] .maillage-interne, [data-theme="dark"] .maillage-seo,
+  [data-theme="dark"] .maillage-about, [data-theme="dark"] .maillage-pme { background: #1E1C1A; border-top-color: rgba(138,130,120,0.2); }
+  [data-theme="dark"] .pme-callout { border-color: rgba(138,130,120,0.3); }
+  [data-theme="dark"] .toc { border-color: rgba(138,130,120,0.3); }
+  [data-theme="dark"] .toc li a { border-top-color: rgba(138,130,120,0.2); }
+  [data-theme="dark"] .toc li a:hover { background: #1E1C1A; }
+  [data-theme="dark"] .article-body p, [data-theme="dark"] .article-body li { color: #A8A09A; }
+  [data-theme="dark"] .article-body a { color: #F0EDE8; }
 
-  /* Hardcoded colors that need override */
-  @media (prefers-color-scheme: dark) {
-    .hero-right { background: #1E1C1A; }
-    .pourqui-section, .faq-section, .livrables-section, .bloom-footer-bar,
-    .definition-section, .composants-section, .cas-section,
-    .approche-section, .dimensions-section, .catalogue-section,
-    .real-section, .related, .pourqui-card { background: #1E1C1A; }
-    .pourqui-card.dark, .questions-block { background: #0A0908; }
-    .systeme-card, .offre-card, .process-step, .faq-section,
-    .article-header, .article-body, .choisir-card, .methode-step,
-    .pillar, .usage-col, .catalogue-col { background: #1A1816; }
-    .offre-card.featured, .parcours-card, .niveau-card, .geo-block,
-    .exemple-card, .preuve-score-card, .livrable-item,
-    .niveaux-section, .exemples-section, .cta-section { background: #0A0908; }
-    footer { background: #141210; border-top-color: rgba(138,130,120,0.2); }
-    .hero-benefit { background: #1A1816; }
-    .hero-benefit:hover { background: rgba(138,130,120,0.15); }
-    .observation-item { background: rgba(255,255,255,0.03); }
-    .parcours-grid, .niveaux-grid, .livrables-par-niveau,
-    .dimensions-grid, .catalogue-grid, .choisir-grid,
-    .articles-grid, .pourquoi-grid, .composants-grid,
-    .exemples-grid, .real-grid, .vs-grid { background: rgba(255,255,255,0.04); }
-    .story-section { background: #141210; }
-    .activites-section, .valeurs-section { background: #1E1C1A; }
-    .incarnation-block { background: #1A1816; }
-    .maillage-interne, .maillage-seo, .maillage-about,
-    .maillage-pme, .maillage-about { background: #1E1C1A; }
-    .pme-callout { border-color: rgba(138,130,120,0.3); }
-    .diag-bandeau, .pourqui-temoignage, .cas-quote-block,
-    .preuve-section { background: #1A1816; }
-    .toc { border-color: rgba(138,130,120,0.3); }
-    .toc li a { border-top-color: rgba(138,130,120,0.2); }
-    .toc li a:hover { background: #1E1C1A; }
-    .certif-section, section[style*="background:var(--beige)"] { background: #1E1C1A; }
-    /* Fix hardcoded text colors */
-    .body-text, .page-intro, .story-text, .hero-subtitle,
-    .activite-text, .valeur-text, .pourquoi-text { color: #A8A09A; }
-    .section-eyebrow::before { background: #8A8278; }
-    a { color: inherit; }
-    .article-body p, .article-body li { color: #A8A09A; }
-    .article-body a { color: #F0EDE8; border-bottom-color: rgba(138,130,120,0.4); }
-  }
-  :root[data-theme="dark"] .hero-right { background: #1E1C1A; }
-  :root[data-theme="dark"] footer { background: #141210; }
-
-  /* TOGGLE BUTTON */
+  /* TOGGLE */
   .theme-toggle { position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 200; width: 44px; height: 44px; border-radius: 50%; background: var(--noir); color: var(--blanc); border: 1px solid rgba(181,173,165,0.3); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1rem; transition: all 0.3s; box-shadow: 0 2px 12px rgba(0,0,0,0.15); }
   .theme-toggle:hover { transform: scale(1.08); }
 
@@ -864,25 +834,28 @@
     });
   });
 </script>
+
+
 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Basculer le thème" id="themeToggle">🌙</button>
 <script>
-  // Dark mode toggle
+  // Dark mode — data-theme only, OS preference as default, toggle persists
   (function() {
-    const saved = localStorage.getItem('theme');
+    const saved = localStorage.getItem('fs-theme');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const isDark = saved === 'dark' || (!saved && prefersDark);
-    if (isDark) {
-      document.documentElement.setAttribute('data-theme', 'dark');
-    }
+    const theme = saved || (prefersDark ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', theme);
+    if (!saved) localStorage.setItem('fs-theme', theme);
   })();
+
   function toggleTheme() {
-    const current = document.documentElement.getAttribute('data-theme');
+    const current = document.documentElement.getAttribute('data-theme') || 'light';
     const next = current === 'dark' ? 'light' : 'dark';
     document.documentElement.setAttribute('data-theme', next);
-    localStorage.setItem('theme', next);
-    document.getElementById('themeToggle').textContent = next === 'dark' ? '☀' : '🌙';
+    localStorage.setItem('fs-theme', next);
+    const btn = document.getElementById('themeToggle');
+    if (btn) btn.textContent = next === 'dark' ? '☀' : '🌙';
   }
-  // Set initial icon
+
   document.addEventListener('DOMContentLoaded', function() {
     const btn = document.getElementById('themeToggle');
     if (btn) {
