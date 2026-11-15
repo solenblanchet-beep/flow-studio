@@ -322,6 +322,48 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; j
 .usage-list li { font-size: 0.78rem; color: #524E4A; line-height: 1.6; padding-left: 1rem; position: relative; }
 .usage-list li::before { content: '—'; position: absolute; left: 0; color: var(--taupe); }
 
+/* JOURNÉE */
+.journee-section { padding: 7rem 6rem; background: var(--noir); color: var(--blanc); }
+.journee-header { max-width: 42rem; margin-bottom: 5rem; }
+.journee-header .section-eyebrow { color: var(--taupe); }
+.journee-header .section-title { color: var(--blanc); }
+.journee-header .section-title em { color: var(--taupe); }
+.journee-header p { font-size: 0.82rem; font-weight: 300; color: rgba(247,245,242,0.55); line-height: 1.8; margin-top: 1.5rem; }
+.journee-scene { display: grid; grid-template-columns: 1fr 1.6fr; gap: 4rem; align-items: start; }
+/* Colonne gauche : contexte */
+.journee-context { }
+.journee-timestamp { font-size: 0.6rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1.5rem; }
+.journee-who { font-family: var(--font-display); font-size: 1.5rem; color: var(--blanc); line-height: 1.35; margin-bottom: 1rem; }
+.journee-situation { font-size: 0.8rem; font-weight: 300; color: rgba(247,245,242,0.55); line-height: 1.8; margin-bottom: 2.5rem; }
+.journee-vocal { background: rgba(247,245,242,0.05); border-left: 2px solid var(--taupe); padding: 1.4rem 1.6rem; }
+.journee-vocal-label { font-size: 0.58rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--taupe); margin-bottom: 0.8rem; }
+.journee-vocal-text { font-family: var(--font-display); font-size: 0.88rem; font-style: italic; color: rgba(247,245,242,0.75); line-height: 1.7; }
+/* Colonne droite : réponse système */
+.journee-system { display: flex; flex-direction: column; gap: 1.2rem; }
+.journee-system-label { font-size: 0.58rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--taupe); margin-bottom: 0.4rem; }
+.journee-tasks { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: rgba(247,245,242,0.08); }
+.journee-task { background: rgba(15,15,15,0.6); padding: 1.2rem 1.3rem; }
+.journee-task-title { font-size: 0.72rem; font-weight: 400; color: rgba(247,245,242,0.8); margin-bottom: 0.4rem; }
+.journee-task-desc { font-size: 0.7rem; font-weight: 300; color: rgba(247,245,242,0.4); line-height: 1.6; }
+.journee-response { background: rgba(247,245,242,0.05); padding: 1.6rem 1.8rem; border: 1px solid rgba(181,173,165,0.15); }
+.journee-response-label { font-size: 0.58rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1rem; }
+.journee-response-text { font-size: 0.8rem; font-weight: 300; color: rgba(247,245,242,0.65); line-height: 1.8; }
+.journee-response-text strong { color: rgba(247,245,242,0.9); font-weight: 400; }
+.journee-actions { display: flex; gap: 2px; margin-top: 1.2rem; }
+.journee-action { background: rgba(247,245,242,0.08); padding: 0.65rem 1rem; font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(247,245,242,0.5); flex: 1; text-align: center; }
+.journee-note { margin-top: 4rem; padding-top: 2.5rem; border-top: 1px solid rgba(181,173,165,0.15); }
+.journee-note p { font-size: 0.72rem; color: rgba(247,245,242,0.3); line-height: 1.8; max-width: 56rem; }
+.journee-note strong { color: rgba(247,245,242,0.5); font-weight: 400; }
+/* responsive */
+@media (max-width: 900px) {
+  .journee-scene { grid-template-columns: 1fr; gap: 2.5rem; }
+  .journee-section { padding: 4rem 1.5rem; }
+  .journee-header { margin-bottom: 3rem; }
+}
+/* dark override — section déjà sombre, forcer */
+[data-theme="dark"] .journee-section { background: #0A0908; }
+[data-theme="dark"] .journee-task { background: rgba(10,9,8,0.6); }
+
 /* COMPARAISON ARCHITECTURES */
 .archi-compare { margin-top: 3rem; padding-top: 2.5rem; border-top: 1px solid rgba(181,173,165,0.3); }
 .archi-compare-label { font-size: 0.6rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1.5rem; }
@@ -892,6 +934,73 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
         <li>Réduction du temps consacré aux tâches répétitives à faible valeur ajoutée</li>
       </ul>
     </div>
+  </div>
+</section>
+
+<!-- UNE JOURNÉE -->
+<section class="journee-section">
+  <div class="journee-header">
+    <p class="section-eyebrow">En pratique</p>
+    <h2 class="section-title">Une journée avec<br><em>Flow Private AI.</em></h2>
+    <p>Voici comment un commercial d'une PME de 30 personnes travaille avec un système IA privé connecté à son CRM, à son catalogue et à ses stocks. Ce n'est pas une démonstration parfaite — c'est ce que rend possible une infrastructure correctement configurée.</p>
+  </div>
+
+  <div class="journee-scene">
+
+    <!-- Contexte gauche -->
+    <div class="journee-context">
+      <p class="journee-timestamp">16 h 15 · Sortie de rendez-vous</p>
+      <h3 class="journee-who">Le commercial sort<br>de chez un client.</h3>
+      <p class="journee-situation">Il ouvre l'assistant vocal de l'entreprise sur son téléphone. Il n'a pas besoin de remplir le CRM à la main ni d'attendre d'être de retour au bureau.</p>
+      <div class="journee-vocal">
+        <p class="journee-vocal-label">Note vocale</p>
+        <p class="journee-vocal-text">« Je sors de chez Atelier Martin. Ils veulent 40 pompes référence P-120 pour la fin du mois. J'ai proposé une remise de 5 %. Il faut leur envoyer un devis aujourd'hui et les relancer vendredi. »</p>
+      </div>
+    </div>
+
+    <!-- Réponse système droite -->
+    <div class="journee-system">
+
+      <div>
+        <p class="journee-system-label">L'IA interprète la demande et consulte les systèmes autorisés</p>
+        <div class="journee-tasks">
+          <div class="journee-task">
+            <p class="journee-task-title">Compte rendu</p>
+            <p class="journee-task-desc">Transcrit la note, identifie le client et prépare la mise à jour de l'opportunité CRM</p>
+          </div>
+          <div class="journee-task">
+            <p class="journee-task-title">Stocks</p>
+            <p class="journee-task-desc">Consulte l'ERP et vérifie les quantités disponibles ainsi que les délais connus</p>
+          </div>
+          <div class="journee-task">
+            <p class="journee-task-title">Devis</p>
+            <p class="journee-task-desc">Prépare le document à partir des tarifs et conditions commerciales autorisés</p>
+          </div>
+          <div class="journee-task">
+            <p class="journee-task-title">Suivi commercial</p>
+            <p class="journee-task-desc">Prépare la tâche de relance et renseigne les prochaines étapes</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="journee-response">
+        <p class="journee-response-label">Réponse de l'assistant</p>
+        <p class="journee-response-text">
+          J'ai préparé ton compte rendu et identifié l'opportunité Atelier Martin.<br><br>
+          <strong>Le stock disponible est de 32 unités sur les 40 demandées.</strong> J'ai signalé les 8 unités manquantes et préparé un devis en brouillon. La remise de 5 % nécessite une validation.<br><br>
+          La relance de vendredi est prête. Tu peux vérifier les informations avant de les enregistrer.
+        </p>
+        <div class="journee-actions">
+          <div class="journee-action">CRM à confirmer</div>
+          <div class="journee-action">Devis à valider</div>
+        </div>
+      </div>
+
+    </div><!-- /journee-system -->
+  </div><!-- /journee-scene -->
+
+  <div class="journee-note">
+    <p>L'IA ne prend pas de décision à la place du commercial. Elle prépare, signale et soumet à validation. <strong>La remise, le devis, la mise à jour CRM restent sous contrôle humain</strong> — c'est ce qui les rend utilisables dans un contexte professionnel réel. Ce scénario est une direction de travail : il est conçu et testé lors du diagnostic, avant tout déploiement.</p>
   </div>
 </section>
 
