@@ -145,30 +145,45 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; j
 .sim-section { background: var(--beige); padding: 7rem 6rem; }
 .sim-intro { max-width: 700px; margin-bottom: 4rem; }
 .sim-intro p { font-size: 0.85rem; color: #524E4A; line-height: 1.9; margin-top: 1.2rem; }
+/* layout principal : colonnes gauche/droite */
 .sim-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
-.sim-controls { background: var(--blanc); padding: 2.8rem 2.5rem; }
+/* panneau gauche : étapes */
+.sim-steps { display: flex; flex-direction: column; gap: 2px; }
+.sim-step-block { background: var(--blanc); }
+.sim-step-header { padding: 1.6rem 2.2rem; display: flex; align-items: center; gap: 1.2rem; cursor: pointer; user-select: none; }
+.sim-step-num { font-family: var(--font-display); font-size: 1.5rem; color: rgba(181,173,165,0.5); line-height: 1; min-width: 1.6rem; }
+.sim-step-title { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--noir); flex: 1; }
+.sim-step-status { font-size: 0.62rem; color: var(--taupe); letter-spacing: 0.1em; }
+.sim-step-body { display: none; padding: 0 2.2rem 2.2rem; border-top: 1px solid rgba(181,173,165,0.2); padding-top: 1.8rem; }
+.sim-step-block.active .sim-step-body { display: block; }
+.sim-step-block.active .sim-step-num { color: var(--noir); }
+.sim-step-block.done .sim-step-num { color: #8aab8a; }
+/* contrôles internes */
 .sim-control { margin-bottom: 2rem; }
 .sim-control:last-child { margin-bottom: 0; }
 .sim-label { font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--taupe); display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.9rem; }
 .sim-label span { font-family: var(--font-display); font-size: 1rem; letter-spacing: 0; text-transform: none; color: var(--noir); }
+.sim-label-hint { font-size: 0.65rem; color: var(--taupe); line-height: 1.5; margin-bottom: 0.9rem; font-style: italic; letter-spacing: 0; text-transform: none; }
 .sim-range { -webkit-appearance: none; appearance: none; width: 100%; height: 1px; background: rgba(181,173,165,0.5); outline: none; cursor: pointer; }
 .sim-range::-webkit-slider-thumb { -webkit-appearance: none; width: 14px; height: 14px; background: var(--noir); border-radius: 50%; cursor: pointer; }
 .sim-range::-moz-range-thumb { width: 14px; height: 14px; background: var(--noir); border-radius: 50%; cursor: pointer; border: none; }
 .sim-ticks { display: flex; justify-content: space-between; margin-top: 0.4rem; }
 .sim-tick { font-size: 0.6rem; color: var(--taupe); }
-.sim-divider { margin: 2rem 0; border: none; border-top: 1px solid rgba(181,173,165,0.3); }
-.sim-advanced-toggle { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--taupe); cursor: pointer; display: flex; align-items: center; gap: 0.6rem; background: none; border: none; padding: 0; font-family: var(--font-body); }
-.sim-advanced-toggle .toggle-arrow { transition: transform 0.3s; display: inline-block; }
-.sim-advanced-toggle.open .toggle-arrow { transform: rotate(90deg); }
-.sim-advanced { display: none; margin-top: 1.5rem; }
-.sim-advanced.open { display: block; }
-.sim-advanced-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-.sim-input-group { display: flex; flex-direction: column; gap: 0.4rem; }
+.sim-divider { margin: 1.8rem 0; border: none; border-top: 1px solid rgba(181,173,165,0.3); }
+.sim-input-group { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1rem; }
 .sim-input-label { font-size: 0.58rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--taupe); }
 .sim-input { border: 1px solid rgba(181,173,165,0.5); background: var(--blanc); color: var(--noir); padding: 0.5rem 0.7rem; font-family: var(--font-body); font-size: 0.8rem; width: 100%; outline: none; }
 .sim-input:focus { border-color: var(--taupe); }
-.sim-results { position: sticky; top: 100px; }
-.sim-verdict { background: var(--noir); padding: 2.5rem; margin-bottom: 2px; }
+.sim-next-btn { margin-top: 1.8rem; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; background: var(--noir); color: var(--blanc); border: none; padding: 0.9rem 1.8rem; cursor: pointer; font-family: var(--font-body); transition: opacity 0.2s; }
+.sim-next-btn:hover { opacity: 0.8; }
+/* panneau budget détail (step 1) */
+.sim-budget-summary { background: var(--beige); padding: 1.2rem 1.5rem; margin-top: 1.5rem; }
+.sim-budget-line { display: flex; justify-content: space-between; font-size: 0.72rem; padding: 0.3rem 0; color: #524E4A; }
+.sim-budget-line.total { border-top: 1px solid rgba(181,173,165,0.4); margin-top: 0.4rem; padding-top: 0.6rem; font-family: var(--font-display); font-size: 0.95rem; color: var(--noir); }
+.sim-budget-line.replaceable { color: #8aab8a; }
+/* panneau droite : résultats */
+.sim-results { position: sticky; top: 100px; display: flex; flex-direction: column; gap: 2px; }
+.sim-verdict { background: var(--noir); padding: 2.5rem; }
 .sim-verdict-label { font-size: 0.58rem; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 1.5rem; }
 .sim-verdict-row { display: flex; justify-content: space-between; align-items: baseline; padding: 0.6rem 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
 .sim-verdict-row:last-of-type { border-bottom: none; }
@@ -177,7 +192,8 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; j
 .sim-verdict-val.highlight { color: #fff; font-size: 1.6rem; }
 .sim-verdict-val.red { color: #d4786e; }
 .sim-verdict-val.green { color: #8aab8a; }
-.sim-conclusion { background: var(--blanc); padding: 1.5rem 2rem; font-size: 0.78rem; line-height: 1.7; color: #524E4A; margin-bottom: 2px; min-height: 60px; }
+.sim-verdict-placeholder { font-size: 0.72rem; color: rgba(255,255,255,0.3); font-style: italic; line-height: 1.7; }
+.sim-conclusion { background: var(--blanc); padding: 1.5rem 2rem; font-size: 0.78rem; line-height: 1.7; color: #524E4A; min-height: 60px; }
 .sim-conclusion strong { color: var(--noir); }
 .sim-chart-wrap { background: var(--blanc); padding: 1.8rem 2rem; }
 .sim-chart-label { font-size: 0.58rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1rem; }
@@ -185,25 +201,55 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; j
 .sim-chart-legend { display: flex; gap: 1.5rem; margin-top: 0.8rem; }
 .sim-chart-legend-item { display: flex; align-items: center; gap: 0.4rem; font-size: 0.62rem; color: var(--taupe); }
 .sim-chart-legend-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
-.sim-cta-block { background: var(--blanc); padding: 2rem; border-top: 2px solid var(--beige); margin-top: 0; }
-.sim-cta-question { font-family: var(--font-display); font-size: 0.95rem; margin-bottom: 0.6rem; line-height: 1.4; }
-.sim-cta-sub { font-size: 0.72rem; color: #524E4A; line-height: 1.6; margin-bottom: 1.2rem; }
-.sim-cta-link { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--noir); text-decoration: none; border-bottom: 1px solid var(--taupe); padding-bottom: 1px; transition: color 0.3s; }
-.sim-cta-link:hover { color: var(--taupe); }
+/* scénarios */
+.sim-scenarios { background: var(--blanc); padding: 1.8rem 2rem; }
+.sim-scenarios-label { font-size: 0.58rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1.2rem; }
+.sim-scenarios-tabs { display: flex; gap: 2px; margin-bottom: 1.2rem; }
+.sim-scenario-tab { font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.5rem 1rem; background: var(--beige); color: var(--taupe); border: none; cursor: pointer; font-family: var(--font-body); transition: all 0.2s; }
+.sim-scenario-tab.active { background: var(--noir); color: var(--blanc); }
+.sim-scenario-content { font-size: 0.75rem; color: #524E4A; line-height: 1.7; }
+.sim-scenario-content strong { color: var(--noir); }
+/* note double comptage */
+.sim-double-note { background: var(--blanc); padding: 1.2rem 2rem; border-left: 2px solid rgba(181,173,165,0.5); }
+.sim-double-note p { font-size: 0.68rem; color: var(--taupe); line-height: 1.7; font-style: italic; }
+/* CTA */
+.sim-cta-block { background: var(--noir); padding: 2.2rem 2rem; }
+.sim-cta-question { font-family: var(--font-display); font-size: 1rem; margin-bottom: 0.6rem; line-height: 1.4; color: var(--blanc); }
+.sim-cta-sub { font-size: 0.72rem; color: rgba(255,255,255,0.55); line-height: 1.6; margin-bottom: 1.5rem; }
+.sim-cta-form { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.2rem; }
+.sim-cta-input { border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.05); color: var(--blanc); padding: 0.7rem 0.9rem; font-family: var(--font-body); font-size: 0.8rem; outline: none; }
+.sim-cta-input::placeholder { color: rgba(255,255,255,0.3); }
+.sim-cta-input:focus { border-color: rgba(255,255,255,0.3); }
+.sim-cta-btn { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; background: var(--blanc); color: var(--noir); border: none; padding: 1rem 1.8rem; cursor: pointer; font-family: var(--font-body); transition: opacity 0.2s; }
+.sim-cta-btn:hover { opacity: 0.85; }
+.sim-cta-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.sim-cta-sent { font-size: 0.75rem; color: rgba(255,255,255,0.7); line-height: 1.7; display: none; }
 .sim-note { margin-top: 1.5rem; font-size: 0.7rem; color: #8A857F; line-height: 1.7; font-style: italic; }
-[data-theme="dark"] .sim-controls { background: #1E1C1A; }
+/* dark mode */
+[data-theme="dark"] .sim-step-block { background: #1E1C1A; }
 [data-theme="dark"] .sim-verdict { background: #0A0908; }
 [data-theme="dark"] .sim-conclusion { background: #1E1C1A; color: rgba(240,237,232,0.6); }
 [data-theme="dark"] .sim-conclusion strong { color: #F0EDE8; }
 [data-theme="dark"] .sim-chart-wrap { background: #1E1C1A; }
-[data-theme="dark"] .sim-cta-block { background: #1E1C1A; border-top-color: #0A0908; }
-[data-theme="dark"] .sim-cta-question { color: #F0EDE8; }
-[data-theme="dark"] .sim-cta-sub { color: rgba(240,237,232,0.5); }
-[data-theme="dark"] .sim-cta-link { color: #F0EDE8; }
+[data-theme="dark"] .sim-scenarios { background: #1E1C1A; }
+[data-theme="dark"] .sim-scenarios-label { color: rgba(240,237,232,0.4); }
+[data-theme="dark"] .sim-scenario-tab { background: #0A0908; color: rgba(240,237,232,0.4); }
+[data-theme="dark"] .sim-scenario-tab.active { background: #F0EDE8; color: #0F0F0F; }
+[data-theme="dark"] .sim-scenario-content { color: rgba(240,237,232,0.6); }
+[data-theme="dark"] .sim-scenario-content strong { color: #F0EDE8; }
+[data-theme="dark"] .sim-double-note { background: #1E1C1A; }
+[data-theme="dark"] .sim-double-note p { color: rgba(240,237,232,0.4); }
 [data-theme="dark"] .sim-input { background: #2A2825; border-color: rgba(138,130,120,0.4); color: #F0EDE8; }
 [data-theme="dark"] .sim-range { background: rgba(138,130,120,0.4); }
 [data-theme="dark"] .sim-range::-webkit-slider-thumb { background: #F0EDE8; }
 [data-theme="dark"] .sim-range::-moz-range-thumb { background: #F0EDE8; }
+[data-theme="dark"] .sim-budget-summary { background: #0A0908; }
+[data-theme="dark"] .sim-budget-line { color: rgba(240,237,232,0.5); }
+[data-theme="dark"] .sim-budget-line.total { color: #F0EDE8; }
+[data-theme="dark"] .sim-next-btn { background: #F0EDE8; color: #0F0F0F; }
+[data-theme="dark"] .sim-step-title { color: #F0EDE8; }
+[data-theme="dark"] .sim-cta-block { background: #0A0908; }
+[data-theme="dark"] .sim-cta-question { color: #F0EDE8; }
 
 /* ARGUMENTS */
 .arguments-section { padding: 7rem 6rem; }
@@ -316,7 +362,10 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
   .sim-section { padding: 4rem 1.5rem; }
   .sim-layout { grid-template-columns: 1fr; }
   .sim-results { position: static; }
-  .sim-advanced-grid { grid-template-columns: 1fr; }
+  .sim-step-header { padding: 1.2rem 1.4rem; }
+  .sim-step-body { padding: 0 1.4rem 1.6rem; padding-top: 1.4rem; }
+  .sim-scenarios-tabs { flex-wrap: wrap; }
+  .sim-cta-block { padding: 1.8rem 1.4rem; }
   .arguments-section { padding: 4rem 1.5rem; }
   .inclus-section { padding: 4rem 1.5rem; }
   .inclus-header { grid-template-columns: 1fr; gap: 1.5rem; }
@@ -468,105 +517,190 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
 <section class="sim-section" id="roi">
   <div class="sim-intro">
     <p class="section-eyebrow">Simulateur de rentabilité</p>
-    <h2 class="section-title">À partir de quand une IA privée<br>devient <em>économiquement intéressante ?</em></h2>
-    <p>Renseignez vos paramètres réels. Les résultats s'actualisent en temps réel. Cette simulation peut aussi conclure que l'IA locale n'est pas rentable pour votre organisation — c'est précisément ce qui la rend utile.</p>
+    <h2 class="section-title">Et si votre IA devenait<br>un véritable levier de <em>rentabilité ?</em></h2>
+    <p>Réduire les dépenses, donner accès à l'IA à davantage de collaborateurs, améliorer les performances des équipes : estimez le potentiel économique d'un système IA privé pour votre entreprise. Cette simulation peut aussi conclure que l'IA locale n'est pas pertinente — c'est précisément ce qui la rend utile.</p>
   </div>
 
   <div class="sim-layout">
-    <!-- CONTRÔLES -->
-    <div class="sim-controls">
-      <div class="sim-control">
-        <div class="sim-label">Collaborateurs équipés en IA <span id="lbl-users">30</span></div>
-        <input type="range" class="sim-range" id="rng-users" min="5" max="100" step="5" value="30" oninput="simUpdate()">
-        <div class="sim-ticks"><span class="sim-tick">5</span><span class="sim-tick">25</span><span class="sim-tick">50</span><span class="sim-tick">75</span><span class="sim-tick">100</span></div>
-      </div>
-      <div class="sim-control">
-        <div class="sim-label">Coût cloud par collaborateur / mois <span id="lbl-cloud">50 €</span></div>
-        <input type="range" class="sim-range" id="rng-cloud" min="10" max="150" step="5" value="50" oninput="simUpdate()">
-        <div class="sim-ticks"><span class="sim-tick">10 €</span><span class="sim-tick">40 €</span><span class="sim-tick">80 €</span><span class="sim-tick">120 €</span><span class="sim-tick">150 €</span></div>
-      </div>
-      <div class="sim-control">
-        <div class="sim-label">Durée de comparaison <span id="lbl-months">36 mois</span></div>
-        <input type="range" class="sim-range" id="rng-months" min="12" max="60" step="6" value="36" oninput="simUpdate()">
-        <div class="sim-ticks"><span class="sim-tick">12 m</span><span class="sim-tick">24 m</span><span class="sim-tick">36 m</span><span class="sim-tick">48 m</span><span class="sim-tick">60 m</span></div>
-      </div>
+    <!-- ÉTAPES GAUCHE -->
+    <div class="sim-steps">
 
-      <hr class="sim-divider">
-
-      <button class="sim-advanced-toggle" id="advToggle" onclick="toggleAdvanced()">
-        <span class="toggle-arrow">›</span> Affiner mon estimation
-      </button>
-      <div class="sim-advanced" id="advPanel">
-        <div class="sim-advanced-grid">
+      <!-- ÉTAPE 1 : DÉPENSES IA -->
+      <div class="sim-step-block active" id="step1">
+        <div class="sim-step-header" onclick="simToggleStep(1)">
+          <span class="sim-step-num">01</span>
+          <span class="sim-step-title">Vos dépenses IA</span>
+          <span class="sim-step-status" id="step1-status">En cours</span>
+        </div>
+        <div class="sim-step-body">
+          <div class="sim-control">
+            <div class="sim-label">Effectif total <span id="lbl-total">30</span></div>
+            <input type="range" class="sim-range" id="rng-total" min="5" max="200" step="5" value="30" oninput="simUpdate()">
+            <div class="sim-ticks"><span class="sim-tick">5</span><span class="sim-tick">50</span><span class="sim-tick">100</span><span class="sim-tick">150</span><span class="sim-tick">200</span></div>
+          </div>
+          <div class="sim-control">
+            <div class="sim-label">Collaborateurs équipés en IA <span id="lbl-equipped">8</span></div>
+            <input type="range" class="sim-range" id="rng-equipped" min="1" max="200" step="1" value="8" oninput="simUpdate()">
+            <div class="sim-ticks"><span class="sim-tick">1</span><span class="sim-tick">50</span><span class="sim-tick">100</span><span class="sim-tick">150</span><span class="sim-tick">200</span></div>
+          </div>
+          <div class="sim-control">
+            <div class="sim-label">Abonnement IA / collab / mois <span id="lbl-sub">30 €</span></div>
+            <input type="range" class="sim-range" id="rng-sub" min="10" max="100" step="5" value="30" oninput="simUpdate()">
+            <div class="sim-ticks"><span class="sim-tick">10 €</span><span class="sim-tick">30 €</span><span class="sim-tick">60 €</span><span class="sim-tick">80 €</span><span class="sim-tick">100 €</span></div>
+          </div>
+          <hr class="sim-divider">
+          <p class="sim-label-hint">Séparez les outils que vous conserveriez même avec une IA privée (CRM, Notion…) de ceux qui seraient remplaçables.</p>
           <div class="sim-input-group">
-            <label class="sim-input-label">Matériel (€ HT)</label>
-            <input type="number" class="sim-input" id="inp-hardware" value="7000" oninput="simUpdate()">
+            <label class="sim-input-label">Outils métiers conservés / mois (€ HT)</label>
+            <input type="number" class="sim-input" id="inp-kept" value="400" oninput="simUpdate()" placeholder="ex : 400">
           </div>
           <div class="sim-input-group">
-            <label class="sim-input-label">Déploiement Flow Studio (€ HT)</label>
-            <input type="number" class="sim-input" id="inp-deploy" value="12000" oninput="simUpdate()">
+            <label class="sim-input-label">API tokens / mois (€ HT)</label>
+            <input type="number" class="sim-input" id="inp-tokens" value="200" oninput="simUpdate()" placeholder="ex : 200">
           </div>
           <div class="sim-input-group">
-            <label class="sim-input-label">Support mensuel (€ HT)</label>
-            <input type="number" class="sim-input" id="inp-support" value="590" oninput="simUpdate()">
+            <label class="sim-input-label">Durée de comparaison</label>
+            <select class="sim-input" id="sel-months" onchange="simUpdate()">
+              <option value="36" selected>3 ans</option>
+              <option value="60">5 ans</option>
+            </select>
           </div>
-          <div class="sim-input-group">
-            <label class="sim-input-label">Énergie / mois (€ HT)</label>
-            <input type="number" class="sim-input" id="inp-energy" value="50" oninput="simUpdate()">
-          </div>
-          <div class="sim-input-group">
-            <label class="sim-input-label">% licences conservées</label>
-            <input type="number" class="sim-input" id="inp-licenses" value="20" min="0" max="100" oninput="simUpdate()">
-          </div>
-          <div class="sim-input-group">
-            <label class="sim-input-label">API cloud mensuelle (€)</label>
-            <input type="number" class="sim-input" id="inp-api" value="300" oninput="simUpdate()">
+          <div class="sim-budget-summary" id="budget-summary">
+            <div class="sim-budget-line"><span>Licences IA actuelles</span><span id="b-licenses">240 €/mois</span></div>
+            <div class="sim-budget-line replaceable"><span>→ Remplaçables avec IA privée</span><span id="b-replaceable">440 €/mois</span></div>
+            <div class="sim-budget-line"><span>Outils conservés</span><span id="b-kept">400 €/mois</span></div>
+            <div class="sim-budget-line total"><span>Total actuel</span><span id="b-total">840 €/mois</span></div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- RÉSULTATS -->
+      <!-- ÉTAPE 2 : PRODUCTIVITÉ (verrouillée au départ) -->
+      <div class="sim-step-block" id="step2">
+        <div class="sim-step-header" onclick="simUnlockStep(2)">
+          <span class="sim-step-num">02</span>
+          <span class="sim-step-title">Votre productivité</span>
+          <span class="sim-step-status" id="step2-status">Calculer aussi mes gains →</span>
+        </div>
+        <div class="sim-step-body">
+          <p class="sim-label-hint">Estimez le temps que l'IA pourrait libérer dans vos équipes. Nous appliquons une hypothèse de réalisation de 75 % — tout le temps libéré ne se transforme pas automatiquement en valeur.</p>
+          <div class="sim-control">
+            <div class="sim-label">Collaborateurs concernés <span id="lbl-prod-users">10</span></div>
+            <input type="range" class="sim-range" id="rng-prod-users" min="1" max="100" step="1" value="10" oninput="simUpdate()">
+            <div class="sim-ticks"><span class="sim-tick">1</span><span class="sim-tick">25</span><span class="sim-tick">50</span><span class="sim-tick">75</span><span class="sim-tick">100</span></div>
+          </div>
+          <div class="sim-control">
+            <div class="sim-label">Temps gagné / personne / semaine <span id="lbl-time">2 h</span></div>
+            <input type="range" class="sim-range" id="rng-time" min="0.5" max="10" step="0.5" value="2" oninput="simUpdate()">
+            <div class="sim-ticks"><span class="sim-tick">0,5 h</span><span class="sim-tick">2,5 h</span><span class="sim-tick">5 h</span><span class="sim-tick">7,5 h</span><span class="sim-tick">10 h</span></div>
+          </div>
+          <div class="sim-input-group">
+            <label class="sim-input-label">Coût horaire chargé moyen (€)</label>
+            <input type="number" class="sim-input" id="inp-hourly" value="45" oninput="simUpdate()" placeholder="ex : 45">
+          </div>
+        </div>
+      </div>
+
+      <!-- ÉTAPE 3 : CROISSANCE (verrouillée au départ) -->
+      <div class="sim-step-block" id="step3">
+        <div class="sim-step-header" onclick="simUnlockStep(3)">
+          <span class="sim-step-num">03</span>
+          <span class="sim-step-title">Votre croissance</span>
+          <span class="sim-step-status" id="step3-status">Calculer mon potentiel commercial →</span>
+        </div>
+        <div class="sim-step-body">
+          <p class="sim-label-hint">Si l'IA améliore votre prospection, vos propositions et votre suivi commercial, combien de nouvelles opportunités pourriez-vous générer ?</p>
+          <div class="sim-input-group">
+            <label class="sim-input-label">Nouvelles opportunités qualifiées / mois</label>
+            <input type="number" class="sim-input" id="inp-opps" value="10" oninput="simUpdate()" placeholder="ex : 10">
+          </div>
+          <div class="sim-input-group">
+            <label class="sim-input-label">Taux de transformation (%)</label>
+            <input type="number" class="sim-input" id="inp-conv" value="20" min="1" max="100" oninput="simUpdate()" placeholder="ex : 20">
+          </div>
+          <div class="sim-input-group">
+            <label class="sim-input-label">CA moyen par vente (€)</label>
+            <input type="number" class="sim-input" id="inp-deal" value="3000" oninput="simUpdate()" placeholder="ex : 3 000">
+          </div>
+          <div class="sim-input-group">
+            <label class="sim-input-label">Taux de marge contributive (%)</label>
+            <input type="number" class="sim-input" id="inp-margin" value="35" min="1" max="100" oninput="simUpdate()" placeholder="ex : 35">
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /sim-steps -->
+
+    <!-- RÉSULTATS DROITE -->
     <div class="sim-results">
+
+      <!-- Panel consolidé -->
       <div class="sim-verdict">
-        <div class="sim-verdict-label">Résultats de votre simulation</div>
+        <div class="sim-verdict-label">Résultats consolidés</div>
         <div class="sim-verdict-row">
-          <span class="sim-verdict-name">Coût cloud total</span>
-          <span class="sim-verdict-val" id="res-cloud">64 800 €</span>
+          <span class="sim-verdict-name">Coût total possession (<span id="res-period-label">3 ans</span>)</span>
+          <span class="sim-verdict-val" id="res-tco">—</span>
         </div>
         <div class="sim-verdict-row">
-          <span class="sim-verdict-name">Coût infrastructure privée</span>
-          <span class="sim-verdict-val" id="res-private">52 840 €</span>
+          <span class="sim-verdict-name">Économies réalisables</span>
+          <span class="sim-verdict-val green" id="res-savings">—</span>
         </div>
-        <div class="sim-verdict-row">
-          <span class="sim-verdict-name">Différence</span>
-          <span class="sim-verdict-val highlight" id="res-diff">− 11 960 €</span>
+        <div class="sim-verdict-row" id="row-prod" style="display:none">
+          <span class="sim-verdict-name">Capacité de travail libérée / an</span>
+          <span class="sim-verdict-val" id="res-capacity">—</span>
         </div>
-        <div class="sim-verdict-row">
-          <span class="sim-verdict-name">Point de rentabilité</span>
-          <span class="sim-verdict-val" id="res-breakeven">mois 23</span>
+        <div class="sim-verdict-row" id="row-net" style="display:none">
+          <span class="sim-verdict-name">Bénéfice économique net potentiel</span>
+          <span class="sim-verdict-val highlight green" id="res-net">—</span>
         </div>
       </div>
-      <div class="sim-conclusion" id="res-conclusion">
-        <strong>L'infrastructure privée est plus économique sur cette période.</strong> L'investissement initial est compensé vers le mois 23. Plus les usages s'intensifient, plus l'avantage augmente.
-      </div>
+
+      <!-- Courbe des dépenses -->
       <div class="sim-chart-wrap">
         <div class="sim-chart-label">Dépenses cumulées sur la période</div>
         <canvas class="sim-chart-canvas" id="simChart" width="400" height="160"></canvas>
         <div class="sim-chart-legend">
-          <div class="sim-chart-legend-item"><div class="sim-chart-legend-dot" style="background:#B5ADA5"></div>Cloud</div>
+          <div class="sim-chart-legend-item"><div class="sim-chart-legend-dot" style="background:#B5ADA5"></div>Cloud actuel</div>
           <div class="sim-chart-legend-item"><div class="sim-chart-legend-dot" style="background:#0F0F0F"></div>Flow Private AI</div>
         </div>
       </div>
-      <div class="sim-cta-block">
-        <p class="sim-cta-question">Votre organisation pourrait-elle réellement économiser ?</p>
-        <p class="sim-cta-sub">Cette simulation ne tient pas compte de tous vos usages, contraintes techniques et besoins de performance. Flow Studio peut réaliser une étude de faisabilité et de rentabilité personnalisée.</p>
-        <a href="https://calendar.app.google/YQL39LLfw5zoFn2v7" class="sim-cta-link" target="_blank" rel="noopener">Demander une étude personnalisée →</a>
-      </div>
-    </div>
-  </div>
 
-  <p class="sim-note">Simulation indicative, non contractuelle. Montants en euros HT. Hors redondance, cybersécurité supplémentaire, renouvellement anticipé du matériel et fiscalité. La capacité de calcul doit être validée par des tests de charge selon les usages réels.</p>
+      <!-- Scénarios croissance (visible seulement si step3 débloqué) -->
+      <div class="sim-scenarios" id="growth-scenarios" style="display:none">
+        <div class="sim-scenarios-label">Scénario de croissance commerciale</div>
+        <div class="sim-scenarios-tabs">
+          <button class="sim-scenario-tab" onclick="simSetScenario('prudent',this)">Prudent</button>
+          <button class="sim-scenario-tab active" onclick="simSetScenario('central',this)">Central</button>
+          <button class="sim-scenario-tab" onclick="simSetScenario('ambitieux',this)">Ambitieux</button>
+        </div>
+        <div class="sim-scenario-content" id="scenario-text">
+          <strong>Scénario central (75 % des hypothèses)</strong><br>
+          CA additionnel / an : <span id="sc-ca">—</span><br>
+          Marge contributive additionnelle : <span id="sc-marge">—</span>
+        </div>
+      </div>
+
+      <!-- Note double comptage -->
+      <div class="sim-double-note" id="double-note" style="display:none">
+        <p>Note méthodologique : si le temps libéré par vos équipes est précisément ce qui génère les nouvelles opportunités commerciales, les leviers 2 et 3 se chevauchent partiellement. Ne les additionnez pas mécaniquement — retenez celui qui représente le mieux votre réalité.</p>
+      </div>
+
+      <!-- CTA -->
+      <div class="sim-cta-block">
+        <p class="sim-cta-question">Réserver mon appel découverte Flow Studio</p>
+        <p class="sim-cta-sub">Vérifiez vos hypothèses avec un expert. Cette simulation reste indicative — un diagnostic personnalisé affine les chiffres et identifie les vrais leviers pour votre organisation.</p>
+        <div class="sim-cta-form">
+          <input type="text" class="sim-cta-input" id="cta-name" placeholder="Votre prénom et nom">
+          <input type="email" class="sim-cta-input" id="cta-email" placeholder="Votre email professionnel">
+          <input type="text" class="sim-cta-input" id="cta-company" placeholder="Votre entreprise (optionnel)">
+        </div>
+        <button class="sim-cta-btn" id="cta-submit" onclick="simSubmitCRM()">Réserver mon appel découverte →</button>
+        <p class="sim-cta-sent" id="cta-sent">Votre demande a bien été transmise. Nous vous contacterons sous 24 heures pour confirmer le créneau.</p>
+      </div>
+
+    </div><!-- /sim-results -->
+  </div><!-- /sim-layout -->
+
+  <p class="sim-note">Simulation indicative, non contractuelle. Montants en euros HT. Infrastructure privée estimée à 7 000 € de matériel + 12 000 € de déploiement Flow Studio + 640 €/mois de fonctionnement. Les économies réalisables correspondent aux seules dépenses remplaçables, pas au total de vos dépenses actuelles. La capacité de calcul doit être validée par des tests de charge selon les usages réels.</p>
 </section>
 
 <!-- ARGUMENTS -->
@@ -910,79 +1044,172 @@ function fmt(n) {
   return Math.round(n).toLocaleString('fr-FR') + ' €';
 }
 
+/* ---- SIMULATEUR v2 ---- */
+
+var SIM = {
+  step2Unlocked: false,
+  step3Unlocked: false,
+  currentScenario: 'central'  // prudent | central | ambitieux
+};
+
+function simToggleStep(n) {
+  var block = document.getElementById('step' + n);
+  if (!block) return;
+  var isActive = block.classList.contains('active');
+  block.classList.toggle('active', !isActive);
+}
+
+function simUnlockStep(n) {
+  var block = document.getElementById('step' + n);
+  if (!block) return;
+  if (n === 2) SIM.step2Unlocked = true;
+  if (n === 3) SIM.step3Unlocked = true;
+  block.classList.add('active', 'done');
+  var status = document.getElementById('step' + n + '-status');
+  if (status) status.textContent = 'En cours';
+  simUpdate();
+}
+
+function simSetScenario(name, btn) {
+  SIM.currentScenario = name;
+  document.querySelectorAll('.sim-scenario-tab').forEach(function(b) {
+    b.classList.remove('active');
+  });
+  if (btn) btn.classList.add('active');
+  simUpdate();
+}
+
+// Infrastructure privée : coûts fixes estimés
+var INFRA = { hw: 7000, deploy: 12000, supportMonthly: 590, energyMonthly: 50 };
+
 function simCalc() {
-  var users   = parseInt(document.getElementById('rng-users').value)   || 30;
-  var cloud   = parseInt(document.getElementById('rng-cloud').value)   || 50;
-  var months  = parseInt(document.getElementById('rng-months').value)  || 36;
-  var hw      = parseInt(document.getElementById('inp-hardware').value) || 7000;
-  var deploy  = parseInt(document.getElementById('inp-deploy').value)  || 12000;
-  var support = parseInt(document.getElementById('inp-support').value) || 590;
-  var energy  = parseInt(document.getElementById('inp-energy').value)  || 50;
-  var licPct  = parseInt(document.getElementById('inp-licenses').value)|| 20;
-  var api     = parseInt(document.getElementById('inp-api').value)     || 300;
+  // === STEP 1 : DÉPENSES ===
+  var total      = parseInt(document.getElementById('rng-total').value) || 30;
+  var equipped   = parseInt(document.getElementById('rng-equipped').value) || 8;
+  var subPerUser = parseFloat(document.getElementById('rng-sub').value) || 30;
+  var kept       = parseFloat(document.getElementById('inp-kept').value) || 400;
+  var tokens     = parseFloat(document.getElementById('inp-tokens').value) || 200;
+  var months     = parseInt(document.getElementById('sel-months').value) || 36;
 
-  var cloudMonthly  = users * cloud + api;
-  var cloudTotal    = cloudMonthly * months;
+  // Licences IA actuelles (remplaçables)
+  var licensesMonthly   = equipped * subPerUser;
+  // Tokens aussi remplaçables
+  var replaceableMonthly = licensesMonthly + tokens;
+  // Total actuel
+  var currentMonthly    = replaceableMonthly + kept;
 
-  var privateMonthly = support + energy + (users * cloud * licPct / 100);
-  var privateFixed   = hw + deploy;
-  var privateTotal   = privateFixed + privateMonthly * months;
+  // Infrastructure privée
+  var privateFixed   = INFRA.hw + INFRA.deploy;
+  var privateMonthly = INFRA.supportMonthly + INFRA.energyMonthly + kept; // kept reste
+  var privateTCO     = privateFixed + privateMonthly * months;
 
-  var diff = cloudTotal - privateTotal;
+  // Dépenses cloud sur la période (ce qui serait dépensé sans changement)
+  var cloudTotal     = currentMonthly * months;
 
-  // Break-even: month where private cumulative < cloud cumulative
+  // Économies réalisables = seulement les dépenses remplaçables
+  var savingsTotal   = replaceableMonthly * months - (privateFixed + (INFRA.supportMonthly + INFRA.energyMonthly) * months);
+
+  // Break-even
   var breakEven = null;
   for (var m = 1; m <= months; m++) {
-    var cCum = cloudMonthly * m;
+    var cCum = currentMonthly * m;
     var pCum = privateFixed + privateMonthly * m;
     if (pCum <= cCum) { breakEven = m; break; }
   }
 
-  return { users, cloud, months, cloudMonthly, cloudTotal,
-           privateMonthly, privateFixed, privateTotal, diff, breakEven };
+  // === STEP 2 : PRODUCTIVITÉ ===
+  var prodResult = null;
+  if (SIM.step2Unlocked) {
+    var prodUsers  = parseInt(document.getElementById('rng-prod-users').value) || 10;
+    var timePerWk  = parseFloat(document.getElementById('rng-time').value) || 2;
+    var hourly     = parseFloat(document.getElementById('inp-hourly').value) || 45;
+    var adoption   = 0.75;
+    var hoursPerMonth   = prodUsers * timePerWk * 4.33;
+    var capacityPerYear = hoursPerMonth * 12 * hourly * adoption;
+    prodResult = { prodUsers, timePerWk, hourly, hoursPerMonth, capacityPerYear };
+  }
+
+  // === STEP 3 : CROISSANCE ===
+  var growthResult = null;
+  if (SIM.step3Unlocked) {
+    var opps   = parseFloat(document.getElementById('inp-opps').value) || 10;
+    var conv   = parseFloat(document.getElementById('inp-conv').value) / 100 || 0.20;
+    var deal   = parseFloat(document.getElementById('inp-deal').value) || 3000;
+    var margin = parseFloat(document.getElementById('inp-margin').value) / 100 || 0.35;
+    var coef = SIM.currentScenario === 'prudent' ? 0.5 : (SIM.currentScenario === 'ambitieux' ? 1.0 : 0.75);
+    var caAddAn    = opps * conv * deal * 12 * coef;
+    var margeAddAn = caAddAn * margin;
+    growthResult = { opps, conv, deal, margin, coef, caAddAn, margeAddAn };
+  }
+
+  // === BÉNÉFICE NET ===
+  var netBenefit = null;
+  if (prodResult || growthResult) {
+    var prodVal = prodResult ? prodResult.capacityPerYear : 0;
+    var growthVal = growthResult ? growthResult.margeAddAn : 0;
+    netBenefit = Math.max(prodVal, growthVal) + (prodResult && growthResult ? Math.min(prodVal, growthVal) * 0.5 : 0);
+  }
+
+  return {
+    total, equipped, subPerUser, kept, tokens, months,
+    licensesMonthly, replaceableMonthly, currentMonthly,
+    privateFixed, privateMonthly, privateTCO,
+    cloudTotal, savingsTotal, breakEven,
+    prodResult, growthResult, netBenefit
+  };
 }
 
 function simUpdate() {
-  var d = document.getElementById('rng-users').value;
-  document.getElementById('lbl-users').textContent = d;
-  document.getElementById('lbl-cloud').textContent = document.getElementById('rng-cloud').value + ' €';
-  document.getElementById('lbl-months').textContent = document.getElementById('rng-months').value + ' mois';
+  // Sync labels step1
+  document.getElementById('lbl-total').textContent     = document.getElementById('rng-total').value;
+  document.getElementById('lbl-equipped').textContent  = document.getElementById('rng-equipped').value;
+  document.getElementById('lbl-sub').textContent       = document.getElementById('rng-sub').value + ' €';
+  // Sync labels step2
+  if (SIM.step2Unlocked) {
+    document.getElementById('lbl-prod-users').textContent = document.getElementById('rng-prod-users').value;
+    var t = parseFloat(document.getElementById('rng-time').value);
+    document.getElementById('lbl-time').textContent = t % 1 === 0 ? t + ' h' : t.toFixed(1) + ' h';
+  }
 
   var r = simCalc();
+  var months = r.months;
 
-  document.getElementById('res-cloud').textContent   = fmt(r.cloudTotal);
-  document.getElementById('res-private').textContent = fmt(r.privateTotal);
+  // Budget summary (step1)
+  document.getElementById('b-licenses').textContent   = fmt(r.licensesMonthly) + '/mois';
+  document.getElementById('b-replaceable').textContent= fmt(r.replaceableMonthly) + '/mois';
+  document.getElementById('b-kept').textContent       = fmt(r.kept) + '/mois';
+  document.getElementById('b-total').textContent      = fmt(r.currentMonthly) + '/mois';
 
-  var diffEl = document.getElementById('res-diff');
-  if (r.diff > 0) {
-    diffEl.textContent = '− ' + fmt(r.diff).replace(' €','') + ' €';
-    diffEl.className = 'sim-verdict-val highlight green';
-  } else if (r.diff < 0) {
-    diffEl.textContent = '+ ' + fmt(Math.abs(r.diff)).replace(' €','') + ' €';
-    diffEl.className = 'sim-verdict-val highlight red';
-  } else {
-    diffEl.textContent = 'Équivalent';
-    diffEl.className = 'sim-verdict-val highlight';
+  // Résultats consolidés
+  document.getElementById('res-period-label').textContent = months === 60 ? '5 ans' : '3 ans';
+  document.getElementById('res-tco').textContent   = fmt(r.privateTCO);
+  document.getElementById('res-savings').textContent = r.savingsTotal > 0 ? fmt(r.savingsTotal) : '—';
+  document.getElementById('res-savings').className = r.savingsTotal > 0 ? 'sim-verdict-val green' : 'sim-verdict-val';
+
+  // Productivité
+  if (SIM.step2Unlocked && r.prodResult) {
+    document.getElementById('row-prod').style.display = '';
+    document.getElementById('res-capacity').textContent = fmt(r.prodResult.capacityPerYear) + '/an';
   }
 
-  var beEl = document.getElementById('res-breakeven');
-  if (r.breakEven) {
-    beEl.textContent = 'mois ' + r.breakEven;
-  } else {
-    beEl.textContent = 'Non atteint';
+  // Bénéfice net
+  if (r.netBenefit !== null) {
+    document.getElementById('row-net').style.display = '';
+    document.getElementById('res-net').textContent = fmt(r.netBenefit) + '/an';
   }
 
-  // Conclusion textuelle
-  var concEl = document.getElementById('res-conclusion');
-  if (r.diff > 0 && r.breakEven) {
-    concEl.innerHTML = '<strong>L\'infrastructure privée est plus économique sur cette période.</strong> L\'investissement initial est compensé vers le mois ' + r.breakEven + '. Avec ' + r.users + ' collaborateurs, l\'écart s\'accentue à mesure que les usages augmentent.';
-  } else if (r.diff > 0 && !r.breakEven) {
-    concEl.innerHTML = '<strong>L\'infrastructure privée reste moins chère sur cette période</strong>, mais le point de rentabilité n\'est pas encore atteint dans le délai sélectionné. Essayez une durée plus longue.';
-  } else if (r.diff < 0) {
-    var gap = fmt(Math.abs(r.diff));
-    concEl.innerHTML = '<strong>Pour cette configuration, le cloud reste moins coûteux de ' + gap + '.</strong> En dessous d\'un certain volume d\'usages, les abonnements individuels sont plus adaptés. Une étude de faisabilité peut identifier le seuil réel pour votre organisation.';
-  } else {
-    concEl.innerHTML = '<strong>Coût équivalent sur cette période.</strong> D\'autres critères — confidentialité, personnalisation, indépendance — peuvent justifier l\'infrastructure privée même à parité.';
+  // Scénarios croissance
+  if (SIM.step3Unlocked && r.growthResult) {
+    document.getElementById('growth-scenarios').style.display = '';
+    document.getElementById('double-note').style.display = SIM.step2Unlocked ? '' : 'none';
+    var sc = r.growthResult;
+    var label = SIM.currentScenario === 'prudent' ? 'Scénario prudent (50 % des hypothèses)' :
+                SIM.currentScenario === 'ambitieux' ? 'Scénario ambitieux (100 % des hypothèses)' :
+                'Scénario central (75 % des hypothèses)';
+    document.getElementById('scenario-text').innerHTML =
+      '<strong>' + label + '</strong><br>' +
+      'CA additionnel / an : <span id="sc-ca">' + fmt(sc.caAddAn) + '</span><br>' +
+      'Marge contributive additionnelle : <span id="sc-marge">' + fmt(sc.margeAddAn) + '</span>';
   }
 
   simDrawChart(r);
@@ -994,6 +1221,7 @@ function simDrawChart(r) {
   var ctx = canvas.getContext('2d');
   var dpr = window.devicePixelRatio || 1;
   var W = canvas.clientWidth, H = canvas.clientHeight;
+  if (!W || !H) return;
   canvas.width  = W * dpr;
   canvas.height = H * dpr;
   ctx.scale(dpr, dpr);
@@ -1005,16 +1233,16 @@ function simDrawChart(r) {
   var gridColor    = isDark ? 'rgba(240,237,232,0.08)' : 'rgba(0,0,0,0.06)';
   var beColor      = '#BA7F75';
 
-  // Build data points
   var pts = r.months;
   var cloudPts   = [];
   var privatePts = [];
   for (var m = 1; m <= pts; m++) {
-    cloudPts.push(r.cloudMonthly * m);
+    cloudPts.push(r.currentMonthly * m);
     privatePts.push(r.privateFixed + r.privateMonthly * m);
   }
 
   var maxVal = Math.max(cloudPts[pts-1], privatePts[pts-1]);
+  if (!maxVal) return;
   var pad = { top: 12, right: 12, bottom: 20, left: 48 };
   var cW = W - pad.left - pad.right;
   var cH = H - pad.top - pad.bottom;
@@ -1022,7 +1250,6 @@ function simDrawChart(r) {
   function xPos(m) { return pad.left + (m - 1) / (pts - 1) * cW; }
   function yPos(v) { return pad.top + cH - (v / maxVal) * cH; }
 
-  // Grid lines
   ctx.strokeStyle = gridColor;
   ctx.lineWidth = 1;
   [0.25, 0.5, 0.75, 1].forEach(function(f) {
@@ -1034,7 +1261,6 @@ function simDrawChart(r) {
     ctx.fillText(Math.round(maxVal * f / 1000) + 'k', pad.left - 4, y + 3);
   });
 
-  // Break-even marker
   if (r.breakEven && r.breakEven <= pts) {
     var bx = xPos(r.breakEven);
     ctx.strokeStyle = beColor;
@@ -1044,7 +1270,6 @@ function simDrawChart(r) {
     ctx.setLineDash([]);
   }
 
-  // Cloud line
   ctx.beginPath();
   ctx.strokeStyle = cloudColor;
   ctx.lineWidth = 1.5;
@@ -1054,7 +1279,6 @@ function simDrawChart(r) {
   });
   ctx.stroke();
 
-  // Private line
   ctx.beginPath();
   ctx.strokeStyle = privateColor;
   ctx.lineWidth = 1.5;
@@ -1064,7 +1288,6 @@ function simDrawChart(r) {
   });
   ctx.stroke();
 
-  // X-axis labels (start, mid, end)
   ctx.fillStyle = isDark ? 'rgba(240,237,232,0.3)' : 'rgba(0,0,0,0.3)';
   ctx.font = '9px Inter, sans-serif';
   ctx.textAlign = 'center';
@@ -1073,27 +1296,102 @@ function simDrawChart(r) {
   });
 }
 
-function toggleAdvanced() {
-  var panel  = document.getElementById('advPanel');
-  var toggle = document.getElementById('advToggle');
-  var isOpen = panel.classList.contains('open');
-  panel.classList.toggle('open', !isOpen);
-  toggle.classList.toggle('open', !isOpen);
+function simSubmitCRM() {
+  var name    = (document.getElementById('cta-name').value || '').trim();
+  var email   = (document.getElementById('cta-email').value || '').trim();
+  var company = (document.getElementById('cta-company').value || '').trim();
+
+  if (!name || !email) {
+    document.getElementById('cta-name').style.borderColor   = name  ? '' : '#d4786e';
+    document.getElementById('cta-email').style.borderColor  = email ? '' : '#d4786e';
+    return;
+  }
+
+  var btn = document.getElementById('cta-submit');
+  btn.disabled = true;
+  btn.textContent = 'Envoi en cours…';
+
+  var r = simCalc();
+  var months = r.months;
+
+  var notes = [
+    '=== Simulation Flow Private AI — ' + new Date().toLocaleDateString('fr-FR') + ' ===',
+    '',
+    '— DÉPENSES IA —',
+    'Effectif total : ' + r.total,
+    'Collaborateurs équipés : ' + r.equipped,
+    'Abonnement IA / collab / mois : ' + r.subPerUser + ' €',
+    'Licences actuelles / mois : ' + Math.round(r.licensesMonthly) + ' €',
+    'Outils conservés / mois : ' + Math.round(r.kept) + ' €',
+    'Tokens API / mois : ' + Math.round(r.tokens) + ' €',
+    'Total actuel / mois : ' + Math.round(r.currentMonthly) + ' €',
+    'Dépenses remplaçables / mois : ' + Math.round(r.replaceableMonthly) + ' €',
+    'Durée de comparaison : ' + months + ' mois',
+    'TCO infrastructure privée : ' + Math.round(r.privateTCO) + ' €',
+    'Économies réalisables : ' + Math.round(r.savingsTotal) + ' €',
+  ];
+
+  if (r.prodResult) {
+    var p = r.prodResult;
+    notes.push('', '— PRODUCTIVITÉ —');
+    notes.push('Collaborateurs concernés : ' + p.prodUsers);
+    notes.push('Temps gagné / semaine / personne : ' + p.timePerWk + ' h');
+    notes.push('Coût horaire chargé : ' + p.hourly + ' €');
+    notes.push('Heures récupérées / mois : ' + Math.round(p.hoursPerMonth) + ' h');
+    notes.push('Capacité valorisée / an (75% adoption) : ' + Math.round(p.capacityPerYear) + ' €');
+  }
+
+  if (r.growthResult) {
+    var g = r.growthResult;
+    notes.push('', '— CROISSANCE —');
+    notes.push('Nouvelles opportunités / mois : ' + g.opps);
+    notes.push('Taux de transformation : ' + Math.round(g.conv * 100) + ' %');
+    notes.push('CA moyen / vente : ' + g.deal + ' €');
+    notes.push('Taux de marge : ' + Math.round(g.margin * 100) + ' %');
+    notes.push('Scénario : ' + SIM.currentScenario + ' (' + Math.round(g.coef*100) + '%)');
+    notes.push('CA additionnel / an : ' + Math.round(g.caAddAn) + ' €');
+    notes.push('Marge contributive additionnelle / an : ' + Math.round(g.margeAddAn) + ' €');
+  }
+
+  var priority = r.savingsTotal > 20000 ? 'P1 - Chaud (closer)' : 'P2 - Tiède (nurture)';
+
+  fetch('/.netlify/functions/notion-prospect', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      name: name,
+      email: email,
+      company: company,
+      budget: Math.round(r.privateTCO),
+      priority: priority,
+      notes: notes.join('\n')
+    })
+  })
+  .then(function(res) { return res.json(); })
+  .then(function(data) {
+    document.getElementById('cta-submit').style.display = 'none';
+    document.getElementById('cta-sent').style.display = 'block';
+  })
+  .catch(function(err) {
+    console.error('CRM error:', err);
+    btn.disabled = false;
+    btn.textContent = 'Réserver mon appel découverte →';
+    alert('Une erreur est survenue. Contactez-nous directement : studio@flow-studio.app');
+  });
 }
 
 // Redraw chart on theme change
-var _origToggleTheme = typeof toggleTheme === 'function' ? toggleTheme : null;
 (function() {
   var origToggle = window.toggleTheme;
   window.toggleTheme = function() {
     if (origToggle) origToggle();
-    setTimeout(function() { var r = simCalc(); simDrawChart(r); }, 50);
+    setTimeout(function() { simUpdate(); }, 50);
   };
 })();
 
 // Init on load
 window.addEventListener('load', function() { simUpdate(); });
-window.addEventListener('resize', function() { var r = simCalc(); simDrawChart(r); });
+window.addEventListener('resize', function() { simUpdate(); });
 </script>
 
 </body>
