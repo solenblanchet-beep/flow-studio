@@ -251,6 +251,45 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; j
 [data-theme="dark"] .sim-cta-block { background: #0A0908; }
 [data-theme="dark"] .sim-cta-question { color: #F0EDE8; }
 
+/* SYSTÈMES */
+.systemes-section { padding: 7rem 6rem; background: var(--beige); }
+.systemes-intro { max-width: 44rem; margin-bottom: 4rem; }
+.systemes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: rgba(181,173,165,0.3); }
+.systeme-card { background: var(--blanc); padding: 2.8rem 2.5rem; display: flex; flex-direction: column; gap: 1.2rem; }
+.systeme-num { font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--taupe); }
+.systeme-name { font-family: var(--font-display); font-size: 1.15rem; line-height: 1.35; }
+.systeme-desc { font-size: 0.8rem; font-weight: 300; color: #6B6560; line-height: 1.75; flex: 1; }
+.systeme-price-block { border-top: 1px solid rgba(181,173,165,0.4); padding-top: 1.4rem; margin-top: 0.4rem; }
+.systeme-price { font-family: var(--font-display); font-size: 1.9rem; }
+.systeme-price-label { font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--taupe); margin-top: 0.3rem; }
+.systeme-features { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1.2rem; }
+.systeme-features li { font-size: 0.75rem; font-weight: 300; color: #6B6560; line-height: 1.6; }
+.systeme-features li::before { content: '—'; color: var(--taupe); margin-right: 0.5rem; }
+.systemes-note { margin-top: 2rem; font-size: 0.72rem; color: #8A857F; font-style: italic; line-height: 1.7; }
+[data-theme="dark"] .systeme-card { background: #1E1C1A; }
+[data-theme="dark"] .systeme-desc,
+[data-theme="dark"] .systeme-features li { color: rgba(240,237,232,0.5); }
+[data-theme="dark"] .systemes-note { color: rgba(240,237,232,0.3); }
+/* Sélecteur prestation dans simulateur */
+.sim-prestation { margin-bottom: 1.8rem; padding-bottom: 1.8rem; border-bottom: 1px solid rgba(181,173,165,0.2); }
+.sim-prestation-label { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1rem; font-family: var(--font-body); }
+.sim-prestation-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; background: rgba(181,173,165,0.3); }
+.sim-prestation-opt { background: var(--blanc); padding: 1rem 1.1rem; cursor: pointer; border: none; text-align: left; font-family: var(--font-body); transition: background 0.2s; }
+.sim-prestation-opt:hover { background: rgba(181,173,165,0.1); }
+.sim-prestation-opt.active { background: var(--noir); }
+.sim-prestation-opt-name { font-size: 0.72rem; font-weight: 400; color: var(--noir); line-height: 1.4; }
+.sim-prestation-opt.active .sim-prestation-opt-name { color: var(--blanc); }
+.sim-prestation-opt-price { font-family: var(--font-display); font-size: 1.1rem; color: var(--noir); margin-top: 0.3rem; }
+.sim-prestation-opt.active .sim-prestation-opt-price { color: var(--blanc); }
+.sim-prestation-opt-note { font-size: 0.6rem; color: var(--taupe); margin-top: 0.2rem; letter-spacing: 0.05em; }
+.sim-prestation-opt.active .sim-prestation-opt-note { color: rgba(247,245,242,0.5); }
+.sim-prestation-custom { font-size: 0.72rem; color: #6B6560; margin-top: 0.8rem; line-height: 1.6; font-style: italic; }
+[data-theme="dark"] .sim-prestation-opt { background: #1E1C1A; }
+[data-theme="dark"] .sim-prestation-opt-name,
+[data-theme="dark"] .sim-prestation-opt-price { color: #F0EDE8; }
+[data-theme="dark"] .sim-prestation-opt.active { background: #F0EDE8; }
+[data-theme="dark"] .sim-prestation-opt.active .sim-prestation-opt-name,
+[data-theme="dark"] .sim-prestation-opt.active .sim-prestation-opt-price { color: #0F0F0F; }
 /* ARGUMENTS */
 .arguments-section { padding: 7rem 6rem; }
 .arguments-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; background: rgba(181,173,165,0.3); margin-top: 3.5rem; }
@@ -565,6 +604,34 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
               <option value="60">5 ans</option>
             </select>
           </div>
+          <hr class="sim-divider">
+          <!-- Sélecteur type de système / prestation -->
+          <div class="sim-prestation">
+            <p class="sim-prestation-label">Investissement initial — Quel type de système souhaitez-vous déployer ?</p>
+            <div class="sim-prestation-grid">
+              <button class="sim-prestation-opt" data-value="5000" onclick="simSelectPrestation(5000, this)">
+                <div class="sim-prestation-opt-name">Assistant documentaire</div>
+                <div class="sim-prestation-opt-price">5 000 €</div>
+                <div class="sim-prestation-opt-note">HT · déploiement</div>
+              </button>
+              <button class="sim-prestation-opt active" data-value="12000" onclick="simSelectPrestation(12000, this)">
+                <div class="sim-prestation-opt-name">Système commercial</div>
+                <div class="sim-prestation-opt-price">12 000 €</div>
+                <div class="sim-prestation-opt-note">HT · déploiement</div>
+              </button>
+              <button class="sim-prestation-opt" data-value="25000" onclick="simSelectPrestation(25000, this)">
+                <div class="sim-prestation-opt-name">Business System complet</div>
+                <div class="sim-prestation-opt-price">25 000 €</div>
+                <div class="sim-prestation-opt-note">HT · déploiement</div>
+              </button>
+              <button class="sim-prestation-opt" data-value="0" onclick="simSelectPrestation(0, this)">
+                <div class="sim-prestation-opt-name">Projet personnalisé</div>
+                <div class="sim-prestation-opt-price">Sur devis</div>
+                <div class="sim-prestation-opt-note">Diagnostic offert</div>
+              </button>
+            </div>
+            <p class="sim-prestation-custom" id="sim-prestation-msg">Hors matériel (~7 000 € estimés). Investissement total estimé : <strong id="sim-prestation-total">19 000 € HT</strong>.</p>
+          </div>
           <div class="sim-budget-summary" id="budget-summary">
             <div class="sim-budget-line"><span>Licences IA actuelles</span><span id="b-licenses">240 €/mois</span></div>
             <div class="sim-budget-line replaceable"><span>→ Remplaçables avec IA privée</span><span id="b-replaceable">440 €/mois</span></div>
@@ -700,7 +767,68 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
     </div><!-- /sim-results -->
   </div><!-- /sim-layout -->
 
-  <p class="sim-note">Simulation indicative, non contractuelle. Montants en euros HT. Infrastructure privée estimée à 7 000 € de matériel + 12 000 € de déploiement Flow Studio + 640 €/mois de fonctionnement. Les économies réalisables correspondent aux seules dépenses remplaçables, pas au total de vos dépenses actuelles. La capacité de calcul doit être validée par des tests de charge selon les usages réels.</p>
+  <p class="sim-note">Simulation indicative, non contractuelle. Montants en euros HT. Infrastructure matérielle estimée à 7 000 €, déploiement Flow Studio selon le type de système sélectionné. Fonctionnement : 640 €/mois. Les économies réalisables correspondent aux seules dépenses remplaçables, pas au total de vos dépenses actuelles. La capacité de calcul doit être validée par des tests de charge selon les usages réels.</p>
+</section>
+
+<!-- SYSTÈMES -->
+<section class="systemes-section">
+  <p class="section-eyebrow">Exemples de systèmes</p>
+  <div class="systemes-intro">
+    <h2 class="section-title">Chaque entreprise a son propre système.<br><em>Votre investissement aussi.</em></h2>
+    <p style="font-size:0.85rem;font-weight:300;color:#6B6560;line-height:1.8;margin-top:1.5rem;">Ces trois exemples donnent une idée de l'enveloppe d'un projet Flow Private AI selon sa portée. Chaque déploiement est dimensionné après diagnostic — les montants ci-dessous sont indicatifs.</p>
+  </div>
+  <div class="systemes-grid">
+
+    <div class="systeme-card">
+      <p class="systeme-num">Exemple 01</p>
+      <h3 class="systeme-name">Assistant de connaissances interne</h3>
+      <p class="systeme-desc">Un assistant IA capable de répondre à partir de vos documents internes : procédures, offres, notes, historique client. Il remplace une partie des recherches manuelles et réduit le temps de montée en compétence pour les nouvelles recrues.</p>
+      <ul class="systeme-features">
+        <li>Ingestion et indexation de vos bases documentaires</li>
+        <li>Interface de chat pour vos équipes</li>
+        <li>Sources citées, réponses traçables</li>
+        <li>Accès jusqu'à 10 collaborateurs simultanés</li>
+      </ul>
+      <div class="systeme-price-block">
+        <p class="systeme-price">5 000 €</p>
+        <p class="systeme-price-label">HT · hors matériel</p>
+      </div>
+    </div>
+
+    <div class="systeme-card">
+      <p class="systeme-num">Exemple 02</p>
+      <h3 class="systeme-name">Système commercial intelligent</h3>
+      <p class="systeme-desc">Un système IA connecté à votre CRM, capable de préparer des rendez-vous, qualifier des prospects, rédiger des propositions commerciales et générer des suivis de relance. Il s'intègre dans les outils de vos équipes de vente.</p>
+      <ul class="systeme-features">
+        <li>Connexion CRM (HubSpot, Notion, Pipedrive…)</li>
+        <li>Agents spécialisés par étape du cycle de vente</li>
+        <li>Génération automatique de compte-rendus et propositions</li>
+        <li>Accès jusqu'à 20 collaborateurs simultanés</li>
+      </ul>
+      <div class="systeme-price-block">
+        <p class="systeme-price">12 000 €</p>
+        <p class="systeme-price-label">HT · hors matériel</p>
+      </div>
+    </div>
+
+    <div class="systeme-card">
+      <p class="systeme-num">Exemple 03</p>
+      <h3 class="systeme-name">Business Operating System intelligent</h3>
+      <p class="systeme-desc">Une infrastructure IA déployée sur plusieurs fonctions de l'entreprise — commercial, opérations, RH, communication. Des agents métiers interconnectés, une base de connaissances partagée, des automatisations sur mesure.</p>
+      <ul class="systeme-features">
+        <li>Architecture multi-agents par département</li>
+        <li>Intégrations métier complexes (ERP, outils sectoriels…)</li>
+        <li>Base de connaissances centralisée et maintenue</li>
+        <li>Accès illimité · formation équipes incluse</li>
+      </ul>
+      <div class="systeme-price-block">
+        <p class="systeme-price">25 000 €</p>
+        <p class="systeme-price-label">HT · hors matériel</p>
+      </div>
+    </div>
+
+  </div>
+  <p class="systemes-note">Ces montants couvrent le déploiement Flow Studio uniquement (conception, intégration, configuration). Le matériel serveur est en sus, estimé entre 5 000 et 10 000 € selon la puissance requise. Pour un projet hors de ces trois cas, nous établissons un devis sur mesure.</p>
 </section>
 
 <!-- ARGUMENTS -->
@@ -1049,8 +1177,30 @@ function fmt(n) {
 var SIM = {
   step2Unlocked: false,
   step3Unlocked: false,
-  currentScenario: 'central'  // prudent | central | ambitieux
+  currentScenario: 'central',  // prudent | central | ambitieux
+  selectedPrestation: 12000    // 5000 | 12000 | 25000 | 0 (sur devis)
 };
+
+function simSelectPrestation(value, el) {
+  SIM.selectedPrestation = value;
+  // Reset all buttons
+  var btns = document.querySelectorAll('.sim-prestation-opt');
+  btns.forEach(function(b) { b.classList.remove('active'); });
+  el.classList.add('active');
+  // Update note
+  var msg = document.getElementById('sim-prestation-msg');
+  var tot = document.getElementById('sim-prestation-total');
+  if (msg && tot) {
+    if (value === 0) {
+      msg.textContent = 'Un devis sur mesure sera établi après diagnostic. Réservez un appel découverte pour l\'obtenir.';
+    } else {
+      var totalEst = 7000 + value;
+      tot.textContent = totalEst.toLocaleString('fr-FR') + ' € HT';
+      msg.innerHTML = 'Hors matériel (~7 000 € estimés). Investissement total estimé : <strong id="sim-prestation-total">' + totalEst.toLocaleString('fr-FR') + ' € HT</strong>.';
+    }
+  }
+  simUpdate();
+}
 
 function simToggleStep(n) {
   var block = document.getElementById('step' + n);
@@ -1080,7 +1230,8 @@ function simSetScenario(name, btn) {
 }
 
 // Infrastructure privée : coûts fixes estimés
-var INFRA = { hw: 7000, deploy: 12000, supportMonthly: 590, energyMonthly: 50 };
+var INFRA = { hw: 7000, supportMonthly: 590, energyMonthly: 50 };
+// deploy est déterminé par SIM.selectedPrestation (5000 | 12000 | 25000 | 0)
 
 function simCalc() {
   // === STEP 1 : DÉPENSES ===
@@ -1099,7 +1250,8 @@ function simCalc() {
   var currentMonthly    = replaceableMonthly + kept;
 
   // Infrastructure privée
-  var privateFixed   = INFRA.hw + INFRA.deploy;
+  var deploy         = SIM.selectedPrestation > 0 ? SIM.selectedPrestation : 12000; // 12k par défaut si "sur devis"
+  var privateFixed   = INFRA.hw + deploy;
   var privateMonthly = INFRA.supportMonthly + INFRA.energyMonthly + kept; // kept reste
   var privateTCO     = privateFixed + privateMonthly * months;
 
