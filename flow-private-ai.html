@@ -56,6 +56,13 @@
 [data-theme="dark"] .niveau-card.featured .niveau-cta:hover { background: #141210; color: #F0EDE8; }
 [data-theme="dark"] .pillar { background: #1E1C1A; }
 [data-theme="dark"] .usage-col { background: #1E1C1A; }
+[data-theme="dark"] .archi-col { background: #1E1C1A; border-color: rgba(138,130,120,0.3); }
+[data-theme="dark"] .archi-col-header { border-bottom-color: rgba(138,130,120,0.3); }
+[data-theme="dark"] .archi-list li { color: rgba(240,237,232,0.65); }
+[data-theme="dark"] .archi-note { color: rgba(240,237,232,0.5); }
+[data-theme="dark"] .archi-disclaimer { color: rgba(240,237,232,0.4); }
+[data-theme="dark"] .usage-title { color: #F0EDE8; }
+[data-theme="dark"] .usage-intro { color: rgba(240,237,232,0.65); }
 [data-theme="dark"] .approche-text,
 [data-theme="dark"] .pillar-text,
 [data-theme="dark"] .niveau-desc,
@@ -179,6 +186,29 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; j
 .inclus-item-content h4 { font-family: var(--font-display); font-size: 0.9rem; color: rgba(255,255,255,0.85); margin-bottom: 0.3rem; font-weight: 400; }
 .inclus-item-content p { font-size: 0.75rem; color: rgba(255,255,255,0.45); line-height: 1.6; }
 
+/* CAS D'USAGE */
+.usage-section { padding: 7rem 6rem; background: var(--beige); }
+.usage-intro { font-size: 0.82rem; color: #524E4A; max-width: 640px; margin: 0 auto 3.5rem; text-align: center; line-height: 1.8; }
+.usage-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: rgba(181,173,165,0.3); }
+.usage-col { background: var(--blanc); padding: 2.5rem 2.2rem; }
+.usage-num { font-family: var(--font-display); font-size: 2.2rem; color: rgba(181,173,165,0.4); line-height: 1; margin-bottom: 0.8rem; }
+.usage-title { font-family: var(--font-display); font-size: 1rem; margin-bottom: 1.2rem; line-height: 1.3; }
+.usage-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+.usage-list li { font-size: 0.78rem; color: #524E4A; line-height: 1.6; padding-left: 1rem; position: relative; }
+.usage-list li::before { content: '—'; position: absolute; left: 0; color: var(--taupe); }
+
+/* COMPARAISON ARCHITECTURES */
+.archi-compare { margin-top: 3rem; padding-top: 2.5rem; border-top: 1px solid rgba(181,173,165,0.3); }
+.archi-compare-label { font-size: 0.6rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1.5rem; }
+.archi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: rgba(181,173,165,0.3); margin-bottom: 1.2rem; }
+.archi-col { background: var(--blanc); padding: 2rem 1.8rem; }
+.archi-col-header { font-family: var(--font-display); font-size: 0.9rem; padding-bottom: 1rem; margin-bottom: 1rem; border-bottom: 1px solid rgba(181,173,165,0.3); }
+.archi-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1rem; }
+.archi-list li { font-size: 0.75rem; color: #524E4A; line-height: 1.6; padding-left: 1rem; position: relative; }
+.archi-list li::before { content: '—'; position: absolute; left: 0; color: var(--taupe); }
+.archi-note { font-size: 0.68rem; color: var(--taupe); letter-spacing: 0.04em; font-style: italic; }
+.archi-disclaimer { font-size: 0.7rem; color: rgba(90,85,80,0.6); line-height: 1.6; max-width: 680px; }
+
 /* PROCESSUS */
 .processus-section { padding: 7rem 6rem; background: var(--beige); }
 .processus-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: rgba(181,173,165,0.3); margin-top: 3.5rem; }
@@ -255,6 +285,11 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
   .cta-final { padding: 5rem 1.5rem; }
   footer { padding: 2rem 1.5rem; flex-direction: column; gap: 1.2rem; text-align: center; }
   .footer-links { flex-wrap: wrap; justify-content: center; }
+}
+@media (max-width: 960px) {
+  .usage-grid { grid-template-columns: 1fr; }
+  .archi-grid { grid-template-columns: 1fr; }
+  .usage-section { padding: 4rem 1.5rem; }
 }
 @media (max-width: 600px) {
   .processus-steps { grid-template-columns: 1fr; }
@@ -456,6 +491,42 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
   </div>
 </section>
 
+<!-- CAS D'USAGE -->
+<section class="usage-section">
+  <p class="section-eyebrow">Scénarios concrets</p>
+  <h2 class="section-title">Une IA privée qui travaille<br>avec <em>les connaissances de votre entreprise.</em></h2>
+  <p class="usage-intro">Ces scénarios illustrent ce que rend possible une infrastructure configurée sur vos données internes. Ils constituent des directions de travail, pas des fonctionnalités prêtes à déployer sans diagnostic préalable.</p>
+  <div class="usage-grid">
+    <div class="usage-col">
+      <div class="usage-num">01</div>
+      <h3 class="usage-title">Capitalisation documentaire</h3>
+      <ul class="usage-list">
+        <li>Un collaborateur retrouve une procédure, une information technique ou une décision passée</li>
+        <li>Les références des documents sources sont indiquées</li>
+        <li>La base de connaissances est alimentée et maintenue par vos équipes</li>
+      </ul>
+    </div>
+    <div class="usage-col">
+      <div class="usage-num">02</div>
+      <h3 class="usage-title">Assistant commercial</h3>
+      <ul class="usage-list">
+        <li>Préparation d'une réponse à un appel d'offres à partir des prestations et références autorisées</li>
+        <li>Rédaction cohérente avec le positionnement et le vocabulaire commercial de l'organisation</li>
+        <li>Accès uniquement aux documents que vous avez choisi de rendre accessibles</li>
+      </ul>
+    </div>
+    <div class="usage-col">
+      <div class="usage-num">03</div>
+      <h3 class="usage-title">Automatisation des opérations</h3>
+      <ul class="usage-list">
+        <li>Préparation de comptes rendus, classification d'informations et transmission aux bonnes personnes</li>
+        <li>Des contrôles humains définis en amont pour chaque étape sensible</li>
+        <li>Réduction du temps consacré aux tâches répétitives à faible valeur ajoutée</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 <!-- CE QUI EST INCLUS -->
 <section class="inclus-section">
   <div class="inclus-header">
@@ -550,15 +621,44 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
   </div>
 </section>
 
-<!-- OBJECTION -->
+<!-- OBJECTION + COMPARAISON ARCHITECTURES -->
 <section class="objection-section">
   <div class="objection-inner">
     <p class="objection-label">Ce qu'il faut savoir</p>
     <h2 class="objection-title">Un modèle local, ce n'est pas<br><em>ChatGPT installé chez vous.</em></h2>
     <div class="objection-text">
       <p>Un modèle IA exécuté en local n'offre pas automatiquement les mêmes performances qu'un modèle cloud de grande taille. Les modèles locaux évoluent rapidement et peuvent répondre efficacement à la majorité des usages professionnels courants, à condition que le projet soit dimensionné en comparant des tâches équivalentes, et pas uniquement des prix d'accès.</p>
-      <p>Flow Private AI est pertinent lorsque les usages sont suffisamment nombreux et réguliers pour justifier l'investissement initial. Pour une équipe de moins de 10 personnes ou des besoins ponctuels, le cloud reste souvent plus adapté. C'est l'une des conclusions que nous tirons ensemble lors du diagnostic.</p>
-      <p>Il faut aussi anticiper que certaines licences resteront nécessaires : Microsoft 365, votre CRM, vos outils métiers. L'infrastructure locale ne les remplace pas. Elle s'y intègre et permet de réduire la part variable des dépenses IA, pas de tout remplacer d'un coup.</p>
+      <p>Le dimensionnement matériel ne dépend pas uniquement du nombre de collaborateurs. La fréquence des requêtes, les modèles choisis et les usages simultanés sont les paramètres déterminants. C'est précisément l'objet du diagnostic : analyser vos usages réels pour calibrer une infrastructure adaptée, ni sous-dimensionnée ni surdimensionnée.</p>
+      <p>Il faut aussi anticiper que certaines licences resteront nécessaires : Microsoft 365, votre CRM, vos outils métiers. L'infrastructure locale ne les remplace pas. Elle s'y intègre et permet de réduire la part variable des dépenses IA.</p>
+    </div>
+
+    <div class="archi-compare">
+      <p class="archi-compare-label">Deux architectures possibles</p>
+      <div class="archi-grid">
+        <div class="archi-col">
+          <div class="archi-col-header">Architecture entièrement locale</div>
+          <ul class="archi-list">
+            <li>Station dédiée sur site (ex. Acer Veriton ou équivalent validé)</li>
+            <li>Modèle IA exécuté localement, aucune donnée sortante</li>
+            <li>Interface accessible par les collaborateurs en réseau interne</li>
+            <li>Coût prévisible sur 36 mois, indépendant des volumes</li>
+            <li>Adapté aux organisations avec des données sensibles et des usages intensifs</li>
+          </ul>
+          <p class="archi-note">Idéale pour : santé, juridique, RH, cabinets de conseil, industrie</p>
+        </div>
+        <div class="archi-col">
+          <div class="archi-col-header">Architecture hybride</div>
+          <ul class="archi-list">
+            <li>Infrastructure locale pour les usages récurrents et les données confidentielles</li>
+            <li>Cloud maintenu pour les usages ponctuels ou les tâches nécessitant un modèle plus puissant</li>
+            <li>Répartition des charges selon la nature des requêtes</li>
+            <li>Réduction des coûts cloud sans rupture dans les workflows existants</li>
+            <li>Transition progressive possible depuis un usage 100% cloud</li>
+          </ul>
+          <p class="archi-note">Idéale pour : PME en cours de structuration, organisations avec des usages variés</p>
+        </div>
+      </div>
+      <p class="archi-disclaimer">La sélection du matériel est validée lors du diagnostic, en tenant compte de vos usages simultanés, des modèles retenus et de vos contraintes réseau. Aucune recommandation de marque n'est formulée sans évaluation préalable.</p>
     </div>
   </div>
 </section>
@@ -635,10 +735,10 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
 <!-- CTA FINAL -->
 <section class="cta-final">
   <p class="cta-final-eyebrow">Flow Studio · Flow Private AI</p>
-  <h2 class="cta-final-title">Évaluons ensemble<br>si c'est fait pour <em>vous.</em></h2>
-  <p class="cta-final-text">30 minutes pour analyser votre situation, vos usages actuels et produire une première simulation de retour sur investissement avec vos chiffres réels.</p>
-  <a href="https://calendar.app.google/YQL39LLfw5zoFn2v7" class="cta-btn" target="_blank" rel="noopener">Réserver un appel découverte</a>
-  <p class="cta-final-micro">Échange sans engagement · Simulation TCO offerte</p>
+  <h2 class="cta-final-title">Et si votre organisation avait intérêt<br>à posséder <em>sa propre IA ?</em></h2>
+  <p class="cta-final-text">Nous analysons ensemble vos usages, vos dépenses actuelles et vos contraintes de confidentialité pour déterminer si une infrastructure privée est pertinente, techniquement et économiquement. Cette conclusion vaut même si vous décidez de rester sur le cloud.</p>
+  <a href="https://calendar.app.google/YQL39LLfw5zoFn2v7" class="cta-btn" target="_blank" rel="noopener">Demander une étude de faisabilité</a>
+  <p class="cta-final-micro">Échange sans engagement · Simulation TCO offerte · 30 minutes</p>
 </section>
 
 <footer>
