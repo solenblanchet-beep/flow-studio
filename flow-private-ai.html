@@ -141,29 +141,69 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; j
 .signal-item { background: var(--beige); padding: 1.2rem 1.5rem; font-size: 0.8rem; color: #524E4A; display: flex; gap: 0.8rem; align-items: flex-start; line-height: 1.5; }
 .signal-item::before { content: '→'; color: var(--taupe); flex-shrink: 0; font-size: 0.65rem; margin-top: 2px; }
 
-/* ROI */
-.roi-section { background: var(--beige); padding: 7rem 6rem; }
-.roi-intro { max-width: 700px; margin-bottom: 4rem; }
-.roi-intro p { font-size: 0.85rem; color: #524E4A; line-height: 1.9; margin-top: 1.2rem; }
-.roi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: rgba(181,173,165,0.3); }
-.roi-card { background: var(--blanc); padding: 3rem 2.5rem; }
-.roi-card.featured { background: var(--noir); }
-.roi-card-label { font-size: 0.58rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1rem; }
-.roi-card.featured .roi-card-label { color: rgba(255,255,255,0.4); }
-.roi-card-title { font-family: var(--font-display); font-size: 1.1rem; margin-bottom: 0.5rem; }
-.roi-card.featured .roi-card-title { color: var(--blanc); }
-.roi-card-price { font-family: var(--font-display); font-size: 2.4rem; font-weight: 400; margin: 1rem 0 0.3rem; }
-.roi-card.featured .roi-card-price { color: var(--blanc); }
-.roi-card-unit { font-size: 0.72rem; color: var(--taupe); letter-spacing: 0.08em; }
-.roi-card.featured .roi-card-unit { color: rgba(255,255,255,0.4); }
-.roi-card-items { list-style: none; margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; padding-top: 1.5rem; border-top: 1px solid rgba(181,173,165,0.3); }
-.roi-card.featured .roi-card-items { border-top-color: rgba(255,255,255,0.1); }
-.roi-card-item { font-size: 0.75rem; color: #524E4A; display: flex; gap: 0.6rem; align-items: flex-start; line-height: 1.4; }
-.roi-card.featured .roi-card-item { color: rgba(255,255,255,0.55); }
-.roi-card-item::before { content: '·'; color: var(--taupe); flex-shrink: 0; }
-.roi-insight { margin-top: 2rem; padding: 1.5rem 2rem; background: var(--noir); font-size: 0.8rem; color: rgba(255,255,255,0.65); line-height: 1.8; }
-.roi-insight strong { color: rgba(255,255,255,0.9); }
-.roi-note { margin-top: 1.2rem; font-size: 0.72rem; color: #8A857F; line-height: 1.7; font-style: italic; }
+/* SIMULATEUR */
+.sim-section { background: var(--beige); padding: 7rem 6rem; }
+.sim-intro { max-width: 700px; margin-bottom: 4rem; }
+.sim-intro p { font-size: 0.85rem; color: #524E4A; line-height: 1.9; margin-top: 1.2rem; }
+.sim-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+.sim-controls { background: var(--blanc); padding: 2.8rem 2.5rem; }
+.sim-control { margin-bottom: 2rem; }
+.sim-control:last-child { margin-bottom: 0; }
+.sim-label { font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--taupe); display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.9rem; }
+.sim-label span { font-family: var(--font-display); font-size: 1rem; letter-spacing: 0; text-transform: none; color: var(--noir); }
+.sim-range { -webkit-appearance: none; appearance: none; width: 100%; height: 1px; background: rgba(181,173,165,0.5); outline: none; cursor: pointer; }
+.sim-range::-webkit-slider-thumb { -webkit-appearance: none; width: 14px; height: 14px; background: var(--noir); border-radius: 50%; cursor: pointer; }
+.sim-range::-moz-range-thumb { width: 14px; height: 14px; background: var(--noir); border-radius: 50%; cursor: pointer; border: none; }
+.sim-ticks { display: flex; justify-content: space-between; margin-top: 0.4rem; }
+.sim-tick { font-size: 0.6rem; color: var(--taupe); }
+.sim-divider { margin: 2rem 0; border: none; border-top: 1px solid rgba(181,173,165,0.3); }
+.sim-advanced-toggle { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--taupe); cursor: pointer; display: flex; align-items: center; gap: 0.6rem; background: none; border: none; padding: 0; font-family: var(--font-body); }
+.sim-advanced-toggle .toggle-arrow { transition: transform 0.3s; display: inline-block; }
+.sim-advanced-toggle.open .toggle-arrow { transform: rotate(90deg); }
+.sim-advanced { display: none; margin-top: 1.5rem; }
+.sim-advanced.open { display: block; }
+.sim-advanced-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.sim-input-group { display: flex; flex-direction: column; gap: 0.4rem; }
+.sim-input-label { font-size: 0.58rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--taupe); }
+.sim-input { border: 1px solid rgba(181,173,165,0.5); background: var(--blanc); color: var(--noir); padding: 0.5rem 0.7rem; font-family: var(--font-body); font-size: 0.8rem; width: 100%; outline: none; }
+.sim-input:focus { border-color: var(--taupe); }
+.sim-results { position: sticky; top: 100px; }
+.sim-verdict { background: var(--noir); padding: 2.5rem; margin-bottom: 2px; }
+.sim-verdict-label { font-size: 0.58rem; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 1.5rem; }
+.sim-verdict-row { display: flex; justify-content: space-between; align-items: baseline; padding: 0.6rem 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.sim-verdict-row:last-of-type { border-bottom: none; }
+.sim-verdict-name { font-size: 0.72rem; color: rgba(255,255,255,0.5); }
+.sim-verdict-val { font-family: var(--font-display); font-size: 1.3rem; color: rgba(255,255,255,0.85); }
+.sim-verdict-val.highlight { color: #fff; font-size: 1.6rem; }
+.sim-verdict-val.red { color: #d4786e; }
+.sim-verdict-val.green { color: #8aab8a; }
+.sim-conclusion { background: var(--blanc); padding: 1.5rem 2rem; font-size: 0.78rem; line-height: 1.7; color: #524E4A; margin-bottom: 2px; min-height: 60px; }
+.sim-conclusion strong { color: var(--noir); }
+.sim-chart-wrap { background: var(--blanc); padding: 1.8rem 2rem; }
+.sim-chart-label { font-size: 0.58rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1rem; }
+.sim-chart-canvas { width: 100%; height: 160px; display: block; }
+.sim-chart-legend { display: flex; gap: 1.5rem; margin-top: 0.8rem; }
+.sim-chart-legend-item { display: flex; align-items: center; gap: 0.4rem; font-size: 0.62rem; color: var(--taupe); }
+.sim-chart-legend-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.sim-cta-block { background: var(--blanc); padding: 2rem; border-top: 2px solid var(--beige); margin-top: 0; }
+.sim-cta-question { font-family: var(--font-display); font-size: 0.95rem; margin-bottom: 0.6rem; line-height: 1.4; }
+.sim-cta-sub { font-size: 0.72rem; color: #524E4A; line-height: 1.6; margin-bottom: 1.2rem; }
+.sim-cta-link { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--noir); text-decoration: none; border-bottom: 1px solid var(--taupe); padding-bottom: 1px; transition: color 0.3s; }
+.sim-cta-link:hover { color: var(--taupe); }
+.sim-note { margin-top: 1.5rem; font-size: 0.7rem; color: #8A857F; line-height: 1.7; font-style: italic; }
+[data-theme="dark"] .sim-controls { background: #1E1C1A; }
+[data-theme="dark"] .sim-verdict { background: #0A0908; }
+[data-theme="dark"] .sim-conclusion { background: #1E1C1A; color: rgba(240,237,232,0.6); }
+[data-theme="dark"] .sim-conclusion strong { color: #F0EDE8; }
+[data-theme="dark"] .sim-chart-wrap { background: #1E1C1A; }
+[data-theme="dark"] .sim-cta-block { background: #1E1C1A; border-top-color: #0A0908; }
+[data-theme="dark"] .sim-cta-question { color: #F0EDE8; }
+[data-theme="dark"] .sim-cta-sub { color: rgba(240,237,232,0.5); }
+[data-theme="dark"] .sim-cta-link { color: #F0EDE8; }
+[data-theme="dark"] .sim-input { background: #2A2825; border-color: rgba(138,130,120,0.4); color: #F0EDE8; }
+[data-theme="dark"] .sim-range { background: rgba(138,130,120,0.4); }
+[data-theme="dark"] .sim-range::-webkit-slider-thumb { background: #F0EDE8; }
+[data-theme="dark"] .sim-range::-moz-range-thumb { background: #F0EDE8; }
 
 /* ARGUMENTS */
 .arguments-section { padding: 7rem 6rem; }
@@ -273,8 +313,10 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
   .hero-right { padding: 2.5rem 1.5rem 3rem; min-height: 320px; }
   .hero-right::before { font-size: 8rem; }
   .probleme-section { grid-template-columns: 1fr; gap: 3rem; padding: 4rem 1.5rem; }
-  .roi-section { padding: 4rem 1.5rem; }
-  .roi-grid { grid-template-columns: 1fr; }
+  .sim-section { padding: 4rem 1.5rem; }
+  .sim-layout { grid-template-columns: 1fr; }
+  .sim-results { position: static; }
+  .sim-advanced-grid { grid-template-columns: 1fr; }
   .arguments-section { padding: 4rem 1.5rem; }
   .inclus-section { padding: 4rem 1.5rem; }
   .inclus-header { grid-template-columns: 1fr; gap: 1.5rem; }
@@ -422,45 +464,109 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
   </div>
 </section>
 
-<!-- ROI -->
-<section class="roi-section" id="roi">
-  <div class="roi-intro">
-    <p class="section-eyebrow">Simulation financière</p>
-    <h2 class="section-title">Ce que coûte réellement<br><em>l'IA dans votre organisation.</em></h2>
-    <p>Cette simulation compare le coût total sur 36 mois d'une organisation de 30 collaborateurs équipés en IA cloud, avec le coût d'une infrastructure Flow Private AI. Les montants sont des hypothèses indicatives à remplacer par vos devis et factures réels.</p>
+<!-- SIMULATEUR -->
+<section class="sim-section" id="roi">
+  <div class="sim-intro">
+    <p class="section-eyebrow">Simulateur de rentabilité</p>
+    <h2 class="section-title">À partir de quand une IA privée<br>devient <em>économiquement intéressante ?</em></h2>
+    <p>Renseignez vos paramètres réels. Les résultats s'actualisent en temps réel. Cette simulation peut aussi conclure que l'IA locale n'est pas rentable pour votre organisation — c'est précisément ce qui la rend utile.</p>
   </div>
-  <div class="roi-grid">
-    <div class="roi-card">
-      <p class="roi-card-label">Solution cloud standard</p>
-      <h3 class="roi-card-title">Abonnements individuels</h3>
-      <p class="roi-card-price">64 800 €</p>
-      <p class="roi-card-unit">sur 36 mois · 1 800 € / mois</p>
-      <ul class="roi-card-items">
-        <li class="roi-card-item">30 collaborateurs à ~50 € HT / mois chacun</li>
-        <li class="roi-card-item">Consommation d'API estimée à 300 € / mois</li>
-        <li class="roi-card-item">Coût variable : augmente avec les effectifs et les usages</li>
-        <li class="roi-card-item">Données traitées sur les serveurs des éditeurs</li>
-        <li class="roi-card-item">Dépendance aux hausses tarifaires annuelles</li>
-      </ul>
+
+  <div class="sim-layout">
+    <!-- CONTRÔLES -->
+    <div class="sim-controls">
+      <div class="sim-control">
+        <div class="sim-label">Collaborateurs équipés en IA <span id="lbl-users">30</span></div>
+        <input type="range" class="sim-range" id="rng-users" min="5" max="100" step="5" value="30" oninput="simUpdate()">
+        <div class="sim-ticks"><span class="sim-tick">5</span><span class="sim-tick">25</span><span class="sim-tick">50</span><span class="sim-tick">75</span><span class="sim-tick">100</span></div>
+      </div>
+      <div class="sim-control">
+        <div class="sim-label">Coût cloud par collaborateur / mois <span id="lbl-cloud">50 €</span></div>
+        <input type="range" class="sim-range" id="rng-cloud" min="10" max="150" step="5" value="50" oninput="simUpdate()">
+        <div class="sim-ticks"><span class="sim-tick">10 €</span><span class="sim-tick">40 €</span><span class="sim-tick">80 €</span><span class="sim-tick">120 €</span><span class="sim-tick">150 €</span></div>
+      </div>
+      <div class="sim-control">
+        <div class="sim-label">Durée de comparaison <span id="lbl-months">36 mois</span></div>
+        <input type="range" class="sim-range" id="rng-months" min="12" max="60" step="6" value="36" oninput="simUpdate()">
+        <div class="sim-ticks"><span class="sim-tick">12 m</span><span class="sim-tick">24 m</span><span class="sim-tick">36 m</span><span class="sim-tick">48 m</span><span class="sim-tick">60 m</span></div>
+      </div>
+
+      <hr class="sim-divider">
+
+      <button class="sim-advanced-toggle" id="advToggle" onclick="toggleAdvanced()">
+        <span class="toggle-arrow">›</span> Affiner mon estimation
+      </button>
+      <div class="sim-advanced" id="advPanel">
+        <div class="sim-advanced-grid">
+          <div class="sim-input-group">
+            <label class="sim-input-label">Matériel (€ HT)</label>
+            <input type="number" class="sim-input" id="inp-hardware" value="7000" oninput="simUpdate()">
+          </div>
+          <div class="sim-input-group">
+            <label class="sim-input-label">Déploiement Flow Studio (€ HT)</label>
+            <input type="number" class="sim-input" id="inp-deploy" value="12000" oninput="simUpdate()">
+          </div>
+          <div class="sim-input-group">
+            <label class="sim-input-label">Support mensuel (€ HT)</label>
+            <input type="number" class="sim-input" id="inp-support" value="590" oninput="simUpdate()">
+          </div>
+          <div class="sim-input-group">
+            <label class="sim-input-label">Énergie / mois (€ HT)</label>
+            <input type="number" class="sim-input" id="inp-energy" value="50" oninput="simUpdate()">
+          </div>
+          <div class="sim-input-group">
+            <label class="sim-input-label">% licences conservées</label>
+            <input type="number" class="sim-input" id="inp-licenses" value="20" min="0" max="100" oninput="simUpdate()">
+          </div>
+          <div class="sim-input-group">
+            <label class="sim-input-label">API cloud mensuelle (€)</label>
+            <input type="number" class="sim-input" id="inp-api" value="300" oninput="simUpdate()">
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="roi-card featured">
-      <p class="roi-card-label">Flow Private AI</p>
-      <h3 class="roi-card-title">Infrastructure privée</h3>
-      <p class="roi-card-price">52 840 €</p>
-      <p class="roi-card-unit">sur 36 mois · 940 € / mois + investissement initial</p>
-      <ul class="roi-card-items">
-        <li class="roi-card-item">Station matérielle et installation : 7 000 €</li>
-        <li class="roi-card-item">Conception et déploiement Flow Studio : 12 000 €</li>
-        <li class="roi-card-item">Support et maintenance : 590 € / mois</li>
-        <li class="roi-card-item">Énergie et exploitation : 50 € / mois</li>
-        <li class="roi-card-item">20 % des licences IA actuelles conservées</li>
-      </ul>
+
+    <!-- RÉSULTATS -->
+    <div class="sim-results">
+      <div class="sim-verdict">
+        <div class="sim-verdict-label">Résultats de votre simulation</div>
+        <div class="sim-verdict-row">
+          <span class="sim-verdict-name">Coût cloud total</span>
+          <span class="sim-verdict-val" id="res-cloud">64 800 €</span>
+        </div>
+        <div class="sim-verdict-row">
+          <span class="sim-verdict-name">Coût infrastructure privée</span>
+          <span class="sim-verdict-val" id="res-private">52 840 €</span>
+        </div>
+        <div class="sim-verdict-row">
+          <span class="sim-verdict-name">Différence</span>
+          <span class="sim-verdict-val highlight" id="res-diff">− 11 960 €</span>
+        </div>
+        <div class="sim-verdict-row">
+          <span class="sim-verdict-name">Point de rentabilité</span>
+          <span class="sim-verdict-val" id="res-breakeven">mois 23</span>
+        </div>
+      </div>
+      <div class="sim-conclusion" id="res-conclusion">
+        <strong>L'infrastructure privée est plus économique sur cette période.</strong> L'investissement initial est compensé vers le mois 23. Plus les usages s'intensifient, plus l'avantage augmente.
+      </div>
+      <div class="sim-chart-wrap">
+        <div class="sim-chart-label">Dépenses cumulées sur la période</div>
+        <canvas class="sim-chart-canvas" id="simChart" width="400" height="160"></canvas>
+        <div class="sim-chart-legend">
+          <div class="sim-chart-legend-item"><div class="sim-chart-legend-dot" style="background:#B5ADA5"></div>Cloud</div>
+          <div class="sim-chart-legend-item"><div class="sim-chart-legend-dot" style="background:#0F0F0F"></div>Flow Private AI</div>
+        </div>
+      </div>
+      <div class="sim-cta-block">
+        <p class="sim-cta-question">Votre organisation pourrait-elle réellement économiser ?</p>
+        <p class="sim-cta-sub">Cette simulation ne tient pas compte de tous vos usages, contraintes techniques et besoins de performance. Flow Studio peut réaliser une étude de faisabilité et de rentabilité personnalisée.</p>
+        <a href="https://calendar.app.google/YQL39LLfw5zoFn2v7" class="sim-cta-link" target="_blank" rel="noopener">Demander une étude personnalisée →</a>
+      </div>
     </div>
   </div>
-  <div class="roi-insight">
-    <strong>Économie potentielle sur 36 mois : ~12 000 €.</strong> L'investissement initial est compensé vers le mois 23, avec les hypothèses de cette simulation. Plus les usages sont intenses et les effectifs IA-équipés nombreux, plus la mutualisation devient avantageuse.
-  </div>
-  <p class="roi-note">Simulation indicative, non contractuelle, sur une seule station. Hypothèses en euros HT. Hors redondance, cybersécurité supplémentaire, renouvellement anticipé du matériel et fiscalité. La capacité de calcul doit être validée par des tests de charge. Pour moins de 10 utilisateurs ou des usages peu fréquents, le cloud reste souvent plus adapté.</p>
+
+  <p class="sim-note">Simulation indicative, non contractuelle. Montants en euros HT. Hors redondance, cybersécurité supplémentaire, renouvellement anticipé du matériel et fiscalité. La capacité de calcul doit être validée par des tests de charge selon les usages réels.</p>
 </section>
 
 <!-- ARGUMENTS -->
@@ -798,6 +904,196 @@ window.addEventListener('scroll', function() {
     nav.style.borderBottomColor = 'rgba(181,173,165,0.2)';
   }
 });
+
+/* ---- SIMULATEUR ---- */
+function fmt(n) {
+  return Math.round(n).toLocaleString('fr-FR') + ' €';
+}
+
+function simCalc() {
+  var users   = parseInt(document.getElementById('rng-users').value)   || 30;
+  var cloud   = parseInt(document.getElementById('rng-cloud').value)   || 50;
+  var months  = parseInt(document.getElementById('rng-months').value)  || 36;
+  var hw      = parseInt(document.getElementById('inp-hardware').value) || 7000;
+  var deploy  = parseInt(document.getElementById('inp-deploy').value)  || 12000;
+  var support = parseInt(document.getElementById('inp-support').value) || 590;
+  var energy  = parseInt(document.getElementById('inp-energy').value)  || 50;
+  var licPct  = parseInt(document.getElementById('inp-licenses').value)|| 20;
+  var api     = parseInt(document.getElementById('inp-api').value)     || 300;
+
+  var cloudMonthly  = users * cloud + api;
+  var cloudTotal    = cloudMonthly * months;
+
+  var privateMonthly = support + energy + (users * cloud * licPct / 100);
+  var privateFixed   = hw + deploy;
+  var privateTotal   = privateFixed + privateMonthly * months;
+
+  var diff = cloudTotal - privateTotal;
+
+  // Break-even: month where private cumulative < cloud cumulative
+  var breakEven = null;
+  for (var m = 1; m <= months; m++) {
+    var cCum = cloudMonthly * m;
+    var pCum = privateFixed + privateMonthly * m;
+    if (pCum <= cCum) { breakEven = m; break; }
+  }
+
+  return { users, cloud, months, cloudMonthly, cloudTotal,
+           privateMonthly, privateFixed, privateTotal, diff, breakEven };
+}
+
+function simUpdate() {
+  var d = document.getElementById('rng-users').value;
+  document.getElementById('lbl-users').textContent = d;
+  document.getElementById('lbl-cloud').textContent = document.getElementById('rng-cloud').value + ' €';
+  document.getElementById('lbl-months').textContent = document.getElementById('rng-months').value + ' mois';
+
+  var r = simCalc();
+
+  document.getElementById('res-cloud').textContent   = fmt(r.cloudTotal);
+  document.getElementById('res-private').textContent = fmt(r.privateTotal);
+
+  var diffEl = document.getElementById('res-diff');
+  if (r.diff > 0) {
+    diffEl.textContent = '− ' + fmt(r.diff).replace(' €','') + ' €';
+    diffEl.className = 'sim-verdict-val highlight green';
+  } else if (r.diff < 0) {
+    diffEl.textContent = '+ ' + fmt(Math.abs(r.diff)).replace(' €','') + ' €';
+    diffEl.className = 'sim-verdict-val highlight red';
+  } else {
+    diffEl.textContent = 'Équivalent';
+    diffEl.className = 'sim-verdict-val highlight';
+  }
+
+  var beEl = document.getElementById('res-breakeven');
+  if (r.breakEven) {
+    beEl.textContent = 'mois ' + r.breakEven;
+  } else {
+    beEl.textContent = 'Non atteint';
+  }
+
+  // Conclusion textuelle
+  var concEl = document.getElementById('res-conclusion');
+  if (r.diff > 0 && r.breakEven) {
+    concEl.innerHTML = '<strong>L\'infrastructure privée est plus économique sur cette période.</strong> L\'investissement initial est compensé vers le mois ' + r.breakEven + '. Avec ' + r.users + ' collaborateurs, l\'écart s\'accentue à mesure que les usages augmentent.';
+  } else if (r.diff > 0 && !r.breakEven) {
+    concEl.innerHTML = '<strong>L\'infrastructure privée reste moins chère sur cette période</strong>, mais le point de rentabilité n\'est pas encore atteint dans le délai sélectionné. Essayez une durée plus longue.';
+  } else if (r.diff < 0) {
+    var gap = fmt(Math.abs(r.diff));
+    concEl.innerHTML = '<strong>Pour cette configuration, le cloud reste moins coûteux de ' + gap + '.</strong> En dessous d\'un certain volume d\'usages, les abonnements individuels sont plus adaptés. Une étude de faisabilité peut identifier le seuil réel pour votre organisation.';
+  } else {
+    concEl.innerHTML = '<strong>Coût équivalent sur cette période.</strong> D\'autres critères — confidentialité, personnalisation, indépendance — peuvent justifier l\'infrastructure privée même à parité.';
+  }
+
+  simDrawChart(r);
+}
+
+function simDrawChart(r) {
+  var canvas = document.getElementById('simChart');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var dpr = window.devicePixelRatio || 1;
+  var W = canvas.clientWidth, H = canvas.clientHeight;
+  canvas.width  = W * dpr;
+  canvas.height = H * dpr;
+  ctx.scale(dpr, dpr);
+  ctx.clearRect(0, 0, W, H);
+
+  var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  var cloudColor   = '#B5ADA5';
+  var privateColor = isDark ? '#F0EDE8' : '#0F0F0F';
+  var gridColor    = isDark ? 'rgba(240,237,232,0.08)' : 'rgba(0,0,0,0.06)';
+  var beColor      = '#BA7F75';
+
+  // Build data points
+  var pts = r.months;
+  var cloudPts   = [];
+  var privatePts = [];
+  for (var m = 1; m <= pts; m++) {
+    cloudPts.push(r.cloudMonthly * m);
+    privatePts.push(r.privateFixed + r.privateMonthly * m);
+  }
+
+  var maxVal = Math.max(cloudPts[pts-1], privatePts[pts-1]);
+  var pad = { top: 12, right: 12, bottom: 20, left: 48 };
+  var cW = W - pad.left - pad.right;
+  var cH = H - pad.top - pad.bottom;
+
+  function xPos(m) { return pad.left + (m - 1) / (pts - 1) * cW; }
+  function yPos(v) { return pad.top + cH - (v / maxVal) * cH; }
+
+  // Grid lines
+  ctx.strokeStyle = gridColor;
+  ctx.lineWidth = 1;
+  [0.25, 0.5, 0.75, 1].forEach(function(f) {
+    var y = pad.top + cH * (1 - f);
+    ctx.beginPath(); ctx.moveTo(pad.left, y); ctx.lineTo(pad.left + cW, y); ctx.stroke();
+    ctx.fillStyle = isDark ? 'rgba(240,237,232,0.3)' : 'rgba(0,0,0,0.3)';
+    ctx.font = '9px Inter, sans-serif';
+    ctx.textAlign = 'right';
+    ctx.fillText(Math.round(maxVal * f / 1000) + 'k', pad.left - 4, y + 3);
+  });
+
+  // Break-even marker
+  if (r.breakEven && r.breakEven <= pts) {
+    var bx = xPos(r.breakEven);
+    ctx.strokeStyle = beColor;
+    ctx.setLineDash([3, 3]);
+    ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(bx, pad.top); ctx.lineTo(bx, pad.top + cH); ctx.stroke();
+    ctx.setLineDash([]);
+  }
+
+  // Cloud line
+  ctx.beginPath();
+  ctx.strokeStyle = cloudColor;
+  ctx.lineWidth = 1.5;
+  cloudPts.forEach(function(v, i) {
+    var x = xPos(i + 1), y = yPos(v);
+    i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+  });
+  ctx.stroke();
+
+  // Private line
+  ctx.beginPath();
+  ctx.strokeStyle = privateColor;
+  ctx.lineWidth = 1.5;
+  privatePts.forEach(function(v, i) {
+    var x = xPos(i + 1), y = yPos(v);
+    i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+  });
+  ctx.stroke();
+
+  // X-axis labels (start, mid, end)
+  ctx.fillStyle = isDark ? 'rgba(240,237,232,0.3)' : 'rgba(0,0,0,0.3)';
+  ctx.font = '9px Inter, sans-serif';
+  ctx.textAlign = 'center';
+  [1, Math.round(pts/2), pts].forEach(function(m) {
+    ctx.fillText('m' + m, xPos(m), pad.top + cH + 13);
+  });
+}
+
+function toggleAdvanced() {
+  var panel  = document.getElementById('advPanel');
+  var toggle = document.getElementById('advToggle');
+  var isOpen = panel.classList.contains('open');
+  panel.classList.toggle('open', !isOpen);
+  toggle.classList.toggle('open', !isOpen);
+}
+
+// Redraw chart on theme change
+var _origToggleTheme = typeof toggleTheme === 'function' ? toggleTheme : null;
+(function() {
+  var origToggle = window.toggleTheme;
+  window.toggleTheme = function() {
+    if (origToggle) origToggle();
+    setTimeout(function() { var r = simCalc(); simDrawChart(r); }, 50);
+  };
+})();
+
+// Init on load
+window.addEventListener('load', function() { simUpdate(); });
+window.addEventListener('resize', function() { var r = simCalc(); simDrawChart(r); });
 </script>
 
 </body>
