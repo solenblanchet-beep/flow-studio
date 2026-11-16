@@ -4,17 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Flow Private AI, une IA privée pour votre PME | Flow Studio</title>
-<meta name="description" content="Flow Private AI installe une infrastructure d'intelligence artificielle privée, partagée par vos équipes et adaptée à vos processus. Coûts prévisibles, données maîtrisées, retour sur investissement démontrable.">
+<meta name="description" content="Flow Studio installe dans votre PME un système commercial qui prépare CRM, devis et relances, avec une IA hébergée chez vous. Vos données clients restent dans l'entreprise.">
 <link rel="canonical" href="https://flow-studio.app/flow-private-ai">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://flow-studio.app/flow-private-ai">
-<meta property="og:title" content="Flow Private AI, une IA privée pour votre PME">
-<meta property="og:description" content="Un système IA installé chez vous, configuré sur vos processus. Simulez le coût face au cloud et le retour attendu pour votre équipe.">
+<meta property="og:title" content="Flow Private AI · Vos commerciaux vendent, le système prépare le reste">
+<meta property="og:description" content="Un système commercial qui prépare CRM, devis et relances, avec une IA hébergée chez vous. Vos données clients restent dans l'entreprise.">
 <meta property="og:image" content="https://flow-studio.app/solen-ouahioune-flow-studio.jpg">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Flow Studio">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Flow Private AI, une IA privée pour votre PME">
+<meta name="twitter:title" content="Flow Private AI · Vos commerciaux vendent, le système prépare le reste">
 <meta name="twitter:description" content="Un système IA installé chez vous, configuré sur vos processus. Simulez le coût face au cloud et le retour attendu.">
 <meta name="twitter:image" content="https://flow-studio.app/solen-ouahioune-flow-studio.jpg">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -493,6 +493,28 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
   .processus-steps { grid-template-columns: 1fr; }
   .hero-actions { flex-direction: column; align-items: flex-start; }
 }
+
+/* === Réécriture nov. 2026 === */
+.arguments-grid--3 { grid-template-columns: repeat(3, 1fr); }
+.systeme-result { margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid rgba(181,173,165,0.4); font-size: 0.78rem; line-height: 1.6; color: var(--noir); }
+[data-theme="dark"] .systeme-result { color: #F0EDE8; border-top-color: rgba(240,237,232,0.12); }
+.journee-also { margin-top: 2px; background: rgba(247,245,242,0.04); border: 1px solid rgba(181,173,165,0.15); padding: 1.6rem 1.8rem; }
+.journee-also-label { font-size: 0.58rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--taupe); margin-bottom: 0.9rem; }
+.journee-also ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+.journee-also li { font-size: 0.8rem; font-weight: 300; color: rgba(247,245,242,0.7); line-height: 1.6; }
+.journee-also li::before { content: '→'; color: var(--taupe); margin-right: 0.6rem; font-size: 0.7rem; }
+.preuve-section { padding: 7rem 6rem; background: var(--beige); display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+.preuve-text p:not(.section-eyebrow) { font-size: 0.85rem; font-weight: 300; color: #524E4A; line-height: 1.9; margin-top: 1.2rem; }
+.preuve-quote { background: var(--blanc); padding: 2.6rem 2.4rem; margin: 0; }
+.preuve-quote blockquote { font-family: var(--font-display); font-style: italic; font-size: 1rem; line-height: 1.7; color: var(--noir); }
+.preuve-result { margin-top: 1.4rem; padding-top: 1.2rem; border-top: 1px solid rgba(181,173,165,0.4); font-size: 0.8rem; color: var(--noir); }
+.preuve-quote figcaption { margin-top: 0.8rem; font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--taupe); }
+[data-theme="dark"] .preuve-section { background: #161412; }
+[data-theme="dark"] .preuve-text p:not(.section-eyebrow) { color: rgba(240,237,232,0.65); }
+[data-theme="dark"] .preuve-quote { background: #1E1C1A; }
+[data-theme="dark"] .preuve-quote blockquote, [data-theme="dark"] .preuve-result { color: #F0EDE8; }
+@media (max-width: 1100px) { .arguments-grid--3 { grid-template-columns: 1fr; } }
+@media (max-width: 960px) { .preuve-section { grid-template-columns: 1fr; gap: 2.5rem; padding: 4rem 1.5rem; } }
 </style>
 
 <script type="application/ld+json">
@@ -550,82 +572,135 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
   <div class="hero-left">
     <p class="hero-eyebrow">Flow Studio · PME</p>
     <h1 class="hero-title">
-      Votre propre système<br>
-      d'intelligence<br>
-      <em>d'entreprise.</em>
+      Vos commerciaux<br>
+      vendent.<br>
+      <em>Le système prépare<br>le reste.</em>
     </h1>
     <p class="hero-subtitle">
-      Une IA privée, partagée par vos équipes et adaptée à vos processus. Un investissement maîtrisé, des coûts prévisibles et une infrastructure qui valorise vos connaissances, sans multiplier les abonnements par collaborateur.
+      Flow Studio conçoit et installe dans votre entreprise un système qui prépare la mise à jour du CRM, les devis et les relances, avec une IA hébergée chez vous. Vos données clients ne quittent pas l'entreprise, et vos commerciaux gardent la main sur chaque envoi.
     </p>
     <div class="hero-actions">
       <a href="https://calendar.app.google/YQL39LLfw5zoFn2v7" class="btn-primary" target="_blank" rel="noopener">Réserver un appel découverte</a>
-      <a href="#roi" class="btn-ghost">Voir la simulation de coût</a>
+      <a href="#roi" class="btn-ghost">Voir ce que ça coûte</a>
     </div>
-    <p class="hero-micro">Échange de 30 minutes pour évaluer la pertinence pour votre organisation.</p>
+    <p class="hero-micro">30 minutes pour savoir si c'est pertinent pour vous. Si ça ne l'est pas, nous vous le dirons.</p>
   </div>
   <div class="hero-right">
-    <p class="hero-label">Flow Private AI · Ce que vous gagnez</p>
+    <p class="hero-label">Flow Private AI · Ce qui change</p>
     <div class="observations">
-      <div class="observation-item">Un seul investissement partagé par toute l'équipe, sans abonnement par siège</div>
-      <div class="observation-item">Vos données restent dans votre infrastructure, hors des serveurs cloud tiers</div>
-      <div class="observation-item">Un modèle configuré avec vos procédures, vos métiers et votre vocabulaire interne</div>
-      <div class="observation-item">Des coûts prévisibles sur 3 à 5 ans, sans surprise liée aux hausses tarifaires</div>
-      <div class="observation-item">Un patrimoine opérationnel documenté et réutilisable par les équipes</div>
-      <div class="observation-item">Un retour sur investissement calculable dès la phase de diagnostic</div>
+      <div class="observation-item">La mise à jour du CRM est préparée dès la sortie du rendez-vous</div>
+      <div class="observation-item">Le devis est rédigé en brouillon à partir de vos tarifs</div>
+      <div class="observation-item">Les relances sont planifiées, le commercial valide</div>
+      <div class="observation-item">Vos fichiers clients, tarifs et contrats ne sortent pas de l'entreprise</div>
+      <div class="observation-item">Le coût reste le même quand l'équipe grandit</div>
     </div>
   </div>
 </section>
-
-<!-- MARQUEE -->
-<div class="marquee-band">
-  <div class="marquee-track">
-    <span>Infrastructure privée</span><span class="accent">·</span>
-    <span>Données maîtrisées</span><span class="accent">·</span>
-    <span>Coûts prévisibles</span><span class="accent">·</span>
-    <span>Modèle partagé</span><span class="accent">·</span>
-    <span>ROI calculable</span><span class="accent">·</span>
-    <span>Souveraineté numérique</span><span class="accent">·</span>
-    <span>IA sur mesure</span><span class="accent">·</span>
-    <span>Adoption par les équipes</span><span class="accent">·</span>
-    <span>Infrastructure privée</span><span class="accent">·</span>
-    <span>Données maîtrisées</span><span class="accent">·</span>
-    <span>Coûts prévisibles</span><span class="accent">·</span>
-    <span>Modèle partagé</span><span class="accent">·</span>
-    <span>ROI calculable</span><span class="accent">·</span>
-    <span>Souveraineté numérique</span><span class="accent">·</span>
-    <span>IA sur mesure</span><span class="accent">·</span>
-    <span>Adoption par les équipes</span><span class="accent">·</span>
-  </div>
-</div>
 
 <!-- PROBLEME -->
 <section class="probleme-section">
   <div>
     <p class="section-eyebrow">Le constat</p>
-    <h2 class="section-title">Les dépenses IA<br>augmentent.<br><em>La maîtrise, non.</em></h2>
+    <h2 class="section-title">Le travail commercial<br>ne s'arrête pas<br><em>à la sortie du rendez-vous.</em></h2>
   </div>
   <div>
     <div class="probleme-text">
-      <p>Les abonnements IA se multiplient par collaborateur. ChatGPT ici, Copilot là, un accès API pour les automatisations, un autre outil pour l'équipe marketing. Chaque poste de dépense semble raisonnable seul. Ensemble, ils forment une ligne de coût variable, difficile à piloter et qui croît avec les effectifs.</p>
-      <p>Pour une PME d'une vingtaine de personnes ou plus, la question n'est plus de savoir si l'IA est utile. Elle l'est. La question est de savoir comment la déployer de manière cohérente, maîtrisée et adaptée à ses propres processus, sans dépendre d'une tarification qu'elle ne contrôle pas.</p>
-      <p>Flow Private AI installe une infrastructure IA dans votre organisation : un modèle local, partagé, configuré sur vos connaissances et vos usages métiers. Les coûts deviennent prévisibles. Les données restent chez vous.</p>
+      <p>Un rendez-vous client entraîne trois autres tâches : le compte rendu, le devis, la relance. Dans beaucoup de PME, elles attendent le retour au bureau, puis la fin de semaine, puis le moment où le prospect a signé ailleurs.</p>
+      <p>L'IA pourrait faire ce travail de préparation. Mais dans les formations à l'IA commerciale que Solen Ouahioune anime, la même question revient à chaque session : a-t-on le droit de mettre nos données clients dans ces outils ? Tant qu'elle reste sans réponse claire, l'IA reste un usage individuel, à la marge du travail commercial.</p>
+      <p>Il ne manque pas un outil de plus. Il manque un système qui relie la note du commercial, le CRM, le catalogue et l'agenda, qui prépare le travail au lieu d'en ajouter, et dont les données restent dans l'entreprise.</p>
     </div>
     <div class="probleme-signaux">
-      <div class="signal-item">Plusieurs abonnements IA actifs, mais peu d'usages structurés ou mesurés</div>
-      <div class="signal-item">Des données sensibles transmises à des modèles cloud sans politique formalisée</div>
-      <div class="signal-item">Un coût IA qui augmente avec les recrutements sans retour visible</div>
-      <div class="signal-item">Des assistants génériques reréglés à chaque conversation, sans mémoire de l'entreprise</div>
-      <div class="signal-item">Des équipes qui expérimentent en silo, sans base commune ni documentation</div>
+      <div class="signal-item">Le CRM n'est vraiment à jour qu'avant la réunion commerciale</div>
+      <div class="signal-item">Un devis met plus d'une journée à partir après le rendez-vous</div>
+      <div class="signal-item">Les relances dépendent de la mémoire de chaque commercial</div>
+      <div class="signal-item">Personne ne sait clairement quelles données on peut confier à l'IA</div>
+      <div class="signal-item">Plusieurs abonnements IA actifs, sans usage commun ni règle partagée</div>
     </div>
+  </div>
+</section>
+
+<!-- UNE JOURNÉE -->
+<section class="journee-section">
+  <div class="journee-header">
+    <p class="section-eyebrow">En pratique</p>
+    <h2 class="section-title">16 h 15, à la sortie<br><em>d'un rendez-vous client.</em></h2>
+    <p>Un commercial d'une PME de 30 personnes sort de chez un client. Voici ce que change un système connecté à son CRM, à son catalogue et à ses stocks. La scène est volontairement ordinaire.</p>
+  </div>
+
+  <div class="journee-scene">
+
+    <!-- Contexte gauche -->
+    <div class="journee-context">
+      <p class="journee-timestamp">16 h 15 · Sortie de rendez-vous</p>
+      <h3 class="journee-who">Le commercial sort<br>de chez un client.</h3>
+      <p class="journee-situation">Il ouvre l'assistant vocal de l'entreprise sur son téléphone. Il n'a pas besoin de remplir le CRM à la main ni d'attendre d'être de retour au bureau.</p>
+      <div class="journee-vocal">
+        <p class="journee-vocal-label">Note vocale</p>
+        <p class="journee-vocal-text">« Je sors de chez Atelier Martin. Ils veulent 40 pompes référence P-120 pour la fin du mois. J'ai proposé une remise de 5 %. Il faut leur envoyer un devis aujourd'hui et les relancer vendredi. »</p>
+      </div>
+    </div>
+
+    <!-- Réponse système droite -->
+    <div class="journee-system">
+
+      <div>
+        <p class="journee-system-label">L'IA interprète la demande et consulte les systèmes autorisés</p>
+        <div class="journee-tasks">
+          <div class="journee-task">
+            <p class="journee-task-title">Compte rendu</p>
+            <p class="journee-task-desc">Transcrit la note, identifie le client et prépare la mise à jour de l'opportunité CRM</p>
+          </div>
+          <div class="journee-task">
+            <p class="journee-task-title">Stocks</p>
+            <p class="journee-task-desc">Consulte l'ERP et vérifie les quantités disponibles ainsi que les délais connus</p>
+          </div>
+          <div class="journee-task">
+            <p class="journee-task-title">Devis</p>
+            <p class="journee-task-desc">Prépare le document à partir des tarifs et conditions commerciales autorisés</p>
+          </div>
+          <div class="journee-task">
+            <p class="journee-task-title">Suivi commercial</p>
+            <p class="journee-task-desc">Prépare la tâche de relance et renseigne les prochaines étapes</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="journee-response">
+        <p class="journee-response-label">Réponse de l'assistant</p>
+        <p class="journee-response-text">
+          J'ai préparé ton compte rendu et identifié l'opportunité Atelier Martin.<br><br>
+          <strong>Le stock disponible est de 32 unités sur les 40 demandées.</strong> J'ai signalé les 8 unités manquantes et préparé un devis en brouillon. La remise de 5 % nécessite une validation.<br><br>
+          La relance de vendredi est prête. Tu peux vérifier les informations avant de les enregistrer.
+        </p>
+        <div class="journee-actions">
+          <div class="journee-action">CRM à confirmer</div>
+          <div class="journee-action">Devis à valider</div>
+        </div>
+      </div>
+
+    </div><!-- /journee-system -->
+  </div><!-- /journee-scene -->
+
+  <div class="journee-also">
+    <p class="journee-also-label">Le même système sait aussi</p>
+    <ul>
+      <li>retrouver une procédure ou une décision passée, avec le document source cité</li>
+      <li>préparer une réponse à un appel d'offres à partir de vos références autorisées</li>
+      <li>classer les comptes rendus et les transmettre aux bonnes personnes</li>
+    </ul>
+  </div>
+
+  <div class="journee-note">
+    <p>L'IA ne prend pas de décision à la place du commercial. Elle prépare, signale et soumet à validation. <strong>La remise, le devis, la mise à jour CRM restent sous contrôle humain</strong>, et c'est ce qui les rend utilisables dans un contexte professionnel réel. Ce scénario est une direction de travail : il est conçu et testé lors du diagnostic, avant tout déploiement.</p>
   </div>
 </section>
 
 <!-- SIMULATEUR -->
 <section class="sim-section" id="roi">
   <div class="sim-intro">
-    <p class="section-eyebrow">Simulateur de rentabilité</p>
-    <h2 class="section-title">Et si votre IA devenait<br>un véritable levier de <em>rentabilité ?</em></h2>
-    <p>Réduire les dépenses, donner accès à l'IA à davantage de collaborateurs, améliorer les performances des équipes : estimez le potentiel économique d'un système IA privé pour votre entreprise. Elle peut aussi conclure que l'IA privée n'est pas pertinente pour vous. Elle sert justement à le savoir avant d'investir.</p>
+    <p class="section-eyebrow">Simulateur</p>
+    <h2 class="section-title">Ce que ça coûte,<br><em>et ce que ça rapporte.</em></h2>
+    <p>Trois étapes : vos dépenses IA actuelles, le coût d'une IA privée face au cloud, puis le retour du système sur votre activité. Le simulateur peut conclure que l'IA privée ne vous convient pas. Il sert aussi à ça.</p>
   </div>
 
   <div class="sim-layout">
@@ -853,9 +928,9 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
 
 <!-- SYSTÈMES -->
 <section class="systemes-section">
-  <p class="section-eyebrow">Exemples de systèmes</p>
+  <p class="section-eyebrow">Trois systèmes</p>
   <div class="systemes-intro">
-    <h2 class="section-title">Chaque entreprise a son propre système.<br><em>Votre investissement aussi.</em></h2>
+    <h2 class="section-title">Trois systèmes,<br><em>trois niveaux d'investissement.</em></h2>
     <p style="font-size:0.85rem;font-weight:300;color:#6B6560;line-height:1.8;margin-top:1.5rem;">Ces trois exemples donnent une idée de l'enveloppe d'un projet Flow Private AI selon sa portée. Chaque déploiement est dimensionné après diagnostic. Les montants ci-dessous sont indicatifs.</p>
   </div>
   <div class="systemes-grid">
@@ -868,8 +943,8 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
         <li>Ingestion et indexation de vos bases documentaires</li>
         <li>Interface de chat pour vos équipes</li>
         <li>Sources citées, réponses traçables</li>
-        <li>Accès jusqu'à 10 collaborateurs simultanés</li>
-      </ul>
+        </ul>
+      <p class="systeme-result">Résultat attendu : moins de temps passé à chercher, des nouvelles recrues autonomes plus vite.</p>
       <div class="systeme-price-block">
         <p class="systeme-price">5 000 €</p>
         <p class="systeme-price-label">HT · hors matériel</p>
@@ -883,9 +958,9 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
       <ul class="systeme-features">
         <li>Connexion CRM (HubSpot, Notion, Pipedrive…)</li>
         <li>Agents spécialisés par étape du cycle de vente</li>
-        <li>Génération automatique de compte-rendus et propositions</li>
-        <li>Accès jusqu'à 20 collaborateurs simultanés</li>
-      </ul>
+        <li>Comptes rendus et propositions préparés en brouillon</li>
+        </ul>
+      <p class="systeme-result">Résultat attendu : un CRM tenu, des devis préparés le jour du rendez-vous, des relances suivies.</p>
       <div class="systeme-price-block">
         <p class="systeme-price">12 000 €</p>
         <p class="systeme-price-label">HT · hors matériel</p>
@@ -900,8 +975,8 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
         <li>Architecture multi-agents par département</li>
         <li>Intégrations métier complexes (ERP, outils sectoriels…)</li>
         <li>Base de connaissances centralisée et maintenue</li>
-        <li>Accès illimité · formation équipes incluse</li>
-      </ul>
+        </ul>
+      <p class="systeme-result">Résultat attendu : un fonctionnement documenté, qui ne dépend plus de quelques personnes.</p>
       <div class="systeme-price-block">
         <p class="systeme-price">25 000 €</p>
         <p class="systeme-price-label">HT · hors matériel</p>
@@ -909,230 +984,28 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
     </div>
 
   </div>
-  <p class="systemes-note">Ces montants couvrent le déploiement Flow Studio uniquement (conception, intégration, configuration). Le matériel serveur est en sus, estimé entre 5 000 et 10 000 € selon la puissance requise. Pour un projet hors de ces trois cas, nous établissons un devis sur mesure.</p>
+  <p class="systemes-note">Ces montants couvrent la conception, le déploiement, la documentation et la formation. Le matériel (environ 7 000 €) et le fonctionnement (environ 640 € par mois) sont les mêmes pour les trois. Pour un projet hors de ces trois cas, nous établissons un devis sur mesure.</p>
 </section>
 
-<!-- ARGUMENTS -->
+<!-- POURQUOI IA PRIVÉE -->
 <section class="arguments-section">
-  <p class="section-eyebrow">Pourquoi Flow Private AI</p>
-  <h2 class="section-title">Quatre raisons de passer<br>à une infrastructure <em>propre.</em></h2>
-  <div class="arguments-grid">
+  <p class="section-eyebrow">Pourquoi une IA privée</p>
+  <h2 class="section-title">Pourquoi une IA installée chez vous<br><em>plutôt que des abonnements.</em></h2>
+  <div class="arguments-grid arguments-grid--3">
     <div class="argument-card">
       <p class="argument-num">01</p>
-      <h3 class="argument-title">Un budget IA prévisible</h3>
-      <p class="argument-text">L'organisation remplace une partie des dépenses variables et récurrentes par un investissement initial et un coût de fonctionnement suivi. Elle peut anticiper ses dépenses sur plusieurs années, indépendamment des hausses tarifaires des éditeurs et de la croissance des effectifs.</p>
+      <h3 class="argument-title">Vos données restent chez vous</h3>
+      <p class="argument-text">Les échanges avec le modèle ne sortent pas de votre infrastructure. Fichier clients, tarifs, contrats : vos équipes peuvent travailler avec, sans se demander où partent les informations. La question de la confidentialité est réglée par l'architecture elle-même, et la règle devient simple à expliquer.</p>
     </div>
     <div class="argument-card">
       <p class="argument-num">02</p>
-      <h3 class="argument-title">Une infrastructure mutualisée</h3>
-      <p class="argument-text">Un seul système IA, utilisé par plusieurs collaborateurs sans acquérir une licence de modèle pour chacun. Il faut dimensionner la capacité selon les usages simultanés, et non simplement l'effectif total. La mutualisation devient plus intéressante à mesure que les usages s'intensifient.</p>
+      <h3 class="argument-title">Le coût ne dépend plus du nombre de personnes</h3>
+      <p class="argument-text">Avec le cloud, chaque nouvel accès est un abonnement de plus. Ici, le coût est fixe : vous pouvez équiper toute l'équipe sans recalculer le budget à chaque recrutement. La capacité se dimensionne selon les usages simultanés, pas selon l'effectif.</p>
     </div>
     <div class="argument-card">
       <p class="argument-num">03</p>
-      <h3 class="argument-title">Une IA adaptée à votre organisation</h3>
-      <p class="argument-text">L'infrastructure est configurée avec les procédures, les métiers, les données et le vocabulaire de l'entreprise. Les données sensibles ne transitent pas par des serveurs cloud tiers. La confidentialité découle de l'architecture elle-même : il n'y a rien à activer après coup.</p>
-    </div>
-    <div class="argument-card">
-      <p class="argument-num">04</p>
-      <h3 class="argument-title">Un investissement qui capitalise</h3>
-      <p class="argument-text">La documentation structurée, les assistants configurés et les workflows construits constituent un patrimoine opérationnel réutilisable. L'organisation conserve la propriété de ses connaissances formalisées et peut les faire évoluer sans repartir de zéro à chaque nouvel abonnement.</p>
-    </div>
-  </div>
-</section>
-
-<!-- CAS D'USAGE -->
-<section class="usage-section">
-  <p class="section-eyebrow">Scénarios concrets</p>
-  <h2 class="section-title">Une IA privée qui travaille<br>avec <em>les connaissances de votre entreprise.</em></h2>
-  <p class="usage-intro">Ces scénarios illustrent ce que rend possible une infrastructure configurée sur vos données internes. Ce sont des directions de travail, à valider lors du diagnostic avant tout déploiement.</p>
-  <div class="usage-grid">
-    <div class="usage-col">
-      <div class="usage-num">01</div>
-      <h3 class="usage-title">Capitalisation documentaire</h3>
-      <ul class="usage-list">
-        <li>Un collaborateur retrouve une procédure, une information technique ou une décision passée</li>
-        <li>Les références des documents sources sont indiquées</li>
-        <li>La base de connaissances est alimentée et maintenue par vos équipes</li>
-      </ul>
-    </div>
-    <div class="usage-col">
-      <div class="usage-num">02</div>
-      <h3 class="usage-title">Assistant commercial</h3>
-      <ul class="usage-list">
-        <li>Préparation d'une réponse à un appel d'offres à partir des prestations et références autorisées</li>
-        <li>Rédaction cohérente avec le positionnement et le vocabulaire commercial de l'organisation</li>
-        <li>Accès uniquement aux documents que vous avez choisi de rendre accessibles</li>
-      </ul>
-    </div>
-    <div class="usage-col">
-      <div class="usage-num">03</div>
-      <h3 class="usage-title">Automatisation des opérations</h3>
-      <ul class="usage-list">
-        <li>Préparation de comptes rendus, classification d'informations et transmission aux bonnes personnes</li>
-        <li>Des contrôles humains définis en amont pour chaque étape sensible</li>
-        <li>Réduction du temps consacré aux tâches répétitives à faible valeur ajoutée</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- UNE JOURNÉE -->
-<section class="journee-section">
-  <div class="journee-header">
-    <p class="section-eyebrow">En pratique</p>
-    <h2 class="section-title">Une journée avec<br><em>Flow Private AI.</em></h2>
-    <p>Voici comment un commercial d'une PME de 30 personnes travaille avec un système IA privé connecté à son CRM, à son catalogue et à ses stocks. La scène est volontairement ordinaire : elle montre ce qu'un système correctement configuré change dans une fin de journée réelle.</p>
-  </div>
-
-  <div class="journee-scene">
-
-    <!-- Contexte gauche -->
-    <div class="journee-context">
-      <p class="journee-timestamp">16 h 15 · Sortie de rendez-vous</p>
-      <h3 class="journee-who">Le commercial sort<br>de chez un client.</h3>
-      <p class="journee-situation">Il ouvre l'assistant vocal de l'entreprise sur son téléphone. Il n'a pas besoin de remplir le CRM à la main ni d'attendre d'être de retour au bureau.</p>
-      <div class="journee-vocal">
-        <p class="journee-vocal-label">Note vocale</p>
-        <p class="journee-vocal-text">« Je sors de chez Atelier Martin. Ils veulent 40 pompes référence P-120 pour la fin du mois. J'ai proposé une remise de 5 %. Il faut leur envoyer un devis aujourd'hui et les relancer vendredi. »</p>
-      </div>
-    </div>
-
-    <!-- Réponse système droite -->
-    <div class="journee-system">
-
-      <div>
-        <p class="journee-system-label">L'IA interprète la demande et consulte les systèmes autorisés</p>
-        <div class="journee-tasks">
-          <div class="journee-task">
-            <p class="journee-task-title">Compte rendu</p>
-            <p class="journee-task-desc">Transcrit la note, identifie le client et prépare la mise à jour de l'opportunité CRM</p>
-          </div>
-          <div class="journee-task">
-            <p class="journee-task-title">Stocks</p>
-            <p class="journee-task-desc">Consulte l'ERP et vérifie les quantités disponibles ainsi que les délais connus</p>
-          </div>
-          <div class="journee-task">
-            <p class="journee-task-title">Devis</p>
-            <p class="journee-task-desc">Prépare le document à partir des tarifs et conditions commerciales autorisés</p>
-          </div>
-          <div class="journee-task">
-            <p class="journee-task-title">Suivi commercial</p>
-            <p class="journee-task-desc">Prépare la tâche de relance et renseigne les prochaines étapes</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="journee-response">
-        <p class="journee-response-label">Réponse de l'assistant</p>
-        <p class="journee-response-text">
-          J'ai préparé ton compte rendu et identifié l'opportunité Atelier Martin.<br><br>
-          <strong>Le stock disponible est de 32 unités sur les 40 demandées.</strong> J'ai signalé les 8 unités manquantes et préparé un devis en brouillon. La remise de 5 % nécessite une validation.<br><br>
-          La relance de vendredi est prête. Tu peux vérifier les informations avant de les enregistrer.
-        </p>
-        <div class="journee-actions">
-          <div class="journee-action">CRM à confirmer</div>
-          <div class="journee-action">Devis à valider</div>
-        </div>
-      </div>
-
-    </div><!-- /journee-system -->
-  </div><!-- /journee-scene -->
-
-  <div class="journee-note">
-    <p>L'IA ne prend pas de décision à la place du commercial. Elle prépare, signale et soumet à validation. <strong>La remise, le devis, la mise à jour CRM restent sous contrôle humain</strong>, et c'est ce qui les rend utilisables dans un contexte professionnel réel. Ce scénario est une direction de travail : il est conçu et testé lors du diagnostic, avant tout déploiement.</p>
-  </div>
-</section>
-
-<!-- CE QUI EST INCLUS -->
-<section class="inclus-section">
-  <div class="inclus-header">
-    <h2 class="inclus-title">Ce que Flow Studio<br><em>conçoit et déploie.</em></h2>
-    <p class="inclus-desc">Le serveur est la partie la plus simple du projet. Flow Studio conçoit le système complet qui l'entoure, de l'audit des usages à la formation des équipes.</p>
-  </div>
-  <div class="inclus-grid">
-    <div class="inclus-item">
-      <span class="inclus-item-num">01</span>
-      <div class="inclus-item-content">
-        <h4>Audit des usages et des processus</h4>
-        <p>Cartographie des usages IA existants, identification des processus prioritaires, analyse des données mobilisées.</p>
-      </div>
-    </div>
-    <div class="inclus-item">
-      <span class="inclus-item-num">02</span>
-      <div class="inclus-item-content">
-        <h4>Dimensionnement de l'infrastructure</h4>
-        <p>Choix et configuration du matériel selon vos besoins réels en capacité et en utilisateurs simultanés.</p>
-      </div>
-    </div>
-    <div class="inclus-item">
-      <span class="inclus-item-num">03</span>
-      <div class="inclus-item-content">
-        <h4>Installation et déploiement</h4>
-        <p>Mise en place du modèle local, intégration réseau, tests de charge et validation de la performance.</p>
-      </div>
-    </div>
-    <div class="inclus-item">
-      <span class="inclus-item-num">04</span>
-      <div class="inclus-item-content">
-        <h4>Configuration sur vos connaissances</h4>
-        <p>Alimentation de l'infrastructure avec vos procédures internes, vos documents métiers et votre vocabulaire.</p>
-      </div>
-    </div>
-    <div class="inclus-item">
-      <span class="inclus-item-num">05</span>
-      <div class="inclus-item-content">
-        <h4>Assistants IA métiers</h4>
-        <p>Conception des assistants adaptés à vos fonctions : RH, commercial, production, communication, support.</p>
-      </div>
-    </div>
-    <div class="inclus-item">
-      <span class="inclus-item-num">06</span>
-      <div class="inclus-item-content">
-        <h4>Documentation et transmission</h4>
-        <p>Documentation complète du système livré, règles d'utilisation, formation des administrateurs et des utilisateurs.</p>
-      </div>
-    </div>
-    <div class="inclus-item">
-      <span class="inclus-item-num">07</span>
-      <div class="inclus-item-content">
-        <h4>Support et maintenance</h4>
-        <p>Suivi mensuel, mises à jour du modèle, supervision des performances et accompagnement dans les évolutions d'usage.</p>
-      </div>
-    </div>
-    <div class="inclus-item">
-      <span class="inclus-item-num">08</span>
-      <div class="inclus-item-content">
-        <h4>Simulation TCO personnalisée</h4>
-        <p>Comparaison de votre coût total de possession sur 36 et 60 mois, avec vos données réelles, dès la phase de diagnostic.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PROCESSUS -->
-<section class="processus-section">
-  <p class="section-eyebrow">La démarche</p>
-  <h2 class="section-title">Comment se déroule<br>un projet <em>Flow Private AI.</em></h2>
-  <div class="processus-steps">
-    <div class="processus-step">
-      <div class="step-num">01</div>
-      <h3 class="step-title">Appel découverte</h3>
-      <p class="step-text">30 minutes pour évaluer votre situation, le nombre de collaborateurs concernés, les usages existants et la pertinence d'une infrastructure locale pour votre organisation.</p>
-    </div>
-    <div class="processus-step">
-      <div class="step-num">02</div>
-      <h3 class="step-title">Diagnostic et simulation</h3>
-      <p class="step-text">Audit des processus et des dépenses IA actuelles. Construction d'une simulation TCO sur 36 mois avec vos chiffres réels pour comparer objectivement le cloud et le local.</p>
-    </div>
-    <div class="processus-step">
-      <div class="step-num">03</div>
-      <h3 class="step-title">Conception et déploiement</h3>
-      <p class="step-text">Dimensionnement du matériel, installation du modèle, configuration sur vos connaissances, construction des assistants métiers et intégration dans vos outils existants.</p>
-    </div>
-    <div class="processus-step">
-      <div class="step-num">04</div>
-      <h3 class="step-title">Formation et suivi</h3>
-      <p class="step-text">Transmission complète aux équipes, documentation des usages, règles d'utilisation, support mensuel et accompagnement dans l'évolution du système.</p>
+      <h3 class="argument-title">Le système connaît votre entreprise</h3>
+      <p class="argument-text">Il est configuré sur vos procédures, votre catalogue et votre vocabulaire. La documentation, les assistants et les workflows construits vous appartiennent et restent en place si vous changez d'outil.</p>
     </div>
   </div>
 </section>
@@ -1140,7 +1013,7 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
 <!-- OBJECTION + COMPARAISON ARCHITECTURES -->
 <section class="objection-section">
   <div class="objection-inner">
-    <p class="objection-label">Ce qu'il faut savoir</p>
+    <p class="objection-label">Les limites, aussi</p>
     <h2 class="objection-title">Ce qu'un modèle local<br><em>fait bien, et ce qu'il fait moins bien.</em></h2>
     <div class="objection-text">
       <p>Un modèle IA exécuté en local n'offre pas automatiquement les mêmes performances qu'un modèle cloud de grande taille. Les modèles locaux évoluent rapidement et peuvent répondre efficacement à la majorité des usages professionnels courants, à condition que le projet soit dimensionné en comparant des tâches équivalentes, et pas uniquement des prix d'accès.</p>
@@ -1154,7 +1027,7 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
         <div class="archi-col">
           <div class="archi-col-header">Architecture entièrement locale</div>
           <ul class="archi-list">
-            <li>Station dédiée sur site (ex. Acer Veriton ou équivalent validé)</li>
+            <li>Station dédiée installée dans vos locaux</li>
             <li>Modèle IA exécuté localement, aucune donnée sortante</li>
             <li>Interface accessible par les collaborateurs en réseau interne</li>
             <li>Coût prévisible sur 36 mois, indépendant des volumes</li>
@@ -1174,9 +1047,52 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
           <p class="archi-note">Idéale pour : PME en cours de structuration, organisations avec des usages variés</p>
         </div>
       </div>
-      <p class="archi-disclaimer">La sélection du matériel est validée lors du diagnostic, en tenant compte de vos usages simultanés, des modèles retenus et de vos contraintes réseau. Aucune recommandation de marque n'est formulée sans évaluation préalable.</p>
+      <p class="archi-disclaimer">Le matériel est choisi lors du diagnostic, selon vos usages simultanés, les modèles retenus et vos contraintes réseau.</p>
     </div>
   </div>
+</section>
+
+<!-- PROCESSUS -->
+<section class="processus-section">
+  <p class="section-eyebrow">La démarche</p>
+  <h2 class="section-title">Comment se déroule<br><em>un projet.</em></h2>
+  <div class="processus-steps">
+    <div class="processus-step">
+      <div class="step-num">01</div>
+      <h3 class="step-title">Appel découverte</h3>
+      <p class="step-text">30 minutes sur vos frictions commerciales, votre équipe, vos dépenses IA et vos contraintes sur les données. Nous vous disons franchement si le projet est pertinent.</p>
+    </div>
+    <div class="processus-step">
+      <div class="step-num">02</div>
+      <h3 class="step-title">Diagnostic</h3>
+      <p class="step-text">Nous observons le fonctionnement réel avant de concevoir quoi que ce soit : circuit d'un devis, tenue du CRM, usages IA existants, données sensibles. La simulation est refaite avec vos chiffres.</p>
+    </div>
+    <div class="processus-step">
+      <div class="step-num">03</div>
+      <h3 class="step-title">Conception et déploiement</h3>
+      <p class="step-text">Architecture du système, installation et dimensionnement du matériel, configuration sur vos documents, assistants métier, connexion à votre CRM et à vos outils.</p>
+    </div>
+    <div class="processus-step">
+      <div class="step-num">04</div>
+      <h3 class="step-title">Transmission et mesure</h3>
+      <p class="step-text">Documentation, formation de l'équipe, support mensuel. Nous suivons des indicateurs simples : part des fiches CRM mises à jour dans les 24 heures, délai moyen d'un devis, relances effectuées.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PREUVES -->
+<section class="preuve-section">
+  <div class="preuve-text">
+    <p class="section-eyebrow">D'où nous parlons</p>
+    <h2 class="section-title">Des équipes formées,<br><em>des systèmes adoptés.</em></h2>
+    <p>Solen Ouahioune, fondatrice de Flow Studio, forme des équipes commerciales de PME et de grands groupes à l'IA appliquée à la vente. C'est dans ces formations que la question des données clients revient, session après session.</p>
+    <p>Flow Studio part toujours du même principe : un système n'a de valeur que s'il est utilisé. Le cahier des charges vient avant l'outil, et l'adoption se mesure.</p>
+  </div>
+  <figure class="preuve-quote">
+    <blockquote>Notre Notion était peu intuitif et ne répondait plus à nos besoins. Pas d'espace collaboratif, pas d'automatisation sur les tâches. Flow Studio nous a aidés à poser un cahier des charges, puis a reconstruit toutes les pages pour créer les bonnes connexions entre les sujets et les collaborateurs.</blockquote>
+    <p class="preuve-result">Résultat : 100 % d'adoption chez les opérationnels qui avaient déserté l'outil.</p>
+    <figcaption>c3llar Wine Society · système Notion Flow Studio</figcaption>
+  </figure>
 </section>
 
 <!-- FAQ -->
@@ -1251,10 +1167,10 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
 <!-- CTA FINAL -->
 <section class="cta-final">
   <p class="cta-final-eyebrow">Flow Studio · Flow Private AI</p>
-  <h2 class="cta-final-title">Et si votre organisation avait intérêt<br>à posséder <em>sa propre IA ?</em></h2>
-  <p class="cta-final-text">Nous analysons ensemble vos usages, vos dépenses actuelles et vos contraintes de confidentialité pour déterminer si une infrastructure privée est pertinente, techniquement et économiquement. Cette conclusion vaut même si vous décidez de rester sur le cloud.</p>
+  <h2 class="cta-final-title">Trente minutes pour savoir<br><em>si c'est pertinent pour vous.</em></h2>
+  <p class="cta-final-text">Nous regardons ensemble vos frictions commerciales, vos dépenses IA et vos contraintes sur les données. Si le cloud vous convient mieux, nous vous le dirons.</p>
   <a href="https://calendar.app.google/YQL39LLfw5zoFn2v7" class="cta-btn" target="_blank" rel="noopener">Réserver un appel découverte</a>
-  <p class="cta-final-micro">Échange sans engagement · Simulation TCO offerte · 30 minutes</p>
+  <p class="cta-final-micro">Sans engagement · 30 minutes · Simulation personnalisée offerte</p>
 </section>
 
 <footer>
