@@ -3,9 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Flow Private AI — Infrastructure IA privée pour PME | Flow Studio</title>
+<title>Flow Private AI, une IA privée pour votre PME | Flow Studio</title>
 <meta name="description" content="Flow Private AI installe une infrastructure d'intelligence artificielle privée, partagée par vos équipes et adaptée à vos processus. Coûts prévisibles, données maîtrisées, retour sur investissement démontrable.">
 <link rel="canonical" href="https://flow-studio.app/flow-private-ai">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://flow-studio.app/flow-private-ai">
+<meta property="og:title" content="Flow Private AI, une IA privée pour votre PME">
+<meta property="og:description" content="Un système IA installé chez vous, configuré sur vos processus. Simulez le coût face au cloud et le retour attendu pour votre équipe.">
+<meta property="og:image" content="https://flow-studio.app/solen-ouahioune-flow-studio.jpg">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Flow Studio">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Flow Private AI, une IA privée pour votre PME">
+<meta name="twitter:description" content="Un système IA installé chez vous, configuré sur vos processus. Simulez le coût face au cloud et le retour attendu.">
+<meta name="twitter:image" content="https://flow-studio.app/solen-ouahioune-flow-studio.jpg">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -230,6 +241,8 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; j
 .sim-cta-btn:hover { opacity: 0.85; }
 .sim-cta-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 .sim-cta-sent { font-size: 0.75rem; color: rgba(255,255,255,0.7); line-height: 1.7; display: none; }
+.sim-cta-sent a, .sim-cta-legal a { color: inherit; text-decoration: underline; }
+.sim-cta-legal { font-size: 0.65rem; color: rgba(255,255,255,0.4); line-height: 1.6; margin-top: 0.9rem; }
 .sim-note { margin-top: 1.5rem; font-size: 0.7rem; color: #8A857F; line-height: 1.7; font-style: italic; }
 /* dark mode */
 [data-theme="dark"] .sim-step-block { background: #1E1C1A; }
@@ -594,7 +607,7 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
   <div>
     <div class="probleme-text">
       <p>Les abonnements IA se multiplient par collaborateur. ChatGPT ici, Copilot là, un accès API pour les automatisations, un autre outil pour l'équipe marketing. Chaque poste de dépense semble raisonnable seul. Ensemble, ils forment une ligne de coût variable, difficile à piloter et qui croît avec les effectifs.</p>
-      <p>Pour une PME de 15 à 50 personnes, la question n'est plus de savoir si l'IA est utile. Elle l'est. La question est de savoir comment la déployer de manière cohérente, maîtrisée et adaptée à ses propres processus, sans dépendre d'une tarification qu'elle ne contrôle pas.</p>
+      <p>Pour une PME d'une vingtaine de personnes ou plus, la question n'est plus de savoir si l'IA est utile. Elle l'est. La question est de savoir comment la déployer de manière cohérente, maîtrisée et adaptée à ses propres processus, sans dépendre d'une tarification qu'elle ne contrôle pas.</p>
       <p>Flow Private AI installe une infrastructure IA dans votre organisation : un modèle local, partagé, configuré sur vos connaissances et vos usages métiers. Les coûts deviennent prévisibles. Les données restent chez vous.</p>
     </div>
     <div class="probleme-signaux">
@@ -612,7 +625,7 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
   <div class="sim-intro">
     <p class="section-eyebrow">Simulateur de rentabilité</p>
     <h2 class="section-title">Et si votre IA devenait<br>un véritable levier de <em>rentabilité ?</em></h2>
-    <p>Réduire les dépenses, donner accès à l'IA à davantage de collaborateurs, améliorer les performances des équipes : estimez le potentiel économique d'un système IA privé pour votre entreprise. Cette simulation peut aussi conclure que l'IA locale n'est pas pertinente — c'est précisément ce qui la rend utile.</p>
+    <p>Réduire les dépenses, donner accès à l'IA à davantage de collaborateurs, améliorer les performances des équipes : estimez le potentiel économique d'un système IA privé pour votre entreprise. Elle peut aussi conclure que l'IA privée n'est pas pertinente pour vous. Elle sert justement à le savoir avant d'investir.</p>
   </div>
 
   <div class="sim-layout">
@@ -629,17 +642,17 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
         <div class="sim-step-body">
           <div class="sim-control">
             <div class="sim-label">Effectif total dans l'entreprise <span id="lbl-total">30</span> collaborateurs</div>
-            <input type="range" class="sim-range" id="rng-total" min="5" max="200" step="5" value="30" oninput="simUpdate()">
+            <input type="range" class="sim-range" id="rng-total" aria-label="Effectif total" min="5" max="200" step="5" value="30" oninput="simUpdate()">
             <div class="sim-ticks"><span class="sim-tick">5</span><span class="sim-tick">50</span><span class="sim-tick">100</span><span class="sim-tick">150</span><span class="sim-tick">200</span></div>
           </div>
           <div class="sim-control">
             <div class="sim-label">Collaborateurs déjà équipés en IA <span id="lbl-equipped">8</span></div>
-            <input type="range" class="sim-range" id="rng-equipped" min="1" max="200" step="1" value="8" oninput="simUpdate()">
+            <input type="range" class="sim-range" id="rng-equipped" aria-label="Collaborateurs déjà équipés en IA" min="1" max="200" step="1" value="8" oninput="simUpdate()">
             <div class="sim-ticks"><span class="sim-tick">1</span><span class="sim-tick">50</span><span class="sim-tick">100</span><span class="sim-tick">150</span><span class="sim-tick">200</span></div>
           </div>
           <div class="sim-control">
             <div class="sim-label">Abonnement IA moyen par personne / mois <span id="lbl-sub">30 €</span></div>
-            <input type="range" class="sim-range" id="rng-sub" min="10" max="100" step="5" value="30" oninput="simUpdate()">
+            <input type="range" class="sim-range" id="rng-sub" aria-label="Abonnement IA moyen par personne et par mois" min="10" max="100" step="5" value="30" oninput="simUpdate()">
             <div class="sim-ticks"><span class="sim-tick">10 €</span><span class="sim-tick">30 €</span><span class="sim-tick">60 €</span><span class="sim-tick">80 €</span><span class="sim-tick">100 €</span></div>
           </div>
           <div class="sim-budget-summary" id="budget-summary">
@@ -660,7 +673,7 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
         <div class="sim-step-body">
           <p class="sim-label-hint">Ici, on compare uniquement l'outil : un serveur IA installé chez vous face aux abonnements cloud. Son coût est fixe, que 10 ou 80 personnes l'utilisent.</p>
           <div class="sim-input-group">
-            <label class="sim-input-label">Horizon de comparaison</label>
+            <label class="sim-input-label" for="sel-months">Horizon de comparaison</label>
             <select class="sim-input" id="sel-months" onchange="simUpdate()">
               <option value="36" selected>3 ans</option>
               <option value="60">5 ans</option>
@@ -708,25 +721,38 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
               </button>
             </div>
           </div>
+          <p class="sim-label-hint" id="sim-system-hint" style="margin-top:1.4rem;"></p>
+          <div id="sim-sales-inputs">
           <div class="sim-control" style="margin-top:2rem;">
             <div class="sim-label">Commerciaux dans l'équipe <span id="lbl-sales">5</span></div>
-            <input type="range" class="sim-range" id="rng-sales" min="1" max="50" step="1" value="5" oninput="simUpdate()">
+            <input type="range" class="sim-range" id="rng-sales" aria-label="Commerciaux dans l'équipe" min="1" max="50" step="1" value="5" oninput="simUpdate()">
             <div class="sim-ticks"><span class="sim-tick">1</span><span class="sim-tick">10</span><span class="sim-tick">20</span><span class="sim-tick">35</span><span class="sim-tick">50</span></div>
           </div>
           <div class="sim-control">
             <div class="sim-label">RDV clients par commercial / semaine <span id="lbl-rdv">4</span></div>
-            <input type="range" class="sim-range" id="rng-rdv" min="1" max="15" step="1" value="4" oninput="simUpdate()">
+            <input type="range" class="sim-range" id="rng-rdv" aria-label="RDV clients par commercial et par semaine" min="1" max="15" step="1" value="4" oninput="simUpdate()">
             <div class="sim-ticks"><span class="sim-tick">1</span><span class="sim-tick">5</span><span class="sim-tick">8</span><span class="sim-tick">12</span><span class="sim-tick">15</span></div>
           </div>
           <div class="sim-input-group">
-            <label class="sim-input-label">Ventes conclues / mois (toute l'équipe)</label>
+            <label class="sim-input-label" for="inp-ventes">Ventes conclues / mois (toute l'équipe)</label>
             <input type="number" class="sim-input" id="inp-ventes" value="8" min="0" oninput="simUpdate()" placeholder="ex : 8">
           </div>
           <div class="sim-input-group">
-            <label class="sim-input-label">CA moyen par vente (€ HT)</label>
+            <label class="sim-input-label" for="inp-deal">CA moyen par vente (€ HT)</label>
             <input type="number" class="sim-input" id="inp-deal" value="3000" min="0" oninput="simUpdate()" placeholder="ex : 3 000">
           </div>
+          <div class="sim-input-group">
+            <label class="sim-input-label" for="sel-margin">Marge brute moyenne sur vos ventes</label>
+            <select class="sim-input" id="sel-margin" onchange="simUpdate()">
+              <option value="20">20 %</option>
+              <option value="30" selected>30 %</option>
+              <option value="40">40 %</option>
+              <option value="50">50 %</option>
+              <option value="60">60 %</option>
+            </select>
+          </div>
           <p class="sim-label-hint" id="sim-conv-hint" style="margin-top:0.4rem;"></p>
+          </div>
         </div>
       </div>
 
@@ -764,11 +790,11 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
           <span class="sim-verdict-val" id="res-deploy">—</span>
         </div>
         <div class="sim-verdict-row">
-          <span class="sim-verdict-name">CA additionnel estimé / an</span>
+          <span class="sim-verdict-name" id="res-net-name">Gain annuel estimé</span>
           <span class="sim-verdict-val green" id="res-net">—</span>
         </div>
         <div class="sim-verdict-row">
-          <span class="sim-verdict-name">Couvert par le CA additionnel en</span>
+          <span class="sim-verdict-name">Déploiement remboursé en</span>
           <span class="sim-verdict-val highlight" id="res-payback">—</span>
         </div>
       </div>
@@ -779,14 +805,14 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
         <canvas class="sim-chart-canvas" id="simChart" width="400" height="160"></canvas>
         <div class="sim-chart-legend">
           <div class="sim-chart-legend-item"><div class="sim-chart-legend-dot" style="background:#B5ADA5;opacity:0.6;border:1px dashed #B5ADA5"></div>Cloud actuel</div>
-          <div class="sim-chart-legend-item"><div class="sim-chart-legend-dot" style="background:#BA7F75"></div>Cloud — équipement total</div>
+          <div class="sim-chart-legend-item"><div class="sim-chart-legend-dot" style="background:#BA7F75"></div>Cloud, équipement total</div>
           <div class="sim-chart-legend-item"><div class="sim-chart-legend-dot sim-dot-private"></div>IA privée</div>
         </div>
       </div>
 
       <!-- Scénarios croissance (visible seulement si step3 débloqué) -->
       <div class="sim-scenarios" id="growth-scenarios" style="display:none">
-        <div class="sim-scenarios-label">Scénario de croissance commerciale</div>
+        <div class="sim-scenarios-label">Niveau de prudence des hypothèses</div>
         <div class="sim-scenarios-tabs">
           <button class="sim-scenario-tab" onclick="simSetScenario('prudent',this)">Prudent</button>
           <button class="sim-scenario-tab active" onclick="simSetScenario('central',this)">Central</button>
@@ -801,20 +827,22 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
 
       <!-- Note double comptage -->
       <div class="sim-double-note" id="double-note" style="display:none">
-        <p>Note méthodologique : si le temps libéré par vos équipes est précisément ce qui génère les nouvelles opportunités commerciales, les leviers 2 et 3 se chevauchent partiellement. Ne les additionnez pas mécaniquement — retenez celui qui représente le mieux votre réalité.</p>
+        <p>Note méthodologique : si le temps libéré par vos équipes est précisément ce qui génère les nouvelles opportunités commerciales, les leviers 2 et 3 se chevauchent partiellement. Ne les additionnez pas mécaniquement : retenez celui qui représente le mieux votre réalité.</p>
       </div>
 
       <!-- CTA -->
       <div class="sim-cta-block">
-        <p class="sim-cta-question">Réserver mon appel découverte Flow Studio</p>
+        <p class="sim-cta-question">Réserver un appel découverte</p>
         <p class="sim-cta-sub">Vérifiez vos hypothèses avec un expert. Cette simulation reste indicative : un diagnostic personnalisé affine les chiffres et identifie les vrais leviers pour votre organisation.</p>
         <div class="sim-cta-form">
-          <input type="text" class="sim-cta-input" id="cta-name" placeholder="Votre prénom et nom">
-          <input type="email" class="sim-cta-input" id="cta-email" placeholder="Votre email professionnel">
-          <input type="text" class="sim-cta-input" id="cta-company" placeholder="Votre entreprise (optionnel)">
+          <input type="text" class="sim-cta-input" id="cta-name" aria-label="Prénom et nom" autocomplete="name" placeholder="Votre prénom et nom">
+          <input type="email" class="sim-cta-input" id="cta-email" aria-label="Email professionnel" autocomplete="email" placeholder="Votre email professionnel">
+          <input type="text" class="sim-cta-input" id="cta-company" aria-label="Entreprise (optionnel)" autocomplete="organization" placeholder="Votre entreprise (optionnel)">
         </div>
-        <button class="sim-cta-btn" id="cta-submit" onclick="simSubmitCRM()">Réserver mon appel découverte →</button>
-        <p class="sim-cta-sent" id="cta-sent">Votre demande a bien été transmise. Nous vous contacterons sous 24 heures pour confirmer le créneau.</p>
+        <button type="button" class="sim-cta-btn" id="cta-submit" onclick="simSubmitCRM()">Réserver un appel découverte →</button>
+        <p class="sim-cta-legal">Vos coordonnées et les résultats de cette simulation sont enregistrés pour préparer l'appel, et pour rien d'autre. <a href="/mentions-legales#politique-confidentialite" target="_blank" rel="noopener">Politique de confidentialité</a></p>
+        <p class="sim-cta-sent" id="cta-sent">Votre simulation est enregistrée. Choisissez votre créneau dans l'agenda qui vient de s'ouvrir. S'il ne s'est pas ouvert : <a href="https://calendar.app.google/YQL39LLfw5zoFn2v7" target="_blank" rel="noopener">accéder à l'agenda</a>.</p>
+        <p class="sim-cta-sent" id="cta-error" role="alert">L'enregistrement n'a pas fonctionné. Vous pouvez réserver directement dans <a href="https://calendar.app.google/YQL39LLfw5zoFn2v7" target="_blank" rel="noopener">l'agenda</a> ou écrire à solen@flow-studio.app.</p>
       </div>
 
     </div><!-- /sim-results -->
@@ -828,7 +856,7 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
   <p class="section-eyebrow">Exemples de systèmes</p>
   <div class="systemes-intro">
     <h2 class="section-title">Chaque entreprise a son propre système.<br><em>Votre investissement aussi.</em></h2>
-    <p style="font-size:0.85rem;font-weight:300;color:#6B6560;line-height:1.8;margin-top:1.5rem;">Ces trois exemples donnent une idée de l'enveloppe d'un projet Flow Private AI selon sa portée. Chaque déploiement est dimensionné après diagnostic — les montants ci-dessous sont indicatifs.</p>
+    <p style="font-size:0.85rem;font-weight:300;color:#6B6560;line-height:1.8;margin-top:1.5rem;">Ces trois exemples donnent une idée de l'enveloppe d'un projet Flow Private AI selon sa portée. Chaque déploiement est dimensionné après diagnostic. Les montants ci-dessous sont indicatifs.</p>
   </div>
   <div class="systemes-grid">
 
@@ -867,7 +895,7 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
     <div class="systeme-card">
       <p class="systeme-num">Exemple 03</p>
       <h3 class="systeme-name">Business Operating System intelligent</h3>
-      <p class="systeme-desc">Une infrastructure IA déployée sur plusieurs fonctions de l'entreprise — commercial, opérations, RH, communication. Des agents métiers interconnectés, une base de connaissances partagée, des automatisations sur mesure.</p>
+      <p class="systeme-desc">Une infrastructure IA déployée sur plusieurs fonctions de l'entreprise : commercial, opérations, RH, communication. Des agents métiers interconnectés, une base de connaissances partagée, des automatisations sur mesure.</p>
       <ul class="systeme-features">
         <li>Architecture multi-agents par département</li>
         <li>Intégrations métier complexes (ERP, outils sectoriels…)</li>
@@ -902,7 +930,7 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
     <div class="argument-card">
       <p class="argument-num">03</p>
       <h3 class="argument-title">Une IA adaptée à votre organisation</h3>
-      <p class="argument-text">L'infrastructure est configurée avec les procédures, les métiers, les données et le vocabulaire de l'entreprise. Les données sensibles ne transitent pas par des serveurs cloud tiers. La confidentialité est un bénéfice structurel, pas un paramètre de sécurité à activer après coup.</p>
+      <p class="argument-text">L'infrastructure est configurée avec les procédures, les métiers, les données et le vocabulaire de l'entreprise. Les données sensibles ne transitent pas par des serveurs cloud tiers. La confidentialité découle de l'architecture elle-même : il n'y a rien à activer après coup.</p>
     </div>
     <div class="argument-card">
       <p class="argument-num">04</p>
@@ -916,7 +944,7 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
 <section class="usage-section">
   <p class="section-eyebrow">Scénarios concrets</p>
   <h2 class="section-title">Une IA privée qui travaille<br>avec <em>les connaissances de votre entreprise.</em></h2>
-  <p class="usage-intro">Ces scénarios illustrent ce que rend possible une infrastructure configurée sur vos données internes. Ils constituent des directions de travail, pas des fonctionnalités prêtes à déployer sans diagnostic préalable.</p>
+  <p class="usage-intro">Ces scénarios illustrent ce que rend possible une infrastructure configurée sur vos données internes. Ce sont des directions de travail, à valider lors du diagnostic avant tout déploiement.</p>
   <div class="usage-grid">
     <div class="usage-col">
       <div class="usage-num">01</div>
@@ -953,7 +981,7 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
   <div class="journee-header">
     <p class="section-eyebrow">En pratique</p>
     <h2 class="section-title">Une journée avec<br><em>Flow Private AI.</em></h2>
-    <p>Voici comment un commercial d'une PME de 30 personnes travaille avec un système IA privé connecté à son CRM, à son catalogue et à ses stocks. Ce n'est pas une démonstration parfaite — c'est ce que rend possible une infrastructure correctement configurée.</p>
+    <p>Voici comment un commercial d'une PME de 30 personnes travaille avec un système IA privé connecté à son CRM, à son catalogue et à ses stocks. La scène est volontairement ordinaire : elle montre ce qu'un système correctement configuré change dans une fin de journée réelle.</p>
   </div>
 
   <div class="journee-scene">
@@ -1011,7 +1039,7 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
   </div><!-- /journee-scene -->
 
   <div class="journee-note">
-    <p>L'IA ne prend pas de décision à la place du commercial. Elle prépare, signale et soumet à validation. <strong>La remise, le devis, la mise à jour CRM restent sous contrôle humain</strong> — c'est ce qui les rend utilisables dans un contexte professionnel réel. Ce scénario est une direction de travail : il est conçu et testé lors du diagnostic, avant tout déploiement.</p>
+    <p>L'IA ne prend pas de décision à la place du commercial. Elle prépare, signale et soumet à validation. <strong>La remise, le devis, la mise à jour CRM restent sous contrôle humain</strong>, et c'est ce qui les rend utilisables dans un contexte professionnel réel. Ce scénario est une direction de travail : il est conçu et testé lors du diagnostic, avant tout déploiement.</p>
   </div>
 </section>
 
@@ -1019,7 +1047,7 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
 <section class="inclus-section">
   <div class="inclus-header">
     <h2 class="inclus-title">Ce que Flow Studio<br><em>conçoit et déploie.</em></h2>
-    <p class="inclus-desc">Flow Private AI n'est pas la livraison d'un serveur. C'est la conception complète d'un système IA adapté à votre organisation : de l'audit des usages à la formation des équipes.</p>
+    <p class="inclus-desc">Le serveur est la partie la plus simple du projet. Flow Studio conçoit le système complet qui l'entoure, de l'audit des usages à la formation des équipes.</p>
   </div>
   <div class="inclus-grid">
     <div class="inclus-item">
@@ -1113,7 +1141,7 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
 <section class="objection-section">
   <div class="objection-inner">
     <p class="objection-label">Ce qu'il faut savoir</p>
-    <h2 class="objection-title">Un modèle local, ce n'est pas<br><em>ChatGPT installé chez vous.</em></h2>
+    <h2 class="objection-title">Ce qu'un modèle local<br><em>fait bien, et ce qu'il fait moins bien.</em></h2>
     <div class="objection-text">
       <p>Un modèle IA exécuté en local n'offre pas automatiquement les mêmes performances qu'un modèle cloud de grande taille. Les modèles locaux évoluent rapidement et peuvent répondre efficacement à la majorité des usages professionnels courants, à condition que le projet soit dimensionné en comparant des tâches équivalentes, et pas uniquement des prix d'accès.</p>
       <p>Le dimensionnement matériel ne dépend pas uniquement du nombre de collaborateurs. La fréquence des requêtes, les modèles choisis et les usages simultanés sont les paramètres déterminants. C'est précisément l'objet du diagnostic : analyser vos usages réels pour calibrer une infrastructure adaptée, ni sous-dimensionnée ni surdimensionnée.</p>
@@ -1163,7 +1191,7 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
         <span class="faq-icon">+</span>
       </div>
       <div class="faq-answer">
-        <p>Flow Private AI est conçu pour des organisations de 15 à 50 collaborateurs dont les dépenses IA augmentent avec les effectifs. En dessous de 10 utilisateurs actifs ou pour des usages peu fréquents, une solution cloud reste généralement plus économique. La simulation TCO réalisée lors du diagnostic permet de trancher objectivement selon votre situation réelle.</p>
+        <p>Sur le seul coût de l'outil, l'IA privée devient moins chère que les abonnements cloud à partir d'environ 25 à 45 personnes équipées, selon le prix de vos abonnements et la durée considérée. Entre 20 et 30 personnes, elle se justifie surtout par l'accès à l'IA pour toute l'équipe, sans coût supplémentaire par personne, et par la maîtrise des données. En dessous d'une vingtaine de personnes, le cloud reste généralement le meilleur choix, et nous vous le dirons. Le simulateur ci-dessus vous donne une première réponse, le diagnostic la confirme avec vos chiffres réels.</p>
       </div>
     </div>
 
@@ -1173,7 +1201,7 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
         <span class="faq-icon">+</span>
       </div>
       <div class="faq-answer">
-        <p>Pour la majorité des usages professionnels courants — rédaction, synthèse, traitement de documents, aide à la décision, questions/réponses sur vos procédures — un modèle local bien dimensionné répond efficacement. Il ne prétend pas égaler les modèles de recherche de pointe sur des tâches complexes. C'est pourquoi le diagnostic commence par l'identification de vos cas d'usage réels avant de dimensionner la solution.</p>
+        <p>Pour la majorité des usages professionnels courants (rédaction, synthèse, traitement de documents, aide à la décision, questions sur vos procédures), un modèle local bien dimensionné répond efficacement. Il ne prétend pas égaler les modèles de recherche de pointe sur des tâches complexes. C'est pourquoi le diagnostic commence par l'identification de vos cas d'usage réels avant de dimensionner la solution.</p>
       </div>
     </div>
 
@@ -1193,7 +1221,7 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
         <span class="faq-icon">+</span>
       </div>
       <div class="faq-answer">
-        <p>L'infrastructure est hébergée sur du matériel physiquement présent dans vos locaux ou dans un datacenter que vous contrôlez. Les traitements réalisés par le modèle local n'envoient aucune donnée à des serveurs cloud tiers. C'est une garantie structurelle, pas une option de paramétrage. Elle est particulièrement importante pour les secteurs soumis à des contraintes réglementaires ou qui traitent des données sensibles.</p>
+        <p>L'infrastructure est hébergée sur du matériel physiquement présent dans vos locaux ou dans un datacenter que vous contrôlez. Les traitements réalisés par le modèle local n'envoient aucune donnée à des serveurs cloud tiers. Cette garantie tient à l'architecture, aucun réglage ne peut la désactiver. Elle compte particulièrement pour les secteurs soumis à des contraintes réglementaires ou qui traitent des données sensibles.</p>
       </div>
     </div>
 
@@ -1203,7 +1231,7 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
         <span class="faq-icon">+</span>
       </div>
       <div class="faq-answer">
-        <p>Oui. L'infrastructure peut être connectée à vos outils métiers : CRM, ERP, suite bureautique, outils de communication, bases documentaires. Les intégrations sont définies lors de la phase de conception selon vos priorités. L'objectif n'est pas de remplacer vos outils, mais de les enrichir avec une couche IA qui connaît votre organisation.</p>
+        <p>Oui. L'infrastructure peut être connectée à vos outils métiers : CRM, ERP, suite bureautique, outils de communication, bases documentaires. Les intégrations sont définies lors de la phase de conception selon vos priorités. Vos outils restent en place : l'infrastructure leur ajoute une couche IA qui connaît votre organisation.</p>
       </div>
     </div>
 
@@ -1225,7 +1253,7 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
   <p class="cta-final-eyebrow">Flow Studio · Flow Private AI</p>
   <h2 class="cta-final-title">Et si votre organisation avait intérêt<br>à posséder <em>sa propre IA ?</em></h2>
   <p class="cta-final-text">Nous analysons ensemble vos usages, vos dépenses actuelles et vos contraintes de confidentialité pour déterminer si une infrastructure privée est pertinente, techniquement et économiquement. Cette conclusion vaut même si vous décidez de rester sur le cloud.</p>
-  <a href="https://calendar.app.google/YQL39LLfw5zoFn2v7" class="cta-btn" target="_blank" rel="noopener">Demander une étude de faisabilité</a>
+  <a href="https://calendar.app.google/YQL39LLfw5zoFn2v7" class="cta-btn" target="_blank" rel="noopener">Réserver un appel découverte</a>
   <p class="cta-final-micro">Échange sans engagement · Simulation TCO offerte · 30 minutes</p>
 </section>
 
@@ -1384,26 +1412,40 @@ function simCalc() {
   // Seuil d'effectif à partir duquel l'IA privée est moins chère sur l'horizon
   var threshold = subPerUser > 0 ? Math.ceil((privateFixed / months + privateMonthly) / subPerUser) : null;
 
-  // === 3. LE SYSTÈME : déploiement vs gains commerciaux ===
-  var deploy   = SIM.selectedPrestation > 0 ? SIM.selectedPrestation : 12000;
+  // === 3. LE SYSTÈME : déploiement vs gains, selon le type de système ===
+  // 5000 = assistant documentaire (temps) · 12000 = système commercial (ventes)
+  // 25000 = business system complet (les deux) · 0 = sur devis (base commerciale 12 000 €)
+  var type     = SIM.selectedPrestation;
+  var deploy   = type > 0 ? type : 12000;
+  var hasSales = type !== 5000;
+  var hasDoc   = type === 5000 || type === 25000;
+  var coef = SIM.currentScenario === 'prudent' ? 0.5 : (SIM.currentScenario === 'ambitieux' ? 1.0 : 0.75);
+
   var salesTeam   = simNum('rng-sales', 5, 1);
   var rdvPerWk    = simNum('rng-rdv', 4, 1);
   var deal        = simNum('inp-deal', 3000, 0);
   var ventesMonth = simNum('inp-ventes', 8, 0);
+  var margin      = simNum('sel-margin', 30, 0) / 100;
   var rdvMonth    = salesTeam * rdvPerWk * 4.33;
   var tauxTransfo = rdvMonth > 0 ? Math.min(ventesMonth / rdvMonth, 1) : 0;
-  var coef = SIM.currentScenario === 'prudent' ? 0.5 : (SIM.currentScenario === 'ambitieux' ? 1.0 : 0.75);
-  // Hypothèse : le système libère l'équivalent d'1 RDV / commercial / semaine
-  var ventesGainMois = salesTeam * 4.33 * tauxTransfo * coef;
-  var caAddAn  = ventesGainMois * deal * 12;
-  var payback  = caAddAn > 0 ? deploy / (caAddAn / 12) : null;
+  // Hypothèse commerciale : le système libère l'équivalent d'1 RDV / commercial / semaine
+  var ventesGainMois = hasSales ? salesTeam * 4.33 * tauxTransfo * coef : 0;
+  var caAddAn    = ventesGainMois * deal * 12;
+  var margeAddAn = caAddAn * margin;
+  // Hypothèse documentaire : 30 min / personne / semaine de recherche évitée, valorisées 35 €/h chargé
+  var DOC = { hoursPerWk: 0.5, hourly: 35 };
+  var docHoursMonth = hasDoc ? total * DOC.hoursPerWk * 4.33 * coef : 0;
+  var docValueAn    = docHoursMonth * 12 * DOC.hourly;
+
+  var gainAn  = margeAddAn + docValueAn;
+  var payback = gainAn > 0 ? deploy / (gainAn / 12) : null;
 
   return {
     total, equipped, subPerUser,
     currentMonthly, fullteamMonthly, deltaMonthly,
     months, privateFixed, privateMonthly, privateTCO,
     cloudTCO, fullteamCloudTCO, infraDelta, breakEven, threshold,
-    growthResult: { deploy, salesTeam, rdvPerWk, deal, ventesMonth, rdvMonth, tauxTransfo, coef, ventesGainMois, caAddAn, payback }
+    growthResult: { type, deploy, hasSales, hasDoc, salesTeam, rdvPerWk, deal, ventesMonth, margin, rdvMonth, tauxTransfo, coef, ventesGainMois, caAddAn, margeAddAn, DOC, docHoursMonth, docValueAn, gainAn, payback }
   };
 }
 
@@ -1471,6 +1513,13 @@ function simUpdate() {
   set('res-infra-note', note);
 
   // Étape 3 : système
+  document.getElementById('sim-sales-inputs').style.display = g.hasSales ? '' : 'none';
+  var sysHint = g.type === 5000
+    ? 'Un assistant documentaire rend du temps à toute l\'équipe : moins de recherches dans les dossiers, les mails et les procédures. Le gain est estimé en temps, pas en ventes.'
+    : g.type === 25000
+      ? 'Un Business System complet agit sur deux leviers : les ventes (renseignez votre équipe commerciale ci-dessous) et le temps de recherche de toute l\'équipe.'
+      : 'Un système commercial agit sur vos ventes : il libère vos commerciaux du travail administratif pour qu\'ils passent plus de temps en rendez-vous.';
+  set('sim-system-hint', sysHint);
   var hint = document.getElementById('sim-conv-hint');
   if (hint) {
     hint.textContent = g.rdvMonth > 0
@@ -1482,18 +1531,22 @@ function simUpdate() {
   if (SIM.step3Unlocked) {
     sys.style.display = '';
     document.getElementById('growth-scenarios').style.display = '';
-    set('res-deploy', SIM.selectedPrestation > 0 ? fmt(g.deploy) : 'Sur devis (base 12 000 €)');
-    set('res-net', fmt(g.caAddAn) + '/an');
+    set('res-deploy', g.type > 0 ? fmt(g.deploy) : 'Sur devis (base 12 000 €)');
+    set('res-net-name', g.hasSales && g.hasDoc ? 'Gain annuel estimé (marge + temps)' : g.hasSales ? 'Marge additionnelle estimée / an' : 'Temps récupéré, valorisé / an');
+    set('res-net', fmt(g.gainAn) + '/an');
     if (g.payback === null) set('res-payback', '—');
     else if (g.payback < 1) set('res-payback', 'moins d\'1 mois');
     else set('res-payback', Math.ceil(g.payback) + ' mois');
-    var label = SIM.currentScenario === 'prudent' ? 'Scénario prudent : 50 % de l\'hypothèse' :
-                SIM.currentScenario === 'ambitieux' ? 'Scénario ambitieux : 100 % de l\'hypothèse' :
-                'Scénario central : 75 % de l\'hypothèse';
-    document.getElementById('scenario-text').innerHTML =
-      '<strong>' + label + '</strong><br>' +
-      'Hypothèse : le système libère l\'équivalent d\'un RDV par commercial et par semaine.<br>' +
-      'Ventes supplémentaires : ' + g.ventesGainMois.toFixed(1).replace('.', ',') + ' / mois';
+    var pct = Math.round(g.coef * 100);
+    var label = SIM.currentScenario === 'prudent' ? 'Scénario prudent' : SIM.currentScenario === 'ambitieux' ? 'Scénario ambitieux' : 'Scénario central';
+    var lines = ['<strong>' + label + ' : ' + pct + ' % des hypothèses ci-dessous</strong>'];
+    if (g.hasSales) {
+      lines.push('Ventes : le système libère l\'équivalent d\'un RDV par commercial et par semaine, soit ' + g.ventesGainMois.toFixed(1).replace('.', ',') + ' vente(s) de plus par mois, ' + fmt(g.caAddAn) + ' de CA par an et ' + fmt(g.margeAddAn) + ' de marge à ' + Math.round(g.margin * 100) + ' %.');
+    }
+    if (g.hasDoc) {
+      lines.push('Temps : 30 minutes de recherche évitées par personne et par semaine, soit ' + Math.round(g.docHoursMonth) + ' h par mois pour ' + r.total + ' personnes, valorisées à ' + g.DOC.hourly + ' €/h chargé (' + fmt(g.docValueAn) + ' par an).');
+    }
+    document.getElementById('scenario-text').innerHTML = lines.join('<br>');
   } else {
     sys.style.display = 'none';
   }
@@ -1609,7 +1662,11 @@ function simSubmitCRM() {
     document.getElementById('cta-email').style.borderColor  = email ? '' : '#d4786e';
     return;
   }
+  document.getElementById('cta-name').style.borderColor = '';
+  document.getElementById('cta-email').style.borderColor = '';
 
+  // L'agenda s'ouvre dans le clic (sinon bloqué par le navigateur), la simulation part en parallèle
+  window.open('https://calendar.app.google/YQL39LLfw5zoFn2v7', '_blank', 'noopener');
   var btn = document.getElementById('cta-submit');
   btn.disabled = true;
   btn.textContent = 'Envoi en cours…';
@@ -1635,16 +1692,15 @@ function simSubmitCRM() {
     'Seuil de rentabilité estimé : ' + r.threshold + ' personnes équipées',
     '',
     '— LE SYSTÈME —',
-    'Système choisi : ' + (SIM.selectedPrestation > 0 ? SIM.selectedPrestation + ' €' : 'sur devis'),
-    'Commerciaux : ' + g.salesTeam + ' · RDV/sem/commercial : ' + g.rdvPerWk,
-    'Ventes / mois : ' + g.ventesMonth + ' · CA moyen : ' + g.deal + ' €',
-    'Taux de transformation déduit : ' + Math.round(g.tauxTransfo * 100) + ' %',
+    'Système choisi : ' + (SIM.selectedPrestation > 0 ? SIM.selectedPrestation + ' €' : 'sur devis (base 12 000 €)'),
     'Scénario : ' + SIM.currentScenario + ' (' + Math.round(g.coef * 100) + ' %)',
-    'CA additionnel estimé / an : ' + Math.round(g.caAddAn) + ' €',
-    'Déploiement couvert par le CA additionnel en : ' + (g.payback ? Math.ceil(g.payback) + ' mois' : 'n/a')
+    (g.hasSales ? 'Commerciaux : ' + g.salesTeam + ' · RDV/sem/commercial : ' + g.rdvPerWk + ' · Ventes/mois : ' + g.ventesMonth + ' · CA moyen : ' + g.deal + ' € · Marge : ' + Math.round(g.margin * 100) + ' %' : 'Pas de levier commercial (assistant documentaire)'),
+    (g.hasSales ? 'Taux de transformation déduit : ' + Math.round(g.tauxTransfo * 100) + ' % · CA additionnel/an : ' + Math.round(g.caAddAn) + ' € · Marge additionnelle/an : ' + Math.round(g.margeAddAn) + ' €' : ''),
+    (g.hasDoc ? 'Temps récupéré : ' + Math.round(g.docHoursMonth) + ' h/mois · valorisé ' + Math.round(g.docValueAn) + ' €/an' : ''),
+    'Gain annuel estimé : ' + Math.round(g.gainAn) + ' € · Déploiement remboursé en : ' + (g.payback ? Math.ceil(g.payback) + ' mois' : 'n/a')
   ];
 
-  var priority = (r.infraDelta > 0 || (g.payback && g.payback <= 6)) ? 'P1 - Chaud (closer)' : 'P2 - Tiède (nurture)';
+  var priority = (r.infraDelta > 0 || (g.payback && g.payback <= 12)) ? 'P1 - Chaud (closer)' : 'P2 - Tiède (nurture)';
 
   fetch('/.netlify/functions/notion-prospect', {
     method: 'POST',
@@ -1655,19 +1711,18 @@ function simSubmitCRM() {
       company: company,
       budget: Math.round(r.privateTCO + g.deploy),
       priority: priority,
-      notes: notes.join('\n')
+      notes: notes.filter(function(l) { return l !== ''; }).join('\n')
     })
   })
-  .then(function(res) { return res.json(); })
+  .then(function(res) { if (!res.ok) throw new Error('HTTP ' + res.status); return res.json(); })
   .then(function(data) {
     document.getElementById('cta-submit').style.display = 'none';
     document.getElementById('cta-sent').style.display = 'block';
   })
   .catch(function(err) {
     console.error('CRM error:', err);
-    btn.disabled = false;
-    btn.textContent = 'Réserver mon appel découverte →';
-    alert('Une erreur est survenue. Contactez-nous directement : studio@flow-studio.app');
+    btn.style.display = 'none';
+    document.getElementById('cta-error').style.display = 'block';
   });
 }
 
