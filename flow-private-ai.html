@@ -192,6 +192,12 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; j
 .sim-verdict-val.highlight { color: #fff; font-size: 1.6rem; }
 .sim-verdict-val.red { color: #d4786e; }
 .sim-verdict-val.green { color: #8aab8a; }
+.sim-verdict-note { font-size: 0.7rem; line-height: 1.7; color: rgba(255,255,255,0.55); margin-top: 1rem; }
+.sim-verdict-note:empty { display: none; }
+.sim-dot-private { background: #0F0F0F; }
+[data-theme="dark"] .sim-dot-private { background: #F0EDE8; }
+.sim-verdict-val { white-space: nowrap; text-align: right; }
+.sim-verdict-name { padding-right: 1rem; }
 .sim-verdict-placeholder { font-size: 0.72rem; color: rgba(255,255,255,0.3); font-style: italic; line-height: 1.7; }
 .sim-conclusion { background: var(--blanc); padding: 1.5rem 2rem; font-size: 0.78rem; line-height: 1.7; color: #524E4A; min-height: 60px; }
 .sim-conclusion strong { color: var(--noir); }
@@ -631,23 +637,47 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
           </div>
           <div class="sim-budget-summary" id="budget-summary">
             <div class="sim-budget-line"><span>Coût IA actuel</span><span id="b-licenses">—</span></div>
-            <div class="sim-budget-line replaceable"><span>Si vous équipiez tout l'effectif</span><span id="b-fullteam">—</span></div>
+            <div class="sim-budget-line"><span>Si vous équipiez tout l'effectif</span><span id="b-fullteam">—</span></div>
             <div class="sim-budget-line total"><span>Différence / mois</span><span id="b-delta">—</span></div>
           </div>
         </div>
       </div>
 
-      <!-- ÉTAPE 2 : IA PRIVÉE (verrouillée au départ) -->
+      <!-- ÉTAPE 2 : INFRASTRUCTURE PRIVÉE -->
       <div class="sim-step-block" id="step2">
         <div class="sim-step-header" onclick="simUnlockStep(2)">
           <span class="sim-step-num">02</span>
-          <span class="sim-step-title">Coût d'une IA privée</span>
+          <span class="sim-step-title">Le coût d'une IA privée</span>
           <span class="sim-step-status" id="step2-status">Comparer avec le cloud →</span>
         </div>
         <div class="sim-step-body">
-          <p class="sim-label-hint">Une infrastructure IA privée a un investissement initial, puis un coût de fonctionnement fixe — indépendant du nombre de collaborateurs qui l'utilisent.</p>
+          <p class="sim-label-hint">Ici, on compare uniquement l'outil : un serveur IA installé chez vous face aux abonnements cloud. Son coût est fixe, que 10 ou 80 personnes l'utilisent.</p>
+          <div class="sim-input-group">
+            <label class="sim-input-label">Horizon de comparaison</label>
+            <select class="sim-input" id="sel-months" onchange="simUpdate()">
+              <option value="36" selected>3 ans</option>
+              <option value="60">5 ans</option>
+            </select>
+          </div>
+          <div class="sim-budget-summary" style="margin-top:1.2rem;">
+            <div class="sim-budget-line"><span>Matériel (achat unique)</span><span id="b-fixed">—</span></div>
+            <div class="sim-budget-line"><span>Fonctionnement (support, énergie)</span><span id="b-monthly">—</span></div>
+            <div class="sim-budget-line total"><span>Coût total sur la période</span><span id="b-tco">—</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ÉTAPE 3 : SYSTÈME & RETOUR -->
+      <div class="sim-step-block" id="step3">
+        <div class="sim-step-header" onclick="simUnlockStep(3)">
+          <span class="sim-step-num">03</span>
+          <span class="sim-step-title">Le système et son retour</span>
+          <span class="sim-step-status" id="step3-status">Estimer mon retour →</span>
+        </div>
+        <div class="sim-step-body">
+          <p class="sim-label-hint">L'outil seul ne change pas vos résultats. Ce qui les change, c'est un système en place : un CRM tenu à jour, des devis préparés en quelques minutes, des relances qui partent. C'est ce que finance le déploiement.</p>
           <div class="sim-prestation">
-            <p class="sim-prestation-label">Quel type de système ?</p>
+            <p class="sim-prestation-label">Quel système voulez-vous construire ?</p>
             <div class="sim-prestation-grid">
               <button class="sim-prestation-opt" data-value="5000" onclick="simSelectPrestation(5000, this)">
                 <div class="sim-prestation-opt-name">Assistant documentaire</div>
@@ -671,31 +701,7 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
               </button>
             </div>
           </div>
-          <div class="sim-input-group" style="margin-top:1.5rem;">
-            <label class="sim-input-label">Horizon de comparaison</label>
-            <select class="sim-input" id="sel-months" onchange="simUpdate()">
-              <option value="36" selected>3 ans</option>
-              <option value="60">5 ans</option>
-            </select>
-          </div>
-          <div class="sim-budget-summary" style="margin-top:1.2rem;">
-            <div class="sim-budget-line"><span>Investissement initial (matériel + déploiement)</span><span id="b-fixed">—</span></div>
-            <div class="sim-budget-line"><span>Fonctionnement mensuel</span><span id="b-monthly">640 €/mois</span></div>
-            <div class="sim-budget-line total"><span>Coût total sur la période</span><span id="b-tco">—</span></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ÉTAPE 3 : GAINS (verrouillée au départ) -->
-      <div class="sim-step-block" id="step3">
-        <div class="sim-step-header" onclick="simUnlockStep(3)">
-          <span class="sim-step-num">03</span>
-          <span class="sim-step-title">Vos gains de productivité &amp; CA</span>
-          <span class="sim-step-status" id="step3-status">Estimer mon retour →</span>
-        </div>
-        <div class="sim-step-body">
-          <p class="sim-label-hint">Deux leviers de retour sur investissement : le temps récupéré par vos équipes, et les ventes supplémentaires rendues possibles.</p>
-          <div class="sim-control">
+          <div class="sim-control" style="margin-top:2rem;">
             <div class="sim-label">Commerciaux dans l'équipe <span id="lbl-sales">5</span></div>
             <input type="range" class="sim-range" id="rng-sales" min="1" max="50" step="1" value="5" oninput="simUpdate()">
             <div class="sim-ticks"><span class="sim-tick">1</span><span class="sim-tick">10</span><span class="sim-tick">20</span><span class="sim-tick">35</span><span class="sim-tick">50</span></div>
@@ -706,13 +712,14 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
             <div class="sim-ticks"><span class="sim-tick">1</span><span class="sim-tick">5</span><span class="sim-tick">8</span><span class="sim-tick">12</span><span class="sim-tick">15</span></div>
           </div>
           <div class="sim-input-group">
-            <label class="sim-input-label">CA moyen par vente (€)</label>
-            <input type="number" class="sim-input" id="inp-deal" value="3000" oninput="simUpdate()" placeholder="ex : 3 000">
+            <label class="sim-input-label">Ventes conclues / mois (toute l'équipe)</label>
+            <input type="number" class="sim-input" id="inp-ventes" value="8" min="0" oninput="simUpdate()" placeholder="ex : 8">
           </div>
           <div class="sim-input-group">
-            <label class="sim-input-label">Nombre de ventes conclues / mois</label>
-            <input type="number" class="sim-input" id="inp-ventes" value="8" oninput="simUpdate()" placeholder="ex : 8">
+            <label class="sim-input-label">CA moyen par vente (€ HT)</label>
+            <input type="number" class="sim-input" id="inp-deal" value="3000" min="0" oninput="simUpdate()" placeholder="ex : 3 000">
           </div>
+          <p class="sim-label-hint" id="sim-conv-hint" style="margin-top:0.4rem;"></p>
         </div>
       </div>
 
@@ -723,37 +730,50 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
 
       <!-- Panel consolidé -->
       <div class="sim-verdict">
-        <div class="sim-verdict-label">Comparaison sur <span id="res-period-label">3 ans</span></div>
+        <div class="sim-verdict-label">L'outil, sur <span id="res-period-label">3 ans</span></div>
         <div class="sim-verdict-row">
-          <span class="sim-verdict-name">Coût cloud actuel (si rien ne change)</span>
+          <span class="sim-verdict-name">Cloud, équipe actuelle</span>
           <span class="sim-verdict-val" id="res-cloud">—</span>
         </div>
         <div class="sim-verdict-row">
-          <span class="sim-verdict-name">Coût si équipement total effectif</span>
+          <span class="sim-verdict-name">Cloud, tout l'effectif équipé</span>
           <span class="sim-verdict-val" id="res-fullteam-tco">—</span>
         </div>
         <div class="sim-verdict-row">
-          <span class="sim-verdict-name">Flow Private AI — coût total</span>
+          <span class="sim-verdict-name">IA privée, tout l'effectif équipé</span>
           <span class="sim-verdict-val" id="res-tco">—</span>
         </div>
         <div class="sim-verdict-row">
-          <span class="sim-verdict-name">Économie vs équipement total cloud</span>
-          <span class="sim-verdict-val green" id="res-savings">—</span>
+          <span class="sim-verdict-name" id="res-savings-name">Écart</span>
+          <span class="sim-verdict-val" id="res-savings">—</span>
         </div>
-        <div class="sim-verdict-row" id="row-net" style="display:none">
-          <span class="sim-verdict-name">CA additionnel potentiel / an</span>
-          <span class="sim-verdict-val highlight green" id="res-net">—</span>
+        <p class="sim-verdict-note" id="res-infra-note"></p>
+      </div>
+
+      <div class="sim-verdict" id="block-system" style="display:none">
+        <div class="sim-verdict-label">Le système, retour sur investissement</div>
+        <div class="sim-verdict-row">
+          <span class="sim-verdict-name">Déploiement du système</span>
+          <span class="sim-verdict-val" id="res-deploy">—</span>
+        </div>
+        <div class="sim-verdict-row">
+          <span class="sim-verdict-name">CA additionnel estimé / an</span>
+          <span class="sim-verdict-val green" id="res-net">—</span>
+        </div>
+        <div class="sim-verdict-row">
+          <span class="sim-verdict-name">Couvert par le CA additionnel en</span>
+          <span class="sim-verdict-val highlight" id="res-payback">—</span>
         </div>
       </div>
 
       <!-- Courbe des dépenses -->
       <div class="sim-chart-wrap">
-        <div class="sim-chart-label">Dépenses cumulées sur la période</div>
+        <div class="sim-chart-label">L'outil : dépenses cumulées sur la période</div>
         <canvas class="sim-chart-canvas" id="simChart" width="400" height="160"></canvas>
         <div class="sim-chart-legend">
           <div class="sim-chart-legend-item"><div class="sim-chart-legend-dot" style="background:#B5ADA5;opacity:0.6;border:1px dashed #B5ADA5"></div>Cloud actuel</div>
           <div class="sim-chart-legend-item"><div class="sim-chart-legend-dot" style="background:#BA7F75"></div>Cloud — équipement total</div>
-          <div class="sim-chart-legend-item"><div class="sim-chart-legend-dot" style="background:#0F0F0F"></div>Flow Private AI</div>
+          <div class="sim-chart-legend-item"><div class="sim-chart-legend-dot sim-dot-private"></div>IA privée</div>
         </div>
       </div>
 
@@ -780,7 +800,7 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
       <!-- CTA -->
       <div class="sim-cta-block">
         <p class="sim-cta-question">Réserver mon appel découverte Flow Studio</p>
-        <p class="sim-cta-sub">Vérifiez vos hypothèses avec un expert. Cette simulation reste indicative — un diagnostic personnalisé affine les chiffres et identifie les vrais leviers pour votre organisation.</p>
+        <p class="sim-cta-sub">Vérifiez vos hypothèses avec un expert. Cette simulation reste indicative : un diagnostic personnalisé affine les chiffres et identifie les vrais leviers pour votre organisation.</p>
         <div class="sim-cta-form">
           <input type="text" class="sim-cta-input" id="cta-name" placeholder="Votre prénom et nom">
           <input type="email" class="sim-cta-input" id="cta-email" placeholder="Votre email professionnel">
@@ -793,7 +813,7 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
     </div><!-- /sim-results -->
   </div><!-- /sim-layout -->
 
-  <p class="sim-note">Simulation indicative, non contractuelle. Montants en euros HT. Infrastructure matérielle estimée à 7 000 €, déploiement Flow Studio selon le type de système sélectionné. Fonctionnement IA privée : 640 €/mois fixe, indépendant du nombre d'utilisateurs. L'économie est calculée par rapport au coût d'équipement total de l'effectif en abonnement cloud. Le gain commercial est estimé sur la base d'un RDV supplémentaire par commercial par semaine libéré par l'IA — à valider avec votre équipe.</p>
+  <p class="sim-note">Simulation indicative, non contractuelle. Montants en euros HT. La comparaison de l'outil porte sur un périmètre égal : abonnements cloud pour tout l'effectif face à une infrastructure privée (matériel estimé à 7 000 €, fonctionnement 640 €/mois, indépendant du nombre d'utilisateurs). Le déploiement du système est traité à part et comparé aux gains commerciaux. Ces gains reposent sur une hypothèse (un RDV libéré par commercial et par semaine) à valider avec votre équipe lors du diagnostic.</p>
 </section>
 
 <!-- SYSTÈMES -->
@@ -1326,120 +1346,140 @@ function simSetScenario(name, btn) {
 var INFRA = { hw: 7000, supportMonthly: 590, energyMonthly: 50 };
 // deploy est déterminé par SIM.selectedPrestation (5000 | 12000 | 25000 | 0)
 
+function simNum(id, def, min) {
+  var v = parseFloat(document.getElementById(id).value);
+  if (isNaN(v)) v = def;
+  return Math.max(min, v);
+}
+
 function simCalc() {
-  // === STEP 1 : COÛT ACTUEL ===
-  var total      = parseInt(document.getElementById('rng-total').value) || 30;
-  var equipped   = parseInt(document.getElementById('rng-equipped').value) || 8;
-  var subPerUser = parseFloat(document.getElementById('rng-sub').value) || 30;
+  // === 1. SITUATION ACTUELLE ===
+  var total      = simNum('rng-total', 30, 1);
+  var equipped   = Math.min(simNum('rng-equipped', 8, 0), total);
+  var subPerUser = simNum('rng-sub', 30, 0);
+  var currentMonthly  = equipped * subPerUser;
+  var fullteamMonthly = total * subPerUser;
+  var deltaMonthly    = fullteamMonthly - currentMonthly;
 
-  // Coût IA cloud actuel (seulement les équipés)
-  var currentMonthly   = equipped * subPerUser;
-  // Coût si tout l'effectif équipé au même abonnement
-  var fullteamMonthly  = total * subPerUser;
-  // Delta mensuel
-  var deltaMonthly     = fullteamMonthly - currentMonthly;
-
-  // === STEP 2 : IA PRIVÉE ===
-  var months = SIM.step2Unlocked ? (parseInt(document.getElementById('sel-months').value) || 36) : 36;
-  var deploy         = SIM.selectedPrestation > 0 ? SIM.selectedPrestation : 12000;
-  var privateFixed   = INFRA.hw + deploy;
-  var privateMonthly = INFRA.supportMonthly + INFRA.energyMonthly; // 640 €/mois fixe
+  // === 2. L'OUTIL : infrastructure privée vs cloud (périmètre égal) ===
+  var months = parseInt(document.getElementById('sel-months').value) || 36;
+  var privateFixed   = INFRA.hw;
+  var privateMonthly = INFRA.supportMonthly + INFRA.energyMonthly;
   var privateTCO     = privateFixed + privateMonthly * months;
-
-  // Totaux sur la période
   var cloudTCO         = currentMonthly * months;
   var fullteamCloudTCO = fullteamMonthly * months;
-  // Économie vs équipement total cloud
-  var savingsVsFullteam = fullteamCloudTCO - privateTCO;
+  var infraDelta       = fullteamCloudTCO - privateTCO; // >0 : IA privée moins chère
 
-  // Break-even (vs fullteam cloud : quand IA privée devient moins chère)
   var breakEven = null;
-  for (var m = 1; m <= months; m++) {
-    if (privateFixed + privateMonthly * m <= fullteamMonthly * m) {
-      breakEven = m; break;
-    }
+  if (fullteamMonthly > privateMonthly) {
+    breakEven = Math.ceil(privateFixed / (fullteamMonthly - privateMonthly));
   }
+  // Seuil d'effectif à partir duquel l'IA privée est moins chère sur l'horizon
+  var threshold = subPerUser > 0 ? Math.ceil((privateFixed / months + privateMonthly) / subPerUser) : null;
 
-  // === STEP 3 : GAINS ===
-  var growthResult = null;
-  if (SIM.step3Unlocked) {
-    var salesTeam  = parseInt(document.getElementById('rng-sales').value) || 5;
-    var rdvPerWk   = parseInt(document.getElementById('rng-rdv').value) || 4;
-    var deal       = parseFloat(document.getElementById('inp-deal').value) || 3000;
-    var ventesMonth= parseFloat(document.getElementById('inp-ventes').value) || 8;
-    // Hypothèse : l'IA libère 20% du temps admin commercial → +1 RDV/sem/commercial en capacité
-    // Scénario prudent 50%, central 75%, ambitieux 100%
-    var coef = SIM.currentScenario === 'prudent' ? 0.5 : (SIM.currentScenario === 'ambitieux' ? 1.0 : 0.75);
-    // Gain = commerciaux × RDV supplémentaires par semaine × taux transfo actuel × deal
-    var tauxTransfo  = ventesMonth / (salesTeam * rdvPerWk * 4.33); // taux actuel déduit
-    var rdvGainSem   = salesTeam * 1; // 1 RDV/sem de plus par commercial (temps admin libéré)
-    var ventesGainMois = rdvGainSem * 4.33 * tauxTransfo * coef;
-    var caAddAn      = ventesGainMois * deal * 12;
-    growthResult = { salesTeam, rdvPerWk, deal, ventesMonth, tauxTransfo, ventesGainMois, caAddAn, coef };
-  }
+  // === 3. LE SYSTÈME : déploiement vs gains commerciaux ===
+  var deploy   = SIM.selectedPrestation > 0 ? SIM.selectedPrestation : 12000;
+  var salesTeam   = simNum('rng-sales', 5, 1);
+  var rdvPerWk    = simNum('rng-rdv', 4, 1);
+  var deal        = simNum('inp-deal', 3000, 0);
+  var ventesMonth = simNum('inp-ventes', 8, 0);
+  var rdvMonth    = salesTeam * rdvPerWk * 4.33;
+  var tauxTransfo = rdvMonth > 0 ? Math.min(ventesMonth / rdvMonth, 1) : 0;
+  var coef = SIM.currentScenario === 'prudent' ? 0.5 : (SIM.currentScenario === 'ambitieux' ? 1.0 : 0.75);
+  // Hypothèse : le système libère l'équivalent d'1 RDV / commercial / semaine
+  var ventesGainMois = salesTeam * 4.33 * tauxTransfo * coef;
+  var caAddAn  = ventesGainMois * deal * 12;
+  var payback  = caAddAn > 0 ? deploy / (caAddAn / 12) : null;
 
   return {
     total, equipped, subPerUser,
     currentMonthly, fullteamMonthly, deltaMonthly,
     months, privateFixed, privateMonthly, privateTCO,
-    cloudTCO, fullteamCloudTCO, savingsVsFullteam, breakEven,
-    growthResult
+    cloudTCO, fullteamCloudTCO, infraDelta, breakEven, threshold,
+    growthResult: { deploy, salesTeam, rdvPerWk, deal, ventesMonth, rdvMonth, tauxTransfo, coef, ventesGainMois, caAddAn, payback }
   };
 }
 
 function simUpdate() {
-  // Sync labels step1
-  document.getElementById('lbl-total').textContent    = document.getElementById('rng-total').value;
-  document.getElementById('lbl-equipped').textContent = document.getElementById('rng-equipped').value;
-  document.getElementById('lbl-sub').textContent      = document.getElementById('rng-sub').value + ' €';
-  // Sync labels step3
-  if (SIM.step3Unlocked) {
-    document.getElementById('lbl-sales').textContent = document.getElementById('rng-sales').value;
-    document.getElementById('lbl-rdv').textContent   = document.getElementById('rng-rdv').value;
-  }
-
   var r = simCalc();
-  var months = r.months;
+  var g = r.growthResult;
+  var set = function(id, txt) { var e = document.getElementById(id); if (e) e.textContent = txt; };
 
-  // Budget summary step1
-  document.getElementById('b-licenses').textContent   = fmt(r.currentMonthly) + '/mois';
-  document.getElementById('b-fullteam').textContent   = fmt(r.fullteamMonthly) + '/mois';
-  var delta = r.deltaMonthly;
-  document.getElementById('b-delta').textContent      = '+' + fmt(delta) + '/mois';
+  // Curseurs : on empêche "équipés > effectif"
+  var eq = document.getElementById('rng-equipped');
+  eq.max = r.total;
+  if (parseInt(eq.value) > r.total) eq.value = r.total;
 
-  // Budget summary step2 (IA privée)
-  if (SIM.step2Unlocked) {
-    document.getElementById('b-fixed').textContent   = fmt(r.privateFixed) + ' €';
-    document.getElementById('b-monthly').textContent = fmt(r.privateMonthly) + ' €/mois';
-    document.getElementById('b-tco').textContent     = fmt(r.privateTCO) + ' €';
-    var prestMsg = document.getElementById('sim-prestation-msg');
-    if (prestMsg) prestMsg.style.display = 'none'; // masquer ancien message
+  set('lbl-total', r.total);
+  set('lbl-equipped', r.equipped);
+  set('lbl-sub', r.subPerUser + ' €');
+  set('lbl-sales', g.salesTeam);
+  set('lbl-rdv', g.rdvPerWk);
+
+  // Étape 1
+  set('b-licenses', fmt(r.currentMonthly) + '/mois');
+  set('b-fullteam', fmt(r.fullteamMonthly) + '/mois');
+  set('b-delta', (r.deltaMonthly > 0 ? '+ ' : '') + fmt(r.deltaMonthly) + '/mois');
+
+  // Étape 2
+  set('b-fixed', fmt(r.privateFixed));
+  set('b-monthly', fmt(r.privateMonthly) + '/mois');
+  set('b-tco', fmt(r.privateTCO));
+
+  // Panneau outil
+  var period = r.months === 60 ? '5 ans' : '3 ans';
+  set('res-period-label', period);
+  set('res-cloud', fmt(r.cloudTCO));
+  set('res-fullteam-tco', fmt(r.fullteamCloudTCO));
+  set('res-tco', SIM.step2Unlocked ? fmt(r.privateTCO) : '—');
+  var savEl = document.getElementById('res-savings');
+  var note = '';
+  if (!SIM.step2Unlocked) {
+    set('res-savings-name', 'Écart');
+    savEl.textContent = '—';
+    savEl.className = 'sim-verdict-val';
+  } else if (r.infraDelta >= 0) {
+    set('res-savings-name', 'Économie avec l\'IA privée');
+    savEl.textContent = fmt(r.infraDelta);
+    savEl.className = 'sim-verdict-val green';
+    if (r.breakEven) note = 'L\'IA privée devient moins chère que le cloud au bout de ' + r.breakEven + ' mois.';
+  } else {
+    set('res-savings-name', 'Surcoût de l\'IA privée');
+    savEl.textContent = fmt(-r.infraDelta);
+    savEl.className = 'sim-verdict-val';
+    note = 'À votre taille, l\'IA privée ne se justifie pas par le prix : elle devient moins chère à partir d\'environ '
+         + r.threshold + ' personnes équipées sur ' + period + '. Ce qu\'elle vous apporte avant ce seuil : vos données restent chez vous, et le coût ne bouge plus quand l\'équipe grandit.';
   }
+  set('res-infra-note', note);
 
-  // Résultats panneau droit
-  document.getElementById('res-period-label').textContent = months === 60 ? '5 ans' : '3 ans';
-  document.getElementById('res-cloud').textContent        = fmt(r.cloudTCO) + ' €';
-  document.getElementById('res-fullteam-tco').textContent = fmt(r.fullteamCloudTCO) + ' €';
-  document.getElementById('res-tco').textContent          = SIM.step2Unlocked ? fmt(r.privateTCO) + ' €' : '—';
-  var sav = r.savingsVsFullteam;
-  document.getElementById('res-savings').textContent      = SIM.step2Unlocked ? (sav > 0 ? fmt(sav) + ' €' : '—') : '—';
-  document.getElementById('res-savings').className        = sav > 0 ? 'sim-verdict-val green' : 'sim-verdict-val';
-
-  // Gains commerciaux (step3)
-  if (SIM.step3Unlocked && r.growthResult) {
-    document.getElementById('row-net').style.display = '';
-    document.getElementById('res-net').textContent   = fmt(r.growthResult.caAddAn) + ' €/an';
+  // Étape 3 : système
+  var hint = document.getElementById('sim-conv-hint');
+  if (hint) {
+    hint.textContent = g.rdvMonth > 0
+      ? 'Votre taux de transformation actuel : environ ' + Math.round(g.tauxTransfo * 100) + ' % (' + Math.round(g.rdvMonth) + ' RDV pour ' + g.ventesMonth + ' ventes par mois).'
+        + (g.ventesMonth > g.rdvMonth ? ' Vous indiquez plus de ventes que de RDV : vérifiez vos chiffres.' : '')
+      : '';
+  }
+  var sys = document.getElementById('block-system');
+  if (SIM.step3Unlocked) {
+    sys.style.display = '';
     document.getElementById('growth-scenarios').style.display = '';
-    var sc = r.growthResult;
-    var label = SIM.currentScenario === 'prudent' ? 'Scénario prudent (50 % des hypothèses)' :
-                SIM.currentScenario === 'ambitieux' ? 'Scénario ambitieux (100 % des hypothèses)' :
-                'Scénario central (75 % des hypothèses)';
+    set('res-deploy', SIM.selectedPrestation > 0 ? fmt(g.deploy) : 'Sur devis (base 12 000 €)');
+    set('res-net', fmt(g.caAddAn) + '/an');
+    if (g.payback === null) set('res-payback', '—');
+    else if (g.payback < 1) set('res-payback', 'moins d\'1 mois');
+    else set('res-payback', Math.ceil(g.payback) + ' mois');
+    var label = SIM.currentScenario === 'prudent' ? 'Scénario prudent : 50 % de l\'hypothèse' :
+                SIM.currentScenario === 'ambitieux' ? 'Scénario ambitieux : 100 % de l\'hypothèse' :
+                'Scénario central : 75 % de l\'hypothèse';
     document.getElementById('scenario-text').innerHTML =
       '<strong>' + label + '</strong><br>' +
-      'Ventes supplémentaires estimées / mois : <span>' + sc.ventesGainMois.toFixed(1) + '</span><br>' +
-      'CA additionnel / an : <span>' + fmt(sc.caAddAn) + ' €</span>';
-    document.getElementById('double-note').style.display = 'none';
+      'Hypothèse : le système libère l\'équivalent d\'un RDV par commercial et par semaine.<br>' +
+      'Ventes supplémentaires : ' + g.ventesGainMois.toFixed(1).replace('.', ',') + ' / mois';
+  } else {
+    sys.style.display = 'none';
   }
+  var dn = document.getElementById('double-note'); if (dn) dn.style.display = 'none';
 
   simDrawChart(r);
 }
@@ -1559,38 +1599,34 @@ function simSubmitCRM() {
   var r = simCalc();
   var months = r.months;
 
+  var g = r.growthResult;
   var notes = [
-    '=== Simulation Flow Private AI — ' + new Date().toLocaleDateString('fr-FR') + ' ===',
+    '=== Simulation Flow Private AI, ' + new Date().toLocaleDateString('fr-FR') + ' ===',
     '',
     '— SITUATION ACTUELLE —',
     'Effectif total : ' + r.total,
     'Collaborateurs équipés en IA : ' + r.equipped,
-    'Abonnement IA / collab / mois : ' + r.subPerUser + ' €',
+    'Abonnement IA / personne / mois : ' + r.subPerUser + ' €',
     'Coût IA actuel / mois : ' + Math.round(r.currentMonthly) + ' €',
-    'Coût si équipement total effectif / mois : ' + Math.round(r.fullteamMonthly) + ' €',
+    'Coût cloud si tout l\'effectif équipé / mois : ' + Math.round(r.fullteamMonthly) + ' €',
     '',
-    '— IA PRIVÉE —',
-    'Type de système sélectionné : ' + SIM.selectedPrestation + ' €',
-    'Investissement initial (matériel + déploiement) : ' + Math.round(r.privateFixed) + ' €',
-    'Fonctionnement mensuel : ' + Math.round(r.privateMonthly) + ' €',
-    'Horizon de comparaison : ' + months + ' mois',
-    'TCO Flow Private AI : ' + Math.round(r.privateTCO) + ' €',
-    'Économie vs équipement total cloud : ' + Math.round(r.savingsVsFullteam) + ' €',
+    '— L\'OUTIL (' + months + ' mois) —',
+    'Cloud tout l\'effectif : ' + Math.round(r.fullteamCloudTCO) + ' €',
+    'IA privée (matériel + fonctionnement) : ' + Math.round(r.privateTCO) + ' €',
+    (r.infraDelta >= 0 ? 'Économie IA privée : ' : 'Surcoût IA privée : ') + Math.round(Math.abs(r.infraDelta)) + ' €',
+    'Seuil de rentabilité estimé : ' + r.threshold + ' personnes équipées',
+    '',
+    '— LE SYSTÈME —',
+    'Système choisi : ' + (SIM.selectedPrestation > 0 ? SIM.selectedPrestation + ' €' : 'sur devis'),
+    'Commerciaux : ' + g.salesTeam + ' · RDV/sem/commercial : ' + g.rdvPerWk,
+    'Ventes / mois : ' + g.ventesMonth + ' · CA moyen : ' + g.deal + ' €',
+    'Taux de transformation déduit : ' + Math.round(g.tauxTransfo * 100) + ' %',
+    'Scénario : ' + SIM.currentScenario + ' (' + Math.round(g.coef * 100) + ' %)',
+    'CA additionnel estimé / an : ' + Math.round(g.caAddAn) + ' €',
+    'Déploiement couvert par le CA additionnel en : ' + (g.payback ? Math.ceil(g.payback) + ' mois' : 'n/a')
   ];
 
-  if (r.growthResult) {
-    var g = r.growthResult;
-    notes.push('', '— CROISSANCE COMMERCIALE —');
-    notes.push('Commerciaux : ' + g.salesTeam);
-    notes.push('RDV / commercial / semaine : ' + g.rdvPerWk);
-    notes.push('CA moyen / vente : ' + g.deal + ' €');
-    notes.push('Ventes actuelles / mois : ' + g.ventesMonth);
-    notes.push('Taux de transformation déduit : ' + (g.tauxTransfo * 100).toFixed(1) + ' %');
-    notes.push('Scénario : ' + SIM.currentScenario + ' (' + Math.round(g.coef*100) + '%)');
-    notes.push('CA additionnel estimé / an : ' + Math.round(g.caAddAn) + ' €');
-  }
-
-  var priority = r.savingsVsFullteam > 20000 ? 'P1 - Chaud (closer)' : 'P2 - Tiède (nurture)';
+  var priority = (r.infraDelta > 0 || (g.payback && g.payback <= 6)) ? 'P1 - Chaud (closer)' : 'P2 - Tiède (nurture)';
 
   fetch('/.netlify/functions/notion-prospect', {
     method: 'POST',
@@ -1599,7 +1635,7 @@ function simSubmitCRM() {
       name: name,
       email: email,
       company: company,
-      budget: Math.round(r.privateTCO),
+      budget: Math.round(r.privateTCO + g.deploy),
       priority: priority,
       notes: notes.join('\n')
     })
