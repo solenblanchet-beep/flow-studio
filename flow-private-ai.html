@@ -1447,8 +1447,19 @@ function simUpdate() {
     set('res-savings-name', 'Surcoût de l\'IA privée');
     savEl.textContent = fmt(-r.infraDelta);
     savEl.className = 'sim-verdict-val';
-    note = 'À votre taille, l\'IA privée ne se justifie pas par le prix : elle devient moins chère à partir d\'environ '
-         + r.threshold + ' personnes équipées sur ' + period + '. Ce qu\'elle vous apporte avant ce seuil : vos données restent chez vous, et le coût ne bouge plus quand l\'équipe grandit.';
+    var newUsers = r.total - r.equipped;
+    var extra = r.privateTCO - r.cloudTCO;
+    note = 'À périmètre égal, le cloud reste moins cher à votre taille (l\'IA privée le devient à partir d\'environ '
+         + r.threshold + ' personnes équipées). ';
+    if (newUsers > 0 && extra > 0) {
+      var perHead = extra / newUsers / r.months;
+      note += 'Mais avec le cloud, chaque poste coûte, et seules ' + r.equipped + ' personnes sur ' + r.total + ' ont l\'IA aujourd\'hui. '
+            + 'Avec l\'IA privée, équiper tout le monde ne coûte rien de plus. Le surcoût par rapport à votre situation actuelle revient à '
+            + fmt(perHead) + ' par mois pour chacune des ' + newUsers + ' personnes nouvellement équipées. '
+            + 'C\'est ce qu\'elles doivent produire en plus pour que l\'opération soit neutre.';
+    } else {
+      note += 'Ce qu\'elle vous apporte avant ce seuil : vos données restent chez vous, et le coût ne bouge plus quand l\'équipe grandit.';
+    }
   }
   set('res-infra-note', note);
 
