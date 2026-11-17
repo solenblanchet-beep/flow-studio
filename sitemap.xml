@@ -20,9 +20,15 @@
   </url>
   <url>
     <loc>https://flow-studio.app/flow-private-ai</loc>
-    <lastmod>2026-11-15</lastmod>
+    <lastmod>2026-11-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://flow-studio.app/cafe-ia-systems</loc>
+    <lastmod>2026-11-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://flow-studio.app/mentions-legales</loc>

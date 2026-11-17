@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Café IA &amp; Systems · Rencontres entre dirigeants | Flow Studio</title>
+<meta name="description" content="Un café entre dirigeants de PME pour parler concrètement d'IA, de CRM et des systèmes qui font fonctionner une entreprise. Gratuit, sur inscription, 8 à 12 participants.">
+<link rel="canonical" href="https://flow-studio.app/cafe-ia-systems">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://flow-studio.app/cafe-ia-systems">
+<meta property="og:title" content="Café IA &amp; Systems · Un café, des dirigeants, des échanges concrets">
+<meta property="og:description" content="Une heure et demie entre dirigeants de PME sur l'IA, le CRM et les systèmes d'une entreprise. Gratuit, inscription obligatoire, 8 à 12 participants.">
+<meta property="og:image" content="https://flow-studio.app/solen-ouahioune-flow-studio.jpg">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Flow Studio">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Café IA &amp; Systems · Flow Studio">
+<meta name="twitter:description" content="Un café entre dirigeants de PME sur l'IA, le CRM et les systèmes d'une entreprise. Gratuit, sur inscription.">
+<meta name="twitter:image" content="https://flow-studio.app/solen-ouahioune-flow-studio.jpg">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<script>
+(function() {
+  var saved = localStorage.getItem('fs-theme');
+  var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  var theme = saved || (prefersDark ? 'dark' : 'light');
+  document.documentElement.setAttribute('data-theme', theme);
+  if (!saved) localStorage.setItem('fs-theme', theme);
+})();
+</script>
+<style>
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --noir: #0F0F0F; --beige: #EAE6E1; --blanc: #F7F5F2;
+  --taupe: #B5ADA5; --terracotta: #BA7F75;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', sans-serif;
+}
+:root[data-theme="dark"] {
+  --noir: #F0EDE8;
+  --beige: #1E1C1A;
+  --blanc: #141210;
+  --taupe: #8A8278;
+}
+[data-theme="dark"] body { background: #141210; color: #F0EDE8; }
+[data-theme="dark"] nav { background: rgba(20,18,16,0.95) !important; }
+[data-theme="dark"] .hero-right { background: #0A0908 !important; }
+[data-theme="dark"] .nav-cta { background: transparent; border-color: rgba(240,237,232,0.4); color: #F0EDE8; }
+[data-theme="dark"] .nav-cta:hover { background: #F0EDE8; color: #141210; }
+[data-theme="dark"] .btn-primary { background: #F0EDE8; color: #141210; border-color: #F0EDE8; }
+[data-theme="dark"] .btn-primary:hover { background: transparent; color: #F0EDE8; }
+[data-theme="dark"] .dropdown-menu { background: #1E1C1A; border-color: rgba(138,130,120,0.3); }
+[data-theme="dark"] .dropdown-menu a:hover { background: #2A2825; }
+[data-theme="dark"] .niveau-card { background: #1E1C1A; }
+[data-theme="dark"] .niveau-card.featured { background: #F0EDE8; }
+[data-theme="dark"] .niveau-card.featured .niveau-title,
+[data-theme="dark"] .niveau-card.featured .niveau-desc,
+[data-theme="dark"] .niveau-card.featured .niveau-item,
+[data-theme="dark"] .niveau-card.featured .niveau-cadrage { color: #141210 !important; }
+[data-theme="dark"] .niveau-cta { border-color: rgba(240,237,232,0.4); color: #F0EDE8; }
+[data-theme="dark"] .niveau-cta:hover { background: #F0EDE8; color: #141210; }
+[data-theme="dark"] .niveau-card.featured .niveau-cta { border-color: #141210; color: #141210; }
+[data-theme="dark"] .niveau-card.featured .niveau-cta:hover { background: #141210; color: #F0EDE8; }
+[data-theme="dark"] .pillar { background: #1E1C1A; }
+[data-theme="dark"] .usage-col { background: #1E1C1A; }
+[data-theme="dark"] .archi-col { background: #1E1C1A; border-color: rgba(138,130,120,0.3); }
+[data-theme="dark"] .archi-col-header { border-bottom-color: rgba(138,130,120,0.3); }
+[data-theme="dark"] .archi-list li { color: rgba(240,237,232,0.65); }
+[data-theme="dark"] .archi-note { color: rgba(240,237,232,0.5); }
+[data-theme="dark"] .archi-disclaimer { color: rgba(240,237,232,0.4); }
+[data-theme="dark"] .usage-title { color: #F0EDE8; }
+[data-theme="dark"] .usage-intro { color: rgba(240,237,232,0.65); }
+[data-theme="dark"] .approche-text,
+[data-theme="dark"] .pillar-text,
+[data-theme="dark"] .niveau-desc,
+[data-theme="dark"] .niveau-item,
+[data-theme="dark"] .usage-list li { color: rgba(240,237,232,0.65); }
+[data-theme="dark"] .hero-subtitle { color: rgba(240,237,232,0.75); }
+[data-theme="dark"] .faq-answer p { color: rgba(240,237,232,0.65); }
+[data-theme="dark"] .mobile-menu { background: #141210; }
+
+html { scroll-behavior: smooth; }
+body { background: var(--blanc); color: var(--noir); font-family: var(--font-body); font-weight: 300; line-height: 1.7; overflow-x: hidden; }
+
+/* NAV */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.4rem 4rem; background: rgba(247,245,242,0.94); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(181,173,165,0.2); }
+.nav-logo { font-family: var(--font-display); font-size: 1.1rem; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 400; color: var(--noir); text-decoration: none; }
+.nav-logo span { font-size: 0.55rem; letter-spacing: 0.4em; display: block; text-align: center; margin-top: -2px; color: var(--taupe); }
+.nav-links { display: flex; gap: 2.5rem; list-style: none; }
+.nav-links a { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--noir); text-decoration: none; transition: color 0.3s; }
+.nav-links a:hover, .nav-links a.active { color: var(--taupe); }
+.nav-dropdown { position: relative; }
+.dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background: var(--blanc); border: 1px solid rgba(181,173,165,0.3); min-width: 240px; z-index: 200; padding: 0.5rem 0; box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+.dropdown-menu li { list-style: none; }
+.dropdown-menu a { display: block; padding: 0.7rem 1.2rem; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--noir); text-decoration: none; transition: background 0.2s; white-space: nowrap; }
+.dropdown-menu a:hover { background: var(--beige); }
+.nav-dropdown:hover .dropdown-menu { display: block; }
+.nav-cta { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 0.65rem 1.5rem; border: 1px solid var(--noir); color: var(--noir); text-decoration: none; transition: all 0.3s; }
+.nav-cta:hover { background: var(--noir); color: var(--blanc); }
+.nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+.nav-hamburger span { display: block; width: 22px; height: 1.5px; background: var(--noir); transition: all 0.3s; }
+.mobile-menu { display: none; position: fixed; top: 76px; left: 0; right: 0; background: var(--blanc); border-bottom: 1px solid rgba(181,173,165,0.3); padding: 1.5rem; z-index: 99; flex-direction: column; }
+.mobile-menu.open { display: flex; }
+.mobile-menu a { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--noir); text-decoration: none; padding: 0.9rem 0; border-bottom: 1px solid rgba(181,173,165,0.2); }
+.mobile-menu .mobile-cta { background: var(--noir); color: var(--blanc); text-align: center; padding: 1rem; border: none; margin-top: 1rem; }
+
+
+.hero-eyebrow { font-size: 0.62rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1.8rem; display: flex; align-items: center; gap: 1rem; }
+.hero-eyebrow::before { content: ''; width: 1.8rem; height: 1px; background: var(--taupe); }
+.btn-primary { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 1.1rem 2.2rem; background: var(--noir); color: var(--blanc); text-decoration: none; border: 1px solid var(--noir); transition: all 0.35s; }
+.btn-primary:hover { background: transparent; color: var(--noir); }
+.btn-ghost { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--noir); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; transition: gap 0.3s; }
+.btn-ghost:hover { gap: 0.9rem; }
+.btn-ghost::after { content: '→'; }
+.hero-micro { font-size: 0.65rem; color: var(--taupe); }
+.section-eyebrow { font-size: 0.62rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1.2rem; display: flex; align-items: center; gap: 1rem; }
+.section-eyebrow::before { content: ''; width: 1.8rem; height: 1px; background: var(--taupe); }
+.section-title { font-family: var(--font-display); font-size: clamp(1.8rem, 2.6vw, 2.4rem); font-weight: 400; line-height: 1.2; }
+.section-title em { font-style: italic; color: var(--taupe); }
+.faq-section { background: var(--beige); padding: 5rem 6rem; }
+.faq-list { margin-top: 3rem; max-width: 780px; }
+.faq-item { border-bottom: 1px solid rgba(181,173,165,0.3); }
+.faq-question { font-family: var(--font-display); font-size: 0.95rem; padding: 1.5rem 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; user-select: none; }
+.faq-question .faq-icon { color: var(--taupe); font-size: 1.1rem; transition: transform 0.3s; flex-shrink: 0; }
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+.faq-answer p { font-size: 0.82rem; color: #524E4A; line-height: 1.9; padding-bottom: 1.5rem; }
+footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid rgba(181,173,165,0.3); display: flex; justify-content: space-between; align-items: center; }
+.footer-logo { font-family: var(--font-display); font-size: 0.95rem; letter-spacing: 0.2em; text-transform: uppercase; }
+.footer-tagline { font-size: 0.65rem; color: var(--taupe); margin-top: 0.2rem; }
+.footer-links { display: flex; gap: 2rem; }
+.footer-links a { font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; color: #8A857F; text-decoration: none; transition: color 0.3s; }
+.footer-links a:hover { color: var(--noir); }
+.theme-toggle { position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 200; width: 44px; height: 44px; border-radius: 50%; background: var(--noir); color: var(--blanc); border: 1px solid rgba(181,173,165,0.3); font-size: 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s; }
+.theme-toggle:hover { transform: scale(1.1); }
+
+/* ====== CAFÉ IA & SYSTEMS ====== */
+.section-eyebrow::before { content: ''; width: 2rem; height: 1px; background: var(--taupe); }
+.section-title em { font-style: italic; color: var(--taupe); }
+.c-hero { min-height: 92vh; display: grid; grid-template-columns: 1.1fr 1fr; padding-top: 76px; }
+.c-hero-left { display: flex; flex-direction: column; justify-content: center; padding: 5rem 4rem 5rem 6rem; }
+.c-hero-title { font-family: var(--font-display); font-size: clamp(2.4rem, 4vw, 3.8rem); font-weight: 400; line-height: 1.08; margin-bottom: 1.8rem; }
+.c-hero-title em { font-style: italic; color: var(--taupe); font-size: 0.62em; line-height: 1.25; display: inline-block; margin-top: 0.5rem; }
+.c-hero-sub { font-size: 0.88rem; color: #524E4A; line-height: 1.9; max-width: 460px; margin-bottom: 2.5rem; }
+.c-hero-actions { display: flex; gap: 1.4rem; align-items: center; flex-wrap: wrap; margin-bottom: 1.2rem; }
+.c-facts { display: flex; flex-wrap: wrap; gap: 0.5rem 1.4rem; font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--taupe); }
+.c-hero-right { background: #0F0F0F; color: #F7F5F2; display: flex; flex-direction: column; justify-content: center; padding: 5rem 4rem; }
+.c-hero-label { font-size: 0.58rem; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(247,245,242,0.35); margin-bottom: 1.6rem; }
+.c-next { display: grid; grid-template-columns: 5.5rem 1fr; gap: 1.6rem; padding: 1.8rem 0; border-top: 1px solid rgba(247,245,242,0.12); text-decoration: none; color: inherit; }
+.c-next:last-of-type { border-bottom: 1px solid rgba(247,245,242,0.12); }
+.c-next-date { text-align: center; }
+.c-next-day { font-family: var(--font-display); font-size: 2.6rem; line-height: 1; font-variant-numeric: lining-nums; }
+.c-next-month { font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(247,245,242,0.55); margin-top: 0.4rem; }
+.c-next-title { font-family: var(--font-display); font-size: 1.05rem; margin-bottom: 0.3rem; }
+.c-next-meta { font-size: 0.75rem; color: rgba(247,245,242,0.6); line-height: 1.6; }
+.c-next-status { display: inline-block; margin-top: 0.6rem; font-size: 0.55rem; letter-spacing: 0.18em; text-transform: uppercase; color: #F7F5F2; border: 1px solid rgba(247,245,242,0.3); padding: 0.25rem 0.6rem; }
+.c-next:hover .c-next-title { color: var(--taupe); }
+
+.c-section { padding: 7rem 6rem; }
+.c-section.beige { background: var(--beige); }
+.c-editions { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: rgba(181,173,165,0.3); margin-top: 3.5rem; }
+.c-edition { background: var(--blanc); padding: 3rem 2.8rem; display: flex; flex-direction: column; }
+.c-edition-top { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: 2.2rem; }
+.c-edition-num { font-size: 0.6rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--taupe); }
+.c-badge { font-size: 0.52rem; letter-spacing: 0.2em; text-transform: uppercase; background: var(--taupe); color: #F7F5F2; padding: 0.3rem 0.7rem; }
+.c-edition-date { font-family: var(--font-display); font-size: 1.15rem; margin-bottom: 1.4rem; }
+.c-edition-theme { font-family: var(--font-display); font-size: clamp(1.3rem, 2vw, 1.7rem); line-height: 1.3; font-weight: 400; flex: 1; margin-bottom: 2rem; }
+.c-edition-meta { font-size: 0.72rem; color: #6B6560; padding-top: 1.2rem; border-top: 1px solid rgba(181,173,165,0.4); margin-bottom: 1.8rem; }
+.c-edition .btn-ghost { align-self: flex-start; background: none; border: none; cursor: pointer; font-family: inherit; }
+
+.c-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; margin-top: 3.5rem; }
+.c-step-num { font-family: var(--font-display); font-size: 2.4rem; line-height: 1; color: var(--taupe); margin-bottom: 1.2rem; font-variant-numeric: lining-nums; }
+.c-step-title { font-family: var(--font-display); font-size: 1.1rem; font-weight: 400; margin-bottom: 0.7rem; }
+.c-step-text { font-size: 0.82rem; color: #524E4A; line-height: 1.85; }
+
+.c-host { display: grid; grid-template-columns: 180px 1fr; gap: 3rem; align-items: center; margin-top: 5rem; padding-top: 3.5rem; border-top: 1px solid rgba(181,173,165,0.4); }
+.c-host img { width: 180px; height: 220px; object-fit: cover; filter: grayscale(8%); display: block; }
+.c-host-label { font-size: 0.6rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--taupe); margin-bottom: 0.8rem; }
+.c-host-name { font-family: var(--font-display); font-size: 1.3rem; margin-bottom: 0.6rem; }
+.c-host p { font-size: 0.82rem; color: #524E4A; line-height: 1.85; max-width: 36rem; }
+
+.c-form-wrap { display: grid; grid-template-columns: 1fr 1.35fr; gap: 5rem; align-items: start; }
+.c-form-intro p { font-size: 0.85rem; color: #524E4A; line-height: 1.9; margin-top: 1.4rem; }
+.c-form-intro .c-facts { margin-top: 2rem; flex-direction: column; gap: 0.7rem; }
+.c-form { background: var(--blanc); padding: 3rem 2.8rem; }
+.c-field { margin-bottom: 1.5rem; }
+.c-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.c-label, .c-form legend { display: block; font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--noir); margin-bottom: 0.6rem; font-weight: 400; }
+.c-label .opt, .c-form legend .opt { color: var(--taupe); text-transform: none; letter-spacing: 0; }
+.c-input, .c-textarea { width: 100%; font-family: var(--font-body); font-size: 0.88rem; font-weight: 300; color: var(--noir); background: transparent; border: 1px solid rgba(181,173,165,0.6); border-radius: 0; padding: 0.85rem 1rem; transition: border-color 0.2s; }
+.c-textarea { min-height: 7rem; resize: vertical; line-height: 1.6; }
+.c-input:focus, .c-textarea:focus { outline: none; border-color: var(--noir); }
+.c-input::placeholder, .c-textarea::placeholder { color: #A9A29A; }
+.c-form fieldset { border: none; margin-bottom: 1.5rem; }
+.c-choices { display: grid; gap: 0.5rem; }
+.c-choices.two { grid-template-columns: 1fr 1fr; }
+.c-choices.four { grid-template-columns: 1fr 1fr; }
+.c-choice { position: relative; }
+.c-choice input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.c-choice span { display: block; border: 1px solid rgba(181,173,165,0.6); padding: 0.9rem 1rem; font-size: 0.8rem; cursor: pointer; transition: all 0.2s; line-height: 1.4; }
+.c-choice span small { display: block; font-size: 0.68rem; color: #8A857F; margin-top: 0.2rem; }
+.c-choice input:checked + span { background: var(--noir); color: var(--blanc); border-color: var(--noir); }
+.c-choice input:checked + span small { color: rgba(247,245,242,0.65); }
+.c-choice input:focus-visible + span { outline: 2px solid var(--terracotta); outline-offset: 2px; }
+.c-check { display: flex; gap: 0.8rem; align-items: flex-start; font-size: 0.8rem; line-height: 1.6; cursor: pointer; margin-bottom: 1.2rem; }
+.c-check input { margin-top: 0.3rem; width: 15px; height: 15px; accent-color: #0F0F0F; flex-shrink: 0; border-radius: 0; }
+.c-legal { font-size: 0.68rem; color: #8A857F; line-height: 1.7; margin-bottom: 1.8rem; }
+.c-legal a, .c-msg a { color: inherit; }
+.c-submit { width: 100%; font-family: var(--font-body); font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; padding: 1.2rem 2rem; background: var(--noir); color: var(--blanc); border: 1px solid var(--noir); border-radius: 0; cursor: pointer; transition: all 0.3s; }
+.c-submit:hover { background: transparent; color: var(--noir); }
+.c-submit[disabled] { opacity: 0.5; cursor: wait; }
+.c-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.c-error-text { font-size: 0.7rem; color: #A3574B; margin-top: 0.4rem; display: none; }
+.c-field.invalid .c-input, fieldset.invalid .c-choice span { border-color: #A3574B; }
+.c-field.invalid .c-error-text, fieldset.invalid .c-error-text { display: block; }
+.c-msg { display: none; padding: 1.4rem 1.6rem; font-size: 0.85rem; line-height: 1.8; margin-top: 1.4rem; }
+.c-msg.ok { background: var(--beige); border-left: 2px solid var(--noir); }
+.c-msg.err { background: rgba(186,127,117,0.12); border-left: 2px solid var(--terracotta); }
+.c-msg strong { font-family: var(--font-display); font-weight: 400; font-size: 1.05rem; display: block; margin-bottom: 0.3rem; }
+.c-faq { max-width: 52rem; margin-top: 3rem; }
+
+[data-theme="dark"] .c-hero-sub, [data-theme="dark"] .c-step-text, [data-theme="dark"] .c-host p, [data-theme="dark"] .c-form-intro p { color: rgba(240,237,232,0.7); }
+[data-theme="dark"] .c-hero-right { background: #0A0908; }
+[data-theme="dark"] .c-edition, [data-theme="dark"] .c-form { background: #1E1C1A; }
+[data-theme="dark"] .c-edition-meta, [data-theme="dark"] .c-legal { color: rgba(240,237,232,0.5); }
+[data-theme="dark"] .c-choice span small { color: rgba(240,237,232,0.5); }
+[data-theme="dark"] .c-choice input:checked + span small { color: rgba(20,18,16,0.6); }
+[data-theme="dark"] .c-input::placeholder, [data-theme="dark"] .c-textarea::placeholder { color: rgba(240,237,232,0.35); }
+[data-theme="dark"] .c-check input { accent-color: #F0EDE8; }
+[data-theme="dark"] footer { background: #1E1C1A; }
+[data-theme="dark"] .c-submit { background: #F0EDE8; color: #141210; border-color: #F0EDE8; }
+[data-theme="dark"] .c-submit:hover { background: transparent; color: #F0EDE8; }
+[data-theme="dark"] .c-choice input:checked + span { background: #F0EDE8; color: #141210; border-color: #F0EDE8; }
+
+@media (max-width: 960px) {
+  nav { padding: 1.2rem 1.5rem; }
+  .nav-links, .nav-cta { display: none; }
+  .nav-hamburger { display: flex; }
+  .c-hero { grid-template-columns: 1fr; min-height: auto; }
+  .c-hero-left { padding: 4rem 1.5rem 2.5rem; }
+  .c-hero-right { padding: 2.5rem 1.5rem 3rem; }
+  .c-section { padding: 4.5rem 1.5rem; }
+  .c-editions, .c-steps, .c-form-wrap { grid-template-columns: 1fr; }
+  .c-steps { gap: 2.2rem; }
+  .c-form-wrap { gap: 2.5rem; }
+  .c-edition { padding: 2.2rem 1.6rem; }
+  .c-form { padding: 2rem 1.3rem; }
+  .c-row, .c-choices.two, .c-choices.four { grid-template-columns: 1fr; }
+  .c-host { grid-template-columns: 1fr; gap: 1.6rem; }
+  .c-host img { width: 140px; height: 170px; }
+  footer { flex-direction: column; gap: 1.5rem; padding: 2rem 1.5rem; align-items: flex-start; }
+  .footer-links { flex-wrap: wrap; gap: 1rem 1.5rem; }
+}
+
+</style>
+</head>
+<body>
+
+<nav id="mainNav">
+  <a href="/" class="nav-logo">FLOW<span>STUDIO</span></a>
+  <ul class="nav-links">
+    <li><a href="/entrepreneurs">Entrepreneurs</a></li>
+    <li class="nav-dropdown">
+      <a href="/pme">PME</a>
+      <ul class="dropdown-menu">
+        <li><a href="/pme">Conseil IA pour PME</a></li>
+        <li><a href="/flow-private-ai">Flow Private AI</a></li>
+      </ul>
+    </li>
+    <li><a href="/solutions">Solutions</a></li>
+    <li><a href="/realisations">Réalisations</a></li>
+    <li><a href="/solen-ouahioune">À propos</a></li>
+  </ul>
+  <a href="https://calendar.app.google/YQL39LLfw5zoFn2v7" class="nav-cta" target="_blank" rel="noopener">Prendre rendez-vous</a>
+  <button class="nav-hamburger" onclick="document.querySelector('.mobile-menu').classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu">
+  <a href="/entrepreneurs">Entrepreneurs</a>
+  <a href="/pme">PME</a>
+  <a href="/flow-private-ai">Flow Private AI</a>
+  <a href="/solutions">Solutions</a>
+  <a href="/realisations">Réalisations</a>
+  <a href="/solen-ouahioune">À propos</a>
+  <a href="https://calendar.app.google/YQL39LLfw5zoFn2v7" class="mobile-cta" target="_blank" rel="noopener">Prendre rendez-vous</a>
+</div>
+
+
+<!-- HERO -->
+<section class="c-hero">
+  <div class="c-hero-left">
+    <p class="hero-eyebrow">Flow Studio · Rencontres entre dirigeants</p>
+    <h1 class="c-hero-title">Café IA &amp; Systems<br><em>Un café, des dirigeants, des échanges concrets.</em></h1>
+    <p class="c-hero-sub">Une heure et demie, le matin, entre dirigeants et responsables d'équipe de PME. On y parle des systèmes qui font fonctionner une entreprise : l'IA, le CRM, l'information, les processus. Chacun vient avec une situation réelle et repart avec des pistes applicables.</p>
+    <div class="c-hero-actions">
+      <a href="#inscription" class="btn-primary">Réserver ma place</a>
+      <a href="#editions" class="btn-ghost">Voir les éditions</a>
+    </div>
+    <div class="c-facts"><span>Gratuit</span><span>Inscription obligatoire</span><span>8 à 12 participants</span></div>
+  </div>
+  <div class="c-hero-right">
+    <p class="c-hero-label">Prochaines éditions</p>
+    <a class="c-next" href="#inscription" data-edition="saint-germain">
+      <div class="c-next-date"><div class="c-next-day">20</div><div class="c-next-month">Jan 2027</div></div>
+      <div>
+        <div class="c-next-title">Saint-Germain-en-Laye</div>
+        <div class="c-next-meta">Mercredi 20 janvier · 8h30–10h</div>
+        <span class="c-next-status">Date à confirmer</span>
+      </div>
+    </a>
+    <a class="c-next" href="#inscription" data-edition="cergy">
+      <div class="c-next-date"><div class="c-next-day">25</div><div class="c-next-month">Fév 2027</div></div>
+      <div>
+        <div class="c-next-title">Cergy</div>
+        <div class="c-next-meta">Jeudi 25 février · 8h30–10h</div>
+        <span class="c-next-status">Date à confirmer</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ÉDITIONS -->
+<section class="c-section" id="editions">
+  <p class="section-eyebrow">Les éditions</p>
+  <h2 class="section-title">Une ville, une question,<br><em>une matinée pour y répondre.</em></h2>
+  <div class="c-editions">
+    <article class="c-edition">
+      <div class="c-edition-top"><span class="c-edition-num">Édition 01 · Saint-Germain-en-Laye</span><span class="c-badge">À confirmer</span></div>
+      <p class="c-edition-date">Mercredi 20 janvier 2027</p>
+      <h3 class="c-edition-theme">Votre entreprise utilise l'IA. Mais est-elle vraiment intégrée à votre fonctionnement ?</h3>
+      <p class="c-edition-meta">8 à 12 participants · Gratuit sur inscription · 8h30–10h</p>
+      <button type="button" class="btn-ghost" data-edition="saint-germain">Réserver pour cette édition</button>
+    </article>
+    <article class="c-edition">
+      <div class="c-edition-top"><span class="c-edition-num">Édition 02 · Cergy</span><span class="c-badge">À confirmer</span></div>
+      <p class="c-edition-date">Jeudi 25 février 2027</p>
+      <h3 class="c-edition-theme">Votre CRM sert-il réellement à piloter votre activité ?</h3>
+      <p class="c-edition-meta">8 à 12 participants · Gratuit sur inscription · 8h30–10h</p>
+      <button type="button" class="btn-ghost" data-edition="cergy">Réserver pour cette édition</button>
+    </article>
+  </div>
+</section>
+
+<!-- FORMAT -->
+<section class="c-section beige">
+  <p class="section-eyebrow">Le format</p>
+  <h2 class="section-title">Une table, un café,<br><em>et vos situations réelles.</em></h2>
+  <div class="c-steps">
+    <div>
+      <div class="c-step-num">01</div>
+      <h3 class="c-step-title">Une question pour ouvrir</h3>
+      <p class="c-step-text">Chaque édition part d'une question précise, posée en début de matinée. Elle donne le fil des échanges sans les enfermer.</p>
+    </div>
+    <div>
+      <div class="c-step-num">02</div>
+      <h3 class="c-step-title">Vos situations réelles</h3>
+      <p class="c-step-text">Chacun apporte une difficulté concrète de son entreprise. Les échanges partent de là, entre personnes qui vivent des problèmes comparables.</p>
+    </div>
+    <div>
+      <div class="c-step-num">03</div>
+      <h3 class="c-step-title">Des pistes à appliquer</h3>
+      <p class="c-step-text">Vous repartez avec des idées concrètes et des repères pour décider de la suite, que vous travailliez avec Flow Studio ou non.</p>
+    </div>
+  </div>
+  <div class="c-host">
+    <img src="/solen-ouahioune-flow-studio.jpg" alt="Solen Ouahioune, fondatrice de Flow Studio" loading="lazy" width="180" height="220">
+    <div>
+      <p class="c-host-label">Animé par</p>
+      <p class="c-host-name">Solen Ouahioune</p>
+      <p>Business Systems Designer et fondatrice de Flow Studio. Elle conçoit les systèmes de travail de PME et forme des équipes de PME et de grands groupes à l'IA appliquée à leur métier.</p>
+    </div>
+  </div>
+</section>
+
+<!-- INSCRIPTION -->
+<section class="c-section" id="inscription">
+  <div class="c-form-wrap">
+    <div class="c-form-intro">
+      <p class="section-eyebrow">Inscription</p>
+      <h2 class="section-title">Réserver<br><em>ma place.</em></h2>
+      <p>La participation est gratuite. L'inscription est obligatoire : chaque édition accueille 8 à 12 personnes, pour que chacun puisse prendre la parole.</p>
+      <p>Chaque inscription est confirmée par email, avec l'adresse exacte du lieu.</p>
+      <div class="c-facts"><span>Gratuit</span><span>8h30–10h</span><span>8 à 12 participants</span></div>
+    </div>
+
+    <form class="c-form" id="cafeForm" novalidate>
+      <fieldset id="fs-edition">
+        <legend>Édition souhaitée *</legend>
+        <div class="c-choices two">
+          <label class="c-choice"><input type="radio" name="edition" value="saint-germain" required><span>Saint-Germain-en-Laye<small>Mercredi 20 janvier 2027</small></span></label>
+          <label class="c-choice"><input type="radio" name="edition" value="cergy"><span>Cergy<small>Jeudi 25 février 2027</small></span></label>
+        </div>
+        <p class="c-error-text">Choisissez une édition.</p>
+      </fieldset>
+
+      <div class="c-row">
+        <div class="c-field"><label class="c-label" for="f-firstname">Prénom *</label><input class="c-input" id="f-firstname" name="firstname" autocomplete="given-name" placeholder="Prénom" required maxlength="80"><p class="c-error-text">Indiquez votre prénom.</p></div>
+        <div class="c-field"><label class="c-label" for="f-lastname">Nom *</label><input class="c-input" id="f-lastname" name="lastname" autocomplete="family-name" placeholder="Nom" required maxlength="80"><p class="c-error-text">Indiquez votre nom.</p></div>
+      </div>
+      <div class="c-field"><label class="c-label" for="f-email">Email professionnel *</label><input class="c-input" id="f-email" name="email" type="email" autocomplete="email" placeholder="prenom@entreprise.fr" required maxlength="160"><p class="c-error-text">Indiquez une adresse email valide.</p></div>
+      <div class="c-field"><label class="c-label" for="f-company">Entreprise *</label><input class="c-input" id="f-company" name="company" autocomplete="organization" placeholder="Nom de l'entreprise" required maxlength="160"><p class="c-error-text">Indiquez votre entreprise.</p></div>
+      <div class="c-field"><label class="c-label" for="f-role">Fonction *</label><input class="c-input" id="f-role" name="role" autocomplete="organization-title" placeholder="Dirigeant, responsable commercial…" required maxlength="160"><p class="c-error-text">Indiquez votre fonction.</p></div>
+
+      <fieldset>
+        <legend>Taille de l'équipe <span class="opt">(facultatif)</span></legend>
+        <div class="c-choices four">
+          <label class="c-choice"><input type="radio" name="team" value="solo"><span>Solo</span></label>
+          <label class="c-choice"><input type="radio" name="team" value="2-10"><span>2 à 10 personnes</span></label>
+          <label class="c-choice"><input type="radio" name="team" value="11-50"><span>11 à 50 personnes</span></label>
+          <label class="c-choice"><input type="radio" name="team" value="50+"><span>Plus de 50 personnes</span></label>
+        </div>
+      </fieldset>
+
+      <div class="c-field"><label class="c-label" for="f-challenge">Quelle difficulté aimeriez-vous aborder pendant ce café ? <span class="opt">(facultatif)</span></label><textarea class="c-textarea" id="f-challenge" name="challenge" maxlength="1500" placeholder="Ex. : notre CRM est mal utilisé, nos informations sont dispersées, nous aimerions intégrer l'IA à nos processus…"></textarea></div>
+
+      <div class="c-hp" aria-hidden="true"><label for="f-website">Site web</label><input id="f-website" name="website" tabindex="-1" autocomplete="off"></div>
+
+      <label class="c-check"><input type="checkbox" name="optin" id="f-optin"><span>J'accepte de recevoir les actualités et invitations de Flow Studio (facultatif).</span></label>
+      <p class="c-legal">Ces informations servent à gérer votre inscription et à préparer la rencontre. Les communications commerciales nécessitent votre accord distinct, ci-dessus. <a href="/mentions-legales#politique-confidentialite" target="_blank" rel="noopener">Politique de confidentialité</a></p>
+
+      <button type="submit" class="c-submit" id="cafeSubmit">Réserver ma place</button>
+      <div class="c-msg ok" id="cafeOk" role="status"></div>
+      <div class="c-msg err" id="cafeErr" role="alert"><strong>L'inscription n'a pas pu être enregistrée.</strong>Réessayez dans un instant, ou écrivez à <a href="mailto:solen@flow-studio.app?subject=Inscription%20Caf%C3%A9%20IA%20%26%20Systems">solen@flow-studio.app</a> en indiquant l'édition choisie.</div>
+    </form>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="c-section beige">
+  <p class="section-eyebrow">Questions fréquentes</p>
+  <h2 class="section-title">Avant de<br><em>vous inscrire.</em></h2>
+  <div class="c-faq">
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)"><span>La participation est-elle vraiment gratuite ?</span><span class="faq-icon">+</span></div>
+      <div class="faq-answer"><p>Oui. Le café est offert, la seule condition est de s'inscrire.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)"><span>Pourquoi l'inscription est-elle obligatoire ?</span><span class="faq-icon">+</span></div>
+      <div class="faq-answer"><p>Chaque édition accueille 8 à 12 personnes, pour que chacun puisse participer aux échanges. L'inscription permet aussi de vous communiquer l'adresse exacte et de préparer la matinée à partir des difficultés que vous indiquez.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)"><span>Est-ce une présentation commerciale ?</span><span class="faq-icon">+</span></div>
+      <div class="faq-answer"><p>Les échanges partent de vos situations, pas des offres de Flow Studio. Si un sujet mérite d'aller plus loin après le café, un diagnostic de votre organisation peut vous être proposé, sans obligation.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)"><span>À qui s'adresse ce café ?</span><span class="faq-icon">+</span></div>
+      <div class="faq-answer"><p>Aux dirigeants et aux responsables d'équipe ou de service de TPE et de PME. Si vous portez un sujet d'organisation, de CRM ou d'IA dans votre entreprise, vous êtes au bon endroit.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)"><span>Et si je ne peux plus venir ?</span><span class="faq-icon">+</span></div>
+      <div class="faq-answer"><p>Prévenez-nous à <a href="mailto:solen@flow-studio.app">solen@flow-studio.app</a> : votre place pourra être proposée à une autre personne.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>
+    <div class="footer-logo">Flow Studio</div>
+    <div class="footer-tagline">Business Systems Design · IA & Systèmes</div>
+  </div>
+  <div class="footer-links">
+    <a href="/">Accueil</a>
+    <a href="/entrepreneurs">Entrepreneurs</a>
+    <a href="/pme">PME</a>
+    <a href="/flow-private-ai">Flow Private AI</a>
+    <a href="/cafe-ia-systems">Café IA &amp; Systems</a>
+    <a href="/solutions">Solutions</a>
+    <a href="/realisations">Réalisations</a>
+    <a href="/solen-ouahioune">À propos</a>
+    <a href="/mentions-legales">Mentions légales</a>
+  </div>
+</footer>
+
+<button class="theme-toggle" onclick="toggleTheme()" aria-label="Basculer le thème" id="themeToggle">🌙</button>
+
+<script>
+function toggleTheme() {
+  var current = document.documentElement.getAttribute('data-theme') || 'light';
+  var next = current === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('fs-theme', next);
+  var btn = document.getElementById('themeToggle');
+  if (btn) btn.textContent = next === 'dark' ? '☀' : '🌙';
+}
+
+(function() {
+  var theme = document.documentElement.getAttribute('data-theme') || 'light';
+  var btn = document.getElementById('themeToggle');
+  if (btn) btn.textContent = theme === 'dark' ? '☀' : '🌙';
+})();
+
+function toggleFaq(el) {
+  var item = el.parentElement;
+  var answer = item.querySelector('.faq-answer');
+  var isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(function(i) {
+    i.classList.remove('open');
+    i.querySelector('.faq-answer').style.maxHeight = '0';
+  });
+  if (!isOpen) {
+    item.classList.add('open');
+    answer.style.maxHeight = answer.scrollHeight + 'px';
+  }
+}
+
+window.addEventListener('scroll', function() {
+  var nav = document.getElementById('mainNav');
+  if (window.scrollY > 20) {
+    nav.style.borderBottomColor = 'rgba(181,173,165,0.3)';
+  } else {
+    nav.style.borderBottomColor = 'rgba(181,173,165,0.2)';
+  }
+});
+
+
+/* ---- CAFÉ IA & SYSTEMS ---- */
+(function() {
+  var EDITIONS = { 'saint-germain': 'Saint-Germain-en-Laye, mercredi 20 janvier 2027', 'cergy': 'Cergy, jeudi 25 février 2027' };
+  var form = document.getElementById('cafeForm');
+
+  function pick(value) {
+    var r = form.querySelector('input[name="edition"][value="' + value + '"]');
+    if (r) { r.checked = true; document.getElementById('fs-edition').classList.remove('invalid'); }
+  }
+  document.querySelectorAll('[data-edition]').forEach(function(el) {
+    el.addEventListener('click', function(e) {
+      pick(el.getAttribute('data-edition'));
+      if (el.tagName === 'BUTTON') { document.getElementById('inscription').scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+
+  form.addEventListener('input', function(e) {
+    var box = e.target.closest('.c-field') || e.target.closest('fieldset');
+    if (box && box.classList.contains('invalid')) box.classList.remove('invalid');
+  });
+  form.addEventListener('change', function(e) {
+    var box = e.target.closest('fieldset');
+    if (box) box.classList.remove('invalid');
+  });
+
+  function setInvalid(el, bad) { (el.closest('.c-field') || el.closest('fieldset')).classList.toggle('invalid', bad); }
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var ok = true, first = null;
+    var ed = form.querySelector('input[name="edition"]:checked');
+    document.getElementById('fs-edition').classList.toggle('invalid', !ed);
+    if (!ed) { ok = false; first = first || form.querySelector('input[name="edition"]'); }
+    ['f-firstname','f-lastname','f-company','f-role'].forEach(function(id) {
+      var el = document.getElementById(id); var bad = !el.value.trim();
+      setInvalid(el, bad); if (bad) { ok = false; first = first || el; }
+    });
+    var em = document.getElementById('f-email');
+    var badEmail = !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em.value.trim());
+    setInvalid(em, badEmail); if (badEmail) { ok = false; first = first || em; }
+    if (!ok) { first.focus(); return; }
+
+    var team = form.querySelector('input[name="team"]:checked');
+    var payload = {
+      edition: ed.value,
+      firstname: document.getElementById('f-firstname').value.trim(),
+      lastname: document.getElementById('f-lastname').value.trim(),
+      email: em.value.trim(),
+      company: document.getElementById('f-company').value.trim(),
+      role: document.getElementById('f-role').value.trim(),
+      team: team ? team.value : '',
+      challenge: document.getElementById('f-challenge').value.trim(),
+      optin: document.getElementById('f-optin').checked,
+      website: document.getElementById('f-website').value
+    };
+    var btn = document.getElementById('cafeSubmit');
+    var okBox = document.getElementById('cafeOk'), errBox = document.getElementById('cafeErr');
+    btn.disabled = true; btn.textContent = 'Envoi en cours…'; errBox.style.display = 'none';
+
+    fetch('/.netlify/functions/cafe-inscription', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload)
+    })
+    .then(function(res) { if (!res.ok) throw new Error('HTTP ' + res.status); return res.json(); })
+    .then(function() {
+      okBox.innerHTML = '<strong>Merci ' + payload.firstname.replace(/[<>&"]/g, '') + ', votre demande est enregistrée.</strong>'
+        + 'Édition : ' + EDITIONS[payload.edition] + '. Vous recevrez un email de confirmation avec l\'adresse exacte du lieu.';
+      okBox.style.display = 'block';
+      btn.style.display = 'none';
+      form.querySelectorAll('input, textarea').forEach(function(i) { i.disabled = true; });
+    })
+    .catch(function() {
+      errBox.style.display = 'block';
+      btn.disabled = false; btn.textContent = 'Réserver ma place';
+    });
+  });
+})();
+</script>
+</body>
+</html>
