@@ -1,0 +1,6 @@
+# Seul réglage déclaré ici : la planification du rappel J-1 du Café IA & Systems.
+# Les autres réglages de build restent ceux de l'interface Netlify.
+
+[functions."cafe-rappel"]
+  # Tous les jours à 8h UTC (9h à Paris en hiver, 10h en été)
+  schedule = "0 8 * * *"

@@ -384,7 +384,7 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
       <p class="section-eyebrow">Inscription</p>
       <h2 class="section-title">Réserver<br><em>ma place.</em></h2>
       <p>La participation est gratuite. L'inscription est obligatoire : chaque édition accueille 8 à 12 personnes, pour que chacun puisse prendre la parole.</p>
-      <p>Chaque inscription est confirmée par email, avec l'adresse exacte du lieu.</p>
+      <p>Vous recevez un email de confirmation dès votre inscription, avec l'invitation à ajouter à votre agenda, puis un rappel la veille avec l'adresse exacte du lieu.</p>
       <div class="c-facts"><span>Gratuit</span><span>8h30–10h</span><span>8 à 12 participants</span></div>
     </div>
 
@@ -441,7 +441,7 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
     </div>
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)"><span>Pourquoi l'inscription est-elle obligatoire ?</span><span class="faq-icon">+</span></div>
-      <div class="faq-answer"><p>Chaque édition accueille 8 à 12 personnes, pour que chacun puisse participer aux échanges. L'inscription permet aussi de vous communiquer l'adresse exacte et de préparer la matinée à partir des difficultés que vous indiquez.</p></div>
+      <div class="faq-answer"><p>Chaque édition accueille 8 à 12 personnes, pour que chacun puisse participer aux échanges. L'inscription permet aussi de vous envoyer la confirmation et le rappel avec l'adresse exacte, et de préparer la matinée à partir des difficultés que vous indiquez.</p></div>
     </div>
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)"><span>Est-ce une présentation commerciale ?</span><span class="faq-icon">+</span></div>
@@ -581,9 +581,11 @@ window.addEventListener('scroll', function() {
       method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload)
     })
     .then(function(res) { if (!res.ok) throw new Error('HTTP ' + res.status); return res.json(); })
-    .then(function() {
+    .then(function(data) {
       okBox.innerHTML = '<strong>Merci ' + payload.firstname.replace(/[<>&"]/g, '') + ', votre demande est enregistrée.</strong>'
-        + 'Édition : ' + EDITIONS[payload.edition] + '. Vous recevrez un email de confirmation avec l\'adresse exacte du lieu.';
+        + 'Édition : ' + EDITIONS[payload.edition] + '. '
+        + (data && data.emailSent ? 'Un email de confirmation vient de vous être envoyé, avec l\'invitation pour votre agenda.' : 'Vous recevrez un email de confirmation sous peu.')
+        + ' Un rappel suivra la veille, avec l\'adresse exacte.';
       okBox.style.display = 'block';
       btn.style.display = 'none';
       form.querySelectorAll('input, textarea').forEach(function(i) { i.disabled = true; });

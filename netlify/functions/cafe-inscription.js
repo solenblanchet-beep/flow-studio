@@ -1,16 +1,12 @@
 /**
  * Netlify Function — Inscription au Café IA & Systems
- * Crée une fiche prospect dans la CRM Notion (même base que notion-prospect).
+ * 1. Crée une fiche prospect dans la CRM Notion
+ * 2. Envoie l'email de confirmation (Brevo) avec l'invitation agenda (.ics)
+ * 3. Trace l'envoi dans « Dernières actions »
  *
- * Variables d'environnement (déjà configurées sur Netlify) :
- *   NOTION_TOKEN   — integration token (secret, jamais côté client)
- *   NOTION_DB_ID   — 2693bb6f-bc49-80c4-9905-000b5a9598ea
+ * Variables d'environnement Netlify : NOTION_TOKEN, NOTION_DB_ID, BREVO_API_KEY
  */
-
-const EDITIONS = {
-  'saint-germain': { label: 'Saint-Germain-en-Laye', short: 'Saint-Germain', date: '2027-01-20', num: '01' },
-  'cergy':         { label: 'Cergy',                 short: 'Cergy',         date: '2027-02-25', num: '02' }
-};
+const cafe = require('../lib/cafe');
 
 const TEAM = {
   'solo':   { label: 'Solo',                 potentiel: 'Faible', priorite: 'P3 - Froid (veille)' },
@@ -22,17 +18,13 @@ const TEAM = {
 function clean(v, max) {
   return String(v == null ? '' : v).replace(/\s+/g, ' ').trim().slice(0, max);
 }
-
 function json(statusCode, obj) {
   return { statusCode, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(obj) };
 }
 
 exports.handler = async function(event) {
   if (event.httpMethod !== 'POST') return json(405, { error: 'Method not allowed' });
-
-  const NOTION_TOKEN = process.env.NOTION_TOKEN;
-  const NOTION_DB_ID = process.env.NOTION_DB_ID || '2693bb6f-bc49-80c4-9905-000b5a9598ea';
-  if (!NOTION_TOKEN) {
+  if (!process.env.NOTION_TOKEN) {
     console.error('NOTION_TOKEN not set');
     return json(500, { error: 'Server configuration error' });
   }
@@ -42,9 +34,9 @@ exports.handler = async function(event) {
   catch (e) { return json(400, { error: 'Invalid JSON' }); }
 
   // Piège à robots : champ invisible pour un humain
-  if (clean(body.website, 200)) return json(200, { ok: true });
+  if (clean(body.website, 200)) return json(200, { ok: true, emailSent: true });
 
-  const edition   = EDITIONS[body.edition];
+  const edition   = cafe.EDITIONS[body.edition];
   const firstname = clean(body.firstname, 80);
   const lastname  = clean(body.lastname, 80);
   const email     = clean(body.email, 160).toLowerCase();
@@ -65,8 +57,8 @@ exports.handler = async function(event) {
   const fullName = firstname + ' ' + lastname;
 
   const notes = [
-    'Inscription Café IA & Systems · Édition ' + edition.num + ' · ' + edition.label + ' · ' + dateFr + ' (date à confirmer)',
-    'Inscrit le ' + now.toLocaleString('fr-FR', { timeZone: 'Europe/Paris' }),
+    'Inscription Café IA & Systems · Édition ' + edition.num + ' · ' + edition.city + ' · ' + dateFr,
+    'Inscrit le ' + cafe.nowParis(),
     '',
     'Contact : ' + fullName + ' · ' + email,
     'Entreprise : ' + company,
@@ -88,31 +80,50 @@ exports.handler = async function(event) {
     'Source de lead': { select: { name: 'Réseau / événement' } },
     'Offre actuelle': { multi_select: [{ name: 'Flow Studio' }] },
     'Priorité': { select: { name: team ? team.priorite : 'P2 - Tiède (nurture)' } },
-    'Prochaine action': { rich_text: [{ text: { content: 'Café IA & Systems ' + edition.short + ' (' + dateFr + ') : confirmer l\'inscription et envoyer le lieu' } }] },
+    'Prochaine action': { rich_text: [{ text: { content: 'Café IA & Systems ' + edition.short + ' (' + dateFr + ') : qualifier avant la rencontre' } }] },
     'Date de dernier contact': { date: { start: today } },
     'Date de relance': { date: { start: relance } },
     'Notes': { rich_text: [{ text: { content: notes } }] }
   };
   if (team) properties['Potentiel'] = { select: { name: team.potentiel } };
 
+  // 1. Fiche CRM
+  let pageId;
   try {
     const response = await fetch('https://api.notion.com/v1/pages', {
       method: 'POST',
-      headers: {
-        'Authorization': 'Bearer ' + NOTION_TOKEN,
-        'Content-Type': 'application/json',
-        'Notion-Version': '2022-06-28'
-      },
-      body: JSON.stringify({ parent: { database_id: NOTION_DB_ID }, properties })
+      headers: cafe.notionHeaders(),
+      body: JSON.stringify({ parent: { database_id: cafe.dbId() }, properties })
     });
     const data = await response.json();
     if (!response.ok) {
       console.error('Notion API error:', JSON.stringify(data));
       return json(502, { error: 'Notion API error' });
     }
-    return json(200, { ok: true });
+    pageId = data.id;
   } catch (err) {
     console.error('Fetch error:', err);
     return json(500, { error: 'Internal server error' });
   }
+
+  // 2. Email de confirmation (l'inscription reste valide même si l'envoi échoue)
+  let emailSent = false, action;
+  try {
+    const mail = cafe.confirmationEmail(edition, firstname, challenge);
+    await cafe.sendEmail({
+      to: email, toName: fullName, subject: mail.subject, html: mail.html,
+      bcc: cafe.ADMIN_EMAIL, tags: ['confirmation', 'edition-' + edition.num],
+      attachment: { name: 'cafe-ia-systems-' + edition.short.toLowerCase().replace(/[^a-z]/g, '') + '.ics', content: cafe.ics(edition, email) }
+    });
+    emailSent = true;
+    action = 'Confirmation Café envoyée le ' + cafe.nowParis();
+  } catch (err) {
+    console.error('Confirmation email error:', err.message);
+    action = 'ÉCHEC envoi confirmation Café le ' + cafe.nowParis() + ' : à envoyer à la main';
+  }
+
+  // 3. Traçabilité
+  await cafe.appendAction(pageId, '', action);
+
+  return json(200, { ok: true, emailSent });
 };
