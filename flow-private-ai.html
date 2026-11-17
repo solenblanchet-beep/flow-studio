@@ -517,6 +517,69 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
 [data-theme="dark"] .preuve-quote blockquote, [data-theme="dark"] .preuve-result { color: #F0EDE8; }
 @media (max-width: 1100px) { .arguments-grid--3 { grid-template-columns: 1fr; } }
 @media (max-width: 960px) { .preuve-section { grid-template-columns: 1fr; gap: 2.5rem; padding: 4rem 1.5rem; } }
+
+/* === Mise en page type « frontier tuning » === */
+.fx-section { padding: 7rem 6rem; background: var(--blanc); }
+.fx-intro { display: grid; grid-template-columns: 1.2fr 1fr; gap: 5rem; align-items: start; margin-bottom: 7rem; }
+.fx-intro-title, .fx-list-title { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.8rem, 2.6vw, 2.5rem); line-height: 1.2; color: var(--noir); }
+.fx-intro-title em, .fx-list-title em { font-style: normal; }
+.fx-intro-text { font-size: 0.85rem; font-weight: 300; line-height: 1.8; color: #524E4A; max-width: 30rem; padding-top: 0.6rem; }
+.fx-loop-head { margin-bottom: 2.5rem; }
+.fx-loop-title { font-family: var(--font-display); font-weight: 400; font-size: 1.35rem; color: var(--noir); }
+.fx-loop-sub { font-size: 0.78rem; font-weight: 300; color: #6B6560; margin-top: 0.5rem; max-width: 26rem; line-height: 1.7; }
+.fx-panel { position: relative; padding: 2.2rem 5rem 2.2rem 8%; display: flex; gap: 1.5rem; align-items: stretch;
+  background:
+    radial-gradient(120% 70% at 15% 20%, rgba(234,230,225,0.35) 0%, transparent 55%),
+    radial-gradient(90% 60% at 85% 85%, rgba(15,15,15,0.28) 0%, transparent 60%),
+    linear-gradient(160deg, #C9A898 0%, #BA7F75 38%, #A98A7C 62%, #8F6F63 100%); }
+.fx-stack { flex: 1; max-width: 46rem; display: flex; flex-direction: column; }
+.fx-card { background: var(--blanc); padding: 1.6rem 1.8rem; box-shadow: 0 10px 30px rgba(15,15,15,0.12); }
+.fx-card-head { display: flex; align-items: center; gap: 0.9rem; margin-bottom: 1.2rem; }
+.fx-step { width: 1.6rem; height: 1.6rem; flex-shrink: 0; background: var(--noir); color: var(--blanc); font-size: 0.7rem; display: inline-flex; align-items: center; justify-content: center; }
+.fx-card-title { font-family: var(--font-display); font-size: 1rem; color: var(--noir); }
+.fx-tags { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; }
+.fx-tag { background: var(--beige); padding: 0.55rem 0.8rem; font-size: 0.68rem; color: #524E4A; text-align: center; }
+.fx-rows { display: flex; flex-direction: column; gap: 0.45rem; }
+.fx-row { background: var(--beige); padding: 0.6rem 0.9rem; display: flex; justify-content: space-between; gap: 1rem; font-size: 0.68rem; color: #524E4A; }
+.fx-row strong { font-weight: 500; color: var(--noir); }
+.fx-row span { text-align: right; }
+.fx-duo { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+.fx-duo-item { background: var(--beige); padding: 0.8rem 0.9rem; font-size: 0.68rem; color: #524E4A; display: flex; flex-direction: column; gap: 0.2rem; line-height: 1.5; }
+.fx-duo-item strong { font-weight: 500; color: var(--noir); }
+.fx-arrow { height: 1.4rem; position: relative; }
+.fx-arrow::before { content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; background: rgba(247,245,242,0.85); }
+.fx-arrow::after { content: ''; position: absolute; left: calc(50% - 3px); bottom: 0; border: 3.5px solid transparent; border-top-color: rgba(247,245,242,0.95); border-bottom: 0; }
+.fx-feedback { position: absolute; right: 2.2rem; top: 28%; bottom: 14%; width: 1.4rem; border: 1px solid rgba(247,245,242,0.85); border-left: 0; display: flex; align-items: center; justify-content: center; }
+.fx-feedback span { position: absolute; right: -0.85rem; writing-mode: vertical-rl; background: var(--blanc); color: var(--noir); font-size: 0.55rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 0.7rem 0.3rem; }
+.fx-list-section { padding: 7rem 6rem; background: var(--blanc); }
+.fx-list-title { margin-bottom: 3.5rem; }
+.fx-list { list-style: none; }
+.fx-list-row { display: grid; grid-template-columns: 1.3fr 1fr 1fr; align-items: center; gap: 2rem; padding: 1.6rem 0; border-top: 1px solid rgba(181,173,165,0.4); }
+.fx-list-row:last-child { border-bottom: 1px solid rgba(181,173,165,0.4); }
+.fx-num { font-variant-numeric: lining-nums; font-feature-settings: "lnum" 1; font-family: var(--font-display); font-size: clamp(3rem, 5vw, 4.6rem); line-height: 1; color: var(--noir); }
+.fx-list-name { font-family: var(--font-display); font-size: 1.15rem; color: var(--noir); }
+.fx-list-desc { font-size: 0.8rem; font-weight: 300; line-height: 1.7; color: #6B6560; max-width: 18rem; }
+[data-theme="dark"] .fx-section, [data-theme="dark"] .fx-list-section { background: #0A0908; }
+[data-theme="dark"] .fx-intro-title, [data-theme="dark"] .fx-list-title, [data-theme="dark"] .fx-loop-title,
+[data-theme="dark"] .fx-num, [data-theme="dark"] .fx-list-name { color: #F0EDE8; }
+[data-theme="dark"] .fx-intro-text, [data-theme="dark"] .fx-loop-sub, [data-theme="dark"] .fx-list-desc { color: rgba(240,237,232,0.6); }
+[data-theme="dark"] .fx-list-row { border-color: rgba(240,237,232,0.12); }
+[data-theme="dark"] .fx-card { background: #1E1C1A; }
+[data-theme="dark"] .fx-card-title, [data-theme="dark"] .fx-row strong, [data-theme="dark"] .fx-duo-item strong { color: #F0EDE8; }
+[data-theme="dark"] .fx-tag, [data-theme="dark"] .fx-row, [data-theme="dark"] .fx-duo-item { background: #2A2724; color: rgba(240,237,232,0.65); }
+[data-theme="dark"] .fx-step { background: #F0EDE8; color: #0F0F0F; }
+@media (max-width: 960px) {
+  .fx-section, .fx-list-section { padding: 4rem 1.5rem; }
+  .fx-intro { grid-template-columns: 1fr; gap: 1.5rem; margin-bottom: 4rem; }
+  .fx-panel { padding: 1.2rem 2.6rem 1.2rem 1rem; }
+  .fx-feedback { right: 0.8rem; }
+  .fx-tags, .fx-duo { grid-template-columns: 1fr; }
+  .fx-row { flex-direction: column; gap: 0.2rem; }
+  .fx-row span { text-align: left; }
+  .fx-list-row { grid-template-columns: 4.5rem 1fr; gap: 0.4rem 1.2rem; }
+  .fx-num { grid-row: span 2; font-size: 2.8rem; }
+  .fx-list-desc { max-width: none; }
+}
 </style>
 
 <script type="application/ld+json">
@@ -618,6 +681,50 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
       <div class="signal-item">Une partie du savoir de l'entreprise n'existe que dans la tête de quelques personnes</div>
       <div class="signal-item">Le coût de l'IA augmente à chaque recrutement</div>
     </div>
+  </div>
+</section>
+
+<!-- FONCTIONNEMENT : INTRO + BOUCLE -->
+<section class="fx-section">
+  <div class="fx-intro">
+    <h2 class="fx-intro-title">Une IA louée sait tout faire.<br><em>La vôtre connaît votre entreprise.</em></h2>
+    <p class="fx-intro-text">Flow Private AI configure un système IA sur vos documents, vos processus et votre vocabulaire, puis l'installe dans votre entreprise. Il travaille avec vos équipes et s'ajuste à leur usage réel.</p>
+  </div>
+
+  <div class="fx-loop-head">
+    <h3 class="fx-loop-title">Vos données, vos règles, votre système.</h3>
+    <p class="fx-loop-sub">Trois étapes, une boucle : les retours de vos équipes ajustent le système chaque mois.</p>
+  </div>
+
+  <div class="fx-panel">
+    <div class="fx-stack">
+      <div class="fx-card">
+        <div class="fx-card-head"><span class="fx-step">1</span><span class="fx-card-title">Ce que sait votre entreprise</span></div>
+        <div class="fx-tags">
+          <span class="fx-tag">Processus et workflows</span>
+          <span class="fx-tag">Documents et connaissances</span>
+          <span class="fx-tag">Vocabulaire et règles internes</span>
+        </div>
+      </div>
+      <div class="fx-arrow" aria-hidden="true"></div>
+      <div class="fx-card">
+        <div class="fx-card-head"><span class="fx-step">2</span><span class="fx-card-title">Le système au travail, dans votre environnement</span></div>
+        <div class="fx-rows">
+          <div class="fx-row"><strong>Les assistants préparent le travail</strong><span>Vos équipes relisent et valident</span></div>
+          <div class="fx-row"><strong>Chaque correction est conservée</strong><span>Décisions, corrections, résultats</span></div>
+          <div class="fx-row"><strong>La base de connaissances s'enrichit</strong><span>Sur votre serveur, jamais partagée</span></div>
+        </div>
+      </div>
+      <div class="fx-arrow" aria-hidden="true"></div>
+      <div class="fx-card">
+        <div class="fx-card-head"><span class="fx-step">3</span><span class="fx-card-title">Un système utilisé par chaque service</span></div>
+        <div class="fx-duo">
+          <div class="fx-duo-item"><strong>Assistants par service</strong><span>Commercial, RH, administration, opérations</span></div>
+          <div class="fx-duo-item"><strong>Relié à vos outils</strong><span>CRM, ERP, Notion, messagerie</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="fx-feedback" aria-hidden="true"><span>Ajustement mensuel</span></div>
   </div>
 </section>
 
@@ -1038,26 +1145,14 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
 </section>
 
 <!-- POURQUOI IA PRIVÉE -->
-<section class="arguments-section">
-  <p class="section-eyebrow">Pourquoi une IA privée</p>
-  <h2 class="section-title">Pourquoi une IA installée chez vous<br><em>plutôt que des abonnements.</em></h2>
-  <div class="arguments-grid arguments-grid--3">
-    <div class="argument-card">
-      <p class="argument-num">01</p>
-      <h3 class="argument-title">Vos données restent chez vous</h3>
-      <p class="argument-text">Les échanges avec le modèle ne sortent pas de votre infrastructure. Fichier clients, tarifs, contrats : vos équipes peuvent travailler avec, sans se demander où partent les informations. La question de la confidentialité est réglée par l'architecture elle-même, et la règle devient simple à expliquer.</p>
-    </div>
-    <div class="argument-card">
-      <p class="argument-num">02</p>
-      <h3 class="argument-title">Le coût ne dépend plus du nombre de personnes</h3>
-      <p class="argument-text">Avec le cloud, chaque nouvel accès est un abonnement de plus. Ici, le coût est fixe : vous pouvez équiper toute l'équipe sans recalculer le budget à chaque recrutement. La capacité se dimensionne selon les usages simultanés, pas selon l'effectif.</p>
-    </div>
-    <div class="argument-card">
-      <p class="argument-num">03</p>
-      <h3 class="argument-title">Le système connaît votre entreprise</h3>
-      <p class="argument-text">Il est configuré sur vos procédures, votre catalogue et votre vocabulaire. La documentation, les assistants et les workflows construits vous appartiennent et restent en place si vous changez d'outil.</p>
-    </div>
-  </div>
+<section class="fx-list-section">
+  <h2 class="fx-list-title">Conçu pour durer.<br><em>Une IA à la mesure de votre entreprise.</em></h2>
+  <ol class="fx-list">
+    <li class="fx-list-row"><span class="fx-num">01</span><span class="fx-list-name">Privé et sécurisé</span><span class="fx-list-desc">Vos données restent dans votre entreprise. Toujours.</span></li>
+    <li class="fx-list-row"><span class="fx-num">02</span><span class="fx-list-name">Coût maîtrisé</span><span class="fx-list-desc">Un coût fixe, quelle que soit la taille de l'équipe équipée.</span></li>
+    <li class="fx-list-row"><span class="fx-num">03</span><span class="fx-list-name">Spécialisé</span><span class="fx-list-desc">Configuré sur vos documents, vos processus et votre vocabulaire.</span></li>
+    <li class="fx-list-row"><span class="fx-num">04</span><span class="fx-list-name">Indépendant</span><span class="fx-list-desc">Le système et sa documentation vous appartiennent. Vous restez libre de changer de modèle ou de prestataire.</span></li>
+  </ol>
 </section>
 
 <!-- OBJECTION + COMPARAISON ARCHITECTURES -->
