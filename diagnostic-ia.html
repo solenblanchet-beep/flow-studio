@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Audit IA pour PME : usages et plan d'action | Flow Studio</title>
-<meta name="description" content="Cartographie de vos usages IA, analyse des risques, quick wins, charte IA interne et plan de formation par métier. Livré en 1 jour. 1 490€.">
+<title>Diagnostic : organisation, architecture IA et maintenance | Flow Studio</title>
+<meta name="description" content="Le point de départ de chaque mission Flow Studio : votre organisation, l'architecture IA adaptée (cloud, hybride ou locale) et le modèle de maintenance. Payant, déduit de la mission.">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -52,7 +52,7 @@
   .hero-cta:hover { background: transparent; color: var(--noir); }
   .hero-note { font-size: 0.65rem; color: var(--taupe); margin-top: 1rem; }
   .hero-right { background: var(--noir); display: flex; flex-direction: column; justify-content: center; padding: 5rem 4rem; position: relative; overflow: hidden; }
-  .hero-right::before { content: '360°'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-family: var(--font-display); font-size: 14rem; color: rgba(255,255,255,0.03); pointer-events: none; letter-spacing: -0.05em; white-space: nowrap; }
+  .hero-right::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-family: var(--font-display); font-size: 14rem; color: rgba(255,255,255,0.03); pointer-events: none; letter-spacing: -0.05em; white-space: nowrap; }
   .hero-deliverables { display: flex; flex-direction: column; gap: 1.5px; }
   .deliverable { background: rgba(255,255,255,0.04); padding: 1.4rem 1.6rem; display: flex; align-items: flex-start; gap: 1.2rem; border-left: 2px solid transparent; transition: all 0.3s; }
   .deliverable:hover { background: rgba(255,255,255,0.07); border-left-color: var(--taupe); }
@@ -113,7 +113,7 @@
 
   /* CTA */
   .cta-section { padding: 8rem 6rem; text-align: center; position: relative; overflow: hidden; }
-  .cta-section::before { content: '1 490€'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-family: var(--font-display); font-size: 12rem; color: rgba(15,15,15,0.03); pointer-events: none; white-space: nowrap; }
+  .cta-section::before { content: '01'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-family: var(--font-display); font-size: 12rem; color: rgba(15,15,15,0.03); pointer-events: none; white-space: nowrap; }
   .cta-eyebrow { font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1.8rem; }
   .cta-title { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1.1; margin-bottom: 1rem; }
   .cta-title em { font-style: italic; color: var(--taupe); }
@@ -343,34 +343,23 @@
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "Diagnostic IA",
+          "name": "Diagnostic",
           "item": "https://flow-studio.app/diagnostic-ia"
         }
       ]
     },
     {
       "@type": "Service",
-      "name": "Diagnostic IA et processus",
+      "name": "Diagnostic",
       "provider": {
         "@id": "https://flow-studio.app/#organization"
       },
-      "description": "Cartographie des usages IA existants, analyse des processus, matrice de priorisation des cas d'usage et feuille de route opérationnelle à 90 jours pour les PME.",
+      "description": "Porte d'entrée unique de Flow Studio, payante et déduite de la mission : organisation et processus, architecture IA (cloud, hybride ou locale), modèle de maintenance.",
       "areaServed": "France",
       "url": "https://flow-studio.app/diagnostic-ia",
       "audience": {
         "@type": "Audience",
-        "audienceType": "PME et organisations"
-      },
-      "offers": {
-        "@type": "Offer",
-        "priceCurrency": "EUR",
-        "price": "1490",
-        "priceSpecification": {
-          "@type": "UnitPriceSpecification",
-          "price": "1490",
-          "priceCurrency": "EUR",
-          "description": "À partir de"
-        }
+        "audienceType": "TPE, PME et métiers exposés à la confidentialité"
       }
     }
   ]
@@ -406,71 +395,71 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-left">
-    <p class="hero-eyebrow reveal">Offre PME</p>
+    <p class="hero-eyebrow reveal">Le point de départ</p>
     <h1 class="hero-title reveal reveal-delay-1">
-      Diagnostic<br>
-      <em>IA 360°</em><br>
-      PME
+      Le<br>
+      <em>Diagnostic</em><br>
+      Flow Studio
     </h1>
     <p class="hero-subtitle reveal reveal-delay-2">
-      En une demi-journée, on cartographie vos usages IA, on identifie les risques, les opportunités et les quick wins. Vous repartez avec un plan d'action concret, pas une étude de 80 pages que personne ne lit.
+      Chaque mission Flow Studio commence ici. On examine votre organisation, on détermine l'architecture IA adaptée à vos données (cloud, hybride ou locale) et le modèle de maintenance qui vous convient. Vous repartez avec une proposition claire, pas une étude de 80 pages que personne ne lit.
     </p>
     <div class="hero-pricing reveal reveal-delay-2">
       <div class="pricing-tier featured-tier">
-        <span class="tier-size">5 à 15 personnes</span>
-        <span class="tier-price">1 490€ HT</span>
-        <span class="tier-note">Tarif fixe · Audit standardisé</span>
+        <span class="tier-size">Payant</span>
+        <span class="tier-price">Déduit</span>
+        <span class="tier-note">de la mission si vous poursuivez</span>
       </div>
       <div class="pricing-tier">
-        <span class="tier-size">16 à 40 personnes</span>
-        <span class="tier-price">Sur devis</span>
-        <span class="tier-note">Selon la complexité des usages</span>
+        <span class="tier-size">En amont</span>
+        <span class="tier-price">Questionnaire</span>
+        <span class="tier-note">Envoyé après la réservation</span>
       </div>
       <div class="pricing-tier">
-        <span class="tier-size">41 à 80 personnes</span>
-        <span class="tier-price">Sur devis</span>
-        <span class="tier-note">Avec entretiens complémentaires</span>
+        <span class="tier-size">À la sortie</span>
+        <span class="tier-price">Proposition</span>
+        <span class="tier-note">Forfait établi sur votre périmètre</span>
       </div>
     </div>
-    <p class="hero-format reveal reveal-delay-2">Demi-journée d'audit + livrable écrit sous 5 à 7 jours</p>
-    <a href="https://calendar.app.google/x3LrzMWr5spjaSn56" target="_blank" class="hero-cta reveal reveal-delay-3">Réserver un appel de qualification</a>
-    <p class="hero-note reveal reveal-delay-3">Appel gratuit 30 min, on vérifie que le diagnostic correspond à votre besoin avant tout engagement.</p>
+    <p class="hero-format reveal reveal-delay-2">Questionnaire, session de diagnostic, puis livrable écrit</p>
+    <a href="https://calendar.app.google/aECESBHBmaUg8Fjv5" target="_blank" class="hero-cta reveal reveal-delay-3">Réserver mon diagnostic</a>
+    <p class="hero-note reveal reveal-delay-3">Une question avant de réserver ? <a href="https://calendar.app.google/YQL39LLfw5zoFn2v7" target="_blank" style="color:inherit;text-decoration:underline;">Un appel découverte de 30 minutes</a> reste possible.</p>
   </div>
   <div class="hero-right">
     <div class="hero-deliverables">
       <div class="deliverable reveal">
         <span class="deliverable-num">01</span>
         <div>
-          <p class="deliverable-title">Cartographie des usages IA</p>
-          <p class="deliverable-text">Audit complet de vos outils et pratiques actuelles par métier</p>
+          <p class="deliverable-title">Organisation et processus</p>
+          <p class="deliverable-text">Comment l'information, les décisions et les tâches circulent aujourd'hui, et où elles se perdent</p>
         </div>
       </div>
       <div class="deliverable reveal reveal-delay-1">
         <span class="deliverable-num">02</span>
         <div>
-          <p class="deliverable-title">Analyse des risques</p>
-          <p class="deliverable-text">Repérage des principaux points de vigilance liés à l'AI Act, au RGPD et à la confidentialité des données</p>
+          <p class="deliverable-title">Architecture IA</p>
+          <p class="deliverable-text">Cloud, hybride ou locale : le choix adapté à la sensibilité de vos données et à vos usages</p>
         </div>
       </div>
       <div class="deliverable reveal reveal-delay-2">
         <span class="deliverable-num">03</span>
         <div>
-          <p class="deliverable-title">Quick wins identifiés</p>
-          <p class="deliverable-text">Les 3 à 5 gains rapides à implémenter dans les 30 prochains jours</p>
+          <p class="deliverable-title">Points de vigilance</p>
+          <p class="deliverable-text">Repérage des principaux points liés à l'AI Act, au RGPD et à la confidentialité des données</p>
         </div>
       </div>
       <div class="deliverable reveal reveal-delay-2">
         <span class="deliverable-num">04</span>
         <div>
-          <p class="deliverable-title">Charte IA interne</p>
-          <p class="deliverable-text">Un document simple, opérationnel, adapté à votre culture d'entreprise</p>
+          <p class="deliverable-title">Modèle de maintenance</p>
+          <p class="deliverable-text">100 % interne avec transmission, mixte avec un référent, ou 100 % Flow Studio</p>
         </div>
       </div>
       <div class="deliverable reveal reveal-delay-3">
         <span class="deliverable-num">05</span>
         <div>
-          <p class="deliverable-title">Plan de formation par métier</p>
-          <p class="deliverable-text">Qui doit apprendre quoi, dans quel ordre, avec quel objectif</p>
+          <p class="deliverable-title">Proposition au forfait</p>
+          <p class="deliverable-text">Le système à construire (System Core, System Signature, Flow Private AI) et son périmètre chiffré</p>
         </div>
       </div>
     </div>
@@ -482,28 +471,28 @@
   <div>
     <p class="section-eyebrow reveal">Pour qui</p>
     <h2 class="section-title reveal reveal-delay-1">
-      Votre entreprise utilise déjà l'IA.<br>
-      <em>Mais pas de façon structurée.</em>
+      Votre activité a grandi.<br>
+      <em>Votre système, pas encore.</em>
     </h2>
     <p class="section-text reveal reveal-delay-2">
-      Chaque collaborateur·rice utilise ses propres outils IA dans son coin. Personne ne sait vraiment ce que ça implique en termes de données, de risques ou d'efficacité. Il n'y a pas de règles communes, pas de vision globale.
+      Les informations sont dispersées, les outils mal reliés, et l'IA s'utilise au cas par cas, sans règles communes. Avant de construire quoi que ce soit, il faut comprendre comment votre entreprise fonctionne réellement.
     </p>
     <p class="section-text reveal reveal-delay-2">
-      Le Diagnostic IA 360° est fait pour les PME qui veulent passer de l'utilisation intuitive à l'organisation structurée, sans tout bloquer le temps d'une longue étude.
+      Le Diagnostic est la porte d'entrée unique de Flow Studio. Il détermine le système à construire, l'architecture IA et le mode de maintenance, sans tout bloquer le temps d'une longue étude.
     </p>
   </div>
   <div class="profiles reveal reveal-delay-2">
     <div class="profile-item">
-      <p class="profile-title">PME de 5 à 80 personnes</p>
-      <p class="profile-text">Plusieurs métiers, plusieurs usages IA disparates, pas de vision commune</p>
+      <p class="profile-title">Dirigeante de TPE débordée</p>
+      <p class="profile-text">L'information est dispersée et l'activité dépend de votre présence. Vers System Core.</p>
     </div>
     <div class="profile-item">
-      <p class="profile-title">Dirigeant·e ou DRH</p>
-      <p class="profile-text">Vous savez que l'IA est un sujet stratégique mais vous ne savez pas par où commencer</p>
+      <p class="profile-title">PME multi-équipes</p>
+      <p class="profile-text">Plusieurs utilisateurs, des processus à relier, souvent un outil IA déjà acheté mais mal paramétré. Vers System Signature.</p>
     </div>
     <div class="profile-item">
-      <p class="profile-title">Structure en croissance</p>
-      <p class="profile-text">Vos process actuels ne tiennent plus à l'échelle et l'IA pourrait changer ça</p>
+      <p class="profile-title">Métier exposé à la confidentialité</p>
+      <p class="profile-text">Expertise, courtage, comptabilité, juridique : des données sensibles et une méfiance envers l'IA en ligne. Vers Flow Private AI.</p>
     </div>
     <div class="profile-item">
       <p class="profile-title">Secteurs de services</p>
@@ -520,19 +509,19 @@
       <p class="process-step-num">01</p>
       <p class="process-step-tag">Avant, J-7</p>
       <h3 class="process-step-title">Questionnaire de cadrage</h3>
-      <p class="process-step-text">Un formulaire court envoyé en amont. Vous listez vos outils, vos métiers, vos usages actuels. Je prépare l'audit sur cette base.</p>
+      <p class="process-step-text">Un questionnaire envoyé après la réservation. Vous décrivez votre activité, vos outils, vos usages actuels et vos données. Je prépare le diagnostic sur cette base.</p>
     </div>
     <div class="process-step reveal reveal-delay-1">
       <p class="process-step-num">02</p>
       <p class="process-step-tag">Jour J, 3h</p>
-      <h3 class="process-step-title">Demi-journée d'audit</h3>
+      <h3 class="process-step-title">Session de diagnostic</h3>
       <p class="process-step-text">Session de travail en visio ou sur site. On passe en revue vos usages, vos process, vos équipes. Questions directes, zéro jargon.</p>
     </div>
     <div class="process-step reveal reveal-delay-2">
       <p class="process-step-num">03</p>
       <p class="process-step-tag">J+5 à J+7</p>
       <h3 class="process-step-title">Livrable complet</h3>
-      <p class="process-step-text">Votre diagnostic complet livré par écrit, cartographie, risques, quick wins, charte IA, plan de formation. Opérationnel dès réception.</p>
+      <p class="process-step-text">Votre diagnostic livré par écrit : organisation, architecture IA recommandée, points de vigilance, modèle de maintenance et proposition au forfait.</p>
     </div>
   </div>
   <div class="process-timeline reveal">
@@ -552,8 +541,8 @@
     </div>
     <div class="timeline-sep"></div>
     <div class="timeline-item-proc">
-      <p class="timeline-label">Tarif</p>
-      <p class="timeline-value">1 490€ HT fixe</p>
+      <p class="timeline-label">Montant</p>
+      <p class="timeline-value">Déduit de la mission</p>
     </div>
   </div>
 </section>
@@ -561,16 +550,16 @@
 <!-- LIVRABLES DÉTAIL -->
 <section class="livrables-section">
   <p class="section-eyebrow reveal">Ce que vous recevez</p>
-  <h2 class="section-title reveal reveal-delay-1">5 livrables.<br><em>Un plan d'action prêt à exécuter.</em></h2>
+  <h2 class="section-title reveal reveal-delay-1">5 livrables.<br><em>Une décision claire sur votre système.</em></h2>
   <div class="livrables-grid">
     <div class="livrable-card reveal">
       <p class="livrable-num">Livrable 01</p>
-      <h3 class="livrable-title">Cartographie des usages IA</h3>
-      <p class="livrable-text">Une vue complète de ce qui se passe dans votre entreprise, qui utilise quoi, comment, avec quelles données.</p>
+      <h3 class="livrable-title">Organisation et processus</h3>
+      <p class="livrable-text">Une vue claire de la façon dont votre entreprise fonctionne : qui fait quoi, avec quelles informations, dans quels outils.</p>
       <ul class="livrable-items">
-        <li>Inventaire des outils IA par service</li>
-        <li>Évaluation de la maturité par métier</li>
-        <li>Identification des angles morts</li>
+        <li>Cartographie des processus et des outils</li>
+        <li>Usages IA actuels par service</li>
+        <li>Points de friction et doublons</li>
       </ul>
     </div>
     <div class="livrable-card reveal reveal-delay-1">
@@ -586,33 +575,32 @@
     </div>
     <div class="livrable-card reveal">
       <p class="livrable-num">Livrable 03</p>
-      <h3 class="livrable-title">Quick wins, 30 jours</h3>
-      <p class="livrable-text">Les 3 à 5 actions à impact immédiat. Priorisées, détaillées, avec les outils et les responsables identifiés.</p>
+      <h3 class="livrable-title">Architecture IA recommandée</h3>
+      <p class="livrable-text">Le paramétrage adapté à vos données et à vos usages, justifié, sans vous vendre une architecture d'avance.</p>
       <ul class="livrable-items">
-        <li>Actions sans investissement supplémentaire</li>
-        <li>Gains de temps estimés par action</li>
-        <li>Ordre d'implémentation recommandé</li>
+        <li>Cloud, hybride ou locale</li>
+        <li>Outils à conserver, relier ou remplacer</li>
+        <li>Contraintes de confidentialité prises en compte</li>
       </ul>
     </div>
     <div class="livrable-card reveal reveal-delay-1">
       <p class="livrable-num">Livrable 04</p>
-      <h3 class="livrable-title">Charte IA interne</h3>
-      <p class="livrable-text">Un document de travail interne que vos équipes peuvent lire et appliquer dès demain. Cadre pratique d'usage, pas un avis juridique, pas une garantie de conformité.</p>
+      <h3 class="livrable-title">Modèle de maintenance</h3>
+      <p class="livrable-text">Qui fera vivre le système après la livraison. Le choix dépend de vos ressources internes.</p>
       <ul class="livrable-items">
-        <li>Ce qui est autorisé / déconseillé / interdit</li>
-        <li>Règles sur les données et la confidentialité</li>
-        <li>Adapté à votre culture d'entreprise</li>
+        <li>100 % interne, avec transmission</li>
+        <li>Mixte : Solen et un référent interne</li>
+        <li>100 % Flow Studio, en forfait mensuel</li>
       </ul>
     </div>
     <div class="livrable-card reveal" style="grid-column: 1 / -1;">
       <p class="livrable-num">Livrable 05</p>
-      <h3 class="livrable-title">Plan de formation par métier</h3>
-      <p class="livrable-text">Qui doit apprendre quoi, pas une formation générique "IA pour tous", mais un parcours adapté à chaque profil de votre équipe.</p>
+      <h3 class="livrable-title">Proposition au forfait</h3>
+      <p class="livrable-text">Le système à construire et son périmètre, chiffré au forfait. Le montant du Diagnostic est déduit si vous poursuivez.</p>
       <ul class="livrable-items">
-        <li>Cartographie des besoins par poste</li>
-        <li>Recommandations d'outils et de ressources</li>
-        <li>Séquençage sur 3 à 6 mois</li>
-        <li>Estimation du temps de montée en compétences</li>
+        <li>System Core, System Signature ou Flow Private AI</li>
+        <li>Périmètre et étapes de la mission</li>
+        <li>Forfait de mission et de maintenance</li>
       </ul>
     </div>
   </div>
@@ -626,7 +614,7 @@
     <div>
       <h3>C'est fait pour vous si :</h3>
       <ul class="limit-list yes">
-        <li>Votre équipe utilise déjà l'IA de façon autonome et vous voulez structurer ça</li>
+        <li>Vos informations, vos outils et vos processus ne tiennent plus ensemble</li>
         <li>Vous préparez une politique IA interne mais ne savez pas par où commencer</li>
         <li>Vous avez des questions sur l'AI Act et son impact sur votre activité</li>
         <li>Vous voulez un état des lieux rapide avant d'investir davantage</li>
@@ -636,7 +624,7 @@
     <div>
       <h3>Ce n'est pas fait pour vous si :</h3>
       <ul class="limit-list no">
-        <li>Votre entreprise n'utilise aucun outil IA et n'envisage pas de le faire</li>
+        <li>Vous cherchez un outil installé sans regarder votre fonctionnement</li>
         <li>Vous cherchez une garantie de conformité AI Act ou RGPD (il vous faut un·e avocat·e spécialisé·e)</li>
         <li>Vous avez besoin d'un audit technique approfondi de vos systèmes informatiques</li>
         <li>Vous avez des usages IA à haut risque (recrutement algorithmique, IA médicale), nécessite un accompagnement juridique spécialisé</li>
@@ -649,13 +637,13 @@
 <section class="cta-section">
   <p class="cta-eyebrow reveal">Prêt·e à passer à l'action ?</p>
   <h2 class="cta-title reveal reveal-delay-1">
-    Votre diagnostic IA,<br>
-    <em>livré en une semaine.</em>
+    Votre système commence<br>
+    <em>par un diagnostic.</em>
   </h2>
-  <p class="cta-subtitle reveal reveal-delay-2">On commence par un appel de 30 minutes pour vérifier que le diagnostic correspond à votre situation.</p>
-  <p class="cta-price reveal reveal-delay-2">À partir de 1 490€ HT</p>
-  <p class="cta-price-sub reveal reveal-delay-2">Structures de 5 à 15 personnes · Sur devis au-delà</p>
-  <a href="https://calendar.app.google/x3LrzMWr5spjaSn56" target="_blank" class="cta-btn reveal reveal-delay-3">Réserver l'appel de qualification</a>
+  <p class="cta-subtitle reveal reveal-delay-2">Réservez votre diagnostic. Le questionnaire vous est envoyé ensuite pour préparer la session.</p>
+  <p class="cta-price reveal reveal-delay-2">Payant, déduit de la mission</p>
+  <p class="cta-price-sub reveal reveal-delay-2">TPE, PME et métiers exposés à la confidentialité</p>
+  <a href="https://calendar.app.google/aECESBHBmaUg8Fjv5" target="_blank" class="cta-btn reveal reveal-delay-3">Réserver mon diagnostic</a>
   <p class="cta-note reveal reveal-delay-3">solen@flow-studio.app · flow-studio.app</p>
 </section>
 

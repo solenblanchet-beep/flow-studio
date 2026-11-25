@@ -1062,29 +1062,25 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
           <span class="sim-step-status" id="step3-status">Estimer mon retour →</span>
         </div>
         <div class="sim-step-body">
-          <p class="sim-label-hint">L'outil seul ne change pas vos résultats. Ce qui les change, c'est un système en place dans vos services : des documents préparés, des informations retrouvées, des suites qui ne dépendent plus de la mémoire de chacun. C'est ce que finance le déploiement.</p>
+          <p class="sim-label-hint">L'outil seul ne change pas vos résultats. Ce qui les change, c'est un système en place dans vos services : des documents préparés, des informations retrouvées, des suites qui ne dépendent plus de la mémoire de chacun. C'est ce que construit le déploiement.</p>
           <div class="sim-prestation">
             <p class="sim-prestation-label">Quel système voulez-vous construire ?</p>
             <div class="sim-prestation-grid">
               <button class="sim-prestation-opt" data-value="5000" onclick="simSelectPrestation(5000, this)">
                 <div class="sim-prestation-opt-name">Assistant documentaire</div>
-                <div class="sim-prestation-opt-price">5 000 €</div>
-                <div class="sim-prestation-opt-note">HT · déploiement</div>
+                <div class="sim-prestation-opt-note">Forfait après Diagnostic</div>
               </button>
               <button class="sim-prestation-opt active" data-value="12000" onclick="simSelectPrestation(12000, this)">
                 <div class="sim-prestation-opt-name">Système pour un service</div>
-                <div class="sim-prestation-opt-price">12 000 €</div>
-                <div class="sim-prestation-opt-note">HT · déploiement</div>
+                <div class="sim-prestation-opt-note">Forfait après Diagnostic</div>
               </button>
               <button class="sim-prestation-opt" data-value="25000" onclick="simSelectPrestation(25000, this)">
                 <div class="sim-prestation-opt-name">Business System complet</div>
-                <div class="sim-prestation-opt-price">25 000 €</div>
-                <div class="sim-prestation-opt-note">HT · déploiement</div>
+                <div class="sim-prestation-opt-note">Forfait après Diagnostic</div>
               </button>
               <button class="sim-prestation-opt" data-value="0" onclick="simSelectPrestation(0, this)">
                 <div class="sim-prestation-opt-name">Projet personnalisé</div>
-                <div class="sim-prestation-opt-price">Sur devis</div>
-                <div class="sim-prestation-opt-note">Diagnostic offert</div>
+                <div class="sim-prestation-opt-note">Défini pendant le Diagnostic</div>
               </button>
             </div>
           </div>
@@ -1151,18 +1147,10 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
       </div>
 
       <div class="sim-verdict" id="block-system" style="display:none">
-        <div class="sim-verdict-label">Le système, retour sur investissement</div>
-        <div class="sim-verdict-row">
-          <span class="sim-verdict-name">Déploiement du système</span>
-          <span class="sim-verdict-val" id="res-deploy">—</span>
-        </div>
+        <div class="sim-verdict-label">Le système, ce qu'il peut rapporter</div>
         <div class="sim-verdict-row">
           <span class="sim-verdict-name" id="res-net-name">Gain annuel estimé</span>
           <span class="sim-verdict-val green" id="res-net">—</span>
-        </div>
-        <div class="sim-verdict-row">
-          <span class="sim-verdict-name">Déploiement remboursé en</span>
-          <span class="sim-verdict-val highlight" id="res-payback">—</span>
         </div>
       </div>
 
@@ -1215,15 +1203,15 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
     </div><!-- /sim-results -->
   </div><!-- /sim-layout -->
 
-  <p class="sim-note">Simulation indicative, non contractuelle. Montants en euros HT. La comparaison de l'outil porte sur un périmètre égal : abonnements cloud pour tout l'effectif face à une infrastructure privée (matériel estimé à 7 000 €, fonctionnement 640 €/mois, indépendant du nombre d'utilisateurs). Le déploiement du système est traité à part et comparé aux gains commerciaux. Ces gains reposent sur une hypothèse (un RDV libéré par commercial et par semaine) à valider avec votre équipe lors du diagnostic.</p>
+  <p class="sim-note">Simulation indicative, non contractuelle. Montants en euros HT. La comparaison de l'outil porte sur un périmètre égal : abonnements cloud pour tout l'effectif face à une infrastructure privée (matériel estimé à 7 000 €, fonctionnement 640 €/mois, indépendant du nombre d'utilisateurs). Le déploiement du système est chiffré à part, après le Diagnostic. Ces gains reposent sur une hypothèse (un RDV libéré par commercial et par semaine) à valider avec votre équipe lors du diagnostic.</p>
 </section>
 
 <!-- SYSTÈMES -->
 <section class="systemes-section">
   <p class="section-eyebrow">Trois systèmes</p>
   <div class="systemes-intro">
-    <h2 class="section-title">Trois systèmes,<br><em>trois niveaux d'investissement.</em></h2>
-    <p style="font-size:0.85rem;font-weight:300;color:#6B6560;line-height:1.8;margin-top:1.5rem;">Ces trois exemples donnent une idée de l'enveloppe d'un projet Flow Private AI selon sa portée. Chaque déploiement est dimensionné après diagnostic. Les montants ci-dessous sont indicatifs.</p>
+    <h2 class="section-title">Trois systèmes,<br><em>trois portées.</em></h2>
+    <p style="font-size:0.85rem;font-weight:300;color:#6B6560;line-height:1.8;margin-top:1.5rem;">Ces trois exemples donnent une idée de la portée d'un projet Flow Private AI. Chaque déploiement est dimensionné et chiffré au forfait après le Diagnostic.</p>
   </div>
   <div class="systemes-grid">
 
@@ -1237,10 +1225,6 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
         <li>Sources citées, réponses traçables</li>
         </ul>
       <p class="systeme-result">Résultat attendu : moins de temps passé à chercher, des nouvelles recrues autonomes plus vite.</p>
-      <div class="systeme-price-block">
-        <p class="systeme-price">5 000 €</p>
-        <p class="systeme-price-label">HT · hors matériel</p>
-      </div>
     </div>
 
     <div class="systeme-card">
@@ -1253,10 +1237,6 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
         <li>Documents et réponses préparés en brouillon</li>
         </ul>
       <p class="systeme-result">Résultat attendu : le travail de préparation d'un service pris en charge, l'équipe valide.</p>
-      <div class="systeme-price-block">
-        <p class="systeme-price">12 000 €</p>
-        <p class="systeme-price-label">HT · hors matériel</p>
-      </div>
     </div>
 
     <div class="systeme-card">
@@ -1269,14 +1249,10 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
         <li>Base de connaissances centralisée et maintenue</li>
         </ul>
       <p class="systeme-result">Résultat attendu : un fonctionnement documenté, qui ne dépend plus de quelques personnes.</p>
-      <div class="systeme-price-block">
-        <p class="systeme-price">25 000 €</p>
-        <p class="systeme-price-label">HT · hors matériel</p>
-      </div>
     </div>
 
   </div>
-  <p class="systemes-note">Ces montants couvrent la conception, le déploiement, la documentation et la formation. Le matériel (environ 7 000 €) et le fonctionnement (environ 640 € par mois) sont les mêmes pour les trois. Pour un projet hors de ces trois cas, nous établissons un devis sur mesure.</p>
+  <p class="systemes-note">Le forfait couvre la conception, le déploiement, la documentation et la formation. Le matériel (environ 7 000 €) et le fonctionnement (environ 640 € par mois) sont les mêmes pour les trois. Flow Private AI s'installe seul ou en complément de System Core ou System Signature.</p>
 </section>
 
 <!-- POURQUOI IA PRIVÉE -->
@@ -1437,7 +1413,7 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
         <span class="faq-icon">+</span>
       </div>
       <div class="faq-answer">
-        <p>L'investissement de départ comprend le matériel (~7 000 €) et la conception-déploiement Flow Studio (~12 000 €), soit environ 19 000 € HT. Le fonctionnement mensuel est d'environ 640 € HT (support + énergie). Le tarif final dépend du périmètre, du nombre d'assistants à construire, des intégrations et de la complexité de vos processus. La simulation TCO produite lors du diagnostic est personnalisée avec vos données réelles.</p>
+        <p>L'investissement de départ comprend le matériel (environ 7 000 € HT) et la conception-déploiement Flow Studio, chiffrée au forfait après le Diagnostic. Le fonctionnement mensuel est d'environ 640 € HT (support + énergie). Le forfait dépend du périmètre, du nombre d'assistants à construire, des intégrations et de la complexité de vos processus. La simulation TCO produite lors du diagnostic est personnalisée avec vos données réelles.</p>
       </div>
     </div>
 
