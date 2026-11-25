@@ -580,6 +580,73 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
   .fx-num { grid-row: span 2; font-size: 2.8rem; }
   .fx-list-desc { max-width: none; }
 }
+
+/* === Deux arguments : confidentialité + sans compter === */
+.hero-args { display: flex; flex-direction: column; gap: 2px; }
+.hero-arg { background: rgba(255,255,255,0.04); padding: 1.6rem 1.6rem; }
+.hero-arg-num { font-size: 0.56rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--taupe); margin-bottom: 0.7rem; }
+.hero-arg-title { font-family: var(--font-display); font-size: 1.35rem; color: #F7F5F2; margin-bottom: 0.5rem; }
+.hero-arg-text { font-size: 0.78rem; color: rgba(255,255,255,0.6); line-height: 1.7; }
+.probleme-section { background: var(--beige); }
+.conf-section { padding: 7rem 6rem; background: var(--noir); color: #F7F5F2; }
+.conf-section .section-title { color: #F7F5F2; }
+.conf-head { max-width: 46rem; margin-bottom: 3.5rem; }
+.conf-intro, .nocount-intro { font-size: 0.88rem; line-height: 1.9; margin-top: 1.4rem; }
+.conf-intro { color: rgba(247,245,242,0.65); }
+.conf-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+.conf-col { background: rgba(247,245,242,0.04); padding: 2.2rem 2.2rem; }
+.conf-col--private { background: rgba(247,245,242,0.09); }
+.conf-col-label { font-size: 0.6rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1.4rem; }
+.conf-flow { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem; margin-bottom: 1.4rem; }
+.conf-flow span:not(.conf-arrow) { border: 1px solid rgba(247,245,242,0.25); padding: 0.5rem 0.8rem; font-size: 0.74rem; color: rgba(247,245,242,0.85); }
+.conf-flow .conf-out { border-color: var(--terracotta); color: #E3B9B1; }
+.conf-flow .conf-in { background: #F7F5F2; color: #0F0F0F !important; border-color: #F7F5F2 !important; }
+.conf-arrow { color: var(--taupe); font-size: 0.8rem; }
+.conf-col-text { font-size: 0.8rem; line-height: 1.7; color: rgba(247,245,242,0.6); }
+.conf-data { margin-top: 3rem; }
+.conf-data-label { font-size: 0.6rem; letter-spacing: 0.24em; text-transform: uppercase; color: rgba(247,245,242,0.45); margin-bottom: 1rem; }
+.conf-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.conf-tags span { border: 1px solid rgba(247,245,242,0.2); padding: 0.55rem 0.9rem; font-size: 0.75rem; color: rgba(247,245,242,0.8); }
+.nocount-section { padding: 7rem 6rem; background: var(--blanc); }
+.nocount-head { text-align: center; max-width: 40rem; margin: 0 auto 3.5rem; }
+.nocount-head .section-eyebrow { justify-content: center; }
+.nocount-intro { color: #524E4A; }
+.nocount-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; max-width: 64rem; margin: 0 auto; }
+.nocount-card { border: 1px solid rgba(181,173,165,0.5); padding: 2.2rem; display: flex; flex-direction: column; background: var(--blanc); }
+.nocount-card--private { background: var(--noir); border-color: var(--noir); color: #F7F5F2; }
+.nocount-card-top { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin-bottom: 1.6rem; }
+.nocount-tag { font-family: var(--font-display); font-size: 1.25rem; }
+.nocount-sub { font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--taupe); }
+.nocount-tasks { list-style: none; margin-bottom: 1.8rem; }
+.nocount-tasks li { display: flex; justify-content: space-between; gap: 1rem; padding: 0.8rem 0; border-top: 1px solid rgba(181,173,165,0.35); font-size: 0.8rem; }
+.nocount-card--private .nocount-tasks li { border-top-color: rgba(247,245,242,0.12); }
+.nocount-tasks em { font-style: normal; font-size: 0.68rem; color: #8A857F; white-space: nowrap; }
+.nocount-card--private .nocount-tasks em { color: var(--taupe); }
+.nocount-meter-label { margin-top: auto; font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: #8A857F; margin-bottom: 0.6rem; }
+.nocount-meter { height: 6px; background: var(--beige); margin-top: auto; margin-bottom: 1.2rem; overflow: hidden; }
+.nocount-bar { height: 100%; width: 8%; background: var(--terracotta); transition: width 0.6s ease; }
+.nocount-figures { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: auto; margin-bottom: 1.2rem; }
+.nocount-big { font-family: var(--font-display); font-size: clamp(1.8rem, 3vw, 2.5rem); line-height: 1; font-variant-numeric: lining-nums tabular-nums; }
+.nocount-cap { font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(247,245,242,0.55); margin-top: 0.5rem; line-height: 1.4; }
+.nocount-foot { font-size: 0.78rem; line-height: 1.7; color: #6B6560; }
+.nocount-card--private .nocount-foot { color: rgba(247,245,242,0.7); }
+.nocount-close { text-align: center; margin-top: 2.5rem; font-size: 0.8rem; color: #6B6560; }
+.nocount-close a { color: var(--noir); }
+[data-theme="dark"] .conf-section { background: #0A0908; }
+[data-theme="dark"] .nocount-section { background: #0A0908; }
+[data-theme="dark"] .nocount-card { background: #1E1C1A; border-color: rgba(240,237,232,0.12); color: #F0EDE8; }
+[data-theme="dark"] .nocount-card--private { background: #F0EDE8; color: #141210; border-color: #F0EDE8; }
+[data-theme="dark"] .nocount-card--private .nocount-cap, [data-theme="dark"] .nocount-card--private .nocount-foot { color: rgba(20,18,16,0.6); }
+[data-theme="dark"] .nocount-card--private .nocount-tasks li { border-top-color: rgba(20,18,16,0.12); }
+[data-theme="dark"] .nocount-intro, [data-theme="dark"] .nocount-foot, [data-theme="dark"] .nocount-close { color: rgba(240,237,232,0.65); }
+[data-theme="dark"] .nocount-close a { color: #F0EDE8; }
+[data-theme="dark"] .nocount-meter { background: #2A2724; }
+@media (max-width: 960px) {
+  .conf-section, .nocount-section { padding: 4.5rem 1.5rem; }
+  .conf-compare, .nocount-cards { grid-template-columns: 1fr; }
+  .conf-col, .nocount-card { padding: 1.8rem 1.4rem; }
+  .nocount-figures { gap: 0.6rem; }
+}
 </style>
 
 <script type="application/ld+json">
@@ -637,7 +704,7 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
       <em>Vos données restent<br>chez vous.</em>
     </h1>
     <p class="hero-subtitle">
-      Flow Studio conçoit et installe dans votre entreprise un système IA privé, configuré sur vos documents et relié à vos outils. Comptes rendus, devis, réponses aux collaborateurs, procédures, reporting : le système prépare, vos équipes valident. Son coût ne dépend pas du nombre de personnes équipées.
+      Flow Studio installe dans votre entreprise un système IA privé, configuré sur vos documents et relié à vos outils. Vos données ne sortent pas de vos murs, et vous ne payez ni par question, ni par collaborateur connecté.
     </p>
     <div class="hero-actions">
       <a href="https://calendar.app.google/YQL39LLfw5zoFn2v7" class="btn-primary" target="_blank" rel="noopener">Réserver un appel découverte</a>
@@ -646,15 +713,88 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
     <p class="hero-micro">30 minutes pour savoir si c'est pertinent pour vous. Si ça ne l'est pas, nous vous le dirons.</p>
   </div>
   <div class="hero-right">
-    <p class="hero-label">Flow Private AI · Ce qui change</p>
-    <div class="observations">
-      <div class="observation-item">Chaque service dispose d'une IA configurée sur ses propres documents</div>
-      <div class="observation-item">Le travail de préparation est fait, vos équipes relisent et valident</div>
-      <div class="observation-item">Fichiers clients, données salariés, contrats et tarifs ne sortent pas de l'entreprise</div>
-      <div class="observation-item">Une règle claire sur l'usage de l'IA, la même pour toute l'équipe</div>
-      <div class="observation-item">Le coût reste le même quand l'équipe grandit</div>
+    <p class="hero-label">Flow Private AI · Deux raisons de passer au privé</p>
+    <div class="hero-args">
+      <div class="hero-arg">
+        <p class="hero-arg-num">01 · Confidentialité</p>
+        <p class="hero-arg-title">Vos données restent chez vous.</p>
+        <p class="hero-arg-text">Fichiers clients, tarifs, contrats, données salariés : le modèle tourne sur votre serveur. Rien ne transite par un fournisseur externe.</p>
+      </div>
+      <div class="hero-arg">
+        <p class="hero-arg-num">02 · Retour sur investissement</p>
+        <p class="hero-arg-title">Aucun frais par jeton.</p>
+        <p class="hero-arg-text">Un coût fixe, que 5 ou 80 collaborateurs soient connectés, qu'ils posent 100 ou 10 000 questions par mois.</p>
+      </div>
     </div>
   </div>
+</section>
+
+<!-- ARGUMENT 1 : CONFIDENTIALITÉ -->
+<section class="conf-section" id="confidentialite">
+  <div class="conf-head">
+    <p class="section-eyebrow">01 · Confidentialité</p>
+    <h2 class="section-title">Votre IA. Vos données.<br><em>Dans vos murs.</em></h2>
+    <p class="conf-intro">Avec une IA en ligne, chaque question envoyée part sur les serveurs du fournisseur, avec les documents qui l'accompagnent. Avec Flow Private AI, le modèle tourne sur un serveur installé dans votre entreprise. La question de ce qu'on a le droit d'y mettre ne se pose plus.</p>
+  </div>
+  <div class="conf-compare">
+    <div class="conf-col">
+      <p class="conf-col-label">IA en ligne</p>
+      <div class="conf-flow">
+        <span>Votre équipe</span><span class="conf-arrow">→</span><span>Internet</span><span class="conf-arrow">→</span><span class="conf-out">Serveurs du fournisseur</span>
+      </div>
+      <p class="conf-col-text">Vos données sont traitées hors de l'entreprise, selon les conditions et la localisation choisies par le fournisseur.</p>
+    </div>
+    <div class="conf-col conf-col--private">
+      <p class="conf-col-label">Flow Private AI</p>
+      <div class="conf-flow">
+        <span>Votre équipe</span><span class="conf-arrow">→</span><span class="conf-in">Votre serveur, dans vos locaux</span>
+      </div>
+      <p class="conf-col-text">Les échanges restent sur votre réseau. Vous savez où sont vos données, et qui y a accès.</p>
+    </div>
+  </div>
+  <div class="conf-data">
+    <p class="conf-data-label">Ce que vos équipes peuvent enfin confier à l'IA</p>
+    <div class="conf-tags">
+      <span>Fichiers clients</span><span>Tarifs et marges</span><span>Contrats</span><span>Données salariés</span><span>Comptes rendus de réunion</span><span>Documents stratégiques</span>
+    </div>
+  </div>
+</section>
+
+<!-- ARGUMENT 2 : TRAVAILLER SANS COMPTER -->
+<section class="nocount-section" id="sans-compter">
+  <div class="nocount-head">
+    <p class="section-eyebrow">02 · Retour sur investissement</p>
+    <h2 class="section-title">Travaillez sans compter.<br><em>Aucun frais par jeton.</em></h2>
+    <p class="nocount-intro">Rédiger, résumer, chercher, analyser : avec une IA privée, chaque question supplémentaire ne coûte rien de plus. Équiper un collaborateur de plus non plus.</p>
+  </div>
+  <div class="nocount-cards" id="nocountCards">
+    <div class="nocount-card">
+      <div class="nocount-card-top"><span class="nocount-tag">IA en ligne</span><span class="nocount-sub">Facturée à l'usage</span></div>
+      <ul class="nocount-tasks">
+        <li><span>Résumer un contrat</span><em>abonnement + jetons</em></li>
+        <li><span>Rédiger une relance client</span><em>abonnement + jetons</em></li>
+        <li><span>Préparer le reporting du mois</span><em>abonnement + jetons</em></li>
+      </ul>
+      <p class="nocount-meter-label">La facture suit l'usage</p>
+      <div class="nocount-meter" style="margin-top:0"><div class="nocount-bar" id="nocountBar"></div></div>
+      <p class="nocount-foot">Chaque nouvel accès est un abonnement de plus. Chaque usage intensif, une facture qui grimpe.</p>
+    </div>
+    <div class="nocount-card nocount-card--private">
+      <div class="nocount-card-top"><span class="nocount-tag">Flow Private AI</span><span class="nocount-sub">Coût fixe</span></div>
+      <ul class="nocount-tasks">
+        <li><span>Résumer un contrat</span><em>inclus</em></li>
+        <li><span>Rédiger une relance client</span><em>inclus</em></li>
+        <li><span>Préparer le reporting du mois</span><em>inclus</em></li>
+      </ul>
+      <div class="nocount-figures">
+        <div><p class="nocount-big">0 €</p><p class="nocount-cap">Frais par jeton</p></div>
+        <div><p class="nocount-big" id="nocountTasks">0</p><p class="nocount-cap">Tâches réalisées</p></div>
+        <div><p class="nocount-big">0 €</p><p class="nocount-cap">Par collaborateur ajouté</p></div>
+      </div>
+      <p class="nocount-foot">Plus de travail fait. Toujours le même coût mensuel, quelle que soit l'utilisation.</p>
+    </div>
+  </div>
+  <p class="nocount-close">Le matériel et le support restent un coût fixe. <a href="#roi">Comparez-le à vos abonnements actuels dans le simulateur →</a></p>
 </section>
 
 <!-- PROBLEME -->
@@ -1144,7 +1284,7 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
   <h2 class="fx-list-title">Conçu pour durer.<br><em>Une IA à la mesure de votre entreprise.</em></h2>
   <ol class="fx-list">
     <li class="fx-list-row"><span class="fx-num">01</span><span class="fx-list-name">Privé et sécurisé</span><span class="fx-list-desc">Vos données restent dans votre entreprise. Toujours.</span></li>
-    <li class="fx-list-row"><span class="fx-num">02</span><span class="fx-list-name">Coût maîtrisé</span><span class="fx-list-desc">Un coût fixe, quelle que soit la taille de l'équipe équipée.</span></li>
+    <li class="fx-list-row"><span class="fx-num">02</span><span class="fx-list-name">Aucun frais par jeton</span><span class="fx-list-desc">Un coût fixe, quel que soit le nombre de collaborateurs connectés et de questions posées.</span></li>
     <li class="fx-list-row"><span class="fx-num">03</span><span class="fx-list-name">Spécialisé</span><span class="fx-list-desc">Configuré sur vos documents, vos processus et votre vocabulaire.</span></li>
     <li class="fx-list-row"><span class="fx-num">04</span><span class="fx-list-name">Indépendant</span><span class="fx-list-desc">Le système et sa documentation vous appartiennent. Vous restez libre de changer de modèle ou de prestataire.</span></li>
   </ol>
@@ -1794,6 +1934,31 @@ function simSubmitCRM() {
 // Init on load
 window.addEventListener('load', function() { simUpdate(); });
 window.addEventListener('resize', function() { simUpdate(); });
+
+/* ---- Travaillez sans compter : compteur ---- */
+(function() {
+  var box = document.getElementById('nocountCards');
+  if (!box) return;
+  var tasksEl = document.getElementById('nocountTasks'), bar = document.getElementById('nocountBar');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function show(n) {
+    tasksEl.textContent = n.toLocaleString('fr-FR');
+    bar.style.width = Math.min(8 + n / 12, 100) + '%';
+  }
+  if (reduce || !('IntersectionObserver' in window)) { show(1240); return; }
+  var started = false;
+  new IntersectionObserver(function(entries, obs) {
+    if (!entries[0].isIntersecting || started) return;
+    started = true; obs.disconnect();
+    var n = 0, target = 1240, t0 = performance.now();
+    (function step(t) {
+      var k = Math.min((t - t0) / 3200, 1);
+      n = Math.round(target * (1 - Math.pow(1 - k, 2)));
+      show(n);
+      if (k < 1) requestAnimationFrame(step);
+    })(t0);
+  }, { threshold: 0.4 }).observe(box);
+})();
 </script>
 
 </body>
