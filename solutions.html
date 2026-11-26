@@ -327,7 +327,7 @@
     <p class="hero-subtitle reveal reveal-delay-2">Flow Studio analyse votre fonctionnement, structure vos processus et construit les systèmes IA et digitaux adaptés à votre activité.</p>
     <p class="hero-tagline reveal reveal-delay-2">Structurer. Connecter. Automatiser. Transmettre.</p>
     <div class="hero-actions reveal reveal-delay-3">
-      <a href="#parcours" class="btn-primary">Découvrir les solutions</a>
+      <a href="#parcours" class="btn-primary">Voir les solutions</a>
       <a href="https://calendar.app.google/YQL39LLfw5zoFn2v7" target="_blank" class="btn-ghost">Prendre rendez-vous</a>
     </div>
     <p class="hero-micro reveal reveal-delay-3">Échange de 30 minutes pour identifier votre besoin et le parcours adapté.</p>
@@ -361,7 +361,7 @@
         <li>Fonctionnement en équipe</li>
       </ul>
       <p class="parcours-price">Sur mesure, après Diagnostic</p>
-      <a href="/entrepreneurs" class="parcours-cta">Découvrir les solutions Entrepreneurs &rarr;</a>
+      <a href="/entrepreneurs" class="parcours-cta">Voir les solutions Entrepreneurs &rarr;</a>
     </div>
     <div class="parcours-card reveal reveal-delay-1">
       <p class="parcours-tag">PME & organisations</p>
@@ -378,7 +378,7 @@
         <li>Suivi des premiers usages</li>
       </ul>
       <p class="parcours-price">Sur mesure, après Diagnostic</p>
-      <a href="/pme" class="parcours-cta">Découvrir les solutions PME &rarr;</a>
+      <a href="/pme" class="parcours-cta">Voir les solutions PME &rarr;</a>
     </div>
   </div>
 </section>
@@ -526,7 +526,7 @@
     </div>
   </div>
   <div style="margin-top:3rem;" class="reveal">
-    <a href="/realisations" class="realisations-btn">Découvrir les réalisations</a>
+    <a href="/realisations" class="realisations-btn">Voir les réalisations</a>
   </div>
 </section>
 
@@ -672,12 +672,12 @@
 <div class="passerelles-bar">
   <div class="passerelle-item">
     <p class="passerelle-label">Vous souhaitez construire vous-même votre système ?</p>
-    <a href="https://bloomandbuild.fr" target="_blank" class="passerelle-link">Découvrir Bloom & Build →</a>
+    <a href="https://bloomandbuild.fr" target="_blank" class="passerelle-link">Voir Bloom & Build →</a>
   </div>
   <div class="passerelle-sep"></div>
   <div class="passerelle-item">
     <p class="passerelle-label">Vous recherchez uniquement une formation pour vos équipes ?</p>
-    <a href="https://fuzzy-formation.fr/" target="_blank" class="passerelle-link">Découvrir Fuzzy Formation →</a>
+    <a href="https://fuzzy-formation.fr/" target="_blank" class="passerelle-link">Voir Fuzzy Formation →</a>
   </div>
 </div>
 
@@ -710,7 +710,7 @@
 </script>
 
 
-<button class="theme-toggle" onclick="toggleTheme()" aria-label="Basculer le thème" id="themeToggle">🌙</button>
+<button class="theme-toggle" onclick="toggleTheme()" aria-label="Basculer le thème" id="themeToggle">☾</button>
 <script>
   // Dark mode — data-theme only, OS preference as default, toggle persists
   (function() {
@@ -727,14 +727,14 @@
     document.documentElement.setAttribute('data-theme', next);
     localStorage.setItem('fs-theme', next);
     const btn = document.getElementById('themeToggle');
-    if (btn) btn.textContent = next === 'dark' ? '☀' : '🌙';
+    if (btn) btn.textContent = next === 'dark' ? '☼' : '☾';
   }
 
   document.addEventListener('DOMContentLoaded', function() {
     const btn = document.getElementById('themeToggle');
     if (btn) {
       const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-      btn.textContent = isDark ? '☀' : '🌙';
+      btn.textContent = isDark ? '☼' : '☾';
     }
   });
 </script>

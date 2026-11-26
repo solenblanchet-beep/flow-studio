@@ -212,7 +212,7 @@
 
   <div class="article-cta">
     <p>Flow Studio conçoit des systèmes Notion, IA et automatisations sur mesure pour entrepreneurs et PME. Je construis, je t'explique, tu pilotes.</p>
-    <a href="/entrepreneurs">Découvrir les solutions Entrepreneurs →</a>
+    <a href="/entrepreneurs">Voir les solutions Entrepreneurs →</a>
   </div>
 </article>
 
@@ -227,7 +227,7 @@
 </section>
 
 <div class="bloom-footer-bar">
-  <p>Tu préfères construire ton système avec mon accompagnement ? <a href="https://bloomandbuild.fr" target="_blank">Découvre Bloom & Build →</a></p>
+  <p>Tu préfères construire ton système avec mon accompagnement ? <a href="https://bloomandbuild.fr" target="_blank">Voir Bloom & Build →</a></p>
 </div>
 
 <footer>
@@ -252,7 +252,7 @@
 </script>
 
 
-<button class="theme-toggle" onclick="toggleTheme()" aria-label="Basculer le thème" id="themeToggle">🌙</button>
+<button class="theme-toggle" onclick="toggleTheme()" aria-label="Basculer le thème" id="themeToggle">☾</button>
 <script>
   // Dark mode — data-theme only, OS preference as default, toggle persists
   (function() {
@@ -269,14 +269,14 @@
     document.documentElement.setAttribute('data-theme', next);
     localStorage.setItem('fs-theme', next);
     const btn = document.getElementById('themeToggle');
-    if (btn) btn.textContent = next === 'dark' ? '☀' : '🌙';
+    if (btn) btn.textContent = next === 'dark' ? '☼' : '☾';
   }
 
   document.addEventListener('DOMContentLoaded', function() {
     const btn = document.getElementById('themeToggle');
     if (btn) {
       const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-      btn.textContent = isDark ? '☀' : '🌙';
+      btn.textContent = isDark ? '☼' : '☾';
     }
   });
 </script>
