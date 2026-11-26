@@ -308,7 +308,7 @@
 </div>
 
 
-<button class="theme-toggle" onclick="toggleTheme()" aria-label="Basculer le thème" id="themeToggle">🌙</button>
+<button class="theme-toggle" onclick="toggleTheme()" aria-label="Basculer le thème" id="themeToggle">☾</button>
 <script>
   // Dark mode — data-theme only, OS preference as default, toggle persists
   (function() {
@@ -325,14 +325,14 @@
     document.documentElement.setAttribute('data-theme', next);
     localStorage.setItem('fs-theme', next);
     const btn = document.getElementById('themeToggle');
-    if (btn) btn.textContent = next === 'dark' ? '☀' : '🌙';
+    if (btn) btn.textContent = next === 'dark' ? '☼' : '☾';
   }
 
   document.addEventListener('DOMContentLoaded', function() {
     const btn = document.getElementById('themeToggle');
     if (btn) {
       const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-      btn.textContent = isDark ? '☀' : '🌙';
+      btn.textContent = isDark ? '☼' : '☾';
     }
   });
 </script>

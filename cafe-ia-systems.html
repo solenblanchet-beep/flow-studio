@@ -471,7 +471,7 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
   </div>
 </footer>
 
-<button class="theme-toggle" onclick="toggleTheme()" aria-label="Basculer le thème" id="themeToggle">🌙</button>
+<button class="theme-toggle" onclick="toggleTheme()" aria-label="Basculer le thème" id="themeToggle">☾</button>
 
 <script>
 function toggleTheme() {
@@ -480,13 +480,13 @@ function toggleTheme() {
   document.documentElement.setAttribute('data-theme', next);
   localStorage.setItem('fs-theme', next);
   var btn = document.getElementById('themeToggle');
-  if (btn) btn.textContent = next === 'dark' ? '☀' : '🌙';
+  if (btn) btn.textContent = next === 'dark' ? '☼' : '☾';
 }
 
 (function() {
   var theme = document.documentElement.getAttribute('data-theme') || 'light';
   var btn = document.getElementById('themeToggle');
-  if (btn) btn.textContent = theme === 'dark' ? '☀' : '🌙';
+  if (btn) btn.textContent = theme === 'dark' ? '☼' : '☾';
 })();
 
 function toggleFaq(el) {

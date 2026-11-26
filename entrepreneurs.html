@@ -562,7 +562,7 @@
     </div>
     <div class="reveal reveal-delay-2">
       <div class="cas-quote-block">
-        <p class="cas-quote">« Notre Notion était peu intuitif et ne répondait plus à nos besoins. Pas d'espace collaboratif, pas d'automation. Flow Studio nous a aidé à poser un cahier des charges et a rebooté toutes les pages pour créer les bonnes connexions entre les sujets et les collaborateurs. »</p>
+        <p class="cas-quote">« Notre Notion était peu intuitif et engageant et ne répondait plus à nos besoins. Pas d'espace collaboratif, pas d'automation sur des tâches… C'était plus un empilement de pages qui vivaient en silo. Flow Studio nous a aidé à poser un cahier des charges et a rebooté ensuite toutes les pages pour créer les bonnes connexions entre les sujets et les collaborateurs. »</p>
         <p class="cas-quote-author">c3llar Wine Society</p>
         <p class="cas-quote-sector">Industrie du vin</p>
       </div>
@@ -775,7 +775,7 @@
 </section>
 
 <div class="bloom-footer-bar">
-  <p>Tu préfères construire ton système avec mon accompagnement ? <a href="https://bloomandbuild.fr" target="_blank">Découvre Bloom & Build →</a></p>
+  <p>Tu préfères construire ton système avec mon accompagnement ? <a href="https://bloomandbuild.fr" target="_blank">Voir Bloom & Build →</a></p>
 </div>
 
 <footer>
@@ -815,7 +815,7 @@
 </script>
 
 
-<button class="theme-toggle" onclick="toggleTheme()" aria-label="Basculer le thème" id="themeToggle">🌙</button>
+<button class="theme-toggle" onclick="toggleTheme()" aria-label="Basculer le thème" id="themeToggle">☾</button>
 <script>
   // Dark mode — data-theme only, OS preference as default, toggle persists
   (function() {
@@ -832,14 +832,14 @@
     document.documentElement.setAttribute('data-theme', next);
     localStorage.setItem('fs-theme', next);
     const btn = document.getElementById('themeToggle');
-    if (btn) btn.textContent = next === 'dark' ? '☀' : '🌙';
+    if (btn) btn.textContent = next === 'dark' ? '☼' : '☾';
   }
 
   document.addEventListener('DOMContentLoaded', function() {
     const btn = document.getElementById('themeToggle');
     if (btn) {
       const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-      btn.textContent = isDark ? '☀' : '🌙';
+      btn.textContent = isDark ? '☼' : '☾';
     }
   });
 </script>
