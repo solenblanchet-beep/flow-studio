@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Solutions IA, Notion et automatisations | Flow Studio</title>
+<title>Solutions : TPE, PME et cabinets | Flow Studio</title>
 <meta name="description" content="Flow Studio conçoit des systèmes IA et digitaux pour entrepreneurs, petites équipes et PME : organisation, processus, assistants IA, automatisations et adoption.">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -80,7 +80,7 @@
   .parcours-section { background: var(--noir); padding: 7rem 6rem; }
   .parcours-title { font-family: var(--font-display); font-size: clamp(1.8rem, 2.5vw, 2.4rem); color: var(--blanc); margin-bottom: 3.5rem; line-height: 1.2; }
   .parcours-title em { font-style: italic; color: var(--taupe); }
-  .parcours-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: rgba(255,255,255,0.06); }
+  .parcours-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: rgba(255,255,255,0.06); }
   .parcours-card { background: rgba(255,255,255,0.03); padding: 3rem 2.8rem; display: flex; flex-direction: column; }
   .parcours-card:hover { background: rgba(255,255,255,0.06); }
   .parcours-tag { font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1rem; }
@@ -302,18 +302,19 @@
     <li><a href="/realisations">Réalisations</a></li>
     <li><a href="/solen-ouahioune">À propos</a></li>
   </ul>
-  <a href="https://calendar.app.google/YQL39LLfw5zoFn2v7" target="_blank" class="nav-cta">Prendre rendez-vous</a>
+  <a href="/diagnostic-ia" class="nav-cta">Le Diagnostic</a>
   <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
+  <a href="/solutions" onclick="toggleMenu()">Solutions</a>
   <a href="/entrepreneurs" onclick="toggleMenu()">Entrepreneurs</a>
   <a href="/pme" onclick="toggleMenu()">PME</a>
   <a href="/flow-private-ai" onclick="toggleMenu()">Flow Private AI</a>
   <a href="/realisations" onclick="toggleMenu()">Réalisations</a>
   <a href="/solen-ouahioune" onclick="toggleMenu()">À propos</a>
-  <a href="https://calendar.app.google/YQL39LLfw5zoFn2v7" target="_blank" class="mobile-cta" onclick="toggleMenu()">Prendre rendez-vous</a>
+  <a href="/diagnostic-ia" class="mobile-cta" onclick="toggleMenu()">Le Diagnostic</a>
 </div>
 
 <!-- HERO -->
@@ -328,9 +329,9 @@
     <p class="hero-tagline reveal reveal-delay-2">Structurer. Connecter. Automatiser. Transmettre.</p>
     <div class="hero-actions reveal reveal-delay-3">
       <a href="#parcours" class="btn-primary">Voir les solutions</a>
-      <a href="https://calendar.app.google/YQL39LLfw5zoFn2v7" target="_blank" class="btn-ghost">Prendre rendez-vous</a>
+      <a href="/diagnostic-ia" class="btn-ghost">Le Diagnostic</a>
     </div>
-    <p class="hero-micro reveal reveal-delay-3">Échange de 30 minutes pour identifier votre besoin et le parcours adapté.</p>
+    <p class="hero-micro reveal reveal-delay-3">Chaque mission commence par le Diagnostic : 490 € TTC, déduits de la mission si vous poursuivez.</p>
   </div>
   <div class="hero-right">
     <div class="hero-benefit reveal reveal-delay-1">Des informations centralisées</div>
@@ -343,7 +344,7 @@
 </section>
 
 <section class="parcours-section" id="parcours">
-  <p class="section-eyebrow reveal" style="color:var(--taupe);">Deux parcours, deux réalités</p>
+  <p class="section-eyebrow reveal" style="color:var(--taupe);">Trois parcours, trois réalités</p>
   <h2 class="parcours-title reveal reveal-delay-1">Le bon système dépend<br><em>de votre situation.</em></h2>
   <div class="parcours-grid">
     <div class="parcours-card reveal">
@@ -380,7 +381,23 @@
       <p class="parcours-price">Sur mesure, après Diagnostic</p>
       <a href="/pme" class="parcours-cta">Voir les solutions PME &rarr;</a>
     </div>
+    <div class="parcours-card reveal reveal-delay-2">
+      <p class="parcours-tag">Cabinets · expertise, courtage, comptabilité, juridique</p>
+      <h3 class="parcours-card-title">Vos dossiers sont sensibles.</h3>
+      <p class="parcours-card-sub">Votre IA doit en tenir compte.</p>
+      <p class="parcours-desc">Votre équipe veut gagner du temps avec l'IA, mais les dossiers clients ne peuvent pas partir n'importe où. Flow Private AI met en place une IA privée ou hybride : les dossiers sensibles restent au cabinet, les usages ordinaires passent par le cloud quand c'est pertinent.</p>
+      <ul class="parcours-items">
+        <li>Session AI Act pour cadrer les usages</li>
+        <li>Choix cloud, hybride ou local selon votre taille et vos données</li>
+        <li>Aide au choix du matériel</li>
+        <li>Assistants IA sur vos propres documents</li>
+        <li>Modèle de maintenance adapté au cabinet</li>
+      </ul>
+      <p class="parcours-price">Sur mesure, après Diagnostic</p>
+      <a href="/flow-private-ai" class="parcours-cta">Voir Flow Private AI &rarr;</a>
+    </div>
   </div>
+  <p class="reveal" style="margin-top:2.5rem;max-width:760px;font-size:0.85rem;line-height:1.85;color:rgba(255,255,255,0.78);"><strong style="color:var(--blanc);font-weight:500;">Et après la mise en place ?</strong> La maintenance, selon trois modèles au choix : en interne avec transmission, mixte avec un référent dans votre équipe, ou assurée par Flow Studio. Elle est chiffrée selon votre taille, après le Diagnostic.</p>
 </section>
 
 
@@ -663,7 +680,7 @@
   </h2>
   <p class="cta-subtitle reveal reveal-delay-2">Flow Studio vous aide à structurer le travail, connecter les informations et intégrer l'intelligence artificielle là où elle apporte une valeur réelle.</p>
   <div class="cta-actions reveal reveal-delay-3">
-    <a href="https://calendar.app.google/YQL39LLfw5zoFn2v7" target="_blank" class="cta-btn-primary">Prendre rendez-vous</a>
+    <a href="/diagnostic-ia" class="cta-btn-primary">Réserver le Diagnostic</a>
     <a href="/realisations" class="cta-btn-ghost">Voir les réalisations</a>
   </div>
 </section>
