@@ -291,6 +291,8 @@
   .bloom-footer-bar p { font-size: 0.78rem; color: #524E4A; }
   .bloom-footer-bar a { color: var(--noir); font-weight: 400; text-decoration: underline; text-underline-offset: 3px; transition: color 0.3s; }
   .bloom-footer-bar a:hover { color: var(--taupe); }
+  @media (max-width: 960px) { .hero-left, .hero-right { min-width: 0; } }
+  @media (max-width: 480px) { .hero-left { padding: 2.5rem 0.5rem 2rem; } .hero-right { padding: 2rem 0.5rem; } }
   @media (max-width: 768px) { .bloom-footer-bar { padding: 1rem 1.5rem; } }
 
 
@@ -396,6 +398,39 @@
  ]
 }
 </script>
+<style>
+  /* Lisibilité mobile : aucun texte informatif sous 11 px */
+  @media (max-width: 768px) {
+    .hero-eyebrow,
+    .btn-primary,
+    .btn-ghost,
+    .stat-label,
+    .section-eyebrow,
+    .module-tag,
+    .module-benefit,
+    .pack-tag,
+    .pack-price-sub,
+    .pack-cta,
+    .visual-label,
+    .visual-author,
+    .testimony-author,
+    .testimony-role,
+    .cta-eyebrow,
+    .cta-btn,
+    .cta-note,
+    .cta-note a,
+    .footer-tagline,
+    .footer-links a,
+    .cookie-btn { font-size: 0.6875rem !important; }
+  }
+</style>
+<style>
+  .footer-keywords { font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: 0.82rem !important; line-height: 1.5; color: var(--taupe); margin-top: 0.5rem; letter-spacing: 0; max-width: 360px; }
+  @media (min-width: 769px) {
+    footer { gap: 2.5rem; }
+    .footer-links { flex: 1; min-width: 0; flex-wrap: wrap; justify-content: flex-end; row-gap: 0.7rem; }
+  }
+</style>
 </head>
 <body>
 

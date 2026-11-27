@@ -721,6 +721,41 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
  ]
 }
 </script>
+<style>
+  /* Lisibilité mobile : aucun texte informatif sous 11 px */
+  @media (max-width: 768px) {
+    .hero-eyebrow,
+    .btn-primary,
+    .btn-ghost,
+    .hero-micro,
+    .hero-label,
+    .hero-arg-num,
+    .section-eyebrow,
+    .conf-col-label,
+    .conf-data-label,
+    .nocount-sub,
+    .nocount-meter-label,
+    .nocount-cap,
+    .systeme-num,
+    .objection-label,
+    .archi-compare-label,
+    .archi-note,
+    .preuve-quote figcaption,
+    .cta-final-eyebrow,
+    .cta-btn,
+    .cta-final-micro,
+    .footer-tagline a,
+    .footer-tagline,
+    .footer-links a { font-size: 0.6875rem !important; }
+  }
+</style>
+<style>
+  .footer-keywords { font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: 0.82rem !important; line-height: 1.5; color: var(--taupe); margin-top: 0.5rem; letter-spacing: 0; max-width: 360px; }
+  @media (min-width: 769px) {
+    footer { gap: 2.5rem; }
+    .footer-links { flex: 1; min-width: 0; flex-wrap: wrap; justify-content: flex-end; row-gap: 0.7rem; }
+  }
+</style>
 </head>
 <body>
 

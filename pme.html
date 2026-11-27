@@ -484,6 +484,41 @@
  ]
 }
 </script>
+<style>
+  /* Lisibilité mobile : aucun texte informatif sous 11 px */
+  @media (max-width: 768px) {
+    .hero-eyebrow,
+    .btn-primary,
+    .btn-ghost,
+    .hero-micro,
+    .section-eyebrow,
+    .pillar-num,
+    .niveau-num,
+    .niveau-cta,
+    .preuve-row-label,
+    .preuve-link,
+    .preuve-score-label,
+    .preuve-score-org,
+    .livrable-niveau-num,
+    .incarnation-block p,
+    .cta-eyebrow,
+    .cta-btn,
+    .cta-note,
+    .cta-note a,
+    .maillage-pme span,
+    .footer-tagline a,
+    .footer-keywords,
+    .footer-links a,
+    .active { font-size: 0.6875rem !important; }
+  }
+</style>
+<style>
+  .footer-keywords { font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: 0.82rem !important; line-height: 1.5; color: var(--taupe); margin-top: 0.5rem; letter-spacing: 0; max-width: 360px; }
+  @media (min-width: 769px) {
+    footer { gap: 2.5rem; }
+    .footer-links { flex: 1; min-width: 0; flex-wrap: wrap; justify-content: flex-end; row-gap: 0.7rem; }
+  }
+</style>
 </head>
 <body>
 
