@@ -1,0 +1,33 @@
+# Flow Studio
+
+> Flow Studio est le studio de Business Systems Design et d'implémentation de Solen Ouahioune. Il conçoit et met en place des systèmes de travail (organisation, processus, Notion, IA, automatisations) pour les dirigeants de TPE, les PME et les cabinets qui veulent déléguer la construction de leur système. Promesse : reprendre le pouvoir sur son business avec des systèmes qui soutiennent son ambition.
+
+## En bref
+
+- Qui : Solen Ouahioune, Business Systems Designer, fondatrice de Flow Studio. Elle travaille seule, de l'analyse à l'implémentation.
+- Quoi : conception et implémentation de systèmes de travail. Notion, l'IA et les automatisations sont des composants du système, choisis après analyse du fonctionnement réel.
+- Pour qui : dirigeants de TPE et petites équipes, PME multi-équipes, cabinets (expertise, courtage, comptabilité, juridique).
+- Où : Île-de-France et à distance, en français.
+- Porte d'entrée : le Diagnostic, 490 € TTC, déduit de la mission si le client poursuit. Session de travail de 3 h, livrable écrit sous 5 à 7 jours.
+- Prix : seul le Diagnostic a un prix public. Les missions et la maintenance sont chiffrées sur mesure après le Diagnostic.
+
+## Offres
+
+- [Le Diagnostic](https://flow-studio.app/diagnostic-ia): organisation, architecture IA (cloud, hybride ou locale) et modèle de maintenance. 490 € TTC.
+- [System Core (TPE)](https://flow-studio.app/entrepreneurs): système central pour la dirigeante ou le dirigeant de TPE : pilotage, projets, CRM, processus, automatisations, documentation, IA cloud paramétrée.
+- [System Signature (PME)](https://flow-studio.app/pme): processus reliés entre les services, paramétrage de l'outil IA cloud déjà en place, déploiement et formation des équipes.
+- [Flow Private AI (cabinets)](https://flow-studio.app/flow-private-ai): IA privée ou hybride pour les cabinets qui traitent des données sensibles. Matériel non vendu par Flow Studio, fourchette indicative de 5 000 à 8 000 € HT par machine.
+- [Session AI Act](https://flow-studio.app/ai-act): séance pour cadrer les usages IA au regard du règlement européen, avant le Diagnostic.
+- Maintenance : trois modèles (en interne avec transmission, mixte avec un référent, ou assurée par Flow Studio), chiffrée selon la taille.
+
+## Références
+
+- [Business Systems Design : définition](https://flow-studio.app/business-systems-design)
+- [Solen Ouahioune](https://flow-studio.app/solen-ouahioune)
+- [Réalisations et témoignages](https://flow-studio.app/realisations)
+- [Blog](https://flow-studio.app/blog/)
+- [Contact](https://flow-studio.app/contact)
+
+## Écosystème
+
+Solen Ouahioune anime aussi deux autres entités, distinctes de Flow Studio : Bloom & Build (https://bloomandbuild.fr), pour les entrepreneures et dirigeantes qui veulent apprendre à construire leurs systèmes, et Fuzzy Formation (https://fuzzy-formation.fr), pour la formation des professionnels et des équipes.

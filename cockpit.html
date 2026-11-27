@@ -291,6 +291,8 @@
   .bloom-footer-bar p { font-size: 0.78rem; color: #524E4A; }
   .bloom-footer-bar a { color: var(--noir); font-weight: 400; text-decoration: underline; text-underline-offset: 3px; transition: color 0.3s; }
   .bloom-footer-bar a:hover { color: var(--taupe); }
+  @media (max-width: 960px) { .hero-left, .hero-right { min-width: 0; } }
+  @media (max-width: 480px) { .hero-left { padding: 2.5rem 0.5rem 2rem; } .hero-right { padding: 2rem 0.5rem; } }
   @media (max-width: 768px) { .bloom-footer-bar { padding: 1rem 1.5rem; } }
 
 
@@ -339,6 +341,100 @@
   .theme-toggle:hover { transform: scale(1.08); }
 
 </style>
+<link rel="canonical" href="https://flow-studio.app/cockpit" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Flow Studio" />
+<meta property="og:locale" content="fr_FR" />
+<meta property="og:url" content="https://flow-studio.app/cockpit" />
+<meta property="og:title" content="Flow Studio · Cockpit, Le système Notion pour architectes d&#x27;intérieur" />
+<meta property="og:description" content="Flow Studio Cockpit : un système Notion sur mesure pour les architectes d&#x27;intérieur. Suivi de chantier, shopping list, portail client, ROI projet. Livré clé en main." />
+<meta property="og:image" content="https://flow-studio.app/solen-ouahioune-flow-studio.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "Je ne sais pas utiliser Notion. C'est un problème ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Pas du tout. Je construis le système pour vous, et je vous livre une vidéo tuto personnalisée, sur votre propre Cockpit, avec vos projets. En général, mes clientes sont autonomes en moins d'une heure."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "J'ai déjà un système qui fonctionne à peu près.",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "À peu près, c'est souvent beaucoup d'énergie dépensée pour un résultat imparfait. Le call découverte est là pour voir si Cockpit vous apporte vraiment quelque chose de plus. Si ce n'est pas le cas, je vous le dis franchement, sans vous faire perdre votre temps."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Est-ce que ça remplace mon logiciel de facturation ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Non, et c'est voulu. Cockpit pilote vos projets et votre activité. Pour la facturation légale, je recommande un outil dédié (Freepaper, Pennylane). Les deux se complètent, chacun fait ce qu'il fait bien."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Combien de temps ça prend à prendre en main ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Le système est conçu pour s'intégrer dans votre façon de travailler. La plupart de mes clientes l'utilisent dès le premier jour. Et vous avez 30 jours de support après livraison pour les ajustements."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Puis-je payer en plusieurs fois ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Oui. Un paiement en 2 fois est disponible sur demande. On en parle lors de l'appel découverte selon votre situation."
+   }
+  }
+ ]
+}
+</script>
+<style>
+  /* Lisibilité mobile : aucun texte informatif sous 11 px */
+  @media (max-width: 768px) {
+    .hero-eyebrow,
+    .btn-primary,
+    .btn-ghost,
+    .stat-label,
+    .section-eyebrow,
+    .module-tag,
+    .module-benefit,
+    .pack-tag,
+    .pack-price-sub,
+    .pack-cta,
+    .visual-label,
+    .visual-author,
+    .testimony-author,
+    .testimony-role,
+    .cta-eyebrow,
+    .cta-btn,
+    .cta-note,
+    .cta-note a,
+    .footer-tagline,
+    .footer-links a,
+    .cookie-btn { font-size: 0.6875rem !important; }
+  }
+</style>
+<style>
+  .footer-keywords { font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: 0.82rem !important; line-height: 1.5; color: var(--taupe); margin-top: 0.5rem; letter-spacing: 0; max-width: 360px; }
+  @media (min-width: 769px) {
+    footer { gap: 2.5rem; }
+    .footer-links { flex: 1; min-width: 0; flex-wrap: wrap; justify-content: flex-end; row-gap: 0.7rem; }
+  }
+</style>
+<style>
+  /* Mode sombre : les blocs sombres gardent leurs couleurs claires-sur-sombre */
+  [data-theme="dark"] .diag-section, [data-theme="dark"] .cta-section { --noir: #0F0F0F; --blanc: #F7F5F2; --beige: #EAE6E1; --taupe: #B5ADA5; }
+</style>
 </head>
 <body>
 
@@ -353,18 +449,19 @@
     <li><a href="/realisations">Réalisations</a></li>
     <li><a href="/solen-ouahioune">À propos</a></li>
   </ul>
-  <a href="https://calendar.app.google/YQL39LLfw5zoFn2v7" target="_blank" class="nav-cta">Prendre rendez-vous</a>
+  <a href="/diagnostic-ia" class="nav-cta">Le Diagnostic</a>
   <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
+  <a href="/solutions" onclick="toggleMenu()">Solutions</a>
   <a href="/entrepreneurs" onclick="toggleMenu()">Entrepreneurs</a>
   <a href="/pme" onclick="toggleMenu()">PME</a>
   <a href="/flow-private-ai" onclick="toggleMenu()">Flow Private AI</a>
   <a href="/realisations" onclick="toggleMenu()">Réalisations</a>
   <a href="/solen-ouahioune" onclick="toggleMenu()">À propos</a>
-  <a href="https://calendar.app.google/x3LrzMWr5spjaSn56" target="_blank" class="mobile-cta" onclick="toggleMenu()">Prendre rendez-vous</a>
+  <a href="/diagnostic-ia" class="mobile-cta" onclick="toggleMenu()">Le Diagnostic</a>
 </div>
 
 <!-- HERO -->
@@ -374,7 +471,7 @@
     <h1 class="hero-title reveal reveal-delay-1">Votre agence tourne.<br>Mais vous, <em>vous courez encore.</em></h1>
     <p class="hero-subtitle reveal reveal-delay-2">Un système Notion sur mesure pour les architectes d'intérieur qui veulent piloter leurs projets, leurs clients et leur rentabilité, sans Excel, sans WhatsApp, sans chaos.</p>
     <div class="hero-actions reveal reveal-delay-3">
-      <a href="https://calendar.app.google/6ozvY6Bq2rzY5D4G8" target="_blank" class="btn-primary">Réserver un call découverte gratuit</a>
+      <a href="/diagnostic-ia" class="btn-primary">Réserver le Diagnostic</a>
       <a href="#offres" class="btn-ghost">Voir les offres</a>
     </div>
     <div class="hero-stats reveal reveal-delay-3">
@@ -686,9 +783,10 @@
 <!-- CTA -->
 <section class="cta-section" id="contact">
   <p class="cta-eyebrow reveal">Et maintenant ?</p>
-  <h2 class="cta-title reveal reveal-delay-1">Arrête de gérer<br><em>votre business à vue.</em></h2>
-  <p class="cta-subtitle reveal reveal-delay-2">30 minutes pour identifier votre besoin, comprendre votre activité et définir le Cockpit qui vous correspond. Gratuit, sans engagement.</p>
-  <a href="https://calendar.app.google/6ozvY6Bq2rzY5D4G8" target="_blank" class="cta-btn reveal reveal-delay-3">Réserver mon call découverte</a>
+  <h2 class="cta-title reveal reveal-delay-1">Arrêtez de gérer<br><em>votre business à vue.</em></h2>
+  <p class="cta-subtitle reveal reveal-delay-2">Le Diagnostic pose votre activité à plat et définit le Cockpit qui vous correspond. 490 € TTC, déduits de la mission si vous poursuivez.</p>
+  <a href="/diagnostic-ia" class="cta-btn reveal reveal-delay-3">Réserver le Diagnostic</a>
+  <p class="cta-note reveal">Une question avant de réserver ? <a href="https://calendar.app.google/YQL39LLfw5zoFn2v7" target="_blank" style="color:inherit;text-decoration:underline;">Appel de 30 minutes, gratuit</a>.</p>
   <p class="cta-note reveal reveal-delay-3">solen@flow-studio.app · flow-studio.app</p>
 </section>
 
@@ -701,6 +799,10 @@
   <div class="footer-links">
     <a href="/entrepreneurs">Entrepreneurs</a>
     <a href="/pme">PME</a>
+    <a href="/flow-private-ai">Flow Private AI</a>
+    <a href="/diagnostic-ia">Le Diagnostic</a>
+    <a href="/business-systems-design">Business Systems Design</a>
+    <a href="/blog/">Blog</a>
     <a href="/realisations">Réalisations</a>
     <a href="/solen-ouahioune">À propos</a>
     <a href="/contact">Contact</a>

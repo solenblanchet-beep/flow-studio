@@ -256,6 +256,84 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
 }
 
 </style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "La participation est-elle vraiment gratuite ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Oui. Le café est offert, la seule condition est de s'inscrire."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Pourquoi l'inscription est-elle obligatoire ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Chaque édition accueille 8 à 12 personnes, pour que chacun puisse participer aux échanges. L'inscription permet aussi de vous envoyer la confirmation et le rappel avec l'adresse exacte, et de préparer la matinée à partir des difficultés que vous indiquez."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Est-ce une présentation commerciale ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Les échanges partent de vos situations, pas des offres de Flow Studio. Si un sujet mérite d'aller plus loin après le café, un diagnostic de votre organisation peut vous être proposé, sans obligation."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "À qui s'adresse ce café ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Aux dirigeants et aux responsables d'équipe ou de service de TPE et de PME. Si vous portez un sujet d'organisation, de CRM ou d'IA dans votre entreprise, vous êtes au bon endroit."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Et si je ne peux plus venir ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Prévenez-moi à solen@flow-studio.app : votre place pourra être proposée à une autre personne."
+   }
+  }
+ ]
+}
+</script>
+<style>
+  /* Lisibilité mobile : aucun texte informatif sous 11 px */
+  @media (max-width: 768px) {
+    .hero-eyebrow,
+    .btn-primary,
+    .btn-ghost,
+    .c-facts span,
+    .c-hero-label,
+    .c-next-month,
+    .c-next-status,
+    .section-eyebrow,
+    .c-edition-num,
+    .c-badge,
+    .c-label,
+    .opt,
+    .c-legal,
+    .c-legal a,
+    .c-submit,
+    .footer-tagline a,
+    .footer-tagline,
+    .footer-links a { font-size: 0.6875rem !important; }
+  }
+</style>
+<style>
+  .footer-keywords { font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: 0.82rem !important; line-height: 1.5; color: var(--taupe); margin-top: 0.5rem; letter-spacing: 0; max-width: 360px; }
+  @media (min-width: 769px) {
+    footer { gap: 2.5rem; }
+    .footer-links { flex: 1; min-width: 0; flex-wrap: wrap; justify-content: flex-end; row-gap: 0.7rem; }
+  }
+</style>
 </head>
 <body>
 
@@ -269,7 +347,7 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
     <li><a href="/realisations">Réalisations</a></li>
     <li><a href="/solen-ouahioune">À propos</a></li>
   </ul>
-  <a href="https://calendar.app.google/YQL39LLfw5zoFn2v7" class="nav-cta" target="_blank" rel="noopener">Prendre rendez-vous</a>
+  <a href="/diagnostic-ia" class="nav-cta">Le Diagnostic</a>
   <button class="nav-hamburger" onclick="document.querySelector('.mobile-menu').classList.toggle('open')" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
@@ -282,7 +360,7 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
   <a href="/solutions">Solutions</a>
   <a href="/realisations">Réalisations</a>
   <a href="/solen-ouahioune">À propos</a>
-  <a href="https://calendar.app.google/YQL39LLfw5zoFn2v7" class="mobile-cta" target="_blank" rel="noopener">Prendre rendez-vous</a>
+  <a href="/diagnostic-ia" class="mobile-cta">Le Diagnostic</a>
 </div>
 
 
@@ -456,7 +534,8 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
 <footer>
   <div>
     <div class="footer-logo">Flow Studio</div>
-    <div class="footer-tagline">Business Systems Design · IA & Systèmes</div>
+    <div class="footer-tagline"><a href="/business-systems-design" style="color:inherit;text-decoration:none;">Business Systems Design & Implementation</a></div>
+    <div class="footer-tagline" style="margin-top:0.4rem;">Reprendre le pouvoir sur son business avec des systèmes qui soutiennent son ambition.</div>
   </div>
   <div class="footer-links">
     <a href="/">Accueil</a>
@@ -465,6 +544,9 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
     <a href="/flow-private-ai">Flow Private AI</a>
     <a href="/cafe-ia-systems">Café IA &amp; Systems</a>
     <a href="/solutions">Solutions</a>
+    <a href="/diagnostic-ia">Le Diagnostic</a>
+    <a href="/business-systems-design">Business Systems Design</a>
+    <a href="/blog/">Blog</a>
     <a href="/realisations">Réalisations</a>
     <a href="/solen-ouahioune">À propos</a>
     <a href="/mentions-legales">Mentions légales</a>

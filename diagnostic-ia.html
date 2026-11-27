@@ -278,7 +278,7 @@
       "@id": "https://flow-studio.app/#organization",
       "name": "Flow Studio",
       "alternateName": "Flow Studio - Business Systems Design",
-      "description": "Flow Studio est un studio de Business Systems Design & Implementation. Solen Ouahioune conçoit et implémente des systèmes de travail (Notion, IA, automatisations) pour les entrepreneures, les petites équipes et les PME.",
+      "description": "Flow Studio est un studio de Business Systems Design & Implementation. Solen Ouahioune conçoit et implémente des systèmes de travail (Notion, IA, automatisations) pour les entrepreneurs, les petites équipes, les PME et les cabinets.",
       "url": "https://flow-studio.app",
       "logo": {
         "@type": "ImageObject",
@@ -366,6 +366,46 @@
   ]
 }
 </script>
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Flow Studio" />
+<meta property="og:locale" content="fr_FR" />
+<meta property="og:url" content="https://flow-studio.app/diagnostic-ia" />
+<meta property="og:title" content="Diagnostic : organisation, architecture IA et maintenance | Flow Studio" />
+<meta property="og:description" content="Le point de départ de chaque mission Flow Studio : votre organisation, l&#x27;architecture IA adaptée (cloud, hybride ou locale) et le modèle de maintenance. 490 € TTC, déduits de la mission." />
+<meta property="og:image" content="https://flow-studio.app/solen-ouahioune-flow-studio.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<style>
+  /* Lisibilité mobile : aucun texte informatif sous 11 px */
+  @media (max-width: 768px) {
+    .hero-eyebrow,
+    .tier-note,
+    .tier-note a,
+    .hero-cta,
+    .hero-note,
+    .hero-note a,
+    .section-eyebrow,
+    .process-step-tag,
+    .timeline-label,
+    .livrable-num,
+    .cta-eyebrow,
+    .cta-btn,
+    .cta-note,
+    .footer-tagline a,
+    .footer-links a,
+    .cookie-btn { font-size: 0.6875rem !important; }
+  }
+</style>
+<style>
+  .footer-keywords { font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: 0.82rem !important; line-height: 1.5; color: var(--taupe); margin-top: 0.5rem; letter-spacing: 0; max-width: 360px; }
+  @media (min-width: 769px) {
+    footer { gap: 2.5rem; }
+    .footer-links { flex: 1; min-width: 0; flex-wrap: wrap; justify-content: flex-end; row-gap: 0.7rem; }
+  }
+</style>
+<style>
+  /* Mode sombre : les blocs sombres gardent leurs couleurs claires-sur-sombre */
+  [data-theme="dark"] .process-section { --noir: #0F0F0F; --blanc: #F7F5F2; --beige: #EAE6E1; --taupe: #B5ADA5; }
+</style>
 </head>
 <body>
 
@@ -379,18 +419,19 @@
     <li><a href="/realisations">Réalisations</a></li>
     <li><a href="/solen-ouahioune">À propos</a></li>
   </ul>
-  <a href="https://calendar.app.google/YQL39LLfw5zoFn2v7" target="_blank" class="nav-cta">Prendre rendez-vous</a>
+  <a href="/diagnostic-ia" class="nav-cta">Le Diagnostic</a>
   <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
+  <a href="/solutions" onclick="toggleMenu()">Solutions</a>
   <a href="/entrepreneurs" onclick="toggleMenu()">Entrepreneurs</a>
   <a href="/pme" onclick="toggleMenu()">PME</a>
   <a href="/flow-private-ai" onclick="toggleMenu()">Flow Private AI</a>
   <a href="/realisations" onclick="toggleMenu()">Réalisations</a>
   <a href="/solen-ouahioune" onclick="toggleMenu()">À propos</a>
-  <a href="https://calendar.app.google/x3LrzMWr5spjaSn56" target="_blank" class="mobile-cta" onclick="toggleMenu()">Prendre rendez-vous</a>
+  <a href="/diagnostic-ia" class="mobile-cta" onclick="toggleMenu()">Le Diagnostic</a>
 </div>
 
 <!-- HERO -->
@@ -651,12 +692,16 @@
 <footer>
   <div>
     <div class="footer-logo">Flow Studio</div>
-    <div class="footer-tagline">Business Systems Design & Implementation</div>
-    <div class="footer-keywords">Notion · IA · Automatisations · Systèmes de travail</div>
+    <div class="footer-tagline"><a href="/business-systems-design" style="color:inherit;text-decoration:none;">Business Systems Design & Implementation</a></div>
+    <div class="footer-keywords">Reprendre le pouvoir sur son business avec des systèmes qui soutiennent son ambition.</div>
   </div>
   <div class="footer-links">
     <a href="/entrepreneurs">Entrepreneurs</a>
     <a href="/pme">PME</a>
+    <a href="/flow-private-ai">Flow Private AI</a>
+    <a href="/diagnostic-ia">Le Diagnostic</a>
+    <a href="/business-systems-design">Business Systems Design</a>
+    <a href="/blog/">Blog</a>
     <a href="/realisations">Réalisations</a>
     <a href="/solen-ouahioune">À propos</a>
     <a href="/contact">Contact</a>

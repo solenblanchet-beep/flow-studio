@@ -665,6 +665,101 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
   "url": "https://flow-studio.app/flow-private-ai"
 }
 </script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "Flow Private AI est-il pertinent pour un petit cabinet ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Oui, quand la raison est la confidentialité, et le plus souvent en hybride. Sur le seul coût de l'outil, l'IA privée ne devient moins chère que les abonnements cloud qu'à partir d'environ 25 personnes équipées. Pour un cabinet de quelques personnes, une machine entre 5 000 et 8 000 € HT se justifie par la nature des dossiers : pièces comptables, contrats, données d'assurés, informations couvertes par le secret professionnel. Si vos usages ne touchent pas de données sensibles, une IA cloud bien paramétrée reste le meilleur choix, et je vous le dirai. La Session AI Act puis le Diagnostic permettent de trancher avec vos usages réels."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Les performances d'un modèle local sont-elles comparables au cloud ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Pour la majorité des usages professionnels courants (rédaction, synthèse, traitement de documents, aide à la décision, questions sur vos procédures), un modèle local bien dimensionné répond efficacement. Il ne prétend pas égaler les modèles de recherche de pointe sur des tâches complexes. C'est pourquoi le diagnostic commence par l'identification de vos cas d'usage réels avant de dimensionner la solution."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Que se passe-t-il si le matériel tombe en panne ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Le contrat de support inclut une supervision des performances et un accompagnement en cas de défaillance. Le dimensionnement initial peut prévoir une redondance selon les besoins de disponibilité. En cas d'interruption majeure, les usages peuvent temporairement basculer sur quelques accès cloud conservés à cet effet."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Nos données sont-elles vraiment privées avec ce système ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "L'infrastructure est hébergée sur du matériel physiquement présent dans vos locaux ou dans un datacenter que vous contrôlez. Les traitements réalisés par le modèle local n'envoient aucune donnée à des serveurs cloud tiers. Cette garantie tient à l'architecture, aucun réglage ne peut la désactiver. Elle compte particulièrement pour les secteurs soumis à des contraintes réglementaires ou qui traitent des données sensibles."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Peut-on intégrer l'infrastructure avec nos outils existants ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Oui. L'infrastructure peut être connectée à vos outils métiers : CRM, ERP, suite bureautique, outils de communication, bases documentaires. Les intégrations sont définies lors de la phase de conception selon vos priorités. Vos outils restent en place : l'infrastructure leur ajoute une couche IA qui connaît votre organisation."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Combien coûte réellement un projet Flow Private AI ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Trois éléments. Le matériel : entre 5 000 et 8 000 € HT par machine à titre indicatif (je vous aide à le choisir, je ne le vends pas), une machine jusqu'à environ 25 collaborateurs, une deuxième au-delà selon les usages. La conception et le déploiement, chiffrés au forfait après le Diagnostic selon le périmètre, le nombre d'assistants et les intégrations. La maintenance mensuelle, sur mesure elle aussi : elle dépend de votre taille et du modèle choisi (en interne avec transmission, mixte avec un référent, ou assurée par Flow Studio). La maintenance d'un petit cabinet ne demande pas le même travail que celle d'une PME de 50 personnes, et son prix en tient compte."
+   }
+  }
+ ]
+}
+</script>
+<style>
+  /* Lisibilité mobile : aucun texte informatif sous 11 px */
+  @media (max-width: 768px) {
+    .hero-eyebrow,
+    .btn-primary,
+    .btn-ghost,
+    .hero-micro,
+    .hero-label,
+    .hero-arg-num,
+    .section-eyebrow,
+    .conf-col-label,
+    .conf-data-label,
+    .nocount-sub,
+    .nocount-meter-label,
+    .nocount-cap,
+    .systeme-num,
+    .objection-label,
+    .archi-compare-label,
+    .archi-note,
+    .preuve-quote figcaption,
+    .cta-final-eyebrow,
+    .cta-btn,
+    .cta-final-micro,
+    .footer-tagline a,
+    .footer-tagline,
+    .footer-links a { font-size: 0.6875rem !important; }
+  }
+</style>
+<style>
+  .footer-keywords { font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: 0.82rem !important; line-height: 1.5; color: var(--taupe); margin-top: 0.5rem; letter-spacing: 0; max-width: 360px; }
+  @media (min-width: 769px) {
+    footer { gap: 2.5rem; }
+    .footer-links { flex: 1; min-width: 0; flex-wrap: wrap; justify-content: flex-end; row-gap: 0.7rem; }
+  }
+</style>
+<style>
+  /* Mode sombre : les blocs sombres gardent leurs couleurs claires-sur-sombre */
+  [data-theme="dark"] .cta-final { --noir: #0F0F0F; --blanc: #F7F5F2; --beige: #EAE6E1; --taupe: #B5ADA5; }
+</style>
 </head>
 <body>
 
@@ -678,7 +773,7 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
     <li><a href="/realisations">Réalisations</a></li>
     <li><a href="/solen-ouahioune">À propos</a></li>
   </ul>
-  <a href="https://calendar.app.google/YQL39LLfw5zoFn2v7" class="nav-cta" target="_blank" rel="noopener">Prendre rendez-vous</a>
+  <a href="/diagnostic-ia" class="nav-cta">Le Diagnostic</a>
   <button class="nav-hamburger" onclick="document.querySelector('.mobile-menu').classList.toggle('open')" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
@@ -691,7 +786,7 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
   <a href="/solutions">Solutions</a>
   <a href="/realisations">Réalisations</a>
   <a href="/solen-ouahioune">À propos</a>
-  <a href="https://calendar.app.google/YQL39LLfw5zoFn2v7" class="mobile-cta" target="_blank" rel="noopener">Prendre rendez-vous</a>
+  <a href="/diagnostic-ia" class="mobile-cta">Le Diagnostic</a>
 </div>
 
 <!-- HERO -->
@@ -793,7 +888,7 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
       <p class="nocount-foot">Plus de travail fait. Toujours le même coût mensuel, quelle que soit l'utilisation.</p>
     </div>
   </div>
-  <p class="nocount-close">Le matériel reste un coût fixe : environ 7 000 € HT par machine. <a href="#choisir">Cloud, hybride ou local : voir comment on choisit →</a></p>
+  <p class="nocount-close">Le matériel reste un coût fixe : comptez entre 5 000 et 8 000 € HT par machine, à titre indicatif. <a href="#choisir">Cloud, hybride ou local : voir comment on choisit →</a></p>
 </section>
 
 <!-- PROBLEME -->
@@ -1028,7 +1123,7 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
       <p class="systeme-result">À retenir : confidentialité et économie vont dans le même sens.</p>
     </div>
   </div>
-  <p class="systemes-note">Matériel : environ 7 000 € HT par machine. Une machine suffit jusqu'à environ 25 collaborateurs, une deuxième est à envisager au-delà selon les usages. La conception, le déploiement et la maintenance mensuelle sont chiffrés sur mesure après le Diagnostic, selon votre taille et le modèle de maintenance choisi.</p>
+  <p class="systemes-note">Matériel : entre 5 000 et 8 000 € HT par machine, à titre indicatif. Je ne le vends pas : je vous aide à le choisir. Une machine suffit jusqu'à environ 25 collaborateurs, une deuxième est à envisager au-delà selon les usages. La conception, le déploiement et la maintenance mensuelle sont chiffrés sur mesure après le Diagnostic, selon votre taille et le modèle de maintenance choisi.</p>
 </section>
 
 <!-- SYSTÈMES -->
@@ -1188,7 +1283,7 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
         <span class="faq-icon">+</span>
       </div>
       <div class="faq-answer">
-        <p>Oui, quand la raison est la confidentialité, et le plus souvent en hybride. Sur le seul coût de l'outil, l'IA privée ne devient moins chère que les abonnements cloud qu'à partir d'environ 25 personnes équipées. Pour un cabinet de quelques personnes, une machine à environ 7 000 € HT se justifie par la nature des dossiers : pièces comptables, contrats, données d'assurés, informations couvertes par le secret professionnel. Si vos usages ne touchent pas de données sensibles, une IA cloud bien paramétrée reste le meilleur choix, et je vous le dirai. La Session AI Act puis le Diagnostic permettent de trancher avec vos usages réels.</p>
+        <p>Oui, quand la raison est la confidentialité, et le plus souvent en hybride. Sur le seul coût de l'outil, l'IA privée ne devient moins chère que les abonnements cloud qu'à partir d'environ 25 personnes équipées. Pour un cabinet de quelques personnes, une machine entre 5 000 et 8 000 € HT se justifie par la nature des dossiers : pièces comptables, contrats, données d'assurés, informations couvertes par le secret professionnel. Si vos usages ne touchent pas de données sensibles, une IA cloud bien paramétrée reste le meilleur choix, et je vous le dirai. La Session AI Act puis le Diagnostic permettent de trancher avec vos usages réels.</p>
       </div>
     </div>
 
@@ -1238,7 +1333,7 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
         <span class="faq-icon">+</span>
       </div>
       <div class="faq-answer">
-        <p>Trois éléments. Le matériel : environ 7 000 € HT par machine, une machine jusqu'à environ 25 collaborateurs, une deuxième au-delà selon les usages. La conception et le déploiement, chiffrés au forfait après le Diagnostic selon le périmètre, le nombre d'assistants et les intégrations. La maintenance mensuelle, sur mesure elle aussi : elle dépend de votre taille et du modèle choisi (en interne avec transmission, mixte avec un référent, ou assurée par Flow Studio). La maintenance d'un petit cabinet ne demande pas le même travail que celle d'une PME de 50 personnes, et son prix en tient compte.</p>
+        <p>Trois éléments. Le matériel : entre 5 000 et 8 000 € HT par machine à titre indicatif (je vous aide à le choisir, je ne le vends pas), une machine jusqu'à environ 25 collaborateurs, une deuxième au-delà selon les usages. La conception et le déploiement, chiffrés au forfait après le Diagnostic selon le périmètre, le nombre d'assistants et les intégrations. La maintenance mensuelle, sur mesure elle aussi : elle dépend de votre taille et du modèle choisi (en interne avec transmission, mixte avec un référent, ou assurée par Flow Studio). La maintenance d'un petit cabinet ne demande pas le même travail que celle d'une PME de 50 personnes, et son prix en tient compte.</p>
       </div>
     </div>
 
@@ -1258,7 +1353,8 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
 <footer>
   <div>
     <div class="footer-logo">Flow Studio</div>
-    <div class="footer-tagline">Business Systems Design · IA & Systèmes</div>
+    <div class="footer-tagline"><a href="/business-systems-design" style="color:inherit;text-decoration:none;">Business Systems Design & Implementation</a></div>
+    <div class="footer-tagline" style="margin-top:0.4rem;">Reprendre le pouvoir sur son business avec des systèmes qui soutiennent son ambition.</div>
   </div>
   <div class="footer-links">
     <a href="/">Accueil</a>
@@ -1266,6 +1362,9 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
     <a href="/pme">PME</a>
     <a href="/flow-private-ai">Flow Private AI</a>
     <a href="/solutions">Solutions</a>
+    <a href="/diagnostic-ia">Le Diagnostic</a>
+    <a href="/business-systems-design">Business Systems Design</a>
+    <a href="/blog/">Blog</a>
     <a href="/realisations">Réalisations</a>
     <a href="/solen-ouahioune">À propos</a>
     <a href="/mentions-legales">Mentions légales</a>

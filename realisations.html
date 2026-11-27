@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Réalisations IA, Notion et automatisations | Flow Studio</title>
-<meta name="description" content="Les retours des clients qui ont fait appel à Flow Studio pour structurer leur business avec Notion, l'IA et les automatisations.">
+<title>Réalisations et témoignages clients | Flow Studio</title>
+<meta name="description" content="Les retours des clients qui ont fait appel à Flow Studio pour concevoir et implémenter leur système de travail : organisation, Notion, IA et automatisations.">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -204,7 +204,7 @@
       "@id": "https://flow-studio.app/#organization",
       "name": "Flow Studio",
       "alternateName": "Flow Studio - Business Systems Design",
-      "description": "Flow Studio est un studio de Business Systems Design & Implementation. Solen Ouahioune conçoit et implémente des systèmes de travail (Notion, IA, automatisations) pour les entrepreneures, les petites équipes et les PME.",
+      "description": "Flow Studio est un studio de Business Systems Design & Implementation. Solen Ouahioune conçoit et implémente des systèmes de travail (Notion, IA, automatisations) pour les entrepreneurs, les petites équipes, les PME et les cabinets.",
       "url": "https://flow-studio.app",
       "logo": {
         "@type": "ImageObject",
@@ -271,6 +271,40 @@
   ]
 }
 </script>
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Flow Studio" />
+<meta property="og:locale" content="fr_FR" />
+<meta property="og:url" content="https://flow-studio.app/realisations" />
+<meta property="og:title" content="Réalisations et témoignages clients | Flow Studio" />
+<meta property="og:description" content="Les retours des clients qui ont fait appel à Flow Studio pour concevoir et implémenter leur système de travail : organisation, Notion, IA et automatisations." />
+<meta property="og:image" content="https://flow-studio.app/solen-ouahioune-flow-studio.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<style>
+  /* Lisibilité mobile : aucun texte informatif sous 11 px */
+  @media (max-width: 768px) {
+    .hero-eyebrow,
+    .section-eyebrow,
+    .real-tag,
+    .real-author,
+    .real-sector,
+    .cta-eyebrow,
+    .cta-btn,
+    .footer-tagline a,
+    .footer-links a,
+    .active { font-size: 0.6875rem !important; }
+  }
+</style>
+<style>
+  .footer-keywords { font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: 0.82rem !important; line-height: 1.5; color: var(--taupe); margin-top: 0.5rem; letter-spacing: 0; max-width: 360px; }
+  @media (min-width: 769px) {
+    footer { gap: 2.5rem; }
+    .footer-links { flex: 1; min-width: 0; flex-wrap: wrap; justify-content: flex-end; row-gap: 0.7rem; }
+  }
+</style>
+<style>
+  /* Mode sombre : les blocs sombres gardent leurs couleurs claires-sur-sombre */
+  [data-theme="dark"] .realisation-card.dark { --noir: #0F0F0F; --blanc: #F7F5F2; --beige: #EAE6E1; --taupe: #B5ADA5; }
+</style>
 </head>
 <body>
 
@@ -284,18 +318,19 @@
     <li><a href="/realisations" class="active">Réalisations</a></li>
     <li><a href="/solen-ouahioune">À propos</a></li>
   </ul>
-  <a href="https://calendar.app.google/YQL39LLfw5zoFn2v7" target="_blank" class="nav-cta">Prendre rendez-vous</a>
+  <a href="/diagnostic-ia" class="nav-cta">Le Diagnostic</a>
   <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
+  <a href="/solutions" onclick="toggleMenu()">Solutions</a>
   <a href="/entrepreneurs" onclick="toggleMenu()">Entrepreneurs</a>
   <a href="/pme" onclick="toggleMenu()">PME</a>
   <a href="/flow-private-ai" onclick="toggleMenu()">Flow Private AI</a>
   <a href="/realisations" onclick="toggleMenu()">Réalisations</a>
   <a href="/solen-ouahioune" onclick="toggleMenu()">À propos</a>
-  <a href="https://calendar.app.google/x3LrzMWr5spjaSn56" target="_blank" class="mobile-cta" onclick="toggleMenu()">Prendre rendez-vous</a>
+  <a href="/diagnostic-ia" class="mobile-cta" onclick="toggleMenu()">Le Diagnostic</a>
 </div>
 
 <!-- HERO -->
@@ -363,8 +398,9 @@
 <section class="cta-section">
   <p class="cta-eyebrow reveal">Et votre business ?</p>
   <h2 class="cta-title reveal reveal-delay-1">Prêt·e à construire<br><em>votre propre système ?</em></h2>
-  <p class="cta-subtitle reveal reveal-delay-1">30 minutes pour comprendre votre situation et voir si on peut travailler ensemble. Gratuit, sans engagement.</p>
-  <a href="https://calendar.app.google/x3LrzMWr5spjaSn56" target="_blank" class="cta-btn reveal">Prendre rendez-vous</a>
+  <p class="cta-subtitle reveal reveal-delay-1">Le Diagnostic pose votre organisation à plat et définit le système à construire. 490 € TTC, déduits de la mission si vous poursuivez.</p>
+  <a href="/diagnostic-ia" class="cta-btn reveal">Réserver le Diagnostic</a>
+  <p class="cta-note reveal">Une question avant de réserver ? <a href="https://calendar.app.google/YQL39LLfw5zoFn2v7" target="_blank" style="color:inherit;text-decoration:underline;">Appel de 30 minutes, gratuit</a>.</p>
 </section>
 
 <div class="bloom-footer-bar">
@@ -374,12 +410,16 @@
 <footer>
   <div>
     <div class="footer-logo">Flow Studio</div>
-    <div class="footer-tagline">Business Systems Design & Implementation</div>
-    <div class="footer-keywords">Notion · IA · Automatisations · Systèmes de travail</div>
+    <div class="footer-tagline"><a href="/business-systems-design" style="color:inherit;text-decoration:none;">Business Systems Design & Implementation</a></div>
+    <div class="footer-keywords">Reprendre le pouvoir sur son business avec des systèmes qui soutiennent son ambition.</div>
   </div>
   <div class="footer-links">
     <a href="/entrepreneurs">Entrepreneurs</a>
     <a href="/pme">PME</a>
+    <a href="/flow-private-ai">Flow Private AI</a>
+    <a href="/diagnostic-ia">Le Diagnostic</a>
+    <a href="/business-systems-design">Business Systems Design</a>
+    <a href="/blog/">Blog</a>
     <a href="/realisations" class="active">Réalisations</a>
     <a href="/solen-ouahioune">À propos</a>
     <a href="/contact">Contact</a>
