@@ -665,6 +665,62 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
   "url": "https://flow-studio.app/flow-private-ai"
 }
 </script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "Flow Private AI est-il pertinent pour un petit cabinet ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Oui, quand la raison est la confidentialité, et le plus souvent en hybride. Sur le seul coût de l'outil, l'IA privée ne devient moins chère que les abonnements cloud qu'à partir d'environ 25 personnes équipées. Pour un cabinet de quelques personnes, une machine entre 5 000 et 8 000 € HT se justifie par la nature des dossiers : pièces comptables, contrats, données d'assurés, informations couvertes par le secret professionnel. Si vos usages ne touchent pas de données sensibles, une IA cloud bien paramétrée reste le meilleur choix, et je vous le dirai. La Session AI Act puis le Diagnostic permettent de trancher avec vos usages réels."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Les performances d'un modèle local sont-elles comparables au cloud ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Pour la majorité des usages professionnels courants (rédaction, synthèse, traitement de documents, aide à la décision, questions sur vos procédures), un modèle local bien dimensionné répond efficacement. Il ne prétend pas égaler les modèles de recherche de pointe sur des tâches complexes. C'est pourquoi le diagnostic commence par l'identification de vos cas d'usage réels avant de dimensionner la solution."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Que se passe-t-il si le matériel tombe en panne ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Le contrat de support inclut une supervision des performances et un accompagnement en cas de défaillance. Le dimensionnement initial peut prévoir une redondance selon les besoins de disponibilité. En cas d'interruption majeure, les usages peuvent temporairement basculer sur quelques accès cloud conservés à cet effet."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Nos données sont-elles vraiment privées avec ce système ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "L'infrastructure est hébergée sur du matériel physiquement présent dans vos locaux ou dans un datacenter que vous contrôlez. Les traitements réalisés par le modèle local n'envoient aucune donnée à des serveurs cloud tiers. Cette garantie tient à l'architecture, aucun réglage ne peut la désactiver. Elle compte particulièrement pour les secteurs soumis à des contraintes réglementaires ou qui traitent des données sensibles."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Peut-on intégrer l'infrastructure avec nos outils existants ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Oui. L'infrastructure peut être connectée à vos outils métiers : CRM, ERP, suite bureautique, outils de communication, bases documentaires. Les intégrations sont définies lors de la phase de conception selon vos priorités. Vos outils restent en place : l'infrastructure leur ajoute une couche IA qui connaît votre organisation."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Combien coûte réellement un projet Flow Private AI ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Trois éléments. Le matériel : entre 5 000 et 8 000 € HT par machine à titre indicatif (je vous aide à le choisir, je ne le vends pas), une machine jusqu'à environ 25 collaborateurs, une deuxième au-delà selon les usages. La conception et le déploiement, chiffrés au forfait après le Diagnostic selon le périmètre, le nombre d'assistants et les intégrations. La maintenance mensuelle, sur mesure elle aussi : elle dépend de votre taille et du modèle choisi (en interne avec transmission, mixte avec un référent, ou assurée par Flow Studio). La maintenance d'un petit cabinet ne demande pas le même travail que celle d'une PME de 50 personnes, et son prix en tient compte."
+   }
+  }
+ ]
+}
+</script>
 </head>
 <body>
 
@@ -1258,7 +1314,8 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
 <footer>
   <div>
     <div class="footer-logo">Flow Studio</div>
-    <div class="footer-tagline">Business Systems Design · IA & Systèmes</div>
+    <div class="footer-tagline"><a href="/business-systems-design" style="color:inherit;text-decoration:none;">Business Systems Design & Implementation</a></div>
+    <div class="footer-tagline" style="margin-top:0.4rem;">Reprendre le pouvoir sur son business avec des systèmes qui soutiennent son ambition.</div>
   </div>
   <div class="footer-links">
     <a href="/">Accueil</a>
@@ -1266,6 +1323,9 @@ footer { background: var(--beige); padding: 2.5rem 6rem; border-top: 1px solid r
     <a href="/pme">PME</a>
     <a href="/flow-private-ai">Flow Private AI</a>
     <a href="/solutions">Solutions</a>
+    <a href="/diagnostic-ia">Le Diagnostic</a>
+    <a href="/business-systems-design">Business Systems Design</a>
+    <a href="/blog/">Blog</a>
     <a href="/realisations">Réalisations</a>
     <a href="/solen-ouahioune">À propos</a>
     <a href="/mentions-legales">Mentions légales</a>
